@@ -21,8 +21,8 @@ count=0
 for page in SITE.rglob('*.html'):
     parser=Links();parser.feed(page.read_text(encoding='utf-8'))
     assert parser.theme_buttons==1,f'Missing or duplicate theme switch: {page}'
-    assert any(link.endswith('/theme.js') for link in parser.links),page
-    assert any(link.endswith('/theme.css') for link in parser.links),page
+    assert any(urlsplit(link).path.endswith('/theme.js') for link in parser.links),page
+    assert any(urlsplit(link).path.endswith('/theme.css') for link in parser.links),page
     for value in parser.links:
         url=urlsplit(value)
         if url.scheme or url.netloc or not url.path:continue

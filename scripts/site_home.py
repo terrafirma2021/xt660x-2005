@@ -12,7 +12,7 @@ def build_home(maps, pins, write):
     return f'''
 <section class="race-hero" aria-labelledby="hero-title">
   <div class="hero-slash" aria-hidden="true"></div>
-  <div class="bike-stage"><img src="assets/xt660x-2005.jpg" alt="Blue 2005 Yamaha XT660X, showing its spoked supermoto wheels, single-cylinder engine and high exhaust" width="1024" height="768" fetchpriority="high"><span class="photo-caption">XT660X / 2005 / YAMAHA</span></div>
+  <div class="bike-stage"><img src="assets/xt660x-2005-cutout.png" alt="Blue 2005 Yamaha XT660X, showing its spoked supermoto wheels, single-cylinder engine and high exhaust" width="1448" height="1086" fetchpriority="high"><span class="photo-caption">XT660X / 2005 / YAMAHA</span></div>
   <div class="hero-content">
     <div class="hero-eyebrow"><span class="race-bars" aria-hidden="true"></span>YAMAHA · 2005 · SUPERMOTO</div>
     <h1 id="hero-title">XT660<span>X</span></h1>

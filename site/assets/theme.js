@@ -9,10 +9,11 @@
     document.documentElement.dataset.theme=theme;
     const button=document.getElementById('theme-toggle');
     if(button){
-      button.textContent=theme==='dark'?'Light theme':'Dark theme';
+      button.textContent=theme==='dark'?'Dark mode':'Light mode';
       button.setAttribute('aria-label','Switch to '+(theme==='dark'?'light':'dark')+' theme');
       button.setAttribute('aria-pressed',String(theme==='dark'));
     }
+    document.dispatchEvent(new CustomEvent('xt660x-themechange',{detail:{theme}}));
   }
   apply(preference||(system.matches?'dark':'light'));
   document.addEventListener('DOMContentLoaded',()=>apply(document.documentElement.dataset.theme));

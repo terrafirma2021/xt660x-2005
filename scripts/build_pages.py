@@ -39,10 +39,10 @@ def nav(current, active):
         f'<a href="{rel(url,current)}"'+(' aria-current="page"' if label==active else '')+f'>{label}</a>' for label,url in links)+f'<a href="{REPO}">GitHub ↗</a><button id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">Dark theme</button></nav></header>'
 
 def theme_head(current):
-    return f'<link rel="icon" href="{rel("assets/favicon.svg",current)}" type="image/svg+xml"><script src="{rel("assets/theme.js",current)}"></script><link rel="stylesheet" href="{rel("assets/theme.css",current)}">'
+    return f'<link rel="icon" href="{rel("assets/favicon.svg",current)}" type="image/svg+xml"><script src="{rel("assets/theme.js",current)}?v={revision}"></script><link rel="stylesheet" href="{rel("assets/theme.css",current)}?v={revision}">'
 
 def shell(title, body, current, active, script=''):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Yamaha XT660X 2005 ECU research: firmware, calibration maps, sensors and MCU pins."><title>{esc(title)} · XT660X Research</title><link rel="stylesheet" href="{rel('assets/site.css',current)}">{theme_head(current)}</head><body>{nav(current,active)}<main class="site-main">{body}</main><footer class="site-footer"><span>YAMAHA XT660X / 2005 · <a href="{rel('coverage/index.html',current)}">Content coverage</a></span><span>Revision <a href="{REPO}/commit/{revision}">{revision}</a> · <a href="{rel("docs/repository/site/ASSET_CREDITS.html",current)}">Credits &amp; independence</a><br>Independent project. Not affiliated with Yamaha Motor.</span></footer>{script}</body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Yamaha XT660X 2005 ECU research: firmware, calibration maps, sensors and MCU pins."><title>{esc(title)} · XT660X Research</title><link rel="stylesheet" href="{rel('assets/site.css',current)}?v={revision}">{theme_head(current)}</head><body>{nav(current,active)}<main class="site-main">{body}</main><footer class="site-footer"><span>YAMAHA XT660X / 2005 · <a href="{rel('coverage/index.html',current)}">Content coverage</a></span><span>Revision <a href="{REPO}/commit/{revision}">{revision}</a> · <a href="{rel("docs/repository/site/ASSET_CREDITS.html",current)}">Credits &amp; independence</a><br>Independent project. Not affiliated with Yamaha Motor.</span></footer>{script}</body></html>'''
 
 def doc_link(name, label, current='index.html'):
     return f'<a href="{rel(doc_targets[(SOURCE/name).resolve()],current)}">{esc(label)} ↗</a>'
@@ -55,7 +55,7 @@ DEST.mkdir()
 shutil.copytree(ROOT / 'site/assets', DEST / 'assets')
 
 home = build_home(maps, pins, write)
-write('index.html', shell('Yamaha XT660X / The inside line', home, 'index.html', 'Overview', '<script src="assets/home.js" defer></script>'))
+write('index.html', shell('Yamaha XT660X / The inside line', home, 'index.html', 'Overview', f'<script src="assets/home.js?v={revision}" defer></script>'))
 
 # Keep the accepted pin UI intact, adding only the shared website navigation.
 pin_page = (SOURCE / 'MCU_PIN_OVERVIEW.html').read_text(encoding='utf-8')
