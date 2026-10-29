@@ -51,3 +51,16 @@ b1ae  b60b3d  LDAA 0xb3d
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+numeric contribution decoded.
+
+Conversion: `(raw+384)*100/512`; unit: **%**.
+
+IAT factor in the normal fuel chain; integer rounding occurs in the actual multi-stage calculation
+
+Converted percentage applies to the normal-running consumer at 0x828C/0x82A6. Startup consumer at 0x7BF1 has different stage scaling.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

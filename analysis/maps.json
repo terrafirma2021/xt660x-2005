@@ -7320,7 +7320,7 @@
         }
       ]
     },
-    "physical_role": "Cyclic 24-code surface; physical event meaning unresolved",
+    "physical_role": "Injection event-phase target; reference-rotated modulo-24 interpolation, not pulse duration or absolute BTDC",
     "units": "raw ECU values",
     "calls": [
       {
@@ -7486,7 +7486,7 @@
       "u16 0x08E8 throttle code (row)",
       "u16 0x0900 selected speed (column)"
     ],
-    "output": "u8 0x0A1B; excludes codes 11 and >=23 after lookup",
+    "output": "u8 0x0A1B; code 11 becomes 10 and codes >=23 become 22; transferred through 0x0A1E to 0x0A1C",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
@@ -7566,7 +7566,7 @@
         }
       ]
     },
-    "physical_role": "Speed/throttle correction",
+    "physical_role": "Secondary injector quantity multiplier; cell 128 is unity",
     "units": "raw ECU values",
     "calls": [
       {
@@ -7862,7 +7862,7 @@
         }
       ]
     },
-    "physical_role": "Control correction",
+    "physical_role": "Centered correction to the common fuel normalization denominator; neutral 128",
     "units": "raw ECU values",
     "calls": [
       {
@@ -8034,7 +8034,7 @@
       "u16 0x0900 selected speed",
       "u16 0x08E8 throttle code"
     ],
-    "output": "u8 0x09D8",
+    "output": "u8 0x09D8, latched to 0x09D6 and selected into 0x0CD4",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
@@ -8313,7 +8313,7 @@
         }
       ]
     },
-    "physical_role": "Temperature/speed correction in spark path",
+    "physical_role": "Alternate base spark surface; replaces the normal base in this mode, not an additive correction",
     "units": "raw ECU values",
     "calls": [
       {
@@ -8499,7 +8499,7 @@
       "u8 high byte of 0x0900 selected speed",
       "u8 0x08F4 coolant"
     ],
-    "output": "u8 0x0A88",
+    "output": "u8 0x0A88 selected as a base by 0x0885 bit 0x20",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
@@ -8797,8 +8797,8 @@
     "inputs": [
       "u8 0x08F4 coolant"
     ],
-    "output": "u8 0x0CAE",
-    "physical_role": "Coolant-dependent feedback threshold",
+    "output": "u8 0x0CAE compared with 1-second-task counter 0x0CAF",
+    "physical_role": "Coolant-dependent delay before feedback eligibility",
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
@@ -8923,8 +8923,8 @@
     "inputs": [
       "u8 0x08F4 coolant"
     ],
-    "output": "u16 0x0994",
-    "physical_role": "Startup/reset state curve",
+    "output": "u16 Q8 state 0x0994; decays by twice ROM 0x3313 per fuel update",
+    "physical_role": "First post-start enrichment state; maximum of both states feeds normal fuel gain",
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
@@ -8986,8 +8986,8 @@
     "inputs": [
       "u8 0x08F4 coolant"
     ],
-    "output": "u16 0x0996",
-    "physical_role": "Startup/reset state curve",
+    "output": "u16 Q8 state 0x0996; decays by twice ROM 0x3314 per fuel update",
+    "physical_role": "Second post-start enrichment state; maximum of both states feeds normal fuel gain",
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
@@ -9301,8 +9301,8 @@
     "inputs": [
       "u16 0x0900 selected speed"
     ],
-    "output": "u8 0x0A05",
-    "physical_role": "Transient threshold",
+    "output": "u8 0x0A05 compared with 0x08EC",
+    "physical_role": "Filtered relative-throttle threshold in a qualification counter path",
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
@@ -9836,8 +9836,8 @@
     "inputs": [
       "u16 0x0900 selected speed"
     ],
-    "output": "u8 0x09D9",
-    "physical_role": "Speed-dependent control correction",
+    "output": "u8 0x09D9, latched into 0x09D7 and compared with 10-ms-task counter 0x09DD",
+    "physical_role": "Hold count before normalization correction returns toward neutral",
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
@@ -9891,8 +9891,8 @@
     "inputs": [
       "u16 0x0900 selected speed"
     ],
-    "output": "u8 0x09D9",
-    "physical_role": "Speed-dependent control correction",
+    "output": "u8 0x09D9, latched into 0x09D7 and compared with 10-ms-task counter 0x09DD",
+    "physical_role": "Alternate hold count before normalization correction returns toward neutral",
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
@@ -9948,8 +9948,8 @@
     "inputs": [
       "u8 0x08F4 coolant"
     ],
-    "output": "u8 0x09B4 compared with 0x09B5",
-    "physical_role": "Feedback eligibility threshold",
+    "output": "u8 0x09B4 compared with 100-ms-task counter 0x09B5",
+    "physical_role": "Delay before feedback eligibility",
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
@@ -9997,8 +9997,8 @@
     "inputs": [
       "u16 0x0900 selected speed"
     ],
-    "output": "u16 0x09A6 = high byte << 8",
-    "physical_role": "Adaptive correction subtraction bound",
+    "output": "u16 0x09A6 = high byte << 8; subtracted from 0x097E at a state transition",
+    "physical_role": "Adaptive correction decrement step; bounds are separate ROM words",
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
@@ -10046,8 +10046,8 @@
     "inputs": [
       "u16 0x0900 selected speed"
     ],
-    "output": "u16 0x09A8 = high byte << 8",
-    "physical_role": "Adaptive correction addition bound",
+    "output": "u16 0x09A8 = high byte << 8; added to 0x097E at a state transition",
+    "physical_role": "Adaptive correction increment step; bounds are separate ROM words",
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
@@ -10289,8 +10289,8 @@
     "inputs": [
       "u16 0x0900 selected speed"
     ],
-    "output": "u8 0x0CB0",
-    "physical_role": "Pressure-processing correction",
+    "output": "u8 0x0CB0; 0x0CB4 = clamp(0x0CB2 + 64*(cell-128),0,65535)",
+    "physical_role": "Centered additive pressure-processing offset; not a multiplier",
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
@@ -10459,8 +10459,8 @@
     "inputs": [
       "u8 0x08F4 coolant"
     ],
-    "output": "u8 0x0A89",
-    "physical_role": "Temperature correction in spark path",
+    "output": "u8 0x0A89 compared with 0x08EC",
+    "physical_role": "Filtered relative-throttle threshold enabling alternate spark mode; not a spark-angle correction",
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
@@ -10516,8 +10516,8 @@
     "inputs": [
       "u8 0x08F4 coolant"
     ],
-    "output": "u8 0x097B",
-    "physical_role": "Coolant-dependent fuel correction",
+    "output": "u8 0x097B contributes 8*cell to pre-gain 0x096C",
+    "physical_role": "Additive coolant enrichment contribution for first fuel-gain lane",
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
@@ -10573,8 +10573,8 @@
     "inputs": [
       "u8 0x08F4 coolant"
     ],
-    "output": "u8 0x097C",
-    "physical_role": "Coolant-dependent fuel correction",
+    "output": "u8 0x097C contributes 8*cell to pre-gain 0x096E",
+    "physical_role": "Additive coolant enrichment contribution for second fuel-gain lane",
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,

@@ -13,7 +13,7 @@ The deliverable now is an evidence model that either kind of tool can consume. I
 | Scalar width, endianness, unsigned/signed encoding | Recorded for the focused catalogue |
 | Cell address, dimensions and axis storage | Existing map atlas, plus new sensor curves |
 | Runtime selector / variant / alternate calibration | Documented where traced; incomplete globally |
-| Conversion to Celsius, RPM, degrees, milliseconds, pressure | Intentionally null until verified |
+| Conversion to Celsius, RPM, degrees, milliseconds, pressure | Clock/crank-conditional values and exact code/gain contributions are in the unit companion; Celsius, pressure and absolute BTDC remain unresolved |
 | Reverse conversion and rounding policy | Not defined for engineering units |
 | Valid physical adjustment ranges | Not inferred from the limits of a byte or word |
 | Checksum algorithm and covered ranges | [ROM and serial algorithms](CHECKSUMS.md) recovered; [startup-corrected copy](CHECKSUM.md) tested. Factory correction field, absent boot content and flash workflow remain unvalidated. |
@@ -65,4 +65,6 @@ The control fixtures use supplied ROM values and controlled RAM/register inputs.
 
 ## Conditional engineering companion
 
-[physical_units.json](physical_units.json) now provides per-map conversion status, named clock/crank assumptions, converted cell values for 15 maps and nominal speed axes for 32 maps. [UNIT_DECODING.md](UNIT_DECODING.md) separates exact arithmetic from inferred physical scales and conflicting sensor evidence. An editor must display these assumptions and must not relabel relative spark angle as BTDC, treat load as measured kPa, or silently enable writes because a conversion is present.
+[physical_units.json](physical_units.json) now provides per-map conversion status, named clock/crank assumptions, 60 numeric/logical/conditional cell interpretations, joint arithmetic for seven maps and nominal speed axes for 40 maps. [UNIT_DECODING.md](UNIT_DECODING.md) separates exact arithmetic from inferred physical scales and conflicting sensor evidence. An editor must display these assumptions and must not relabel relative spark angle as BTDC, treat load as measured kPa, or silently enable writes because a conversion is present.
+
+The [consumer models](../../scripts/map_models.py) include word wrap, rounding, coupled saturation, asymmetric channel ordering and the stock half-scaling factor. Do not replace them with a single table-to-pulse multiplier. [Stock activation notes](MAP_CONSUMERS.md#active-versus-dormant-calibrations) also matter: some identified families are disabled by stock mode settings or zero eligibility cells.

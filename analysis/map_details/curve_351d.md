@@ -71,3 +71,14 @@ Addresses refer to the unchanged image. Windows around entry/call sites provide 
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+numeric contribution decoded.
+
+Conversion: `(raw+384)*100/256`; unit: **%**.
+
+factor in transient contribution; not the same scaling as normal IAT correction
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

@@ -52,3 +52,18 @@ Addresses refer to the unchanged image. Windows around entry/call sites provide 
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+numeric contribution decoded.
+
+Conversion: `raw*100/256`; unit: **%**.
+
+dimensionless multiplier of the stated contribution, not necessarily total fuel
+
+95C/95D=clamp(128+signed_round((input-128)*cell/256),0,255); centered result later contributes 4*(result-128) timer ticks
+
+Consumer instruction addresses: `0x8623`, `0x8323`.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

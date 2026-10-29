@@ -1,12 +1,12 @@
 # curve_3494
 
-Transient threshold
+Filtered relative-throttle threshold in a qualification counter path
 
 Cells: **0x349A–34A3**, 1 rows × 10 columns, 8-bit unsigned big-endian values.
 
 Inputs: u16 0x0900 selected speed.
 
-Output: u8 0x0A05.
+Output: u8 0x0A05 compared with 0x08EC.
 
 Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
 
@@ -52,3 +52,18 @@ Addresses refer to the unchanged image. Windows around entry/call sites provide 
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+numeric contribution decoded.
+
+Conversion: `raw`; unit: **10-bit ADC counts above learned closed position**.
+
+Threshold compared with min(255,filtered relative TPS count). Electrical/mechanical angle remains unconfirmed.
+
+A05 compared against min(255,08E6), a filtered relative TPS count; not a throttle-rate threshold
+
+Consumer instruction addresses: `0x8C99`, `0x8F82`, `0x8FAA`.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

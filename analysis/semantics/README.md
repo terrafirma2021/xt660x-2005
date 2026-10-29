@@ -13,6 +13,7 @@ The analysis applies only to the exact [supplied image](../../firmware/XT660X%20
 | Engine speed / cuts | [Speed calculation and output suppression](RPM_AND_CUTS.md) | Reciprocal calculation, three period-limit pairs, separate road-speed cut flags, conditional injector limits | Confirmed timer timebase / crank geometry, complete interlock meanings |
 | Spark | [Maps through the timing scheduler](SPARK.md) | Three selected byte maps, rounding and downstream correction, timer-3 identity | Absolute crank-angle reference, degrees conversion, all correction meanings |
 | Fuel | [Quantity tables and injector scheduling](FUEL.md) | Main table selection, speed/other input variables, primary timer-6 output, secondary variant gating | Full cell-to-pulse formula, physical units and mode meanings |
+| Map consumers | [Fuel products, adaptation and event timing](MAP_CONSUMERS.md) | Exact normal/startup fuel chains, transient products, corrected roles, injection phase dispatch and dormant families | Sensor physical references, absolute crank phase and complete mode coverage |
 | Units | [Engineering derivation](UNIT_DECODING.md) | Conditional timer/RPM/relative-angle conversions, contribution gains and exact normalization | Absolute TDC reference and confirmed sensor scales |
 | Variants | [Second injector and configuration](VARIANTS.md) | Variant 9 skips the second normal injector entry; separate diagnostic path remains | Exact donor models and physical second-channel hardware |
 | Extended maps | [New families and dataflow](EXTENDED_MAPS.md) | 71 layouts, per-map breakdowns, computed axes, step grids, RAM-copied curve | Remaining scalars/indirect data and complete engineering conversions |
@@ -31,6 +32,8 @@ These have different levels of completion. Coolant/fan decisions and the princip
 - [catalog.json](catalog.json): 28 calibration records with exact storage, original bytes, role, references, and explicit missing conversion fields; eight ADC channels and six logical outputs.
 - [control_validation.json](control_validation.json): 212,090 isolated control test cases against the compiled instruction translation.
 - [extended_map_validation.json](extended_map_validation.json): 150,614 additional cases, including the delivered checksum correction.
+- [MAP_RESOLUTION.md](MAP_RESOLUTION.md): current per-map status; cell interpretation does not imply every axis or mode is resolved.
+- [map_consumer_validation.json](map_consumer_validation.json): 259,216 consumer checks with independent integer models.
 - [physical_units.json](physical_units.json): all 71 maps accounted for, with named assumptions on converted values.
 - [units_variant_validation.json](units_variant_validation.json): independent unit arithmetic, scheduler and variant fixtures.
 - [Every map's breakdown](../MAP_DETAILS.md) and [remaining calibration inventory](../REMAINING_CALIBRATIONS.md).

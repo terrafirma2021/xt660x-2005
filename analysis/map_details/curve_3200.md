@@ -1,12 +1,12 @@
 # curve_3200
 
-Speed-dependent control correction
+Alternate hold count before normalization correction returns toward neutral
 
 Cells: **0x3206–3212**, 1 rows × 13 columns, 8-bit unsigned big-endian values.
 
 Inputs: u16 0x0900 selected speed.
 
-Output: u8 0x09D9.
+Output: u8 0x09D9, latched into 0x09D7 and compared with 10-ms-task counter 0x09DD.
 
 Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
 
@@ -52,3 +52,18 @@ a47b  b13214  CMPA 0x3214
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+conditional physical conversion.
+
+Conversion: `raw*5000/timer_hz`; unit: **s**.
+
+Latched threshold for qualifying 2-base-tick task iterations before correction recovery. Conditional count, not an unconditional wall-clock timer.
+
+Required profiles: `nominal_xt_timer`. These are assumptions, not measured hardware parameters.
+
+Stock activation: Normal state path is disabled: ROM 0x3130 is 0xFF; 0x8DF9 requires exactly 0x80. The disabled path resets CD4 to 128. Lookup presence alone does not establish an active effect.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

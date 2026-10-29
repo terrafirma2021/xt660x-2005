@@ -1,12 +1,12 @@
 # curve_1880
 
-Pressure-processing correction
+Centered additive pressure-processing offset; not a multiplier
 
 Cells: **0x1886–1899**, 1 rows × 20 columns, 8-bit unsigned big-endian values.
 
 Inputs: u16 0x0900 selected speed.
 
-Output: u8 0x0CB0.
+Output: u8 0x0CB0; 0x0CB4 = clamp(0x0CB2 + 64*(cell-128),0,65535).
 
 Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
 
@@ -52,3 +52,14 @@ b29c  2503  BCS 0xb2a1
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+numeric contribution decoded.
+
+Conversion: `64*(raw-128)`; unit: **pressure-coordinate counts**.
+
+Additive offset into CB4 relative to CB2, saturated to a word. It is not a pressure multiplier or measured kPa.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

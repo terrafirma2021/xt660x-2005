@@ -1,12 +1,12 @@
 # correction_surface_D
 
-Temperature/speed correction in spark path
+Alternate base spark surface; replaces the normal base in this mode, not an additive correction
 
 Cells: **0x4A60–4AF5**, 10 rows × 15 columns, 8-bit unsigned big-endian values.
 
 Inputs: u8 high byte of 0x0900 selected speed; u8 0x08F4 coolant.
 
-Output: u8 0x0A88.
+Output: u8 0x0A88 selected as a base by 0x0885 bit 0x20.
 
 Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
 
@@ -72,3 +72,20 @@ b8ad  b608f4  LDAA 0x8f4
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+conditional physical conversion.
+
+Conversion: `raw*three_pitch_degrees/256`; unit: **relative crank degrees**.
+
+relative scheduler angle, NOT absolute degrees BTDC; fixed and variable timer corrections follow
+
+Required profiles: `nominal_xt_crank`. These are assumptions, not measured hardware parameters.
+
+Used instead of A83 when 0885 bit 0x20 selects alternate spark mode; floor(max(selected_base,D05_if_required)*A86/128), then other trims and clamps
+
+Consumer instruction addresses: `0x8979`, `0x899E`.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

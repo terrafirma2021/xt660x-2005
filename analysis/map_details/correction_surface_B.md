@@ -1,12 +1,12 @@
 # correction_surface_B
 
-Control correction
+Centered correction to the common fuel normalization denominator; neutral 128
 
 Cells: **0x3168–31E9**, 13 rows × 10 columns, 8-bit unsigned big-endian values.
 
 Inputs: u16 0x0900 selected speed; u16 0x08E8 throttle code.
 
-Output: u8 0x09D8.
+Output: u8 0x09D8, latched to 0x09D6 and selected into 0x0CD4.
 
 Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
 
@@ -75,3 +75,16 @@ a45e  7a09d9  STAA 0x9d9
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+numeric contribution decoded.
+
+Conversion: `raw-128`; unit: **normalization-code counts**.
+
+Latched into CD4 under eligibility gates, added to the selected normalization code before its inverse-ratio calculation.
+
+Stock activation: Normal state path is disabled: ROM 0x3130 is 0xFF; 0x8DF9 requires exactly 0x80. The disabled path resets CD4 to 128. Lookup presence alone does not establish an active effect.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

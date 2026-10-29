@@ -8,11 +8,13 @@ All **15,942 decoded instructions / 42,849 instruction bytes** are translated, a
 
 The included CPU12 processor model corrects defects in Ghidra 12.1.4's bundled HC12 semantics: indexed word memory dereferencing, ADC overflow, SBC borrow handling, an inverted BRSET condition, and immediate ADCB reading the wrong accumulator. The corrections are documented in a reviewable patch and checked with independent instruction fixtures.
 
-The [calibration map atlas](analysis/MAP_ATLAS.md) now documents **71 maps and curves**, with a [separate breakdown for every map](analysis/MAP_DETAILS.md): 19 grids, 36 uniform-axis curves, 14 precomputed-axis curves and two sensor-conversion curves. It includes 32 stored axes/threshold lists and computed axes. The [unit derivation](analysis/semantics/UNIT_DECODING.md) and [read-only conversion catalogue](analysis/semantics/physical_units.json) provide 15 dimensionless or conditional physical cell conversions and nominal speed axes for 32 maps. Absolute spark reference and several sensor scales remain unresolved.
+The [calibration map atlas](analysis/MAP_ATLAS.md) now documents **71 maps and curves**, with a [separate breakdown for every map](analysis/MAP_DETAILS.md): 19 grids, 36 uniform-axis curves, 14 precomputed-axis curves and two sensor-conversion curves. It includes 32 stored axes/threshold lists and computed axes. The [unit derivation](analysis/semantics/UNIT_DECODING.md) and [read-only conversion catalogue](analysis/semantics/physical_units.json) now provide 60 numeric, logical or conditional physical cell interpretations, joint arithmetic for seven more maps, and nominal speed axes for 40 maps. These are different levels of resolution; they do not mean 60 fully decoded physical tuning maps. Absolute spark reference and several sensor scales remain unresolved.
 
 The [extended recovery pass](analysis/semantics/EXTENDED_MAPS.md) adds 22 previously missing layouts: transient fuel gains, air-induction and feedback eligibility grids, spark-path tables, sensor conversions, and a curve copied into RAM. [Remaining calibration work](analysis/REMAINING_CALIBRATIONS.md) accounts for every outstanding span and links 502 static address/width/access records. Three more 2×2 fuel-normalization maps are now recovered and their common multiplier is decoded. Catalogue coverage is not a claim that every physical map meaning is resolved.
 
 The [variant analysis](analysis/semantics/VARIANTS.md) confirms that this image selects variant 9, which skips the second normal injector entry. A second diagnostic injector handler remains present; this does not establish complete twin-cylinder hardware or firmware support. The latest tests also exposed and corrected an ADCB accumulator defect in the decompiler model, and the generated analysis has been rebuilt.
+
+The [map-consumer breakdown](analysis/semantics/MAP_CONSUMERS.md) now reconstructs normal and startup fuel arithmetic, post-start decay, transient pulses, adaptive steps and injection event timing. [Per-map status](analysis/semantics/MAP_RESOLUTION.md) distinguishes gains, thresholds, logical gates, conditional physical values and unresolved scales, including stock-disabled families.
 
 ## Checksum-corrected image
 
@@ -27,6 +29,8 @@ A branch-condition defect found during this pass materially affected earlier gen
 [150,614 additional cases](analysis/semantics/extended_map_validation.json) verify computed axes, selector branches, step-grid boundaries, special-grid interpolation, the RAM-copied curve and the checksum-corrected file.
 
 [149,180 unit and variant cases](analysis/semantics/units_variant_validation.json) check normalization, scheduler cadence, sensor payload arithmetic, relative spark scheduling and both injector paths. The rebuilt full translation passes 344,357 checks, including independent accumulator tests at every immediate-ADCB site.
+
+[259,216 additional consumer cases](analysis/semantics/map_consumer_validation.json) check complete arithmetic blocks, coupled gains, post-start state decay, transition steps, relative-throttle thresholds and injection phase dispatch.
 
 ## Communication and immobilizer analysis
 

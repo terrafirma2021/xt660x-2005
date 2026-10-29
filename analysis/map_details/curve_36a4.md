@@ -1,12 +1,12 @@
 # curve_36a4
 
-Adaptive correction subtraction bound
+Adaptive correction decrement step; bounds are separate ROM words
 
 Cells: **0x36AA–36B0**, 1 rows × 7 columns, 8-bit unsigned big-endian values.
 
 Inputs: u16 0x0900 selected speed.
 
-Output: u16 0x09A6 = high byte << 8.
+Output: u16 0x09A6 = high byte << 8; subtracted from 0x097E at a state transition.
 
 Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
 
@@ -52,3 +52,14 @@ a6f9  1f09a20119  BRCLR 0x9a2,0x1,0xa717
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+numeric contribution decoded.
+
+Conversion: `raw*100/256`; unit: **normalized fuel percentage points per transition step**.
+
+Magnitude of a transition-triggered adjustment to centered RAM 0x097E. Not a bound or percentage applied on every scheduler tick.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

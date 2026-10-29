@@ -1,5 +1,7 @@
 # Fuel quantity maps and injector scheduling
 
+The latest [map-consumer pass](MAP_CONSUMERS.md) adds exact arithmetic and corrects earlier generic roles, including the alternate spark base, relative-throttle thresholds, adaptive steps and injection event map. See [per-map status](MAP_RESOLUTION.md) for current interpretation.
+
 The [unit-decoding pass](UNIT_DECODING.md) now derives the common normalization multiplier, three additional 2×2 grids, nominal timer-duration cell units and contribution gains. The [variant tests](VARIANTS.md) distinguish the second normal injector gate from its diagnostic handler.
 
 **Primary injector output is identified by diagnostic 36. Major table layout/selection and timer-duration consumers are established. Complete physical cell-to-fuel/pulse conversion remains open.** See [instruction excerpts](fuel_maps_evidence.txt) and the [map atlas](../MAP_ATLAS.md).

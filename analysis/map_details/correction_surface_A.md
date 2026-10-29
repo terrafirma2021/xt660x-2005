@@ -1,6 +1,6 @@
 # correction_surface_A
 
-Speed/throttle correction
+Secondary injector quantity multiplier; cell 128 is unity
 
 Cells: **0x1A1A–1ACD**, 12 rows × 15 columns, 8-bit unsigned big-endian values.
 
@@ -74,3 +74,20 @@ Addresses refer to the unchanged image. Windows around entry/call sites provide 
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+numeric contribution decoded.
+
+Conversion: `raw*100/128`; unit: **percent of reference multiplier**.
+
+128 represents unity in the normalized consumer equation; exact integer stages and saturation are in map_models.py.
+
+rounded_q8(quantity,2*cell); secondary injector channel gain
+
+Stock activation: Used in secondary-quantity arithmetic; variant 9 skips the normal secondary injector scheduling entry. Diagnostic paths are separate.
+
+Consumer instruction addresses: `0x84FA`, `0x7C42`, `0x94E8`.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

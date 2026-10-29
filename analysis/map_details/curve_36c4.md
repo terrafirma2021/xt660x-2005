@@ -1,12 +1,12 @@
 # curve_36c4
 
-Feedback eligibility threshold
+Delay before feedback eligibility
 
 Cells: **0x36C7–36D5**, 1 rows × 15 columns, 8-bit unsigned big-endian values.
 
 Inputs: u8 0x08F4 coolant.
 
-Output: u8 0x09B4 compared with 0x09B5.
+Output: u8 0x09B4 compared with 100-ms-task counter 0x09B5.
 
 Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
 
@@ -51,3 +51,16 @@ a5b9  18270075  LBEQ 0xa632
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+conditional physical conversion.
+
+Conversion: `raw*50000/timer_hz`; unit: **s**.
+
+Threshold in a saturating counter incremented by the 20-base-tick task; reset in startup state. Nominal 0.1 second per count.
+
+Required profiles: `nominal_xt_timer`. These are assumptions, not measured hardware parameters.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

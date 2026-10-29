@@ -1,12 +1,12 @@
 # curve_3301
 
-Startup/reset state curve
+Second post-start enrichment state; maximum of both states feeds normal fuel gain
 
 Cells: **0x3304–3312**, 1 rows × 15 columns, 8-bit unsigned big-endian values.
 
 Inputs: u8 0x08F4 coolant.
 
-Output: u16 0x0996.
+Output: u16 Q8 state 0x0996; decays by twice ROM 0x3314 per fuel update.
 
 Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
 
@@ -71,3 +71,14 @@ Addresses refer to the unchanged image. Windows around entry/call sites provide 
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+numeric contribution decoded.
+
+Conversion: `raw*100/32`; unit: **normalized fuel percentage points**.
+
+Contribution of the selected post-start state high byte before remaining gains. States decay and their maximum is selected; they are not added.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

@@ -75,3 +75,18 @@ ac44  2003  BRA 0xac49
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+logical behavior decoded.
+
+Conversion: `raw != 0`; unit: **eligible**.
+
+Zero inhibits this gate; any nonzero byte passes this gate. Other conditions can still inhibit the function.
+
+Eligibility: zero inhibits the documented path; nonzero permits its next tests. Not a continuous physical quantity.
+
+Stock activation: Every stock cell is zero, rejecting this normal feedback-eligibility gate.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

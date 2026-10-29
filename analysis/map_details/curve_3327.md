@@ -1,12 +1,12 @@
 # curve_3327
 
-Coolant-dependent fuel correction
+Additive coolant enrichment contribution for second fuel-gain lane
 
 Cells: **0x332A–3338**, 1 rows × 15 columns, 8-bit unsigned big-endian values.
 
 Inputs: u8 0x08F4 coolant.
 
-Output: u8 0x097C.
+Output: u8 0x097C contributes 8*cell to pre-gain 0x096E.
 
 Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
 
@@ -52,3 +52,14 @@ b8d3  ce4bac  LDX #0x4bac
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+numeric contribution decoded.
+
+Conversion: `raw*100/128`; unit: **normalized fuel percentage points**.
+
+Additive coolant contribution to the normalized pre-gain, before IAT, pressure, transient and other multipliers. Zero contribution at cell zero.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

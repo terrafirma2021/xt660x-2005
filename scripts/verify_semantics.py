@@ -39,6 +39,11 @@ assert units['result']=='passed' and units['firmware_sha256']==catalog['firmware
 assert units['test_script_sha256']==digest(ROOT/'scripts/test_units_variants.py')
 assert units['conversion_script_sha256']==digest(ROOT/'scripts/decode_units.py')
 assert units['compiled_library_sha256']==full['compiled_library_sha256']
+consumers=json.loads((OUT/'map_consumer_validation.json').read_text())
+assert consumers['result']=='passed' and consumers['firmware_sha256']==catalog['firmware_sha256']
+assert consumers['test_script_sha256']==digest(ROOT/'scripts/test_map_consumers.py')
+assert consumers['model_script_sha256']==digest(ROOT/'scripts/map_models.py')
+assert consumers['compiled_library_sha256']==full['compiled_library_sha256']
 physical=json.loads((OUT/'physical_units.json').read_text())
 maps=json.loads((ROOT/'analysis/maps.json').read_text())
 assert physical['firmware_sha256']==catalog['firmware_sha256']

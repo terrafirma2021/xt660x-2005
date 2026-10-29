@@ -52,3 +52,20 @@ b914  8200  SBCA #0x0
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+conditional physical conversion.
+
+Conversion: `raw*three_pitch_degrees/256`; unit: **relative crank degrees**.
+
+relative scheduler angle, NOT absolute degrees BTDC; fixed and variable timer corrections follow
+
+Required profiles: `nominal_xt_crank`. These are assumptions, not measured hardware parameters.
+
+Minimum base code in the normal spark path; conditional minimum in the alternate path; scaled by A86/128 and later corrected
+
+Consumer instruction addresses: `0x89A9`, `0x8A2F`.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

@@ -1,12 +1,12 @@
 # curve_4a33
 
-Temperature correction in spark path
+Filtered relative-throttle threshold enabling alternate spark mode; not a spark-angle correction
 
 Cells: **0x4A36–4A44**, 1 rows × 15 columns, 8-bit unsigned big-endian values.
 
 Inputs: u8 0x08F4 coolant.
 
-Output: u8 0x0A89.
+Output: u8 0x0A89 compared with 0x08EC.
 
 Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
 
@@ -51,3 +51,18 @@ b8bc  16c1cd  JSR 0xc1cd
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+numeric contribution decoded.
+
+Conversion: `raw`; unit: **10-bit ADC counts above learned closed position**.
+
+Threshold compared with min(255,filtered relative TPS count). Electrical/mechanical angle remains unconfirmed.
+
+A89 compared against min(255,08E6), a filtered relative TPS count; coolant selects the threshold, not a spark-angle correction
+
+Consumer instruction addresses: `0x8C99`, `0x8F82`, `0x96BA`.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

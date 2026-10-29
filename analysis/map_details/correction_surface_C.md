@@ -70,3 +70,18 @@ b3e4  7a0978  STAA 0x978
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+numeric contribution decoded.
+
+Conversion: `raw*100/128`; unit: **percent of reference multiplier**.
+
+128 represents unity in the normalized consumer equation; exact integer stages and saturation are in map_models.py.
+
+970=min(255,floor(cell*curve_323c/128)); factors couple and saturate before the fuel multiplication
+
+Consumer instruction addresses: `0xB3CC`, `0x82D6`.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

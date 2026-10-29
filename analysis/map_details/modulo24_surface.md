@@ -1,12 +1,12 @@
 # modulo24_surface
 
-Cyclic 24-code surface; physical event meaning unresolved
+Injection event-phase target; reference-rotated modulo-24 interpolation, not pulse duration or absolute BTDC
 
 Cells: **0x1914–1995**, 10 rows × 13 columns, 8-bit unsigned big-endian values.
 
 Inputs: u16 0x08E8 throttle code (row); u16 0x0900 selected speed (column).
 
-Output: u8 0x0A1B; excludes codes 11 and >=23 after lookup.
+Output: u8 0x0A1B; code 11 becomes 10 and codes >=23 become 22; transferred through 0x0A1E to 0x0A1C.
 
 Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
 
@@ -72,3 +72,18 @@ Addresses refer to the unchanged image. Windows around entry/call sites provide 
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+numeric contribution decoded.
+
+Conversion: `raw`; unit: **injection event-phase code**.
+
+Target used by injection scheduling, cyclic modulo 24 around D7E reference. After lookup 11 becomes 10 and >=23 becomes 22. Not absolute degrees BTDC or a duration.
+
+C521 interpolates after rotating codes around D7E; A1B feeds EC98, A1E and latched A1C. Dispatcher F4F2 schedules injection when C04 or 0923 equals A1C. Mode gates and optional slew limiting remain relevant.
+
+Consumer instruction addresses: `0xC521`, `0x7B92`, `0xEC98`, `0x85AB`, `0xF4F2`.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

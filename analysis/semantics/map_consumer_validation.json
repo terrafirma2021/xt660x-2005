@@ -1,0 +1,31 @@
+{
+  "result": "passed",
+  "cases": 259216,
+  "checks": {
+    "normal_gain_chain_all_intermediates_random_inputs": 6000,
+    "primary_request_chain": 6000,
+    "secondary_request_chain": 6000,
+    "both_post_start_decay_states_all_word_values": 65536,
+    "startup_quantity_product_rounding_and_saturation": 5000,
+    "additional_transient_pulse_joint_product": 5000,
+    "signed_delta_combination_coolant_gains_and_negative_cap": 8000,
+    "pressure_offset_is_additive_not_multiplicative": 1792,
+    "centered_additive_trim_gain_all_byte_pairs": 65536,
+    "pressure_load_rescaling_signed_rounding_saturation": 5000,
+    "adaptive_transition_steps_and_separate_bounds": 3072,
+    "scheduler_10ms_100ms_1s_task_dividers": 1000,
+    "feedback_delay_counters_saturate_and_reset": 1024,
+    "relative_throttle_threshold_source_all_10bit_counts": 1024,
+    "event_interpolation_rotates_around_reference_cut": 11520,
+    "injection_phase_sanitization_and_direct_scheduler_copy": 256,
+    "injection_phase_equality_dispatch_both_counter_modes": 1152,
+    "stock_calibration_disables_normalization_offset_state": 256,
+    "coupled_pressure_gains_all_byte_pairs": 65536,
+    "alternate_spark_surface_replaces_normal_base": 512
+  },
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "test_script_sha256": "6ff4c1e21c4d264775b813c29222394e9e6942558fa4a38647975c2a5100002b",
+  "model_script_sha256": "740ef8494a2b30d26482417e8416bcbdb654abff6ef353c9fcd69797715014a6",
+  "compiled_library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
+  "limitations": "Isolated instruction translation, RAM-backed peripherals, and injected lookup results. Tests prove arithmetic at stated boundaries, not every caller path, physical clock/sensor units or hardware operation."
+}

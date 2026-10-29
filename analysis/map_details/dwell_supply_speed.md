@@ -101,3 +101,16 @@ Addresses refer to the unchanged image. Windows around entry/call sites provide 
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
+
+<!-- generated-unit-decoding -->
+## Recovered consumer and unit interpretation
+
+conditional physical conversion.
+
+Conversion: `raw*32*1000/timer_hz`; unit: **ms**.
+
+base dwell contribution; additional dwell and speed clamps still apply
+
+Required profiles: `nominal_xt_timer`. These are assumptions, not measured hardware parameters.
+
+See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.
