@@ -1,0 +1,4 @@
+*.rep/
+*.lock
+*.lock~
+__pycache__/
