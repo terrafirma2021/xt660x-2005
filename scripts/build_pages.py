@@ -2,6 +2,7 @@
 import html
 import json
 import os
+import re
 import shutil
 import subprocess
 from html.parser import HTMLParser
@@ -9,6 +10,7 @@ from pathlib import Path
 from urllib.parse import quote, unquote, urlsplit
 import markdown
 from site_home import build_home
+from site_map_grids import grid as map_grid, preview as map_preview
 
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / '_site'
@@ -17,6 +19,7 @@ REPO = 'https://github.com/terrafirma2021/xt660x-2005'
 revision = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD'], cwd=ROOT, text=True).strip()
 esc = html.escape
 maps = json.loads((ROOT / 'analysis/maps.json').read_text())
+map_by_id = {m['id']: m for m in maps}
 units = json.loads((SOURCE / 'physical_units.json').read_text())
 unit_by_id = {m['id']: m for m in units['maps']}
 pins = json.loads((SOURCE / 'mcu_pin_overview.json').read_text())
@@ -39,7 +42,7 @@ def nav(current, active):
         f'<a href="{rel(url,current)}"'+(' aria-current="page"' if label==active else '')+f'>{label}</a>' for label,url in links)+f'<a href="{REPO}">GitHub ↗</a><button id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">Dark theme</button></nav></header>'
 
 def theme_head(current):
-    return f'<link rel="icon" href="{rel("assets/favicon.svg",current)}" type="image/svg+xml"><script src="{rel("assets/theme.js",current)}?v={revision}"></script><link rel="stylesheet" href="{rel("assets/theme.css",current)}?v={revision}">'
+    return f'<link rel="stylesheet" href="{rel("assets/map-grid.css",current)}?v={revision}"><link rel="icon" href="{rel("assets/favicon.svg",current)}" type="image/svg+xml"><script src="{rel("assets/theme.js",current)}?v={revision}"></script><link rel="stylesheet" href="{rel("assets/theme.css",current)}?v={revision}">'
 
 def shell(title, body, current, active, script=''):
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Yamaha XT660X 2005 ECU research: firmware, calibration maps, sensors and MCU pins."><title>{esc(title)} · XT660X Research</title><link rel="stylesheet" href="{rel('assets/site.css',current)}?v={revision}">{theme_head(current)}</head><body>{nav(current,active)}<main class="site-main">{body}</main><footer class="site-footer"><span>YAMAHA XT660X / 2005 · <a href="{rel('coverage/index.html',current)}">Content coverage</a></span><span>Revision <a href="{REPO}/commit/{revision}">{revision}</a> · <a href="{rel("docs/repository/site/ASSET_CREDITS.html",current)}">Credits &amp; independence</a><br>Independent project. Not affiliated with Yamaha Motor.</span></footer>{script}</body></html>'''
@@ -80,7 +83,7 @@ for m in maps:
     open_items='<ul>'+''.join('<li>'+esc(item)+'</li>' for item in u['open_items'])+'</ul>'
     axis_review='<ul>'+''.join('<li>'+esc(a['axis'].replace('_',' ')+': '+a['meaning'])+'</li>' for a in u['axis_interpretations'])+'</ul>'
     review=f'<details class="map-review"><summary>Axes and remaining work</summary>{axis_review}{open_items}</details>'
-    cards.append(f'''<article class="map-card" data-search="{esc(search,quote=True)}" data-status="{esc(u['status'],quote=True)}" data-kind="{esc(m['kind'],quote=True)}"><div class="map-top"><code>{m['data_address']}</code><span>{m['rows']} × {m['columns']} · {m['element_bytes']*8}-bit</span></div><div class="map-category">{esc(m['category'])}</div><h2><a href="{detail}">{esc(m['display_name'])}</a></h2><p class="map-id">Reference ID: <code>{esc(m['id'])}</code></p><span class="status">{esc(u['status'])}</span><details><summary>Meaning and cell interpretation</summary><p>{esc(m['naming_note'])}</p><p><code>{esc(formula)}</code> {esc(unit)}</p><p>{esc(conversion.get('meaning',''))}</p><p>Required profiles: {esc(', '.join(u.get('requires',[])) or 'None listed for this cell interpretation; see the full derivation.')}</p></details>{review}<a class="map-link" href="{detail}">Open values &amp; evidence ↗</a></article>''')
+    cards.append(f'''<article class="map-card" data-search="{esc(search,quote=True)}" data-status="{esc(u['status'],quote=True)}" data-kind="{esc(m['kind'],quote=True)}"><div class="map-top"><code>{m['data_address']}</code><span>{m['rows']} × {m['columns']} · {m['element_bytes']*8}-bit</span></div><div class="map-category">{esc(m['category'])}</div><h2><a href="{detail}">{esc(m['display_name'])}</a></h2><a class="map-mini-link" href="{detail}#calibration-grid" aria-label="Open colour grid: {esc(m["display_name"],quote=True)}">{map_preview(m)}</a><p class="map-id">Reference ID: <code>{esc(m['id'])}</code></p><span class="status">{esc(u['status'])}</span><details><summary>Meaning and cell interpretation</summary><p>{esc(m['naming_note'])}</p><p><code>{esc(formula)}</code> {esc(unit)}</p><p>{esc(conversion.get('meaning',''))}</p><p>Required profiles: {esc(', '.join(u.get('requires',[])) or 'None listed for this cell interpretation; see the full derivation.')}</p></details>{review}<a class="map-link" href="{detail}">Open values &amp; evidence ↗</a></article>''')
 statuses=sorted({u['status'] for u in units['maps']})
 kinds=sorted({m['kind'] for m in maps})
 map_body=f'''<div class="page-heading"><div class="kicker">Calibration catalogue</div><h1>Maps &amp; curves</h1><p>{len(maps)} recovered layouts, connected to the current physical-unit research. Open an entry for raw values, axes, consumers and unresolved questions.</p></div><div class="notice">All 71 entries now separate cell interpretation, input axes and remaining work. 64 have numeric, code, logical or conditional conversions; seven have joint arithmetic. These are not 71 fully verified tuning maps. Absolute spark BTDC and several physical scales remain open.</div><div class="filters"><label>Search<input id="map-search" type="search" placeholder="Fuel, spark, coolant, 0x1B66…"></label><label>Decoding status<select id="map-status"><option value="">All statuses</option>{''.join(f'<option>{esc(s)}</option>' for s in statuses)}</select></label><label>Layout<select id="map-kind"><option value="">All layouts</option>{''.join(f'<option>{esc(k)}</option>' for k in kinds)}</select></label></div><p id="map-count" class="result-count" aria-live="polite">{len(maps)} maps</p><div class="map-grid">{''.join(cards)}</div><p id="map-empty" hidden>No matching maps. Try a different search or filter.</p>'''
@@ -149,8 +152,17 @@ for source in documents:
     rendered=markdown.markdown(raw,extensions=['tables','fenced_code','toc'])
     rendered=rendered.replace('<li>[x] ', '<li><input type="checkbox" checked disabled aria-label="Checked"> ')
     rendered=rendered.replace('<li>[ ] ', '<li><input type="checkbox" disabled aria-label="Open"> ')
+    script=''
+    if source.parent == ROOT/'analysis/map_details' and source.stem in map_by_id:
+        m=map_by_id[source.stem]
+        rendered,count=re.subn(r'<h2[^>]*>Raw cells</h2>\s*(<pre><code>.*?</code></pre>)',
+            r'<details class="raw-matrix"><summary>Copyable raw matrix</summary>\1</details>',rendered,count=1,flags=re.S)
+        assert count==1, ('Raw matrix missing',m['id'])
+        position=rendered.index('<h2')
+        rendered=rendered[:position]+map_grid(m)+rendered[position:]
+        script=f'<script src="{rel("assets/map-grid.js",target)}?v={revision}" defer></script>'
     parser=LinkRewriter(source,target);parser.feed(rendered)
     body=f'<div class="doc-toolbar"><a href="{rel("research/index.html",target)}">← Research library</a><a href="{REPO}/blob/main/{quote(source.relative_to(ROOT).as_posix())}">View source on GitHub ↗</a></div><article class="document">'+''.join(parser.parts)+'</article>'
-    write(target,shell(title,body,target,'Research'))
+    write(target,shell(title,body,target,'Research',script))
 write('.nojekyll','')
 print(f'Built project website: home, {len(maps)} maps, pin explorer and {len(documents)} research documents.')

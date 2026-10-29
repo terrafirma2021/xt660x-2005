@@ -9,13 +9,21 @@ ROOT=Path(__file__).resolve().parents[1]
 SITE=ROOT/'_site'
 class Links(HTMLParser):
     def __init__(self):
-        super().__init__(); self.links=[]; self.map_count=0; self.theme_buttons=0
+        super().__init__(); self.links=[]; self.map_count=0; self.theme_buttons=0; self.cells=[]; self.cell=None; self.grid_count=0; self.preview_count=0
     def handle_starttag(self,tag,attrs):
         attrs=dict(attrs)
         for key in ('href','src'):
             if attrs.get(key):self.links.append(attrs[key])
         if 'map-card' in attrs.get('class','').split():self.map_count+=1
         if attrs.get('id')=='theme-toggle':self.theme_buttons+=1
+        if attrs.get('id')=='calibration-grid':self.grid_count+=1
+        if 'map-mini' in attrs.get('class','').split():self.preview_count+=1
+        if 'map-cell' in attrs.get('class','').split():
+            self.cell=dict(attrs,text='');self.cells.append(self.cell)
+    def handle_data(self,text):
+        if self.cell is not None:self.cell['text']+=text
+    def handle_endtag(self,tag):
+        if tag=='button':self.cell=None
 
 count=0
 for page in SITE.rglob('*.html'):
@@ -33,6 +41,20 @@ for page in SITE.rglob('*.html'):
         count+=1
 parser=Links();parser.feed((SITE/'maps/index.html').read_text(encoding='utf-8'))
 assert parser.map_count==len(json.loads((ROOT/'analysis/maps.json').read_text()))==71
+assert parser.preview_count==71
+image=(ROOT/'firmware/XT660X 2005.bin').read_bytes()
+cell_count=0
+for m in json.loads((ROOT/'analysis/maps.json').read_text()):
+    parser=Links();parser.feed((SITE/'docs/map_details'/f"{m['id']}.html").read_text(encoding='utf-8'))
+    assert parser.grid_count==1 and len(parser.cells)==m['rows']*m['columns'],m['id']
+    assert sum(c.get('tabindex')=='0' for c in parser.cells)==1
+    for index,c in enumerate(parser.cells):
+        address=int(m['data_address'],16)+index*m['element_bytes']
+        value=int.from_bytes(image[address:address+m['element_bytes']],'big')
+        assert int(c['data-address'],16)==address
+        assert int(c['data-value'])==int(c['text'])==value
+        assert (int(c['data-row']),int(c['data-column']))==divmod(index,m['columns'])
+        cell_count+=1
 assert not list(SITE.rglob('*.bin'))
 for route in ('index.html','maps/index.html','pins/index.html','research/index.html','coverage/index.html'):
     assert (SITE/route).is_file()
@@ -41,4 +63,4 @@ coverage=json.loads((SITE/'coverage/manifest.json').read_text())
 assert {f['path'] for f in coverage['files']}==set(tracked)
 assert coverage['rendered_documents']==sum(p.endswith('.md') for p in tracked)
 assert len(list((SITE/'docs').rglob('*.html')))==coverage['rendered_documents']
-print(f'Verified five site sections, 71 maps, {coverage["rendered_documents"]} documents, complete tracked-file index, theme assets and {count} local links; no firmware binary in site.')
+print(f'Verified five site sections, 71 maps, {coverage["rendered_documents"]} documents, {cell_count} grid cells matched to firmware, 71 colour previews, complete tracked-file index, theme assets and {count} local links; no firmware binary in site.')
