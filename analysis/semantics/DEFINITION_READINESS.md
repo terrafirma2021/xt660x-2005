@@ -16,7 +16,7 @@ The deliverable now is an evidence model that either kind of tool can consume. I
 | Conversion to Celsius, RPM, degrees, milliseconds, pressure | Intentionally null until verified |
 | Reverse conversion and rounding policy | Not defined for engineering units |
 | Valid physical adjustment ranges | Not inferred from the limits of a byte or word |
-| Checksum algorithm and covered ranges | Unresolved |
+| Checksum algorithm and covered ranges | [Application ROM sum/range and serial checksum established](CHECKSUMS.md); correction location and write workflow unvalidated |
 | Flash format, programming procedure, boot requirements | Unresolved; supplied boot region absent |
 
 `ready_for_tuning_export` is false for every current entry. This does not mean the offsets are guesses. It means the whole definition is not yet validated for engineering-unit edits and flash use.
@@ -43,7 +43,7 @@ An eventual editing tool should bind definitions to a verified image identity, p
 3. **Fuel:** complete every map-to-request transformation and prove duration units, voltage compensation, temperature corrections and transient paths.
 4. **All cut reasons:** build a writer/consumer record for every dispatcher gate; distinguish rev/road-speed limits, deceleration, faults and interlocks.
 5. **Connector pins:** match the exact ECU part number and harness/board to the logical MCU channels.
-6. **Integrity and packaging:** recover checksum computation/coverage and the programming format before producing a flash-oriented definition.
+6. **Integrity and packaging:** validate checksum correction and the programming format before producing a flash-oriented definition; [the application checksum computation and coverage are now established](CHECKSUMS.md).
 
 Matching ECU identification, read-tool/acquisition details, a verified wiring diagram, and measured sensor/timer traces will resolve facts that this image alone cannot prove. None is required to continue the remaining static software analysis.
 

@@ -2,7 +2,7 @@
 
 This directory connects firmware addresses to motorcycle functions, with enough evidence to review each interpretation. It is the starting point for a future XDF or custom calibration tool. It is **not yet a validated tuning definition**.
 
-The analysis applies only to the exact [original image](../../firmware/XT660X%202005.bin), SHA-256 `5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280`. CPU addresses equal file offsets in this image. RAM and peripheral addresses are runtime state, not editable calibration locations.
+The analysis applies only to the exact [supplied image](../../firmware/XT660X%202005.bin), SHA-256 `5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280`. CPU addresses equal file offsets in this image. RAM and peripheral addresses are runtime state, not editable calibration locations.
 
 ## Read by area
 
@@ -13,7 +13,12 @@ The analysis applies only to the exact [original image](../../firmware/XT660X%20
 | Engine speed / cuts | [Speed calculation and output suppression](RPM_AND_CUTS.md) | Reciprocal calculation, three period-limit pairs, separate road-speed cut flags, conditional injector limits | Confirmed timer timebase / crank geometry, complete interlock meanings |
 | Spark | [Maps through the timing scheduler](SPARK.md) | Three selected byte maps, rounding and downstream correction, timer-3 identity | Absolute crank-angle reference, degrees conversion, all correction meanings |
 | Fuel | [Quantity tables and injector scheduling](FUEL.md) | Main table selection, speed/other input variables, primary timer-6 output, secondary variant gating | Full cell-to-pulse formula, physical units and mode meanings |
-| Tool definitions | [XDF / custom-tool readiness](DEFINITION_READINESS.md) | Byte-backed structured catalogue, evidence links, confidence and unresolved items | Exportable physical conversions, checksums, write/flash validation |
+| Serial link | [SCI1 and K-line identification](K_LINE.md) | Byte requests, five-byte replies, register/divisor setup | Physical wire/pins, actual clock and waveform timing |
+| Dashboard diagnostics | [Commands, menu and fault codes](DIAGNOSTICS.md) | Startup bytes, button states, 19 selectable items, fault bitmap | Fully validated display units and live captures |
+| Startup | [Power on and application initialization](STARTUP.md) | Application entry, setup, checksum and serial state | Missing reset/boot region and inherited configuration |
+| Integrity | [Serial and ROM checksums](CHECKSUMS.md) | Additive reply check and application ROM sum/range | General correction location and flash validation |
+| Immobilizer | [Patch, authentication and stored records](IMMOBILIZER.md) | Owner's patch, candidate original state, challenge/registration exchange | Original pre-patch image, external record bytes and physical key protocol |
+| Tool definitions | [XDF / custom-tool readiness](DEFINITION_READINESS.md) | Byte-backed structured catalogue, evidence links, confidence and unresolved items | Exportable physical conversions, checksum correction/write workflow, flash validation |
 
 These have different levels of completion. Coolant/fan decisions and the principal raw cut thresholds have direct behavioral fixtures. Spark angle and fuel quantity are traced workstreams, not fully identified engineering calibrations.
 
@@ -23,6 +28,7 @@ These have different levels of completion. Coolant/fan decisions and the princip
 - [control_validation.json](control_validation.json): 212,090 isolated control test cases against the compiled instruction translation.
 - [coolant_conversion_samples.json](coolant_conversion_samples.json): all 1,024 possible ten-bit inputs and their internal/diagnostic outputs.
 - Byte-backed instruction excerpts: [sensor/fan](sensor_fan_evidence.txt), [speed/cuts](rpm_cuts_evidence.txt), [spark](spark_evidence.txt), [fuel](fuel_maps_evidence.txt), [road speed](road_speed_evidence.txt).
+- [Protocol verification](PROTOCOL_VERIFICATION.md), [results](protocol_verification.json), and [instruction evidence](protocol_evidence.tsv).
 - [Review notes and model correction](REVIEW_NOTES.md).
 
 An identification is strongest when independent paths agree: an ADC dispatch, a diagnostic display number, a control consumer, and an actuator diagnostic. A plausible table shape or plausible stock number alone is not enough. Engineering units remain separate from physical role: identifying the coolant function does not by itself prove its Celsius formula.
@@ -36,7 +42,7 @@ An identification is strongest when independent paths agree: an ADC dispatch, a 
 5. Confirm units/timebases/pin routing using matching hardware evidence.
 6. Promote only validated definitions into an editor. Preserve unresolved hypotheses in the research catalogue.
 
-No firmware setting has been changed. The documentation uses descriptive aliases; original address-based function names remain available for cross-checking. No original source names are claimed.
+No firmware setting has been changed by this analysis. The owner supplied an image already patched to skip the immobilizer check; see [patch provenance and effects](IMMOBILIZER.md). The documentation uses descriptive aliases; original address-based function names remain available for cross-checking. No original source names are claimed.
 
 ## Sources
 
