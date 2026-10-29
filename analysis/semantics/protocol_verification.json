@@ -1,0 +1,133 @@
+{
+  "source_commit": "1779f6e5f4a6ff2b8c8bd07e8ab47f67233f50f6",
+  "sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "method": "Independent selected-path CPU12 interpreter over byte-checked disassembly. Synthetic RAM and registers; no hardware timing or peripheral validation.",
+  "authentication_configuration_byte": "80",
+  "tests": [
+    {
+      "test": "Boot ROM checksum",
+      "range": "1800-F7FF inclusive",
+      "computed": "AAD5",
+      "expected": "AA55",
+      "matches": false
+    },
+    {
+      "test": "Five-byte reply checksum",
+      "vectors": 4096,
+      "result": "passed"
+    },
+    {
+      "test": "Challenge generation and response validation",
+      "seeds": 256,
+      "valid_and_corrupted_responses": 512,
+      "result": "passed"
+    },
+    {
+      "test": "Authentication parser stage sequence",
+      "commands": "3E 3D 80 80 80",
+      "frames": [
+        "13 7c 43 47 19",
+        "4a 4a 4a 4a 28",
+        "47 47 47 47 1c",
+        "47 47 47 47 1c",
+        "47 47 47 47 1c"
+      ],
+      "result": "passed; zero response is accepted for buffering, not authenticated"
+    },
+    {
+      "test": "Normal application handshake",
+      "commands": "FE 01",
+      "result": "normal state bit set; startup state bit cleared"
+    },
+    {
+      "test": "Diagnostic button navigation",
+      "result": "CA then CB increments; CA then CC decrements"
+    },
+    {
+      "test": "Candidate pre-patch checksum",
+      "change_in_simulated_memory": "4E7D: 80 -> 00",
+      "computed": "AA55",
+      "expected": "AA55",
+      "matches": true,
+      "provenance": "User recalls 00 -> 80 patch; original image not supplied"
+    },
+    {
+      "test": "Receive dispatch before and after patch",
+      "result": "80 selects CE51 immediately; 00 selects D36C until 0D06 bit 7 is set"
+    },
+    {
+      "test": "Registered authentication exchange valid",
+      "trace": [
+        {
+          "peer": "3e",
+          "ecu": "13 7c 43 47 19"
+        },
+        {
+          "peer": "3d",
+          "ecu": "41 42 4b 43 11"
+        },
+        {
+          "peer": "83",
+          "ecu": "47 47 47 47 1c"
+        },
+        {
+          "peer": "83",
+          "ecu": "47 47 47 47 1c"
+        },
+        {
+          "peer": "9d",
+          "ecu": "47 47 47 47 1c"
+        },
+        {
+          "peer": "3f",
+          "ecu": "45 45 45 45 14"
+        },
+        {
+          "peer": "3f",
+          "ecu": "45 45 45 45 14"
+        },
+        {
+          "peer": "3f",
+          "ecu": "45 45 45 45 14"
+        },
+        {
+          "peer": "3f",
+          "ecu": "45 45 45 45 14"
+        }
+      ],
+      "authenticated": true,
+      "result": "passed; synthetic record, no hardware/timing validation"
+    },
+    {
+      "test": "Registered authentication exchange invalid",
+      "trace": [
+        {
+          "peer": "3e",
+          "ecu": "13 7c 43 47 19"
+        },
+        {
+          "peer": "3d",
+          "ecu": "41 42 4b 43 11"
+        },
+        {
+          "peer": "83",
+          "ecu": "47 47 47 47 1c"
+        },
+        {
+          "peer": "83",
+          "ecu": "47 47 47 47 1c"
+        },
+        {
+          "peer": "9c",
+          "ecu": "47 47 47 47 1c"
+        },
+        {
+          "peer": "3f",
+          "ecu": "46 46 46 46 18"
+        }
+      ],
+      "authenticated": false,
+      "result": "passed; synthetic record, no hardware/timing validation"
+    }
+  ]
+}

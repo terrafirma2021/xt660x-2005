@@ -42,7 +42,7 @@ Three byte grids have 32 rows and 20 columns, with cells at `0x42AE`, `0x452E`, 
 
 The atlas also includes smaller surfaces and uniform-axis curves. Special/precomputed-index tables and scalar parameters remain unclassified where extent or meaning has not been verified. Direct references and explicit pointers are retained for further analysis.
 
-Complete physical mapping requires tracing ADC inputs to hardware connections and sensor characteristics, then tracing fuel/timing calculations into timer outputs, including clocks and modes. Scalar limits, checksums, diagnostics and special lookup forms still need semantic review. The file cannot provide absent boot code. This is a usable calibration-navigation foundation, not a complete XDF/A2L with known units.
+Complete physical mapping requires tracing ADC inputs to hardware connections and sensor characteristics, then tracing fuel/timing calculations into timer outputs, including clocks and modes. See the [semantic guides](semantics/README.md) for subsequent raw control-limit, diagnostic, checksum and immobilizer analysis. Special lookup forms and remaining physical conversions still need semantic review. The file cannot provide absent boot code. This is a usable calibration-navigation foundation, not a complete XDF/A2L with known units.
 
 ## Primary references
 

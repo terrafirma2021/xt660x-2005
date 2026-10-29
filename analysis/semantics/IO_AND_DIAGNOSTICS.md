@@ -1,5 +1,7 @@
 # Inputs, outputs and diagnostic evidence
 
+For serial commands, menu navigation, reply packing and fault numbers, see [Dashboard diagnostic protocol](DIAGNOSTICS.md). This guide covers the corresponding hardware identities.
+
 ## Why the diagnostic table matters
 
 At `0x5FC8`, a byte count from `0x4EF5` controls a copy from `0x4EF6` into RAM `0x0D3D`. The count is 21. Those bytes are diagnostic selectors. The display routine at `0x650B` compares the selected number at `0x0BDD` with the copied entries and returns the corresponding measurement. The actuator dispatcher around `0xAF92` selects output-test routines using the same table.

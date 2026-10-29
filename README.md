@@ -2,7 +2,7 @@
 
 A reverse-engineering project for the Yamaha XT660X 2005 firmware image. The repository contains the unchanged binary, structured C, an address-preserving compilable C translation of every decoded instruction, a complete byte listing, calibration analysis, and an annotated Ghidra program.
 
-**Start with the [control-system breakdown](analysis/semantics/README.md)** for coolant/fan, sensor and output identities, RPM/cut logic, spark, fuel, and future XDF/tool definitions. The [full decompilation guide](analysis/full/README.md) and [function index](analysis/full/FUNCTION_INDEX.md) provide the underlying code.
+**Start with the [control-system breakdown](analysis/semantics/README.md)** for coolant/fan, sensor and output identities, RPM/cut logic, spark, fuel, serial diagnostics, startup, checksums, immobilizer behavior, and future XDF/tool definitions. The [full decompilation guide](analysis/full/README.md) and [function index](analysis/full/FUNCTION_INDEX.md) provide the underlying code.
 
 All **15,942 decoded instructions / 42,849 instruction bytes** are translated, all **225 recovered routines** have structured C, and every byte of the **65,536-byte input** is classified. The complete C translation compiles and passes instruction-level comparisons and independent CPU12/lookup fixtures. This describes coverage of the supplied image, not recovery of the original manufacturer's source project.
 
@@ -24,9 +24,15 @@ A branch-condition defect found during this pass materially affected earlier gen
 
 [150,614 additional cases](analysis/semantics/extended_map_validation.json) verify computed axes, selector branches, step-grid boundaries, special-grid interpolation, the RAM-copied curve and the checksum-corrected file.
 
+## Communication and immobilizer analysis
+
+The protocol findings are split into [serial transport](analysis/semantics/K_LINE.md), [dashboard diagnostics](analysis/semantics/DIAGNOSTICS.md), [startup](analysis/semantics/STARTUP.md), [checksums](analysis/semantics/CHECKSUMS.md), and [immobilizer patch/authentication](analysis/semantics/IMMOBILIZER.md). [Verification and offline decoding](analysis/semantics/PROTOCOL_VERIFICATION.md) provides reproducible instruction checks and capture-decoding examples.
+
+The owner confirms that the supplied image was patched to skip immobilizer checking and recalls `0x4E7D: 00 → 80`. This exactly accounts for the ROM sum changing from the expected `AA55` to `AAD5` if it was the only modification. The pre-patch case was tested in simulated memory only; the supplied binary remains unchanged.
+
 ## Files
 
-- [Original firmware](firmware/XT660X%202005.bin): 65,536 unchanged bytes.
+- [Supplied firmware](firmware/XT660X%202005.bin): 65,536 unchanged bytes.
 - [Map atlas](analysis/MAP_ATLAS.md), [maps and values](analysis/maps.json), [axes](analysis/axes.json), and [byte-exact extracts](analysis/map_extracts).
 - [Disassembly](analysis/disassembly.tsv), [approximate C](analysis/decompiled.c), and [individual routines](analysis/functions). The C is not original or buildable source.
 - [Complete compilable low-level C](analysis/full/c), [all-byte listing](analysis/full/whole_image.asm), and [raw data as C](analysis/full/firmware_data.c).
@@ -44,7 +50,7 @@ The complete decoded application is represented, including structurally recovere
 
 Vehicle/year attribution comes from the filename. Embedded strings mention T64 and 2002 dates. CPU12 instructions and fixed addresses match an MC9S12T64-style application; the exact ECU part number is unverified. Several sensor/output identities are now corroborated by diagnostic cross-references. Connector pins, engineering units, final fuel/timing scaling, and some special lookup forms still need analysis.
 
-The original firmware remains unchanged. The separately named checksum-corrected copy changes one trailer byte; no calibration setting is altered. This is an analysis workspace, not a flash-ready tuning definition. No redistribution license is assigned to the supplied firmware.
+The supplied firmware remains unchanged and already contains the owner’s immobilizer patch. The separately named checksum-corrected copy changes one trailer byte; no calibration setting is altered. This is an analysis workspace, not a flash-ready tuning definition. No redistribution license is assigned to the supplied firmware.
 
 ## Reproduce
 

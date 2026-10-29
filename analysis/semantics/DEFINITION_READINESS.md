@@ -16,7 +16,7 @@ The deliverable now is an evidence model that either kind of tool can consume. I
 | Conversion to Celsius, RPM, degrees, milliseconds, pressure | Intentionally null until verified |
 | Reverse conversion and rounding policy | Not defined for engineering units |
 | Valid physical adjustment ranges | Not inferred from the limits of a byte or word |
-| Checksum algorithm and covered ranges | Startup sum/range recovered and corrected copy tested; alternate full-address-space check includes absent boot content. See [checksum correction](CHECKSUM.md). |
+| Checksum algorithm and covered ranges | [ROM and serial algorithms](CHECKSUMS.md) recovered; [startup-corrected copy](CHECKSUM.md) tested. Factory correction field, absent boot content and flash workflow remain unvalidated. |
 | Flash format, programming procedure, boot requirements | Unresolved; supplied boot region absent |
 
 `ready_for_tuning_export` is false for every current entry. This does not mean the offsets are guesses. It means the whole definition is not yet validated for engineering-unit edits and flash use.

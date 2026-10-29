@@ -11,6 +11,8 @@ The startup caller at `0x5358–0x535B` passes `D = 0xF7FF` to routine `0xA489`.
 | Original | `0x1800–0xF7FF` | `0xAAD5` | Fails comparison |
 | Corrected copy | `0x1800–0xF7FF` | `0xAA55` | Passes comparison |
 
+The merged [immobilizer analysis](IMMOBILIZER.md#effect-of-the-immobilizer-patch) records an owner-recalled `0x4E7D: 00 to 80` modification. That would explain the `0x0080` checksum delta if it was the only edit. The correction below preserves the supplied value at `0x4E7D`.
+
 ## Exact change
 
 The compensation word at `0xF7FC` changes from `0xFFFF` to `0xFF7F`. Only byte **`0xF7FD: FF → 7F`** differs. This subtracts `0x0080` from the sum. All calibration bytes, decoded application instructions, the terminal `0x5AA5` marker, and the `0xF800–0xFFFF` FF boot placeholder remain unchanged.
