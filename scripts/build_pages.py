@@ -64,10 +64,11 @@ write('index.html', shell('Overview', home, 'index.html', 'Overview'))
 # Keep the accepted pin UI intact, adding only the shared website navigation.
 pin_page = (SOURCE / 'MCU_PIN_OVERVIEW.html').read_text(encoding='utf-8')
 pin_page = pin_page.replace('href="MCU_PIN_OVERVIEW.md"', 'href="../docs/semantics/MCU_PIN_OVERVIEW.html"')
+pin_page = pin_page.replace('href="ECU_CONNECTOR.md"', 'href="../docs/semantics/ECU_CONNECTOR.html"')
 pin_page = pin_page.replace('</head>', '<link rel="stylesheet" href="../assets/nav.css">'+theme_head('pins/index.html')+'</head>')
 pin_page = pin_page.replace('<body>', '<body>'+nav('pins/index.html', 'MCU pins'), 1)
 write('pins/index.html', pin_page)
-for name in ('mcu_pin_overview.json','mcu_pin_overview.svg'):
+for name in ('mcu_pin_overview.json','mcu_pin_overview.svg','ecu_connector.svg'):
     shutil.copyfile(SOURCE/name, DEST/'pins'/name)
 
 cards=[]
@@ -85,7 +86,7 @@ kinds=sorted({m['kind'] for m in maps})
 map_body=f'''<div class="page-heading"><div class="kicker">Calibration catalogue</div><h1>Maps &amp; curves</h1><p>{len(maps)} recovered layouts, connected to the current physical-unit research. Open an entry for raw values, axes, consumers and unresolved questions.</p></div><div class="notice">A decoded layout does not establish every physical unit. Conditional conversions retain their assumptions; absolute spark BTDC remains unresolved.</div><div class="filters"><label>Search<input id="map-search" type="search" placeholder="Fuel, spark, coolant, 0x1B66…"></label><label>Decoding status<select id="map-status"><option value="">All statuses</option>{''.join(f'<option>{esc(s)}</option>' for s in statuses)}</select></label><label>Layout<select id="map-kind"><option value="">All layouts</option>{''.join(f'<option>{esc(k)}</option>' for k in kinds)}</select></label></div><p id="map-count" class="result-count" aria-live="polite">{len(maps)} maps</p><div class="map-grid">{''.join(cards)}</div><p id="map-empty" hidden>No matching maps. Try a different search or filter.</p>'''
 write('maps/index.html',shell('Maps & curves',map_body,'maps/index.html','Maps','<script src="../assets/maps.js"></script>'))
 
-groups=[('Sensors & hardware', [('MCU_PIN_OVERVIEW.md','MCU pins and XT/TDM comparison'),('IO_AND_DIAGNOSTICS.md','Sensor and output identities'),('COOLANT_AND_FAN.md','Coolant and fan control'),('TEMPERATURE_PROFILE.md','Temperature conversion research')]),
+groups=[('Sensors & hardware', [('MCU_PIN_OVERVIEW.md','MCU pins and XT/TDM comparison'),('ECU_CONNECTOR.md','ECU connector positions and MCU links'),('IO_AND_DIAGNOSTICS.md','Sensor and output identities'),('COOLANT_AND_FAN.md','Coolant and fan control'),('TEMPERATURE_PROFILE.md','Temperature conversion research')]),
         ('Spark, fuel & engine control',[('CRANK_REFERENCE.md','CPS and wasted-spark cadence'),('SPARK_SCHEDULER.md','Spark scheduling and dwell'),('SPARK.md','Spark maps and corrections'),('FUEL.md','Fuel quantity and injection'),('RPM_AND_CUTS.md','RPM limits and cut logic'),('MAP_CONSUMERS.md','Map consumers and arithmetic')]),
         ('Calibration & variants',[('../MAP_NAMES.md','Map names and stable references'),('UNIT_DECODING.md','Engineering units and assumptions'),('MAP_RESOLUTION.md','Every map’s resolution status'),('VARIANTS.md','Variant 9 and secondary injector'),('EXTENDED_MAPS.md','Extended map recovery'),('DEFINITION_READINESS.md','XDF and custom-tool readiness')]),
         ('Firmware & diagnostics',[('STARTUP.md','Startup and initialization'),('CHECKSUM.md','Checksum correction'),('DIAGNOSTICS.md','Dashboard diagnostic protocol'),('K_LINE.md','Serial transport'),('IMMOBILIZER.md','Immobilizer analysis'),('PROTOCOL_VERIFICATION.md','Protocol verification')])]
@@ -103,7 +104,7 @@ for name in tracked_files:
         destination=rel(doc_targets[source],'coverage/index.html');location='Website document'
     elif name=='analysis/semantics/MCU_PIN_OVERVIEW.html':
         destination='../pins/';location='Website explorer'
-    elif name in ('analysis/semantics/mcu_pin_overview.json','analysis/semantics/mcu_pin_overview.svg'):
+    elif name in ('analysis/semantics/mcu_pin_overview.json','analysis/semantics/mcu_pin_overview.svg','analysis/semantics/ecu_connector.svg'):
         destination='../pins/'+source.name;location='Website asset'
     else:
         destination=REPO+'/blob/main/'+quote(name);location='GitHub file'
@@ -122,7 +123,7 @@ class LinkRewriter(HTMLParser):
         path=(self.source.parent/unquote(u.path)).resolve()
         if path in doc_targets: url=rel(doc_targets[path],self.target)
         elif path==SOURCE/'MCU_PIN_OVERVIEW.html':url=rel('pins/index.html',self.target)
-        elif path in [SOURCE/'mcu_pin_overview.svg',SOURCE/'mcu_pin_overview.json']:url=rel('pins/'+path.name,self.target)
+        elif path in [SOURCE/'mcu_pin_overview.svg',SOURCE/'mcu_pin_overview.json',SOURCE/'ecu_connector.svg']:url=rel('pins/'+path.name,self.target)
         elif path.is_relative_to(ROOT):url=REPO+'/blob/main/'+quote(path.relative_to(ROOT).as_posix())
         else:return value
         return url+('?' + u.query if u.query else '')+('#'+u.fragment if u.fragment else '')

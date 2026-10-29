@@ -2,7 +2,9 @@
 
 **80-pin MC9S12T64 reference, conditional on confirming the chip marking.** The firmware/register map supports this family; actual package identity has not been verified. Pin numbers below refer to the MCU, never the ECU connector.
 
-[Interactive overview](MCU_PIN_OVERVIEW.html) | [Machine-readable catalogue](mcu_pin_overview.json) | [Package drawing](mcu_pin_overview.svg)
+[Interactive overview](MCU_PIN_OVERVIEW.html) | [ECU connector positions](ECU_CONNECTOR.md) | [Machine-readable catalogue](mcu_pin_overview.json) | [Package drawing](mcu_pin_overview.svg)
+
+The [ECU connector inventory](ECU_CONNECTOR.md) now accounts for the manual drawing's 26 positions, including the 23 wire-labelled positions and three crosses. Fourteen circuits have corroborated MCU function links; four have candidate associations; five identify power/return networks with untraced internal joins. These are function associations through board circuitry, not direct-wire claims.
 
 The overview covers all 80 package positions. Corroborated means firmware dataflow plus Yamaha diagnostic identity; Decoded means a software role is established; Candidate means a physical role is tentative. Datasheet entries identify package functions only. Unassigned does not mean unused.
 
@@ -12,6 +14,7 @@ The overview covers all 80 package positions. Corroborated means firmware datafl
 |---:|---|---|---|---|
 | 1 | PT2/IOC2 | Vehicle-speed pulses | Corroborated | 7 |
 | 20 | PB0 | Sidestand / start-interlock input | Corroborated | 20 |
+| 21 | PB1 | Starter-request input candidate | Candidate | - |
 | 24 | PB4 | Neutral input | Corroborated | 21 |
 | 59 | PAD0/AN0 | Throttle position (TPS) | Corroborated | 1 |
 | 60 | PAD1/AN1 | Intake manifold pressure (MAP) | Corroborated | 3 |
@@ -72,6 +75,8 @@ Useful runtime RAM: `0x0AB0`, `0x0ABE`, `0x0AE3`.
 
 XT manual wire reference: W (white) in ECU-side XT harness; sensor-side colors differ. This is a harness reference, not a measured MCU-to-connector continuity result.
 
+ECU drawing position: **U05**, upper row position 5, wire W (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
+
 ### Pin 2 - PT3/IOC3 - Ignition-coil driver command
 
 Timer output commands coil dwell and release through the ECU power driver. The MCU output is high during modeled dwell and clears for release; coil-terminal voltage is a different signal.
@@ -83,6 +88,8 @@ Instruction anchors: `0xB900`, `0xEF50`, `0xEFDE`.
 Useful runtime RAM: `0x0A82`, `0x0A96`, `0x0AA4`.
 
 XT manual wire reference: O (orange), coil control at ECU; R/B coil supply. This is a harness reference, not a measured MCU-to-connector continuity result.
+
+ECU drawing position: **U13**, upper row position 13, wire O (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
 
 ### Pin 4 - PT5/IOC5 - Ignition monitoring capture
 
@@ -103,6 +110,8 @@ Instruction anchors: `0xB97F`, `0xF519`, `0xC55B`.
 Useful runtime RAM: `0x092A`, `0x0B72`.
 
 XT manual wire reference: R/B (red/black), injector control at ECU; R/L injector supply. This is a harness reference, not a measured MCU-to-connector continuity result.
+
+ECU drawing position: **U12**, upper row position 12, wire R/B (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
 
 ### Pin 6 - PT7/IOC7 - Secondary injector code path
 
@@ -132,6 +141,8 @@ Instruction anchors: `0xBAC3`, `0xBAE5`, `0x9D51`.
 
 XT manual wire reference: Br/R (brown/red), control at ECU; R/W supply. This is a harness reference, not a measured MCU-to-connector continuity result.
 
+ECU drawing position: **U10**, upper row position 10, wire Br/R (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
+
 ### Pin 14 - PP2/PWM2 - Radiator-fan relay command
 
 Normal coolant hysteresis and fault/diagnostic overrides command the fan relay. It does not directly supply motor current.
@@ -139,6 +150,10 @@ Normal coolant hysteresis and fault/diagnostic overrides command the fan relay. 
 Status: **Corroborated**. Register/channel: `PTP 0x00F0 bit2`.
 
 Instruction anchors: `0x71C5`, `0x71CA`, `0xBB7B`.
+
+XT manual wire reference: G/Y at L09 in the manual drawing (function corroborated). This is a harness reference, not a measured MCU-to-connector continuity result.
+
+ECU drawing position: **L09**, lower row position 9, wire G/Y (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
 
 ### Pin 15 - PP3/PWM3 - Storage transaction select/strobe
 
@@ -155,6 +170,10 @@ Commands the headlight relay in normal logic and diagnostic 52.
 Status: **Corroborated**. Register/channel: `PTP 0x00F0 bit4`.
 
 Instruction anchors: `0x9DC5`, `0x9DCA`, `0xBBD7`.
+
+XT manual wire reference: Y/B at L10 in the manual drawing (function corroborated). This is a harness reference, not a measured MCU-to-connector continuity result.
+
+ECU drawing position: **L10**, lower row position 10, wire Y/B (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
 
 ### Pin 19 - PP7/PWM7 - Memory-test status/enable output
 
@@ -174,6 +193,24 @@ Instruction anchors: `0x8B45`, `0x8B57`, `0x6583`.
 
 Useful runtime RAM: `0x0896`.
 
+XT manual wire reference: B/Y at L01 in the manual drawing (candidate association). This is a harness reference, not a measured MCU-to-connector continuity result.
+
+ECU drawing position: **L01**, lower row position 1, wire B/Y (candidate association). See [connector orientation and paths](ECU_CONNECTOR.md).
+
+### Pin 21 - PB1 - Starter-request input candidate
+
+Filtered PB1 is debounced into 0x0880 bit0. Variant 9 treats low as active; other variants reverse the polarity. This state participates in fault-19 qualification and headlight suppression, supporting a starter-request role. L/W is a candidate external association, not a measured board connection.
+
+Status: **Candidate**. Register/channel: `PORTB 0x0001 bit1`.
+
+Instruction anchors: `0xCBEF`, `0xCBF6`, `0x8B8D`, `0x9DC0`.
+
+Useful runtime RAM: `0x0896`, `0x0880`, `0x0B05`, `0x0B06`.
+
+XT manual wire reference: L/W at U01 in the manual drawing (candidate association). This is a harness reference, not a measured MCU-to-connector continuity result.
+
+ECU drawing position: **U01**, upper row position 1, wire L/W (candidate association). See [connector orientation and paths](ECU_CONNECTOR.md).
+
 ### Pin 24 - PB4 - Neutral input
 
 PB4 is filtered into 0x0896 bit4. For stock variant 9 diagnostic 21 reports that bit; other variants substitute a fixed diagnostic response.
@@ -183,6 +220,10 @@ Status: **Corroborated**. Register/channel: `PORTB 0x0001 bit4`.
 Instruction anchors: `0x8B45`, `0x6599`, `0x65A0`.
 
 Useful runtime RAM: `0x0896`.
+
+XT manual wire reference: L/B at L02 in the manual drawing (function corroborated). This is a harness reference, not a measured MCU-to-connector continuity result.
+
+ECU drawing position: **L02**, lower row position 2, wire L/B (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
 
 ### Pin 27 - PB7 - Timed digital output
 
@@ -232,6 +273,10 @@ Status: **Corroborated**. Register/channel: `PORTA 0x0000 bit2`.
 
 Instruction anchors: `0xBB23`, `0xBB41`, `0xACD9`, `0xACE6`.
 
+XT manual wire reference: L/R at L08 in the manual drawing (function corroborated). This is a harness reference, not a measured MCU-to-connector continuity result.
+
+ECU drawing position: **L08**, lower row position 8, wire L/R (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
+
 ### Pin 49 - PA4 - Periodic service/watchdog candidate
 
 PA4 is toggled by a recurring service helper. An external watchdog-service role is plausible, not board-proven.
@@ -252,6 +297,8 @@ Useful runtime RAM: `0x08D0`, `0x08CE`, `0x08E8`, `0x0AE9`.
 
 XT manual wire reference: Y (yellow), signal at ECU; L supply and B/L return shown in XT diagram. This is a harness reference, not a measured MCU-to-connector continuity result.
 
+ECU drawing position: **L06**, lower row position 6, wire Y (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
+
 ### Pin 60 - PAD1/AN1 - Intake manifold pressure (MAP)
 
 Measures intake pressure for load, fueling and pressure-based engine-cycle recognition. Processed load is not identical to raw manifold pressure.
@@ -263,6 +310,8 @@ Instruction anchors: `0x6AA5`, `0x652B`, `0xEA7F`.
 Useful runtime RAM: `0x0CA2`, `0x0C90`, `0x0AEA`.
 
 XT manual wire reference: P/W (pink/white), signal at ECU. This is a harness reference, not a measured MCU-to-connector continuity result.
+
+ECU drawing position: **L05**, lower row position 5, wire P/W (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
 
 ### Pin 61 - PAD2/AN2 - Oxygen-feedback candidate
 
@@ -286,6 +335,8 @@ Useful runtime RAM: `0x08F5`, `0x0AEB`.
 
 XT manual wire reference: Br/W (brown/white), signal at ECU; B/L return. This is a harness reference, not a measured MCU-to-connector continuity result.
 
+ECU drawing position: **L04**, lower row position 4, wire Br/W (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
+
 ### Pin 63 - PAD4/AN4 - Fuel-system supply monitor
 
 Monitors conditioned fuel-system voltage for fault detection, injector compensation and dwell calculations. This MCU input is behind a divider/protection circuit, not a battery terminal.
@@ -295,6 +346,10 @@ Status: **Corroborated**. Register/channel: `ATD channel 4`.
 Instruction anchors: `0x6C5E`, `0x6577`.
 
 Useful runtime RAM: `0x0BCE`, `0x08D9`, `0x0AEC`.
+
+XT manual wire reference: R/L at L11 in the manual drawing (candidate association). This is a harness reference, not a measured MCU-to-connector continuity result.
+
+ECU drawing position: **L11**, lower row position 11, wire R/L (candidate association). See [connector orientation and paths](ECU_CONNECTOR.md).
 
 ### Pin 64 - PAD5/AN5 - Lean-angle / tip-over sensor
 
@@ -308,6 +363,8 @@ Useful runtime RAM: `0x08DD`.
 
 XT manual wire reference: Y/G (yellow/green), signal at ECU. This is a harness reference, not a measured MCU-to-connector continuity result.
 
+ECU drawing position: **U03**, upper row position 3, wire Y/G (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
+
 ### Pin 65 - PAD6/AN6 - Coolant temperature (ECT)
 
 Thermistor conversion drives warm-up fueling, temperature-dependent limits and fan decisions. Measured and effective/fault-substituted temperature are separate.
@@ -319,6 +376,8 @@ Instruction anchors: `0x70A3`, `0x711B`, `0x714F`.
 Useful runtime RAM: `0x08F6`, `0x08F4`, `0x0AE8`.
 
 XT manual wire reference: G/R (green/red), signal at ECU; B/L return. This is a harness reference, not a measured MCU-to-connector continuity result.
+
+ECU drawing position: **L03**, lower row position 3, wire G/R (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
 
 ### Pin 66 - PAD7/AN7/ETRIG - Additional analog channel
 
@@ -338,6 +397,10 @@ Status: **Decoded**. Register/channel: `SCI1 data 0x00D7`.
 
 Instruction anchors: `0x5073`, `0xCDC0`.
 
+XT manual wire reference: Y/L at U02 in the manual drawing (candidate association). This is a harness reference, not a measured MCU-to-connector continuity result.
+
+ECU drawing position: **U02**, upper row position 2, wire Y/L (candidate association). See [connector orientation and paths](ECU_CONNECTOR.md).
+
 ### Pin 70 - PS3/TxD1 - Dashboard/immobilizer serial TX
 
 SCI1 sends five-byte ECU replies. MCU logic-level TX is not the external harness voltage.
@@ -345,6 +408,10 @@ SCI1 sends five-byte ECU replies. MCU logic-level TX is not the external harness
 Status: **Decoded**. Register/channel: `SCI1 data 0x00D7`.
 
 Instruction anchors: `0xCCA9`, `0xCDBB`.
+
+XT manual wire reference: Y/L at U02 in the manual drawing (candidate association). This is a harness reference, not a measured MCU-to-connector continuity result.
+
+ECU drawing position: **U02**, upper row position 2, wire Y/L (candidate association). See [connector orientation and paths](ECU_CONNECTOR.md).
 
 ### Pin 71 - PS4/MISO - SPI data input
 
@@ -382,6 +449,8 @@ Useful runtime RAM: `0x0AF0`, `0x0C04`, `0x0A2E`, `0x0A44`.
 
 XT manual wire reference: Gy (gray) at ECU; G/W sensor return joins B/L in harness. Raw sensor wire colors differ across the harness.. This is a harness reference, not a measured MCU-to-connector continuity result.
 
+ECU drawing position: **U06**, upper row position 6, wire Gy (function corroborated). See [connector orientation and paths](ECU_CONNECTOR.md).
+
 ## Complete package inventory
 
 | MCU pin | Package signal | Recorded role | Status |
@@ -406,7 +475,7 @@ XT manual wire reference: Gy (gray) at ECU; G/W sensor return joins B/L in harne
 | 18 | PP6/PWM6 | Application role not established | Unassigned |
 | 19 | PP7/PWM7 | Memory-test status/enable output | Decoded |
 | 20 | PB0 | Sidestand / start-interlock input | Corroborated |
-| 21 | PB1 | Application role not established | Unassigned |
+| 21 | PB1 | Starter-request input candidate | Candidate |
 | 22 | PB2 | Application role not established | Unassigned |
 | 23 | PB3 | Application role not established | Unassigned |
 | 24 | PB4 | Neutral input | Corroborated |
@@ -469,12 +538,12 @@ XT manual wire reference: Gy (gray) at ECU; G/W sensor return joins B/L in harne
 
 ## What is still needed for a board pinout
 
-A visible chip marking establishes whether this package reference applies. Board continuity tracing then connects MCU pads through conditioning/driver ICs to numbered ECU cavities. A TDM binary/board is needed for its own assignments. The manual connector pictograms are not assigned invented cavity numbers.
+The manual supports the [wire-position inventory](ECU_CONNECTOR.md), which is now recorded. A matching connector face convention and OEM numbering are still needed to translate those drawing coordinates into numbered physical cavities. Chip marking and board tracing establish the exact package and internal conditioning/driver routes. A TDM binary/board is needed for its own assignments.
 
 ## Sources and reproduction
 
 - [NXP MC9S12T64 revision 1.1.1](https://www.nxp.com/docs/en/data-sheet/9S12T64AF16V1.pdf), PDF pages 60, 86, 251, 253, 385.
-- [Yamaha XT660R/X 2004 service manual](https://scootertuub.nl/motoren/Yamaha/Yamaha%20XT%20660%20R%20X%202004%20Service%20Manual%20%20.pdf), PDF pages 345, 353, 354, 355, 361, 397.
+- [Yamaha XT660R/X 2004 service manual](https://scootertuub.nl/motoren/Yamaha/Yamaha%20XT%20660%20R%20X%202004%20Service%20Manual%20%20.pdf), PDF pages 345, 353, 354, 355, 361, 362, 379, 397, 458, 462.
 - [Yamaha TDM900 service manual](https://biker.ee/manuals/yamaha/Yamaha-TDM900-2002-2007_Workshop_Service_Repair_Manual.pdf), PDF pages 365, 373.
 - Supplied image, instruction bytes and [hardware/diagnostic derivation](IO_AND_DIAGNOSTICS.md).
 - [Crank path](CRANK_REFERENCE.md), [sensor scales](TEMPERATURE_PROFILE.md), [serial link](K_LINE.md), [variant behavior](VARIANTS.md).

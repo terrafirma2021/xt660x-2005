@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 235" role="img" aria-label="ECU connector wire positions as drawn in Yamaha manual">
+<rect width="1040" height="235" rx="12" fill="#122631"/>
+<text x="24" y="28" fill="#d4e3eb" font-family="sans-serif" font-size="15">Manual drawing orientation · U/L labels are research coordinates, not OEM cavity numbers</text>
+<path d="M495 57V43H545V57" fill="none" stroke="#9eb5c2" stroke-width="3"/>
+<g class="connector-slot" data-connector="U01" role="button" tabindex="0" aria-label="U01: L/W, Starter-relay control network">
+<rect x="32" y="62" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="68" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U01</text>
+<text x="68" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">L/W</text></g>
+<g class="connector-slot" data-connector="U02" role="button" tabindex="0" aria-label="U02: Y/L, Meter / immobilizer communication line">
+<rect x="107" y="62" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="143" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U02</text>
+<text x="143" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">Y/L</text></g>
+<g class="connector-slot" data-connector="U03" role="button" tabindex="0" aria-label="U03: Y/G, Lean-angle sensor signal">
+<rect x="182" y="62" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="218" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U03</text>
+<text x="218" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">Y/G</text></g>
+<g class="connector-slot" data-connector="U04" role="button" tabindex="0" aria-label="U04: cross-marked, Cross-marked position">
+<rect x="257" y="62" width="72" height="68" rx="4" fill="#1b303b" stroke="#7895a6"/>
+<text x="293" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U04</text>
+<text x="293" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">×</text></g>
+<g class="connector-slot" data-connector="U05" role="button" tabindex="0" aria-label="U05: W, Vehicle-speed sensor signal">
+<rect x="332" y="62" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="368" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U05</text>
+<text x="368" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">W</text></g>
+<g class="connector-slot" data-connector="U06" role="button" tabindex="0" aria-label="U06: Gy, Crank-position sensor signal">
+<rect x="407" y="62" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="443" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U06</text>
+<text x="443" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">Gy</text></g>
+<g class="connector-slot" data-connector="U07" role="button" tabindex="0" aria-label="U07: B/W, Harness ground / return">
+<rect x="482" y="62" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="518" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U07</text>
+<text x="518" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">B/W</text></g>
+<g class="connector-slot" data-connector="U08" role="button" tabindex="0" aria-label="U08: cross-marked, Cross-marked position">
+<rect x="557" y="62" width="72" height="68" rx="4" fill="#1b303b" stroke="#7895a6"/>
+<text x="593" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U08</text>
+<text x="593" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">×</text></g>
+<g class="connector-slot" data-connector="U09" role="button" tabindex="0" aria-label="U09: L, Shared sensor supply">
+<rect x="632" y="62" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="668" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U09</text>
+<text x="668" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">L</text></g>
+<g class="connector-slot" data-connector="U10" role="button" tabindex="0" aria-label="U10: Br/R, Air-induction solenoid control">
+<rect x="707" y="62" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="743" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U10</text>
+<text x="743" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">Br/R</text></g>
+<g class="connector-slot" data-connector="U11" role="button" tabindex="0" aria-label="U11: R, ECU power feed">
+<rect x="782" y="62" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="818" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U11</text>
+<text x="818" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">R</text></g>
+<g class="connector-slot" data-connector="U12" role="button" tabindex="0" aria-label="U12: R/B, Primary fuel-injector control">
+<rect x="857" y="62" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="893" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U12</text>
+<text x="893" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">R/B</text></g>
+<g class="connector-slot" data-connector="U13" role="button" tabindex="0" aria-label="U13: O, Ignition-coil control">
+<rect x="932" y="62" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="968" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U13</text>
+<text x="968" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">O</text></g>
+<g class="connector-slot" data-connector="L01" role="button" tabindex="0" aria-label="L01: B/Y, Starting / sidestand interlock network">
+<rect x="32" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="68" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L01</text>
+<text x="68" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">B/Y</text></g>
+<g class="connector-slot" data-connector="L02" role="button" tabindex="0" aria-label="L02: L/B, Neutral-state input through relay unit">
+<rect x="107" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="143" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L02</text>
+<text x="143" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">L/B</text></g>
+<g class="connector-slot" data-connector="L03" role="button" tabindex="0" aria-label="L03: G/R, Coolant-temperature sensor signal">
+<rect x="182" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="218" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L03</text>
+<text x="218" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">G/R</text></g>
+<g class="connector-slot" data-connector="L04" role="button" tabindex="0" aria-label="L04: Br/W, Intake-air-temperature sensor signal">
+<rect x="257" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="293" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L04</text>
+<text x="293" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">Br/W</text></g>
+<g class="connector-slot" data-connector="L05" role="button" tabindex="0" aria-label="L05: P/W, Intake-pressure sensor signal">
+<rect x="332" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="368" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L05</text>
+<text x="368" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">P/W</text></g>
+<g class="connector-slot" data-connector="L06" role="button" tabindex="0" aria-label="L06: Y, Throttle-position sensor signal">
+<rect x="407" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="443" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L06</text>
+<text x="443" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">Y</text></g>
+<g class="connector-slot" data-connector="L07" role="button" tabindex="0" aria-label="L07: B/L, Shared sensor return">
+<rect x="482" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="518" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L07</text>
+<text x="518" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">B/L</text></g>
+<g class="connector-slot" data-connector="L08" role="button" tabindex="0" aria-label="L08: L/R, Fuel-injection-system relay control">
+<rect x="557" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="593" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L08</text>
+<text x="593" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">L/R</text></g>
+<g class="connector-slot" data-connector="L09" role="button" tabindex="0" aria-label="L09: G/Y, Radiator-fan relay control">
+<rect x="632" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="668" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L09</text>
+<text x="668" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">G/Y</text></g>
+<g class="connector-slot" data-connector="L10" role="button" tabindex="0" aria-label="L10: Y/B, Headlight-relay control">
+<rect x="707" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="743" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L10</text>
+<text x="743" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">Y/B</text></g>
+<g class="connector-slot" data-connector="L11" role="button" tabindex="0" aria-label="L11: R/L, Fuel-injection relay output / system supply">
+<rect x="782" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="818" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L11</text>
+<text x="818" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">R/L</text></g>
+<g class="connector-slot" data-connector="L12" role="button" tabindex="0" aria-label="L12: cross-marked, Cross-marked position">
+<rect x="857" y="140" width="72" height="68" rx="4" fill="#1b303b" stroke="#7895a6"/>
+<text x="893" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L12</text>
+<text x="893" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">×</text></g>
+<g class="connector-slot" data-connector="L13" role="button" tabindex="0" aria-label="L13: B, Harness ground">
+<rect x="932" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
+<text x="968" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L13</text>
+<text x="968" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">B</text></g>
+</svg>

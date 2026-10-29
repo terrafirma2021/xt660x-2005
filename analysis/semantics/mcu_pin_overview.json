@@ -1,11 +1,456 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
-  "generator_sha256": "26c51c9f300c8ffe933b81948a0c8d16136555c2a754319698bf366dbb44e0d5",
-  "template_sha256": "644780446b5632dcd7944ede97b27b8b851df77328579e98fec268629a71cf2d",
+  "generator_sha256": "ef7af51eca621a8bba058438527b09ce665564d1334180aa13be087a69dccb12",
+  "template_sha256": "d1d41492aa094ecd1d891e868a912a51d78503ef3b001b02c13086858a3304c2",
   "target": "Supplied XT660X 2005 image; variant 9",
   "package_assumption": "MC9S12T64 80-pin LQFP, top view, conditional on physical chip identification. CPU/register evidence fits this family; chip marking has not been supplied.",
-  "connector_policy": "MCU package numbers are NOT ECU connector cavity numbers. All cavity numbers remain null; the inspected Yamaha drawings show wire colors but do not number those cavities.",
+  "connector_policy": "All 26 manual connector positions are inventoried separately using upper/lower drawing coordinates. OEM cavity numbers and view-side convention are not printed; function links are not measured board continuity.",
+  "ecu_connector": {
+    "source_title": "Yamaha XT660R/X 2004 service manual 5VK1-AE1",
+    "source_url": "https://scootertuub.nl/motoren/Yamaha/Yamaha%20XT%20660%20R%20X%202004%20Service%20Manual%20%20.pdf",
+    "source_pdf_pages": [
+      345,
+      362,
+      379,
+      458,
+      462
+    ],
+    "target_scope": "Manual reference for 2004 XT660R/X, correlated with the supplied 2005-labelled image; exact ECU part number is unconfirmed.",
+    "orientation": "As drawn in the manual, with the small tab symbol above. The inspected drawing does not state mating-face versus wire-entry view. Do not mirror or assign OEM numbers without establishing that view.",
+    "coordinate_policy": "U01-U13 and L01-L13 mean upper/lower row, counted left to right in the printed drawing. They are research coordinates, not Yamaha cavity numbers.",
+    "link_policy": "Function corroborated joins the manual circuit to a firmware diagnostic identity. Candidate association is weaker. No connector-to-MCU board continuity has been measured.",
+    "generator_sha256": "2f6fc395380276fb71ae3e20f0b448da36ba6ec0bf81e27acb8dc68a0e183a36",
+    "slots": [
+      {
+        "position": "U01",
+        "row": "Upper",
+        "column": 1,
+        "wire": "L/W",
+        "role": "Starter-relay control network",
+        "mcu_package_pins": [
+          21
+        ],
+        "association": "Candidate association",
+        "path": "The drawing joins ECU L/W to the starter-relay/cut-off relay network. Filtered PB1 drives the debounced 0x0880 bit 0 state at 0xCBEF; that state participates in fault-19 and headlight suppression paths. This supports a starter-request interpretation, but the L/W-to-PB1 board route is not verified.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "U02",
+        "row": "Upper",
+        "column": 2,
+        "wire": "Y/L",
+        "role": "Meter / immobilizer communication line",
+        "mcu_package_pins": [
+          69,
+          70
+        ],
+        "association": "Candidate association",
+        "path": "Y/L joins the ECU, meter and immobilizer in the manual. SCI1 RX/TX handles their software exchange; the external line interface joining both MCU signals has not been traced.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "U03",
+        "row": "Upper",
+        "column": 3,
+        "wire": "Y/G",
+        "role": "Lean-angle sensor signal",
+        "mcu_package_pins": [
+          64
+        ],
+        "association": "Function corroborated",
+        "path": "Manual signal Y/G; diagnostic 08 selects ATD5. Protection/conditioning lies between terminal and PAD5.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "U04",
+        "row": "Upper",
+        "column": 4,
+        "wire": null,
+        "role": "Cross-marked position",
+        "mcu_package_pins": [],
+        "association": "No connection shown",
+        "path": "Cross-marked in the manual pictogram. This does not establish whether a physical contact is fitted or internally connected.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "U05",
+        "row": "Upper",
+        "column": 5,
+        "wire": "W",
+        "role": "Vehicle-speed sensor signal",
+        "mcu_package_pins": [
+          1
+        ],
+        "association": "Function corroborated",
+        "path": "Manual ECU-side W; diagnostic 07 and timer-2 counter identify PT2. Sensor-side wire is P; external input conditioning is not mapped.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "U06",
+        "row": "Upper",
+        "column": 6,
+        "wire": "Gy",
+        "role": "Crank-position sensor signal",
+        "mcu_package_pins": [
+          80
+        ],
+        "association": "Function corroborated",
+        "path": "Manual ECU-side Gy; crank capture uses PT1/TC1. The sensor-side lead is L/Y and its return joins the harness return network. Comparator/protection route is not mapped.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "U07",
+        "row": "Upper",
+        "column": 7,
+        "wire": "B/W",
+        "role": "Harness ground / return",
+        "mcu_package_pins": [],
+        "association": "Internal rail",
+        "path": "The diagram grounds ECU B/W and shares that return with other vehicle circuits. Exact joins to MCU ground domains require the PCB netlist.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "U08",
+        "row": "Upper",
+        "column": 8,
+        "wire": null,
+        "role": "Cross-marked position",
+        "mcu_package_pins": [],
+        "association": "No connection shown",
+        "path": "Cross-marked in the manual pictogram. This does not establish whether a physical contact is fitted or internally connected.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "U09",
+        "row": "Upper",
+        "column": 9,
+        "wire": "L",
+        "role": "Shared sensor supply",
+        "mcu_package_pins": [],
+        "association": "Internal rail",
+        "path": "The manual supplies TPS, MAP, lean-angle and speed sensors from L. This is a board supply rail, not an identified MCU GPIO output; no regulator or reference-pin connection is established.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "U10",
+        "row": "Upper",
+        "column": 10,
+        "wire": "Br/R",
+        "role": "Air-induction solenoid control",
+        "mcu_package_pins": [
+          13
+        ],
+        "association": "Function corroborated",
+        "path": "Manual Br/R runs from ECU to the air-induction solenoid; R/W is its separate supply. Diagnostic 48 commands PP1/PWM1 at PTP bit 1. An unidentified power driver lies between MCU and harness.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "U11",
+        "row": "Upper",
+        "column": 11,
+        "wire": "R",
+        "role": "ECU power feed",
+        "mcu_package_pins": [],
+        "association": "Internal rail",
+        "path": "The manual shows R entering the ECU from the vehicle power network. Internal regulation and its MCU supply destinations are not mapped; this is not a direct MCU supply-pin assignment.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "U12",
+        "row": "Upper",
+        "column": 12,
+        "wire": "R/B",
+        "role": "Primary fuel-injector control",
+        "mcu_package_pins": [
+          5
+        ],
+        "association": "Function corroborated",
+        "path": "Manual ECU R/B runs to the injector control terminal; R/L supplies the injector separately. Diagnostic 36 commands PT6/TC6. A power driver lies between MCU and harness. Other R/B wires elsewhere in the harness are not this ECU net.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "U13",
+        "row": "Upper",
+        "column": 13,
+        "wire": "O",
+        "role": "Ignition-coil control",
+        "mcu_package_pins": [
+          2
+        ],
+        "association": "Function corroborated",
+        "path": "Manual O runs to the ignition coil primary; diagnostic 30 commands PT3/TC3. A coil power driver separates the MCU command from this terminal.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "L01",
+        "row": "Lower",
+        "column": 1,
+        "wire": "B/Y",
+        "role": "Starting / sidestand interlock network",
+        "mcu_package_pins": [
+          20
+        ],
+        "association": "Candidate association",
+        "path": "Manual B/Y joins ECU to the relay/interlock network. Diagnostic 20 identifies PB0 as sidestand/start-interlock input, but this particular electrical join is not board-proven.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "L02",
+        "row": "Lower",
+        "column": 2,
+        "wire": "L/B",
+        "role": "Neutral-state input through relay unit",
+        "mcu_package_pins": [
+          24
+        ],
+        "association": "Function corroborated",
+        "path": "Fault-42 instructions identify relay L/Y to ECU L/B (PDF page 362). Diagnostic 21 reads filtered PB4 for variant 9. This is not the raw Sb wire at the neutral switch.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "L03",
+        "row": "Lower",
+        "column": 3,
+        "wire": "G/R",
+        "role": "Coolant-temperature sensor signal",
+        "mcu_package_pins": [
+          65
+        ],
+        "association": "Function corroborated",
+        "path": "Manual G/R and diagnostic 06 identify ATD6/PAD6. Thermistor bias/protection and the exact PCB route are not mapped.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "L04",
+        "row": "Lower",
+        "column": 4,
+        "wire": "Br/W",
+        "role": "Intake-air-temperature sensor signal",
+        "mcu_package_pins": [
+          62
+        ],
+        "association": "Function corroborated",
+        "path": "Manual Br/W and diagnostic 05 identify ATD3/PAD3. The input includes thermistor bias/protection.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "L05",
+        "row": "Lower",
+        "column": 5,
+        "wire": "P/W",
+        "role": "Intake-pressure sensor signal",
+        "mcu_package_pins": [
+          60
+        ],
+        "association": "Function corroborated",
+        "path": "Manual P/W and diagnostic 03 identify ATD1/PAD1. The exact conditioning route is not mapped.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "L06",
+        "row": "Lower",
+        "column": 6,
+        "wire": "Y",
+        "role": "Throttle-position sensor signal",
+        "mcu_package_pins": [
+          59
+        ],
+        "association": "Function corroborated",
+        "path": "Manual Y and diagnostic 01 identify ATD0/PAD0. The exact conditioning route is not mapped.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "L07",
+        "row": "Lower",
+        "column": 7,
+        "wire": "B/L",
+        "role": "Shared sensor return",
+        "mcu_package_pins": [],
+        "association": "Internal rail",
+        "path": "The manual joins sensor returns to ECU B/L. Connections to VSSA, VRL or other MCU grounds are not established by the external drawing.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "L08",
+        "row": "Lower",
+        "column": 8,
+        "wire": "L/R",
+        "role": "Fuel-injection-system relay control",
+        "mcu_package_pins": [
+          47
+        ],
+        "association": "Function corroborated",
+        "path": "Manual L/R runs to the fuel-injection relay control side; diagnostic 50 commands PA2. The board driver is not identified.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "L09",
+        "row": "Lower",
+        "column": 9,
+        "wire": "G/Y",
+        "role": "Radiator-fan relay control",
+        "mcu_package_pins": [
+          14
+        ],
+        "association": "Function corroborated",
+        "path": "Manual G/Y runs to the radiator-fan relay coil; diagnostic 51 commands PP2/PWM2. The fan motor has a separate supply circuit.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "L10",
+        "row": "Lower",
+        "column": 10,
+        "wire": "Y/B",
+        "role": "Headlight-relay control",
+        "mcu_package_pins": [
+          16
+        ],
+        "association": "Function corroborated",
+        "path": "Manual Y/B runs to the headlight relay coil; diagnostic 52 commands PP4/PWM4. The board driver is not identified.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "L11",
+        "row": "Lower",
+        "column": 11,
+        "wire": "R/L",
+        "role": "Fuel-injection relay output / system supply",
+        "mcu_package_pins": [
+          63
+        ],
+        "association": "Candidate association",
+        "path": "Manual R/L supplies ECU, injector and fuel pump from the fuel-injection relay. ATD4/PAD4 monitors fuel-system supply; assigning this terminal to that divider remains a candidate, not a continuity result.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "L12",
+        "row": "Lower",
+        "column": 12,
+        "wire": null,
+        "role": "Cross-marked position",
+        "mcu_package_pins": [],
+        "association": "No connection shown",
+        "path": "Cross-marked in the manual pictogram. This does not establish whether a physical contact is fitted or internally connected.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      },
+      {
+        "position": "L13",
+        "row": "Lower",
+        "column": 13,
+        "wire": "B",
+        "role": "Harness ground",
+        "mcu_package_pins": [],
+        "association": "Internal rail",
+        "path": "The diagram connects ECU B to ground. The division between power, digital and analog grounds inside the ECU is not established.",
+        "oem_cavity_number": null,
+        "continuity_verified": false,
+        "source_pdf_pages": [
+          462
+        ]
+      }
+    ]
+  },
   "tdm_policy": "TDM comparison is by manufacturer-described functions. No TDM binary or board trace is available to prove an MCU pin-for-pin mapping.",
   "pins": [
     {
@@ -40,6 +485,15 @@
           "bytes": "4fe1040a",
           "instruction": "BRCLR 0x00e1,0x4,0xf409",
           "function": "FUN_f3f3"
+        }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "U05",
+          "row": "Upper",
+          "column": 5,
+          "wire": "W",
+          "association": "Function corroborated"
         }
       ]
     },
@@ -83,6 +537,15 @@
           "instruction": "STD 0x0056",
           "function": "FUN_ef6d"
         }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "U13",
+          "row": "Upper",
+          "column": 13,
+          "wire": "O",
+          "association": "Function corroborated"
+        }
       ]
     },
     {
@@ -98,7 +561,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 4,
@@ -136,7 +600,8 @@
           "instruction": "STAA 0x004e",
           "function": "candidate_unreferenced_dc39"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 5,
@@ -176,6 +641,15 @@
           "bytes": "1c08c110",
           "instruction": "BSET 0x8c1,0x10",
           "function": "FUN_c55b"
+        }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "U12",
+          "row": "Upper",
+          "column": 12,
+          "wire": "R/B",
+          "association": "Function corroborated"
         }
       ]
     },
@@ -217,7 +691,8 @@
           "instruction": "BSET 0x8c1,0x40",
           "function": "FUN_c712"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 7,
@@ -232,7 +707,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 8,
@@ -247,7 +723,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 9,
@@ -262,7 +739,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 10,
@@ -277,7 +755,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 11,
@@ -292,7 +771,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 12,
@@ -344,7 +824,8 @@
           "instruction": "BSET 0x00f0,0x1",
           "function": "FUN_bbfd"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 13,
@@ -382,6 +863,15 @@
           "instruction": "BCLR 0x00f0,0x2",
           "function": "FUN_99fd"
         }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "U10",
+          "row": "Upper",
+          "column": 10,
+          "wire": "Br/R",
+          "association": "Function corroborated"
+        }
       ]
     },
     {
@@ -399,7 +889,7 @@
       ],
       "ram": [],
       "diagnostic": 51,
-      "xt_wire": null,
+      "xt_wire": "G/Y at L09 in the manual drawing (function corroborated)",
       "ecu_connector_cavity": null,
       "evidence_instructions": [
         {
@@ -419,6 +909,15 @@
           "bytes": "4cf004",
           "instruction": "BSET 0x00f0,0x4",
           "function": "FUN_bb45"
+        }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "L09",
+          "row": "Lower",
+          "column": 9,
+          "wire": "G/Y",
+          "association": "Function corroborated"
         }
       ]
     },
@@ -458,7 +957,8 @@
           "instruction": "BCLR 0x00f0,0x8",
           "function": "FUN_5857"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 16,
@@ -475,7 +975,7 @@
       ],
       "ram": [],
       "diagnostic": 52,
-      "xt_wire": null,
+      "xt_wire": "Y/B at L10 in the manual drawing (function corroborated)",
       "ecu_connector_cavity": null,
       "evidence_instructions": [
         {
@@ -496,6 +996,15 @@
           "instruction": "BSET 0x00f0,0x10",
           "function": "FUN_bba1"
         }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "L10",
+          "row": "Lower",
+          "column": 10,
+          "wire": "Y/B",
+          "association": "Function corroborated"
+        }
       ]
     },
     {
@@ -511,7 +1020,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 18,
@@ -526,7 +1036,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 19,
@@ -571,7 +1082,8 @@
           "instruction": "BSET 0x00f0,0x80",
           "function": "FUN_a505"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 20,
@@ -590,7 +1102,7 @@
         "0x0896"
       ],
       "diagnostic": 20,
-      "xt_wire": null,
+      "xt_wire": "B/Y at L01 in the manual drawing (candidate association)",
       "ecu_connector_cavity": null,
       "evidence_instructions": [
         {
@@ -611,22 +1123,75 @@
           "instruction": "BRSET 0x896,0x1,0x658e",
           "function": "FUN_650b"
         }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "L01",
+          "row": "Lower",
+          "column": 1,
+          "wire": "B/Y",
+          "association": "Candidate association"
+        }
       ]
     },
     {
       "pin": 21,
       "signal": "PB1",
-      "category": "unresolved",
-      "status": "Unassigned",
-      "role": "Application role not established",
-      "function": "Do not interpret an unassigned pin as unused or unconnected.",
-      "register": null,
-      "evidence": [],
-      "ram": [],
+      "category": "digital",
+      "status": "Candidate",
+      "role": "Starter-request input candidate",
+      "function": "Filtered PB1 is debounced into 0x0880 bit0. Variant 9 treats low as active; other variants reverse the polarity. This state participates in fault-19 qualification and headlight suppression, supporting a starter-request role. L/W is a candidate external association, not a measured board connection.",
+      "register": "PORTB 0x0001 bit1",
+      "evidence": [
+        "0xCBEF",
+        "0xCBF6",
+        "0x8B8D",
+        "0x9DC0"
+      ],
+      "ram": [
+        "0x0896",
+        "0x0880",
+        "0x0B05",
+        "0x0B06"
+      ],
       "diagnostic": null,
-      "xt_wire": null,
+      "xt_wire": "L/W at U01 in the manual drawing (candidate association)",
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [
+        {
+          "address": "cbef",
+          "bytes": "f60d87",
+          "instruction": "LDAB 0xd87",
+          "function": "FUN_cbef"
+        },
+        {
+          "address": "cbf6",
+          "bytes": "1e0896021e",
+          "instruction": "BRSET 0x896,0x2,0xcc19",
+          "function": "FUN_cbef"
+        },
+        {
+          "address": "8b8d",
+          "bytes": "1e0880010d",
+          "instruction": "BRSET 0x880,0x1,0x8b9f",
+          "function": "FUN_8b34"
+        },
+        {
+          "address": "9dc0",
+          "bytes": "1e08800105",
+          "instruction": "BRSET 0x880,0x1,0x9dca",
+          "function": "FUN_99fd"
+        }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "U01",
+          "row": "Upper",
+          "column": 1,
+          "wire": "L/W",
+          "association": "Candidate association"
+        }
+      ]
     },
     {
       "pin": 22,
@@ -641,7 +1206,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 23,
@@ -656,7 +1222,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 24,
@@ -675,7 +1242,7 @@
         "0x0896"
       ],
       "diagnostic": 21,
-      "xt_wire": null,
+      "xt_wire": "L/B at L02 in the manual drawing (function corroborated)",
       "ecu_connector_cavity": null,
       "evidence_instructions": [
         {
@@ -696,6 +1263,15 @@
           "instruction": "BRSET 0x896,0x10,0x65ab",
           "function": "FUN_650b"
         }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "L02",
+          "row": "Lower",
+          "column": 2,
+          "wire": "L/B",
+          "association": "Function corroborated"
+        }
       ]
     },
     {
@@ -711,7 +1287,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 26,
@@ -726,7 +1303,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 27,
@@ -764,7 +1342,8 @@
           "instruction": "BCLR 0x0001,0x80",
           "function": "candidate_unreferenced_cb8b"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 28,
@@ -779,7 +1358,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 29,
@@ -794,7 +1374,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 30,
@@ -809,7 +1390,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 31,
@@ -824,7 +1406,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 32,
@@ -839,7 +1422,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 33,
@@ -854,7 +1438,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 34,
@@ -869,7 +1454,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 35,
@@ -884,7 +1470,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 36,
@@ -899,7 +1486,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 37,
@@ -914,7 +1502,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 38,
@@ -929,7 +1518,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 39,
@@ -981,7 +1571,8 @@
           "instruction": "LDAA 0xe3b",
           "function": "FUN_5728"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 40,
@@ -1033,7 +1624,8 @@
           "instruction": "LDAA 0xe3b",
           "function": "FUN_5728"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 41,
@@ -1048,7 +1640,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 42,
@@ -1063,7 +1656,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 43,
@@ -1078,7 +1672,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 44,
@@ -1093,7 +1688,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 45,
@@ -1124,7 +1720,8 @@
           "instruction": "LDAB 0x0000",
           "function": "FUN_c55b"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 46,
@@ -1155,7 +1752,8 @@
           "instruction": "LDAB 0x0000",
           "function": "FUN_c712"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 47,
@@ -1173,7 +1771,7 @@
       ],
       "ram": [],
       "diagnostic": 50,
-      "xt_wire": null,
+      "xt_wire": "L/R at L08 in the manual drawing (function corroborated)",
       "ecu_connector_cavity": null,
       "evidence_instructions": [
         {
@@ -1200,6 +1798,15 @@
           "instruction": "BCLR 0x0000,0x4",
           "function": "FUN_ac7f"
         }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "L08",
+          "row": "Lower",
+          "column": 8,
+          "wire": "L/R",
+          "association": "Function corroborated"
+        }
       ]
     },
     {
@@ -1215,7 +1822,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 49,
@@ -1253,7 +1861,8 @@
           "instruction": "BCLR 0x0000,0x10",
           "function": "FUN_5fa4"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 50,
@@ -1268,7 +1877,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 51,
@@ -1283,7 +1893,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 52,
@@ -1298,7 +1909,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 53,
@@ -1313,7 +1925,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 54,
@@ -1328,7 +1941,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 55,
@@ -1343,7 +1957,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 56,
@@ -1358,7 +1973,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 57,
@@ -1373,7 +1989,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 58,
@@ -1388,7 +2005,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 59,
@@ -1423,6 +2041,15 @@
           "bytes": "b60ae9",
           "instruction": "LDAA 0xae9",
           "function": "FUN_650b"
+        }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "L06",
+          "row": "Lower",
+          "column": 6,
+          "wire": "Y",
+          "association": "Function corroborated"
         }
       ]
     },
@@ -1466,6 +2093,15 @@
           "instruction": "BRSET 0xca8,0x1,0xead9",
           "function": "candidate_unreferenced_e294"
         }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "L05",
+          "row": "Lower",
+          "column": 5,
+          "wire": "P/W",
+          "association": "Function corroborated"
+        }
       ]
     },
     {
@@ -1500,7 +2136,8 @@
           "instruction": "LDAB 0xd87",
           "function": "FUN_6af6"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 62,
@@ -1541,6 +2178,15 @@
           "instruction": "LDAA 0x4e65",
           "function": "FUN_6fc2"
         }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "L04",
+          "row": "Lower",
+          "column": 4,
+          "wire": "Br/W",
+          "association": "Function corroborated"
+        }
       ]
     },
     {
@@ -1561,7 +2207,7 @@
         "0x0AEC"
       ],
       "diagnostic": 9,
-      "xt_wire": null,
+      "xt_wire": "R/L at L11 in the manual drawing (candidate association)",
       "ecu_connector_cavity": null,
       "evidence_instructions": [
         {
@@ -1575,6 +2221,15 @@
           "bytes": "b60aec",
           "instruction": "LDAA 0xaec",
           "function": "FUN_650b"
+        }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "L11",
+          "row": "Lower",
+          "column": 11,
+          "wire": "R/L",
+          "association": "Candidate association"
         }
       ]
     },
@@ -1608,6 +2263,15 @@
           "bytes": "b608dd",
           "instruction": "LDAA 0x8dd",
           "function": "FUN_650b"
+        }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "U03",
+          "row": "Upper",
+          "column": 3,
+          "wire": "Y/G",
+          "association": "Function corroborated"
         }
       ]
     },
@@ -1651,6 +2315,15 @@
           "instruction": "LDAA 0x4e64",
           "function": "FUN_70a3"
         }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "L03",
+          "row": "Lower",
+          "column": 3,
+          "wire": "G/R",
+          "association": "Function corroborated"
+        }
       ]
     },
     {
@@ -1686,7 +2359,8 @@
           "instruction": "INC 0x8c5",
           "function": "FUN_6772"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 67,
@@ -1701,7 +2375,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 68,
@@ -1716,7 +2391,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 69,
@@ -1732,7 +2408,7 @@
       ],
       "ram": [],
       "diagnostic": null,
-      "xt_wire": null,
+      "xt_wire": "Y/L at U02 in the manual drawing (candidate association)",
       "ecu_connector_cavity": null,
       "evidence_instructions": [
         {
@@ -1746,6 +2422,15 @@
           "bytes": "4f20011a",
           "instruction": "BRCLR 0x0020,0x1,0xcdde",
           "function": "FUN_cdc0"
+        }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "U02",
+          "row": "Upper",
+          "column": 2,
+          "wire": "Y/L",
+          "association": "Candidate association"
         }
       ]
     },
@@ -1763,7 +2448,7 @@
       ],
       "ram": [],
       "diagnostic": null,
-      "xt_wire": null,
+      "xt_wire": "Y/L at U02 in the manual drawing (candidate association)",
       "ecu_connector_cavity": null,
       "evidence_instructions": [
         {
@@ -1777,6 +2462,15 @@
           "bytes": "8626",
           "instruction": "LDAA #0x26",
           "function": "FUN_ccb0"
+        }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "U02",
+          "row": "Upper",
+          "column": 2,
+          "wire": "Y/L",
+          "association": "Candidate association"
         }
       ]
     },
@@ -1809,7 +2503,8 @@
           "instruction": "BSET 0x00f0,0x8",
           "function": "FUN_57b4"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 72,
@@ -1840,7 +2535,8 @@
           "instruction": "BSET 0x00f0,0x8",
           "function": "FUN_57b4"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 73,
@@ -1871,7 +2567,8 @@
           "instruction": "BSET 0x00f0,0x8",
           "function": "FUN_57b4"
         }
-      ]
+      ],
+      "ecu_connector_positions": []
     },
     {
       "pin": 74,
@@ -1886,7 +2583,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 75,
@@ -1901,7 +2599,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 76,
@@ -1916,7 +2615,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 77,
@@ -1931,7 +2631,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 78,
@@ -1946,7 +2647,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 79,
@@ -1961,7 +2663,8 @@
       "diagnostic": null,
       "xt_wire": null,
       "ecu_connector_cavity": null,
-      "evidence_instructions": []
+      "evidence_instructions": [],
+      "ecu_connector_positions": []
     },
     {
       "pin": 80,
@@ -2004,6 +2707,15 @@
           "instruction": "LDD 0x0052",
           "function": "FUN_d871"
         }
+      ],
+      "ecu_connector_positions": [
+        {
+          "position": "U06",
+          "row": "Upper",
+          "column": 6,
+          "wire": "Gy",
+          "association": "Function corroborated"
+        }
       ]
     }
   ],
@@ -2030,7 +2742,11 @@
         354,
         355,
         361,
-        397
+        362,
+        379,
+        397,
+        458,
+        462
       ]
     },
     {

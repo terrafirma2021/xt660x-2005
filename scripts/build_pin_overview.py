@@ -4,6 +4,7 @@ import hashlib
 import html
 import json
 from pathlib import Path
+from ecu_connector import build_connector, connector_svg, write_connector_doc
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'analysis/semantics'
@@ -65,6 +66,9 @@ assign(20,'digital','Corroborated','Sidestand / start-interlock input',
 assign(24,'digital','Corroborated','Neutral input',
        'PB4 is filtered into 0x0896 bit4. For stock variant 9 diagnostic 21 reports that bit; other variants substitute a fixed diagnostic response.',
        'PORTB 0x0001 bit4',(0x8b45,0x6599,0x65a0),(0x896,),21)
+assign(21,'digital','Candidate','Starter-request input candidate',
+       'Filtered PB1 is debounced into 0x0880 bit0. Variant 9 treats low as active; other variants reverse the polarity. This state participates in fault-19 qualification and headlight suppression, supporting a starter-request role. L/W is a candidate external association, not a measured board connection.',
+       'PORTB 0x0001 bit1',(0xcbef,0xcbf6,0x8b8d,0x9dc0),(0x896,0x880,0xb05,0xb06))
 assign(2,'actuator','Corroborated','Ignition-coil driver command',
        'Timer output commands coil dwell and release through the ECU power driver. The MCU output is high during modeled dwell and clears for release; coil-terminal voltage is a different signal.',
        'PT3 / TC3 0x0056',(0xb900,0xef50,0xefde),(0xa82,0xa96,0xaa4),30,'O (orange), coil control at ECU; R/B coil supply')
@@ -130,7 +134,7 @@ for pin in [7,8,9,28,29,30,32,36,37,38,41,42,43,44,78]:
                'Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.')
 
 sources=[dict(id='mcu',title='NXP MC9S12T64 revision 1.1.1',url=MCU,pdf_pages=[60,86,251,253,385]),
-         dict(id='xt',title='Yamaha XT660R/X 2004 service manual',url=XT,pdf_pages=[345,353,354,355,361,397]),
+         dict(id='xt',title='Yamaha XT660R/X 2004 service manual',url=XT,pdf_pages=[345,353,354,355,361,362,379,397,458,462]),
          dict(id='tdm',title='Yamaha TDM900 service manual',url=TDM,pdf_pages=[365,373])]
 comparison=[
     ['TPS, MAP, IAT, coolant, lean angle, vehicle speed, CPS','Listed in XT reference','Also listed in TDM reference','Same function does not establish the same MCU or connector pin.'],
@@ -149,18 +153,22 @@ def build():
     by_pc={int(r['address'],16):r for r in dis}
     for p in pins:
         p['evidence_instructions']=[by_pc[int(a,16)] for a in p['evidence']]
-    report=dict(schema_version=1,firmware_sha256=hashlib.sha256(image).hexdigest(),
+    connector=build_connector(pins,ROOT/'scripts/ecu_connector.py')
+    write_connector_doc(connector,pins,OUT)
+    report=dict(schema_version=2,firmware_sha256=hashlib.sha256(image).hexdigest(),
         generator_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         template_sha256=hashlib.sha256((ROOT/'scripts/pin_overview_template.html').read_bytes()).hexdigest(),
         target='Supplied XT660X 2005 image; variant 9',
         package_assumption='MC9S12T64 80-pin LQFP, top view, conditional on physical chip identification. CPU/register evidence fits this family; chip marking has not been supplied.',
-        connector_policy='MCU package numbers are NOT ECU connector cavity numbers. All cavity numbers remain null; the inspected Yamaha drawings show wire colors but do not number those cavities.',
+        connector_policy='All 26 manual connector positions are inventoried separately using upper/lower drawing coordinates. OEM cavity numbers and view-side convention are not printed; function links are not measured board continuity.',
+        ecu_connector=connector,
         tdm_policy='TDM comparison is by manufacturer-described functions. No TDM binary or board trace is available to prove an MCU pin-for-pin mapping.',
         pins=pins,sources=sources,model_comparison=comparison)
     (OUT/'mcu_pin_overview.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8',newline='\n')
     lines=['# XT660X MCU pin overview and TDM comparison','',
            '**80-pin MC9S12T64 reference, conditional on confirming the chip marking.** The firmware/register map supports this family; actual package identity has not been verified. Pin numbers below refer to the MCU, never the ECU connector.','',
-           '[Interactive overview](MCU_PIN_OVERVIEW.html) | [Machine-readable catalogue](mcu_pin_overview.json) | [Package drawing](mcu_pin_overview.svg)','',
+           '[Interactive overview](MCU_PIN_OVERVIEW.html) | [ECU connector positions](ECU_CONNECTOR.md) | [Machine-readable catalogue](mcu_pin_overview.json) | [Package drawing](mcu_pin_overview.svg)','',
+           'The [ECU connector inventory](ECU_CONNECTOR.md) now accounts for the manual drawing\'s 26 positions, including the 23 wire-labelled positions and three crosses. Fourteen circuits have corroborated MCU function links; four have candidate associations; five identify power/return networks with untraced internal joins. These are function associations through board circuitry, not direct-wire claims.','',
            'The overview covers all 80 package positions. Corroborated means firmware dataflow plus Yamaha diagnostic identity; Decoded means a software role is established; Candidate means a physical role is tentative. Datasheet entries identify package functions only. Unassigned does not mean unused.','',
            '## Sensors and switch inputs','',
            '| MCU pin | Signal | Function | Status | Diagnostic |','|---:|---|---|---|---|']
@@ -183,10 +191,12 @@ def build():
                       'Instruction anchors: '+', '.join('`'+a+'`' for a in p['evidence'])+'.','']
             if p['ram']:lines+=['Useful runtime RAM: '+', '.join('`'+a+'`' for a in p['ram'])+'.','']
             if p['xt_wire']:lines+=['XT manual wire reference: '+p['xt_wire']+'. This is a harness reference, not a measured MCU-to-connector continuity result.','']
+            if p['ecu_connector_positions']:
+                lines+=['ECU drawing position: '+ '; '.join(f"**{s['position']}**, {s['row'].lower()} row position {s['column']}, wire {s['wire']} ({s['association'].lower()})" for s in p['ecu_connector_positions'])+'. See [connector orientation and paths](ECU_CONNECTOR.md).','']
     lines+=['## Complete package inventory','', '| MCU pin | Package signal | Recorded role | Status |','|---:|---|---|---|']
     lines += [f"| {p['pin']} | {p['signal']} | {p['role']} | {p['status']} |" for p in pins]
     lines+=['','## What is still needed for a board pinout','',
-            'A visible chip marking establishes whether this package reference applies. Board continuity tracing then connects MCU pads through conditioning/driver ICs to numbered ECU cavities. A TDM binary/board is needed for its own assignments. The manual connector pictograms are not assigned invented cavity numbers.','',
+            'The manual supports the [wire-position inventory](ECU_CONNECTOR.md), which is now recorded. A matching connector face convention and OEM numbering are still needed to translate those drawing coordinates into numbered physical cavities. Chip marking and board tracing establish the exact package and internal conditioning/driver routes. A TDM binary/board is needed for its own assignments.','',
             '## Sources and reproduction','']
     lines += [f"- [{s['title']}]({s['url']}), PDF pages "+', '.join(map(str,s['pdf_pages']))+'.' for s in sources]
     lines+=['- Supplied image, instruction bytes and [hardware/diagnostic derivation](IO_AND_DIAGNOSTICS.md).',
@@ -222,7 +232,7 @@ def render(report):
     svg+=['<text x="40" y="802" font-family="sans-serif" font-size="14" fill="#58697b">Dot marks pin-1 corner. Trace external conditioning and drivers before assigning connector wiring.</text>','</svg>']
     svgt='\n'.join(svg);(OUT/'mcu_pin_overview.svg').write_text(svgt,encoding='utf-8',newline='\n')
     template=(ROOT/'scripts/pin_overview_template.html').read_text(encoding='utf-8')
-    page=template.replace('@@SVG@@',svgt).replace('@@DATA@@',json.dumps(report).replace('</','<\\/'))
+    page=template.replace('@@SVG@@',svgt).replace('@@CONNECTOR@@',connector_svg(report['ecu_connector'])).replace('@@DATA@@',json.dumps(report).replace('</','<\\/'))
     (OUT/'MCU_PIN_OVERVIEW.html').write_text(page,encoding='utf-8',newline='\n')
 
 if __name__=='__main__':build()

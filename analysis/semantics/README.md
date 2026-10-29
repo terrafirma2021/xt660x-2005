@@ -8,7 +8,8 @@ The analysis applies only to the exact [supplied image](../../firmware/XT660X%20
 
 | Area | Breakdown | Established | Still missing |
 |---|---|---|---|
-| MCU pin reference | [80-pin overview and XT/TDM comparison](MCU_PIN_OVERVIEW.md), [interactive view](MCU_PIN_OVERVIEW.html) | Complete conditional package inventory; 34 instruction-linked entries; sensor and actuator purposes | Physical chip identification, ECU cavity numbers, TDM board-specific routing |
+| MCU pin reference | [80-pin overview and XT/TDM comparison](MCU_PIN_OVERVIEW.md), [interactive view](MCU_PIN_OVERVIEW.html) | Complete conditional package inventory; 35 instruction-linked entries; sensor and actuator purposes | Physical chip identification, ECU cavity numbers, TDM board-specific routing |
+| ECU connector | [26 drawing positions and MCU links](ECU_CONNECTOR.md) | 23 wire-labelled positions, three crosses; 14 corroborated function links, four candidates and five power/return networks | OEM numbers, view-side convention, exact internal conditioning/driver routes |
 | Inputs / outputs | [Hardware and diagnostic cross-references](IO_AND_DIAGNOSTICS.md) | Eight ADC dispatch slots; six logical outputs; several physical identities corroborated by diagnostic numbers | ECU connector pin numbers, board routing, exact ECU identity |
 | Coolant / fan | [Temperature conversion, faults and fan decisions](COOLANT_AND_FAN.md) | Conversion bytes, full normal/fault/override decision, raw threshold boundaries, primary consumers | Verified Celsius encoding and physical fan test |
 | Engine speed / cuts | [Speed calculation and output suppression](RPM_AND_CUTS.md) | Reciprocal calculation, three period-limit pairs, separate road-speed cut flags, conditional injector limits | Confirmed timer timebase / crank geometry, complete interlock meanings |
@@ -35,7 +36,7 @@ These have different levels of completion. Coolant/fan decisions and the princip
 ## Evidence files
 
 - [Map names and stable references](../MAP_NAMES.md): the reviewed name, existing ID, address and naming evidence for all 71 maps. Names describe functions; IDs remain stable for code and cross-references.
-- [mcu_pin_overview.json](mcu_pin_overview.json): all 80 package positions, 97 instruction anchors, diagnostic identities, harness references and explicit uncertainty; [package drawing](mcu_pin_overview.svg).
+- [mcu_pin_overview.json](mcu_pin_overview.json): all 80 package positions, 101 instruction anchors, 26 connector positions, diagnostic identities, harness references and explicit uncertainty; [package drawing](mcu_pin_overview.svg).
 - [catalog.json](catalog.json): 28 calibration records with exact storage, original bytes, role, references, and explicit missing conversion fields; eight ADC channels and six logical outputs.
 - [control_validation.json](control_validation.json): 212,090 isolated control test cases against the compiled instruction translation.
 - [extended_map_validation.json](extended_map_validation.json): 150,614 additional cases, including the delivered checksum correction.

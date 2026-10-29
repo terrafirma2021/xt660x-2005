@@ -4,6 +4,8 @@ For serial commands, menu navigation, reply packing and fault numbers, see [Dash
 
 The [MCU pin overview](MCU_PIN_OVERVIEW.md) adds the conditional 80-pin package map, individual sensor purposes, instruction anchors, harness references and XT/TDM comparison. Its [interactive version](MCU_PIN_OVERVIEW.html) supports searching and selecting pins. Package pin numbers remain conditional on chip identification and are not ECU connector cavity numbers.
 
+The [ECU connector inventory](ECU_CONNECTOR.md) now records the manual's complete 26-position wire layout and links the circuits to MCU functions where supported. Earlier blank cavity fields omitted these recoverable drawing positions. OEM numbering and internal board continuity remain separate, unresolved fields.
+
 ## Why the diagnostic table matters
 
 At `0x5FC8`, a byte count from `0x4EF5` controls a copy from `0x4EF6` into RAM `0x0D3D`. The count is 21. Those bytes are diagnostic selectors. The display routine at `0x650B` compares the selected number at `0x0BDD` with the copied entries and returns the corresponding measurement. The actuator dispatcher around `0xAF92` selects output-test routines using the same table.
