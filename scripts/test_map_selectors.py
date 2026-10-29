@@ -190,6 +190,10 @@ assert get(s.ram,0xb82)==65535
 checks['sequence_counter_saturates'] = 1
 
 report = dict(result='passed', cases=sum(checks.values()), checks=checks,
+    evidence_scope=dict(instruction_behavior_cases=sum(checks.values())-3000,
+        synthetic_hypothesis_iterations=3000, hardware_measurements=0,
+        sensor_pulses_per_output_shaft_revolution='unknown',
+        hypothesis_note='20 pulses was selected for a numerical fit, not independently sourced. The synthetic gear traces do not establish sensor pulse count or actual gear numbering.'),
     conditional_gear_traces=gear_traces,
     stock_ratio_thresholds=thresholds, synthetic_sequence_trace=trace,
     firmware_sha256=hashlib.sha256(image).hexdigest(),

@@ -18,6 +18,13 @@
     "sequence_initial_ratio_code_gate_all_bytes": 256,
     "sequence_counter_saturates": 1
   },
+  "evidence_scope": {
+    "instruction_behavior_cases": 9523,
+    "synthetic_hypothesis_iterations": 3000,
+    "hardware_measurements": 0,
+    "sensor_pulses_per_output_shaft_revolution": "unknown",
+    "hypothesis_note": "20 pulses was selected for a numerical fit, not independently sourced. The synthetic gear traces do not establish sensor pulse count or actual gear numbering."
+  },
   "conditional_gear_traces": [
     {
       "assumed_gear": 1,
@@ -180,7 +187,7 @@
     }
   ],
   "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
-  "test_script_sha256": "4868d30edd26ba4416830b252f9ebe183df98da8212c8ee112da9f42d5292e55",
+  "test_script_sha256": "3a2d6f6e175ab2869b28954df53abe381b181a88bd0beac2064f52da57d8e524",
   "compiled_library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
   "limitations": "Instruction-level fixtures, not a complete boot or hardware simulation. Tests establish code paths and boundaries, not gear-number calibration, neutral circuit polarity, wall-clock periods or mechanical TDC. The successful sequence uses changed calibration bytes only in emulated memory; it is not stock behavior."
 }

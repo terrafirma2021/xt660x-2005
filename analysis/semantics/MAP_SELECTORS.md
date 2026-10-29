@@ -29,19 +29,23 @@ An instruction pair at `0xE294–0xE296` can prepare code 6/mask `0x40`, but no 
 
 The XT manual lists five gears (printed page 2-9 / PDF page 35). Code 0 also occurs with no road pulses; it is not synonymous with neutral. The separate neutral input has priority in the consumers below.
 
-### Conditional gear-number reconstruction
+### Evidence audit: gear interpretation and unknown pulse count
 
-The manual's primary reduction is `75/36`; gear ratios are `30/12`, `26/16`, `23/20`, `20/22` and `20/26`. **Assuming 20 detected speed pulses per transmission output-shaft revolution**, the predicted pulses per crank revolution are `20 / (primary reduction × gear ratio)`. Multiplying by the firmware's stock factor 20 gives the ideal classifier input below. This pulse count is a hypothesis supported by the fit, not a measured or manual-confirmed sensor property.
+The earlier version chose **20 detected speed pulses per output-shaft revolution** as a numerical-fit hypothesis. That number was not read from a sensor specification, established by a board/gear inspection, or measured on this motorcycle. Executing the firmware with pulse counts generated from that assumption demonstrated consistency only. It did not independently validate the assumption or identify the gears. The earlier first-gear/higher-gear conclusion from that fit is withdrawn.
 
-| Assumed gear | Predicted pulses/crank revolution | Ideal scaled input | Actual steady filtered range in instruction simulation | Resulting code |
-|---|---|---|---|---|
-| 1 | 3.8400 | 76.8000 | 76–77 | 1 |
-| 2 | 5.9077 | 118.1538 | 118–119 | 2 |
-| 3 | 8.3478 | 166.9565 | 166–168 | 3 |
-| 4 | 10.5600 | 211.2000 | 211–212 | 4 |
-| 5 | 12.4800 | 249.6000 | 249–250 | 5 |
+| Statement | Evidence | Status |
+|---|---|---|
+| Primary reduction `75/36`; gear ratios `30/12`, `26/16`, `23/20`, `20/22`, `20/26` | Yamaha XT660R/X service manual, printed page 2-9 / PDF page 35 | Documented mechanical specifications |
+| Pulse-count multiplier is decimal 20 | ROM `0x4BD7 = 0x14`, copied to `0x0D7F`; multiplication at `0xE132–0xE138` | Direct firmware evidence; **not** a sensor pulse-count specification |
+| Classifier thresholds are 39, 96, 141, 189, 230 | ROM `0x4BD9–0x4BDD`; comparisons at `0xE254–0xE286` | Direct firmware evidence |
+| Fault 42 forces output code 5 | `0xE34D–0xE361`; covered by all classifier-input/fault-override fixtures | Direct firmware evidence |
+| Fault 42 substitutes top gear | Yamaha manual, printed page 7-5 / PDF page 348: “Fixes the gear to the top gear.” | Manufacturer-described fail-safe behavior |
+| Code 5 represents the top-gear substitute | Correlation of the preceding two independent observations; XT has five gears | Corroborated interpretation, without assuming a pulse count |
+| Sensor generates 20 detected pulses per output-shaft revolution | No independent source or measurement established | **Unverified; not used to assign physical map names** |
 
-The test supplies integer cumulative pulse counts at alternating crank phases 0/12 and executes the full snapshot, both filters and classifier for 600 revolutions per ratio. Every one of the final 500 outputs per ratio matches the assumed gear. The first 100 are settling time. The stock boundaries also lie close to the midpoints between the predicted gear inputs. This supports interpreting the first transient family's stock split as **first-gear/low-ratio versus higher gears**, while ignition's split at 5 includes all five normal gears. Display names retain exact ratio-code semantics until the pulse count is independently established; no sixth gear is inferred.
+The actual detected pulse count, sensing target and shaft relationship still need independent evidence. The manual's fault-42 checks (printed page 7-18 / PDF page 361) describe the speed-detection gear and sensor voltage checks; those checks do not specify 20 pulses per revolution. Neither the MCU model nor the software multiplier supplies that missing hardware fact.
+
+The test script and report retain the former 20-pulse experiment for reproducibility, explicitly as a **synthetic hypothesis test**. Its 3,000 simulated revolutions are not motorcycle measurements or independent gear validation. The map names continue to use the directly tested ratio-code branches. No numbered-gear assignment for codes 1–4 is claimed from that experiment.
 
 ## Neutral input and map branches
 
@@ -86,8 +90,8 @@ The map's accurate name is therefore **Sequence-selected alternate load fuel qua
 
 ## Validation and remaining trace work
 
-The report contains 12,523 instruction-execution cases: every byte of the classification input, every selector code for each tested variant/neutral/sign combination, both normalization-hold choices, fault override, neutral filtering, pulse snapshot rollover/saturation, 3,000 revolutions through the conditional gear model and full filters, stock sequence boundaries and timeout resets, and a complete synthetic four-stage sequence with latch/reset behavior. Tests stop at documented block boundaries; they are not a full boot or hardware simulation.
+The report contains 12,523 instruction-execution cases: every byte of the classification input, every selector code for each tested variant/neutral/sign combination, both normalization-hold choices, fault override, neutral filtering, pulse snapshot rollover/saturation, 3,000 synthetic revolutions through an unverified 20-pulse hypothesis and full filters, stock sequence boundaries and timeout resets, and a complete synthetic four-stage sequence with latch/reset behavior. Of these cases, 9,523 check instruction behavior and 3,000 exercise the explicitly assumed pulse model. This total is not a count of physical facts validated. Tests stop at documented block boundaries; they are not a full boot or hardware simulation.
 
 This resolves selector names for 25 map entries. Remaining software work includes transient-family trigger meanings, other ignition correction/state gates, indirect calibration references and protocol-controlled state. Actual gear numbering, mechanical TDC, board-conditioned sensor scales and absent boot bytes remain distinct evidence gaps. A known instruction set makes the software trace possible; it cannot supply bytes missing from the dump or external component geometry.
 
-Sources: [Yamaha XT660R/X service manual](https://scootertuub.nl/motoren/Yamaha/Yamaha%20XT%20660%20R%20X%202004%20Service%20Manual%20%20.pdf), printed pages 2-9, 7-11 and 8-5; [unchanged disassembly](../disassembly.tsv); [complete instruction translation](../full/README.md).
+Sources: [Yamaha XT660R/X service manual](https://scootertuub.nl/motoren/Yamaha/Yamaha%20XT%20660%20R%20X%202004%20Service%20Manual%20%20.pdf), printed pages 2-9, 7-5, 7-11, 7-18 and 8-5; [unchanged disassembly](../disassembly.tsv); [complete instruction translation](../full/README.md).
