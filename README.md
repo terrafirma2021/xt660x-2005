@@ -24,6 +24,8 @@ The [temperature profile](analysis/semantics/TEMPERATURE_PROFILE.md) supplies co
 
 ## Focused control analysis
 
+The [CPS/reference trace](analysis/semantics/CRANK_REFERENCE.md) now follows capture synchronization through normal spark dispatch. Synthetic crank patterns produce one firing transition per pattern on both halves of the longer cycle counter, supporting wasted-spark operation. The code also aligns cycle phase from pressure changes. [561 new checks](analysis/semantics/crank_reference_validation.json) cover these paths; the physical gap-edge-to-TDC angle is still unconfirmed.
+
 The [area guides](analysis/semantics/README.md) document coolant conversion, fan hysteresis and sensor-fault handling; separate spark/injector period limits and road-speed gates; six major map selections; and remaining work for a tuning definition. The [machine-readable catalogue](analysis/semantics/catalog.json) records 28 raw calibrations, eight ADC channels and six logical outputs. [212,090 focused control cases](analysis/semantics/control_validation.json) exercise the recovered behavior, in addition to instruction-level checks.
 
 A branch-condition defect found during this pass materially affected earlier generated C. All generated code and the Ghidra archive have been regenerated; see [review notes](analysis/semantics/REVIEW_NOTES.md). Original firmware bytes are unchanged.

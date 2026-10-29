@@ -1,5 +1,7 @@
 # Spark event and coil-charge scheduling
 
+The subsequent [CPS/reference pass](CRANK_REFERENCE.md) links synchronization to normal ignition dispatch: one firing transition per repeating pattern while the longer cycle counter alternates halves, supporting wasted spark. Event 6 is six ordinary pitches after the gap-ending edge; its physical TDC offset remains to be established.
+
 The ordinary spark planner and its normal compare dispatch are now modeled independently in [spark_models.py](../../scripts/spark_models.py) and compared with the original instruction translation in [74,832 cases](spark_schedule_validation.json). This establishes the event-relative time equation, including planner overflow behavior and minimum-charge intervention. Physical TDC phase remains separate.
 
 ## Firing-time equation

@@ -56,4 +56,4 @@ The normal scheduler does not give all channels equal priority. Over a 16-step c
 
 The MCU names come from the [NXP register definitions](README.md#sources). Firmware writes establish the logical state. They do not establish connector cavity numbers, driver inversion, external voltage levels, or whether unused channel circuitry is populated. Those fields intentionally remain null in `catalog.json`.
 
-Timer channel 1 is the crank-event candidate (`0xD871`, capture `0x0052`); timer channel 2 counts the signal independently tied to vehicle-speed diagnostic 07 (`0xF3F3 → 0x0AB0 → 0xCDC0 → 0x0AE3`). Confirm crank tooth geometry and both external routes with matching ECU/harness evidence.
+Timer channel 1 is the recovered crank-event path (`0xD871`, capture `0x0052`): the [CPS/reference pass](CRANK_REFERENCE.md) executes gap synchronization, phase counters and normal spark dispatch. Timer channel 2 counts the signal independently tied to vehicle-speed diagnostic 07 (`0xF3F3 → 0x0AB0 → 0xCDC0 → 0x0AE3`). Confirm physical rotor-to-TDC geometry and both external routes with matching ECU/harness evidence.

@@ -53,6 +53,10 @@ for report_name,test_name,model_name in [
     assert report['model_script_sha256']==digest(ROOT/'scripts'/model_name)
     assert report['compiled_library_sha256']==full['compiled_library_sha256']
 temperature=json.loads((OUT/'temperature_profile.json').read_text())
+crank=json.loads((OUT/'crank_reference_validation.json').read_text())
+assert crank['result']=='passed' and crank['firmware_sha256']==catalog['firmware_sha256']
+assert crank['test_script_sha256']==digest(ROOT/'scripts/test_crank_reference.py')
+assert crank['compiled_library_sha256']==full['compiled_library_sha256']
 assert temperature['firmware_sha256']==catalog['firmware_sha256']
 assert temperature['generator_sha256']==digest(ROOT/'scripts/sensor_profiles.py')
 physical=json.loads((OUT/'physical_units.json').read_text())

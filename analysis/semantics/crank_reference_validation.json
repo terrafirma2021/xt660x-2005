@@ -1,0 +1,629 @@
+{
+  "result": "passed",
+  "cases": 561,
+  "checks": {
+    "capture_edges_acquire_sync_normalize_gap_and_dispatch_spark": 396,
+    "uniform_capture_intervals_do_not_acquire_gap_sync": 132,
+    "high_CPS_input_does_not_advance_phase": 11,
+    "pressure_phase_alignment_leaves_crank_spark_counter_unchanged": 22
+  },
+  "traces": [
+    {
+      "pitch_ticks": 800,
+      "normal_intervals_per_pattern": 10,
+      "gap_interval_ticks": 1600,
+      "pattern_period_ticks": 9600,
+      "cycle_phase_at_pattern6": [
+        18,
+        6,
+        18,
+        6,
+        18,
+        6,
+        18,
+        6,
+        18,
+        6
+      ],
+      "steady_output_edges": [
+        {
+          "ticks": 32600,
+          "level": 1
+        },
+        {
+          "ticks": 33000,
+          "level": 0
+        },
+        {
+          "ticks": 42200,
+          "level": 1
+        },
+        {
+          "ticks": 42600,
+          "level": 0
+        },
+        {
+          "ticks": 51800,
+          "level": 1
+        },
+        {
+          "ticks": 52200,
+          "level": 0
+        },
+        {
+          "ticks": 61400,
+          "level": 1
+        },
+        {
+          "ticks": 61800,
+          "level": 0
+        },
+        {
+          "ticks": 71000,
+          "level": 1
+        },
+        {
+          "ticks": 71400,
+          "level": 0
+        },
+        {
+          "ticks": 80600,
+          "level": 1
+        },
+        {
+          "ticks": 81000,
+          "level": 0
+        },
+        {
+          "ticks": 90200,
+          "level": 1
+        },
+        {
+          "ticks": 90600,
+          "level": 0
+        },
+        {
+          "ticks": 99800,
+          "level": 1
+        },
+        {
+          "ticks": 100200,
+          "level": 0
+        },
+        {
+          "ticks": 109400,
+          "level": 1
+        },
+        {
+          "ticks": 109800,
+          "level": 0
+        }
+      ],
+      "phases": [
+        {
+          "edge": 22,
+          "pattern_phase": 1,
+          "cycle_phase": 13
+        },
+        {
+          "edge": 23,
+          "pattern_phase": 2,
+          "cycle_phase": 14
+        },
+        {
+          "edge": 24,
+          "pattern_phase": 3,
+          "cycle_phase": 15
+        },
+        {
+          "edge": 25,
+          "pattern_phase": 4,
+          "cycle_phase": 16
+        },
+        {
+          "edge": 26,
+          "pattern_phase": 5,
+          "cycle_phase": 17
+        },
+        {
+          "edge": 27,
+          "pattern_phase": 6,
+          "cycle_phase": 18
+        },
+        {
+          "edge": 28,
+          "pattern_phase": 7,
+          "cycle_phase": 19
+        },
+        {
+          "edge": 29,
+          "pattern_phase": 8,
+          "cycle_phase": 20
+        },
+        {
+          "edge": 30,
+          "pattern_phase": 9,
+          "cycle_phase": 21
+        },
+        {
+          "edge": 31,
+          "pattern_phase": 10,
+          "cycle_phase": 22
+        },
+        {
+          "edge": 32,
+          "pattern_phase": 0,
+          "cycle_phase": 0
+        },
+        {
+          "edge": 33,
+          "pattern_phase": 1,
+          "cycle_phase": 1
+        },
+        {
+          "edge": 34,
+          "pattern_phase": 2,
+          "cycle_phase": 2
+        },
+        {
+          "edge": 35,
+          "pattern_phase": 3,
+          "cycle_phase": 3
+        },
+        {
+          "edge": 36,
+          "pattern_phase": 4,
+          "cycle_phase": 4
+        },
+        {
+          "edge": 37,
+          "pattern_phase": 5,
+          "cycle_phase": 5
+        },
+        {
+          "edge": 38,
+          "pattern_phase": 6,
+          "cycle_phase": 6
+        },
+        {
+          "edge": 39,
+          "pattern_phase": 7,
+          "cycle_phase": 7
+        },
+        {
+          "edge": 40,
+          "pattern_phase": 8,
+          "cycle_phase": 8
+        },
+        {
+          "edge": 41,
+          "pattern_phase": 9,
+          "cycle_phase": 9
+        },
+        {
+          "edge": 42,
+          "pattern_phase": 10,
+          "cycle_phase": 10
+        },
+        {
+          "edge": 43,
+          "pattern_phase": 0,
+          "cycle_phase": 12
+        }
+      ]
+    },
+    {
+      "pitch_ticks": 1600,
+      "normal_intervals_per_pattern": 10,
+      "gap_interval_ticks": 3200,
+      "pattern_period_ticks": 19200,
+      "cycle_phase_at_pattern6": [
+        18,
+        6,
+        18,
+        6,
+        18,
+        6,
+        18,
+        6,
+        18,
+        6
+      ],
+      "steady_output_edges": [
+        {
+          "ticks": 65200,
+          "level": 1
+        },
+        {
+          "ticks": 66000,
+          "level": 0
+        },
+        {
+          "ticks": 84400,
+          "level": 1
+        },
+        {
+          "ticks": 85200,
+          "level": 0
+        },
+        {
+          "ticks": 103600,
+          "level": 1
+        },
+        {
+          "ticks": 104400,
+          "level": 0
+        },
+        {
+          "ticks": 122800,
+          "level": 1
+        },
+        {
+          "ticks": 123600,
+          "level": 0
+        },
+        {
+          "ticks": 142000,
+          "level": 1
+        },
+        {
+          "ticks": 142800,
+          "level": 0
+        },
+        {
+          "ticks": 161200,
+          "level": 1
+        },
+        {
+          "ticks": 162000,
+          "level": 0
+        },
+        {
+          "ticks": 180400,
+          "level": 1
+        },
+        {
+          "ticks": 181200,
+          "level": 0
+        },
+        {
+          "ticks": 199600,
+          "level": 1
+        },
+        {
+          "ticks": 200400,
+          "level": 0
+        },
+        {
+          "ticks": 218800,
+          "level": 1
+        },
+        {
+          "ticks": 219600,
+          "level": 0
+        }
+      ],
+      "phases": [
+        {
+          "edge": 22,
+          "pattern_phase": 1,
+          "cycle_phase": 13
+        },
+        {
+          "edge": 23,
+          "pattern_phase": 2,
+          "cycle_phase": 14
+        },
+        {
+          "edge": 24,
+          "pattern_phase": 3,
+          "cycle_phase": 15
+        },
+        {
+          "edge": 25,
+          "pattern_phase": 4,
+          "cycle_phase": 16
+        },
+        {
+          "edge": 26,
+          "pattern_phase": 5,
+          "cycle_phase": 17
+        },
+        {
+          "edge": 27,
+          "pattern_phase": 6,
+          "cycle_phase": 18
+        },
+        {
+          "edge": 28,
+          "pattern_phase": 7,
+          "cycle_phase": 19
+        },
+        {
+          "edge": 29,
+          "pattern_phase": 8,
+          "cycle_phase": 20
+        },
+        {
+          "edge": 30,
+          "pattern_phase": 9,
+          "cycle_phase": 21
+        },
+        {
+          "edge": 31,
+          "pattern_phase": 10,
+          "cycle_phase": 22
+        },
+        {
+          "edge": 32,
+          "pattern_phase": 0,
+          "cycle_phase": 0
+        },
+        {
+          "edge": 33,
+          "pattern_phase": 1,
+          "cycle_phase": 1
+        },
+        {
+          "edge": 34,
+          "pattern_phase": 2,
+          "cycle_phase": 2
+        },
+        {
+          "edge": 35,
+          "pattern_phase": 3,
+          "cycle_phase": 3
+        },
+        {
+          "edge": 36,
+          "pattern_phase": 4,
+          "cycle_phase": 4
+        },
+        {
+          "edge": 37,
+          "pattern_phase": 5,
+          "cycle_phase": 5
+        },
+        {
+          "edge": 38,
+          "pattern_phase": 6,
+          "cycle_phase": 6
+        },
+        {
+          "edge": 39,
+          "pattern_phase": 7,
+          "cycle_phase": 7
+        },
+        {
+          "edge": 40,
+          "pattern_phase": 8,
+          "cycle_phase": 8
+        },
+        {
+          "edge": 41,
+          "pattern_phase": 9,
+          "cycle_phase": 9
+        },
+        {
+          "edge": 42,
+          "pattern_phase": 10,
+          "cycle_phase": 10
+        },
+        {
+          "edge": 43,
+          "pattern_phase": 0,
+          "cycle_phase": 12
+        }
+      ]
+    },
+    {
+      "pitch_ticks": 2400,
+      "normal_intervals_per_pattern": 10,
+      "gap_interval_ticks": 4800,
+      "pattern_period_ticks": 28800,
+      "cycle_phase_at_pattern6": [
+        18,
+        6,
+        18,
+        6,
+        18,
+        6,
+        18,
+        6,
+        18,
+        6
+      ],
+      "steady_output_edges": [
+        {
+          "ticks": 97800,
+          "level": 1
+        },
+        {
+          "ticks": 99000,
+          "level": 0
+        },
+        {
+          "ticks": 126600,
+          "level": 1
+        },
+        {
+          "ticks": 127800,
+          "level": 0
+        },
+        {
+          "ticks": 155400,
+          "level": 1
+        },
+        {
+          "ticks": 156600,
+          "level": 0
+        },
+        {
+          "ticks": 184200,
+          "level": 1
+        },
+        {
+          "ticks": 185400,
+          "level": 0
+        },
+        {
+          "ticks": 213000,
+          "level": 1
+        },
+        {
+          "ticks": 214200,
+          "level": 0
+        },
+        {
+          "ticks": 241800,
+          "level": 1
+        },
+        {
+          "ticks": 243000,
+          "level": 0
+        },
+        {
+          "ticks": 270600,
+          "level": 1
+        },
+        {
+          "ticks": 271800,
+          "level": 0
+        },
+        {
+          "ticks": 299400,
+          "level": 1
+        },
+        {
+          "ticks": 300600,
+          "level": 0
+        },
+        {
+          "ticks": 328200,
+          "level": 1
+        },
+        {
+          "ticks": 329400,
+          "level": 0
+        }
+      ],
+      "phases": [
+        {
+          "edge": 22,
+          "pattern_phase": 1,
+          "cycle_phase": 13
+        },
+        {
+          "edge": 23,
+          "pattern_phase": 2,
+          "cycle_phase": 14
+        },
+        {
+          "edge": 24,
+          "pattern_phase": 3,
+          "cycle_phase": 15
+        },
+        {
+          "edge": 25,
+          "pattern_phase": 4,
+          "cycle_phase": 16
+        },
+        {
+          "edge": 26,
+          "pattern_phase": 5,
+          "cycle_phase": 17
+        },
+        {
+          "edge": 27,
+          "pattern_phase": 6,
+          "cycle_phase": 18
+        },
+        {
+          "edge": 28,
+          "pattern_phase": 7,
+          "cycle_phase": 19
+        },
+        {
+          "edge": 29,
+          "pattern_phase": 8,
+          "cycle_phase": 20
+        },
+        {
+          "edge": 30,
+          "pattern_phase": 9,
+          "cycle_phase": 21
+        },
+        {
+          "edge": 31,
+          "pattern_phase": 10,
+          "cycle_phase": 22
+        },
+        {
+          "edge": 32,
+          "pattern_phase": 0,
+          "cycle_phase": 0
+        },
+        {
+          "edge": 33,
+          "pattern_phase": 1,
+          "cycle_phase": 1
+        },
+        {
+          "edge": 34,
+          "pattern_phase": 2,
+          "cycle_phase": 2
+        },
+        {
+          "edge": 35,
+          "pattern_phase": 3,
+          "cycle_phase": 3
+        },
+        {
+          "edge": 36,
+          "pattern_phase": 4,
+          "cycle_phase": 4
+        },
+        {
+          "edge": 37,
+          "pattern_phase": 5,
+          "cycle_phase": 5
+        },
+        {
+          "edge": 38,
+          "pattern_phase": 6,
+          "cycle_phase": 6
+        },
+        {
+          "edge": 39,
+          "pattern_phase": 7,
+          "cycle_phase": 7
+        },
+        {
+          "edge": 40,
+          "pattern_phase": 8,
+          "cycle_phase": 8
+        },
+        {
+          "edge": 41,
+          "pattern_phase": 9,
+          "cycle_phase": 9
+        },
+        {
+          "edge": 42,
+          "pattern_phase": 10,
+          "cycle_phase": 10
+        },
+        {
+          "edge": 43,
+          "pattern_phase": 0,
+          "cycle_phase": 12
+        }
+      ]
+    }
+  ],
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "test_script_sha256": "89e7feaaa61fcf257f6b2ef0161df3317d619a5b4282a0743581da51caf78ddc",
+  "compiled_library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
+  "conclusion": "Synthetic ten-short/one-double capture pattern synchronizes. Normal spark produces one high-to-low edge per pattern while the longer phase alternates 6/18. Under one pattern per crank revolution, this is wasted spark.",
+  "limitations": "Synthetic CPS input, manually emulated ECT output and ISR stopped after spark dispatch. Normal gates, selected periods, fixed final spark/dwell inputs. Does not establish rotor-to-TDC angle, board polarity, actual hardware tooth count or every special mode."
+}
