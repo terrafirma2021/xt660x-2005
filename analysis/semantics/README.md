@@ -6,6 +6,8 @@ The analysis applies only to the exact [supplied image](../../firmware/XT660X%20
 
 ## Read by area
 
+Start with the [verification ledger](VERIFICATION_LEDGER.md) for checked claims and remaining evidence requirements across all 71 maps, 80 MCU positions and 26 connector positions. It includes the code-to-register-to-package review for every firmware-linked pin. Passing software tests does not sign off physical units or wiring.
+
 | Area | Breakdown | Established | Still missing |
 |---|---|---|---|
 | MCU pin reference | [80-pin overview and XT/TDM comparison](MCU_PIN_OVERVIEW.md), [interactive view](MCU_PIN_OVERVIEW.html) | Complete conditional package inventory; 35 instruction-linked entries; sensor and actuator purposes | Physical chip identification, ECU cavity numbers, TDM board-specific routing |

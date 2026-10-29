@@ -1,0 +1,4247 @@
+{
+  "schema_version": 1,
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "overall_status": "Incomplete: physical interpretation and hardware verification remain open",
+  "policy": "Verified is final for a stated claim, image and evidence scope. Passing software checks does not promote physical claims. Reopen affected claims when evidence changes.",
+  "checks_run": [
+    {
+      "script": "scripts/verify_analysis.py",
+      "sha256": "543331f838c24757e025e19d8fcf1a181a199b414962587028d62dd726af9548",
+      "result": "passed"
+    },
+    {
+      "script": "scripts/verify_semantics.py",
+      "sha256": "14ce19e43e99d24914afaa2ce6a3c4eac992928920edfbc15bbc1a44d0364789",
+      "result": "passed"
+    },
+    {
+      "script": "scripts/verify_pin_overview.py",
+      "sha256": "a64916bfdd7869a9917f34d7f40358a3a26948fed98a005769cbb73793a9f27c",
+      "result": "passed"
+    },
+    {
+      "script": "scripts/verify_map_names.py",
+      "sha256": "abe5254267294160a509c1bd71cd038863990031ce69c3bebc473d53a7e2cdff",
+      "result": "passed"
+    }
+  ],
+  "extraction": {
+    "original_sha256_verified": true,
+    "instruction_count": 15942,
+    "instruction_bytes": 42849,
+    "map_extracts_verified": 71,
+    "axis_extracts_verified": 32,
+    "decoded_calibration_cell_bytes": 12325,
+    "functions_decompiled": 225,
+    "functions_failed": 0,
+    "unavailable_targets": [
+      "f8a0"
+    ],
+    "limitations": "Integrity checks validate extraction, not physical map meaning or decompiler semantics."
+  },
+  "package_source_review": {
+    "schema_version": 1,
+    "source_url": "https://www.nxp.com/docs/en/data-sheet/9S12T64AF16V1.pdf",
+    "source_sha256": "a63f2fa9d946528a5f1f793901c719899c77e43dbba46e96050767475ae294f0",
+    "source_pdf_page": 60,
+    "figure": 11,
+    "review_date": "2026-10-29",
+    "review_method": "Visual comparison of all 80 numbered positions with Figure 11. This records a manual source review; automated checks detect changes to the reviewed transcription.",
+    "scope": "Primary package signal and displayed alternate functions. PA address/data multiplexing and active-low typography are abbreviated in the viewer. This does not identify the physical MCU fitted to the supplied ECU.",
+    "reviewed_signals": {
+      "1": "PT2/IOC2",
+      "2": "PT3/IOC3",
+      "3": "PT4/IOC4",
+      "4": "PT5/IOC5",
+      "5": "PT6/IOC6",
+      "6": "PT7/IOC7",
+      "7": "BKGD/MODC/TAGHI/SI",
+      "8": "SCKBDM/SPIMODE",
+      "9": "SO",
+      "10": "VDD1",
+      "11": "VSS1",
+      "12": "PP0/PWM0",
+      "13": "PP1/PWM1",
+      "14": "PP2/PWM2",
+      "15": "PP3/PWM3",
+      "16": "PP4/PWM4",
+      "17": "PP5/PWM5",
+      "18": "PP6/PWM6",
+      "19": "PP7/PWM7",
+      "20": "PB0",
+      "21": "PB1",
+      "22": "PB2",
+      "23": "PB3",
+      "24": "PB4",
+      "25": "PB5",
+      "26": "PB6",
+      "27": "PB7",
+      "28": "RESET",
+      "29": "EXTAL",
+      "30": "XTAL",
+      "31": "VSSPLL",
+      "32": "XFC",
+      "33": "VDDPLL",
+      "34": "VDDR",
+      "35": "VSSR",
+      "36": "PK7/ROMONE/ECS",
+      "37": "PE0/XIRQ",
+      "38": "PE1/IRQ",
+      "39": "PE2/RW",
+      "40": "PE3/LSTRB/TAGLO",
+      "41": "PE4/ECLK",
+      "42": "PE5/MODA/IPIPE0",
+      "43": "PE6/MODB/IPIPE1",
+      "44": "PE7/NOACC/XCLKS",
+      "45": "PA0",
+      "46": "PA1",
+      "47": "PA2",
+      "48": "PA3",
+      "49": "PA4",
+      "50": "VDD2",
+      "51": "VSS2",
+      "52": "PA5",
+      "53": "PA6",
+      "54": "PA7",
+      "55": "VDDA",
+      "56": "VRH",
+      "57": "VRL",
+      "58": "VSSA",
+      "59": "PAD0/AN0",
+      "60": "PAD1/AN1",
+      "61": "PAD2/AN2",
+      "62": "PAD3/AN3",
+      "63": "PAD4/AN4",
+      "64": "PAD5/AN5",
+      "65": "PAD6/AN6",
+      "66": "PAD7/AN7/ETRIG",
+      "67": "PS0/RxD0",
+      "68": "PS1/TxD0",
+      "69": "PS2/RxD1",
+      "70": "PS3/TxD1",
+      "71": "PS4/MISO",
+      "72": "PS5/MOSI",
+      "73": "PS6/SCK",
+      "74": "PS7/SS",
+      "75": "VREGEN",
+      "76": "VSSX",
+      "77": "VDDX",
+      "78": "TEST",
+      "79": "PT0/IOC0",
+      "80": "PT1/IOC1"
+    }
+  },
+  "code_to_pin_review": {
+    "schema_version": 1,
+    "review_date": "2026-10-29",
+    "source_url": "https://www.nxp.com/docs/en/data-sheet/9S12T64AF16V1.pdf",
+    "source_sha256": "a63f2fa9d946528a5f1f793901c719899c77e43dbba46e96050767475ae294f0",
+    "package_pdf_page": 60,
+    "scope": "Manual cross-check of code operands, input/output setup and datasheet register-to-package mapping for all 35 firmware-linked entries. Conditional on the MC9S12T64 reference model and register block based at zero. Missing boot prevents verification of all inherited mode/multiplex settings. Not a hardware continuity or full functional coverage certificate.",
+    "pins": [
+      {
+        "pin": 1,
+        "signal": "PT2/IOC2",
+        "role": "Vehicle-speed pulses",
+        "overview_register": "PTIT 0x00E1 bit2; TC2 0x0054",
+        "register_pdf_pages": [
+          100,
+          90,
+          91
+        ],
+        "chain": "PTIT bit 2; input-capture channel 2",
+        "review_note": "Input capture; the speed ISR tests the pin level. Sensor pulses per revolution remain unknown.",
+        "instructions": [
+          {
+            "address": "f3fb",
+            "bytes": "4fe1040a",
+            "instruction": "BRCLR 0x00e1,0x4,0xf409"
+          },
+          {
+            "address": "505b",
+            "bytes": "c6d8",
+            "instruction": "LDAB #0xd8"
+          },
+          {
+            "address": "505d",
+            "bytes": "5b40",
+            "instruction": "STAB 0x0040"
+          }
+        ]
+      },
+      {
+        "pin": 2,
+        "signal": "PT3/IOC3",
+        "role": "Ignition-coil driver command",
+        "overview_register": "PT3 / TC3 0x0056",
+        "register_pdf_pages": [
+          90,
+          91
+        ],
+        "chain": "TC3; TCTL2 OM3/OL3; timer channel 3",
+        "review_note": "Output compare. Digital compare action does not establish external coil inversion or absolute TDC.",
+        "instructions": [
+          {
+            "address": "ef50",
+            "bytes": "9649",
+            "instruction": "LDAA 0x0049"
+          },
+          {
+            "address": "ef52",
+            "bytes": "8ac0",
+            "instruction": "ORAA #0xc0"
+          },
+          {
+            "address": "ef54",
+            "bytes": "5a49",
+            "instruction": "STAA 0x0049"
+          },
+          {
+            "address": "ef66",
+            "bytes": "5c56",
+            "instruction": "STD 0x0056"
+          },
+          {
+            "address": "505b",
+            "bytes": "c6d8",
+            "instruction": "LDAB #0xd8"
+          },
+          {
+            "address": "505d",
+            "bytes": "5b40",
+            "instruction": "STAB 0x0040"
+          }
+        ]
+      },
+      {
+        "pin": 4,
+        "signal": "PT5/IOC5",
+        "role": "Ignition monitoring capture",
+        "overview_register": "PT5 / TFLG1 0x004E bit5",
+        "register_pdf_pages": [
+          90
+        ],
+        "chain": "TFLG1 bit 5 (C5F); capture channel 5",
+        "review_note": "Input capture; code checks capture flag, not a direct TC5 timestamp read.",
+        "instructions": [
+          {
+            "address": "ddab",
+            "bytes": "964e",
+            "instruction": "LDAA 0x004e"
+          },
+          {
+            "address": "ddad",
+            "bytes": "8420",
+            "instruction": "ANDA #0x20"
+          },
+          {
+            "address": "505b",
+            "bytes": "c6d8",
+            "instruction": "LDAB #0xd8"
+          },
+          {
+            "address": "505d",
+            "bytes": "5b40",
+            "instruction": "STAB 0x0040"
+          }
+        ]
+      },
+      {
+        "pin": 5,
+        "signal": "PT6/IOC6",
+        "role": "Primary fuel-injector command",
+        "overview_register": "PT6 / TC6 0x005C",
+        "register_pdf_pages": [
+          90,
+          91
+        ],
+        "chain": "TC6; timer channel 6",
+        "review_note": "Output compare; normal stock injector path.",
+        "instructions": [
+          {
+            "address": "b9b8",
+            "bytes": "5c5c",
+            "instruction": "STD 0x005c"
+          },
+          {
+            "address": "c56b",
+            "bytes": "96e1",
+            "instruction": "LDAA 0x00e1"
+          },
+          {
+            "address": "c56d",
+            "bytes": "8440",
+            "instruction": "ANDA #0x40"
+          },
+          {
+            "address": "505b",
+            "bytes": "c6d8",
+            "instruction": "LDAB #0xd8"
+          },
+          {
+            "address": "505d",
+            "bytes": "5b40",
+            "instruction": "STAB 0x0040"
+          }
+        ]
+      },
+      {
+        "pin": 6,
+        "signal": "PT7/IOC7",
+        "role": "Secondary injector code path",
+        "overview_register": "PT7 / TC7 0x005E",
+        "register_pdf_pages": [
+          90,
+          91
+        ],
+        "chain": "TC7; timer channel 7",
+        "review_note": "Output compare; second normal path is gated by variant. Presence is not proof of TDM hardware.",
+        "instructions": [
+          {
+            "address": "ba3f",
+            "bytes": "5c5e",
+            "instruction": "STD 0x005e"
+          },
+          {
+            "address": "505b",
+            "bytes": "c6d8",
+            "instruction": "LDAB #0xd8"
+          },
+          {
+            "address": "505d",
+            "bytes": "5b40",
+            "instruction": "STAB 0x0040"
+          }
+        ]
+      },
+      {
+        "pin": 12,
+        "signal": "PP0/PWM0",
+        "role": "Variant-gated auxiliary output",
+        "overview_register": "PTP 0x00F0 bit0",
+        "register_pdf_pages": [
+          101
+        ],
+        "chain": "PTP bit 0",
+        "review_note": "DDRP=FF configures output. PWM in the package alias does not prove PWM operation; these anchors use GPIO.",
+        "instructions": [
+          {
+            "address": "ad14",
+            "bytes": "4cf001",
+            "instruction": "BSET 0x00f0,0x1"
+          },
+          {
+            "address": "5037",
+            "bytes": "c6ff",
+            "instruction": "LDAB #0xff"
+          },
+          {
+            "address": "5039",
+            "bytes": "5bf2",
+            "instruction": "STAB 0x00f2"
+          }
+        ]
+      },
+      {
+        "pin": 13,
+        "signal": "PP1/PWM1",
+        "role": "Air-induction solenoid command",
+        "overview_register": "PTP 0x00F0 bit1",
+        "register_pdf_pages": [
+          101
+        ],
+        "chain": "PTP bit 1",
+        "review_note": "DDRP=FF configures output. PWM in the package alias does not prove PWM operation; these anchors use GPIO.",
+        "instructions": [
+          {
+            "address": "bac3",
+            "bytes": "4cf002",
+            "instruction": "BSET 0x00f0,0x2"
+          },
+          {
+            "address": "5037",
+            "bytes": "c6ff",
+            "instruction": "LDAB #0xff"
+          },
+          {
+            "address": "5039",
+            "bytes": "5bf2",
+            "instruction": "STAB 0x00f2"
+          }
+        ]
+      },
+      {
+        "pin": 14,
+        "signal": "PP2/PWM2",
+        "role": "Radiator-fan relay command",
+        "overview_register": "PTP 0x00F0 bit2",
+        "register_pdf_pages": [
+          101
+        ],
+        "chain": "PTP bit 2",
+        "review_note": "DDRP=FF configures output. PWM in the package alias does not prove PWM operation; these anchors use GPIO.",
+        "instructions": [
+          {
+            "address": "71c5",
+            "bytes": "4cf004",
+            "instruction": "BSET 0x00f0,0x4"
+          },
+          {
+            "address": "5037",
+            "bytes": "c6ff",
+            "instruction": "LDAB #0xff"
+          },
+          {
+            "address": "5039",
+            "bytes": "5bf2",
+            "instruction": "STAB 0x00f2"
+          }
+        ]
+      },
+      {
+        "pin": 15,
+        "signal": "PP3/PWM3",
+        "role": "Storage transaction select/strobe",
+        "overview_register": "PTP 0x00F0 bit3",
+        "register_pdf_pages": [
+          101
+        ],
+        "chain": "PTP bit 3",
+        "review_note": "DDRP=FF configures output. PWM in the package alias does not prove PWM operation; these anchors use GPIO.",
+        "instructions": [
+          {
+            "address": "57b4",
+            "bytes": "4cf008",
+            "instruction": "BSET 0x00f0,0x8"
+          },
+          {
+            "address": "5037",
+            "bytes": "c6ff",
+            "instruction": "LDAB #0xff"
+          },
+          {
+            "address": "5039",
+            "bytes": "5bf2",
+            "instruction": "STAB 0x00f2"
+          }
+        ]
+      },
+      {
+        "pin": 16,
+        "signal": "PP4/PWM4",
+        "role": "Headlight-relay command",
+        "overview_register": "PTP 0x00F0 bit4",
+        "register_pdf_pages": [
+          101
+        ],
+        "chain": "PTP bit 4",
+        "review_note": "DDRP=FF configures output. PWM in the package alias does not prove PWM operation; these anchors use GPIO.",
+        "instructions": [
+          {
+            "address": "9dc5",
+            "bytes": "4cf010",
+            "instruction": "BSET 0x00f0,0x10"
+          },
+          {
+            "address": "5037",
+            "bytes": "c6ff",
+            "instruction": "LDAB #0xff"
+          },
+          {
+            "address": "5039",
+            "bytes": "5bf2",
+            "instruction": "STAB 0x00f2"
+          }
+        ]
+      },
+      {
+        "pin": 19,
+        "signal": "PP7/PWM7",
+        "role": "Memory-test status/enable output",
+        "overview_register": "PTP 0x00F0 bit7",
+        "register_pdf_pages": [
+          101
+        ],
+        "chain": "PTP bit 7",
+        "review_note": "DDRP=FF configures output. PWM in the package alias does not prove PWM operation; these anchors use GPIO.",
+        "instructions": [
+          {
+            "address": "a489",
+            "bytes": "4df080",
+            "instruction": "BCLR 0x00f0,0x80"
+          },
+          {
+            "address": "5037",
+            "bytes": "c6ff",
+            "instruction": "LDAB #0xff"
+          },
+          {
+            "address": "5039",
+            "bytes": "5bf2",
+            "instruction": "STAB 0x00f2"
+          }
+        ]
+      },
+      {
+        "pin": 20,
+        "signal": "PB0",
+        "role": "Sidestand / start-interlock input",
+        "overview_register": "PORTB 0x0001 bit0",
+        "register_pdf_pages": [
+          86
+        ],
+        "chain": "PORTB bit 0 -> filtered RAM 0896 bit 0",
+        "review_note": "Input; B/Y versus L/B external route unresolved.",
+        "instructions": [
+          {
+            "address": "8b45",
+            "bytes": "9601",
+            "instruction": "LDAA 0x0001"
+          },
+          {
+            "address": "8b57",
+            "bytes": "7c0896",
+            "instruction": "STD 0x896"
+          },
+          {
+            "address": "6583",
+            "bytes": "1e08960106",
+            "instruction": "BRSET 0x896,0x1,0x658e"
+          },
+          {
+            "address": "502f",
+            "bytes": "86ec",
+            "instruction": "LDAA #0xec"
+          },
+          {
+            "address": "5031",
+            "bytes": "5a03",
+            "instruction": "STAA 0x0003"
+          }
+        ]
+      },
+      {
+        "pin": 21,
+        "signal": "PB1",
+        "role": "Starter-request input candidate",
+        "overview_register": "PORTB 0x0001 bit1",
+        "register_pdf_pages": [
+          86
+        ],
+        "chain": "PORTB bit 1 -> filtered RAM 0896 bit 1",
+        "review_note": "Input; starter interpretation supported, L/W association remains candidate.",
+        "instructions": [
+          {
+            "address": "8b45",
+            "bytes": "9601",
+            "instruction": "LDAA 0x0001"
+          },
+          {
+            "address": "8b57",
+            "bytes": "7c0896",
+            "instruction": "STD 0x896"
+          },
+          {
+            "address": "cbf6",
+            "bytes": "1e0896021e",
+            "instruction": "BRSET 0x896,0x2,0xcc19"
+          },
+          {
+            "address": "502f",
+            "bytes": "86ec",
+            "instruction": "LDAA #0xec"
+          },
+          {
+            "address": "5031",
+            "bytes": "5a03",
+            "instruction": "STAA 0x0003"
+          }
+        ]
+      },
+      {
+        "pin": 24,
+        "signal": "PB4",
+        "role": "Neutral input",
+        "overview_register": "PORTB 0x0001 bit4",
+        "register_pdf_pages": [
+          86
+        ],
+        "chain": "PORTB bit 4 -> filtered RAM 0896 bit 4",
+        "review_note": "Input; neutral diagnostic in variant 9, external route unresolved.",
+        "instructions": [
+          {
+            "address": "8b45",
+            "bytes": "9601",
+            "instruction": "LDAA 0x0001"
+          },
+          {
+            "address": "8b57",
+            "bytes": "7c0896",
+            "instruction": "STD 0x896"
+          },
+          {
+            "address": "65a0",
+            "bytes": "1e08961006",
+            "instruction": "BRSET 0x896,0x10,0x65ab"
+          },
+          {
+            "address": "502f",
+            "bytes": "86ec",
+            "instruction": "LDAA #0xec"
+          },
+          {
+            "address": "5031",
+            "bytes": "5a03",
+            "instruction": "STAA 0x0003"
+          }
+        ]
+      },
+      {
+        "pin": 27,
+        "signal": "PB7",
+        "role": "Timed digital output",
+        "overview_register": "PORTB 0x0001 bit7",
+        "register_pdf_pages": [
+          86
+        ],
+        "chain": "PORTB bit 7",
+        "review_note": "Configured output. Reading PORTB does not by itself prove external feedback sensing.",
+        "instructions": [
+          {
+            "address": "cb8b",
+            "bytes": "4e018016",
+            "instruction": "BRSET 0x0001,0x80,0xcba5"
+          },
+          {
+            "address": "cb8f",
+            "bytes": "4c0180",
+            "instruction": "BSET 0x0001,0x80"
+          },
+          {
+            "address": "cbad",
+            "bytes": "4d0180",
+            "instruction": "BCLR 0x0001,0x80"
+          },
+          {
+            "address": "502f",
+            "bytes": "86ec",
+            "instruction": "LDAA #0xec"
+          },
+          {
+            "address": "5031",
+            "bytes": "5a03",
+            "instruction": "STAA 0x0003"
+          }
+        ]
+      },
+      {
+        "pin": 39,
+        "signal": "PE2/RW",
+        "role": "Analog-bank selection bit 0",
+        "overview_register": "PORTE 0x0008 bit2",
+        "register_pdf_pages": [
+          86
+        ],
+        "chain": "PORTE bit 2",
+        "review_note": "Configured output; bank-selection software. External analog multiplexer circuit remains untraced.",
+        "instructions": [
+          {
+            "address": "56e7",
+            "bytes": "4d0804",
+            "instruction": "BCLR 0x0008,0x4"
+          },
+          {
+            "address": "56f0",
+            "bytes": "4c0804",
+            "instruction": "BSET 0x0008,0x4"
+          },
+          {
+            "address": "504b",
+            "bytes": "c69f",
+            "instruction": "LDAB #0x9f"
+          },
+          {
+            "address": "504d",
+            "bytes": "5b09",
+            "instruction": "STAB 0x0009"
+          }
+        ]
+      },
+      {
+        "pin": 40,
+        "signal": "PE3/LSTRB/TAGLO",
+        "role": "Analog-bank selection bit 1",
+        "overview_register": "PORTE 0x0008 bit3",
+        "register_pdf_pages": [
+          86
+        ],
+        "chain": "PORTE bit 3",
+        "review_note": "Configured output; bank-selection software. External analog multiplexer circuit remains untraced.",
+        "instructions": [
+          {
+            "address": "56fb",
+            "bytes": "4d0808",
+            "instruction": "BCLR 0x0008,0x8"
+          },
+          {
+            "address": "5704",
+            "bytes": "4c0808",
+            "instruction": "BSET 0x0008,0x8"
+          },
+          {
+            "address": "504b",
+            "bytes": "c69f",
+            "instruction": "LDAB #0x9f"
+          },
+          {
+            "address": "504d",
+            "bytes": "5b09",
+            "instruction": "STAB 0x0009"
+          }
+        ]
+      },
+      {
+        "pin": 45,
+        "signal": "PA0",
+        "role": "Injector-path readback / control bit",
+        "overview_register": "PORTA 0x0000 bit0",
+        "register_pdf_pages": [
+          86
+        ],
+        "chain": "PORTA bit 0",
+        "review_note": "Configured output, also read by injector monitor. Do not assume an input or physical readback without port-mode/circuit evidence.",
+        "instructions": [
+          {
+            "address": "c57a",
+            "bytes": "d600",
+            "instruction": "LDAB 0x0000"
+          },
+          {
+            "address": "c57c",
+            "bytes": "c501",
+            "instruction": "BITB #0x1"
+          },
+          {
+            "address": "501c",
+            "bytes": "861f",
+            "instruction": "LDAA #0x1f"
+          },
+          {
+            "address": "501e",
+            "bytes": "5a02",
+            "instruction": "STAA 0x0002"
+          }
+        ]
+      },
+      {
+        "pin": 46,
+        "signal": "PA1",
+        "role": "Injector-path readback / control bit",
+        "overview_register": "PORTA 0x0000 bit1",
+        "register_pdf_pages": [
+          86
+        ],
+        "chain": "PORTA bit 1",
+        "review_note": "Configured output, also read by injector monitor. Do not assume an input or physical readback without port-mode/circuit evidence.",
+        "instructions": [
+          {
+            "address": "c731",
+            "bytes": "d600",
+            "instruction": "LDAB 0x0000"
+          },
+          {
+            "address": "c733",
+            "bytes": "c502",
+            "instruction": "BITB #0x2"
+          },
+          {
+            "address": "501c",
+            "bytes": "861f",
+            "instruction": "LDAA #0x1f"
+          },
+          {
+            "address": "501e",
+            "bytes": "5a02",
+            "instruction": "STAA 0x0002"
+          }
+        ]
+      },
+      {
+        "pin": 47,
+        "signal": "PA2",
+        "role": "Fuel-injection system relay command",
+        "overview_register": "PORTA 0x0000 bit2",
+        "register_pdf_pages": [
+          86
+        ],
+        "chain": "PORTA bit 2",
+        "review_note": "Configured output; prime sets, stop clears. External driver polarity remains separate.",
+        "instructions": [
+          {
+            "address": "acd9",
+            "bytes": "4c0004",
+            "instruction": "BSET 0x0000,0x4"
+          },
+          {
+            "address": "ace6",
+            "bytes": "4d0004",
+            "instruction": "BCLR 0x0000,0x4"
+          },
+          {
+            "address": "501c",
+            "bytes": "861f",
+            "instruction": "LDAA #0x1f"
+          },
+          {
+            "address": "501e",
+            "bytes": "5a02",
+            "instruction": "STAA 0x0002"
+          }
+        ]
+      },
+      {
+        "pin": 49,
+        "signal": "PA4",
+        "role": "Periodic service/watchdog candidate",
+        "overview_register": "PORTA 0x0000 bit4",
+        "register_pdf_pages": [
+          86
+        ],
+        "chain": "PORTA bit 4",
+        "review_note": "Configured output; toggled next to COP service. External watchdog role remains candidate.",
+        "instructions": [
+          {
+            "address": "5fac",
+            "bytes": "4e001005",
+            "instruction": "BRSET 0x0000,0x10,0x5fb5"
+          },
+          {
+            "address": "5fb0",
+            "bytes": "4c0010",
+            "instruction": "BSET 0x0000,0x10"
+          },
+          {
+            "address": "5fb5",
+            "bytes": "4d0010",
+            "instruction": "BCLR 0x0000,0x10"
+          },
+          {
+            "address": "501c",
+            "bytes": "861f",
+            "instruction": "LDAA #0x1f"
+          },
+          {
+            "address": "501e",
+            "bytes": "5a02",
+            "instruction": "STAA 0x0002"
+          }
+        ]
+      },
+      {
+        "pin": 59,
+        "signal": "PAD0/AN0",
+        "role": "Throttle position (TPS)",
+        "overview_register": "ATD channel 0; ATDCTL5 0x0085",
+        "register_pdf_pages": [
+          94,
+          95
+        ],
+        "chain": "ATDCTL5 channel selector 0; result slot ATDDR3 at 0096",
+        "review_note": "Dispatch table 6968 indexes selected input channel. Result-slot number 3 is not input channel 3; alternate startup/bank paths require separate interpretation.",
+        "instructions": [
+          {
+            "address": "68cf",
+            "bytes": "dc96",
+            "instruction": "LDD 0x0096"
+          },
+          {
+            "address": "68d6",
+            "bytes": "ce6968",
+            "instruction": "LDX #0x6968"
+          },
+          {
+            "address": "68d9",
+            "bytes": "d685",
+            "instruction": "LDAB 0x0085"
+          },
+          {
+            "address": "68db",
+            "bytes": "c407",
+            "instruction": "ANDB #0x7"
+          },
+          {
+            "address": "68dd",
+            "bytes": "58",
+            "instruction": "ASLB"
+          },
+          {
+            "address": "68de",
+            "bytes": "1ae5",
+            "instruction": "ABX"
+          },
+          {
+            "address": "68e2",
+            "bytes": "ee00",
+            "instruction": "LDX 0,IX"
+          },
+          {
+            "address": "68e7",
+            "bytes": "1500",
+            "instruction": "JSR 0,IX"
+          },
+          {
+            "address": "692e",
+            "bytes": "5b85",
+            "instruction": "STAB 0x0085"
+          }
+        ]
+      },
+      {
+        "pin": 60,
+        "signal": "PAD1/AN1",
+        "role": "Intake manifold pressure (MAP)",
+        "overview_register": "ATD channel 1",
+        "register_pdf_pages": [
+          94,
+          95
+        ],
+        "chain": "ATDCTL5 channel selector 1; result slot ATDDR3 at 0096",
+        "review_note": "Dispatch table 6968 indexes selected input channel. Result-slot number 3 is not input channel 3; alternate startup/bank paths require separate interpretation.",
+        "instructions": [
+          {
+            "address": "68cf",
+            "bytes": "dc96",
+            "instruction": "LDD 0x0096"
+          },
+          {
+            "address": "68d6",
+            "bytes": "ce6968",
+            "instruction": "LDX #0x6968"
+          },
+          {
+            "address": "68d9",
+            "bytes": "d685",
+            "instruction": "LDAB 0x0085"
+          },
+          {
+            "address": "68db",
+            "bytes": "c407",
+            "instruction": "ANDB #0x7"
+          },
+          {
+            "address": "68dd",
+            "bytes": "58",
+            "instruction": "ASLB"
+          },
+          {
+            "address": "68de",
+            "bytes": "1ae5",
+            "instruction": "ABX"
+          },
+          {
+            "address": "68e2",
+            "bytes": "ee00",
+            "instruction": "LDX 0,IX"
+          },
+          {
+            "address": "68e7",
+            "bytes": "1500",
+            "instruction": "JSR 0,IX"
+          },
+          {
+            "address": "692e",
+            "bytes": "5b85",
+            "instruction": "STAB 0x0085"
+          }
+        ]
+      },
+      {
+        "pin": 61,
+        "signal": "PAD2/AN2",
+        "role": "Oxygen-feedback candidate",
+        "overview_register": "ATD channel 2",
+        "register_pdf_pages": [
+          94,
+          95
+        ],
+        "chain": "ATDCTL5 channel selector 2; result slot ATDDR3 at 0096",
+        "review_note": "Dispatch table 6968 indexes selected input channel. Result-slot number 3 is not input channel 3; alternate startup/bank paths require separate interpretation.",
+        "instructions": [
+          {
+            "address": "68cf",
+            "bytes": "dc96",
+            "instruction": "LDD 0x0096"
+          },
+          {
+            "address": "68d6",
+            "bytes": "ce6968",
+            "instruction": "LDX #0x6968"
+          },
+          {
+            "address": "68d9",
+            "bytes": "d685",
+            "instruction": "LDAB 0x0085"
+          },
+          {
+            "address": "68db",
+            "bytes": "c407",
+            "instruction": "ANDB #0x7"
+          },
+          {
+            "address": "68dd",
+            "bytes": "58",
+            "instruction": "ASLB"
+          },
+          {
+            "address": "68de",
+            "bytes": "1ae5",
+            "instruction": "ABX"
+          },
+          {
+            "address": "68e2",
+            "bytes": "ee00",
+            "instruction": "LDX 0,IX"
+          },
+          {
+            "address": "68e7",
+            "bytes": "1500",
+            "instruction": "JSR 0,IX"
+          },
+          {
+            "address": "692e",
+            "bytes": "5b85",
+            "instruction": "STAB 0x0085"
+          }
+        ]
+      },
+      {
+        "pin": 62,
+        "signal": "PAD3/AN3",
+        "role": "Intake air temperature (IAT)",
+        "overview_register": "ATD channel 3",
+        "register_pdf_pages": [
+          94,
+          95
+        ],
+        "chain": "ATDCTL5 channel selector 3; result slot ATDDR3 at 0096",
+        "review_note": "Dispatch table 6968 indexes selected input channel. Result-slot number 3 is not input channel 3; alternate startup/bank paths require separate interpretation.",
+        "instructions": [
+          {
+            "address": "68cf",
+            "bytes": "dc96",
+            "instruction": "LDD 0x0096"
+          },
+          {
+            "address": "68d6",
+            "bytes": "ce6968",
+            "instruction": "LDX #0x6968"
+          },
+          {
+            "address": "68d9",
+            "bytes": "d685",
+            "instruction": "LDAB 0x0085"
+          },
+          {
+            "address": "68db",
+            "bytes": "c407",
+            "instruction": "ANDB #0x7"
+          },
+          {
+            "address": "68dd",
+            "bytes": "58",
+            "instruction": "ASLB"
+          },
+          {
+            "address": "68de",
+            "bytes": "1ae5",
+            "instruction": "ABX"
+          },
+          {
+            "address": "68e2",
+            "bytes": "ee00",
+            "instruction": "LDX 0,IX"
+          },
+          {
+            "address": "68e7",
+            "bytes": "1500",
+            "instruction": "JSR 0,IX"
+          },
+          {
+            "address": "692e",
+            "bytes": "5b85",
+            "instruction": "STAB 0x0085"
+          }
+        ]
+      },
+      {
+        "pin": 63,
+        "signal": "PAD4/AN4",
+        "role": "Fuel-system supply monitor",
+        "overview_register": "ATD channel 4",
+        "register_pdf_pages": [
+          94,
+          95
+        ],
+        "chain": "ATDCTL5 channel selector 4; result slot ATDDR3 at 0096",
+        "review_note": "Dispatch table 6968 indexes selected input channel. Result-slot number 3 is not input channel 3; alternate startup/bank paths require separate interpretation.",
+        "instructions": [
+          {
+            "address": "68cf",
+            "bytes": "dc96",
+            "instruction": "LDD 0x0096"
+          },
+          {
+            "address": "68d6",
+            "bytes": "ce6968",
+            "instruction": "LDX #0x6968"
+          },
+          {
+            "address": "68d9",
+            "bytes": "d685",
+            "instruction": "LDAB 0x0085"
+          },
+          {
+            "address": "68db",
+            "bytes": "c407",
+            "instruction": "ANDB #0x7"
+          },
+          {
+            "address": "68dd",
+            "bytes": "58",
+            "instruction": "ASLB"
+          },
+          {
+            "address": "68de",
+            "bytes": "1ae5",
+            "instruction": "ABX"
+          },
+          {
+            "address": "68e2",
+            "bytes": "ee00",
+            "instruction": "LDX 0,IX"
+          },
+          {
+            "address": "68e7",
+            "bytes": "1500",
+            "instruction": "JSR 0,IX"
+          },
+          {
+            "address": "692e",
+            "bytes": "5b85",
+            "instruction": "STAB 0x0085"
+          }
+        ]
+      },
+      {
+        "pin": 64,
+        "signal": "PAD5/AN5",
+        "role": "Lean-angle / tip-over sensor",
+        "overview_register": "ATD channel 5",
+        "register_pdf_pages": [
+          94,
+          95
+        ],
+        "chain": "ATDCTL5 channel selector 5; result slot ATDDR3 at 0096",
+        "review_note": "Dispatch table 6968 indexes selected input channel. Result-slot number 3 is not input channel 3; alternate startup/bank paths require separate interpretation.",
+        "instructions": [
+          {
+            "address": "68cf",
+            "bytes": "dc96",
+            "instruction": "LDD 0x0096"
+          },
+          {
+            "address": "68d6",
+            "bytes": "ce6968",
+            "instruction": "LDX #0x6968"
+          },
+          {
+            "address": "68d9",
+            "bytes": "d685",
+            "instruction": "LDAB 0x0085"
+          },
+          {
+            "address": "68db",
+            "bytes": "c407",
+            "instruction": "ANDB #0x7"
+          },
+          {
+            "address": "68dd",
+            "bytes": "58",
+            "instruction": "ASLB"
+          },
+          {
+            "address": "68de",
+            "bytes": "1ae5",
+            "instruction": "ABX"
+          },
+          {
+            "address": "68e2",
+            "bytes": "ee00",
+            "instruction": "LDX 0,IX"
+          },
+          {
+            "address": "68e7",
+            "bytes": "1500",
+            "instruction": "JSR 0,IX"
+          },
+          {
+            "address": "692e",
+            "bytes": "5b85",
+            "instruction": "STAB 0x0085"
+          }
+        ]
+      },
+      {
+        "pin": 65,
+        "signal": "PAD6/AN6",
+        "role": "Coolant temperature (ECT)",
+        "overview_register": "ATD channel 6",
+        "register_pdf_pages": [
+          94,
+          95
+        ],
+        "chain": "ATDCTL5 channel selector 6; result slot ATDDR3 at 0096",
+        "review_note": "Dispatch table 6968 indexes selected input channel. Result-slot number 3 is not input channel 3; alternate startup/bank paths require separate interpretation.",
+        "instructions": [
+          {
+            "address": "68cf",
+            "bytes": "dc96",
+            "instruction": "LDD 0x0096"
+          },
+          {
+            "address": "68d6",
+            "bytes": "ce6968",
+            "instruction": "LDX #0x6968"
+          },
+          {
+            "address": "68d9",
+            "bytes": "d685",
+            "instruction": "LDAB 0x0085"
+          },
+          {
+            "address": "68db",
+            "bytes": "c407",
+            "instruction": "ANDB #0x7"
+          },
+          {
+            "address": "68dd",
+            "bytes": "58",
+            "instruction": "ASLB"
+          },
+          {
+            "address": "68de",
+            "bytes": "1ae5",
+            "instruction": "ABX"
+          },
+          {
+            "address": "68e2",
+            "bytes": "ee00",
+            "instruction": "LDX 0,IX"
+          },
+          {
+            "address": "68e7",
+            "bytes": "1500",
+            "instruction": "JSR 0,IX"
+          },
+          {
+            "address": "692e",
+            "bytes": "5b85",
+            "instruction": "STAB 0x0085"
+          }
+        ]
+      },
+      {
+        "pin": 66,
+        "signal": "PAD7/AN7/ETRIG",
+        "role": "Additional analog channel",
+        "overview_register": "ATD channel 7",
+        "register_pdf_pages": [
+          94,
+          95
+        ],
+        "chain": "ATDCTL5 channel selector 7; result slot ATDDR3 at 0096",
+        "review_note": "Dispatch table 6968 indexes selected input channel. Result-slot number 3 is not input channel 3. Channel 7 is absent from the ordinary 68E9 selector sequence; full activation coverage remains open.",
+        "instructions": [
+          {
+            "address": "68cf",
+            "bytes": "dc96",
+            "instruction": "LDD 0x0096"
+          },
+          {
+            "address": "68d6",
+            "bytes": "ce6968",
+            "instruction": "LDX #0x6968"
+          },
+          {
+            "address": "68d9",
+            "bytes": "d685",
+            "instruction": "LDAB 0x0085"
+          },
+          {
+            "address": "68db",
+            "bytes": "c407",
+            "instruction": "ANDB #0x7"
+          },
+          {
+            "address": "68dd",
+            "bytes": "58",
+            "instruction": "ASLB"
+          },
+          {
+            "address": "68de",
+            "bytes": "1ae5",
+            "instruction": "ABX"
+          },
+          {
+            "address": "68e2",
+            "bytes": "ee00",
+            "instruction": "LDX 0,IX"
+          },
+          {
+            "address": "68e7",
+            "bytes": "1500",
+            "instruction": "JSR 0,IX"
+          },
+          {
+            "address": "692e",
+            "bytes": "5b85",
+            "instruction": "STAB 0x0085"
+          }
+        ]
+      },
+      {
+        "pin": 69,
+        "signal": "PS2/RxD1",
+        "role": "Dashboard/immobilizer serial RX",
+        "overview_register": "SCI1 data 0x00D7",
+        "register_pdf_pages": [
+          99
+        ],
+        "chain": "SCI1DRL at 00D7, receive; SCI1CR2 RE",
+        "review_note": "Receiver enabled (RE=1). PS2/RxD1 package association; no physical transceiver verification.",
+        "instructions": [
+          {
+            "address": "5073",
+            "bytes": "8624",
+            "instruction": "LDAA #0x24"
+          },
+          {
+            "address": "5075",
+            "bytes": "5ad3",
+            "instruction": "STAA 0x00d3"
+          },
+          {
+            "address": "cdcb",
+            "bytes": "dcd4",
+            "instruction": "LDD 0x00d4"
+          },
+          {
+            "address": "cdcd",
+            "bytes": "d6d7",
+            "instruction": "LDAB 0x00d7"
+          }
+        ]
+      },
+      {
+        "pin": 70,
+        "signal": "PS3/TxD1",
+        "role": "Dashboard/immobilizer serial TX",
+        "overview_register": "SCI1 data 0x00D7",
+        "register_pdf_pages": [
+          99
+        ],
+        "chain": "SCI1DRL at 00D7, transmit; SCI1CR2 TE",
+        "review_note": "Shared data register with receive. Initial TE=0; CE3E/CE40 writes 08 (TE=1) to enable transmission. No physical bus verification.",
+        "instructions": [
+          {
+            "address": "5073",
+            "bytes": "8624",
+            "instruction": "LDAA #0x24"
+          },
+          {
+            "address": "5075",
+            "bytes": "5ad3",
+            "instruction": "STAA 0x00d3"
+          },
+          {
+            "address": "ccf8",
+            "bytes": "5bd7",
+            "instruction": "STAB 0x00d7"
+          },
+          {
+            "address": "ce3e",
+            "bytes": "8608",
+            "instruction": "LDAA #0x8"
+          },
+          {
+            "address": "ce40",
+            "bytes": "5ad3",
+            "instruction": "STAA 0x00d3"
+          }
+        ]
+      },
+      {
+        "pin": 71,
+        "signal": "PS4/MISO",
+        "role": "SPI data input",
+        "overview_register": "SPI 0x00D8-0x00DD",
+        "register_pdf_pages": [
+          99
+        ],
+        "chain": "SPI SPICR1/SPI data; MISO",
+        "review_note": "SPICR1=50 enables master SPI; MISO is input. Slave device identity remains separate.",
+        "instructions": [
+          {
+            "address": "5077",
+            "bytes": "8650",
+            "instruction": "LDAA #0x50"
+          },
+          {
+            "address": "5079",
+            "bytes": "5ad8",
+            "instruction": "STAA 0x00d8"
+          },
+          {
+            "address": "57ca",
+            "bytes": "96dd",
+            "instruction": "LDAA 0x00dd"
+          }
+        ]
+      },
+      {
+        "pin": 72,
+        "signal": "PS5/MOSI",
+        "role": "SPI data output",
+        "overview_register": "SPI 0x00D8-0x00DD",
+        "register_pdf_pages": [
+          99
+        ],
+        "chain": "SPI SPICR1/SPI data; MOSI",
+        "review_note": "SPICR1=50 enables master SPI; MOSI is output. Slave device identity remains separate.",
+        "instructions": [
+          {
+            "address": "5077",
+            "bytes": "8650",
+            "instruction": "LDAA #0x50"
+          },
+          {
+            "address": "5079",
+            "bytes": "5ad8",
+            "instruction": "STAA 0x00d8"
+          },
+          {
+            "address": "57c2",
+            "bytes": "5add",
+            "instruction": "STAA 0x00dd"
+          }
+        ]
+      },
+      {
+        "pin": 73,
+        "signal": "PS6/SCK",
+        "role": "SPI clock",
+        "overview_register": "SPI 0x00D8-0x00DD",
+        "register_pdf_pages": [
+          99
+        ],
+        "chain": "SPI SPICR1/SPI data; SCK",
+        "review_note": "SPICR1=50 enables master SPI; SCK is master clock. Physical frequency requires bus clock.",
+        "instructions": [
+          {
+            "address": "5077",
+            "bytes": "8650",
+            "instruction": "LDAA #0x50"
+          },
+          {
+            "address": "5079",
+            "bytes": "5ad8",
+            "instruction": "STAA 0x00d8"
+          },
+          {
+            "address": "507b",
+            "bytes": "8603",
+            "instruction": "LDAA #0x3"
+          },
+          {
+            "address": "507d",
+            "bytes": "5ada",
+            "instruction": "STAA 0x00da"
+          }
+        ]
+      },
+      {
+        "pin": 80,
+        "signal": "PT1/IOC1",
+        "role": "Crank-position sensor (CPS)",
+        "overview_register": "PTIT 0x00E1 bit1; TC1 0x0052",
+        "register_pdf_pages": [
+          90,
+          91,
+          100
+        ],
+        "chain": "TC1 and PTIT bit 1; capture channel 1",
+        "review_note": "Input capture; CPS reference angle and hardware edge conditioning remain unconfirmed.",
+        "instructions": [
+          {
+            "address": "d8d3",
+            "bytes": "dc52",
+            "instruction": "LDD 0x0052"
+          },
+          {
+            "address": "505b",
+            "bytes": "c6d8",
+            "instruction": "LDAB #0xd8"
+          },
+          {
+            "address": "505d",
+            "bytes": "5b40",
+            "instruction": "STAB 0x0040"
+          }
+        ]
+      }
+    ],
+    "adc_dispatch": {
+      "address": "6968",
+      "handlers": [
+        "6996",
+        "6aa5",
+        "6af6",
+        "6fc2",
+        "6c5e",
+        "71eb",
+        "70a3",
+        "707c"
+      ]
+    }
+  },
+  "profiles": {
+    "yamaha_temperature_candidate": {
+      "celsius_per_code": 0.625,
+      "offset_celsius": -30,
+      "status": "inferred conditional profile; ECU identity and analog circuit unconfirmed",
+      "basis": "Both digital curves admit a constant ratiometric NTC pullup across XT660 resistance specifications. TDM900 fail-safe values match both fallback codes under this formula.",
+      "conflict": "XT660 2004 manual specifies coolant fail-safe 80 C; this formula gives 60 C. TDM900 specifies 60 C. This does not identify this dump as TDM900 firmware or prove its board matches either manual.",
+      "requires": [
+        "NTC to ground with constant pullup to ADC reference",
+        "sensor specifications apply to this ECU",
+        "affine temperature-code interpretation"
+      ],
+      "evidence": [
+        "0x6FC2",
+        "0x70A3",
+        "0x4E64",
+        "0x4E65",
+        "0x4F26",
+        "0x4F47"
+      ]
+    },
+    "nominal_xt_timer": {
+      "timer_hz": 500000,
+      "bus_hz": 16000000,
+      "tick_microseconds": 2,
+      "status": "service-correlated nominal; not measured on this ECU",
+      "basis": "TSCR2=5 gives bus/32. Fan diagnostic repeats every 250 tasks; each task is 4*2500 timer ticks. Yamaha specifies a 5-second fan cycle with 2 seconds on, 3 off.",
+      "evidence": [
+        "0x5057",
+        "0x5059",
+        "0x679C",
+        "0x67C4",
+        "0x54B5",
+        "0xAC7F",
+        "0xBB45"
+      ]
+    },
+    "nominal_xt_crank": {
+      "normalized_pitches_per_revolution": 12,
+      "pitch_degrees": 30,
+      "speed_period_degrees": 180,
+      "spark_scale_period_degrees": 90,
+      "status": "conditional: 11 capture intervals including one double interval interpreted as one crank revolution",
+      "basis": "Counter wraps at 11; gap interval is halved; A44 sums six normalized pitches; A36 contains three. Rotor-to-crank and TDC phase require independent confirmation.",
+      "evidence": [
+        "0xD871",
+        "0xDBAA",
+        "0x53F4",
+        "0x73F7"
+      ]
+    }
+  },
+  "maps": [
+    {
+      "id": "main_quantity_A",
+      "name": "Normal load-based fuel quantity",
+      "address": "0x1B66",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "timer_ms",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/main_quantity_A.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "main_quantity_B",
+      "name": "Throttle-based fuel quantity",
+      "address": "0x2688",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "timer_ms",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/main_quantity_B.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "main_quantity_C",
+      "name": "Sequence-selected alternate load fuel quantity",
+      "address": "0x37A8",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "timer_ms",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/main_quantity_C.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "main_u8_A",
+      "name": "Base ignition timing — neutral-input branch",
+      "address": "0x42AE",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "spark_relative_degrees",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/main_u8_A.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "main_u8_B",
+      "name": "Base ignition timing — normal ratio-code branch",
+      "address": "0x452E",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "spark_relative_degrees",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/main_u8_B.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "main_u8_C",
+      "name": "Base ignition timing — extended ratio-code branch",
+      "address": "0x47AE",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "spark_relative_degrees",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/main_u8_C.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "modulo24_surface",
+      "name": "Injection event-phase target",
+      "address": "0x1914",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "injection_event_code",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/modulo24_surface.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "correction_surface_A",
+      "name": "Secondary injector quantity multiplier",
+      "address": "0x1A1A",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "gain128_percent",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/correction_surface_A.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "correction_surface_B",
+      "name": "Fuel normalization offset",
+      "address": "0x3168",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "normalization_offset_codes",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/correction_surface_B.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "correction_surface_C",
+      "name": "Fuel correction gain vs speed and load",
+      "address": "0x3280",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "gain128_percent",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/correction_surface_C.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "correction_surface_D",
+      "name": "Alternate base ignition timing vs speed and coolant",
+      "address": "0x4A60",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "spark_relative_degrees",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer",
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/correction_surface_D.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "fuel_normalization_load",
+      "name": "Load-based fuel normalization input",
+      "address": "0x311E",
+      "byte_extraction": "Verified",
+      "interpretation_status": "unresolved cell conversion",
+      "cell_conversion": null,
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/fuel_normalization_load.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "fuel_normalization_throttle",
+      "name": "Throttle-based fuel normalization input",
+      "address": "0x312A",
+      "byte_extraction": "Verified",
+      "interpretation_status": "unresolved cell conversion",
+      "cell_conversion": null,
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/fuel_normalization_throttle.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "fuel_normalization_gain",
+      "name": "Fuel normalization denominator gain",
+      "address": "0x321C",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "normalization_gain_percent",
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/fuel_normalization_gain.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_18b6",
+      "name": "Feedback startup delay vs coolant",
+      "address": "0x18B9",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "feedback_delay_s",
+      "conditional_profiles": [
+        "nominal_xt_timer",
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_18b6.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_1996",
+      "name": "Startup fuel base quantity vs coolant",
+      "address": "0x1999",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "startup_base_ms",
+      "conditional_profiles": [
+        "nominal_xt_timer",
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_1996.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_32ef",
+      "name": "Post-start enrichment — fast-decay state",
+      "address": "0x32F2",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "post_start_enrichment_pp",
+      "conditional_profiles": [
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_32ef.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_3301",
+      "name": "Post-start enrichment — slow-decay state",
+      "address": "0x3304",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "post_start_enrichment_pp",
+      "conditional_profiles": [
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_3301.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_4234",
+      "name": "Injector pulse compensation vs supply",
+      "address": "0x4237",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "injector_compensation_ms",
+      "conditional_profiles": [
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_4234.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_19c6",
+      "name": "Startup fuel multiplier vs pressure estimate",
+      "address": "0x19CC",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "gain128_percent",
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_19c6.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_19ba",
+      "name": "Startup fuel multiplier vs throttle",
+      "address": "0x19C0",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "gain128_percent",
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_19ba.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_19a8",
+      "name": "Startup fuel multiplier vs engine speed",
+      "address": "0x19AE",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "gain128_percent",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_19a8.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_34b0",
+      "name": "Centered fuel-correction gain vs engine speed",
+      "address": "0x34B6",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "q8_gain_percent",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_34b0.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_3494",
+      "name": "Relative-throttle qualification threshold vs speed",
+      "address": "0x349A",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "relative_tps_counts",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_3494.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_353a",
+      "name": "Transient fuel multiplier vs pressure estimate",
+      "address": "0x3540",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "gain128_percent",
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_353a.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_351d",
+      "name": "Transient fuel multiplier vs intake temperature",
+      "address": "0x3520",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "transient_iat_gain_percent",
+      "conditional_profiles": [
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_351d.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_34d0",
+      "name": "Transient fuel response 1 — neutral-input branch",
+      "address": "0x34D3",
+      "byte_extraction": "Verified",
+      "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "cell_conversion": null,
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_34d0.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_34da",
+      "name": "Transient fuel response 1 — low ratio codes",
+      "address": "0x34DD",
+      "byte_extraction": "Verified",
+      "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "cell_conversion": null,
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_34da.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_34e4",
+      "name": "Transient fuel response 1 — higher ratio codes",
+      "address": "0x34E7",
+      "byte_extraction": "Verified",
+      "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "cell_conversion": null,
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_34e4.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_34ee",
+      "name": "Transient fuel multiplier vs throttle",
+      "address": "0x34F4",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "gain128_percent",
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_34ee.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_355d",
+      "name": "Transient fuel response 2 — neutral-input branch",
+      "address": "0x3560",
+      "byte_extraction": "Verified",
+      "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "cell_conversion": null,
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_355d.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_3567",
+      "name": "Transient fuel response 2 — normal ratio-code branch",
+      "address": "0x356A",
+      "byte_extraction": "Verified",
+      "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "cell_conversion": null,
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_3567.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_3571",
+      "name": "Transient fuel response 2 — extended ratio-code branch",
+      "address": "0x3574",
+      "byte_extraction": "Verified",
+      "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "cell_conversion": null,
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_3571.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_31ec",
+      "name": "Fuel normalization recovery hold — normal ratio-code branch",
+      "address": "0x31F2",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "normalization_hold_s",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_31ec.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_3200",
+      "name": "Fuel normalization recovery hold — extended ratio-code branch",
+      "address": "0x3206",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "normalization_hold_s",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_3200.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_36c4",
+      "name": "Feedback eligibility delay vs coolant",
+      "address": "0x36C7",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "feedback_delay_100ms_s",
+      "conditional_profiles": [
+        "nominal_xt_timer",
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_36c4.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_36a4",
+      "name": "Adaptive fuel correction — decrement step",
+      "address": "0x36AA",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "adaptive_step_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_36a4.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_36b2",
+      "name": "Adaptive fuel correction — increment step",
+      "address": "0x36B8",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "adaptive_step_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_36b2.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_3220",
+      "name": "Fuel multiplier vs intake temperature",
+      "address": "0x3223",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "fuel_iat_gain_percent",
+      "conditional_profiles": [
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_3220.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_3345",
+      "name": "Positive transient fuel gain vs coolant",
+      "address": "0x3348",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "q8_gain_percent",
+      "conditional_profiles": [
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_3345.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_3357",
+      "name": "Negative transient fuel gain vs coolant",
+      "address": "0x335A",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "q8_gain_percent",
+      "conditional_profiles": [
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_3357.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_1880",
+      "name": "Pressure-processing offset vs engine speed",
+      "address": "0x1886",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "load_offset_codes",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_1880.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_323c",
+      "name": "Load-path fuel multiplier vs pressure estimate",
+      "address": "0x3242",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "gain128_percent",
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_323c.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_32e0",
+      "name": "Throttle-path fuel multiplier vs pressure estimate",
+      "address": "0x32E6",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "gain128_percent",
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_32e0.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_4a33",
+      "name": "Alternate ignition mode — throttle threshold vs coolant",
+      "address": "0x4A36",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "relative_tps_counts",
+      "conditional_profiles": [
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_4a33.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_3315",
+      "name": "Coolant enrichment — load-based fuel path",
+      "address": "0x3318",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "coolant_enrichment_pp",
+      "conditional_profiles": [
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_3315.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_3327",
+      "name": "Coolant enrichment — throttle-based fuel path",
+      "address": "0x332A",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "coolant_enrichment_pp",
+      "conditional_profiles": [
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_3327.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_34fd",
+      "name": "Transient fuel pulse contribution vs coolant",
+      "address": "0x3500",
+      "byte_extraction": "Verified",
+      "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "cell_conversion": null,
+      "conditional_profiles": [
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_34fd.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_4bac",
+      "name": "Spark timing bound vs pressure estimate",
+      "address": "0x4BB2",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "spark_relative_degrees",
+      "conditional_profiles": [
+        "nominal_xt_crank"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_4bac.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "delta_0985_gain_1",
+      "name": "Throttle-delta fuel gain — nonnegative, neutral-input",
+      "address": "0x336B",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "transient_delta_slope_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/delta_0985_gain_1.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "delta_0985_gain_2",
+      "name": "Throttle-delta fuel gain — nonnegative, normal ratio-code",
+      "address": "0x3382",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "transient_delta_slope_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/delta_0985_gain_2.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "delta_0985_gain_3",
+      "name": "Throttle-delta fuel gain — nonnegative, extended ratio-code",
+      "address": "0x3399",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "transient_delta_slope_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/delta_0985_gain_3.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "delta_0985_gain_4",
+      "name": "Throttle-delta fuel gain — negative, neutral-input",
+      "address": "0x33B0",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "transient_delta_slope_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/delta_0985_gain_4.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "delta_0985_gain_5",
+      "name": "Throttle-delta fuel gain — negative, normal ratio-code",
+      "address": "0x33C7",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "transient_delta_slope_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/delta_0985_gain_5.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "delta_0985_gain_6",
+      "name": "Throttle-delta fuel gain — negative, extended ratio-code",
+      "address": "0x33DE",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "transient_delta_slope_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/delta_0985_gain_6.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "delta_0989_gain_1",
+      "name": "Load-delta fuel gain — nonnegative, neutral-input",
+      "address": "0x33F7",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "transient_delta_slope_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/delta_0989_gain_1.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "delta_0989_gain_2",
+      "name": "Load-delta fuel gain — nonnegative, normal ratio-code",
+      "address": "0x340E",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "transient_delta_slope_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/delta_0989_gain_2.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "delta_0989_gain_3",
+      "name": "Load-delta fuel gain — nonnegative, extended ratio-code",
+      "address": "0x3425",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "transient_delta_slope_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/delta_0989_gain_3.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "delta_0989_gain_4",
+      "name": "Load-delta fuel gain — negative, neutral-input",
+      "address": "0x343C",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "transient_delta_slope_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/delta_0989_gain_4.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "delta_0989_gain_5",
+      "name": "Load-delta fuel gain — negative, normal ratio-code",
+      "address": "0x3453",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "transient_delta_slope_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/delta_0989_gain_5.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "delta_0989_gain_6",
+      "name": "Load-delta fuel gain — negative, extended ratio-code",
+      "address": "0x346A",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "transient_delta_slope_pp",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/delta_0989_gain_6.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "step_grid_4c44",
+      "name": "Air-induction enable vs speed and throttle",
+      "address": "0x4C44",
+      "byte_extraction": "Verified",
+      "interpretation_status": "logical behavior decoded",
+      "cell_conversion": "eligibility",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/step_grid_4c44.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "step_grid_4d48",
+      "name": "Air-induction enable vs speed and load",
+      "address": "0x4D48",
+      "byte_extraction": "Verified",
+      "interpretation_status": "logical behavior decoded",
+      "cell_conversion": "eligibility",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/step_grid_4d48.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "step_grid_35b0",
+      "name": "Adaptive feedback enable vs speed and throttle",
+      "address": "0x35B0",
+      "byte_extraction": "Verified",
+      "interpretation_status": "logical behavior decoded",
+      "cell_conversion": "eligibility",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/step_grid_35b0.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "step_grid_363c",
+      "name": "Adaptive feedback enable vs speed and load",
+      "address": "0x363C",
+      "byte_extraction": "Verified",
+      "interpretation_status": "logical behavior decoded",
+      "cell_conversion": "eligibility",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/step_grid_363c.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "timing_speed_4f64",
+      "name": "Spark time correction — other variants",
+      "address": "0x4F64",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "timer_ms",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/timing_speed_4f64.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "timing_speed_4f81",
+      "name": "Spark time correction — XT variant 9",
+      "address": "0x4F81",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "timer_ms",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/timing_speed_4f81.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "dwell_supply_speed",
+      "name": "Ignition dwell contribution vs speed and supply",
+      "address": "0x4B12",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "dwell_ms",
+      "conditional_profiles": [
+        "nominal_xt_crank",
+        "nominal_xt_timer"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/dwell_supply_speed.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "coolant_sensor_conversion",
+      "name": "Coolant sensor conversion",
+      "address": "0x4F47",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "temperature_celsius_candidate",
+      "conditional_profiles": [
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/coolant_sensor_conversion.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "intake_temperature_conversion",
+      "name": "Intake air temperature sensor conversion",
+      "address": "0x4F26",
+      "byte_extraction": "Verified",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "temperature_celsius_candidate",
+      "conditional_profiles": [
+        "yamaha_temperature_candidate"
+      ],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/intake_temperature_conversion.md",
+      "tuning_signoff": "Open"
+    },
+    {
+      "id": "curve_1854",
+      "name": "Pressure-to-load processing gain",
+      "address": "0x185A",
+      "byte_extraction": "Verified",
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "gain128_percent",
+      "conditional_profiles": [],
+      "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "open_items": [
+        "Engineering-unit conversions and complete downstream transformation",
+        "Hardware/bench confirmation and safe operating limits"
+      ],
+      "dossier": "analysis/map_details/curve_1854.md",
+      "tuning_signoff": "Open"
+    }
+  ],
+  "mcu_pins": [
+    {
+      "pin": 1,
+      "signal": "PT2/IOC2",
+      "role": "Vehicle-speed pulses",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 2,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 2,
+      "signal": "PT3/IOC3",
+      "role": "Ignition-coil driver command",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 3,
+      "signal": "PT4/IOC4",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 4,
+      "signal": "PT5/IOC5",
+      "role": "Ignition monitoring capture",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Candidate",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 5,
+      "signal": "PT6/IOC6",
+      "role": "Primary fuel-injector command",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 6,
+      "signal": "PT7/IOC7",
+      "role": "Secondary injector code path",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Decoded",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 7,
+      "signal": "BKGD/MODC/TAGHI/SI",
+      "role": "BKGD/MODC/TAGHI/SI",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 8,
+      "signal": "SCKBDM/SPIMODE",
+      "role": "SCKBDM/SPIMODE",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 9,
+      "signal": "SO",
+      "role": "SO",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 10,
+      "signal": "VDD1",
+      "role": "VDD1",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 11,
+      "signal": "VSS1",
+      "role": "VSS1",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 12,
+      "signal": "PP0/PWM0",
+      "role": "Variant-gated auxiliary output",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Decoded",
+      "instruction_anchors_checked": 5,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 13,
+      "signal": "PP1/PWM1",
+      "role": "Air-induction solenoid command",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 14,
+      "signal": "PP2/PWM2",
+      "role": "Radiator-fan relay command",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 15,
+      "signal": "PP3/PWM3",
+      "role": "Storage transaction select/strobe",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Decoded",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 16,
+      "signal": "PP4/PWM4",
+      "role": "Headlight-relay command",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 17,
+      "signal": "PP5/PWM5",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 18,
+      "signal": "PP6/PWM6",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 19,
+      "signal": "PP7/PWM7",
+      "role": "Memory-test status/enable output",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Decoded",
+      "instruction_anchors_checked": 4,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 20,
+      "signal": "PB0",
+      "role": "Sidestand / start-interlock input",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 21,
+      "signal": "PB1",
+      "role": "Starter-request input candidate",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Candidate",
+      "instruction_anchors_checked": 4,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 22,
+      "signal": "PB2",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 23,
+      "signal": "PB3",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 24,
+      "signal": "PB4",
+      "role": "Neutral input",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 25,
+      "signal": "PB5",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 26,
+      "signal": "PB6",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 27,
+      "signal": "PB7",
+      "role": "Timed digital output",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 28,
+      "signal": "RESET",
+      "role": "RESET",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 29,
+      "signal": "EXTAL",
+      "role": "EXTAL",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 30,
+      "signal": "XTAL",
+      "role": "XTAL",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 31,
+      "signal": "VSSPLL",
+      "role": "VSSPLL",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 32,
+      "signal": "XFC",
+      "role": "XFC",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 33,
+      "signal": "VDDPLL",
+      "role": "VDDPLL",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 34,
+      "signal": "VDDR",
+      "role": "VDDR",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 35,
+      "signal": "VSSR",
+      "role": "VSSR",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 36,
+      "signal": "PK7/ROMONE/ECS",
+      "role": "PK7/ROMONE/ECS",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 37,
+      "signal": "PE0/XIRQ",
+      "role": "PE0/XIRQ",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 38,
+      "signal": "PE1/IRQ",
+      "role": "PE1/IRQ",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 39,
+      "signal": "PE2/RW",
+      "role": "Analog-bank selection bit 0",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Decoded",
+      "instruction_anchors_checked": 5,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 40,
+      "signal": "PE3/LSTRB/TAGLO",
+      "role": "Analog-bank selection bit 1",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Decoded",
+      "instruction_anchors_checked": 5,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 41,
+      "signal": "PE4/ECLK",
+      "role": "PE4/ECLK",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 42,
+      "signal": "PE5/MODA/IPIPE0",
+      "role": "PE5/MODA/IPIPE0",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 43,
+      "signal": "PE6/MODB/IPIPE1",
+      "role": "PE6/MODB/IPIPE1",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 44,
+      "signal": "PE7/NOACC/XCLKS",
+      "role": "PE7/NOACC/XCLKS",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 45,
+      "signal": "PA0",
+      "role": "Injector-path readback / control bit",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 2,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 46,
+      "signal": "PA1",
+      "role": "Injector-path readback / control bit",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 2,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 47,
+      "signal": "PA2",
+      "role": "Fuel-injection system relay command",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 4,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 48,
+      "signal": "PA3",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 49,
+      "signal": "PA4",
+      "role": "Periodic service/watchdog candidate",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Candidate",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 50,
+      "signal": "VDD2",
+      "role": "VDD2",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 51,
+      "signal": "VSS2",
+      "role": "VSS2",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 52,
+      "signal": "PA5",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 53,
+      "signal": "PA6",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 54,
+      "signal": "PA7",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 55,
+      "signal": "VDDA",
+      "role": "VDDA",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 56,
+      "signal": "VRH",
+      "role": "VRH",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 57,
+      "signal": "VRL",
+      "role": "VRL",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 58,
+      "signal": "VSSA",
+      "role": "VSSA",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 59,
+      "signal": "PAD0/AN0",
+      "role": "Throttle position (TPS)",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 2,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 60,
+      "signal": "PAD1/AN1",
+      "role": "Intake manifold pressure (MAP)",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 61,
+      "signal": "PAD2/AN2",
+      "role": "Oxygen-feedback candidate",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Candidate",
+      "instruction_anchors_checked": 2,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 62,
+      "signal": "PAD3/AN3",
+      "role": "Intake air temperature (IAT)",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 63,
+      "signal": "PAD4/AN4",
+      "role": "Fuel-system supply monitor",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 2,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 64,
+      "signal": "PAD5/AN5",
+      "role": "Lean-angle / tip-over sensor",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 2,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 65,
+      "signal": "PAD6/AN6",
+      "role": "Coolant temperature (ECT)",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 66,
+      "signal": "PAD7/AN7/ETRIG",
+      "role": "Additional analog channel",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 2,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 67,
+      "signal": "PS0/RxD0",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 68,
+      "signal": "PS1/TxD0",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 69,
+      "signal": "PS2/RxD1",
+      "role": "Dashboard/immobilizer serial RX",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Decoded",
+      "instruction_anchors_checked": 2,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 70,
+      "signal": "PS3/TxD1",
+      "role": "Dashboard/immobilizer serial TX",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Decoded",
+      "instruction_anchors_checked": 2,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 71,
+      "signal": "PS4/MISO",
+      "role": "SPI data input",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Decoded",
+      "instruction_anchors_checked": 2,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 72,
+      "signal": "PS5/MOSI",
+      "role": "SPI data output",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Decoded",
+      "instruction_anchors_checked": 2,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 73,
+      "signal": "PS6/SCK",
+      "role": "SPI clock",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Decoded",
+      "instruction_anchors_checked": 2,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 74,
+      "signal": "PS7/SS",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 75,
+      "signal": "VREGEN",
+      "role": "VREGEN",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 76,
+      "signal": "VSSX",
+      "role": "VSSX",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 77,
+      "signal": "VDDX",
+      "role": "VDDX",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 78,
+      "signal": "TEST",
+      "role": "TEST",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Datasheet",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 79,
+      "signal": "PT0/IOC0",
+      "role": "Application role not established",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Unassigned",
+      "instruction_anchors_checked": 0,
+      "code_register_package_chain": "No application claim established",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    },
+    {
+      "pin": 80,
+      "signal": "PT1/IOC1",
+      "role": "Crank-position sensor (CPS)",
+      "datasheet_package_assignment": "Verified against Figure 11",
+      "application_evidence_status": "Corroborated",
+      "instruction_anchors_checked": 3,
+      "code_register_package_chain": "Reviewed; conditional MCU/register model",
+      "fitted_package_identity": "Unconfirmed",
+      "physical_route": "Unverified"
+    }
+  ],
+  "connector_positions": [
+    {
+      "position": "U01",
+      "wire": "L/W",
+      "role": "Starter-relay control network",
+      "function_association": "Candidate association",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        21
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "U02",
+      "wire": "Y/L",
+      "role": "Meter / immobilizer communication line",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        69,
+        70
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "U03",
+      "wire": "Y/G",
+      "role": "Lean-angle sensor signal",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        64
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "U04",
+      "wire": null,
+      "role": "Cross-marked position",
+      "function_association": "No connection shown",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "U05",
+      "wire": "W",
+      "role": "Vehicle-speed sensor signal",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        1
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "U06",
+      "wire": "Gy",
+      "role": "Crank-position sensor signal",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        80
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "U07",
+      "wire": "B/W",
+      "role": "Harness ground / return",
+      "function_association": "Internal rail",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "U08",
+      "wire": null,
+      "role": "Cross-marked position",
+      "function_association": "No connection shown",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "U09",
+      "wire": "L",
+      "role": "Shared sensor supply",
+      "function_association": "Internal rail",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "U10",
+      "wire": "Br/R",
+      "role": "Air-induction solenoid control",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        13
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "U11",
+      "wire": "R",
+      "role": "ECU power feed",
+      "function_association": "Internal rail",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "U12",
+      "wire": "R/B",
+      "role": "Primary fuel-injector control",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        5
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "U13",
+      "wire": "O",
+      "role": "Ignition-coil control",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        2
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "L01",
+      "wire": "B/Y",
+      "role": "Starting-permission relay network",
+      "function_association": "Unresolved alternatives",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        20,
+        24
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "L02",
+      "wire": "L/B",
+      "role": "Interlock input with overlapping manual references",
+      "function_association": "Unresolved alternatives",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        20,
+        24
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "L03",
+      "wire": "G/R",
+      "role": "Coolant-temperature sensor signal",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        65
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "L04",
+      "wire": "Br/W",
+      "role": "Intake-air-temperature sensor signal",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        62
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "L05",
+      "wire": "P/W",
+      "role": "Intake-pressure sensor signal",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        60
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "L06",
+      "wire": "Y",
+      "role": "Throttle-position sensor signal",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        59
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "L07",
+      "wire": "B/L",
+      "role": "Shared sensor return",
+      "function_association": "Internal rail",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "L08",
+      "wire": "L/R",
+      "role": "Fuel-injection-system relay control",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        47
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "L09",
+      "wire": "G/Y",
+      "role": "Radiator-fan relay control",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        14
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "L10",
+      "wire": "Y/B",
+      "role": "Headlight-relay control",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        16
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "L11",
+      "wire": "R/L",
+      "role": "Fuel-injection relay output / system supply monitor",
+      "function_association": "Function corroborated",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [
+        63
+      ],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "L12",
+      "wire": null,
+      "role": "Cross-marked position",
+      "function_association": "No connection shown",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    },
+    {
+      "position": "L13",
+      "wire": "B",
+      "role": "Harness ground",
+      "function_association": "Internal rail",
+      "source_pdf_pages": [
+        462
+      ],
+      "mcu_package_pins": [],
+      "oem_cavity_number": null,
+      "continuity_verified": false,
+      "signoff": "Open: connector face/OEM identity and physical route unverified"
+    }
+  ],
+  "software_reports": [
+    {
+      "path": "analysis/full/validation.json",
+      "sha256": "9ab39184d80fe6a7a86f96da74fc4bcdd645508de76d0dd65fe1ad7f07c9bc79",
+      "recorded_result": "passed",
+      "recorded_cases": 344357,
+      "scope": "Independent Python evaluator of exported raw p-code; confirms C translation consistency, not silicon equivalence.",
+      "evidence_scope": null,
+      "audit_action": "Report/source provenance checked; fixtures not re-executed by ledger build"
+    },
+    {
+      "path": "analysis/semantics/connector_path_validation.json",
+      "sha256": "cac99bd7f2608ca3494f4f4549ea69e698c672c68a2cb08e6a3ec2908d7d68cf",
+      "recorded_result": "passed",
+      "recorded_cases": 10344,
+      "scope": "Synthetic software fixtures; no connector continuity, voltage measurement, transceiver test or complete ECU boot. Counter values are routine invocations or preseeded timer states, not independently measured milliseconds. Wire assignments require separate manual/board evidence.",
+      "evidence_scope": null,
+      "audit_action": "Report/source provenance checked; fixtures not re-executed by ledger build"
+    },
+    {
+      "path": "analysis/semantics/control_validation.json",
+      "sha256": "e3579f83adc3df005a8291b2b1cf7e20d362f69ed46046da44ca6f91384f33ec",
+      "recorded_result": "passed",
+      "recorded_cases": 212090,
+      "scope": "Independent formulas/decision tables versus instruction translation. No peripheral timing, physical units or connector identity certified.",
+      "evidence_scope": null,
+      "audit_action": "Report/source provenance checked; fixtures not re-executed by ledger build"
+    },
+    {
+      "path": "analysis/semantics/crank_reference_validation.json",
+      "sha256": "bd95b1daaed65f07add4627b5abca4785585ef8362fbcc72dcbae7877a1afb4d",
+      "recorded_result": "passed",
+      "recorded_cases": 561,
+      "scope": "Synthetic CPS input, manually emulated ECT output and ISR stopped after spark dispatch. Normal gates, selected periods, fixed final spark/dwell inputs. Does not establish rotor-to-TDC angle, board polarity, actual hardware tooth count or every special mode.",
+      "evidence_scope": null,
+      "audit_action": "Report/source provenance checked; fixtures not re-executed by ledger build"
+    },
+    {
+      "path": "analysis/semantics/extended_map_validation.json",
+      "sha256": "c9fc810d73d3965a5f385de8f0d0186c3a5b6feb01d9dc32a0e3cdd20cf3fbe9",
+      "recorded_result": "passed",
+      "recorded_cases": 150614,
+      "scope": "Isolated execution of the compiled instruction translation; no peripheral model or vehicle validation. Synthetic fixtures modify only temporary process memory.",
+      "evidence_scope": null,
+      "audit_action": "Report/source provenance checked; fixtures not re-executed by ledger build"
+    },
+    {
+      "path": "analysis/semantics/map_consumer_validation.json",
+      "sha256": "c9e1476ae631e6d5cd4ba616d959ad57853702a4272a0fa89053fb56795e52b8",
+      "recorded_result": "passed",
+      "recorded_cases": 259216,
+      "scope": "Isolated instruction translation, RAM-backed peripherals, and injected lookup results. Tests prove arithmetic at stated boundaries, not every caller path, physical clock/sensor units or hardware operation.",
+      "evidence_scope": null,
+      "audit_action": "Report/source provenance checked; fixtures not re-executed by ledger build"
+    },
+    {
+      "path": "analysis/semantics/map_selector_validation.json",
+      "sha256": "d82e30d34a62dc469330ed2a522c88b9f6eae85e020b3aabedc32e93bc4a6252",
+      "recorded_result": "passed",
+      "recorded_cases": 12523,
+      "scope": "Instruction-level fixtures, not a complete boot or hardware simulation. Tests establish code paths and boundaries, not gear-number calibration, neutral circuit polarity, wall-clock periods or mechanical TDC. The successful sequence uses changed calibration bytes only in emulated memory; it is not stock behavior.",
+      "evidence_scope": {
+        "instruction_behavior_cases": 9523,
+        "synthetic_hypothesis_iterations": 3000,
+        "hardware_measurements": 0,
+        "sensor_pulses_per_output_shaft_revolution": "unknown",
+        "hypothesis_note": "20 pulses was selected for a numerical fit, not independently sourced. The synthetic gear traces do not establish sensor pulse count or actual gear numbering."
+      },
+      "audit_action": "Report/source provenance checked; fixtures not re-executed by ledger build"
+    },
+    {
+      "path": "analysis/semantics/sensor_variant_validation.json",
+      "sha256": "9c2087ec05b25e20d5c13411554dd9c1c639c556d12fe2d860d6f82fe58c3d1e",
+      "recorded_result": "passed",
+      "recorded_cases": 66600,
+      "scope": "Isolated routines with injected ADC results and fault states. No proof about every possible upstream state writer, external analog circuit, donor ECU identity or physical units.",
+      "evidence_scope": null,
+      "audit_action": "Report/source provenance checked; fixtures not re-executed by ledger build"
+    },
+    {
+      "path": "analysis/semantics/spark_schedule_validation.json",
+      "sha256": "af7e4484a818ecafe8fcfcf84329116462378aa97a1358ec65418a965030373e",
+      "recorded_result": "passed",
+      "recorded_cases": 74832,
+      "scope": "Planner arithmetic includes synthetic edge cases. Timeline is a uniform wheel segment with normal gates clear and manually simulated ECT pin state. Special-mode dispatch, physical coil polarity, timer frequency and TDC phase are not established by this test.",
+      "evidence_scope": null,
+      "audit_action": "Report/source provenance checked; fixtures not re-executed by ledger build"
+    },
+    {
+      "path": "analysis/semantics/units_variant_validation.json",
+      "sha256": "10d096f6d29d7018ff4d31f5123f1b13d66eec485ec5e389e279d2e13c919681",
+      "recorded_result": "passed",
+      "recorded_cases": 149180,
+      "scope": "Isolated instruction execution with RAM-backed peripherals. Physical units, oscillator rate, sensor circuitry, crank/TDC geometry and hardware outputs are not validated by these tests.",
+      "evidence_scope": null,
+      "audit_action": "Report/source provenance checked; fixtures not re-executed by ledger build"
+    }
+  ],
+  "summary": {
+    "map_byte_extractions_verified": 71,
+    "maps_signed_off_for_tuning": 0,
+    "package_positions_datasheet_checked": 80,
+    "pins_with_instruction_anchors": 35,
+    "connector_positions_inventoried": 26,
+    "connector_function_statuses": {
+      "Candidate association": 1,
+      "Function corroborated": 15,
+      "No connection shown": 3,
+      "Internal rail": 5,
+      "Unresolved alternatives": 2
+    },
+    "connector_routes_physically_verified": 0
+  },
+  "input_sha256": {
+    "analysis/maps.json": "cc86882f1aa66cb80e00a09911b68d913e6c688d74387af296e29318f39021fb",
+    "analysis/semantics/physical_units.json": "40c82ec9c439dfc4f9000df24da63cd364badcc05b3042240abcc86aa65ef8f7",
+    "analysis/semantics/mcu_pin_overview.json": "8b46f9e61d6c9f681ca07169ecb9493a1989c7bf0d2a4348acf9282febfdab8f",
+    "analysis/semantics/package_datasheet_review.json": "1f5f1d8a7c7b2d2acaf66dc4da1385a65e1f1a3fc9c426c7c4e555353414ce4a",
+    "analysis/semantics/code_pin_review.json": "e888703265b48fa9e3ca1cb1ee4506f9445278d5dbfd9979bcd11ee4e6b46072",
+    "scripts/build_verification_ledger.py": "473c4239d9a441943a5a0fe787f7739fdc3e7e890691a18651fed1832367e7cc"
+  }
+}

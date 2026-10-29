@@ -2,6 +2,8 @@
 
 The deliverable now is an evidence model that either kind of tool can consume. It deliberately separates **byte layout**, **software behavior**, **physical interpretation**, and **validated editing**.
 
+The [verification ledger](VERIFICATION_LEDGER.md) records each map and pin separately, including source review and outstanding sign-off requirements. A final **Verified** state must identify its exact claim; verified bytes or a matched MCU register do not imply a verified physical tuning definition.
+
 ## Definition fields
 
 [catalog.json](catalog.json) contains exact offsets, widths, counts, byte order, stock bytes, descriptions and instruction references for 28 scalar/curve items. It also describes ADC and output identities. Existing [maps.json](../maps.json) and [axes.json](../axes.json) supply grid layouts and values.
