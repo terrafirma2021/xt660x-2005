@@ -74,4 +74,16 @@ Conversion: `raw*100/128`; unit: **percent of reference multiplier**.
 
 128 represents unity in the normalized consumer equation; exact integer stages and saturation are in map_models.py.
 
+### Every input axis
+
+| Axis | Traced source | Interpretation | Physical scale |
+|---|---|---|---|
+| uniform_input | u16 0x08CE throttle-derived; zero on fault path | Relative throttle coordinate | Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle. |
+
+### What remains for this map
+
+- Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.
+- Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.
+- Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

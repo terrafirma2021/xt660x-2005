@@ -11,7 +11,7 @@
     },
     {
       "script": "scripts/verify_semantics.py",
-      "sha256": "14ce19e43e99d24914afaa2ce6a3c4eac992928920edfbc15bbc1a44d0364789",
+      "sha256": "065e878b099be1d879b414063f45c83ce9df264dea33a7efa300a1d60fefd57e",
       "result": "passed"
     },
     {
@@ -1579,9 +1579,32 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x0C90 load code",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/main_quantity_A.md",
       "tuning_signoff": "Open"
@@ -1598,9 +1621,32 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code; fault substitution ROM 0x4E62",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/main_quantity_B.md",
       "tuning_signoff": "Open"
@@ -1617,9 +1663,32 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x0C90 load code",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/main_quantity_C.md",
       "tuning_signoff": "Open"
@@ -1636,9 +1705,33 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0902 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code; conditional 0xD000 substitution",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/main_u8_A.md",
       "tuning_signoff": "Open"
@@ -1655,9 +1748,33 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0902 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code; conditional 0xD000 substitution",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/main_u8_B.md",
       "tuning_signoff": "Open"
@@ -1674,9 +1791,33 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0902 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code; conditional 0xD000 substitution",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/main_u8_C.md",
       "tuning_signoff": "Open"
@@ -1693,9 +1834,33 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x08E8 throttle code (row)",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x0900 selected speed (column)",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Establish event-code phase relative to the physical crank cycle, including special scheduling modes.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/modulo24_surface.md",
       "tuning_signoff": "Open"
@@ -1712,9 +1877,32 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/correction_surface_A.md",
       "tuning_signoff": "Open"
@@ -1731,9 +1919,32 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/correction_surface_B.md",
       "tuning_signoff": "Open"
@@ -1750,9 +1961,32 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x0C90 load code",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/correction_surface_C.md",
       "tuning_signoff": "Open"
@@ -1770,9 +2004,33 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u8 high byte of 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/correction_surface_D.md",
       "tuning_signoff": "Open"
@@ -1782,16 +2040,39 @@
       "name": "Load-based fuel normalization input",
       "address": "0x311E",
       "byte_extraction": "Verified",
-      "interpretation_status": "unresolved cell conversion",
-      "cell_conversion": null,
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "normalization_input_code",
       "conditional_profiles": [
         "nominal_xt_crank",
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x0C90 load code",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/fuel_normalization_load.md",
       "tuning_signoff": "Open"
@@ -1801,16 +2082,39 @@
       "name": "Throttle-based fuel normalization input",
       "address": "0x312A",
       "byte_extraction": "Verified",
-      "interpretation_status": "unresolved cell conversion",
-      "cell_conversion": null,
+      "interpretation_status": "numeric contribution decoded",
+      "cell_conversion": "normalization_input_code",
       "conditional_profiles": [
         "nominal_xt_crank",
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/fuel_normalization_throttle.md",
       "tuning_signoff": "Open"
@@ -1824,9 +2128,30 @@
       "cell_conversion": "normalization_gain_percent",
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u8 0x0CD0 combined normalization code",
+          "domain": "normalization",
+          "meaning": "Combined normalization code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Not required: internal code/count",
+          "open_requirement": null
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x0C90 load code",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/fuel_normalization_gain.md",
       "tuning_signoff": "Open"
@@ -1843,9 +2168,22 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_18b6.md",
       "tuning_signoff": "Open"
@@ -1862,9 +2200,22 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_1996.md",
       "tuning_signoff": "Open"
@@ -1880,9 +2231,21 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_32ef.md",
       "tuning_signoff": "Open"
@@ -1898,9 +2261,21 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_3301.md",
       "tuning_signoff": "Open"
@@ -1916,9 +2291,22 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08DA supply-derived",
+          "domain": "supply",
+          "meaning": "Supply-derived code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the voltage divider/reference and filtering before assigning volts."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm the voltage divider/reference and filtering before assigning volts.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_4234.md",
       "tuning_signoff": "Open"
@@ -1932,9 +2320,21 @@
       "cell_conversion": "gain128_percent",
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08F2 pressure-derived estimate",
+          "domain": "pressure_estimate",
+          "meaning": "Pressure-derived estimate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_19c6.md",
       "tuning_signoff": "Open"
@@ -1948,9 +2348,21 @@
       "cell_conversion": "gain128_percent",
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08CE throttle-derived; zero on fault path",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_19ba.md",
       "tuning_signoff": "Open"
@@ -1967,9 +2379,22 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_19a8.md",
       "tuning_signoff": "Open"
@@ -1986,9 +2411,22 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_34b0.md",
       "tuning_signoff": "Open"
@@ -2005,9 +2443,23 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the relative TPS count-to-mechanical-angle transfer for the cell threshold.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_3494.md",
       "tuning_signoff": "Open"
@@ -2021,9 +2473,21 @@
       "cell_conversion": "gain128_percent",
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08F2 pressure-derived estimate",
+          "domain": "pressure_estimate",
+          "meaning": "Pressure-derived estimate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_353a.md",
       "tuning_signoff": "Open"
@@ -2039,9 +2503,21 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F5 intake temperature",
+          "domain": "iat",
+          "meaning": "Intake temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the IAT circuit/temperature transfer before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the IAT circuit/temperature transfer before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_351d.md",
       "tuning_signoff": "Open"
@@ -2055,9 +2531,22 @@
       "cell_conversion": null,
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08ED throttle-derived delta",
+          "domain": "throttle_delta",
+          "meaning": "Internal throttle-delta code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_34d0.md",
       "tuning_signoff": "Open"
@@ -2071,9 +2560,22 @@
       "cell_conversion": null,
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08ED throttle-derived delta",
+          "domain": "throttle_delta",
+          "meaning": "Internal throttle-delta code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_34da.md",
       "tuning_signoff": "Open"
@@ -2087,9 +2589,22 @@
       "cell_conversion": null,
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08ED throttle-derived delta",
+          "domain": "throttle_delta",
+          "meaning": "Internal throttle-delta code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_34e4.md",
       "tuning_signoff": "Open"
@@ -2103,9 +2618,21 @@
       "cell_conversion": "gain128_percent",
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08CE throttle-derived",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_34ee.md",
       "tuning_signoff": "Open"
@@ -2119,9 +2646,22 @@
       "cell_conversion": null,
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08ED throttle-derived delta",
+          "domain": "throttle_delta",
+          "meaning": "Internal throttle-delta code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_355d.md",
       "tuning_signoff": "Open"
@@ -2135,9 +2675,22 @@
       "cell_conversion": null,
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08ED throttle-derived delta",
+          "domain": "throttle_delta",
+          "meaning": "Internal throttle-delta code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_3567.md",
       "tuning_signoff": "Open"
@@ -2151,9 +2704,22 @@
       "cell_conversion": null,
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08ED throttle-derived delta",
+          "domain": "throttle_delta",
+          "meaning": "Internal throttle-delta code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_3571.md",
       "tuning_signoff": "Open"
@@ -2170,9 +2736,22 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_31ec.md",
       "tuning_signoff": "Open"
@@ -2189,9 +2768,22 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_3200.md",
       "tuning_signoff": "Open"
@@ -2208,9 +2800,22 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_36c4.md",
       "tuning_signoff": "Open"
@@ -2227,9 +2832,22 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_36a4.md",
       "tuning_signoff": "Open"
@@ -2246,9 +2864,22 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_36b2.md",
       "tuning_signoff": "Open"
@@ -2264,9 +2895,21 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F5 intake temperature",
+          "domain": "iat",
+          "meaning": "Intake temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the IAT circuit/temperature transfer before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the IAT circuit/temperature transfer before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_3220.md",
       "tuning_signoff": "Open"
@@ -2282,9 +2925,21 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_3345.md",
       "tuning_signoff": "Open"
@@ -2300,9 +2955,21 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_3357.md",
       "tuning_signoff": "Open"
@@ -2319,9 +2986,22 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_1880.md",
       "tuning_signoff": "Open"
@@ -2335,9 +3015,21 @@
       "cell_conversion": "gain128_percent",
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08F2 pressure-derived estimate",
+          "domain": "pressure_estimate",
+          "meaning": "Pressure-derived estimate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_323c.md",
       "tuning_signoff": "Open"
@@ -2351,9 +3043,21 @@
       "cell_conversion": "gain128_percent",
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08F2 pressure-derived estimate",
+          "domain": "pressure_estimate",
+          "meaning": "Pressure-derived estimate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_32e0.md",
       "tuning_signoff": "Open"
@@ -2369,9 +3073,22 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Confirm the relative TPS count-to-mechanical-angle transfer for the cell threshold.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_4a33.md",
       "tuning_signoff": "Open"
@@ -2387,9 +3104,21 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_3315.md",
       "tuning_signoff": "Open"
@@ -2405,9 +3134,21 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_3327.md",
       "tuning_signoff": "Open"
@@ -2423,9 +3164,22 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_34fd.md",
       "tuning_signoff": "Open"
@@ -2441,9 +3195,23 @@
         "nominal_xt_crank"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08F2 pressure-derived estimate",
+          "domain": "pressure_estimate",
+          "meaning": "Pressure-derived estimate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+        "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_4bac.md",
       "tuning_signoff": "Open"
@@ -2460,9 +3228,23 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/delta_0985_gain_1.md",
       "tuning_signoff": "Open"
@@ -2479,9 +3261,23 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/delta_0985_gain_2.md",
       "tuning_signoff": "Open"
@@ -2498,9 +3294,23 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/delta_0985_gain_3.md",
       "tuning_signoff": "Open"
@@ -2517,9 +3327,23 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/delta_0985_gain_4.md",
       "tuning_signoff": "Open"
@@ -2536,9 +3360,23 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/delta_0985_gain_5.md",
       "tuning_signoff": "Open"
@@ -2555,9 +3393,23 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/delta_0985_gain_6.md",
       "tuning_signoff": "Open"
@@ -2574,9 +3426,23 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/delta_0989_gain_1.md",
       "tuning_signoff": "Open"
@@ -2593,9 +3459,23 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/delta_0989_gain_2.md",
       "tuning_signoff": "Open"
@@ -2612,9 +3492,23 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/delta_0989_gain_3.md",
       "tuning_signoff": "Open"
@@ -2631,9 +3525,23 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/delta_0989_gain_4.md",
       "tuning_signoff": "Open"
@@ -2650,9 +3558,23 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/delta_0989_gain_5.md",
       "tuning_signoff": "Open"
@@ -2669,9 +3591,23 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/delta_0989_gain_6.md",
       "tuning_signoff": "Open"
@@ -2688,9 +3624,32 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x08E8",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/step_grid_4c44.md",
       "tuning_signoff": "Open"
@@ -2707,9 +3666,32 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0C90",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/step_grid_4d48.md",
       "tuning_signoff": "Open"
@@ -2726,9 +3708,32 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x08E8",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/step_grid_35b0.md",
       "tuning_signoff": "Open"
@@ -2745,9 +3750,32 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0C90",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/step_grid_363c.md",
       "tuning_signoff": "Open"
@@ -2764,9 +3792,22 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x08F8: instantaneous speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/timing_speed_4f64.md",
       "tuning_signoff": "Open"
@@ -2783,9 +3824,22 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x08F8: instantaneous speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/timing_speed_4f81.md",
       "tuning_signoff": "Open"
@@ -2802,9 +3856,32 @@
         "nominal_xt_timer"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u8 RAM 0x08D9: supply code",
+          "domain": "supply",
+          "meaning": "Supply-derived code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the voltage divider/reference and filtering before assigning volts."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the voltage divider/reference and filtering before assigning volts.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/dwell_supply_speed.md",
       "tuning_signoff": "Open"
@@ -2820,9 +3897,21 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "10-bit ADC channel 6",
+          "domain": "adc",
+          "meaning": "ADC count",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Not required: internal code/count",
+          "open_requirement": null
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/coolant_sensor_conversion.md",
       "tuning_signoff": "Open"
@@ -2838,9 +3927,21 @@
         "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "10-bit ADC channel 3",
+          "domain": "adc",
+          "meaning": "ADC count",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Not required: internal code/count",
+          "open_requirement": null
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the IAT circuit/temperature transfer before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/intake_temperature_conversion.md",
       "tuning_signoff": "Open"
@@ -2854,9 +3955,21 @@
       "cell_conversion": "gain128_percent",
       "conditional_profiles": [],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08F2 pressure-derived estimate",
+          "domain": "pressure_estimate",
+          "meaning": "Pressure-derived estimate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2."
+        }
+      ],
       "open_items": [
-        "Engineering-unit conversions and complete downstream transformation",
-        "Hardware/bench confirmation and safe operating limits"
+        "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/curve_1854.md",
       "tuning_signoff": "Open"
@@ -4213,9 +5326,9 @@
     },
     {
       "path": "analysis/semantics/units_variant_validation.json",
-      "sha256": "10d096f6d29d7018ff4d31f5123f1b13d66eec485ec5e389e279d2e13c919681",
+      "sha256": "f9ae8ed1519cbbe28711549a3ec4dceb05e2e2999f3267d7c1bf4ca6475ca613",
       "recorded_result": "passed",
-      "recorded_cases": 149180,
+      "recorded_cases": 219324,
       "scope": "Isolated instruction execution with RAM-backed peripherals. Physical units, oscillator rate, sensor circuitry, crank/TDC geometry and hardware outputs are not validated by these tests.",
       "evidence_scope": null,
       "audit_action": "Report/source provenance checked; fixtures not re-executed by ledger build"
@@ -4223,6 +5336,7 @@
   ],
   "summary": {
     "map_byte_extractions_verified": 71,
+    "map_input_axes_reviewed": 90,
     "maps_signed_off_for_tuning": 0,
     "package_positions_datasheet_checked": 80,
     "pins_with_instruction_anchors": 35,
@@ -4237,11 +5351,12 @@
     "connector_routes_physically_verified": 0
   },
   "input_sha256": {
-    "analysis/maps.json": "cc86882f1aa66cb80e00a09911b68d913e6c688d74387af296e29318f39021fb",
-    "analysis/semantics/physical_units.json": "40c82ec9c439dfc4f9000df24da63cd364badcc05b3042240abcc86aa65ef8f7",
+    "analysis/maps.json": "a57fecc957cda6c55eea4983d536059013e5bd964d2d04f903f516bfcd223809",
+    "analysis/semantics/physical_units.json": "c48fbb593eb9fc54059196a88004f2346db253effd3e6bf9dcbddbb0d0c7cdac",
     "analysis/semantics/mcu_pin_overview.json": "8b46f9e61d6c9f681ca07169ecb9493a1989c7bf0d2a4348acf9282febfdab8f",
     "analysis/semantics/package_datasheet_review.json": "1f5f1d8a7c7b2d2acaf66dc4da1385a65e1f1a3fc9c426c7c4e555353414ce4a",
     "analysis/semantics/code_pin_review.json": "e888703265b48fa9e3ca1cb1ee4506f9445278d5dbfd9979bcd11ee4e6b46072",
-    "scripts/build_verification_ledger.py": "473c4239d9a441943a5a0fe787f7739fdc3e7e890691a18651fed1832367e7cc"
+    "scripts/map_review.py": "7b7fe02f539d388cfd44056063ad2d5aaf4da8a19cc1b8cc6e4ac7c34a4c5140",
+    "scripts/build_verification_ledger.py": "ccc2950d6f911505201c5f0033666366eaf0b8b14b1493139f3d74042b9f1bde"
   }
 }

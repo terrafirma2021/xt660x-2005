@@ -101,4 +101,19 @@ Consumer instruction addresses: `0x84FA`, `0x7C42`, `0x94E8`.
 row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
 Converted values: 0, 1300, 1500, 2000, 2500, 3000, 4000, 5000, 5500, 6000, 7000, 9000.
 
+### Every input axis
+
+| Axis | Traced source | Interpretation | Physical scale |
+|---|---|---|---|
+| row_axis | u16 0x0900 selected speed | Speed coordinate | Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM. |
+| column_axis | u16 0x08E8 throttle code | Relative throttle coordinate | Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle. |
+
+### What remains for this map
+
+- Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.
+- Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.
+- Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.
+- Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.
+- Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

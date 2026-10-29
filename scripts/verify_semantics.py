@@ -2,6 +2,7 @@
 import hashlib
 import json
 import re
+from map_review import input_review, remaining_questions
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -73,7 +74,13 @@ assert physical['firmware_sha256']==catalog['firmware_sha256']
 assert {m['id'] for m in physical['maps']}=={m['id'] for m in maps}
 assert all(not m['ready_for_tuning_export'] for m in physical['maps'])
 by_id={m['id']:m for m in maps}
+assert physical['review_generator_sha256']==digest(ROOT/'scripts/map_review.py')
+assert physical['summary']['axes_with_explicit_review']==sum(len(input_review(m)) for m in maps)
 for record in physical['maps']:
+    m=by_id[record['id']]
+    assert record['axis_interpretations']==input_review(m)
+    assert record['open_items']==m['unresolved']==remaining_questions(m,record)
+    assert len(record['axis_interpretations'])==(1 if m['kind'].startswith('1D_') else 2)
     if record['cell_conversion']=='temperature_celsius_candidate':
         assert record['converted_cell_values']==[[v*.625-30 for v in row] for row in by_id[record['id']]['raw_values']]
     for axis in record['axis_conversions']:

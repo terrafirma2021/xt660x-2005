@@ -1590,8 +1590,11 @@
     "selection": "RAM 0x0B80 bit 0 clear: normal load fuel path; see semantics/MAP_SELECTORS.md",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Normal load-based fuel quantity",
     "category": "Fuel",
@@ -3184,8 +3187,11 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Throttle-based fuel quantity",
     "category": "Fuel",
@@ -4783,8 +4789,11 @@
     "selection": "RAM 0x0B80 bit 0 set: completed four-stage road-speed sequence; stock zero timeout prevents completion from cleared state; see semantics/MAP_SELECTORS.md",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Sequence-selected alternate load fuel quantity",
     "category": "Fuel",
@@ -5612,8 +5621,12 @@
     "selection": "Variant 9 and filtered neutral input PB4 low (0x0896 bit 4 clear)",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+      "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Base ignition timing \u2014 neutral-input branch",
     "category": "Ignition",
@@ -6441,8 +6454,12 @@
     "selection": "Outside neutral-input branch: ratio code 0x0898 <= ROM 0x4245 (stock 5)",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+      "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Base ignition timing \u2014 normal ratio-code branch",
     "category": "Ignition",
@@ -7270,8 +7287,12 @@
     "selection": "Outside neutral-input branch: ratio code 0x0898 > ROM 0x4245 (stock 5); not emitted by the recovered normal classifier",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+      "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Base ignition timing \u2014 extended ratio-code branch",
     "category": "Ignition",
@@ -7516,8 +7537,12 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+      "Establish event-code phase relative to the physical crank cycle, including special scheduling modes.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Injection event-phase target",
     "category": "Fuel",
@@ -7820,8 +7845,11 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Secondary injector quantity multiplier",
     "category": "Fuel",
@@ -8072,8 +8100,11 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Fuel normalization offset",
     "category": "Fuel",
@@ -8277,8 +8308,11 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Fuel correction gain vs speed and load",
     "category": "Fuel",
@@ -8545,8 +8579,12 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+      "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Alternate base ignition timing vs speed and coolant",
     "category": "Ignition",
@@ -8627,11 +8665,14 @@
     "output": "u8 0x0CD2",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Both tables are evaluated; ROM 0x3114 == 0x80 selects load (not selected in stock) at 0x7EE4; this is an equality comparison, not a bit test",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Load-based fuel normalization input",
     "category": "Fuel",
@@ -8712,11 +8753,14 @@
     "output": "u8 0x0CD3",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Both tables are evaluated; ROM 0x3114 != 0x80 selects throttle (selected in stock, value 0) at 0x7EE4; this is an equality comparison, not a bit test",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Throttle-based fuel normalization input",
     "category": "Fuel",
@@ -8797,11 +8841,12 @@
     "output": "u8 0x0CD5",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Evaluated after the selected code and CD4 offset are clamped into CD0 at 0x7F0B; both load/throttle selection branches share this denominator gain",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Fuel normalization denominator gain",
     "category": "Fuel",
@@ -8861,8 +8906,10 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Feedback startup delay vs coolant",
     "category": "Feedback",
@@ -8928,8 +8975,10 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Startup fuel base quantity vs coolant",
     "category": "Fuel",
@@ -8995,8 +9044,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Post-start enrichment \u2014 fast-decay state",
     "category": "Fuel",
@@ -9062,8 +9112,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Post-start enrichment \u2014 slow-decay state",
     "category": "Fuel",
@@ -9121,8 +9172,10 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm the voltage divider/reference and filtering before assigning volts.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Injector pulse compensation vs supply",
     "category": "Fuel",
@@ -9175,8 +9228,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Startup fuel multiplier vs pressure estimate",
     "category": "Fuel",
@@ -9227,8 +9281,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Startup fuel multiplier vs throttle",
     "category": "Fuel",
@@ -9284,8 +9339,10 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Startup fuel multiplier vs engine speed",
     "category": "Fuel",
@@ -9345,8 +9402,10 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Centered fuel-correction gain vs engine speed",
     "category": "Fuel",
@@ -9401,8 +9460,11 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the relative TPS count-to-mechanical-angle transfer for the cell threshold.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Relative-throttle qualification threshold vs speed",
     "category": "Fuel",
@@ -9461,8 +9523,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Transient fuel multiplier vs pressure estimate",
     "category": "Transient fuel",
@@ -9538,8 +9601,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the IAT circuit/temperature transfer before assigning Celsius.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Transient fuel multiplier vs intake temperature",
     "category": "Transient fuel",
@@ -9591,8 +9655,10 @@
     "selection": "Variant 9 and filtered neutral input PB4 low (0x0896 bit 4 clear)",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+      "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Transient fuel response 1 \u2014 neutral-input branch",
     "category": "Transient fuel",
@@ -9644,8 +9710,10 @@
     "selection": "Outside neutral-input branch: ratio code 0x0898 <= ROM 0x34CF (stock 1)",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+      "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Transient fuel response 1 \u2014 low ratio codes",
     "category": "Transient fuel",
@@ -9697,8 +9765,10 @@
     "selection": "Outside neutral-input branch: ratio code 0x0898 > ROM 0x34CF (stock 1)",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+      "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Transient fuel response 1 \u2014 higher ratio codes",
     "category": "Transient fuel",
@@ -9758,8 +9828,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Transient fuel multiplier vs throttle",
     "category": "Transient fuel",
@@ -9811,8 +9882,10 @@
     "selection": "Variant 9 and filtered neutral input PB4 low (0x0896 bit 4 clear)",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+      "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Transient fuel response 2 \u2014 neutral-input branch",
     "category": "Transient fuel",
@@ -9864,8 +9937,10 @@
     "selection": "Outside neutral-input branch: ratio code 0x0898 <= ROM 0x355C (stock 5)",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+      "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Transient fuel response 2 \u2014 normal ratio-code branch",
     "category": "Transient fuel",
@@ -9917,8 +9992,10 @@
     "selection": "Outside neutral-input branch: ratio code 0x0898 > ROM 0x355C (stock 5)",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+      "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Transient fuel response 2 \u2014 extended ratio-code branch",
     "category": "Transient fuel",
@@ -9976,8 +10053,10 @@
     "selection": "Ratio code 0x0898 <= ROM 0x31EA (stock 5); consuming normalization state disabled by stock ROM 0x3130 = 0xFF",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Fuel normalization recovery hold \u2014 normal ratio-code branch",
     "category": "Fuel",
@@ -10035,8 +10114,10 @@
     "selection": "Ratio code 0x0898 > ROM 0x31EA (stock 5); consuming normalization state disabled by stock ROM 0x3130 = 0xFF",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Fuel normalization recovery hold \u2014 extended ratio-code branch",
     "category": "Fuel",
@@ -10096,8 +10177,10 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Feedback eligibility delay vs coolant",
     "category": "Feedback",
@@ -10149,8 +10232,10 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Adaptive fuel correction \u2014 decrement step",
     "category": "Feedback",
@@ -10202,8 +10287,10 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Adaptive fuel correction \u2014 increment step",
     "category": "Feedback",
@@ -10273,8 +10360,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the IAT circuit/temperature transfer before assigning Celsius.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Fuel multiplier vs intake temperature",
     "category": "Fuel",
@@ -10334,8 +10422,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Positive transient fuel gain vs coolant",
     "category": "Transient fuel",
@@ -10395,8 +10484,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Negative transient fuel gain vs coolant",
     "category": "Transient fuel",
@@ -10461,8 +10551,10 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Pressure-processing offset vs engine speed",
     "category": "Sensor processing",
@@ -10528,8 +10620,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Load-path fuel multiplier vs pressure estimate",
     "category": "Fuel",
@@ -10582,8 +10675,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Throttle-path fuel multiplier vs pressure estimate",
     "category": "Fuel",
@@ -10643,8 +10737,10 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+      "Confirm the relative TPS count-to-mechanical-angle transfer for the cell threshold.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Alternate ignition mode \u2014 throttle threshold vs coolant",
     "category": "Ignition",
@@ -10704,8 +10800,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Coolant enrichment \u2014 load-based fuel path",
     "category": "Fuel",
@@ -10765,8 +10862,9 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Coolant enrichment \u2014 throttle-based fuel path",
     "category": "Fuel",
@@ -10840,8 +10938,10 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+      "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Transient fuel pulse contribution vs coolant",
     "category": "Transient fuel",
@@ -10907,8 +11007,11 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+      "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Spark timing bound vs pressure estimate",
     "category": "Ignition",
@@ -11001,8 +11104,11 @@
       "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Throttle-delta fuel gain \u2014 nonnegative, neutral-input",
     "category": "Transient fuel",
@@ -11095,8 +11201,11 @@
       "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Throttle-delta fuel gain \u2014 nonnegative, normal ratio-code",
     "category": "Transient fuel",
@@ -11189,8 +11298,11 @@
       "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Throttle-delta fuel gain \u2014 nonnegative, extended ratio-code",
     "category": "Transient fuel",
@@ -11283,8 +11395,11 @@
       "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Throttle-delta fuel gain \u2014 negative, neutral-input",
     "category": "Transient fuel",
@@ -11377,8 +11492,11 @@
       "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Throttle-delta fuel gain \u2014 negative, normal ratio-code",
     "category": "Transient fuel",
@@ -11471,8 +11589,11 @@
       "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Throttle-delta fuel gain \u2014 negative, extended ratio-code",
     "category": "Transient fuel",
@@ -11565,8 +11686,11 @@
       "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Load-delta fuel gain \u2014 nonnegative, neutral-input",
     "category": "Transient fuel",
@@ -11659,8 +11783,11 @@
       "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Load-delta fuel gain \u2014 nonnegative, normal ratio-code",
     "category": "Transient fuel",
@@ -11753,8 +11880,11 @@
       "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Load-delta fuel gain \u2014 nonnegative, extended ratio-code",
     "category": "Transient fuel",
@@ -11847,8 +11977,11 @@
       "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Load-delta fuel gain \u2014 negative, neutral-input",
     "category": "Transient fuel",
@@ -11941,8 +12074,11 @@
       "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Load-delta fuel gain \u2014 negative, normal ratio-code",
     "category": "Transient fuel",
@@ -12035,8 +12171,11 @@
       "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Load-delta fuel gain \u2014 negative, extended ratio-code",
     "category": "Transient fuel",
@@ -12375,8 +12514,11 @@
     },
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Air-induction enable vs speed and throttle",
     "category": "Air induction",
@@ -12715,8 +12857,11 @@
     },
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Air-induction enable vs speed and load",
     "category": "Air induction",
@@ -12925,8 +13070,11 @@
     },
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Adaptive feedback enable vs speed and throttle",
     "category": "Feedback",
@@ -13135,8 +13283,11 @@
     },
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Adaptive feedback enable vs speed and load",
     "category": "Feedback",
@@ -13240,8 +13391,10 @@
       "index_formula": "q8=clamp(input-4096,0,57344)//8 (0xCC63)"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Spark time correction \u2014 other variants",
     "category": "Ignition",
@@ -13345,8 +13498,10 @@
       "index_formula": "q8=clamp(input-4096,0,57344)//8 (0xCC63)"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Spark time correction \u2014 XT variant 9",
     "category": "Ignition",
@@ -13590,8 +13745,11 @@
       "index_formula": "input<26 substitutes 179; q8=clamp(input-83,0,128)*16"
     },
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+      "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+      "Confirm the voltage divider/reference and filtering before assigning volts.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Ignition dwell contribution vs speed and supply",
     "category": "Ignition",
@@ -13694,8 +13852,9 @@
     },
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Coolant sensor conversion",
     "category": "Sensor processing",
@@ -13806,8 +13965,9 @@
     },
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the IAT circuit/temperature transfer before assigning Celsius.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Intake air temperature sensor conversion",
     "category": "Sensor processing",
@@ -13884,8 +14044,9 @@
     "pointer_base": "0x1854",
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "unresolved": [
-      "Engineering-unit conversions and complete downstream transformation",
-      "Hardware/bench confirmation and safe operating limits"
+      "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Pressure-to-load processing gain",
     "category": "Sensor processing",

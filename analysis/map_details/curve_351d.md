@@ -92,4 +92,16 @@ factor in transient contribution; not the same scaling as normal IAT correction
 uniform_input conversion: `temperature_celsius_candidate`; requires `yamaha_temperature_candidate`.
 Converted values: -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100.
 
+### Every input axis
+
+| Axis | Traced source | Interpretation | Physical scale |
+|---|---|---|---|
+| uniform_input | u8 0x08F5 intake temperature | Intake temperature code | Confirm the IAT circuit/temperature transfer before assigning Celsius. |
+
+### What remains for this map
+
+- Confirm the IAT circuit/temperature transfer before assigning Celsius.
+- Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.
+- Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

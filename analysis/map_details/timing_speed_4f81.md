@@ -90,4 +90,17 @@ Required profiles: `nominal_xt_timer`. These are assumptions, not measured hardw
 column_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
 Converted values: 800, 1200, 1600, 2000, 2400, 2800, 3200, 3600, 4000, 4400, 4800, 5200, 5600, 6000, 6400, 6800, 7200, 7600, 8000, 8400, 8800, 9200, 9600, 10000, 10400, 10800, 11200, 11600, 12000.
 
+### Every input axis
+
+| Axis | Traced source | Interpretation | Physical scale |
+|---|---|---|---|
+| column_axis | u16 RAM 0x08F8: instantaneous speed code | Speed coordinate | Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM. |
+
+### What remains for this map
+
+- Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.
+- Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.
+- Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.
+- Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

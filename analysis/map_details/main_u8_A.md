@@ -125,4 +125,20 @@ Required profiles: `nominal_xt_crank`. These are assumptions, not measured hardw
 row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
 Converted values: 600, 800, 900, 1000, 1100, 1200, 1300, 1400, 1600, 1800, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000, 11500, 12000, 12500.
 
+### Every input axis
+
+| Axis | Traced source | Interpretation | Physical scale |
+|---|---|---|---|
+| row_axis | u16 0x0902 selected speed | Speed coordinate | Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM. |
+| column_axis | u16 0x08E8 throttle code; conditional 0xD000 substitution | Relative throttle coordinate | Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle. |
+
+### What remains for this map
+
+- Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.
+- Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.
+- Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.
+- Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.
+- Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.
+- Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

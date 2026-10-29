@@ -16,7 +16,7 @@ Inputs: u8 0x0CD0 combined normalization code; u16 0x0C90 load code.
 
 Output: u8 0x0CD5.
 
-Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
+Selection: Evaluated after the selected code and CD4 offset are clamped into CD0 at 0x7F0B; both load/throttle selection branches share this denominator gain.
 
 Interpolation: See the helper and axis evidence below; standard grid paths use Q8 indices..
 
@@ -81,5 +81,18 @@ numeric contribution decoded.
 Conversion: `raw*100/128`; unit: **%**.
 
 multiplicative factor in the denominator, not a direct fuel multiplier
+
+### Every input axis
+
+| Axis | Traced source | Interpretation | Physical scale |
+|---|---|---|---|
+| row_axis | u8 0x0CD0 combined normalization code | Combined normalization code | Not required: internal code/count |
+| column_axis | u16 0x0C90 load code | Processed load coordinate | Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis. |
+
+### What remains for this map
+
+- Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.
+- Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.
+- Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
 
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

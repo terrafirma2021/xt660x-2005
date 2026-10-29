@@ -70,4 +70,16 @@ Conversion: `raw*100/128`; unit: **percent of reference multiplier**.
 
 128 represents unity in the normalized consumer equation; exact integer stages and saturation are in map_models.py.
 
+### Every input axis
+
+| Axis | Traced source | Interpretation | Physical scale |
+|---|---|---|---|
+| uniform_input | u16 0x08F2 pressure-derived estimate | Pressure-derived estimate | Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2. |
+
+### What remains for this map
+
+- Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.
+- Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.
+- Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

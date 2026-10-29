@@ -80,7 +80,8 @@ def build():
             'cell_conversion': u['cell_conversion'],
             'conditional_profiles': sorted(requires),
             'consumer_test_coverage': 'See scoped software reports; no exhaustive per-map path coverage certificate',
-            'open_items': m['unresolved'],
+            'axis_interpretations': u['axis_interpretations'],
+            'open_items': u['open_items'],
             'dossier': 'analysis/map_details/' + m['id'] + '.md',
             'tuning_signoff': 'Open',
         })
@@ -117,6 +118,7 @@ def build():
         })
     result['summary'] = {
         'map_byte_extractions_verified': len(maps),
+        'map_input_axes_reviewed': units['summary']['axes_with_explicit_review'],
         'maps_signed_off_for_tuning': 0,
         'package_positions_datasheet_checked': len(pins['pins']),
         'pins_with_instruction_anchors': sum(bool(p['evidence']) for p in pins['pins']),
@@ -127,7 +129,7 @@ def build():
     inputs = ['analysis/maps.json', 'analysis/semantics/physical_units.json',
               'analysis/semantics/mcu_pin_overview.json', 'analysis/semantics/package_datasheet_review.json',
               'analysis/semantics/code_pin_review.json',
-              'scripts/build_verification_ledger.py']
+              'scripts/map_review.py', 'scripts/build_verification_ledger.py']
     result['input_sha256'] = {p: sha(p) for p in inputs}
     return result
 
@@ -150,6 +152,7 @@ def render(r):
         '## Checked off in this audit', '',
         '- [x] Original image hash, instruction bytes and non-overlapping extraction.',
         '- [x] All 71 map extracts and 32 stored axes match the supplied bytes.',
+        '- [x] All 90 input-axis uses have explicit coordinate and remaining physical-scale requirements; every map has specific open items.',
         '- [x] All 80 displayed package assignments visually compared with NXP Figure 11; transcription locked for future change detection.',
         '- [x] All 35 firmware-linked pin entries reviewed from code operands and setup through the datasheet register/channel to the package pin.',
         '- [x] Existing software reports match the checked source/image provenance.',

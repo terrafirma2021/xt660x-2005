@@ -100,4 +100,19 @@ Stock activation: Every stock cell is zero, rejecting this normal feedback-eligi
 row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
 Converted values: 800, 1200, 1600, 2050, 2400, 2800, 3200, 3600, 4500.
 
+### Every input axis
+
+| Axis | Traced source | Interpretation | Physical scale |
+|---|---|---|---|
+| row_axis | u16 RAM 0x0900: selected speed code | Speed coordinate | Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM. |
+| column_axis | u16 RAM 0x0C90 | Processed load coordinate | Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis. |
+
+### What remains for this map
+
+- Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.
+- Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.
+- Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.
+- Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.
+- Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

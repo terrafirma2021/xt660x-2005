@@ -8,6 +8,7 @@ import json
 import csv
 from pathlib import Path
 from sensor_profiles import PROFILE, DEFINITION, celsius
+from map_review import input_review, remaining_questions
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -91,6 +92,8 @@ def build():
             meaning='IAT factor in the normal fuel chain; integer rounding occurs in the actual multi-stage calculation'),
         'transient_iat_gain_percent': dict(unit='%', formula='(raw+384)*100/256', requires=[],
             meaning='factor in transient contribution; not the same scaling as normal IAT correction'),
+        'normalization_input_code': dict(unit='inverse-ratio input code', formula='raw', requires=[],
+            meaning='Selected lookup code enters clamp(raw+CD4-128,0,255), then the rounded inverse-ratio consumer. Zero combined code bypasses normalization to unity. This is not an AFR or direct percent-fuel encoding.'),
         'normalization_gain_percent': dict(unit='%', formula='raw*100/128', requires=[],
             meaning='multiplicative factor in the denominator, not a direct fuel multiplier'),
     }
@@ -104,6 +107,8 @@ def build():
         'curve_3220':'fuel_iat_gain_percent', 'curve_351d':'transient_iat_gain_percent',
         'curve_3345':'q8_gain_percent', 'curve_3357':'q8_gain_percent',
         'fuel_normalization_gain':'normalization_gain_percent',
+        'fuel_normalization_load':'normalization_input_code',
+        'fuel_normalization_throttle':'normalization_input_code',
     }
     nominal = {
         'temperature_celsius_candidate':celsius,
@@ -114,6 +119,7 @@ def build():
         'fuel_iat_gain_percent':lambda x:(x+384)*100/512,
         'transient_iat_gain_percent':lambda x:(x+384)*100/256,
         'normalization_gain_percent':lambda x:x*100/128,
+        'normalization_input_code':lambda x:x,
     }
     additions={
         'gain128_percent':('percent of reference multiplier','raw*100/128',[],lambda x:x*100/128,
@@ -223,7 +229,14 @@ def build():
                 raw_clamped_range=[m['input_min_raw'],m['input_min_raw']+m['input_span_raw']],
                 caveat='Conditional candidate profile. Ideal final knot can exceed clamped input span.',requires=[PROFILE]))
         if m['id'] in ['fuel_normalization_load','fuel_normalization_throttle']:
-            rec['decoded_context']='Combined code is clamp(selected_cell+CD4-128,0,255); used through (code+128), not a proven AFR encoding.'
+            rec['decoded_context']='The selected rounded lookup becomes CD1; CD0=clamp(CD1+CD4-128,0,255). CE2=normalization(CD0,CD5,ROM[1ACE]) is a Q8 multiplier shared by 0952/0954/0956/0958 into CE4/CE6/CE8/CEA. Increasing a nonzero code at fixed gain/reference reduces the ideal multiplier; code zero instead bypasses to unity. See NORMALIZATION.md for exact rounding and exceptions.'
+            rec['consumer_evidence']=['0x7EE4','0x7EF3','0x7F0B','0x7F50','0x7FA8','0x7FAB','0x7FD5']
+            selected=m['id']=='fuel_normalization_throttle'
+            rec['stock_activation']='ROM 0x3114 is 0: the throttle table is selected; the load table is calculated but not selected. ROM 0x3130 is 0xFF, disabling the normal offset state and resetting CD4 to 128.'
+            rec['reference_scenario']=dict(label='Fixed stock gain/reference and neutral offset; not a standalone cell conversion',
+                gain=128,reference=image[0x1ace],offset_code=128,selected_in_stock=selected,
+                multiplier_percent=[[normalization(v,128,image[0x1ace])*100/256 for v in row] for row in m['raw_values']],
+                warning='Firmware interpolates raw codes first, rounds to a byte, then takes the inverse ratio. Do not interpolate these displayed percentages or reuse them with different gain/offset/reference.')
         if m['id']=='curve_3220':
             rec['decoded_context']='Converted percentage applies to the normal-running consumer at 0x828C/0x82A6. Startup consumer at 0x7BF1 has different stage scaling.'
         if m['kind']=='2D_step_grid':
@@ -243,9 +256,12 @@ def build():
             rec['status']='joint arithmetic decoded; standalone physical cell unit not assigned'
             rec['decoded_context']='Selected response R (34D0/34DA/34E4 or 355D/3567/3571) and coolant C (34FD) participate in extra_transient_ticks(P,C,I,R,T). See map_models.py and MAP_CONSUMERS.md; assigning milliseconds to R or C alone would depend on the other factors.'
             rec['consumer_evidence']=['0x9220','0x9232','0x9274','0x9495','0x94BA']
+        rec['axis_interpretations']=input_review(m)
+        rec['open_items']=remaining_questions(m,rec)
+        m['unresolved']=rec['open_items']
         records.append(rec)
     assert set(cell_ids)<= {m['id'] for m in maps},set(cell_ids)-{m['id'] for m in maps}
-    report=dict(schema_version=2,firmware_sha256=hashlib.sha256(image).hexdigest(),
+    report=dict(schema_version=3,firmware_sha256=hashlib.sha256(image).hexdigest(),
         policy='Read-only research conversions. Assumptions travel with values; no XDF export is enabled.',
         profiles=profiles,conversions=conversions,maps=records,
         unresolved_sensor_hypotheses={
@@ -288,15 +304,24 @@ def build():
                  maps_with_candidate_temperature_axes=sum(any(a['conversion']=='temperature_celsius_candidate' for a in r['axis_conversions']) for r in records),
                  joint_arithmetic_maps=len(joint_transient),
                  unresolved_cell_maps=[r['id'] for r in records if r['status']=='unresolved cell conversion'])
+    summary['axes_with_explicit_review']=sum(len(r['axis_interpretations']) for r in records)
     report['summary']=summary
+    report['review_generator_sha256']=hashlib.sha256((ROOT/'scripts/map_review.py').read_bytes()).hexdigest()
+    (ROOT/'analysis/maps.json').write_text(json.dumps(maps,indent=2)+'\n',encoding='utf-8',newline='\n')
     out.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8',newline='\n')
     lines=['# Per-map resolution status','',
-           'Generated by scripts/decode_units.py. Numeric/code conversions, logical gates, joint arithmetic and conditional physical units are different kinds of progress. A populated conversion does not make an editable tuning definition. See [consumer derivations](MAP_CONSUMERS.md).','',
+           'Generated by scripts/decode_units.py. All 71 records now separate cell arithmetic, every input axis and the specific remaining requirements. The 64 numeric/code/logical/conditional conversions include the two inverse-ratio input codes; seven transient curves retain joint arithmetic. This is not 71 fully verified physical tuning maps. See [consumer derivations](MAP_CONSUMERS.md) and [normalization details](NORMALIZATION.md).','',
            '| Map | Cell interpretation | Status |','|---|---|---|']
     for record in records:
         key=record['cell_conversion']
         meaning=(conversions[key]['formula']+' '+conversions[key]['unit']) if key else record.get('decoded_context','Unresolved physical cell scale')
         lines.append(f"| [{record['id']}](../map_details/{record['id']}.md) | {meaning.replace('|','/')} | {record['status']} |")
+    lines += ['', '## Axis and completion review', '',
+              'An internal coordinate can be identified without knowing its physical scale. Each dossier lists these requirements individually. Raw ADC counts and normalization codes do not need invented physical units.', '',
+              '| Map | Axis domains | Remaining requirements |', '|---|---|---|']
+    for m,record in zip(maps,records):
+        domains='; '.join(a['axis']+': '+a['meaning'] for a in record['axis_interpretations'])
+        lines.append(f"| [{m['id']}](../map_details/{m['id']}.md) | {domains} | {'<br>'.join(record['open_items'])} |")
     (out.parent/'MAP_RESOLUTION.md').write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\n')
     marker='<!-- generated-unit-decoding -->'
     for record in records:
@@ -310,11 +335,21 @@ def build():
             if definition['requires']:
                 extra += ['Required profiles: '+', '.join('`'+x+'`' for x in definition['requires'])+'. These are assumptions, not measured hardware parameters.','']
         if record.get('decoded_context'):extra += [record['decoded_context'],'']
+        if record.get('reference_scenario'):
+            scenario=record['reference_scenario']
+            extra += ['### Fixed stock reference example','',
+                      'With gain 128, reference '+str(scenario['reference'])+' and offset code 128, all stock cells produce a 100% multiplier. '+scenario['warning'],'',
+                      'See [normalization derivation and tests](../semantics/NORMALIZATION.md).','']
         if record.get('stock_activation'):extra += ['Stock activation: '+record['stock_activation'],'']
         if record.get('consumer_evidence'):extra += ['Consumer instruction addresses: '+', '.join('`'+x+'`' for x in record['consumer_evidence'])+'.','']
         for axis in record['axis_conversions']:
             extra += [f"{axis['axis']} conversion: `{axis['conversion']}`; requires "+', '.join('`'+x+'`' for x in axis['requires'])+'.',
                       'Converted values: '+', '.join(f'{v:g}' for v in axis['values'])+'.','']
+        extra += ['### Every input axis','', '| Axis | Traced source | Interpretation | Physical scale |', '|---|---|---|---|']
+        for axis in record['axis_interpretations']:
+            extra.append(f"| {axis['axis']} | {axis['source']} | {axis['meaning']} | {axis['open_requirement'] or axis['physical_status']} |")
+        extra += ['', '### What remains for this map', '']
+        extra += ['- '+item for item in record['open_items']]+['']
         extra += ['See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.','']
         dossier.write_text(body+'\n\n'+'\n'.join(extra),encoding='utf-8',newline='\n')
     print(json.dumps(summary))

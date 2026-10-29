@@ -16,7 +16,7 @@ Inputs: u16 0x0900 selected speed; u16 0x0C90 load code.
 
 Output: u8 0x0CD2.
 
-Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
+Selection: Both tables are evaluated; ROM 0x3114 == 0x80 selects load (not selected in stock) at 0x7EE4; this is an equality comparison, not a bit test.
 
 Interpolation: See the helper and axis evidence below; standard grid paths use Q8 indices..
 
@@ -76,11 +76,40 @@ Addresses refer to the unchanged image. Windows around entry/call sites provide 
 <!-- generated-unit-decoding -->
 ## Recovered consumer and unit interpretation
 
-unresolved cell conversion.
+numeric contribution decoded.
 
-Combined code is clamp(selected_cell+CD4-128,0,255); used through (code+128), not a proven AFR encoding.
+Conversion: `raw`; unit: **inverse-ratio input code**.
+
+Selected lookup code enters clamp(raw+CD4-128,0,255), then the rounded inverse-ratio consumer. Zero combined code bypasses normalization to unity. This is not an AFR or direct percent-fuel encoding.
+
+The selected rounded lookup becomes CD1; CD0=clamp(CD1+CD4-128,0,255). CE2=normalization(CD0,CD5,ROM[1ACE]) is a Q8 multiplier shared by 0952/0954/0956/0958 into CE4/CE6/CE8/CEA. Increasing a nonzero code at fixed gain/reference reduces the ideal multiplier; code zero instead bypasses to unity. See NORMALIZATION.md for exact rounding and exceptions.
+
+### Fixed stock reference example
+
+With gain 128, reference 166 and offset code 128, all stock cells produce a 100% multiplier. Firmware interpolates raw codes first, rounds to a byte, then takes the inverse ratio. Do not interpolate these displayed percentages or reuse them with different gain/offset/reference.
+
+See [normalization derivation and tests](../semantics/NORMALIZATION.md).
+
+Stock activation: ROM 0x3114 is 0: the throttle table is selected; the load table is calculated but not selected. ROM 0x3130 is 0xFF, disabling the normal offset state and resetting CD4 to 128.
+
+Consumer instruction addresses: `0x7EE4`, `0x7EF3`, `0x7F0B`, `0x7F50`, `0x7FA8`, `0x7FAB`, `0x7FD5`.
 
 row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
 Converted values: 600, 12750.
+
+### Every input axis
+
+| Axis | Traced source | Interpretation | Physical scale |
+|---|---|---|---|
+| row_axis | u16 0x0900 selected speed | Speed coordinate | Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM. |
+| column_axis | u16 0x0C90 load code | Processed load coordinate | Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis. |
+
+### What remains for this map
+
+- Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.
+- Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.
+- Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.
+- Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.
+- Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
 
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

@@ -17,6 +17,7 @@ These are evidence gates, not an automatic promotion ladder. A Yamaha map meanin
 
 - [x] Original image hash, instruction bytes and non-overlapping extraction.
 - [x] All 71 map extracts and 32 stored axes match the supplied bytes.
+- [x] All 90 input-axis uses have explicit coordinate and remaining physical-scale requirements; every map has specific open items.
 - [x] All 80 displayed package assignments visually compared with NXP Figure 11; transcription locked for future change detection.
 - [x] All 35 firmware-linked pin entries reviewed from code operands and setup through the datasheet register/channel to the package pin.
 - [x] Existing software reports match the checked source/image provenance.
@@ -60,8 +61,8 @@ These gaps do not prevent further static tracing. They prevent final sign-off of
 | [Fuel normalization offset](../map_details/correction_surface_B.md) `0x3168` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Fuel correction gain vs speed and load](../map_details/correction_surface_C.md) `0x3280` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Alternate base ignition timing vs speed and coolant](../map_details/correction_surface_D.md) `0x4A60` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer, yamaha_temperature_candidate | Open |
-| [Load-based fuel normalization input](../map_details/fuel_normalization_load.md) `0x311E` | Verified | unresolved cell conversion | nominal_xt_crank, nominal_xt_timer | Open |
-| [Throttle-based fuel normalization input](../map_details/fuel_normalization_throttle.md) `0x312A` | Verified | unresolved cell conversion | nominal_xt_crank, nominal_xt_timer | Open |
+| [Load-based fuel normalization input](../map_details/fuel_normalization_load.md) `0x311E` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
+| [Throttle-based fuel normalization input](../map_details/fuel_normalization_throttle.md) `0x312A` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Fuel normalization denominator gain](../map_details/fuel_normalization_gain.md) `0x321C` | Verified | numeric contribution decoded | None listed; see dossier | Open |
 | [Feedback startup delay vs coolant](../map_details/curve_18b6.md) `0x18B9` | Verified | conditional physical conversion | nominal_xt_timer, yamaha_temperature_candidate | Open |
 | [Startup fuel base quantity vs coolant](../map_details/curve_1996.md) `0x1999` | Verified | conditional physical conversion | nominal_xt_timer, yamaha_temperature_candidate | Open |
@@ -298,7 +299,7 @@ These are previously recorded fixture results whose provenance is checked during
 | [map_selector_validation.json](map_selector_validation.json) | 12523 | Passed | Instruction-level fixtures, not a complete boot or hardware simulation. Tests establish code paths and boundaries, not gear-number calibration, neutral circuit polarity, wall-clock periods or mechanical TDC. The successful sequence uses changed calibration bytes only in emulated memory; it is not stock behavior. |
 | [sensor_variant_validation.json](sensor_variant_validation.json) | 66600 | Passed | Isolated routines with injected ADC results and fault states. No proof about every possible upstream state writer, external analog circuit, donor ECU identity or physical units. |
 | [spark_schedule_validation.json](spark_schedule_validation.json) | 74832 | Passed | Planner arithmetic includes synthetic edge cases. Timeline is a uniform wheel segment with normal gates clear and manually simulated ECT pin state. Special-mode dispatch, physical coil polarity, timer frequency and TDC phase are not established by this test. |
-| [units_variant_validation.json](units_variant_validation.json) | 149180 | Passed | Isolated instruction execution with RAM-backed peripherals. Physical units, oscillator rate, sensor circuitry, crank/TDC geometry and hardware outputs are not validated by these tests. |
+| [units_variant_validation.json](units_variant_validation.json) | 219324 | Passed | Isolated instruction execution with RAM-backed peripherals. Physical units, oscillator rate, sensor circuitry, crank/TDC geometry and hardware outputs are not validated by these tests. |
 
 ## Reproduce the audit
 

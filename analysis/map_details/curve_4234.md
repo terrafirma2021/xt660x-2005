@@ -91,4 +91,17 @@ additive injector-duration compensation after lookup rounding
 
 Required profiles: `nominal_xt_timer`. These are assumptions, not measured hardware parameters.
 
+### Every input axis
+
+| Axis | Traced source | Interpretation | Physical scale |
+|---|---|---|---|
+| uniform_input | u8 0x08DA supply-derived | Supply-derived code | Confirm the voltage divider/reference and filtering before assigning volts. |
+
+### What remains for this map
+
+- Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.
+- Confirm the voltage divider/reference and filtering before assigning volts.
+- Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.
+- Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

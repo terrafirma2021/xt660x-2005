@@ -123,6 +123,45 @@ for selector in range(256):
     run(s,0x7f0e);assert s.ram[0xcd0]==(19 if selector==128 else 73)
 checks['normalization_selector_is_exact_128_not_bit_test']=256
 
+# Exhaust the offset clamp independently of the ratio helper. Alternate the two
+# selector branches; the full selector-byte domain is checked above.
+for selected in range(256):
+    for offset in range(256):
+        s=state(0x7ee4)
+        s.ram[0x3114]=128 if (selected+offset)%2 else 0
+        s.ram[0xcd2]=selected;s.ram[0xcd3]=selected;s.ram[0xcd4]=offset
+        run(s,0x7f0e)
+        assert s.ram[0xcd1]==selected
+        assert s.ram[0xcd0]==max(0,min(255,selected+offset-128))
+checks['normalization_offset_clamp_all_65536_selected_offset_pairs']=65536
+
+# Complete both 2x2 lookups, selection, offset clamp, gain lookup, division and
+# all four quantity writes. Synthetic constant cells isolate the whole chain;
+# asymmetric corner orientation is checked above. No disk image is modified.
+count=0
+for code in range(256):
+    for selector in [0,128]:
+        for offset in [0,128,255]:
+            for gain in [0,128,255]:
+                s=state(0x7e60);s.ram[0x3114]=selector;s.ram[0xcd4]=offset
+                chosen,other=(0x311e,0x312a) if selector==128 else (0x312a,0x311e)
+                s.ram[chosen:chosen+4]=bytes([code])*4
+                s.ram[other:other+4]=bytes([255-code])*4
+                s.ram[0x321c:0x3220]=bytes([gain])*4
+                put(s.ram,0x900,rng.randrange(65536));put(s.ram,0xc90,rng.randrange(65536))
+                put(s.ram,0x8e8,rng.randrange(65536))
+                quantities=[0,1,1000,65535]
+                for a,q in zip([0x952,0x954,0x956,0x958],quantities):put(s.ram,a,q)
+                run(s,0x7fd8)
+                combined=max(0,min(255,code+offset-128))
+                factor=normalization(combined,gain,image[0x1ace])
+                assert s.ram[0xcd1]==code and s.ram[0xcd0]==combined
+                assert s.ram[0xcd5]==gain and get(s.ram,0xce2)==factor
+                for a,q in zip([0xce4,0xce6,0xce8,0xcea],quantities):
+                    assert get(s.ram,a)==min(65535,q*factor//256),(code,selector,offset,gain,a)
+                count+=1
+checks['normalization_full_lookup_to_four_quantity_outputs']=count
+
 for _ in range(10000):
     value,factor=[rng.randrange(65536) for _ in range(2)]
     s=state(0xc243);put(s.reg,0,value);put(s.reg,18,factor);run(s)

@@ -71,4 +71,17 @@ Selected response R (34D0/34DA/34E4 or 355D/3567/3571) and coolant C (34FD) part
 
 Consumer instruction addresses: `0x9220`, `0x9232`, `0x9274`, `0x9495`, `0x94BA`.
 
+### Every input axis
+
+| Axis | Traced source | Interpretation | Physical scale |
+|---|---|---|---|
+| uniform_input | u8 0x08ED throttle-derived delta | Internal throttle-delta code | Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate. |
+
+### What remains for this map
+
+- Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.
+- The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.
+- Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.
+- Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

@@ -179,6 +179,10 @@ def extend(maps, axes, image):
             m['selection']='RAM 0x0B80 bit 0 '+('clear: normal load fuel path' if key.endswith('A') else 'set: completed four-stage road-speed sequence; stock zero timeout prevents completion from cleared state')+'; see semantics/MAP_SELECTORS.md'
         elif key.startswith('main_u8_'):
             m['selection']={'A':'Variant 9 and filtered neutral input PB4 low (0x0896 bit 4 clear)', 'B':'Outside neutral-input branch: ratio code 0x0898 <= ROM 0x4245 (stock 5)', 'C':'Outside neutral-input branch: ratio code 0x0898 > ROM 0x4245 (stock 5); not emitted by the recovered normal classifier'}[key[-1]]
+        elif key in {'fuel_normalization_load','fuel_normalization_throttle'}:
+            m['selection']='Both tables are evaluated; ROM 0x3114 '+('== 0x80 selects load (not selected in stock)' if key.endswith('load') else '!= 0x80 selects throttle (selected in stock, value 0)')+' at 0x7EE4; this is an equality comparison, not a bit test'
+        elif key=='fuel_normalization_gain':
+            m['selection']='Evaluated after the selected code and CD4 offset are clamped into CD0 at 0x7F0B; both load/throttle selection branches share this denominator gain'
         elif key in {'curve_31ec','curve_3200'}:
             m['selection']='Ratio code 0x0898 '+('<=' if key=='curve_31ec' else '>')+' ROM 0x31EA (stock 5); consuming normalization state disabled by stock ROM 0x3130 = 0xFF'
         elif key in {'curve_34d0','curve_34da','curve_34e4','curve_355d','curve_3567','curve_3571'}:

@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
   "policy": "Read-only research conversions. Assumptions travel with values; no XDF export is enabled.",
   "profiles": {
@@ -126,6 +126,12 @@
       "formula": "(raw+384)*100/256",
       "requires": [],
       "meaning": "factor in transient contribution; not the same scaling as normal IAT correction"
+    },
+    "normalization_input_code": {
+      "unit": "inverse-ratio input code",
+      "formula": "raw",
+      "requires": [],
+      "meaning": "Selected lookup code enters clamp(raw+CD4-128,0,255), then the rounded inverse-ratio consumer. Zero combined code bypasses normalization to unity. This is not an AFR or direct percent-fuel encoding."
     },
     "normalization_gain_percent": {
       "unit": "%",
@@ -1736,6 +1742,33 @@
       "requires": [
         "nominal_xt_timer"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x0C90 load code",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Normal load-based fuel quantity",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -3249,6 +3282,33 @@
       ],
       "requires": [
         "nominal_xt_timer"
+      ],
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code; fault substitution ROM 0x4E62",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Throttle-based fuel quantity",
       "category": "Fuel",
@@ -4764,6 +4824,33 @@
       "requires": [
         "nominal_xt_timer"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x0C90 load code",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Sequence-selected alternate load fuel quantity",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -5528,6 +5615,34 @@
       ],
       "requires": [
         "nominal_xt_crank"
+      ],
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0902 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code; conditional 0xD000 substitution",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Base ignition timing \u2014 neutral-input branch",
       "category": "Ignition",
@@ -6294,6 +6409,34 @@
       "requires": [
         "nominal_xt_crank"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0902 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code; conditional 0xD000 substitution",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Base ignition timing \u2014 normal ratio-code branch",
       "category": "Ignition",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -7059,6 +7202,34 @@
       "requires": [
         "nominal_xt_crank"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0902 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code; conditional 0xD000 substitution",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Base ignition timing \u2014 extended ratio-code branch",
       "category": "Ignition",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -7256,6 +7427,34 @@
         "0xEC98",
         "0x85AB",
         "0xF4F2"
+      ],
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x08E8 throttle code (row)",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x0900 selected speed (column)",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Establish event-code phase relative to the physical crank cycle, including special scheduling modes.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Injection event-phase target",
       "category": "Fuel",
@@ -7507,6 +7706,33 @@
         "0x94E8"
       ],
       "stock_activation": "Used in secondary-quantity arithmetic; variant 9 skips the normal secondary injector scheduling entry. Diagnostic paths are separate.",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Secondary injector quantity multiplier",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -7704,6 +7930,33 @@
       ],
       "requires": [],
       "stock_activation": "Normal state path is disabled: ROM 0x3130 is 0xFF; 0x8DF9 requires exactly 0x80. The disabled path resets CD4 to 128. Lookup presence alone does not establish an active effect.",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Fuel normalization offset",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -7855,6 +8108,33 @@
       "consumer_evidence": [
         "0xB3CC",
         "0x82D6"
+      ],
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x0C90 load code",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Fuel correction gain vs speed and load",
       "category": "Fuel",
@@ -8095,6 +8375,34 @@
         "0x8979",
         "0x899E"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u8 high byte of 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Alternate base ignition timing vs speed and coolant",
       "category": "Ignition",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8103,9 +8411,9 @@
     {
       "id": "fuel_normalization_load",
       "data_address": "0x311E",
-      "cell_conversion": null,
+      "cell_conversion": "normalization_input_code",
       "ready_for_tuning_export": false,
-      "status": "unresolved cell conversion",
+      "status": "numeric contribution decoded",
       "axis_conversions": [
         {
           "axis": "row_axis",
@@ -8121,7 +8429,73 @@
           ]
         }
       ],
-      "decoded_context": "Combined code is clamp(selected_cell+CD4-128,0,255); used through (code+128), not a proven AFR encoding.",
+      "converted_cell_values": [
+        [
+          166,
+          166
+        ],
+        [
+          166,
+          166
+        ]
+      ],
+      "requires": [],
+      "decoded_context": "The selected rounded lookup becomes CD1; CD0=clamp(CD1+CD4-128,0,255). CE2=normalization(CD0,CD5,ROM[1ACE]) is a Q8 multiplier shared by 0952/0954/0956/0958 into CE4/CE6/CE8/CEA. Increasing a nonzero code at fixed gain/reference reduces the ideal multiplier; code zero instead bypasses to unity. See NORMALIZATION.md for exact rounding and exceptions.",
+      "consumer_evidence": [
+        "0x7EE4",
+        "0x7EF3",
+        "0x7F0B",
+        "0x7F50",
+        "0x7FA8",
+        "0x7FAB",
+        "0x7FD5"
+      ],
+      "stock_activation": "ROM 0x3114 is 0: the throttle table is selected; the load table is calculated but not selected. ROM 0x3130 is 0xFF, disabling the normal offset state and resetting CD4 to 128.",
+      "reference_scenario": {
+        "label": "Fixed stock gain/reference and neutral offset; not a standalone cell conversion",
+        "gain": 128,
+        "reference": 166,
+        "offset_code": 128,
+        "selected_in_stock": false,
+        "multiplier_percent": [
+          [
+            100.0,
+            100.0
+          ],
+          [
+            100.0,
+            100.0
+          ]
+        ],
+        "warning": "Firmware interpolates raw codes first, rounds to a byte, then takes the inverse ratio. Do not interpolate these displayed percentages or reuse them with different gain/offset/reference."
+      },
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x0C90 load code",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Load-based fuel normalization input",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8130,9 +8504,9 @@
     {
       "id": "fuel_normalization_throttle",
       "data_address": "0x312A",
-      "cell_conversion": null,
+      "cell_conversion": "normalization_input_code",
       "ready_for_tuning_export": false,
-      "status": "unresolved cell conversion",
+      "status": "numeric contribution decoded",
       "axis_conversions": [
         {
           "axis": "row_axis",
@@ -8148,7 +8522,73 @@
           ]
         }
       ],
-      "decoded_context": "Combined code is clamp(selected_cell+CD4-128,0,255); used through (code+128), not a proven AFR encoding.",
+      "converted_cell_values": [
+        [
+          166,
+          166
+        ],
+        [
+          166,
+          166
+        ]
+      ],
+      "requires": [],
+      "decoded_context": "The selected rounded lookup becomes CD1; CD0=clamp(CD1+CD4-128,0,255). CE2=normalization(CD0,CD5,ROM[1ACE]) is a Q8 multiplier shared by 0952/0954/0956/0958 into CE4/CE6/CE8/CEA. Increasing a nonzero code at fixed gain/reference reduces the ideal multiplier; code zero instead bypasses to unity. See NORMALIZATION.md for exact rounding and exceptions.",
+      "consumer_evidence": [
+        "0x7EE4",
+        "0x7EF3",
+        "0x7F0B",
+        "0x7F50",
+        "0x7FA8",
+        "0x7FAB",
+        "0x7FD5"
+      ],
+      "stock_activation": "ROM 0x3114 is 0: the throttle table is selected; the load table is calculated but not selected. ROM 0x3130 is 0xFF, disabling the normal offset state and resetting CD4 to 128.",
+      "reference_scenario": {
+        "label": "Fixed stock gain/reference and neutral offset; not a standalone cell conversion",
+        "gain": 128,
+        "reference": 166,
+        "offset_code": 128,
+        "selected_in_stock": true,
+        "multiplier_percent": [
+          [
+            100.0,
+            100.0
+          ],
+          [
+            100.0,
+            100.0
+          ]
+        ],
+        "warning": "Firmware interpolates raw codes first, rounds to a byte, then takes the inverse ratio. Do not interpolate these displayed percentages or reuse them with different gain/offset/reference."
+      },
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x08E8 throttle code",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Throttle-based fuel normalization input",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8172,6 +8612,31 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u8 0x0CD0 combined normalization code",
+          "domain": "normalization",
+          "meaning": "Combined normalization code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Not required: internal code/count",
+          "open_requirement": null
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 0x0C90 load code",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
+      "open_items": [
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Fuel normalization denominator gain",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8253,6 +8718,23 @@
       ],
       "requires": [
         "nominal_xt_timer"
+      ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Feedback startup delay vs coolant",
       "category": "Feedback",
@@ -8336,6 +8818,23 @@
       "requires": [
         "nominal_xt_timer"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Startup fuel base quantity vs coolant",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8416,6 +8915,22 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Post-start enrichment \u2014 fast-decay state",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8496,6 +9011,22 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Post-start enrichment \u2014 slow-decay state",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8522,6 +9053,23 @@
       "requires": [
         "nominal_xt_timer"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08DA supply-derived",
+          "domain": "supply",
+          "meaning": "Supply-derived code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the voltage divider/reference and filtering before assigning volts."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm the voltage divider/reference and filtering before assigning volts.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Injector pulse compensation vs supply",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8547,6 +9095,22 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08F2 pressure-derived estimate",
+          "domain": "pressure_estimate",
+          "meaning": "Pressure-derived estimate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2."
+        }
+      ],
+      "open_items": [
+        "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Startup fuel multiplier vs pressure estimate",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8570,6 +9134,22 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08CE throttle-derived; zero on fault path",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
+      "open_items": [
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Startup fuel multiplier vs throttle",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8639,6 +9219,23 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Startup fuel multiplier vs engine speed",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8725,6 +9322,23 @@
         "0x8623",
         "0x8323"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Centered fuel-correction gain vs engine speed",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8797,6 +9411,24 @@
         "0x8F82",
         "0x8FAA"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the relative TPS count-to-mechanical-angle transfer for the cell threshold.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Relative-throttle qualification threshold vs speed",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8822,6 +9454,22 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08F2 pressure-derived estimate",
+          "domain": "pressure_estimate",
+          "meaning": "Pressure-derived estimate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2."
+        }
+      ],
+      "open_items": [
+        "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Transient fuel multiplier vs pressure estimate",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8932,6 +9580,22 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F5 intake temperature",
+          "domain": "iat",
+          "meaning": "Intake temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the IAT circuit/temperature transfer before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm the IAT circuit/temperature transfer before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Transient fuel multiplier vs intake temperature",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -8951,6 +9615,23 @@
         "0x9274",
         "0x9495",
         "0x94BA"
+      ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08ED throttle-derived delta",
+          "domain": "throttle_delta",
+          "meaning": "Internal throttle-delta code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate."
+        }
+      ],
+      "open_items": [
+        "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Transient fuel response 1 \u2014 neutral-input branch",
       "category": "Transient fuel",
@@ -8972,6 +9653,23 @@
         "0x9495",
         "0x94BA"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08ED throttle-derived delta",
+          "domain": "throttle_delta",
+          "meaning": "Internal throttle-delta code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate."
+        }
+      ],
+      "open_items": [
+        "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Transient fuel response 1 \u2014 low ratio codes",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -8991,6 +9689,23 @@
         "0x9274",
         "0x9495",
         "0x94BA"
+      ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08ED throttle-derived delta",
+          "domain": "throttle_delta",
+          "meaning": "Internal throttle-delta code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate."
+        }
+      ],
+      "open_items": [
+        "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Transient fuel response 1 \u2014 higher ratio codes",
       "category": "Transient fuel",
@@ -9018,6 +9733,22 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08CE throttle-derived",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
+      "open_items": [
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Transient fuel multiplier vs throttle",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -9037,6 +9768,23 @@
         "0x9274",
         "0x9495",
         "0x94BA"
+      ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08ED throttle-derived delta",
+          "domain": "throttle_delta",
+          "meaning": "Internal throttle-delta code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate."
+        }
+      ],
+      "open_items": [
+        "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Transient fuel response 2 \u2014 neutral-input branch",
       "category": "Transient fuel",
@@ -9058,6 +9806,23 @@
         "0x9495",
         "0x94BA"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08ED throttle-derived delta",
+          "domain": "throttle_delta",
+          "meaning": "Internal throttle-delta code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate."
+        }
+      ],
+      "open_items": [
+        "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Transient fuel response 2 \u2014 normal ratio-code branch",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -9077,6 +9842,23 @@
         "0x9274",
         "0x9495",
         "0x94BA"
+      ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08ED throttle-derived delta",
+          "domain": "throttle_delta",
+          "meaning": "Internal throttle-delta code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate."
+        }
+      ],
+      "open_items": [
+        "Finish the delta/deadband and sample-cadence transfer before assigning a physical throttle rate.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Transient fuel response 2 \u2014 extended ratio-code branch",
       "category": "Transient fuel",
@@ -9156,6 +9938,23 @@
         "nominal_xt_timer"
       ],
       "stock_activation": "Normal state path is disabled: ROM 0x3130 is 0xFF; 0x8DF9 requires exactly 0x80. The disabled path resets CD4 to 128. Lookup presence alone does not establish an active effect.",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Fuel normalization recovery hold \u2014 normal ratio-code branch",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -9234,6 +10033,23 @@
         "nominal_xt_timer"
       ],
       "stock_activation": "Normal state path is disabled: ROM 0x3130 is 0xFF; 0x8DF9 requires exactly 0x80. The disabled path resets CD4 to 128. Lookup presence alone does not establish an active effect.",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Fuel normalization recovery hold \u2014 extended ratio-code branch",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -9316,6 +10132,23 @@
       "requires": [
         "nominal_xt_timer"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Feedback eligibility delay vs coolant",
       "category": "Feedback",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -9373,6 +10206,23 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Adaptive fuel correction \u2014 decrement step",
       "category": "Feedback",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -9430,6 +10280,23 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Adaptive fuel correction \u2014 increment step",
       "category": "Feedback",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -9541,6 +10408,22 @@
       ],
       "requires": [],
       "decoded_context": "Converted percentage applies to the normal-running consumer at 0x828C/0x82A6. Startup consumer at 0x7BF1 has different stage scaling.",
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F5 intake temperature",
+          "domain": "iat",
+          "meaning": "Intake temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the IAT circuit/temperature transfer before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm the IAT circuit/temperature transfer before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Fuel multiplier vs intake temperature",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -9621,6 +10504,22 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Positive transient fuel gain vs coolant",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -9701,6 +10600,22 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Negative transient fuel gain vs coolant",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -9797,6 +10712,23 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x0900 selected speed",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Pressure-processing offset vs engine speed",
       "category": "Sensor processing",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -9840,6 +10772,22 @@
         "0xB3CF",
         "0x82D6"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08F2 pressure-derived estimate",
+          "domain": "pressure_estimate",
+          "meaning": "Pressure-derived estimate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2."
+        }
+      ],
+      "open_items": [
+        "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Load-path fuel multiplier vs pressure estimate",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -9865,6 +10813,22 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08F2 pressure-derived estimate",
+          "domain": "pressure_estimate",
+          "meaning": "Pressure-derived estimate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2."
+        }
+      ],
+      "open_items": [
+        "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Throttle-path fuel multiplier vs pressure estimate",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -9951,6 +10915,23 @@
         "0x8F82",
         "0x96BA"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Confirm the relative TPS count-to-mechanical-angle transfer for the cell threshold.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Alternate ignition mode \u2014 throttle threshold vs coolant",
       "category": "Ignition",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -10031,6 +11012,22 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Coolant enrichment \u2014 load-based fuel path",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -10111,6 +11108,22 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Coolant enrichment \u2014 throttle-based fuel path",
       "category": "Fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -10207,6 +11220,23 @@
         "0x9495",
         "0x94BA"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u8 0x08F4 coolant",
+          "domain": "coolant",
+          "meaning": "Effective coolant temperature code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
+        }
+      ],
+      "open_items": [
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Transient fuel pulse contribution vs coolant",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -10251,6 +11281,24 @@
       "consumer_evidence": [
         "0x89A9",
         "0x8A2F"
+      ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08F2 pressure-derived estimate",
+          "domain": "pressure_estimate",
+          "meaning": "Pressure-derived estimate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2."
+        }
+      ],
+      "open_items": [
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+        "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Spark timing bound vs pressure estimate",
       "category": "Ignition",
@@ -10327,6 +11375,24 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Throttle-delta fuel gain \u2014 nonnegative, neutral-input",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -10402,6 +11468,24 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Throttle-delta fuel gain \u2014 nonnegative, normal ratio-code",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -10477,6 +11561,24 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Throttle-delta fuel gain \u2014 nonnegative, extended ratio-code",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -10552,6 +11654,24 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Throttle-delta fuel gain \u2014 negative, neutral-input",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -10627,6 +11747,24 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Throttle-delta fuel gain \u2014 negative, normal ratio-code",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -10702,6 +11840,24 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Throttle-delta fuel gain \u2014 negative, extended ratio-code",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -10777,6 +11933,24 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Load-delta fuel gain \u2014 nonnegative, neutral-input",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -10852,6 +12026,24 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Load-delta fuel gain \u2014 nonnegative, normal ratio-code",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -10927,6 +12119,24 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Load-delta fuel gain \u2014 nonnegative, extended ratio-code",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -11002,6 +12212,24 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Load-delta fuel gain \u2014 negative, neutral-input",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -11077,6 +12305,24 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Load-delta fuel gain \u2014 negative, normal ratio-code",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -11152,6 +12398,24 @@
         ]
       ],
       "requires": [],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Load-delta fuel gain \u2014 negative, extended ratio-code",
       "category": "Transient fuel",
       "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
@@ -11439,6 +12703,33 @@
       ],
       "requires": [],
       "decoded_context": "Eligibility: zero inhibits the documented path; nonzero permits its next tests. Not a continuous physical quantity.",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x08E8",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Air-induction enable vs speed and throttle",
       "category": "Air induction",
       "naming_basis": "analysis/semantics/EXTENDED_MAPS.md",
@@ -11726,6 +13017,33 @@
       ],
       "requires": [],
       "decoded_context": "Eligibility: zero inhibits the documented path; nonzero permits its next tests. Not a continuous physical quantity.",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0C90",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Air-induction enable vs speed and load",
       "category": "Air induction",
       "naming_basis": "analysis/semantics/EXTENDED_MAPS.md",
@@ -11884,6 +13202,33 @@
       "requires": [],
       "decoded_context": "Eligibility: zero inhibits the documented path; nonzero permits its next tests. Not a continuous physical quantity.",
       "stock_activation": "Every stock cell is zero, rejecting this normal feedback-eligibility gate.",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x08E8",
+          "domain": "throttle",
+          "meaning": "Relative throttle coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Adaptive feedback enable vs speed and throttle",
       "category": "Feedback",
       "naming_basis": "analysis/semantics/EXTENDED_MAPS.md",
@@ -12042,6 +13387,33 @@
       "requires": [],
       "decoded_context": "Eligibility: zero inhibits the documented path; nonzero permits its next tests. Not a continuous physical quantity.",
       "stock_activation": "Every stock cell is zero, rejecting this normal feedback-eligibility gate.",
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x0C90",
+          "domain": "load",
+          "meaning": "Processed load coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Adaptive feedback enable vs speed and load",
       "category": "Feedback",
       "naming_basis": "analysis/semantics/EXTENDED_MAPS.md",
@@ -12131,6 +13503,23 @@
       "requires": [
         "nominal_xt_timer"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x08F8: instantaneous speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Spark time correction \u2014 other variants",
       "category": "Ignition",
       "naming_basis": "analysis/semantics/SPARK_SCHEDULER.md",
@@ -12219,6 +13608,23 @@
       ],
       "requires": [
         "nominal_xt_timer"
+      ],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "u16 RAM 0x08F8: instantaneous speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Spark time correction \u2014 XT variant 9",
       "category": "Ignition",
@@ -12429,6 +13835,33 @@
       "requires": [
         "nominal_xt_timer"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "row_axis",
+          "source": "u16 RAM 0x0900: selected speed code",
+          "domain": "speed",
+          "meaning": "Speed coordinate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
+        },
+        {
+          "axis": "column_axis",
+          "source": "u8 RAM 0x08D9: supply code",
+          "domain": "supply",
+          "meaning": "Supply-derived code",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the voltage divider/reference and filtering before assigning volts."
+        }
+      ],
+      "open_items": [
+        "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
+        "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
+        "Confirm the voltage divider/reference and filtering before assigning volts.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Ignition dwell contribution vs speed and supply",
       "category": "Ignition",
       "naming_basis": "analysis/semantics/SPARK_SCHEDULER.md",
@@ -12476,6 +13909,22 @@
       ],
       "requires": [
         "yamaha_temperature_candidate"
+      ],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "10-bit ADC channel 6",
+          "domain": "adc",
+          "meaning": "ADC count",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Not required: internal code/count",
+          "open_requirement": null
+        }
+      ],
+      "open_items": [
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Coolant sensor conversion",
       "category": "Sensor processing",
@@ -12529,6 +13978,22 @@
       "requires": [
         "yamaha_temperature_candidate"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "column_axis",
+          "source": "10-bit ADC channel 3",
+          "domain": "adc",
+          "meaning": "ADC count",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Not required: internal code/count",
+          "open_requirement": null
+        }
+      ],
+      "open_items": [
+        "Confirm the IAT circuit/temperature transfer before assigning Celsius.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Intake air temperature sensor conversion",
       "category": "Sensor processing",
       "naming_basis": "analysis/semantics/TEMPERATURE_PROFILE.md",
@@ -12572,6 +14037,22 @@
         "0x9609",
         "0x965E"
       ],
+      "axis_interpretations": [
+        {
+          "axis": "uniform_input",
+          "source": "u16 0x08F2 pressure-derived estimate",
+          "domain": "pressure_estimate",
+          "meaning": "Pressure-derived estimate",
+          "raw_coordinate_status": "Traced in catalogue",
+          "physical_status": "Open",
+          "open_requirement": "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2."
+        }
+      ],
+      "open_items": [
+        "Confirm the pressure estimator, analog transfer and reference before assigning kPa to 08F2.",
+        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
+      ],
       "display_name": "Pressure-to-load processing gain",
       "category": "Sensor processing",
       "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
@@ -12606,13 +14087,12 @@
   },
   "summary": {
     "maps": 71,
-    "cell_conversions": 62,
+    "cell_conversions": 64,
     "maps_with_speed_axes": 40,
     "maps_with_candidate_temperature_axes": 14,
     "joint_arithmetic_maps": 7,
-    "unresolved_cell_maps": [
-      "fuel_normalization_load",
-      "fuel_normalization_throttle"
-    ]
-  }
+    "unresolved_cell_maps": [],
+    "axes_with_explicit_review": 90
+  },
+  "review_generator_sha256": "7b7fe02f539d388cfd44056063ad2d5aaf4da8a19cc1b8cc6e4ac7c34a4c5140"
 }
