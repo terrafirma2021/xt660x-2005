@@ -13,9 +13,28 @@ ROM `0x18D3 = 9` initializes RAM `0x0D87`. That selector demonstrably changes ma
 | Intake air | `0x7040` loads fixed pointer `0x4F23`, cells `0x4F26` | `0x7060` loads fixed ROM byte `0x4E65 = 80` |
 | Coolant | `0x711B` loads fixed pointer `0x4F44`, cells `0x4F47` | `0x714F` loads fixed ROM byte `0x4E64 = 144` |
 
-[66,600 instruction-execution cases](sensor_variant_validation.json) test the claim: 30,504 temperature cases vary all 256 selector values, ADC inputs and established fault states; 36,096 cases check selection and fractional interpolation of the two spark correction curves. Every ADC input is covered for selector values 0, 9 and 255; the remaining selector values use 18 boundary/interior ADC samples. Temperature results and replacements remain identical when only `D87` changes. The spark curve changes exactly at value 9. These are isolated-routine tests, not proof about all upstream state or other firmware images.
+[74,792 instruction-execution cases](sensor_variant_validation.json) test the claim: 30,504 temperature cases vary all 256 selector values, ADC inputs and established fault states; 8,192 further cases exhaust both sensors across every ADC input and all established fault/override bit combinations at variant 9; 36,096 cases check selection and fractional interpolation of the two spark correction curves. Every ADC input is covered for selector values 0, 9 and 255; the remaining selector values use 18 boundary/interior ADC samples. Temperature results and replacements remain identical when only `D87` changes. The spark curve changes exactly at value 9. These are isolated-routine tests, not proof about all upstream state or other firmware images.
 
 The coolant diagnostic payload uses the **measured** temperature code even when the effective code is replaced due to a fault. The IAT diagnostic payload uses the **effective** code. Neither diagnostic payload by itself establishes a dashboard Celsius offset.
+
+## Exact coolant lookup and replacement path
+
+The coolant map is present at **0x4F47-0x4F63**, with **29 stored cells**. It maps ADC input to an internal temperature code; it is not a two-dimensional fuel surface. The website shows its full digital curve and the cell grid directly below the page title. Its ADC slider covers all 1,024 possible inputs. Candidate Celsius is an optional, explicitly conditional display.
+
+```text
+q = min(7168, max(0, adc10 * 64 - 3840) // 8)
+index, fraction = divmod(q, 256)
+measured = cell[28] if index == 28 else
+           (cell[index] * (256-fraction) + cell[index+1] * fraction) // 256
+```
+
+The first stored knot is ADC 60; the last is ADC 956. Inputs below 60 clamp to code 239, while inputs at/above 956 clamp to code 0. Each intermediate knot is 32 ADC counts apart. These digital facts do not depend on assigning Celsius.
+
+At `0x7136`, measured code is written to `08F6`. The branch at `0x7145-0x7157` sets effective code `08F4` to fallback byte `ROM[4E64]=144` only when `08A0 & 4 == 0` and `08B0 & 128 != 0`; otherwise it copies the measured code. The diagnostic payload `0AE8=min(149, measured*160//256)` continues to report the measured conversion even during replacement. The initial startup and enrichment state writes at `0x715A-0x718D` use the effective code under their one-shot flags.
+
+For IAT, the branch at `0x702A-0x7063` runs the table when `08A0 & 4 != 0` or `08B0 & 64 == 0`; otherwise effective code `08F5` takes `ROM[4E65]=80`. IAT diagnostics report that effective code. The named bits above are firmware conditions, not newly identified physical operating-mode names. Fault qualification and upstream state writers remain separate from this established-state branch check.
+
+The extra 8,192 execution cases verify these exact output and diagnostic choices against the instruction translation. They confirm digital arithmetic and branching; they do not resolve the analog circuit or the conflicting manual temperature.
 
 ## Evidence for the candidate scale
 

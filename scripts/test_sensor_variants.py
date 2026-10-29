@@ -41,6 +41,27 @@ for variant in range(256):
                 assert s.ram[0xae8 if coolant else 0xaeb]==min(149,payload_source*160//256)
                 n+=1
 checks['all_variant_bytes_temperature_conversion_and_fault_fallback']=n
+# Exhaust the explicit override/fault selector at the temperature consumer.
+# Qualification is held off so these cases isolate the established state bits.
+n=0
+for coolant in [True,False]:
+    for adc in range(1024):
+        for fault in [False,True]:
+            for override in [False,True]:
+                s=state(0x70a3 if coolant else 0x6fc2)
+                put(s.reg,0,adc*64);put(s.ram,0x8ca,adc*64)
+                s.ram[0xd87]=9;s.ram[0xd58 if coolant else 0xd59]=128
+                s.ram[0x8a0]=4 if override else 0
+                s.ram[0x8b0]=(128 if coolant else 64) if fault else 0
+                run(s,0x715a if coolant else 0x7072)
+                measured=sensor_code(image,adc,coolant)
+                effective=image[0x4e64 if coolant else 0x4e65] if fault and not override else measured
+                assert s.ram[0x8f4 if coolant else 0x8f5]==effective
+                if coolant:assert s.ram[0x8f6]==measured
+                assert s.ram[0xae8 if coolant else 0xaeb]==min(149,(measured if coolant else effective)*160//256)
+                n+=1
+checks['temperature_all_adc_fault_override_combinations']=n
+
 n=0
 for variant in range(256):
     for index in range(29):

@@ -94,9 +94,10 @@ def extend(maps, axes, image):
         ('intake_temperature_conversion',0x4f23,33,'10-bit ADC channel 3','RAM 0x08F5',
          'q8=(adc10//4)*32',[32*k for k in range(33)],[0x6fc2])]:
         add(name,base+3,1,count,'1D_sensor_conversion',[src],dest,
-            'Sensor conversion to internal temperature code; Celsius offset unresolved',ev,
+            'Sensor conversion to internal temperature code; candidate Celsius scale remains conditional',ev+[0x711b,0x7136,0x7145,0x714f,0x7157] if name.startswith('coolant') else ev+[0x702a,0x7040,0x7049,0x7060],
             base=base,col=implied(knots,src,formula),
-            interpolation='linear Q8, high byte (floor); last intake-temperature knot is an interpolation endpoint beyond ADC maximum 1023')
+            interpolation=('linear Q8, high byte (floor); coolant input clamps below ADC 60 and at/above ADC 956' if name.startswith('coolant') else 'linear Q8, high byte (floor); discards two ADC low bits; last stored knot at 1024 is an interpolation endpoint beyond ADC maximum 1023'),
+            selection=('Measured conversion is computed at 0x7115-0x7136 on each handler call. Effective 08F4 takes fallback ROM 4E64 (144) only when 08A0 bit 0x04 is clear and 08B0 bit 0x80 is set; otherwise it takes measured 08F6. This handler does not select a temperature table by D87' if name.startswith('coolant') else 'Lookup runs when 08A0 bit 0x04 is set or 08B0 bit 0x40 is clear; otherwise 08F5 takes ROM 4E65 (80). This handler does not select a temperature table by D87'))
 
     copied=add('curve_1854',0x185a,1,21,'1D_uniform_axis',
         ['u16 RAM 0x08F2 pressure-derived estimate'],'u8 RAM 0x0C92',

@@ -13805,13 +13805,19 @@
       "10-bit ADC channel 6"
     ],
     "output": "RAM 0x08F6 measured / 0x08F4 effective",
-    "physical_role": "Sensor conversion to internal temperature code; Celsius offset unresolved",
+    "physical_role": "Sensor conversion to internal temperature code; candidate Celsius scale remains conditional",
     "evidence_addresses": [
-      "0x70A3"
+      "0x70A3",
+      "0x711B",
+      "0x7136",
+      "0x7145",
+      "0x714F",
+      "0x7157"
     ],
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "interpolation": "linear Q8, high byte (floor); last intake-temperature knot is an interpolation endpoint beyond ADC maximum 1023",
+    "interpolation": "linear Q8, high byte (floor); coolant input clamps below ADC 60 and at/above ADC 956",
+    "selection": "Measured conversion is computed at 0x7115-0x7136 on each handler call. Effective 08F4 takes fallback ROM 4E64 (144) only when 08A0 bit 0x04 is clear and 08B0 bit 0x80 is set; otherwise it takes measured 08F6. This handler does not select a temperature table by D87",
     "pointer_base": "0x4F44",
     "column_axis": {
       "kind": "computed_axis",
@@ -13850,10 +13856,9 @@
       "input": "10-bit ADC channel 6",
       "index_formula": "q8=clamp((adc10*64-3840)//8,0,7168)"
     },
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "unresolved": [
       "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
-      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Coolant sensor conversion",
@@ -13914,13 +13919,18 @@
       "10-bit ADC channel 3"
     ],
     "output": "RAM 0x08F5",
-    "physical_role": "Sensor conversion to internal temperature code; Celsius offset unresolved",
+    "physical_role": "Sensor conversion to internal temperature code; candidate Celsius scale remains conditional",
     "evidence_addresses": [
-      "0x6FC2"
+      "0x6FC2",
+      "0x702A",
+      "0x7040",
+      "0x7049",
+      "0x7060"
     ],
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "interpolation": "linear Q8, high byte (floor); last intake-temperature knot is an interpolation endpoint beyond ADC maximum 1023",
+    "interpolation": "linear Q8, high byte (floor); discards two ADC low bits; last stored knot at 1024 is an interpolation endpoint beyond ADC maximum 1023",
+    "selection": "Lookup runs when 08A0 bit 0x04 is set or 08B0 bit 0x40 is clear; otherwise 08F5 takes ROM 4E65 (80). This handler does not select a temperature table by D87",
     "pointer_base": "0x4F23",
     "column_axis": {
       "kind": "computed_axis",
@@ -13963,10 +13973,9 @@
       "input": "10-bit ADC channel 3",
       "index_formula": "q8=(adc10//4)*32"
     },
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "unresolved": [
       "Confirm the IAT circuit/temperature transfer before assigning Celsius.",
-      "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+      "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Intake air temperature sensor conversion",

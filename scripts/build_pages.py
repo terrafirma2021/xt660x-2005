@@ -22,6 +22,7 @@ maps = json.loads((ROOT / 'analysis/maps.json').read_text())
 map_by_id = {m['id']: m for m in maps}
 units = json.loads((SOURCE / 'physical_units.json').read_text())
 unit_by_id = {m['id']: m for m in units['maps']}
+temperature = json.loads((SOURCE/'temperature_profile.json').read_text(encoding='utf-8'))
 pins = json.loads((SOURCE / 'mcu_pin_overview.json').read_text())
 tracked_files = subprocess.check_output(['git', 'ls-files', '-z'], cwd=ROOT).decode('utf-8').strip('\0').split('\0')
 documents = sorted(ROOT / p for p in tracked_files if p.endswith('.md'))
@@ -134,7 +135,10 @@ class LinkRewriter(HTMLParser):
     def handle_starttag(self,tag,attrs):
         attrs=[(k,self.rewrite(v) if k in ('href','src') and v else v) for k,v in attrs]
         self.parts.append('<'+tag+''.join(' '+k+(f'="{esc(v,quote=True)}"' if v is not None else '') for k,v in attrs)+'>')
-    def handle_startendtag(self,tag,attrs):self.handle_starttag(tag,attrs)
+    def handle_startendtag(self,tag,attrs):
+        self.handle_starttag(tag,attrs)
+        # Preserve self-closing SVG shapes; an open path/line swallows siblings.
+        self.parts[-1]=self.parts[-1][:-1]+'/>'
     def handle_endtag(self,tag):self.parts.append('</'+tag+'>')
     def handle_data(self,data):self.parts.append(data)
     def handle_entityref(self,name):self.parts.append('&'+name+';')
@@ -158,8 +162,8 @@ for source in documents:
         rendered,count=re.subn(r'<h2[^>]*>Raw cells</h2>\s*(<pre><code>.*?</code></pre>)',
             r'<details class="raw-matrix"><summary>Copyable raw matrix</summary>\1</details>',rendered,count=1,flags=re.S)
         assert count==1, ('Raw matrix missing',m['id'])
-        position=rendered.index('<h2')
-        rendered=rendered[:position]+map_grid(m)+rendered[position:]
+        position=rendered.index('</h1>')+len('</h1>')
+        rendered=rendered[:position]+map_grid(m,temperature)+rendered[position:]
         script=f'<script src="{rel("assets/map-grid.js",target)}?v={revision}" defer></script>'
     parser=LinkRewriter(source,target);parser.feed(rendered)
     body=f'<div class="doc-toolbar"><a href="{rel("research/index.html",target)}">← Research library</a><a href="{REPO}/blob/main/{quote(source.relative_to(ROOT).as_posix())}">View source on GitHub ↗</a></div><article class="document">'+''.join(parser.parts)+'</article>'

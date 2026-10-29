@@ -13923,7 +13923,7 @@
       ],
       "open_items": [
         "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
-        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Coolant sensor conversion",
@@ -13991,7 +13991,7 @@
       ],
       "open_items": [
         "Confirm the IAT circuit/temperature transfer before assigning Celsius.",
-        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "display_name": "Intake air temperature sensor conversion",

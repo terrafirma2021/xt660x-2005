@@ -14,8 +14,39 @@ document.querySelectorAll('.calibration-grid').forEach(grid=>{
     cell.tabIndex=0;
     cell.classList.add('selected');
     output.textContent=cell.getAttribute('aria-label');
+    grid.querySelectorAll('.curve-knot').forEach(dot=>dot.classList.toggle('selected',Number(dot.dataset.cell)===Number(cell.dataset.column)));
   };
   select(selected);
+  const plot=grid.querySelector('.curve-plot');
+  if(plot){
+    const data=JSON.parse(grid.querySelector('.curve-data').textContent);
+    const scale=grid.querySelector('.curve-scale'),adc=grid.querySelector('.curve-adc');
+    let span=790;
+    const x=value=>70+(value-data.xmin)/(data.xmax-data.xmin||1)*span;
+    const render=()=>{
+      span=grid.clientWidth<600?360:790;plot.setAttribute('viewBox','0 0 '+(span+110)+' 320');
+      plot.querySelectorAll('.curve-guide').forEach(line=>line.setAttribute('x2',70+span));
+      plot.querySelectorAll('.curve-x-tick').forEach(tick=>tick.setAttribute('x',x(Number(tick.textContent))));
+      plot.querySelector('.curve-x-label').setAttribute('x',70+span/2);
+      plot.querySelectorAll('.curve-knot').forEach(dot=>dot.setAttribute('cx',x(data.knots[Number(dot.dataset.cell)][0])));
+      const candidate=scale?.value==='candidate';
+      const convert=value=>candidate?value*.625-30:value;
+      const low=convert(data.ymin),high=convert(data.ymax);
+      const y=value=>260-(convert(value)-low)/(high-low)*210;
+      const label=candidate?'Candidate °C — conditional':data.sensor?'Internal temperature code':'Raw cell value';
+      plot.querySelector('.curve-y-label').textContent=label;
+      plot.setAttribute('aria-label',label+' versus raw input coordinate');
+      plot.querySelectorAll('.curve-y-tick').forEach((tick,i)=>tick.textContent=Number((low+(high-low)*i/4).toFixed(3)));
+      plot.querySelector('.curve-line').setAttribute('d',data.samples.map(([a,v],i)=>(i?'L':'M')+x(a)+','+y(v)).join(' '));
+      if(adc){
+        const a=Number(adc.value),raw=data.samples[a][1];
+        const probe=plot.querySelector('.curve-probe');probe.setAttribute('cx',x(a));probe.setAttribute('cy',y(raw));probe.setAttribute('visibility','visible');
+        grid.querySelector('.curve-reading').textContent='ADC '+a+' → internal code '+raw+(candidate?' → candidate '+Number(convert(raw).toFixed(3))+' °C (conditional)':'');
+      }
+    };
+    plot.addEventListener('click',event=>{const knot=event.target.closest('.curve-knot');if(knot)cells[Number(knot.dataset.cell)].focus({preventScroll:true})});
+    scale?.addEventListener('change',render);adc?.addEventListener('input',render);render();new ResizeObserver(render).observe(grid);
+  }
   grid.addEventListener('focusin',event=>{if(event.target.matches('.map-cell'))select(event.target)});
   grid.addEventListener('click',event=>{if(event.target.matches('.map-cell'))select(event.target)});
   grid.addEventListener('keydown',event=>{

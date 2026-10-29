@@ -46,7 +46,7 @@ These have different levels of completion. Coolant/fan decisions and the princip
 - [MAP_RESOLUTION.md](MAP_RESOLUTION.md): current per-map status; cell interpretation does not imply every axis or mode is resolved.
 - [map_consumer_validation.json](map_consumer_validation.json): 259,216 consumer checks with independent integer models.
 - [spark_schedule_validation.json](spark_schedule_validation.json): 74,832 planner and compare-dispatch checks.
-- [sensor_variant_validation.json](sensor_variant_validation.json): 66,600 temperature and variant-selected spark-curve checks.
+- [sensor_variant_validation.json](sensor_variant_validation.json): 74,792 temperature and variant-selected spark-curve checks.
 - [temperature_profile.json](temperature_profile.json): quantified sensor-profile assumptions, resistance comparisons and all ADC inputs.
 - [physical_units.json](physical_units.json): all 71 maps accounted for, with named assumptions on converted values.
 - [units_variant_validation.json](units_variant_validation.json): independent unit arithmetic, scheduler and variant fixtures.

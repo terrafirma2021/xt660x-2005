@@ -8,7 +8,7 @@ Sensor identity is corroborated. The internal-code-to-Celsius profile remains co
 Naming evidence: [recovered derivation](../../analysis/semantics/TEMPERATURE_PROFILE.md).
 <!-- /map-name -->
 
-Sensor conversion to internal temperature code; Celsius offset unresolved
+Sensor conversion to internal temperature code; candidate Celsius scale remains conditional
 
 Cells: **0x4F26–4F46**, 1 rows × 33 columns, 8-bit unsigned big-endian values.
 
@@ -16,9 +16,9 @@ Inputs: 10-bit ADC channel 3.
 
 Output: RAM 0x08F5.
 
-Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
+Selection: Lookup runs when 08A0 bit 0x04 is set or 08B0 bit 0x40 is clear; otherwise 08F5 takes ROM 4E65 (80). This handler does not select a temperature table by D87.
 
-Interpolation: linear Q8, high byte (floor); last intake-temperature knot is an interpolation endpoint beyond ADC maximum 1023.
+Interpolation: linear Q8, high byte (floor); discards two ADC low bits; last stored knot at 1024 is an interpolation endpoint beyond ADC maximum 1023.
 
 **Tuning export is disabled.** Conditional conversions and unresolved physical references are recorded per map in the [engineering-unit companion](../semantics/physical_units.json); see the [derivation](../semantics/UNIT_DECODING.md).
 
@@ -59,6 +59,46 @@ Addresses refer to the unchanged image. Windows around entry/call sites provide 
 6fe0  b60b42  LDAA 0xb42
 6fe3  b10d8a  CMPA 0xd8a
 6fe6  2342  BLS 0x702a
+...
+7018  b10d8a  CMPA 0xd8a
+701b  230d  BLS 0x702a
+701d  1f08b04008  BRCLR 0x8b0,0x40,0x702a
+7022  1d08b040  BCLR 0x8b0,0x40
+7026  1c0bd240  BSET 0xbd2,0x40
+702a  1e08a00405  BRSET 0x8a0,0x4,0x7034
+702f  1e08b04026  BRSET 0x8b0,0x40,0x705a
+7034  b608ca  LDAA 0x8ca
+7037  7a08d8  STAA 0x8d8
+703a  8000  SUBA #0x0
+703c  2402  BCC 0x7040
+703e  8600  LDAA #0x0
+7040  ce4f23  LDX #0x4f23
+7043  c620  LDAB #0x20
+7045  12  MUL
+7046  16c1db  JSR 0xc1db
+7049  7a08f5  STAA 0x8f5
+704c  c6a0  LDAB #0xa0
+704e  12  MUL
+704f  8196  CMPA #0x96
+7051  2502  BCS 0x7055
+7053  8695  LDAA #0x95
+7055  7a0aeb  STAA 0xaeb
+7058  2018  BRA 0x7072
+705a  b608ca  LDAA 0x8ca
+705d  7a08d8  STAA 0x8d8
+7060  b64e65  LDAA 0x4e65
+7063  7a08f5  STAA 0x8f5
+7066  c6a0  LDAB #0xa0
+7068  12  MUL
+7069  8196  CMPA #0x96
+706b  2502  BCS 0x706f
+706d  8695  LDAA #0x95
+706f  7a0aeb  STAA 0xaeb
+7072  cc1000  LDD #0x1000
+7075  7a08c2  STAA 0x8c2
+7078  7b08c3  STAB 0x8c3
+707b  3d  RTS
+707c  1e0880100a  BRSET 0x880,0x10,0x708b
 ```
 
 [Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)
@@ -83,7 +123,7 @@ Required profiles: `yamaha_temperature_candidate`. These are assumptions, not me
 ### What remains for this map
 
 - Confirm the IAT circuit/temperature transfer before assigning Celsius.
-- Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.
+- Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.
 - Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
 
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

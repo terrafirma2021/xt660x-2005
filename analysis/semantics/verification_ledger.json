@@ -3910,7 +3910,7 @@
       ],
       "open_items": [
         "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
-        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/coolant_sensor_conversion.md",
@@ -3940,7 +3940,7 @@
       ],
       "open_items": [
         "Confirm the IAT circuit/temperature transfer before assigning Celsius.",
-        "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
+        "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
       "dossier": "analysis/map_details/intake_temperature_conversion.md",
@@ -5308,9 +5308,9 @@
     },
     {
       "path": "analysis/semantics/sensor_variant_validation.json",
-      "sha256": "9c2087ec05b25e20d5c13411554dd9c1c639c556d12fe2d860d6f82fe58c3d1e",
+      "sha256": "e9ee14545f8fb6090b619ef94aae1618c325188c2a37f1349eff87524315bd40",
       "recorded_result": "passed",
-      "recorded_cases": 66600,
+      "recorded_cases": 74792,
       "scope": "Isolated routines with injected ADC results and fault states. No proof about every possible upstream state writer, external analog circuit, donor ECU identity or physical units.",
       "evidence_scope": null,
       "audit_action": "Report/source provenance checked; fixtures not re-executed by ledger build"
@@ -5351,8 +5351,8 @@
     "connector_routes_physically_verified": 0
   },
   "input_sha256": {
-    "analysis/maps.json": "a57fecc957cda6c55eea4983d536059013e5bd964d2d04f903f516bfcd223809",
-    "analysis/semantics/physical_units.json": "c48fbb593eb9fc54059196a88004f2346db253effd3e6bf9dcbddbb0d0c7cdac",
+    "analysis/maps.json": "232925b28640258492569a91d701a6d3b9e46d1f31024b4691cf86befdd952e0",
+    "analysis/semantics/physical_units.json": "332a66921f5af8613f2986a7281afc84029f3a5de4187dfa48d3d003efe0a002",
     "analysis/semantics/mcu_pin_overview.json": "8b46f9e61d6c9f681ca07169ecb9493a1989c7bf0d2a4348acf9282febfdab8f",
     "analysis/semantics/package_datasheet_review.json": "1f5f1d8a7c7b2d2acaf66dc4da1385a65e1f1a3fc9c426c7c4e555353414ce4a",
     "analysis/semantics/code_pin_review.json": "e888703265b48fa9e3ca1cb1ee4506f9445278d5dbfd9979bcd11ee4e6b46072",
