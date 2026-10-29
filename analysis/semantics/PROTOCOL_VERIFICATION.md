@@ -17,6 +17,8 @@ The [verification results](protocol_verification.json) come from [a selected-pat
 
 These checks supply synthetic RAM and registers. They do not emulate a whole ECU, external storage, interrupt timing, hardware waveforms, or a physical ignition key. The interpreter implements the instructions needed by these fixtures and fails on unsupported instructions.
 
+The expanded [immobilizer simulation](IMMOBILIZER.md#exhaustive-seed-and-replay-simulation) adds all-seed exchanges through the receive/transmit routines, fixed and corrupted responses, sequence omissions, synthetic record variation, and a 65,536-pair arithmetic replay matrix. Its method, results, limits, and reproduction command are maintained in the immobilizer guide.
+
 ## Current and historical C limitations
 
 The earlier `042796c` structured C inverted an authentication-routing condition. The repository has since fixed BRSET semantics and regenerated that C; see [the semantic review notes](REVIEW_NOTES.md). The obsolete routing expression is not treated as a current defect here.

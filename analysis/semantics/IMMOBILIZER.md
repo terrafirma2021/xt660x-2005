@@ -93,6 +93,53 @@ Peer → ECU       ECU → peer
 
 Changing the final response chunk from `9D` to `9C` makes the next poll return `46 46 46 46 18`; the completion flag remains clear. This tests the complete registered-record logical exchange, including rejection. It does not validate the real peer's identity checks, capture timing, or physical key recognition. In particular, the ECU's arithmetic check is not a decode of the transponder's own authentication algorithm.
 
+## Exhaustive seed and replay simulation
+
+Run date: 2026-10-29; tested against repository baseline `72fc171536914363f4030bcd4ca3d7ce4ba09038`.
+
+The recovered ECU application accepts a response calculated from its transmitted challenge for every possible value of the sampled timer byte. Repeating one fixed response does not work across all challenges. This supports a possible explanation for consistent emulator operation: calculating the response for each exchange requires no secret input in the particular ECU-side check tested here. It does not identify how any commercial emulator is implemented.
+
+### Results
+
+| Experiment | Successful / tested | Meaning |
+|---|---:|---|
+| Fresh response calculated from the transmitted challenge | 256 / 256 | Authentication completion flag set for every timer seed |
+| Same fixed response reused for all seeds | 1 / 256 | Replay succeeds only for a matching challenge in this experiment |
+| Correct response with its lowest bit flipped | 0 / 256 | Arithmetic validation rejects the corruption |
+| Fresh response, omitting the registration-status command | 0 / 256 | Sequence/state requirements still apply |
+| Four different synthetic stored-record payloads, all seeds | 1,024 / 1,024 | These payload bytes are unnecessary to the response calculator under the assumed registered state |
+| Every generated response against every generated challenge | 258 / 65,536 | Arithmetic-check matrix only; includes 256 matching-seed cases and two cross-seed cases |
+
+There are 256 distinct challenge frames but 255 distinct expected responses. Seeds 68 and 180 share a response; the matrix therefore contains two cross-seed acceptances. Among the generated responses, a single fixed response matches at most two of the 256 seeds. These counts do not establish the real distribution of timer values at power-on.
+
+### Method
+
+The harness interprets recovered CPU12 instructions from the repository's disassembly. It verifies the listed instruction bytes against the supplied firmware, then exercises the receive dispatcher at `CDC0`, transmit routine at `CCB0`, and response-check path at `A9AF–AA51`. The interpreter implements the selected instruction subset; this is not a full silicon or peripheral emulator. Byte agreement does not independently validate every disassembler or interpreter semantic.
+
+The peer initiates the tested application exchange. The ECU returns the challenge, and the synthetic peer calculates its response using only the transmitted challenge frame. Successful sessions set the ECU's authentication-completion flag on the fourth successful completion poll. All emitted five-byte reply checksums were checked. Corrupt-response sessions never set completion.
+
+The uploaded firmware contains the bypass setting. The harness restores the candidate pre-patch setting `4E7D=00` and its RAM copy only in simulated memory, so the authentication handler and comparison execute. The resulting simulated startup checksum is `AA55`. The original pre-patch binary was not supplied; this configuration follows the user's recollection of a single `00 → 80` modification. The firmware file on disk remained unchanged.
+
+### Limits
+
+- A valid registered-record state is supplied in RAM. Real external-storage initialization, enrollment, and record validity are not tested.
+- UART readiness is supplied synthetically. Electrical levels, baud rate, delays, interrupts, timeout scheduling, and real power-on behavior are not established.
+- The main-loop response check is invoked at the appropriate modeled stage; the entire firmware is not run continuously from reset. Watchdog servicing is stubbed.
+- The physical key/transponder-to-immobilizer exchange is outside this model and may use separate secrets.
+- Authentication completion in this application path does not demonstrate a physical engine start or exclude other enable conditions.
+
+Thus, the evidence supports **a challenge-dependent ECU-facing calculation without a secret input in this checked path**. A fixed opening command alone says nothing about security, and a fixed response is not universally accepted. Hardware traces would be needed to validate the modeled sequence and timing on a real unpatched ECU.
+
+### Reproduce
+
+From the repository root with Python 3:
+
+```sh
+python scripts/simulate_immo_exchange.py .
+```
+
+Keep assertions enabled; do not use Python `-O`. The [simulation harness](../../scripts/simulate_immo_exchange.py) uses the existing selected-path interpreter and writes [machine-readable results](immo_simulation_results.json), including source hashes, experiment counts, eight sample traces, and accepted replay pairs. An optional `--out PATH` selects another results file. Firmware is read only.
+
 ## Stored keys and markers
 
 Three different concepts should not be confused:
