@@ -1,0 +1,3 @@
+delta_0989_gain_4 | 0x343C | 1 rows x 23 columns | raw values
+instruction-traced layout and raw dataflow; engineering units unresolved
+8 8 8 8 8 8 8 13 29 30 30 30 30 30 30 30 30 30 30 30 30 30 30

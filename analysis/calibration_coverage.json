@@ -1,0 +1,2011 @@
+{
+  "first": "0x1800",
+  "end_exclusive": "0x5000",
+  "total_bytes": 14336,
+  "description": "Byte accounting, not proof that every map or physical meaning is decoded. No-static-access bytes can still be used indirectly.",
+  "totals": {
+    "no_classified_layout_or_static_access": 307,
+    "static_access_role_unresolved": 552,
+    "catalogued_map_header_cells_or_axis": 13440,
+    "focused_semantic_parameter": 37
+  },
+  "spans": [
+    {
+      "start": "0x1800",
+      "end_exclusive": "0x1842",
+      "bytes": 66,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "464f5220543634204e45572044415441555044415445202730322f30312f5858ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff70ff",
+      "access_addresses": []
+    },
+    {
+      "start": "0x1842",
+      "end_exclusive": "0x1852",
+      "bytes": 16,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "070c0601000000000000060101010101",
+      "access_addresses": [
+        "0x1842",
+        "0x1843",
+        "0x1844",
+        "0x1845",
+        "0x1846",
+        "0x1847",
+        "0x1848",
+        "0x1849",
+        "0x184A",
+        "0x184B",
+        "0x184C",
+        "0x184D",
+        "0x184E",
+        "0x184F",
+        "0x1850",
+        "0x1851"
+      ]
+    },
+    {
+      "start": "0x1852",
+      "end_exclusive": "0x1854",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "4000",
+      "access_addresses": []
+    },
+    {
+      "start": "0x1854",
+      "end_exclusive": "0x186F",
+      "bytes": 27,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "720050000040efe4dad1c9c1bab3ada6a19c97938f8c8884807d7a",
+      "access_addresses": []
+    },
+    {
+      "start": "0x186F",
+      "end_exclusive": "0x1872",
+      "bytes": 3,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "800119",
+      "access_addresses": [
+        "0x186F",
+        "0x1870",
+        "0x1871"
+      ]
+    },
+    {
+      "start": "0x1872",
+      "end_exclusive": "0x1874",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "4000",
+      "access_addresses": []
+    },
+    {
+      "start": "0x1874",
+      "end_exclusive": "0x1880",
+      "bytes": 12,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "fe00ff00fe00ff00fe00ff00",
+      "access_addresses": [
+        "0x1874",
+        "0x1876",
+        "0x1878",
+        "0x187A",
+        "0x187C",
+        "0x187E"
+      ]
+    },
+    {
+      "start": "0x1880",
+      "end_exclusive": "0x189A",
+      "bytes": 26,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "1800980000208080808080808080808080808080808080808080",
+      "access_addresses": []
+    },
+    {
+      "start": "0x189A",
+      "end_exclusive": "0x189B",
+      "bytes": 1,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0e",
+      "access_addresses": [
+        "0x189A"
+      ]
+    },
+    {
+      "start": "0x189B",
+      "end_exclusive": "0x189C",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x189C",
+      "end_exclusive": "0x189E",
+      "bytes": 2,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0180",
+      "access_addresses": [
+        "0x189C"
+      ]
+    },
+    {
+      "start": "0x189E",
+      "end_exclusive": "0x18A0",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "ff00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x18A0",
+      "end_exclusive": "0x18B1",
+      "bytes": 17,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "02de2b0010005a006b80ff006b80ff0005",
+      "access_addresses": [
+        "0x18A0",
+        "0x18A2",
+        "0x18A4",
+        "0x18A6",
+        "0x18A8",
+        "0x18AA",
+        "0x18AC",
+        "0x18AE",
+        "0x18B0"
+      ]
+    },
+    {
+      "start": "0x18B1",
+      "end_exclusive": "0x18B3",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "2096",
+      "access_addresses": []
+    },
+    {
+      "start": "0x18B3",
+      "end_exclusive": "0x18B6",
+      "bytes": 3,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0c0c00",
+      "access_addresses": [
+        "0x18B3",
+        "0x18B4",
+        "0x18B5"
+      ]
+    },
+    {
+      "start": "0x18B6",
+      "end_exclusive": "0x18C8",
+      "bytes": 18,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "10e0103c3c3c3c3c3c3c3c3c3c3c3c3c3c3c",
+      "access_addresses": []
+    },
+    {
+      "start": "0x18C8",
+      "end_exclusive": "0x18CF",
+      "bytes": 7,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "7dc0208c03c000",
+      "access_addresses": [
+        "0x18C8",
+        "0x18C9",
+        "0x18CA",
+        "0x18CB",
+        "0x18CC",
+        "0x18CD",
+        "0x18CE"
+      ]
+    },
+    {
+      "start": "0x18CF",
+      "end_exclusive": "0x18D0",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x18D0",
+      "end_exclusive": "0x18D3",
+      "bytes": 3,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "1d0005",
+      "access_addresses": [
+        "0x18D0",
+        "0x18D2"
+      ]
+    },
+    {
+      "start": "0x18D3",
+      "end_exclusive": "0x18D4",
+      "bytes": 1,
+      "status": "focused_semantic_parameter",
+      "raw_hex": "09",
+      "access_addresses": [
+        "0x18D3"
+      ]
+    },
+    {
+      "start": "0x18D4",
+      "end_exclusive": "0x18D6",
+      "bytes": 2,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0406",
+      "access_addresses": [
+        "0x18D4",
+        "0x18D5"
+      ]
+    },
+    {
+      "start": "0x18D6",
+      "end_exclusive": "0x18D7",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "40",
+      "access_addresses": []
+    },
+    {
+      "start": "0x18D7",
+      "end_exclusive": "0x18D8",
+      "bytes": 1,
+      "status": "focused_semantic_parameter",
+      "raw_hex": "01",
+      "access_addresses": [
+        "0x18D7"
+      ]
+    },
+    {
+      "start": "0x18D8",
+      "end_exclusive": "0x18D9",
+      "bytes": 1,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "28",
+      "access_addresses": [
+        "0x18D8"
+      ]
+    },
+    {
+      "start": "0x18D9",
+      "end_exclusive": "0x18DA",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x18DA",
+      "end_exclusive": "0x18E6",
+      "bytes": 12,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "09ba620c0300030012800001",
+      "access_addresses": [
+        "0x18DA",
+        "0x18DC",
+        "0x18DD",
+        "0x18DE",
+        "0x18DF",
+        "0x18E0",
+        "0x18E1",
+        "0x18E2",
+        "0x18E3",
+        "0x18E4",
+        "0x18E5"
+      ]
+    },
+    {
+      "start": "0x18E6",
+      "end_exclusive": "0x19B9",
+      "bytes": 211,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "000002000b0015c02b8057006cc082809840ae0010001c0028003c005000640078008c00a000b400c800dc00f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010e01038332e28211a140e0807070707070704cd1400008080726252423d3935302c28",
+      "access_addresses": []
+    },
+    {
+      "start": "0x19B9",
+      "end_exclusive": "0x19BA",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x19BA",
+      "end_exclusive": "0x19D4",
+      "bytes": 26,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "0000a00000084080808080807000700000104e59636e79838e98",
+      "access_addresses": []
+    },
+    {
+      "start": "0x19D4",
+      "end_exclusive": "0x19D9",
+      "bytes": 5,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "2019008904",
+      "access_addresses": [
+        "0x19D4",
+        "0x19D5",
+        "0x19D6",
+        "0x19D7",
+        "0x19D8"
+      ]
+    },
+    {
+      "start": "0x19D9",
+      "end_exclusive": "0x19DA",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x19DA",
+      "end_exclusive": "0x19E4",
+      "bytes": 10,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "006461a8030000808080",
+      "access_addresses": [
+        "0x19DA",
+        "0x19DC",
+        "0x19DE",
+        "0x19DF",
+        "0x19E0",
+        "0x19E1",
+        "0x19E2",
+        "0x19E3"
+      ]
+    },
+    {
+      "start": "0x19E4",
+      "end_exclusive": "0x1ACE",
+      "bytes": 234,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "0000020014801ec0290033403d8047c052005c40708085009980b080b84000001a001e00280032003c00500064006e0078008c00b400808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080",
+      "access_addresses": []
+    },
+    {
+      "start": "0x1ACE",
+      "end_exclusive": "0x1ACF",
+      "bytes": 1,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "a6",
+      "access_addresses": [
+        "0x1ACE"
+      ]
+    },
+    {
+      "start": "0x1ACF",
+      "end_exclusive": "0x1AD0",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x1AD0",
+      "end_exclusive": "0x3114",
+      "bytes": 5700,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "46c04b404fc0548059005dc0624067006b806dc0700074c079407e00828087008bc09040950099809e40a2c0a740ac00b080b540b9c0be80c300c7c00c0010001400160018001a001c001e002000240028002c003000340038003c00410046004b00500055005a005f00640069006e00730078007d00820087008c009600a000aa00b400be00c800d200dc00e600f000fd00fe00ff00039303b603f10403040f041f042e043d044e046b048a0504053a055505be05d70604065906a406c7070807210749078007b707f8086608ca08ca08ca039303b303d704040410041f042b043d044f0468048a05050540055505be05d70604065906a406c7070807210749078007b707f8086608ca08ca08ca039003b003db040404110420042a043b044b0467049404f2052c055505be05d70604065906a406c706e207210749078007b707f8086608ca11f311f3038d03b003d403fa040804150422042f043e0456048804ca0528056105be05d70604065906a406c706ef07210749078007b707f8086608ca11e911e9038d03b303d003f303fe040a0414042404320446047904b40518056e05ac05d70604064a06a406c706ee07210749078007b707f8086608ca11f311f3039003ad03ce03ed03f8040404100421042f0442047604ae0512056e05a905d80604064a06a406c206ef07210749078007b707f8087008d411e911e9038a03a803c803f103fe040b041604240434044a047e04c20519057505af05de060d065706a006c206ee070e0751078407b7080c0884091a11d511d5038503ab03d803f70407041604250433044a0463049504db052b058605c805f706200663069e06c406eb07120753079107c7083e08d1097911d511d5038d03b903e504040412042604380449046b048904c005020542059005d206090631067506a406c206eb07120753079b07ee086209450a3111cb11cb029102ed032c037003a203cd041b0457048604ba04f30535057605b905eb06180645068306ae06c906f1071c075c079e0804087c097f0a7211941194025202a202e20333037003a203eb0431048104cc05080544057d05bc05eb06150643067f06a606cf06f2071c0760079e0809086f09710a5d11c611c60230027502b603070343037903d6041e046004b704f90535056f05a905d9060b0638067606a506cd06ef071b0753078d07ee0862092e09dd11f811f8020f024e028a02de0325036303bc040c045c049d04db051d0560059805c805fa06200657069106bc06e90719074e078807e1084b08cc0952125c125c01e20227026802b20307035703b304030450049104c904fe054b057805a705d606000635066f069406c406fa0738076d07c1082808b0091813881388015401d5022f029102e1034003a104030444048804c004f5053f056f059505ca05f1061d064d067f06b406df0722076007ab081a088708f413ec13ec014b01aa01f6027102c9032e039203fd0444049104c004fe0531055d059205c205e80614063b067506a506d20714075307a20800086d08d013ec13ec014b018a01db0230029f0313038103f40450048b04c60507053a0566059505c205e50617063f067006a106d6070c0741078c07f2086108ba13ba13ba014b018201cf0227028c0304037b0406046504a004d80516054b057805a105ca05f406200648066c069806c907030741078307e1084b08ac13ec13ec014b017e01c9021802890304037b040f046704ac04de0513054e0575059b05ca05f10620063f066c069806c406fa073c077607cf082c08b612f212f2014b018001c60211028902fc03780409047304ac04e4051605450575059805c505f4062006440670069406d207030733076d07c6082c08ac13561356014b017c01b50205027c02e503730415047304a604e7051305450572059b05c205ee061a06480670069406c406f5072f076d07c108230898138813880155017501a601fd027a02e503680412046d04a904e1051c05450572059805c505f1062006480670069406c90703073c077607c10823088e141e141e014b017001a101f0026a02dd036e041b047004a304e105100545056f059b05c505f70623064d067906a506df070c0741077f07d8084208ac14ff14ff014b016b019601e6026302dd036f040b046d04a604d8050d0545057b05a405d006060635066a069706cf0701073c077507b60803086d08de15e015e0014b0163019601db025b02d303880412046a04a004d5050f0546057d05af05e106090640067706ae06ea07210753079e07df08160894092e16761676014b0163018f01d4025102ce03830410046f049c04de0523055a058c05c305e606260659068606b306e5071c075807ad07e4082a089f094c16121612014b015e018c01cf024702c90393041f047404a604e305280564059b05be05fa0636066d069f06d106fe0735076707bc07ee082a087f095615181518014b0154018a01c9024202c103a5041f047404ba04e20528055f059b05be05f5061d0654069a06b806ea07170758079e07da081b0861093814a014a0014b0154018501c2023f02c103af041f047404c404ec0528055f05a505d205fa062c0645068606b306ef070d0744078507c108020834091a143c143c014b0154017f01bd023a02bc03b6041f047404c404ec0528055f05a505d205fa062c0645067706a406d107030730076707b207e4082f091f13ba13ba014b0154018201bd023702b703c5041f047404c404ec0528055f05a505d205fa062706450677069a06c206f907210753079e07df082008fc12f212f2014b0154016601bf023702ce03c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07e9083408fc12751275014b015401660199022d02d303c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07e9083408fc122a122a014b0154016601a6023a02e003c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07df082508f210f910f9014b0154016601b2024402e503c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07df082508e811801180014b0154016601de029302f203c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07df082508f2112b112b014b01540166025d02e9036103c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07df082508f210ea10ea014b01540166025d02e9036103c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07df082508f2107c107c014b01540166025d02e9036103c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07df082508f2107c107c014b01540166025d02e9036103c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07df082508f2107c107c014b01540166025d02e9036103c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07df082508f2107c107c014b01540166025d02e9036103c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07df082508f2107c107c014b01540166025d02e9036103c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07df082508f2107c107c014b01540166025d02e9036103c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07df082508f2107c107c014b01540166025d02e9036103c5041f047404bf04ec0528055f05a505d205f006270640067206a906cc07080730076207ad07df082508f2107c107c0000010002000300040008000c0010001800200028003000400050006000700080009000a3c0b000b840c200c240c300c400c500c600c700c800c9000c0010001400160018001a001c001e002000240028002c003000340038003c00410046004b00500055005a005f00640069006e00730078007d00820087008c009600a000aa00b400be00c800d200dc00e600f000fd00fe00ff0005910591063605b405ff06b8081b086b0924094709c40a6e0bb80c9e0da70e6f0f7811df11df11df11df11df11df11df11df11df11df11df11df11df055a055a05eb05c8060906d6081b089d0956097909ec0aaa0bf40cb20dcf0e8d0f9611df11df11df11df11df11df11df11df11df11df11df11df11df04e704e7057805fa060e0708081b08cf098809ab0a1e0ae60c260cee0e0b0ebf0fbe11f311f311f311f311f311f311f311f311f311f311f311f311f3047e047e05690640061d072b082a090109ba09ab0a3c0b0e0c300d020e290ec90fd211e911e911e911e911e911e911e911e911e911e911e911e911e9046a046a0550060406450749087f099709ec09dd0a6e0b2c0c620d200e470ee70ff011f311f311f311f311f311f311f311f311f311f311f311f311f304470447050a05b4065e077b08a7099709ec09e70a820b4a0c6c0d480e650f19101811e911e911e911e911e911e911e911e911e911e911e911e911e90410041004b50578061307370898096009ec09fb0aa00b680c9e0d6f0e830f37103611d511d511d511d511d511d511d511d511d511d511d511d511d503e303e3046a0514059106d60818091f09dd0a050aa00b900cb20da20ebf0f73105e11d511d511d511d511d511d511d511d511d511d511d511d511d5039d039d045104d3053c068107d6090709ce0a5f0ad20c480d1c0e4e0efb0fa5109011cb11cb11cb11cb11cb11cb11cb11cb11cb11cb11cb11cb11cb0375037503e8048304fb0627077908df0a940b5a0c480d480e320eeb0f87100e10e011c1122a122a119411941194119411941194119411941194119403070307037f03f7044c05f5075208df0a860bc40d250ded0efe0fb6102c108111761207125c125c11c611c611c611c611c611c611c611c611c611c602da02da030c037f041a055f06f508aa0a2a0bdc0d540e630f741025109a1126120c1216125c125c11f811f811f811f811f811f811f811f811f811f802bc02bc02da0334039d04fb067e07ee09790ac80ce00e6e100010ce114311941298124d128e128e125c125c125c125c125c125c125c125c125c125c02b202b202b202ee036b049705c306dd081a098b0bdf0e160ff110dc115d122a13561356138813881388138813881388138813881388138813881388028f028f029e02e40329045605370659076a08b80ad10d2b0fef10d5117612161310132413ba13ba13ec13ec13ec13ec13ec13ec13ec13ec13ec13ec026c026c028502b202f3042904ec05ea073b08460a210c870fc610c6115411fb12b6132413ba13ba13ec13ec13ec13ec13ec13ec13ec13ec13ec13ec024902490276029902c103e804d305df06ff080809c90c3f0f6a10a91162125c136f138813ba13ba13ba13ba13ba13ba13ba13ba13ba13ba13ba13ba02300230026c028a029903ac04e705f406da081509710bce0e97108111851270135613ba13ec13ec13ec13ec13ec13ec13ec13ec13ec13ec13ec13ec02120212026202670280037b04ad05cb06e107f809430b680e471063118a125c125c12a712f212f212f212f212f212f212f212f212f212f212f212f201fe01fe024e0258027103480497059706a707c508ff0ae20e0a104011c612a212f2130b13561356135613561356135613561356135613561356135601f401f4023002440226032f0463054e0647077408bc0a640daa103611c612f21324133d13881388138813881388138813881388138813881388138801f401f402120226022602f8041a050505f4072b08780a170d4a1040122a138813ba13ba141e141e141e141e141e141e141e141e141e141e141e141e01f401f401f40226022602d003c0049705e106f0081e09dd0d061022125c13ec14b414b414e614e614ff14ff14ff14ff14ff14ff14ff14ff14ff14ff01f401f401f40226022602c103980479059b06cb07e409860cc31018128e1482154a156315e015e015e015e015e015e015e015e015e015e015e015e001f401f401f402260226026c03840465059606b507e409380c760fe61275149b157c157c16121612167616761676167616761676167616761676167601f401f401f4022602260253036b043d059106a607c608fc0c030f28120c14501518156315f915f9161216121612161216121612161216121612161201f401f401f402260226023003480424058206a6078a08b60b860e5b112b1379145014cd15181518151815181518151815181518151815181518151801f401f401f40226022602260343040b056e0680073f08610aeb0d6b103612a713ba145a14d214d214a014a014a014a014a014a014a014a014a014a001f401f401f4022602260226034303f2054b0662071607f80a320cbc0f6911f8131a13ba143c143c143c143c143c143c143c143c143c143c143c143c01f401f401f4022602260226032503b60537063d06cb07b209ba0c260ea111491261132413ba13ba13ba13ba13ba13ba13ba13ba13ba13ba13ba13ba01f401f401f402260226022602f8038e05190601069f077109470b590dde106811ad128e12f212f212f212f212f212f212f212f212f212f212f212f201f401f401f402260226022602d0037504dd05ea065e0735090b0ac80d2a0fd7112611e912751275127512751275127512751275127512751275127501f401f401f402260226022602b2035704ab05aa063b06e008480a3c0c940ece1054114e122a122a122a122a122a122a122a122a122a122a122a122a01f401f401f402260226022602b2034803e805aa063b070308340a3c0c490e150f8710a910f910f910f910f910f910f910f910f910f910f910f910f901f401f401f402260226022602b2032003de05aa063b070308340a280c1c0e740fa010ef11801180118011801180118011801180118011801180118001f401f401f402260226022602b202fd047905aa063b0703083409f60bb80e100f3c1095112b112b112b112b112b112b112b112b112b112b112b112b01f401f401f402260226022602b202bc041a05aa063b07030834092e0b540dac0ed8102510ea10ea10ea10ea10ea10ea10ea10ea10ea10ea10ea10ea01f401f401f402260226022602b202bc03e80514063b0703076c092e0b220d480e740fcd107c107c107c107c107c107c107c107c107c107c107c107c01f401f401f402260226022602b202bc03b104f6063b0703076c092e0b220d480e740fcd107c107c107c107c107c107c107c107c107c107c107c107c01f401f401f402260226022602b202bc035204b0063b0703076c092e0b220d480e740fcd107c107c107c107c107c107c107c107c107c107c107c107c01f401f401f402260226022602b202bc032a047e063b0703076c092e0b220d480e740fcd107c107c107c107c107c107c107c107c107c107c107c107c01f401f401f402260226022602b202bc02e9044c063b0703076c092e0b220d480e740fcd107c107c107c107c107c107c107c107c107c107c107c107c01f401f401f402260226022602b202bc02bc041a063b0703076c092e0b220d480e740fcd107c107c107c107c107c107c107c107c107c107c107c107c01f401f401f402260226022602b202bc02bc03e8063b0703076c092e0b220d480e740fcd107c107c107c107c107c107c107c107c107c107c107c107c01f401f401f402260226022602b202bc02bc0384063b0703076c092e0b220d480e740fcd107c107c107c107c107c107c107c107c107c107c107c107c",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3114",
+      "end_exclusive": "0x3115",
+      "bytes": 1,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "00",
+      "access_addresses": [
+        "0x3114"
+      ]
+    },
+    {
+      "start": "0x3115",
+      "end_exclusive": "0x3116",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3116",
+      "end_exclusive": "0x311E",
+      "bytes": 8,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "2700ba800c00ff00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x311E",
+      "end_exclusive": "0x3122",
+      "bytes": 4,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "a6a6a6a6",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3122",
+      "end_exclusive": "0x312A",
+      "bytes": 8,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "148066800c00ff00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x312A",
+      "end_exclusive": "0x312F",
+      "bytes": 5,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "a6a6a6a670",
+      "access_addresses": []
+    },
+    {
+      "start": "0x312F",
+      "end_exclusive": "0x3131",
+      "bytes": 2,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "05ff",
+      "access_addresses": [
+        "0x312F",
+        "0x3130"
+      ]
+    },
+    {
+      "start": "0x3131",
+      "end_exclusive": "0x3132",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3132",
+      "end_exclusive": "0x3137",
+      "bytes": 5,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0001000105",
+      "access_addresses": [
+        "0x3132",
+        "0x3134",
+        "0x3136"
+      ]
+    },
+    {
+      "start": "0x3137",
+      "end_exclusive": "0x3138",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3138",
+      "end_exclusive": "0x313A",
+      "bytes": 2,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0002",
+      "access_addresses": [
+        "0x3138"
+      ]
+    },
+    {
+      "start": "0x313A",
+      "end_exclusive": "0x31EA",
+      "bytes": 176,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "0000020004000c0018003000500070009000b00020003000400050006000700080009000a000b000c000d000e00080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080",
+      "access_addresses": []
+    },
+    {
+      "start": "0x31EA",
+      "end_exclusive": "0x31EB",
+      "bytes": 1,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "05",
+      "access_addresses": [
+        "0x31EA"
+      ]
+    },
+    {
+      "start": "0x31EB",
+      "end_exclusive": "0x31EC",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x31EC",
+      "end_exclusive": "0x31FF",
+      "bytes": 19,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "2000c000001000000000000000000000000000",
+      "access_addresses": []
+    },
+    {
+      "start": "0x31FF",
+      "end_exclusive": "0x3200",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3200",
+      "end_exclusive": "0x3213",
+      "bytes": 19,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "2000c000001000000000000000000000000000",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3213",
+      "end_exclusive": "0x3215",
+      "bytes": 2,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "2005",
+      "access_addresses": [
+        "0x3213",
+        "0x3214"
+      ]
+    },
+    {
+      "start": "0x3215",
+      "end_exclusive": "0x3216",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3216",
+      "end_exclusive": "0x321C",
+      "bytes": 6,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "2700ba8046f6",
+      "access_addresses": []
+    },
+    {
+      "start": "0x321C",
+      "end_exclusive": "0x3220",
+      "bytes": 4,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "80808080",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3220",
+      "end_exclusive": "0x3257",
+      "bytes": 55,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "10c0209e99948f8a8785827f7d7a787573706e6b686663615e5c5957720050000040505255585a5d606265676a6d6f7275777a7d7f8284",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3257",
+      "end_exclusive": "0x3258",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3258",
+      "end_exclusive": "0x32EE",
+      "bytes": 150,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "42404a4052405a4062406a4072407a4082408a409240ba40100014001800280050007800a000c8008080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080807000700000104e59636e79838e98",
+      "access_addresses": []
+    },
+    {
+      "start": "0x32EE",
+      "end_exclusive": "0x32EF",
+      "bytes": 1,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "80",
+      "access_addresses": [
+        "0x32EE"
+      ]
+    },
+    {
+      "start": "0x32EF",
+      "end_exclusive": "0x3313",
+      "bytes": 36,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "10e010896c503e2e221712110c080604040410e01015120f0c0b09080606040302020202",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3313",
+      "end_exclusive": "0x3315",
+      "bytes": 2,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "7b02",
+      "access_addresses": [
+        "0x3313",
+        "0x3314"
+      ]
+    },
+    {
+      "start": "0x3315",
+      "end_exclusive": "0x3339",
+      "bytes": 36,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "10e0103d352e26201b150f0a07060504030210e0103d352e26201b150f0a070605040302",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3339",
+      "end_exclusive": "0x3342",
+      "bytes": 9,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0e100488000002b802",
+      "access_addresses": [
+        "0x3339",
+        "0x333A",
+        "0x333B",
+        "0x333C",
+        "0x333D",
+        "0x333E",
+        "0x333F",
+        "0x3340",
+        "0x3341"
+      ]
+    },
+    {
+      "start": "0x3342",
+      "end_exclusive": "0x3344",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "0e0e",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3344",
+      "end_exclusive": "0x3345",
+      "bytes": 1,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "ff",
+      "access_addresses": [
+        "0x3344"
+      ]
+    },
+    {
+      "start": "0x3345",
+      "end_exclusive": "0x3369",
+      "bytes": 36,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "10e0102f2a2623201e1c1b1a19191818181810e010aa8a6a5a4a4036302a2a2a2a2a2a2a",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3369",
+      "end_exclusive": "0x336B",
+      "bytes": 2,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0505",
+      "access_addresses": [
+        "0x3369",
+        "0x336A"
+      ]
+    },
+    {
+      "start": "0x336B",
+      "end_exclusive": "0x33F5",
+      "bytes": 138,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "000000664c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002d4858606666666666666666000000000000000d1d273b4b4e58606666666666666666000000000000000d1d273b4b4e58606666666666666666",
+      "access_addresses": []
+    },
+    {
+      "start": "0x33F5",
+      "end_exclusive": "0x33F7",
+      "bytes": 2,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0505",
+      "access_addresses": [
+        "0x33F5",
+        "0x33F6"
+      ]
+    },
+    {
+      "start": "0x33F7",
+      "end_exclusive": "0x3481",
+      "bytes": 138,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080808080808080d1d1e1e1e1e1e1e1e1e1e1e1e1e1e1e080808080808080d1d1e1e1e1e1e1e1e1e1e1e1e1e1e1e080808080808080d1d1e1e1e1e1e1e1e1e1e1e1e1e1e1e",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3481",
+      "end_exclusive": "0x3493",
+      "bytes": 18,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "83808001030380187d90840f373c45400404",
+      "access_addresses": [
+        "0x3481",
+        "0x3482",
+        "0x3483",
+        "0x3484",
+        "0x3485",
+        "0x3486",
+        "0x3487",
+        "0x3488",
+        "0x3489",
+        "0x348A",
+        "0x348B",
+        "0x348C",
+        "0x348D",
+        "0x348E",
+        "0x348F",
+        "0x3490",
+        "0x3491",
+        "0x3492"
+      ]
+    },
+    {
+      "start": "0x3493",
+      "end_exclusive": "0x3494",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3494",
+      "end_exclusive": "0x34A4",
+      "bytes": 16,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "20009000001004040404040404040404",
+      "access_addresses": []
+    },
+    {
+      "start": "0x34A4",
+      "end_exclusive": "0x34A7",
+      "bytes": 3,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "050028",
+      "access_addresses": [
+        "0x34A4",
+        "0x34A5",
+        "0x34A6"
+      ]
+    },
+    {
+      "start": "0x34A7",
+      "end_exclusive": "0x34A8",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x34A8",
+      "end_exclusive": "0x34B0",
+      "bytes": 8,
+      "status": "focused_semantic_parameter",
+      "raw_hex": "063b062a063b062a",
+      "access_addresses": [
+        "0x34A8",
+        "0x34AA",
+        "0x34AC",
+        "0x34AE"
+      ]
+    },
+    {
+      "start": "0x34B0",
+      "end_exclusive": "0x34C5",
+      "bytes": 21,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "14001c000080ffffffffffffffffffffffffff0000",
+      "access_addresses": []
+    },
+    {
+      "start": "0x34C5",
+      "end_exclusive": "0x34CB",
+      "bytes": 6,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "14ff00ff8c88",
+      "access_addresses": [
+        "0x34C5",
+        "0x34C6",
+        "0x34C7",
+        "0x34C8",
+        "0x34C9",
+        "0x34CA"
+      ]
+    },
+    {
+      "start": "0x34CB",
+      "end_exclusive": "0x34CC",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x34CC",
+      "end_exclusive": "0x34D0",
+      "bytes": 4,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "00f0ff01",
+      "access_addresses": [
+        "0x34CC",
+        "0x34CE",
+        "0x34CF"
+      ]
+    },
+    {
+      "start": "0x34D0",
+      "end_exclusive": "0x3539",
+      "bytes": 105,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "803020010508090b0d1980302001020305080d178030200506080b10171700008000001094948a8583807a737310e020272625242322201f1d1b1a19181817171514131211101010101010101010c0209e99948f8a878582807d7a787573706e6b6259504740383028",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3539",
+      "end_exclusive": "0x353A",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x353A",
+      "end_exclusive": "0x3548",
+      "bytes": 14,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "700070000010535e697479838e98",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3548",
+      "end_exclusive": "0x355D",
+      "bytes": 21,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0a0a0a0a0a0a0a1e460401400eff00ff8686828005",
+      "access_addresses": [
+        "0x3548",
+        "0x3549",
+        "0x354A",
+        "0x354B",
+        "0x354C",
+        "0x354D",
+        "0x354E",
+        "0x354F",
+        "0x3550",
+        "0x3551",
+        "0x3552",
+        "0x3553",
+        "0x3554",
+        "0x3555",
+        "0x3556",
+        "0x3557",
+        "0x3558",
+        "0x3559",
+        "0x355A",
+        "0x355B",
+        "0x355C"
+      ]
+    },
+    {
+      "start": "0x355D",
+      "end_exclusive": "0x357B",
+      "bytes": 30,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "8030201414211919261980302012151d1616211680302012151d16162116",
+      "access_addresses": []
+    },
+    {
+      "start": "0x357B",
+      "end_exclusive": "0x357F",
+      "bytes": 4,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "010003ff",
+      "access_addresses": [
+        "0x357B",
+        "0x357C",
+        "0x357D",
+        "0x357E"
+      ]
+    },
+    {
+      "start": "0x357F",
+      "end_exclusive": "0x3580",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3580",
+      "end_exclusive": "0x3588",
+      "bytes": 8,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "80008000a100b100",
+      "access_addresses": [
+        "0x3580",
+        "0x3582",
+        "0x3584",
+        "0x3586"
+      ]
+    },
+    {
+      "start": "0x3588",
+      "end_exclusive": "0x359A",
+      "bytes": 18,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "00000300040006400a400e40148025003d80",
+      "access_addresses": []
+    },
+    {
+      "start": "0x359A",
+      "end_exclusive": "0x359C",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "ccc0",
+      "access_addresses": []
+    },
+    {
+      "start": "0x359C",
+      "end_exclusive": "0x35AE",
+      "bytes": 18,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "100018002000290030003800400048005a00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x35AE",
+      "end_exclusive": "0x35B0",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "6000",
+      "access_addresses": []
+    },
+    {
+      "start": "0x35B0",
+      "end_exclusive": "0x3626",
+      "bytes": 118,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000520059c064006ac072407b8083408c809800",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3626",
+      "end_exclusive": "0x3628",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "9bc0",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3628",
+      "end_exclusive": "0x363A",
+      "bytes": 18,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "100018002000290030003800400048005a00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x363A",
+      "end_exclusive": "0x363C",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "6000",
+      "access_addresses": []
+    },
+    {
+      "start": "0x363C",
+      "end_exclusive": "0x36A0",
+      "bytes": 100,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "access_addresses": []
+    },
+    {
+      "start": "0x36A0",
+      "end_exclusive": "0x36A4",
+      "bytes": 4,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "00060006",
+      "access_addresses": [
+        "0x36A0",
+        "0x36A2"
+      ]
+    },
+    {
+      "start": "0x36A4",
+      "end_exclusive": "0x36B1",
+      "bytes": 13,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "18006000001004040404040404",
+      "access_addresses": []
+    },
+    {
+      "start": "0x36B1",
+      "end_exclusive": "0x36B2",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x36B2",
+      "end_exclusive": "0x36BF",
+      "bytes": 13,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "18006000001004040404040404",
+      "access_addresses": []
+    },
+    {
+      "start": "0x36BF",
+      "end_exclusive": "0x36C0",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x36C0",
+      "end_exclusive": "0x36C4",
+      "bytes": 4,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "199ae666",
+      "access_addresses": [
+        "0x36C0",
+        "0x36C2"
+      ]
+    },
+    {
+      "start": "0x36C4",
+      "end_exclusive": "0x36D6",
+      "bytes": 18,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "10e010000000000000000000000000000000",
+      "access_addresses": []
+    },
+    {
+      "start": "0x36D6",
+      "end_exclusive": "0x36ED",
+      "bytes": 23,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "2c37424d5867727d8792b0d001ff79873eff8a750119e6",
+      "access_addresses": [
+        "0x36D6",
+        "0x36D7",
+        "0x36D8",
+        "0x36D9",
+        "0x36DA",
+        "0x36DB",
+        "0x36DC",
+        "0x36DD",
+        "0x36DE",
+        "0x36DF",
+        "0x36E0",
+        "0x36E1",
+        "0x36E2",
+        "0x36E3",
+        "0x36E4",
+        "0x36E5",
+        "0x36E6",
+        "0x36E7",
+        "0x36E8",
+        "0x36E9",
+        "0x36EA",
+        "0x36EB",
+        "0x36EC"
+      ]
+    },
+    {
+      "start": "0x36ED",
+      "end_exclusive": "0x36EE",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "20",
+      "access_addresses": []
+    },
+    {
+      "start": "0x36EE",
+      "end_exclusive": "0x36F1",
+      "bytes": 3,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "80ffff",
+      "access_addresses": [
+        "0x36EE",
+        "0x36EF",
+        "0x36F0"
+      ]
+    },
+    {
+      "start": "0x36F1",
+      "end_exclusive": "0x36F2",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x36F2",
+      "end_exclusive": "0x370F",
+      "bytes": 29,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "044c051401f4ffff038405dc04b0ffff01f40320015effff01f4035229",
+      "access_addresses": [
+        "0x36F2",
+        "0x36F4",
+        "0x36F6",
+        "0x36F8",
+        "0x36F9",
+        "0x36FA",
+        "0x36FC",
+        "0x36FE",
+        "0x3700",
+        "0x3701",
+        "0x3702",
+        "0x3704",
+        "0x3706",
+        "0x3708",
+        "0x3709",
+        "0x370A",
+        "0x370C",
+        "0x370E"
+      ]
+    },
+    {
+      "start": "0x370F",
+      "end_exclusive": "0x3710",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x3710",
+      "end_exclusive": "0x3712",
+      "bytes": 2,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0000",
+      "access_addresses": [
+        "0x3710"
+      ]
+    },
+    {
+      "start": "0x3712",
+      "end_exclusive": "0x423E",
+      "bytes": 2860,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "26c02a002d0030003300364039403c403f804bc058005e0064406a806d807080738076c079c07cc080008300860089008f4095809b80a1c0ae00ba400c001000140017001a001d0020002300260029002c002f00320037003c00410046004b00500055005a005f00640069006e00730078007d00820087008c009600a000aa00b400be00c800d200dc00e600fb00fc00fd00fe00ff0003b103b103b103b103b103b103b103b103b1040b041003b103e8043d04a304ea04e605f705ef05d006030774075507b107e908020b8c0f16114a150903890389038903890389038903890389038903ed03f203a003cf043804a204eb0501055505e405b206030774075507b107da082c0ba10f16114a1509036b036b036b036b036b036b036b036b036b03d903de039d03b6043804a404e904e3059b063705ba05f30755075507b207d0084b0bb00f16114a150903480348034803480348034803480348034803c003c5037f0387043b049904d5054705c4059f05b206110774075507a807ef08890bd00f16114a1509033e033e033e033e033e033e033e033e033e03a703b103480384045e04ae04f1053c05c505a706150643071b074307a7082d08890bd00f16114a15090334033403340334033403340334033403340389039603250384045904b504fb053c05d405a70618064c06cc075b07a7060609660c3e0f1610b115090320032003200320032003200320032003200370037a02ff03770433048d04fb053c059405a005f5065c06b107280763061309540c350f1610171509031603160316031603160316031603160316033e034302f20369041a047904c405110566059705d20642067906b40688061307db0b4a0f09101715090307030703070307030703070307030703070320033e02cd034f0407045604a604fc0534055b057705b305bd05e4062a061707d50b4f0efc1017150902f802f802f802f802f802f802f802f8028a0298029802eb034203f90451049404d8051d055d0572059d05bd05fd062806a707d50b500efc101f150902e402e402e402e402e402e402e402e4028a029702970300034b03e5044c048104ca0525055e059605cb06040635066806a707fc0ba90eaf101f15e002ff02ff02ff02ff02ff02ff02ff02ff029a029a029a0309036503f3045004990516055705a405bd05ff062c0662068506cc08160bae0eaf101f15e002ea02ea02ea02ea02ea02ea02ea02ea02b802b802b80317035c0415048004da0541058905b80607062c06240652067d06c207e00b8e0eaa101f15e002cb02cb02cb02cb02cb02cb02cb02cb02c102ca02a203030364044404a004d90524055b059105af05df060f0639062f06aa07380a070f96101f15e003f203f203f203f203f203f203f203f202c602c602b50303036404090455048c04bd050e0541056f058a059705c805e3063406d60a220f41101f15e003de03de03de03de03de03de03de03de02ad02ad02af02fe035703f20438047d04bf04fe05380573059905bc05ea0609066c06b309c10f76101f15e00352035203520352035203520352035202b2028a02a60313036703ef0425046f04b704fc0541057c059c05c705ea0619067506ed09660f6d121a1509030c030c030c030c030c030c030c030c029e029e02a30319036d0403044b049804ef0539057305ac05e006090629065706a9073009b3101b121a150902da02da02da02da02da02da02da02da0289028902b1031903790416047104b4050d0543057e05ab05d9060a0626065a06bf073c0a2d103a121a1509028a028a028a028a028a028a028a028a028a02a102d1034f03c5046604ac04fc053f057605a305d505ee06260651066706ce07540a420fee121a1509025802580258025802580258025802580258028002dd036703e1048804d905120560058405c605ef061e0637064f067a06df07700a7a0fca121a1509025d025d025d025d025d025d025d025d025d026a02e8036d03f104a404d8052d056b059b05c105f4061a06350660067c06e4075b0a710f2a121a1509023f023f023f023f023f023f023f023f023f025802d9036803f5049504eb052b055d059605c405ee0612062f0655067e06cf076c0a5a0e1f121a1509023d023d023d023d023d023d023d023d023d024e02eb036d03ed048b04df051d0547058005b105e705fe06230649065e06cf07490a1f0dcb121a1509023802380238023802380238023802380238023602ea036703e2047d04c2050c0547056b05a705bf05e60611061f064706ac073e09890d3f121a1509021b021b021b021b021b021b021b021b021b023102f6036303da045804a804ed0521055b059105ac05dd05fd061e0645068e075b09770d2111b21509021002100210021002100210021002100210025802fe037403cd045604a604de051f0556058105a905dd05f20622063c06940784093a0d87114a150901f401f401f401f401f401f401f401f401f4024e030a037803d5045104a104d80513054f058405af05cf05f30617064806a0079c09450d6f114a1509022e022e022e022e022e022e022e022e022e025802f4037203c10440049204d7050f0542057405ab05cd05f10610063c069707cc09480d59114a1509022602260226022602260226022602260226023102e7035e03b80434047504ca05050536056f05ab05bc05e706040623067607b0091f0d3d114a1509022702270227022702270227022702270227023b02d9034f03a5042e046804b204ee0526055f058605a905cb05f60617066b0799090e0d1f114a1509021c021c021c021c021c021c021c021c021c023602bc0328038304110452049404dd051d05440573059605b005d7060b0669078908f20d2312271509021c021c021c021c021c021c021c021c021c023b02af031c0371040c043c048104c80507052e0569058705a905cb06070679078c08e60d8d12271509021702170217021702170217021702170217023b0312036f036b043e04a0049c04d304f4052a055c0567057b05a205ca0665075c09830da0122715090212021202120212021202120212021202120258032003ec03da0442047a04c004f6052d054d056d058d059c05c805fb0687076809d40cb212271509020d020d020d020d020d020d020d020d020d023b035203e80408044c046a04b004e2052d0546051405d3058c05aa05dc0672076e09c40cb212271509020d020d020d020d020d020d020d020d020d023b034c0348034503b504ac04f90550056a059405bf05d306090644067306f4076e09980ca112271509020d020d020d020d020d020d020d020d020d0236034c0348034503b504ac04f90550056a059405bf05d306090644067306f4076e09980c8212271509020d020d020d020d020d020d020d020d020d0231034c0348034503b504ac04f90550056a059405bf05d306090644067306f4076e09b70c4412271509020d020d020d020d020d020d020d020d020d0231034c0348034503b504ac04f90550056a059405bf05d306090644067306f4076e09980c441227150902100210021002100210021002100210021002300328036603280386047e04dc0539059605b505b5059605d40631068f072a07e509790c4413f9146e021002100210021002100210021002100210021003090347034703a5047e04dc04fb055805960596059605d405f3065106ec07a7093b0c6313f9146e021002100210021002100210021002100210021003470347032803a5045f04bc04dc057705960596057705d405f3067006ae07e509980c6313f9146e021002100210021002100210021002100210021003090347036603a5047e045f04bc059605b50596059605d405f3065106ae078709790c8213f9146e021002100210021002100210021002100210021003090366030903a5045f03e3045f0539059605d4059605b505f3067006cd080409980ca113f9146e13c0083ca6a65b3c2b1f",
+      "access_addresses": []
+    },
+    {
+      "start": "0x423E",
+      "end_exclusive": "0x4246",
+      "bytes": 8,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0c0605fff0024005",
+      "access_addresses": [
+        "0x423E",
+        "0x423F",
+        "0x4240",
+        "0x4241",
+        "0x4242",
+        "0x4243",
+        "0x4244",
+        "0x4245"
+      ]
+    },
+    {
+      "start": "0x4246",
+      "end_exclusive": "0x4A2E",
+      "bytes": 2024,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "0000010005000a8014802a003e4053007c80a1c0ac00b200b640b840ba40bc80be80c080c280c4800c00100012001400160018001a001c0020002400280032003c00460050005a0064006e00780082008c009600a000aa00b400be00c800d200dc00e600f000fa0040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040464646464646464646464646464646464646464654545454545454545454545454545454545454546262626262626262626262626262626262626262686868686868686868686868686868686868686868686868686868686868686868686868686868686e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e70707070707070707070707070707070707070706e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737373737340404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040406152464040404040404040404040404040404040ac954e4040404040464646464646464646464646c1b08f7e74685751545454545454545454545454cebfb5a49c8a7068686262626262626262626262c5bab5acac957970686868686868686868686868bdbdbdbdbda684796e6868686868686868686868b5b5b5b5b5a68a846e6e6e6e6e6e6e6e6e6e6e6ea9a9a9a9a9b295846e7070707070707070707070a1a1a1a1a1b79b8a736e6e6e6e6e6e6e6e6e6e6e9898989898aca68d7373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a99073737373737373737373737340404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040406152464040404040404040404040404040404040ac954e4040404040464646464646464646464646c1b08f7e74685751545454545454545454545454cebfb5a49c8a7068686262626262626262626262c5bab5acac957970686868686868686868686868bdbdbdbdbda684796e6868686868686868686868b5b5b5b5b5a68a846e6e6e6e6e6e6e6e6e6e6e6ea9a9a9a9a9b295846e7070707070707070707070a1a1a1a1a1b79b8a736e6e6e6e6e6e6e6e6e6e6e9898989898aca68d7373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a9907373737373737373737373738d8d8d8d8da1a990737373737373737373737373",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4A2E",
+      "end_exclusive": "0x4A33",
+      "bytes": 5,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "830a0580b0",
+      "access_addresses": [
+        "0x4A2E",
+        "0x4A2F",
+        "0x4A30",
+        "0x4A31",
+        "0x4A32"
+      ]
+    },
+    {
+      "start": "0x4A33",
+      "end_exclusive": "0x4A45",
+      "bytes": 18,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "10e010202020202020202020202020202020",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4A45",
+      "end_exclusive": "0x4A46",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4A46",
+      "end_exclusive": "0x4A55",
+      "bytes": 15,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "102030405060708090a0b0c0d0e0f0",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4A55",
+      "end_exclusive": "0x4A56",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4A56",
+      "end_exclusive": "0x4AF6",
+      "bytes": 160,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "1416181a1c1e202224264e4e4e4e4e4e4e4e4e4040404040404e4e4e4e4e4e4e40404040404040404e4e4e4e40404040404040404040404e4e404040404040404040404040404e4040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040404040",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4AF6",
+      "end_exclusive": "0x4AF7",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "04",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4AF7",
+      "end_exclusive": "0x4B12",
+      "bytes": 27,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "fdff02034050c8a0a21f148fff6b6b820610808080040404831918",
+      "access_addresses": [
+        "0x4AF7",
+        "0x4AF8",
+        "0x4AF9",
+        "0x4AFA",
+        "0x4AFB",
+        "0x4AFC",
+        "0x4AFD",
+        "0x4AFE",
+        "0x4AFF",
+        "0x4B00",
+        "0x4B01",
+        "0x4B02",
+        "0x4B03",
+        "0x4B04",
+        "0x4B05",
+        "0x4B06",
+        "0x4B07",
+        "0x4B08",
+        "0x4B09",
+        "0x4B0A",
+        "0x4B0B",
+        "0x4B0C",
+        "0x4B0D",
+        "0x4B0E",
+        "0x4B0F",
+        "0x4B10",
+        "0x4B11"
+      ]
+    },
+    {
+      "start": "0x4B12",
+      "end_exclusive": "0x4B99",
+      "bytes": 135,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "a49688827c76706e6ca49688827c76706e6ca49688827c76706e6ca496888279706a645f9d8b7d7068605a555189786d645c554f4c477b6a6059524c4744416e6259514b46413e3b675a524b46413e39385f544c46413c393633594f47413c39363330534b433e393633302e4f46403b3633302e2b4c433c3835322e2d2a47403b36322e2d2a28",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4B99",
+      "end_exclusive": "0x4BA1",
+      "bytes": 8,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "030102280000ff04",
+      "access_addresses": [
+        "0x4B99",
+        "0x4B9A",
+        "0x4B9B",
+        "0x4B9C",
+        "0x4B9D",
+        "0x4B9E",
+        "0x4B9F",
+        "0x4BA0"
+      ]
+    },
+    {
+      "start": "0x4BA1",
+      "end_exclusive": "0x4BA2",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "60",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4BA2",
+      "end_exclusive": "0x4BAC",
+      "bytes": 10,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "7d7d01147d014600fe70",
+      "access_addresses": [
+        "0x4BA2",
+        "0x4BA3",
+        "0x4BA4",
+        "0x4BA5",
+        "0x4BA6",
+        "0x4BA7",
+        "0x4BA8",
+        "0x4BA9",
+        "0x4BAA",
+        "0x4BAB"
+      ]
+    },
+    {
+      "start": "0x4BAC",
+      "end_exclusive": "0x4BC7",
+      "bytes": 27,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "7200500000406d6d6d6d6d6d6d6d66605a55504c48450000000000",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4BC7",
+      "end_exclusive": "0x4BC8",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4BC8",
+      "end_exclusive": "0x4BD7",
+      "bytes": 15,
+      "status": "focused_semantic_parameter",
+      "raw_hex": "08070806080708060807080600173c",
+      "access_addresses": [
+        "0x4BC8",
+        "0x4BCA",
+        "0x4BCC",
+        "0x4BCE",
+        "0x4BD0",
+        "0x4BD2",
+        "0x4BD4",
+        "0x4BD6"
+      ]
+    },
+    {
+      "start": "0x4BD7",
+      "end_exclusive": "0x4BDF",
+      "bytes": 8,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "143c27608dbde6ff",
+      "access_addresses": [
+        "0x4BD7",
+        "0x4BD8",
+        "0x4BD9",
+        "0x4BDA",
+        "0x4BDB",
+        "0x4BDC",
+        "0x4BDD",
+        "0x4BDE"
+      ]
+    },
+    {
+      "start": "0x4BDF",
+      "end_exclusive": "0x4BE5",
+      "bytes": 6,
+      "status": "focused_semantic_parameter",
+      "raw_hex": "fdfefefffdfe",
+      "access_addresses": [
+        "0x4BDF",
+        "0x4BE0",
+        "0x4BE1",
+        "0x4BE2",
+        "0x4BE3",
+        "0x4BE4"
+      ]
+    },
+    {
+      "start": "0x4BE5",
+      "end_exclusive": "0x4BFE",
+      "bytes": 25,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0007d00064008c1000ffffff3c3c3c2bffffffff19ff00640f",
+      "access_addresses": [
+        "0x4BE5",
+        "0x4BE6",
+        "0x4BE8",
+        "0x4BEA",
+        "0x4BEC",
+        "0x4BEE",
+        "0x4BEF",
+        "0x4BF0",
+        "0x4BF1",
+        "0x4BF2",
+        "0x4BF3",
+        "0x4BF4",
+        "0x4BF5",
+        "0x4BF6",
+        "0x4BF7",
+        "0x4BF8",
+        "0x4BF9",
+        "0x4BFA",
+        "0x4BFB",
+        "0x4BFC",
+        "0x4BFD"
+      ]
+    },
+    {
+      "start": "0x4BFE",
+      "end_exclusive": "0x4C02",
+      "bytes": 4,
+      "status": "focused_semantic_parameter",
+      "raw_hex": "cdd9323c",
+      "access_addresses": [
+        "0x4BFE",
+        "0x4BFF",
+        "0x4C00",
+        "0x4C01"
+      ]
+    },
+    {
+      "start": "0x4C02",
+      "end_exclusive": "0x4C05",
+      "bytes": 3,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "64b008",
+      "access_addresses": [
+        "0x4C02",
+        "0x4C03",
+        "0x4C04"
+      ]
+    },
+    {
+      "start": "0x4C05",
+      "end_exclusive": "0x4C06",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4C06",
+      "end_exclusive": "0x4C08",
+      "bytes": 2,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "8000",
+      "access_addresses": [
+        "0x4C06"
+      ]
+    },
+    {
+      "start": "0x4C08",
+      "end_exclusive": "0x4C1A",
+      "bytes": 18,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "00000a4014801ec023c029002e0033403840",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4C1A",
+      "end_exclusive": "0x4C1C",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "3d80",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4C1C",
+      "end_exclusive": "0x4C42",
+      "bytes": 38,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "10001400160018001a001c001e00280032003c00460050005a00640078008c00a000b400c800",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4C42",
+      "end_exclusive": "0x4C44",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "dc00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4C44",
+      "end_exclusive": "0x4D1E",
+      "bytes": 218,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "0000000001010101010100000000010101010101000000000101010101010000000001010101010100000000010101010101000000000101010101010000000001010101010100000000010101010101000000000101010101010000000001010101010100000000010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101520059c063006a0072407b8083408c809400",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4D1E",
+      "end_exclusive": "0x4D20",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "9bc0",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4D20",
+      "end_exclusive": "0x4D46",
+      "bytes": 38,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "120016001a00280050007800b400b600b800ba00bc00be00c000c200c400c600c800ca00cc00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4D46",
+      "end_exclusive": "0x4D48",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "ce00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4D48",
+      "end_exclusive": "0x4E10",
+      "bytes": 200,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4E10",
+      "end_exclusive": "0x4E11",
+      "bytes": 1,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "01",
+      "access_addresses": [
+        "0x4E10"
+      ]
+    },
+    {
+      "start": "0x4E11",
+      "end_exclusive": "0x4E18",
+      "bytes": 7,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "01010101010101",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4E18",
+      "end_exclusive": "0x4E33",
+      "bytes": 27,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "00bc0c0cfeff2800220014002200000004031e0a03045623791e50",
+      "access_addresses": [
+        "0x4E18",
+        "0x4E1A",
+        "0x4E1B",
+        "0x4E1C",
+        "0x4E1D",
+        "0x4E1E",
+        "0x4E20",
+        "0x4E22",
+        "0x4E24",
+        "0x4E26",
+        "0x4E28",
+        "0x4E29",
+        "0x4E2A",
+        "0x4E2B",
+        "0x4E2C",
+        "0x4E2D",
+        "0x4E2E",
+        "0x4E2F",
+        "0x4E30",
+        "0x4E31",
+        "0x4E32"
+      ]
+    },
+    {
+      "start": "0x4E33",
+      "end_exclusive": "0x4E34",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4E34",
+      "end_exclusive": "0x4E39",
+      "bytes": 5,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "00be010a20",
+      "access_addresses": [
+        "0x4E34",
+        "0x4E36",
+        "0x4E37",
+        "0x4E38"
+      ]
+    },
+    {
+      "start": "0x4E39",
+      "end_exclusive": "0x4E3A",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4E3A",
+      "end_exclusive": "0x4E47",
+      "bytes": 13,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "7bba0a010a0a3c10034032000f",
+      "access_addresses": [
+        "0x4E3A",
+        "0x4E3C",
+        "0x4E3D",
+        "0x4E3E",
+        "0x4E3F",
+        "0x4E40",
+        "0x4E41",
+        "0x4E42",
+        "0x4E44",
+        "0x4E46"
+      ]
+    },
+    {
+      "start": "0x4E47",
+      "end_exclusive": "0x4E48",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4E48",
+      "end_exclusive": "0x4E4D",
+      "bytes": 5,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0008024090",
+      "access_addresses": [
+        "0x4E48",
+        "0x4E4A",
+        "0x4E4B",
+        "0x4E4C"
+      ]
+    },
+    {
+      "start": "0x4E4D",
+      "end_exclusive": "0x4E4E",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4E4E",
+      "end_exclusive": "0x4E5D",
+      "bytes": 15,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "780048007814023080fa961e0580c7",
+      "access_addresses": [
+        "0x4E4E",
+        "0x4E50",
+        "0x4E52",
+        "0x4E53",
+        "0x4E54",
+        "0x4E55",
+        "0x4E56",
+        "0x4E57",
+        "0x4E58",
+        "0x4E59",
+        "0x4E5A",
+        "0x4E5B",
+        "0x4E5C"
+      ]
+    },
+    {
+      "start": "0x4E5D",
+      "end_exclusive": "0x4E5E",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4E5E",
+      "end_exclusive": "0x4E64",
+      "bytes": 6,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "ba4003120000",
+      "access_addresses": [
+        "0x4E5E",
+        "0x4E60",
+        "0x4E62"
+      ]
+    },
+    {
+      "start": "0x4E64",
+      "end_exclusive": "0x4E66",
+      "bytes": 2,
+      "status": "focused_semantic_parameter",
+      "raw_hex": "9050",
+      "access_addresses": [
+        "0x4E64",
+        "0x4E65"
+      ]
+    },
+    {
+      "start": "0x4E66",
+      "end_exclusive": "0x4E9A",
+      "bytes": 52,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0600000000000000008000808000800000000000000500800a0a0a030514330a00000000007d000296320100f6850a28f60a6604",
+      "access_addresses": [
+        "0x4E66",
+        "0x4E67",
+        "0x4E68",
+        "0x4E69",
+        "0x4E6A",
+        "0x4E6B",
+        "0x4E6C",
+        "0x4E6D",
+        "0x4E6E",
+        "0x4E6F",
+        "0x4E70",
+        "0x4E71",
+        "0x4E72",
+        "0x4E73",
+        "0x4E74",
+        "0x4E75",
+        "0x4E76",
+        "0x4E77",
+        "0x4E78",
+        "0x4E79",
+        "0x4E7A",
+        "0x4E7B",
+        "0x4E7C",
+        "0x4E7D",
+        "0x4E7E",
+        "0x4E7F",
+        "0x4E80",
+        "0x4E81",
+        "0x4E82",
+        "0x4E83",
+        "0x4E84",
+        "0x4E85",
+        "0x4E86",
+        "0x4E88",
+        "0x4E8A",
+        "0x4E8C",
+        "0x4E8D",
+        "0x4E8E",
+        "0x4E8F",
+        "0x4E90",
+        "0x4E91",
+        "0x4E92",
+        "0x4E93",
+        "0x4E94",
+        "0x4E95",
+        "0x4E96",
+        "0x4E97",
+        "0x4E98",
+        "0x4E99"
+      ]
+    },
+    {
+      "start": "0x4E9A",
+      "end_exclusive": "0x4E9B",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "04",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4E9B",
+      "end_exclusive": "0x4ECA",
+      "bytes": 47,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "808080808080000100018080808080808080808080808080808000000000000000000000ffffffffffffffffffffff",
+      "access_addresses": [
+        "0x4E9B",
+        "0x4E9C",
+        "0x4E9D",
+        "0x4E9E",
+        "0x4E9F",
+        "0x4EA0",
+        "0x4EA1",
+        "0x4EA2",
+        "0x4EA3",
+        "0x4EA4",
+        "0x4EA5",
+        "0x4EA6",
+        "0x4EA7",
+        "0x4EA8",
+        "0x4EA9",
+        "0x4EAA",
+        "0x4EAB",
+        "0x4EAC",
+        "0x4EAD",
+        "0x4EAE",
+        "0x4EAF",
+        "0x4EB0",
+        "0x4EB1",
+        "0x4EB2",
+        "0x4EB3",
+        "0x4EB4",
+        "0x4EB5",
+        "0x4EB6",
+        "0x4EB7",
+        "0x4EB8",
+        "0x4EB9",
+        "0x4EBA",
+        "0x4EBB",
+        "0x4EBC",
+        "0x4EBD",
+        "0x4EBE",
+        "0x4EBF",
+        "0x4EC0",
+        "0x4EC1",
+        "0x4EC2",
+        "0x4EC3",
+        "0x4EC4",
+        "0x4EC5",
+        "0x4EC6",
+        "0x4EC7",
+        "0x4EC8",
+        "0x4EC9"
+      ]
+    },
+    {
+      "start": "0x4ECA",
+      "end_exclusive": "0x4EEA",
+      "bytes": 32,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "0b0c0d0e0f101314151617181e1f2000212225292a2b2c2e3200000000000000",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4EEA",
+      "end_exclusive": "0x4EEC",
+      "bytes": 2,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "8080",
+      "access_addresses": [
+        "0x4EEA",
+        "0x4EEB"
+      ]
+    },
+    {
+      "start": "0x4EEC",
+      "end_exclusive": "0x4EF4",
+      "bytes": 8,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "0000000000000102",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4EF4",
+      "end_exclusive": "0x4EF6",
+      "bytes": 2,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "8015",
+      "access_addresses": [
+        "0x4EF4",
+        "0x4EF5"
+      ]
+    },
+    {
+      "start": "0x4EF6",
+      "end_exclusive": "0x4F0B",
+      "bytes": 21,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "0103050607080914151e242530323334393c3d3e46",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4F0B",
+      "end_exclusive": "0x4F11",
+      "bytes": 6,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "053232fa1964",
+      "access_addresses": [
+        "0x4F0B",
+        "0x4F0C",
+        "0x4F0D",
+        "0x4F0E",
+        "0x4F0F",
+        "0x4F10"
+      ]
+    },
+    {
+      "start": "0x4F11",
+      "end_exclusive": "0x4F12",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4F12",
+      "end_exclusive": "0x4F17",
+      "bytes": 5,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "09c4201428",
+      "access_addresses": [
+        "0x4F12",
+        "0x4F14",
+        "0x4F15",
+        "0x4F16"
+      ]
+    },
+    {
+      "start": "0x4F17",
+      "end_exclusive": "0x4F18",
+      "bytes": 1,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "00",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4F18",
+      "end_exclusive": "0x4F24",
+      "bytes": 12,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0022003000960032001e0032",
+      "access_addresses": [
+        "0x4F18",
+        "0x4F1A",
+        "0x4F1C",
+        "0x4F1E",
+        "0x4F20",
+        "0x4F22"
+      ]
+    },
+    {
+      "start": "0x4F24",
+      "end_exclusive": "0x4F26",
+      "bytes": 2,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "0003",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4F26",
+      "end_exclusive": "0x4F9E",
+      "bytes": 120,
+      "status": "catalogued_map_header_cells_or_axis",
+      "raw_hex": "ffffd3b8a6988d837b746d67615b56514c47433e3934302b25201a130c03000000efd2beafa3999088807a746e68635d58534e49433e39332d261f170d0020637a878f969b9fa2a4a6a8a9a9acaeaeafb0b5b5b5b6b6b5b5b4b3b235637f8b969c9ea1a2a4a6abaeaeaeb0b0b1b0b1b1b1b2b2b1b0afaeae",
+      "access_addresses": []
+    },
+    {
+      "start": "0x4F9E",
+      "end_exclusive": "0x4FA2",
+      "bytes": 4,
+      "status": "static_access_role_unresolved",
+      "raw_hex": "0096fa87",
+      "access_addresses": [
+        "0x4F9E",
+        "0x4FA0"
+      ]
+    },
+    {
+      "start": "0x4FA2",
+      "end_exclusive": "0x5000",
+      "bytes": 94,
+      "status": "no_classified_layout_or_static_access",
+      "raw_hex": "1cfffa87ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "access_addresses": []
+    }
+  ]
+}

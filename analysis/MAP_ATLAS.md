@@ -1,7 +1,7 @@
 # Calibration map atlas
 
 Addresses below are file offsets and the working flat CPU12 addresses. Actual cell addresses differ from the pointers passed to the lookup helpers.
-All cells and axes use raw ECU values. Physical roles, units, and tuning limits are unverified. This is an analysis catalogue, not a flash definition.
+All cells and axes use raw ECU values. Input/output traces and evidence for every map are in [the per-map breakdown](MAP_DETAILS.md). Physical units and tuning limits remain unresolved. This is an analysis catalogue, not a flash definition.
 
 ## Confirmed grid layouts
 
@@ -58,6 +58,33 @@ All cells and axes use raw ECU values. Physical roles, units, and tuning limits 
 | 0x3327 | 0x332A | 15 | 16 / 224 / 16 |
 | 0x34FD | 0x3500 | 29 | 16 / 224 / 32 |
 | 0x4BAC | 0x4BB2 | 21 | 29184 / 20480 / 64 |
+| 0x1854 | 0x185A | 21 | 29184 / 20480 / 64 |
+
+## Computed-axis, sensor and inline step tables
+
+| ID | Cells | Rows x columns | Method |
+|---|---|---|---|
+| [delta_0985_gain_1](map_details/delta_0985_gain_1.md) | 0x336B | 1 x 23 | 1D_precomputed_axis |
+| [delta_0985_gain_2](map_details/delta_0985_gain_2.md) | 0x3382 | 1 x 23 | 1D_precomputed_axis |
+| [delta_0985_gain_3](map_details/delta_0985_gain_3.md) | 0x3399 | 1 x 23 | 1D_precomputed_axis |
+| [delta_0985_gain_4](map_details/delta_0985_gain_4.md) | 0x33B0 | 1 x 23 | 1D_precomputed_axis |
+| [delta_0985_gain_5](map_details/delta_0985_gain_5.md) | 0x33C7 | 1 x 23 | 1D_precomputed_axis |
+| [delta_0985_gain_6](map_details/delta_0985_gain_6.md) | 0x33DE | 1 x 23 | 1D_precomputed_axis |
+| [delta_0989_gain_1](map_details/delta_0989_gain_1.md) | 0x33F7 | 1 x 23 | 1D_precomputed_axis |
+| [delta_0989_gain_2](map_details/delta_0989_gain_2.md) | 0x340E | 1 x 23 | 1D_precomputed_axis |
+| [delta_0989_gain_3](map_details/delta_0989_gain_3.md) | 0x3425 | 1 x 23 | 1D_precomputed_axis |
+| [delta_0989_gain_4](map_details/delta_0989_gain_4.md) | 0x343C | 1 x 23 | 1D_precomputed_axis |
+| [delta_0989_gain_5](map_details/delta_0989_gain_5.md) | 0x3453 | 1 x 23 | 1D_precomputed_axis |
+| [delta_0989_gain_6](map_details/delta_0989_gain_6.md) | 0x346A | 1 x 23 | 1D_precomputed_axis |
+| [step_grid_4c44](map_details/step_grid_4c44.md) | 0x4C44 | 20 x 10 | 2D_step_grid |
+| [step_grid_4d48](map_details/step_grid_4d48.md) | 0x4D48 | 20 x 10 | 2D_step_grid |
+| [step_grid_35b0](map_details/step_grid_35b0.md) | 0x35B0 | 10 x 10 | 2D_step_grid |
+| [step_grid_363c](map_details/step_grid_363c.md) | 0x363C | 10 x 10 | 2D_step_grid |
+| [timing_speed_4f64](map_details/timing_speed_4f64.md) | 0x4F64 | 1 x 29 | 1D_precomputed_axis |
+| [timing_speed_4f81](map_details/timing_speed_4f81.md) | 0x4F81 | 1 x 29 | 1D_precomputed_axis |
+| [dwell_supply_speed](map_details/dwell_supply_speed.md) | 0x4B12 | 15 x 9 | 2D_special_grid |
+| [coolant_sensor_conversion](map_details/coolant_sensor_conversion.md) | 0x4F47 | 1 x 29 | 1D_sensor_conversion |
+| [intake_temperature_conversion](map_details/intake_temperature_conversion.md) | 0x4F26 | 1 x 33 | 1D_sensor_conversion |
 
 ## Evidence and use
 
@@ -70,9 +97,9 @@ The uniform-axis helpers at 0xC1CD and 0xC1F2 clamp the input, multiply its offs
 
 ## Still unresolved
 
-- Physical sensor names and axis conversions (RPM, pressure, throttle and temperature).
+- Engineering-unit axis conversions (RPM, pressure, throttle and temperature); several sensor identities are established separately in the control guides.
 - Final fuel/timing output scaling and mode-selection semantics.
-- Special/precomputed-index tables, bit-packed maps, scalars and indirect references outside the confirmed catalogue.
+- Remaining indirect references, scalars, flags and possible tables outside the catalogue; see the explicit coverage gaps. Identifying every map is not claimed.
 - Boot/reset code and hardware identity: the final 2 KiB is all FF in the supplied file.
 - Exact semantic function boundaries in unreferenced and shared-entry assembly routines.
 

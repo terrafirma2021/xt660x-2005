@@ -13,7 +13,9 @@ The analysis applies only to the exact [original image](../../firmware/XT660X%20
 | Engine speed / cuts | [Speed calculation and output suppression](RPM_AND_CUTS.md) | Reciprocal calculation, three period-limit pairs, separate road-speed cut flags, conditional injector limits | Confirmed timer timebase / crank geometry, complete interlock meanings |
 | Spark | [Maps through the timing scheduler](SPARK.md) | Three selected byte maps, rounding and downstream correction, timer-3 identity | Absolute crank-angle reference, degrees conversion, all correction meanings |
 | Fuel | [Quantity tables and injector scheduling](FUEL.md) | Main table selection, speed/other input variables, primary timer-6 output, secondary variant gating | Full cell-to-pulse formula, physical units and mode meanings |
-| Tool definitions | [XDF / custom-tool readiness](DEFINITION_READINESS.md) | Byte-backed structured catalogue, evidence links, confidence and unresolved items | Exportable physical conversions, checksums, write/flash validation |
+| Extended maps | [New families and dataflow](EXTENDED_MAPS.md) | 68 layouts, per-map breakdowns, computed axes, step grids, RAM-copied curve | Remaining scalars/indirect data and complete engineering conversions |
+| Checksum | [Corrected image and validation](CHECKSUM.md) | Startup algorithm, range and passing corrected file | Factory adjustment field and actual boot-region content |
+| Tool definitions | [XDF / custom-tool readiness](DEFINITION_READINESS.md) | Byte-backed structured catalogue, evidence links, confidence and unresolved items | Exportable physical conversions and write/flash validation |
 
 These have different levels of completion. Coolant/fan decisions and the principal raw cut thresholds have direct behavioral fixtures. Spark angle and fuel quantity are traced workstreams, not fully identified engineering calibrations.
 
@@ -21,6 +23,8 @@ These have different levels of completion. Coolant/fan decisions and the princip
 
 - [catalog.json](catalog.json): 28 calibration records with exact storage, original bytes, role, references, and explicit missing conversion fields; eight ADC channels and six logical outputs.
 - [control_validation.json](control_validation.json): 212,090 isolated control test cases against the compiled instruction translation.
+- [extended_map_validation.json](extended_map_validation.json): 150,614 additional cases, including the delivered checksum correction.
+- [Every map's breakdown](../MAP_DETAILS.md) and [remaining calibration inventory](../REMAINING_CALIBRATIONS.md).
 - [coolant_conversion_samples.json](coolant_conversion_samples.json): all 1,024 possible ten-bit inputs and their internal/diagnostic outputs.
 - Byte-backed instruction excerpts: [sensor/fan](sensor_fan_evidence.txt), [speed/cuts](rpm_cuts_evidence.txt), [spark](spark_evidence.txt), [fuel](fuel_maps_evidence.txt), [road speed](road_speed_evidence.txt).
 - [Review notes and model correction](REVIEW_NOTES.md).
@@ -36,7 +40,7 @@ An identification is strongest when independent paths agree: an ADC dispatch, a 
 5. Confirm units/timebases/pin routing using matching hardware evidence.
 6. Promote only validated definitions into an editor. Preserve unresolved hypotheses in the research catalogue.
 
-No firmware setting has been changed. The documentation uses descriptive aliases; original address-based function names remain available for cross-checking. No original source names are claimed.
+No calibration setting has been changed. A separate [checksum-corrected image](CHECKSUM.md) changes one trailer byte while the original remains intact. The documentation uses descriptive aliases; original address-based function names remain available for cross-checking. No original source names are claimed.
 
 ## Sources
 

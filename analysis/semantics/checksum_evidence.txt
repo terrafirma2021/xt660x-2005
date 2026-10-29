@@ -1,0 +1,83 @@
+Original instruction bytes; operands use CPU addresses = file offsets.
+Firmware SHA256: 5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280
+
+Range 0x5358 .. 0x535E exclusive
+5358  ccf7ff        LDD #0xf7ff
+535b  16a489        JSR 0xa489
+
+Range 0x5FA4 .. 0x5FBA exclusive
+5fa4  3b            PSHD
+5fa5  cc55aa        LDD #0x55aa
+5fa8  5a3f          STAA 0x003f
+5faa  5b3f          STAB 0x003f
+5fac  4e001005      BRSET 0x0000,0x10,0x5fb5
+5fb0  4c0010        BSET 0x0000,0x10
+5fb3  2003          BRA 0x5fb8
+5fb5  4d0010        BCLR 0x0000,0x10
+5fb8  3a            PULD
+5fb9  3d            RTS
+
+Range 0xA2CB .. 0xA2E6 exclusive
+a2cb  b608b1        LDAA 0x8b1
+a2ce  8480          ANDA #0x80
+a2d0  8180          CMPA #0x80
+a2d2  263b          BNE 0xa30f
+a2d4  9600          LDAA 0x0000
+a2d6  84e0          ANDA #0xe0
+a2d8  8180          CMPA #0x80
+a2da  2633          BNE 0xa30f
+a2dc  1410          SEI
+a2de  ccffff        LDD #0xffff
+a2e1  16a489        JSR 0xa489
+a2e4  10ef          CLI
+
+Range 0xA489 .. 0xA505 exclusive
+a489  4df080        BCLR 0x00f0,0x80
+a48c  165fa4        JSR 0x5fa4
+a48f  7c0dde        STD 0xdde
+a492  ce1800        LDX #0x1800
+a495  87            CLRA
+a496  c7            CLRB
+a497  e300          ADDD 0,IX
+a499  34            PSHX
+a49a  31            PULY
+a49b  b7c6          XGDY
+a49d  841f          ANDA #0x1f
+a49f  8c1000        CPD #0x1000
+a4a2  b7c6          XGDY
+a4a4  2603          BNE 0xa4a9
+a4a6  165fa4        JSR 0x5fa4
+a4a9  08            INX
+a4aa  08            INX
+a4ab  2705          BEQ 0xa4b2
+a4ad  be0dde        CPX 0xdde
+a4b0  23e5          BLS 0xa497
+a4b2  b7c6          XGDY
+a4b4  c600          LDAB #0x0
+a4b6  8daa55        CPY #0xaa55
+a4b9  2702          BEQ 0xa4bd
+a4bb  c6ff          LDAB #0xff
+a4bd  7d0e66        STY 0xe66
+a4c0  c100          CMPB #0x0
+a4c2  261c          BNE 0xa4e0
+a4c4  165fa4        JSR 0x5fa4
+a4c7  b60d65        LDAA 0xd65
+a4ca  8180          CMPA #0x80
+a4cc  270d          BEQ 0xa4db
+a4ce  1f08b28008    BRCLR 0x8b2,0x80,0xa4db
+a4d3  1d08b280      BCLR 0x8b2,0x80
+a4d7  1c0bd210      BSET 0xbd2,0x10
+a4db  4cf080        BSET 0x00f0,0x80
+a4de  2021          BRA 0xa501
+a4e0  b60d65        LDAA 0xd65
+a4e3  8180          CMPA #0x80
+a4e5  271a          BEQ 0xa501
+a4e7  1e08b28015    BRSET 0x8b2,0x80,0xa501
+a4ec  1c08b280      BSET 0x8b2,0x80
+a4f0  1c0bd210      BSET 0xbd2,0x10
+a4f4  1e08bb8008    BRSET 0x8bb,0x80,0xa501
+a4f9  1c08bb80      BSET 0x8bb,0x80
+a4fd  1c0bd201      BSET 0xbd2,0x1
+a501  165fa4        JSR 0x5fa4
+a504  3d            RTS
+

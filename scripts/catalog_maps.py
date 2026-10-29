@@ -4,6 +4,7 @@ No tuning changes or engineering-unit assumptions are made. Python standard libr
 """
 from pathlib import Path
 import csv, json, re, math, hashlib, collections
+from map_details import extend, write_dossiers
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'analysis'
@@ -123,10 +124,18 @@ for x in loads:
             'index_divisor':denominator,'units':'raw ECU values','raw_values':[list(BIN[start:start+n])],
             'calls':[]})
         item['calls'].append({'pointer_load':hx(x['load']),'call':hx(call),'helper':hx(h),'function':x['function']})
-maps.extend(uniform.values());save('maps.json',maps)
+maps.extend(uniform.values())
+extend(maps,axes,BIN)
+uniform={int(m['pointer_base'],16):m for m in maps if m['kind']=='1D_uniform_axis'}
+save('maps.json',maps)
+save('axes.json',list(axes.values()))
+write_dossiers(maps,OUT,INS)
 
 covered=set()
-for m in maps:covered.update(range(int(m['pointer_base'],16),int(m['end_exclusive'],16)))
+for m in maps:
+    # Biased grid/index pointers are not headers. Only uniform lookups have headers.
+    start=m['pointer_base'] if m['kind']=='1D_uniform_axis' else m['data_address']
+    covered.update(range(int(start,16),int(m['end_exclusive'],16)))
 for a in axes.values():
     start=int(a['address'],16);covered.update(range(start,start+a['count']*a['element_bytes']))
 gaps=[];start=None
@@ -135,7 +144,7 @@ for a in range(0x1800,0x5001):
     if unknown and start is None:start=a
     if not unknown and start is not None:
         gaps.append({'start':hx(start),'end_exclusive':hx(a),'bytes':a-start,'raw_hex':BIN[start:a].hex()});start=None
-save('uncatalogued_calibration_ranges.json',{'description':'Bytes outside catalogued cells, implicit headers, and explicit axes. Includes markers, scalars, flags, special tables and padding; not all are maps.',
+save('uncatalogued_calibration_ranges.json',{'description':'Bytes outside catalogued cells, actual uniform headers, and used explicit axes. Biased grid pointers do not claim header coverage. Includes scalars, flags, unused threshold words and other data; not all are maps.',
     'covered_bytes':len(covered),'uncatalogued_bytes':sum(x['bytes'] for x in gaps),'ranges':gaps})
 
 refs=collections.defaultdict(list)
@@ -159,20 +168,27 @@ for m in maps:
 strings=[{'offset':hx(m.start()),'text':m.group().decode('ascii')} for m in re.finditer(rb'[ -~]{8,}',BIN)]
 save('strings.json',strings)
 manifest={'filename':'XT660X 2005.bin','bytes':len(BIN),'sha256':hashlib.sha256(BIN).hexdigest(),
- 'grid_count':len(GRIDS),'uniform_curve_count':len(uniform),'axis_count':len(axes),'referenced_calibration_addresses':len(refs),
+ 'map_count':len(maps),'grid_count':sum(m['rows']>1 for m in maps),'uniform_curve_count':len(uniform),
+ 'precomputed_curve_count':sum(m['kind']=='1D_precomputed_axis' for m in maps),
+ 'sensor_conversion_curve_count':sum(m['kind']=='1D_sensor_conversion' for m in maps),
+ 'axis_count':len(axes),'referenced_calibration_addresses':len(refs),
  'limits':['No complete original-source recovery','No verified fuel/ignition units','All-FF boot region cannot supply boot code',
            'Unreferenced code entries are candidates','All maps and constants are not claimed to be identified']}
 save('manifest.json',manifest)
 
 lines=['# Calibration map atlas','',
  'Addresses below are file offsets and the working flat CPU12 addresses. Actual cell addresses differ from the pointers passed to the lookup helpers.',
- 'All cells and axes use raw ECU values. Physical roles, units, and tuning limits are unverified. This is an analysis catalogue, not a flash definition.',
+ 'All cells and axes use raw ECU values. Input/output traces and evidence for every map are in [the per-map breakdown](MAP_DETAILS.md). Physical units and tuning limits remain unresolved. This is an analysis catalogue, not a flash definition.',
  '', '## Confirmed grid layouts','',
  '| ID | Cell address | Rows × columns | Cell width | Row / column axes |',
  '|---|---|---|---|---|']
 for m in maps[:len(GRIDS)]:lines.append(f"| {m['id']} | {m['data_address']} | {m['rows']} × {m['columns']} | {m['element_bytes']*8}-bit BE | {m['row_axis']['address']} / {m['column_axis']['address']} |")
 lines+=['','## Uniform-axis curves','','| Header | Cells | Points | Input minimum / span / factor |','|---|---|---|---|']
 for m in uniform.values():lines.append(f"| {m['pointer_base']} | {m['data_address']} | {m['columns']} | {m['input_min_raw']} / {m['input_span_raw']} / {m['index_factor_raw']} |")
+lines+=['','## Computed-axis, sensor and inline step tables','','| ID | Cells | Rows x columns | Method |','|---|---|---|---|']
+for m in maps:
+    if m['kind'] in ('2D_grid','1D_uniform_axis'):continue
+    lines.append(f"| [{m['id']}](map_details/{m['id']}.md) | {m['data_address']} | {m['rows']} x {m['columns']} | {m['kind']} |")
 lines+=['','## Evidence and use','',
  '`maps.json` contains every extracted grid/curve, its raw values, axes and caller addresses. `map_extracts/` has byte-exact cell payloads and plain-text matrices.',
  '`axes.json` records code-confirmed axis pointers, counts, raw breakpoints and input load instructions. `calibration_pointer_loads.json` includes pointer loads not yet classified as maps.',
@@ -180,9 +196,9 @@ lines+=['','## Evidence and use','',
  '', 'The 16-bit grid helper at 0xC499 uses X + 21 + 2 × (row × columns + column). The byte grid helper at 0xC32D uses X + 3 + row × columns + column. The modulo-24 helper at 0xC4DC uses the byte layout with cyclic interpolation.',
  'The uniform-axis helpers at 0xC1CD and 0xC1F2 clamp the input, multiply its offset by a header factor, then interpolate adjacent byte cells. Their index denominators are 256 and 65536 respectively. The extracted point count includes the upper adjacent cell if a fractional endpoint needs it.',
  '', '## Still unresolved','',
- '- Physical sensor names and axis conversions (RPM, pressure, throttle and temperature).',
+ '- Engineering-unit axis conversions (RPM, pressure, throttle and temperature); several sensor identities are established separately in the control guides.',
  '- Final fuel/timing output scaling and mode-selection semantics.',
- '- Special/precomputed-index tables, bit-packed maps, scalars and indirect references outside the confirmed catalogue.',
+ '- Remaining indirect references, scalars, flags and possible tables outside the catalogue; see the explicit coverage gaps. Identifying every map is not claimed.',
  '- Boot/reset code and hardware identity: the final 2 KiB is all FF in the supplied file.',
  '- Exact semantic function boundaries in unreferenced and shared-entry assembly routines.',
  '', 'Do not treat successful decompilation as proof of source-level accuracy or complete map identification.']

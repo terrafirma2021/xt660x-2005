@@ -1,0 +1,53 @@
+# curve_34e4
+
+Selected transient response curve
+
+Cells: **0x34E7–34ED**, 1 rows × 7 columns, 8-bit unsigned big-endian values.
+
+Inputs: u8 0x08ED throttle-derived delta.
+
+Output: u8 0x0A0C.
+
+Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
+
+Interpolation: clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented.
+
+**Engineering conversion is unresolved; tuning export is disabled.**
+
+## Uniform axis
+
+Minimum 128; span 48; factor 32; index divisor 256. Header begins at 0x34E4. These are internal scaling parameters, not physical-unit labels.
+
+## Raw cells
+
+```
+5 6 8 11 16 23 23
+```
+
+## Instruction evidence
+
+Addresses refer to the unchanged image. Windows around entry/call sites provide context, not a complete execution trace.
+
+```
+9255  f60898  LDAB 0x898
+9258  f134cf  CMPB 0x34cf
+925b  2205  BHI 0x9262
+925d  ce34da  LDX #0x34da
+9260  2003  BRA 0x9265
+9262  ce34e4  LDX #0x34e4
+9265  16c1cd  JSR 0xc1cd
+9268  7a0a0c  STAA 0xa0c
+926b  ce34ee  LDX #0x34ee
+926e  fc08ce  LDD 0x8ce
+9271  16c1f2  JSR 0xc1f2
+9274  7a0a0e  STAA 0xa0e
+9277  f60a0c  LDAB 0xa0c
+927a  12  MUL
+927b  fd0dde  LDY 0xdde
+927e  13  EMUL
+927f  8d4000  CPY #0x4000
+9282  2505  BCS 0x9289
+9284  cdffff  LDY #0xffff
+```
+
+[Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)

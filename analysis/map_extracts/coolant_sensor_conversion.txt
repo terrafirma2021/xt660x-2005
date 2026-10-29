@@ -1,0 +1,3 @@
+coolant_sensor_conversion | 0x4F47 | 1 rows x 29 columns | raw values
+instruction-traced layout and raw dataflow; engineering units unresolved
+239 210 190 175 163 153 144 136 128 122 116 110 104 99 93 88 83 78 73 67 62 57 51 45 38 31 23 13 0

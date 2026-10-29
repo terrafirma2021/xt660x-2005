@@ -30,3 +30,7 @@ if($LASTEXITCODE -ne 0){throw 'Whole-image audit failed'}
 if($LASTEXITCODE -ne 0){throw 'Text normalization failed'}
 & $Python (Join-Path $PSScriptRoot 'build_semantic_catalog.py')
 if($LASTEXITCODE -ne 0){throw 'Semantic catalogue failed'}
+& $Python (Join-Path $PSScriptRoot 'catalog_calibration_accesses.py')
+if($LASTEXITCODE -ne 0){throw 'Calibration access inventory failed'}
+& $Python (Join-Path $PSScriptRoot 'fix_startup_checksum.py')
+if($LASTEXITCODE -ne 0){throw 'Checksum correction failed'}

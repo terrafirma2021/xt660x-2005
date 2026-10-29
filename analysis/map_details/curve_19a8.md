@@ -1,0 +1,54 @@
+# curve_19a8
+
+Startup fuel multiplier
+
+Cells: **0x19AE–19B8**, 1 rows × 11 columns, 8-bit unsigned big-endian values.
+
+Inputs: u16 0x0900 selected speed.
+
+Output: u8 0x0936.
+
+Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
+
+Interpolation: clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented.
+
+**Engineering conversion is unresolved; tuning export is disabled.**
+
+## Uniform axis
+
+Minimum 1229; span 5120; factor 128; index divisor 65536. Header begins at 0x19A8. These are internal scaling parameters, not physical-unit labels.
+
+## Raw cells
+
+```
+128 114 98 82 66 61 57 53 48 44 40
+```
+
+## Instruction evidence
+
+Addresses refer to the unchanged image. Windows around entry/call sites provide context, not a complete execution trace.
+
+```
+7bd0  fc08ce  LDD 0x8ce
+7bd3  2003  BRA 0x7bd8
+7bd5  cc0000  LDD #0x0
+7bd8  16c1f2  JSR 0xc1f2
+7bdb  7a0937  STAA 0x937
+7bde  ce19a8  LDX #0x19a8
+7be1  fc0900  LDD 0x900
+7be4  16c1f2  JSR 0xc1f2
+7be7  7a0936  STAA 0x936
+7bea  f60937  LDAB 0x937
+7bed  12  MUL
+7bee  b7c6  XGDY
+7bf0  87  CLRA
+7bf1  f60979  LDAB 0x979
+7bf4  c30180  ADDD #0x180
+7bf7  16c243  JSR 0xc243
+7bfa  b7c6  XGDY
+7bfc  87  CLRA
+7bfd  f60938  LDAB 0x938
+7c00  16c243  JSR 0xc243
+```
+
+[Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)

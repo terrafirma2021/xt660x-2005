@@ -88,7 +88,10 @@ outputs=[
 catalog={'schema_version':1,'firmware_sha256':sha,'file_address_mapping':'CPU address = file offset for supplied flat image',
          'purpose':'Evidence registry for later XDF/tool development; no entry currently validated for tuning export.',
          'calibrations':records,'inputs':inputs,'outputs':outputs,
-         'integrity':{'checksum_algorithm':None,'checksum_ranges':None,'flash_procedure':None},
+         'integrity':{'checksum_algorithm':'sum_u16_big_endian_mod_65536','checksum_target':'0xAA55',
+                      'checksum_ranges':[{'caller':'0x535B','start':'0x1800','end_inclusive':'0xF7FF','mode':'startup'},
+                                         {'caller':'0xA2E1','start':'0x1800','end_inclusive':'0xFFFF','mode':'conditional full address space; boot unavailable'}],
+                      'correction_report':'checksum_fix.json','factory_checksum_field':None,'flash_procedure':None},
          'processor_model_sha256':hashlib.sha256((ROOT/'ghidra/XT660CPU12/data/languages/HCS_HC12.sinc').read_bytes()).hexdigest()}
 (OUT/'catalog.json').write_text(json.dumps(catalog,indent=2)+'\n', encoding='utf-8', newline='\n')
 ranges={
@@ -96,7 +99,10 @@ ranges={
     'rpm_cuts':[(0x6259,0x6299),(0x73a5,0x74b8),(0x7588,0x75c7),(0x77c6,0x7800),(0xf49f,0xf607),(0x5664,0x56b4)],
     'spark':[(0x5407,0x547a),(0x54f0,0x55b6),(0x8827,0x88b1),(0x8a2f,0x8a89),(0xed29,0xee78),(0xb900,0xb97f)],
     'fuel_maps':[(0x7cc3,0x7e60),(0x8530,0x857d),(0xb97f,0xba8d),(0xf519,0xf607)],
-    'road_speed':[(0xf3f3,0xf424),(0x9b09,0x9c6c),(0xcde5,0xce13)]}
+    'road_speed':[(0xf3f3,0xf424),(0x9b09,0x9c6c),(0xcde5,0xce13)],
+    'checksum':[(0x5358,0x535e),(0x5fa4,0x5fba),(0xa2cb,0xa2e6),(0xa489,0xa505)],
+    'extended_maps':[(0x6244,0x6259),(0x7878,0x793d),(0x79cd,0x7b56),(0x88d1,0x88f4),(0x8a95,0x8b34),
+                     (0x95fd,0x9609),(0x9ce4,0x9d61),(0xa363,0xa405),(0xa58c,0xa63a),(0xabdd,0xac7f),(0xcc63,0xcca9)]}
 for name,blocks in ranges.items():
     lines=['Original instruction bytes; operands use CPU addresses = file offsets.',f'Firmware SHA256: {sha}','']
     for lo,hi in blocks:

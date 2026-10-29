@@ -1,0 +1,35 @@
+{
+  "source": "XT660X 2005.bin",
+  "output": "XT660X 2005 startup-checksum-fixed.bin",
+  "source_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "output_sha256": "972ac93e76cb632470092d88c2a57e910daae69c02d6cdef52f1cad72f6909e7",
+  "bytes": 65536,
+  "algorithm": "sum unsigned big-endian 16-bit words modulo 65536",
+  "first_byte": "0x1800",
+  "last_byte_inclusive": "0xF7FF",
+  "target": "0xAA55",
+  "before": "0xAAD5",
+  "after": "0xAA55",
+  "compensation_word": {
+    "offset": "0xF7FC",
+    "before": "0xFFFF",
+    "after": "0xFF7F",
+    "status": "analyst-selected FF trailer padding; not an identified manufacturer checksum field"
+  },
+  "changes": [
+    {
+      "offset": "0xF7FD",
+      "before": "0xFF",
+      "after": "0x7F"
+    }
+  ],
+  "calibration_bytes_unchanged": true,
+  "decoded_instructions_unchanged": true,
+  "marker_5aa5_unchanged": true,
+  "boot_placeholder_unchanged": true,
+  "limitations": [
+    "Corrects the startup range only; full-address-space check includes unavailable boot bytes.",
+    "Static analysis finds no reference to compensation bytes; absent boot code cannot be inspected.",
+    "Not hardware or flash-programmer validated."
+  ]
+}

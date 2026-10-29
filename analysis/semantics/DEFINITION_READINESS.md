@@ -16,7 +16,7 @@ The deliverable now is an evidence model that either kind of tool can consume. I
 | Conversion to Celsius, RPM, degrees, milliseconds, pressure | Intentionally null until verified |
 | Reverse conversion and rounding policy | Not defined for engineering units |
 | Valid physical adjustment ranges | Not inferred from the limits of a byte or word |
-| Checksum algorithm and covered ranges | Unresolved |
+| Checksum algorithm and covered ranges | Startup sum/range recovered and corrected copy tested; alternate full-address-space check includes absent boot content. See [checksum correction](CHECKSUM.md). |
 | Flash format, programming procedure, boot requirements | Unresolved; supplied boot region absent |
 
 `ready_for_tuning_export` is false for every current entry. This does not mean the offsets are guesses. It means the whole definition is not yet validated for engineering-unit edits and flash use.
@@ -43,7 +43,7 @@ An eventual editing tool should bind definitions to a verified image identity, p
 3. **Fuel:** complete every map-to-request transformation and prove duration units, voltage compensation, temperature corrections and transient paths.
 4. **All cut reasons:** build a writer/consumer record for every dispatcher gate; distinguish rev/road-speed limits, deceleration, faults and interlocks.
 5. **Connector pins:** match the exact ECU part number and harness/board to the logical MCU channels.
-6. **Integrity and packaging:** recover checksum computation/coverage and the programming format before producing a flash-oriented definition.
+6. **Integrity and packaging:** validate the correction field against the actual ECU/programming format and resolve the missing boot content before producing a flash-oriented definition. The startup computation and range are now recovered.
 
 Matching ECU identification, read-tool/acquisition details, a verified wiring diagram, and measured sensor/timer traces will resolve facts that this image alone cannot prove. None is required to continue the remaining static software analysis.
 
@@ -56,6 +56,8 @@ python3 scripts/build_semantic_catalog.py
 clang -std=c11 -O0 -fPIC -shared analysis/full/c/page_*.c analysis/full/c/dispatch.c -o /tmp/libxt660_full.so
 python3 scripts/test_full_lift.py /tmp/libxt660_full.so
 python3 scripts/test_control_semantics.py /tmp/libxt660_full.so
+python3 scripts/fix_startup_checksum.py
+python3 scripts/test_extended_maps.py /tmp/libxt660_full.so
 python3 scripts/verify_semantics.py
 ```
 

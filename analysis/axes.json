@@ -799,5 +799,241 @@
         "function": "FUN_b817"
       }
     ]
+  },
+  {
+    "address": "0x4C1C",
+    "count": 19,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      4096,
+      5120,
+      5632,
+      6144,
+      6656,
+      7168,
+      7680,
+      10240,
+      12800,
+      15360,
+      17920,
+      20480,
+      23040,
+      25600,
+      30720,
+      35840,
+      40960,
+      46080,
+      51200
+    ],
+    "ascending": true,
+    "input": "u16 RAM 0x0900",
+    "kind": "step_thresholds",
+    "calls": [],
+    "equality": "lower bin; bin = number of thresholds strictly below input",
+    "following_word": {
+      "address": "0x4C42",
+      "raw": 56320,
+      "status": "present but not compared by this lookup"
+    }
+  },
+  {
+    "address": "0x4C08",
+    "count": 9,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      0,
+      2624,
+      5248,
+      7872,
+      9152,
+      10496,
+      11776,
+      13120,
+      14400
+    ],
+    "ascending": true,
+    "input": "u16 RAM 0x08E8",
+    "kind": "step_thresholds",
+    "calls": [],
+    "equality": "lower bin; bin = number of thresholds strictly below input",
+    "following_word": {
+      "address": "0x4C1A",
+      "raw": 15744,
+      "status": "present but not compared by this lookup"
+    }
+  },
+  {
+    "address": "0x4D20",
+    "count": 19,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      4608,
+      5632,
+      6656,
+      10240,
+      20480,
+      30720,
+      46080,
+      46592,
+      47104,
+      47616,
+      48128,
+      48640,
+      49152,
+      49664,
+      50176,
+      50688,
+      51200,
+      51712,
+      52224
+    ],
+    "ascending": true,
+    "input": "u16 RAM 0x0900",
+    "kind": "step_thresholds",
+    "calls": [],
+    "equality": "lower bin; bin = number of thresholds strictly below input",
+    "following_word": {
+      "address": "0x4D46",
+      "raw": 52736,
+      "status": "present but not compared by this lookup"
+    }
+  },
+  {
+    "address": "0x4D0C",
+    "count": 9,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      20992,
+      22976,
+      25344,
+      27136,
+      29248,
+      31616,
+      33600,
+      35968,
+      37888
+    ],
+    "ascending": true,
+    "input": "u16 RAM 0x0C90",
+    "kind": "step_thresholds",
+    "calls": [],
+    "equality": "lower bin; bin = number of thresholds strictly below input",
+    "following_word": {
+      "address": "0x4D1E",
+      "raw": 39872,
+      "status": "present but not compared by this lookup"
+    }
+  },
+  {
+    "address": "0x359C",
+    "count": 9,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      4096,
+      6144,
+      8192,
+      10496,
+      12288,
+      14336,
+      16384,
+      18432,
+      23040
+    ],
+    "ascending": true,
+    "input": "u16 RAM 0x0900",
+    "kind": "step_thresholds",
+    "calls": [],
+    "equality": "lower bin; bin = number of thresholds strictly below input",
+    "following_word": {
+      "address": "0x35AE",
+      "raw": 24576,
+      "status": "present but not compared by this lookup"
+    }
+  },
+  {
+    "address": "0x3588",
+    "count": 9,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      0,
+      768,
+      1024,
+      1600,
+      2624,
+      3648,
+      5248,
+      9472,
+      15744
+    ],
+    "ascending": true,
+    "input": "u16 RAM 0x08E8",
+    "kind": "step_thresholds",
+    "calls": [],
+    "equality": "lower bin; bin = number of thresholds strictly below input",
+    "following_word": {
+      "address": "0x359A",
+      "raw": 52416,
+      "status": "present but not compared by this lookup"
+    }
+  },
+  {
+    "address": "0x3628",
+    "count": 9,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      4096,
+      6144,
+      8192,
+      10496,
+      12288,
+      14336,
+      16384,
+      18432,
+      23040
+    ],
+    "ascending": true,
+    "input": "u16 RAM 0x0900",
+    "kind": "step_thresholds",
+    "calls": [],
+    "equality": "lower bin; bin = number of thresholds strictly below input",
+    "following_word": {
+      "address": "0x363A",
+      "raw": 24576,
+      "status": "present but not compared by this lookup"
+    }
+  },
+  {
+    "address": "0x3614",
+    "count": 9,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      20992,
+      22976,
+      25600,
+      27328,
+      29248,
+      31616,
+      33600,
+      35968,
+      38912
+    ],
+    "ascending": true,
+    "input": "u16 RAM 0x0C90",
+    "kind": "step_thresholds",
+    "calls": [],
+    "equality": "lower bin; bin = number of thresholds strictly below input",
+    "following_word": {
+      "address": "0x3626",
+      "raw": 39872,
+      "status": "present but not compared by this lookup"
+    }
   }
 ]

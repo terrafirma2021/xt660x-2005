@@ -1,0 +1,73 @@
+# curve_1996
+
+Startup fuel base quantity
+
+Cells: **0x1999–19A7**, 1 rows × 15 columns, 8-bit unsigned big-endian values.
+
+Inputs: u8 0x08F4 coolant.
+
+Output: u16 0x0934; initialization also writes high byte to 0x0A08.
+
+Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
+
+Interpolation: clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented.
+
+**Engineering conversion is unresolved; tuning export is disabled.**
+
+## Uniform axis
+
+Minimum 16; span 224; factor 16; index divisor 256. Header begins at 0x1996. These are internal scaling parameters, not physical-unit labels.
+
+## Raw cells
+
+```
+56 51 46 40 33 26 20 14 8 7 7 7 7 7 7
+```
+
+## Instruction evidence
+
+Addresses refer to the unchanged image. Windows around entry/call sites provide context, not a complete execution trace.
+
+```
+7154  b608f6  LDAA 0x8f6
+7157  7a08f4  STAA 0x8f4
+715a  1e08832031  BRSET 0x883,0x20,0x7190
+715f  1c088320  BSET 0x883,0x20
+7163  b608f4  LDAA 0x8f4
+7166  ce1996  LDX #0x1996
+7169  16c1cd  JSR 0xc1cd
+716c  7a0a08  STAA 0xa08
+716f  1e0884081c  BRSET 0x884,0x8,0x7190
+7174  1c088408  BSET 0x884,0x8
+7178  b608f4  LDAA 0x8f4
+717b  ce32ef  LDX #0x32ef
+717e  16c1cd  JSR 0xc1cd
+7181  7c0994  STD 0x994
+7184  b608f4  LDAA 0x8f4
+7187  ce3301  LDX #0x3301
+718a  16c1cd  JSR 0xc1cd
+718d  7c0996  STD 0x996
+7190  1f08a00408  BRCLR 0x8a0,0x4,0x719d
+...
+7bab  ce19c6  LDX #0x19c6
+7bae  fc08f2  LDD 0x8f2
+7bb1  16c1f2  JSR 0xc1f2
+7bb4  7a0938  STAA 0x938
+7bb7  b608f4  LDAA 0x8f4
+7bba  ce1996  LDX #0x1996
+7bbd  16c1cd  JSR 0xc1cd
+7bc0  7c0934  STD 0x934
+7bc3  ce19ba  LDX #0x19ba
+7bc6  1e08af080a  BRSET 0x8af,0x8,0x7bd5
+7bcb  1e08af0405  BRSET 0x8af,0x4,0x7bd5
+7bd0  fc08ce  LDD 0x8ce
+7bd3  2003  BRA 0x7bd8
+7bd5  cc0000  LDD #0x0
+7bd8  16c1f2  JSR 0xc1f2
+7bdb  7a0937  STAA 0x937
+7bde  ce19a8  LDX #0x19a8
+7be1  fc0900  LDD 0x900
+7be4  16c1f2  JSR 0xc1f2
+```
+
+[Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)

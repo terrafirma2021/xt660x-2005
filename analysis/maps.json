@@ -122,7 +122,7 @@
         }
       ]
     },
-    "physical_role": "fuel-related candidate; role and units unverified",
+    "physical_role": "Primary fuel quantity surface A; see semantics/FUEL.md",
     "units": "raw ECU values",
     "calls": [
       {
@@ -1579,6 +1579,19 @@
         4220,
         4220
       ]
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed",
+      "u16 0x0C90 load code"
+    ],
+    "output": "0x0952 or 0x0954",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -1699,7 +1712,7 @@
         }
       ]
     },
-    "physical_role": "fuel-related candidate; role and units unverified",
+    "physical_role": "Fuel quantity surface B; see semantics/FUEL.md",
     "units": "raw ECU values",
     "calls": [
       {
@@ -3156,6 +3169,19 @@
         4220,
         4220
       ]
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed",
+      "u16 0x08E8 throttle code; fault substitution ROM 0x4E62"
+    ],
+    "output": "0x0956 or 0x0958",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -3281,7 +3307,7 @@
         }
       ]
     },
-    "physical_role": "fuel-related candidate; role and units unverified",
+    "physical_role": "Primary fuel quantity surface C; see semantics/FUEL.md",
     "units": "raw ECU values",
     "calls": [
       {
@@ -4738,6 +4764,19 @@
         5113,
         5230
       ]
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed",
+      "u16 0x0C90 load code"
+    ],
+    "output": "0x0952 or 0x0954",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -4835,7 +4874,7 @@
         }
       ]
     },
-    "physical_role": "timing-related candidate; role and units unverified",
+    "physical_role": "Base spark timing surface A; see semantics/SPARK.md",
     "units": "raw ECU values",
     "calls": [
       {
@@ -5550,6 +5589,19 @@
         115,
         115
       ]
+    ],
+    "inputs": [
+      "u16 0x0902 selected speed",
+      "u16 0x08E8 throttle code; conditional 0xD000 substitution"
+    ],
+    "output": "u8 0x0A83 after Q8 rounding; corrected into 0x0A82",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -5647,7 +5699,7 @@
         }
       ]
     },
-    "physical_role": "timing-related candidate; role and units unverified",
+    "physical_role": "Base spark timing surface B; see semantics/SPARK.md",
     "units": "raw ECU values",
     "calls": [
       {
@@ -6362,6 +6414,19 @@
         115,
         115
       ]
+    ],
+    "inputs": [
+      "u16 0x0902 selected speed",
+      "u16 0x08E8 throttle code; conditional 0xD000 substitution"
+    ],
+    "output": "u8 0x0A83 after Q8 rounding; corrected into 0x0A82",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -6459,7 +6524,7 @@
         }
       ]
     },
-    "physical_role": "timing-related candidate; role and units unverified",
+    "physical_role": "Base spark timing surface C; see semantics/SPARK.md",
     "units": "raw ECU values",
     "calls": [
       {
@@ -7174,6 +7239,19 @@
         115,
         115
       ]
+    ],
+    "inputs": [
+      "u16 0x0902 selected speed",
+      "u16 0x08E8 throttle code; conditional 0xD000 substitution"
+    ],
+    "output": "u8 0x0A83 after Q8 rounding; corrected into 0x0A82",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -7242,7 +7320,7 @@
         }
       ]
     },
-    "physical_role": "special cyclic interpolation; not plain linear interpolation",
+    "physical_role": "Cyclic 24-code surface; physical event meaning unresolved",
     "units": "raw ECU values",
     "calls": [
       {
@@ -7403,6 +7481,19 @@
         0,
         0
       ]
+    ],
+    "inputs": [
+      "u16 0x08E8 throttle code (row)",
+      "u16 0x0900 selected speed (column)"
+    ],
+    "output": "u8 0x0A1B; excludes codes 11 and >=23 after lookup",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -7475,7 +7566,7 @@
         }
       ]
     },
-    "physical_role": "physical role unverified",
+    "physical_role": "Speed/throttle correction",
     "units": "raw ECU values",
     "calls": [
       {
@@ -7690,6 +7781,19 @@
         128,
         128
       ]
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed",
+      "u16 0x08E8 throttle code"
+    ],
+    "output": "u8 0x0CEC",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -7758,7 +7862,7 @@
         }
       ]
     },
-    "physical_role": "physical role unverified",
+    "physical_role": "Control correction",
     "units": "raw ECU values",
     "calls": [
       {
@@ -7925,6 +8029,19 @@
         128,
         128
       ]
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed",
+      "u16 0x08E8 throttle code"
+    ],
+    "output": "u8 0x09D8",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -7990,7 +8107,7 @@
         }
       ]
     },
-    "physical_role": "physical role unverified",
+    "physical_role": "Fuel correction surface",
     "units": "raw ECU values",
     "calls": [
       {
@@ -8113,6 +8230,19 @@
         128,
         128
       ]
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed",
+      "u16 0x0C90 load code"
+    ],
+    "output": "u8 0x0972; multiplied by 0x0971, scaled and saturated into 0x0970",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8183,7 +8313,7 @@
         }
       ]
     },
-    "physical_role": "physical role unverified",
+    "physical_role": "Temperature/speed correction in spark path",
     "units": "raw ECU values",
     "calls": [
       {
@@ -8364,6 +8494,19 @@
         64,
         64
       ]
+    ],
+    "inputs": [
+      "u8 high byte of 0x0900 selected speed",
+      "u8 0x08F4 coolant"
+    ],
+    "output": "u8 0x0A88",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8407,6 +8550,20 @@
         "helper": "0xC1CD",
         "function": "FUN_6af6"
       }
+    ],
+    "inputs": [
+      "u8 0x08F4 coolant"
+    ],
+    "output": "u8 0x0CAE",
+    "physical_role": "Coolant-dependent feedback threshold",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8456,6 +8613,20 @@
         "helper": "0xC1CD",
         "function": "FUN_74b8"
       }
+    ],
+    "inputs": [
+      "u8 0x08F4 coolant"
+    ],
+    "output": "u16 0x0934; initialization also writes high byte to 0x0A08",
+    "physical_role": "Startup fuel base quantity",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8505,6 +8676,20 @@
         "helper": "0xC1CD",
         "function": "FUN_721f"
       }
+    ],
+    "inputs": [
+      "u8 0x08F4 coolant"
+    ],
+    "output": "u16 0x0994",
+    "physical_role": "Startup/reset state curve",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8554,6 +8739,20 @@
         "helper": "0xC1CD",
         "function": "FUN_721f"
       }
+    ],
+    "inputs": [
+      "u8 0x08F4 coolant"
+    ],
+    "output": "u16 0x0996",
+    "physical_role": "Startup/reset state curve",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8595,6 +8794,20 @@
         "helper": "0xC1CD",
         "function": "FUN_b166"
       }
+    ],
+    "inputs": [
+      "u8 0x08DA supply-derived"
+    ],
+    "output": "u16 0x095E = high byte * 8",
+    "physical_role": "Additive injection-pulse compensation; deadtime candidate",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8631,6 +8844,20 @@
         "helper": "0xC1F2",
         "function": "FUN_74b8"
       }
+    ],
+    "inputs": [
+      "u16 0x08F2 pressure-derived estimate"
+    ],
+    "output": "u8 0x0938",
+    "physical_role": "Startup fuel multiplier",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8665,6 +8892,20 @@
         "helper": "0xC1F2",
         "function": "FUN_74b8"
       }
+    ],
+    "inputs": [
+      "u16 0x08CE throttle-derived; zero on fault path"
+    ],
+    "output": "u8 0x0937",
+    "physical_role": "Startup fuel multiplier",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8704,6 +8945,20 @@
         "helper": "0xC1F2",
         "function": "FUN_74b8"
       }
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed"
+    ],
+    "output": "u8 0x0936",
+    "physical_role": "Startup fuel multiplier",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8747,6 +9002,20 @@
         "helper": "0xC1F2",
         "function": "FUN_74b8"
       }
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed"
+    ],
+    "output": "u8 0x09A0",
+    "physical_role": "Speed-dependent correction",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8785,6 +9054,20 @@
         "helper": "0xC1F2",
         "function": "FUN_8b34"
       }
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed"
+    ],
+    "output": "u8 0x0A05",
+    "physical_role": "Transient threshold",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8827,6 +9110,20 @@
         "helper": "0xC1F2",
         "function": "FUN_8b34"
       }
+    ],
+    "inputs": [
+      "u16 0x08F2 pressure-derived estimate"
+    ],
+    "output": "u8 0x0A0D",
+    "physical_role": "Transient correction",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8886,6 +9183,20 @@
         "helper": "0xC1CD",
         "function": "FUN_8b34"
       }
+    ],
+    "inputs": [
+      "u8 0x08F5 intake temperature"
+    ],
+    "output": "u8 0x0A10; subsequently widened and offset by 0x0180",
+    "physical_role": "Transient temperature multiplier",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8921,6 +9232,20 @@
         "helper": "0xC1CD",
         "function": "FUN_8b34"
       }
+    ],
+    "inputs": [
+      "u8 0x08ED throttle-derived delta"
+    ],
+    "output": "u8 0x0A0C",
+    "physical_role": "Selected transient response curve",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8956,6 +9281,20 @@
         "helper": "0xC1CD",
         "function": "FUN_8b34"
       }
+    ],
+    "inputs": [
+      "u8 0x08ED throttle-derived delta"
+    ],
+    "output": "u8 0x0A0C",
+    "physical_role": "Selected transient response curve",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -8991,6 +9330,20 @@
         "helper": "0xC1CD",
         "function": "FUN_8b34"
       }
+    ],
+    "inputs": [
+      "u8 0x08ED throttle-derived delta"
+    ],
+    "output": "u8 0x0A0C",
+    "physical_role": "Selected transient response curve",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9034,6 +9387,20 @@
         "helper": "0xC1F2",
         "function": "FUN_8b34"
       }
+    ],
+    "inputs": [
+      "u16 0x08CE throttle-derived"
+    ],
+    "output": "u8 0x0A0E",
+    "physical_role": "Transient throttle correction",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9069,6 +9436,20 @@
         "helper": "0xC1CD",
         "function": "FUN_8b34"
       }
+    ],
+    "inputs": [
+      "u8 0x08ED throttle-derived delta"
+    ],
+    "output": "u8 0x0D04",
+    "physical_role": "Selected transient response curve",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9104,6 +9485,20 @@
         "helper": "0xC1CD",
         "function": "FUN_8b34"
       }
+    ],
+    "inputs": [
+      "u8 0x08ED throttle-derived delta"
+    ],
+    "output": "u8 0x0D04",
+    "physical_role": "Selected transient response curve",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9139,6 +9534,20 @@
         "helper": "0xC1CD",
         "function": "FUN_8b34"
       }
+    ],
+    "inputs": [
+      "u8 0x08ED throttle-derived delta"
+    ],
+    "output": "u8 0x0D04",
+    "physical_role": "Selected transient response curve",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9180,6 +9589,20 @@
         "helper": "0xC1F2",
         "function": "FUN_a448"
       }
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed"
+    ],
+    "output": "u8 0x09D9",
+    "physical_role": "Speed-dependent control correction",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9221,6 +9644,20 @@
         "helper": "0xC1F2",
         "function": "FUN_a448"
       }
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed"
+    ],
+    "output": "u8 0x09D9",
+    "physical_role": "Speed-dependent control correction",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9264,6 +9701,20 @@
         "helper": "0xC1CD",
         "function": "FUN_a564"
       }
+    ],
+    "inputs": [
+      "u8 0x08F4 coolant"
+    ],
+    "output": "u8 0x09B4 compared with 0x09B5",
+    "physical_role": "Feedback eligibility threshold",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9299,6 +9750,20 @@
         "helper": "0xC1F2",
         "function": "FUN_a564"
       }
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed"
+    ],
+    "output": "u16 0x09A6 = high byte << 8",
+    "physical_role": "Adaptive correction subtraction bound",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9334,6 +9799,20 @@
         "helper": "0xC1F2",
         "function": "FUN_a564"
       }
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed"
+    ],
+    "output": "u16 0x09A8 = high byte << 8",
+    "physical_role": "Adaptive correction addition bound",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9387,6 +9866,20 @@
         "helper": "0xC1CD",
         "function": "FUN_b166"
       }
+    ],
+    "inputs": [
+      "u8 0x08F5 intake temperature"
+    ],
+    "output": "u8 0x0979",
+    "physical_role": "Fuel temperature multiplier; used with offset 0x0180",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9430,6 +9923,20 @@
         "helper": "0xC1CD",
         "function": "FUN_b166"
       }
+    ],
+    "inputs": [
+      "u8 0x08F4 coolant"
+    ],
+    "output": "u8 0x098F",
+    "physical_role": "Coolant-dependent correction",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9473,6 +9980,20 @@
         "helper": "0xC1CD",
         "function": "FUN_b166"
       }
+    ],
+    "inputs": [
+      "u8 0x08F4 coolant"
+    ],
+    "output": "u8 0x0990",
+    "physical_role": "Coolant-dependent correction",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9521,6 +10042,20 @@
         "helper": "0xC1F2",
         "function": "FUN_b166"
       }
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed"
+    ],
+    "output": "u8 0x0CB0",
+    "physical_role": "Pressure-processing correction",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9570,6 +10105,20 @@
         "helper": "0xC1F2",
         "function": "FUN_b166"
       }
+    ],
+    "inputs": [
+      "u16 0x08F2 pressure-derived estimate"
+    ],
+    "output": "u8 0x0971",
+    "physical_role": "Multiplier for correction_surface_C",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9606,6 +10155,20 @@
         "helper": "0xC1F2",
         "function": "FUN_b166"
       }
+    ],
+    "inputs": [
+      "u16 0x08F2 pressure-derived estimate"
+    ],
+    "output": "u8 0x0978",
+    "physical_role": "Pressure-dependent fuel correction",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9649,6 +10212,20 @@
         "helper": "0xC1CD",
         "function": "FUN_b817"
       }
+    ],
+    "inputs": [
+      "u8 0x08F4 coolant"
+    ],
+    "output": "u8 0x0A89",
+    "physical_role": "Temperature correction in spark path",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9692,6 +10269,20 @@
         "helper": "0xC1CD",
         "function": "FUN_b817"
       }
+    ],
+    "inputs": [
+      "u8 0x08F4 coolant"
+    ],
+    "output": "u8 0x097B",
+    "physical_role": "Coolant-dependent fuel correction",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9735,6 +10326,20 @@
         "helper": "0xC1CD",
         "function": "FUN_b817"
       }
+    ],
+    "inputs": [
+      "u8 0x08F4 coolant"
+    ],
+    "output": "u8 0x097C",
+    "physical_role": "Coolant-dependent fuel correction",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9792,6 +10397,20 @@
         "helper": "0xC1CD",
         "function": "FUN_b817"
       }
+    ],
+    "inputs": [
+      "u8 0x08F4 coolant"
+    ],
+    "output": "u8 0x0A0F",
+    "physical_role": "Transient temperature correction",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   },
   {
@@ -9841,6 +10460,2909 @@
         "helper": "0xC1F2",
         "function": "FUN_b817"
       }
+    ],
+    "inputs": [
+      "u16 0x08F2 pressure-derived estimate"
+    ],
+    "output": "u8 0x0D05",
+    "physical_role": "Timing bound consumed at 0x8A2F",
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "delta_0985_gain_1",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x336B",
+    "end_exclusive": "0x3382",
+    "rows": 1,
+    "columns": 23,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        0,
+        0,
+        0,
+        102,
+        76,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code"
+    ],
+    "output": "u8 RAM 0x098D",
+    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "evidence_addresses": [
+      "0x7A49",
+      "0x7A81",
+      "0xCC7B"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "0xC1DB linear Q8; caller takes high byte (floor)",
+    "selection": "RAM 0x0985 bit 7 set; variant 0x0D87 == 9 and RAM 0x0896 bit 0x10 clear",
+    "pointer_base": "0x3368",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        5120,
+        6144,
+        7168,
+        8192,
+        9216,
+        10240,
+        11264,
+        12288,
+        13312,
+        14336,
+        16384,
+        18432,
+        22528,
+        26624,
+        30720,
+        34816,
+        38912,
+        43008,
+        47104,
+        51200,
+        55296,
+        59392
+      ],
+      "count": 23,
+      "input": "u16 RAM 0x0900: selected speed code",
+      "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "delta_0985_gain_2",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x3382",
+    "end_exclusive": "0x3399",
+    "rows": 1,
+    "columns": 23,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code"
+    ],
+    "output": "u8 RAM 0x098D",
+    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "evidence_addresses": [
+      "0x7A56",
+      "0x7A81",
+      "0xCC7B"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "0xC1DB linear Q8; caller takes high byte (floor)",
+    "selection": "RAM 0x0985 bit 7 set; otherwise RAM 0x0898 <= ROM 0x3369",
+    "pointer_base": "0x337F",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        5120,
+        6144,
+        7168,
+        8192,
+        9216,
+        10240,
+        11264,
+        12288,
+        13312,
+        14336,
+        16384,
+        18432,
+        22528,
+        26624,
+        30720,
+        34816,
+        38912,
+        43008,
+        47104,
+        51200,
+        55296,
+        59392
+      ],
+      "count": 23,
+      "input": "u16 RAM 0x0900: selected speed code",
+      "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "delta_0985_gain_3",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x3399",
+    "end_exclusive": "0x33B0",
+    "rows": 1,
+    "columns": 23,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code"
+    ],
+    "output": "u8 RAM 0x098D",
+    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "evidence_addresses": [
+      "0x7A5B",
+      "0x7A81",
+      "0xCC7B"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "0xC1DB linear Q8; caller takes high byte (floor)",
+    "selection": "RAM 0x0985 bit 7 set; otherwise RAM 0x0898 > ROM 0x3369",
+    "pointer_base": "0x3396",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        5120,
+        6144,
+        7168,
+        8192,
+        9216,
+        10240,
+        11264,
+        12288,
+        13312,
+        14336,
+        16384,
+        18432,
+        22528,
+        26624,
+        30720,
+        34816,
+        38912,
+        43008,
+        47104,
+        51200,
+        55296,
+        59392
+      ],
+      "count": 23,
+      "input": "u16 RAM 0x0900: selected speed code",
+      "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "delta_0985_gain_4",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x33B0",
+    "end_exclusive": "0x33C7",
+    "rows": 1,
+    "columns": 23,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        45,
+        72,
+        88,
+        96,
+        102,
+        102,
+        102,
+        102,
+        102,
+        102,
+        102,
+        102
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code"
+    ],
+    "output": "u8 RAM 0x098D",
+    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "evidence_addresses": [
+      "0x7A69",
+      "0x7A81",
+      "0xCC7B"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "0xC1DB linear Q8; caller takes high byte (floor)",
+    "selection": "RAM 0x0985 bit 7 clear; variant 0x0D87 == 9 and RAM 0x0896 bit 0x10 clear",
+    "pointer_base": "0x33AD",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        5120,
+        6144,
+        7168,
+        8192,
+        9216,
+        10240,
+        11264,
+        12288,
+        13312,
+        14336,
+        16384,
+        18432,
+        22528,
+        26624,
+        30720,
+        34816,
+        38912,
+        43008,
+        47104,
+        51200,
+        55296,
+        59392
+      ],
+      "count": 23,
+      "input": "u16 RAM 0x0900: selected speed code",
+      "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "delta_0985_gain_5",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x33C7",
+    "end_exclusive": "0x33DE",
+    "rows": 1,
+    "columns": 23,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        13,
+        29,
+        39,
+        59,
+        75,
+        78,
+        88,
+        96,
+        102,
+        102,
+        102,
+        102,
+        102,
+        102,
+        102,
+        102
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code"
+    ],
+    "output": "u8 RAM 0x098D",
+    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "evidence_addresses": [
+      "0x7A76",
+      "0x7A81",
+      "0xCC7B"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "0xC1DB linear Q8; caller takes high byte (floor)",
+    "selection": "RAM 0x0985 bit 7 clear; otherwise RAM 0x0898 <= ROM 0x336A",
+    "pointer_base": "0x33C4",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        5120,
+        6144,
+        7168,
+        8192,
+        9216,
+        10240,
+        11264,
+        12288,
+        13312,
+        14336,
+        16384,
+        18432,
+        22528,
+        26624,
+        30720,
+        34816,
+        38912,
+        43008,
+        47104,
+        51200,
+        55296,
+        59392
+      ],
+      "count": 23,
+      "input": "u16 RAM 0x0900: selected speed code",
+      "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "delta_0985_gain_6",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x33DE",
+    "end_exclusive": "0x33F5",
+    "rows": 1,
+    "columns": 23,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        13,
+        29,
+        39,
+        59,
+        75,
+        78,
+        88,
+        96,
+        102,
+        102,
+        102,
+        102,
+        102,
+        102,
+        102,
+        102
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code"
+    ],
+    "output": "u8 RAM 0x098D",
+    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "evidence_addresses": [
+      "0x7A7B",
+      "0x7A81",
+      "0xCC7B"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "0xC1DB linear Q8; caller takes high byte (floor)",
+    "selection": "RAM 0x0985 bit 7 clear; otherwise RAM 0x0898 > ROM 0x336A",
+    "pointer_base": "0x33DB",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        5120,
+        6144,
+        7168,
+        8192,
+        9216,
+        10240,
+        11264,
+        12288,
+        13312,
+        14336,
+        16384,
+        18432,
+        22528,
+        26624,
+        30720,
+        34816,
+        38912,
+        43008,
+        47104,
+        51200,
+        55296,
+        59392
+      ],
+      "count": 23,
+      "input": "u16 RAM 0x0900: selected speed code",
+      "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "delta_0989_gain_1",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x33F7",
+    "end_exclusive": "0x340E",
+    "rows": 1,
+    "columns": 23,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code"
+    ],
+    "output": "u8 RAM 0x098E",
+    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "evidence_addresses": [
+      "0x78D6",
+      "0x790E",
+      "0xCC7B"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "0xC1DB linear Q8; caller takes high byte (floor)",
+    "selection": "RAM 0x0989 bit 7 set; variant 0x0D87 == 9 and RAM 0x0896 bit 0x10 clear",
+    "pointer_base": "0x33F4",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        5120,
+        6144,
+        7168,
+        8192,
+        9216,
+        10240,
+        11264,
+        12288,
+        13312,
+        14336,
+        16384,
+        18432,
+        22528,
+        26624,
+        30720,
+        34816,
+        38912,
+        43008,
+        47104,
+        51200,
+        55296,
+        59392
+      ],
+      "count": 23,
+      "input": "u16 RAM 0x0900: selected speed code",
+      "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "delta_0989_gain_2",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x340E",
+    "end_exclusive": "0x3425",
+    "rows": 1,
+    "columns": 23,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code"
+    ],
+    "output": "u8 RAM 0x098E",
+    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "evidence_addresses": [
+      "0x78E3",
+      "0x790E",
+      "0xCC7B"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "0xC1DB linear Q8; caller takes high byte (floor)",
+    "selection": "RAM 0x0989 bit 7 set; otherwise RAM 0x0898 <= ROM 0x33F5",
+    "pointer_base": "0x340B",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        5120,
+        6144,
+        7168,
+        8192,
+        9216,
+        10240,
+        11264,
+        12288,
+        13312,
+        14336,
+        16384,
+        18432,
+        22528,
+        26624,
+        30720,
+        34816,
+        38912,
+        43008,
+        47104,
+        51200,
+        55296,
+        59392
+      ],
+      "count": 23,
+      "input": "u16 RAM 0x0900: selected speed code",
+      "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "delta_0989_gain_3",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x3425",
+    "end_exclusive": "0x343C",
+    "rows": 1,
+    "columns": 23,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code"
+    ],
+    "output": "u8 RAM 0x098E",
+    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "evidence_addresses": [
+      "0x78E8",
+      "0x790E",
+      "0xCC7B"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "0xC1DB linear Q8; caller takes high byte (floor)",
+    "selection": "RAM 0x0989 bit 7 set; otherwise RAM 0x0898 > ROM 0x33F5",
+    "pointer_base": "0x3422",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        5120,
+        6144,
+        7168,
+        8192,
+        9216,
+        10240,
+        11264,
+        12288,
+        13312,
+        14336,
+        16384,
+        18432,
+        22528,
+        26624,
+        30720,
+        34816,
+        38912,
+        43008,
+        47104,
+        51200,
+        55296,
+        59392
+      ],
+      "count": 23,
+      "input": "u16 RAM 0x0900: selected speed code",
+      "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "delta_0989_gain_4",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x343C",
+    "end_exclusive": "0x3453",
+    "rows": 1,
+    "columns": 23,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        13,
+        29,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code"
+    ],
+    "output": "u8 RAM 0x098E",
+    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "evidence_addresses": [
+      "0x78F6",
+      "0x790E",
+      "0xCC7B"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "0xC1DB linear Q8; caller takes high byte (floor)",
+    "selection": "RAM 0x0989 bit 7 clear; variant 0x0D87 == 9 and RAM 0x0896 bit 0x10 clear",
+    "pointer_base": "0x3439",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        5120,
+        6144,
+        7168,
+        8192,
+        9216,
+        10240,
+        11264,
+        12288,
+        13312,
+        14336,
+        16384,
+        18432,
+        22528,
+        26624,
+        30720,
+        34816,
+        38912,
+        43008,
+        47104,
+        51200,
+        55296,
+        59392
+      ],
+      "count": 23,
+      "input": "u16 RAM 0x0900: selected speed code",
+      "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "delta_0989_gain_5",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x3453",
+    "end_exclusive": "0x346A",
+    "rows": 1,
+    "columns": 23,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        13,
+        29,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code"
+    ],
+    "output": "u8 RAM 0x098E",
+    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "evidence_addresses": [
+      "0x7903",
+      "0x790E",
+      "0xCC7B"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "0xC1DB linear Q8; caller takes high byte (floor)",
+    "selection": "RAM 0x0989 bit 7 clear; otherwise RAM 0x0898 <= ROM 0x33F6",
+    "pointer_base": "0x3450",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        5120,
+        6144,
+        7168,
+        8192,
+        9216,
+        10240,
+        11264,
+        12288,
+        13312,
+        14336,
+        16384,
+        18432,
+        22528,
+        26624,
+        30720,
+        34816,
+        38912,
+        43008,
+        47104,
+        51200,
+        55296,
+        59392
+      ],
+      "count": 23,
+      "input": "u16 RAM 0x0900: selected speed code",
+      "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "delta_0989_gain_6",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x346A",
+    "end_exclusive": "0x3481",
+    "rows": 1,
+    "columns": 23,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        13,
+        29,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code"
+    ],
+    "output": "u8 RAM 0x098E",
+    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "evidence_addresses": [
+      "0x7908",
+      "0x790E",
+      "0xCC7B"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "0xC1DB linear Q8; caller takes high byte (floor)",
+    "selection": "RAM 0x0989 bit 7 clear; otherwise RAM 0x0898 > ROM 0x33F6",
+    "pointer_base": "0x3467",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        5120,
+        6144,
+        7168,
+        8192,
+        9216,
+        10240,
+        11264,
+        12288,
+        13312,
+        14336,
+        16384,
+        18432,
+        22528,
+        26624,
+        30720,
+        34816,
+        38912,
+        43008,
+        47104,
+        51200,
+        55296,
+        59392
+      ],
+      "count": 23,
+      "input": "u16 RAM 0x0900: selected speed code",
+      "index_formula": "u=clamp(input-4096,0,55296); q8=u//4 if u<10240 else u//8+1280 if u<14336 else u//16+2176"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "step_grid_4c44",
+    "kind": "2D_step_grid",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x4C44",
+    "end_exclusive": "0x4D0C",
+    "rows": 20,
+    "columns": 10,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code",
+      "u16 RAM 0x08E8"
+    ],
+    "output": "u8 RAM 0x0ACD; column/row bins at 0x0AD0/0x0AD1",
+    "physical_role": "Air-induction solenoid eligibility grid; zero inhibits this eligibility path",
+    "evidence_addresses": [
+      "0xA363"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "none; strict > threshold selects upper bin; equality stays in lower bin",
+    "row_axis": {
+      "address": "0x4C1C",
+      "count": 19,
+      "element_bytes": 2,
+      "byte_order": "big",
+      "raw_values": [
+        4096,
+        5120,
+        5632,
+        6144,
+        6656,
+        7168,
+        7680,
+        10240,
+        12800,
+        15360,
+        17920,
+        20480,
+        23040,
+        25600,
+        30720,
+        35840,
+        40960,
+        46080,
+        51200
+      ],
+      "ascending": true,
+      "input": "u16 RAM 0x0900",
+      "kind": "step_thresholds",
+      "calls": [],
+      "equality": "lower bin; bin = number of thresholds strictly below input",
+      "following_word": {
+        "address": "0x4C42",
+        "raw": 56320,
+        "status": "present but not compared by this lookup"
+      }
+    },
+    "column_axis": {
+      "address": "0x4C08",
+      "count": 9,
+      "element_bytes": 2,
+      "byte_order": "big",
+      "raw_values": [
+        0,
+        2624,
+        5248,
+        7872,
+        9152,
+        10496,
+        11776,
+        13120,
+        14400
+      ],
+      "ascending": true,
+      "input": "u16 RAM 0x08E8",
+      "kind": "step_thresholds",
+      "calls": [],
+      "equality": "lower bin; bin = number of thresholds strictly below input",
+      "following_word": {
+        "address": "0x4C1A",
+        "raw": 15744,
+        "status": "present but not compared by this lookup"
+      }
+    },
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "step_grid_4d48",
+    "kind": "2D_step_grid",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x4D48",
+    "end_exclusive": "0x4E10",
+    "rows": 20,
+    "columns": 10,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code",
+      "u16 RAM 0x0C90"
+    ],
+    "output": "u8 RAM 0x0ACE; column/row bins at 0x0AD2/0x0AD3",
+    "physical_role": "Air-induction solenoid eligibility grid; zero inhibits this eligibility path",
+    "evidence_addresses": [
+      "0xA3B4"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "none; strict > threshold selects upper bin; equality stays in lower bin",
+    "row_axis": {
+      "address": "0x4D20",
+      "count": 19,
+      "element_bytes": 2,
+      "byte_order": "big",
+      "raw_values": [
+        4608,
+        5632,
+        6656,
+        10240,
+        20480,
+        30720,
+        46080,
+        46592,
+        47104,
+        47616,
+        48128,
+        48640,
+        49152,
+        49664,
+        50176,
+        50688,
+        51200,
+        51712,
+        52224
+      ],
+      "ascending": true,
+      "input": "u16 RAM 0x0900",
+      "kind": "step_thresholds",
+      "calls": [],
+      "equality": "lower bin; bin = number of thresholds strictly below input",
+      "following_word": {
+        "address": "0x4D46",
+        "raw": 52736,
+        "status": "present but not compared by this lookup"
+      }
+    },
+    "column_axis": {
+      "address": "0x4D0C",
+      "count": 9,
+      "element_bytes": 2,
+      "byte_order": "big",
+      "raw_values": [
+        20992,
+        22976,
+        25344,
+        27136,
+        29248,
+        31616,
+        33600,
+        35968,
+        37888
+      ],
+      "ascending": true,
+      "input": "u16 RAM 0x0C90",
+      "kind": "step_thresholds",
+      "calls": [],
+      "equality": "lower bin; bin = number of thresholds strictly below input",
+      "following_word": {
+        "address": "0x4D1E",
+        "raw": 39872,
+        "status": "present but not compared by this lookup"
+      }
+    },
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "step_grid_35b0",
+    "kind": "2D_step_grid",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x35B0",
+    "end_exclusive": "0x3614",
+    "rows": 10,
+    "columns": 10,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code",
+      "u16 RAM 0x08E8"
+    ],
+    "output": "u8 RAM 0x09AE; column/row bins at 0x09B0/0x09B1",
+    "physical_role": "Adaptive feedback eligibility grid; zero clears feedback-enable path",
+    "evidence_addresses": [
+      "0xABDD"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "none; strict > threshold selects upper bin; equality stays in lower bin",
+    "row_axis": {
+      "address": "0x359C",
+      "count": 9,
+      "element_bytes": 2,
+      "byte_order": "big",
+      "raw_values": [
+        4096,
+        6144,
+        8192,
+        10496,
+        12288,
+        14336,
+        16384,
+        18432,
+        23040
+      ],
+      "ascending": true,
+      "input": "u16 RAM 0x0900",
+      "kind": "step_thresholds",
+      "calls": [],
+      "equality": "lower bin; bin = number of thresholds strictly below input",
+      "following_word": {
+        "address": "0x35AE",
+        "raw": 24576,
+        "status": "present but not compared by this lookup"
+      }
+    },
+    "column_axis": {
+      "address": "0x3588",
+      "count": 9,
+      "element_bytes": 2,
+      "byte_order": "big",
+      "raw_values": [
+        0,
+        768,
+        1024,
+        1600,
+        2624,
+        3648,
+        5248,
+        9472,
+        15744
+      ],
+      "ascending": true,
+      "input": "u16 RAM 0x08E8",
+      "kind": "step_thresholds",
+      "calls": [],
+      "equality": "lower bin; bin = number of thresholds strictly below input",
+      "following_word": {
+        "address": "0x359A",
+        "raw": 52416,
+        "status": "present but not compared by this lookup"
+      }
+    },
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "step_grid_363c",
+    "kind": "2D_step_grid",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x363C",
+    "end_exclusive": "0x36A0",
+    "rows": 10,
+    "columns": 10,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code",
+      "u16 RAM 0x0C90"
+    ],
+    "output": "u8 RAM 0x09AF; column/row bins at 0x09B2/0x09B3",
+    "physical_role": "Adaptive feedback eligibility grid; zero clears feedback-enable path",
+    "evidence_addresses": [
+      "0xAC2E"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "none; strict > threshold selects upper bin; equality stays in lower bin",
+    "row_axis": {
+      "address": "0x3628",
+      "count": 9,
+      "element_bytes": 2,
+      "byte_order": "big",
+      "raw_values": [
+        4096,
+        6144,
+        8192,
+        10496,
+        12288,
+        14336,
+        16384,
+        18432,
+        23040
+      ],
+      "ascending": true,
+      "input": "u16 RAM 0x0900",
+      "kind": "step_thresholds",
+      "calls": [],
+      "equality": "lower bin; bin = number of thresholds strictly below input",
+      "following_word": {
+        "address": "0x363A",
+        "raw": 24576,
+        "status": "present but not compared by this lookup"
+      }
+    },
+    "column_axis": {
+      "address": "0x3614",
+      "count": 9,
+      "element_bytes": 2,
+      "byte_order": "big",
+      "raw_values": [
+        20992,
+        22976,
+        25600,
+        27328,
+        29248,
+        31616,
+        33600,
+        35968,
+        38912
+      ],
+      "ascending": true,
+      "input": "u16 RAM 0x0C90",
+      "kind": "step_thresholds",
+      "calls": [],
+      "equality": "lower bin; bin = number of thresholds strictly below input",
+      "following_word": {
+        "address": "0x3626",
+        "raw": 39872,
+        "status": "present but not compared by this lookup"
+      }
+    },
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "timing_speed_4f64",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x4F64",
+    "end_exclusive": "0x4F81",
+    "rows": 1,
+    "columns": 29,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        32,
+        99,
+        122,
+        135,
+        143,
+        150,
+        155,
+        159,
+        162,
+        164,
+        166,
+        168,
+        169,
+        169,
+        172,
+        174,
+        174,
+        175,
+        176,
+        181,
+        181,
+        181,
+        182,
+        182,
+        181,
+        181,
+        180,
+        179,
+        178
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x08F8: instantaneous speed code"
+    ],
+    "output": "u8 RAM 0x0A8B",
+    "physical_role": "Speed correction in spark-timing path; final degree conversion unresolved",
+    "evidence_addresses": [
+      "0x88D1",
+      "0x88EE"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "RAM 0x0D87 != 9",
+    "interpolation": "0xC28D with one row; linear Q8 rounded to nearest byte",
+    "pointer_base": "0x4F61",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        6144,
+        8192,
+        10240,
+        12288,
+        14336,
+        16384,
+        18432,
+        20480,
+        22528,
+        24576,
+        26624,
+        28672,
+        30720,
+        32768,
+        34816,
+        36864,
+        38912,
+        40960,
+        43008,
+        45056,
+        47104,
+        49152,
+        51200,
+        53248,
+        55296,
+        57344,
+        59392,
+        61440
+      ],
+      "count": 29,
+      "input": "u16 RAM 0x08F8 via RAM 0x0918",
+      "index_formula": "q8=clamp(input-4096,0,57344)//8 (0xCC63)"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "timing_speed_4f81",
+    "kind": "1D_precomputed_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x4F81",
+    "end_exclusive": "0x4F9E",
+    "rows": 1,
+    "columns": 29,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        53,
+        99,
+        127,
+        139,
+        150,
+        156,
+        158,
+        161,
+        162,
+        164,
+        166,
+        171,
+        174,
+        174,
+        174,
+        176,
+        176,
+        177,
+        176,
+        177,
+        177,
+        177,
+        178,
+        178,
+        177,
+        176,
+        175,
+        174,
+        174
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x08F8: instantaneous speed code"
+    ],
+    "output": "u8 RAM 0x0A8B",
+    "physical_role": "Speed correction in spark-timing path; final degree conversion unresolved",
+    "evidence_addresses": [
+      "0x88D1",
+      "0x88EE"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "RAM 0x0D87 == 9",
+    "interpolation": "0xC28D with one row; linear Q8 rounded to nearest byte",
+    "pointer_base": "0x4F7E",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        6144,
+        8192,
+        10240,
+        12288,
+        14336,
+        16384,
+        18432,
+        20480,
+        22528,
+        24576,
+        26624,
+        28672,
+        30720,
+        32768,
+        34816,
+        36864,
+        38912,
+        40960,
+        43008,
+        45056,
+        47104,
+        49152,
+        51200,
+        53248,
+        55296,
+        57344,
+        59392,
+        61440
+      ],
+      "count": 29,
+      "input": "u16 RAM 0x08F8 via RAM 0x0918",
+      "index_formula": "q8=clamp(input-4096,0,57344)//8 (0xCC63)"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "dwell_supply_speed",
+    "kind": "2D_special_grid",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x4B12",
+    "end_exclusive": "0x4B99",
+    "rows": 15,
+    "columns": 9,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        164,
+        150,
+        136,
+        130,
+        124,
+        118,
+        112,
+        110,
+        108
+      ],
+      [
+        164,
+        150,
+        136,
+        130,
+        124,
+        118,
+        112,
+        110,
+        108
+      ],
+      [
+        164,
+        150,
+        136,
+        130,
+        124,
+        118,
+        112,
+        110,
+        108
+      ],
+      [
+        164,
+        150,
+        136,
+        130,
+        121,
+        112,
+        106,
+        100,
+        95
+      ],
+      [
+        157,
+        139,
+        125,
+        112,
+        104,
+        96,
+        90,
+        85,
+        81
+      ],
+      [
+        137,
+        120,
+        109,
+        100,
+        92,
+        85,
+        79,
+        76,
+        71
+      ],
+      [
+        123,
+        106,
+        96,
+        89,
+        82,
+        76,
+        71,
+        68,
+        65
+      ],
+      [
+        110,
+        98,
+        89,
+        81,
+        75,
+        70,
+        65,
+        62,
+        59
+      ],
+      [
+        103,
+        90,
+        82,
+        75,
+        70,
+        65,
+        62,
+        57,
+        56
+      ],
+      [
+        95,
+        84,
+        76,
+        70,
+        65,
+        60,
+        57,
+        54,
+        51
+      ],
+      [
+        89,
+        79,
+        71,
+        65,
+        60,
+        57,
+        54,
+        51,
+        48
+      ],
+      [
+        83,
+        75,
+        67,
+        62,
+        57,
+        54,
+        51,
+        48,
+        46
+      ],
+      [
+        79,
+        70,
+        64,
+        59,
+        54,
+        51,
+        48,
+        46,
+        43
+      ],
+      [
+        76,
+        67,
+        60,
+        56,
+        53,
+        50,
+        46,
+        45,
+        42
+      ],
+      [
+        71,
+        64,
+        59,
+        54,
+        50,
+        46,
+        45,
+        42,
+        40
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "u16 RAM 0x0900: selected speed code",
+      "u8 RAM 0x08D9: supply code"
+    ],
+    "output": "u16 RAM 0x0A98 = rounded cell * 32; added to RAM 0x0A9C * 32, limited into 0x0A96",
+    "physical_role": "Spark output timing/dwell candidate; timer units and electrical interpretation unresolved",
+    "evidence_addresses": [
+      "0x8AD4",
+      "0x8ADB",
+      "0x8AE6",
+      "0x8B20"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "0xC28D: round column interpolation to bytes, then round row interpolation",
+    "selection": "RAM 0x088D bit 0x40 overrides lookup result with ROM 0x4BAB",
+    "pointer_base": "0x4B0F",
+    "row_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        4096,
+        8192,
+        12288,
+        16384,
+        20480,
+        24576,
+        28672,
+        32768,
+        36864,
+        40960,
+        45056,
+        49152,
+        53248,
+        57344,
+        61440
+      ],
+      "count": 15,
+      "input": "u16 RAM 0x0900",
+      "index_formula": "q8=clamp(input-4096,0,57344)//16"
+    },
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        83,
+        99,
+        115,
+        131,
+        147,
+        163,
+        179,
+        195,
+        211
+      ],
+      "count": 9,
+      "input": "u8 RAM 0x08D9",
+      "index_formula": "input<26 substitutes 179; q8=clamp(input-83,0,128)*16"
+    },
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "coolant_sensor_conversion",
+    "kind": "1D_sensor_conversion",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x4F47",
+    "end_exclusive": "0x4F64",
+    "rows": 1,
+    "columns": 29,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        239,
+        210,
+        190,
+        175,
+        163,
+        153,
+        144,
+        136,
+        128,
+        122,
+        116,
+        110,
+        104,
+        99,
+        93,
+        88,
+        83,
+        78,
+        73,
+        67,
+        62,
+        57,
+        51,
+        45,
+        38,
+        31,
+        23,
+        13,
+        0
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "10-bit ADC channel 6"
+    ],
+    "output": "RAM 0x08F6 measured / 0x08F4 effective",
+    "physical_role": "Sensor conversion to internal temperature code; Celsius offset unresolved",
+    "evidence_addresses": [
+      "0x70A3"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "linear Q8, high byte (floor); last intake-temperature knot is an interpolation endpoint beyond ADC maximum 1023",
+    "pointer_base": "0x4F44",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        60,
+        92,
+        124,
+        156,
+        188,
+        220,
+        252,
+        284,
+        316,
+        348,
+        380,
+        412,
+        444,
+        476,
+        508,
+        540,
+        572,
+        604,
+        636,
+        668,
+        700,
+        732,
+        764,
+        796,
+        828,
+        860,
+        892,
+        924,
+        956
+      ],
+      "count": 29,
+      "input": "10-bit ADC channel 6",
+      "index_formula": "q8=clamp((adc10*64-3840)//8,0,7168)"
+    },
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "intake_temperature_conversion",
+    "kind": "1D_sensor_conversion",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x4F26",
+    "end_exclusive": "0x4F47",
+    "rows": 1,
+    "columns": 33,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        255,
+        255,
+        211,
+        184,
+        166,
+        152,
+        141,
+        131,
+        123,
+        116,
+        109,
+        103,
+        97,
+        91,
+        86,
+        81,
+        76,
+        71,
+        67,
+        62,
+        57,
+        52,
+        48,
+        43,
+        37,
+        32,
+        26,
+        19,
+        12,
+        3,
+        0,
+        0,
+        0
+      ]
+    ],
+    "calls": [],
+    "inputs": [
+      "10-bit ADC channel 3"
+    ],
+    "output": "RAM 0x08F5",
+    "physical_role": "Sensor conversion to internal temperature code; Celsius offset unresolved",
+    "evidence_addresses": [
+      "0x6FC2"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "interpolation": "linear Q8, high byte (floor); last intake-temperature knot is an interpolation endpoint beyond ADC maximum 1023",
+    "pointer_base": "0x4F23",
+    "column_axis": {
+      "kind": "computed_axis",
+      "raw_values": [
+        0,
+        32,
+        64,
+        96,
+        128,
+        160,
+        192,
+        224,
+        256,
+        288,
+        320,
+        352,
+        384,
+        416,
+        448,
+        480,
+        512,
+        544,
+        576,
+        608,
+        640,
+        672,
+        704,
+        736,
+        768,
+        800,
+        832,
+        864,
+        896,
+        928,
+        960,
+        992,
+        1024
+      ],
+      "count": 33,
+      "input": "10-bit ADC channel 3",
+      "index_formula": "q8=(adc10//4)*32"
+    },
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "curve_1854",
+    "kind": "1D_uniform_axis",
+    "confidence": "instruction-traced layout and raw dataflow; engineering units unresolved",
+    "data_address": "0x185A",
+    "end_exclusive": "0x186F",
+    "rows": 1,
+    "columns": 21,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "units": "raw ECU values",
+    "raw_values": [
+      [
+        239,
+        228,
+        218,
+        209,
+        201,
+        193,
+        186,
+        179,
+        173,
+        166,
+        161,
+        156,
+        151,
+        147,
+        143,
+        140,
+        136,
+        132,
+        128,
+        125,
+        122
+      ]
+    ],
+    "calls": [
+      {
+        "pointer_load": "0x95FD",
+        "call": "0x9603",
+        "helper": "0xC1F2",
+        "function": "FUN_8b34"
+      }
+    ],
+    "inputs": [
+      "u16 0x08F2 pressure-derived estimate"
+    ],
+    "output": "u8 0x0C92; alternate unreferenced path writes 0x0C93",
+    "physical_role": "Pressure/load-processing gain copied to RAM 0x0DBA",
+    "evidence_addresses": [
+      "0x6244",
+      "0x624C",
+      "0x95FD",
+      "0x9603"
+    ],
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "input_min_raw": 29184,
+    "input_span_raw": 20480,
+    "index_factor_raw": 64,
+    "index_divisor": 65536,
+    "runtime_copy": {
+      "source": "0x1854",
+      "destination": "0x0DBA",
+      "bytes": 27
+    },
+    "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
+    "pointer_base": "0x1854",
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
     ]
   }
 ]

@@ -8,13 +8,21 @@ All **15,942 decoded instructions / 42,849 instruction bytes** are translated, a
 
 The included CPU12 processor model corrects four defects in Ghidra 12.1.4's bundled HC12 semantics: indexed word memory dereferencing, ADC overflow, SBC borrow handling, and an inverted BRSET condition. The corrections are documented in a reviewable patch and checked with independent instruction fixtures.
 
-The [calibration map atlas](analysis/MAP_ATLAS.md) documents 11 grid layouts, 35 uniform-axis curves, and 24 explicit axes. The focused semantic pass adds diagnostic-backed sensor/output identities and raw control behavior. Engineering units and remaining fuel/ignition transformations still require investigation.
+The [calibration map atlas](analysis/MAP_ATLAS.md) now documents **68 maps and curves**, with a [separate breakdown for every map](analysis/MAP_DETAILS.md): 16 grids, 36 uniform-axis curves, 14 precomputed-axis curves and two sensor-conversion curves. It includes 32 stored axes/threshold lists and computed axes. Engineering units and remaining fuel/ignition transformations still require investigation.
+
+The [extended recovery pass](analysis/semantics/EXTENDED_MAPS.md) adds 22 previously missing layouts: transient fuel gains, air-induction and feedback eligibility grids, spark-path tables, sensor conversions, and a curve copied into RAM. [Remaining calibration work](analysis/REMAINING_CALIBRATIONS.md) accounts for every outstanding span and links 502 static address/width/access records. Catalogue coverage is not a claim that every physical map meaning is resolved.
+
+## Checksum-corrected image
+
+[XT660X 2005 startup-checksum-fixed.bin](firmware/XT660X%202005%20startup-checksum-fixed.bin) passes the recovered startup checksum routine in software validation. The single-byte change at `0xF7FD` (`FF` to `7F`) compensates the sum from `0xAAD5` to `0xAA55`; all maps and decoded instructions remain unchanged. The original dump is retained. [Correction details](analysis/semantics/CHECKSUM.md) explain the selected trailer padding, exact hashes and the separate check involving unavailable boot content. This is not a hardware-validated flash image.
 
 ## Focused control analysis
 
 The [area guides](analysis/semantics/README.md) document coolant conversion, fan hysteresis and sensor-fault handling; separate spark/injector period limits and road-speed gates; six major map selections; and remaining work for a tuning definition. The [machine-readable catalogue](analysis/semantics/catalog.json) records 28 raw calibrations, eight ADC channels and six logical outputs. [212,090 focused control cases](analysis/semantics/control_validation.json) exercise the recovered behavior, in addition to instruction-level checks.
 
 A branch-condition defect found during this pass materially affected earlier generated C. All generated code and the Ghidra archive have been regenerated; see [review notes](analysis/semantics/REVIEW_NOTES.md). Original firmware bytes are unchanged.
+
+[150,614 additional cases](analysis/semantics/extended_map_validation.json) verify computed axes, selector branches, step-grid boundaries, special-grid interpolation, the RAM-copied curve and the checksum-corrected file.
 
 ## Files
 
@@ -36,7 +44,7 @@ The complete decoded application is represented, including structurally recovere
 
 Vehicle/year attribution comes from the filename. Embedded strings mention T64 and 2002 dates. CPU12 instructions and fixed addresses match an MC9S12T64-style application; the exact ECU part number is unverified. Several sensor/output identities are now corroborated by diagnostic cross-references. Connector pins, engineering units, final fuel/timing scaling, and some special lookup forms still need analysis.
 
-No firmware bytes or settings have been changed. This is an analysis workspace, not a flash-ready tuning definition. No redistribution license is assigned to the supplied firmware.
+The original firmware remains unchanged. The separately named checksum-corrected copy changes one trailer byte; no calibration setting is altered. This is an analysis workspace, not a flash-ready tuning definition. No redistribution license is assigned to the supplied firmware.
 
 ## Reproduce
 
@@ -50,5 +58,7 @@ To regenerate only the catalogue and validate its bytes:
 
 ```powershell
 python scripts/catalog_maps.py
+python scripts/catalog_calibration_accesses.py
+python scripts/fix_startup_checksum.py
 python scripts/verify_analysis.py
 ```

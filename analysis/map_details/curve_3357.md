@@ -1,0 +1,53 @@
+# curve_3357
+
+Coolant-dependent correction
+
+Cells: **0x335A–3368**, 1 rows × 15 columns, 8-bit unsigned big-endian values.
+
+Inputs: u8 0x08F4 coolant.
+
+Output: u8 0x0990.
+
+Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
+
+Interpolation: clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented.
+
+**Engineering conversion is unresolved; tuning export is disabled.**
+
+## Uniform axis
+
+Minimum 16; span 224; factor 16; index divisor 256. Header begins at 0x3357. These are internal scaling parameters, not physical-unit labels.
+
+## Raw cells
+
+```
+170 138 106 90 74 64 54 48 42 42 42 42 42 42 42
+```
+
+## Instruction evidence
+
+Addresses refer to the unchanged image. Windows around entry/call sites provide context, not a complete execution trace.
+
+```
+b18c  b608f4  LDAA 0x8f4
+b18f  ce3345  LDX #0x3345
+b192  16c1cd  JSR 0xc1cd
+b195  7a098f  STAA 0x98f
+b198  b608f4  LDAA 0x8f4
+b19b  ce3357  LDX #0x3357
+b19e  16c1cd  JSR 0xc1cd
+b1a1  7a0990  STAA 0x990
+b1a4  1f08812029  BRCLR 0x881,0x20,0xb1d2
+b1a9  1e08800824  BRSET 0x880,0x8,0xb1d2
+b1ae  b60b3d  LDAA 0xb3d
+b1b1  8b01  ADDA #0x1
+b1b3  8200  SBCA #0x0
+b1b5  7a0b3d  STAA 0xb3d
+b1b8  b118b0  CMPA 0x18b0
+b1bb  251a  BCS 0xb1d7
+b1bd  1c089f80  BSET 0x89f,0x80
+b1c1  1e089f4019  BRSET 0x89f,0x40,0xb1df
+b1c6  fc0ca2  LDD 0xca2
+```
+
+[Machine-readable catalogue](../maps.json) · [All map breakdowns](../MAP_DETAILS.md)

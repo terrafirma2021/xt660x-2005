@@ -1492,8 +1492,24 @@
     }
   ],
   "integrity": {
-    "checksum_algorithm": null,
-    "checksum_ranges": null,
+    "checksum_algorithm": "sum_u16_big_endian_mod_65536",
+    "checksum_target": "0xAA55",
+    "checksum_ranges": [
+      {
+        "caller": "0x535B",
+        "start": "0x1800",
+        "end_inclusive": "0xF7FF",
+        "mode": "startup"
+      },
+      {
+        "caller": "0xA2E1",
+        "start": "0x1800",
+        "end_inclusive": "0xFFFF",
+        "mode": "conditional full address space; boot unavailable"
+      }
+    ],
+    "correction_report": "checksum_fix.json",
+    "factory_checksum_field": null,
     "flash_procedure": null
   },
   "processor_model_sha256": "a8f092145064bd5f7e50b1e838b8956d9df9ef47c3de0b6cea1b54fc7cbee6b3"

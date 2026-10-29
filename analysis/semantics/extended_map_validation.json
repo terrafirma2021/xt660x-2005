@@ -1,0 +1,36 @@
+{
+  "result": "passed",
+  "cases": 150614,
+  "checks": {
+    "index_cc7b_all_u16_inputs": 65536,
+    "index_cc63_all_u16_inputs": 65536,
+    "twelve_precomputed_curves_knots_and_fractional_inputs": 2609,
+    "transient_curve_branch_selection_synthetic_cells": 64,
+    "four_step_grids_all_threshold_boundaries_stock_and_synthetic": 9856,
+    "special_grid_knots_fractional_and_synthetic_cells": 6386,
+    "ram_copied_curve_1854_copy_and_lookup": 622,
+    "checksum_stock_failure_and_synthetic_success_paths": 4,
+    "delivered_checksum_fixed_image_passes_firmware_routine": 1
+  },
+  "checksum": [
+    {
+      "start": "0x1800",
+      "last_byte": "0xF7FF",
+      "sum_u16_be": "0xAAD5",
+      "expected": "0xAA55",
+      "matches": false
+    },
+    {
+      "start": "0x1800",
+      "last_byte": "0xFFFF",
+      "sum_u16_be": "0xA6D5",
+      "expected": "0xAA55",
+      "matches": false
+    }
+  ],
+  "corrected_image_sha256": "972ac93e76cb632470092d88c2a57e910daae69c02d6cdef52f1cad72f6909e7",
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "test_script_sha256": "ecc86c13b58a8d70a376b003ef178d9db4e1efce2ce4ee95cea563ca203d0834",
+  "compiled_library_sha256": "31d9ada81daf59bc96e60c30dd6863a4225e2ff59e8221d1e01ed995794fb051",
+  "limitations": "Isolated execution of the compiled instruction translation; no peripheral model or vehicle validation. Synthetic fixtures modify only temporary process memory."
+}

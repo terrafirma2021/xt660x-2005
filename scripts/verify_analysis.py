@@ -24,10 +24,26 @@ for m in maps:
     assert len(data)==z-a and data==b[a:z]==(out/'map_extracts'/(m['id']+'.bin')).read_bytes()
     assert not occupied_maps.intersection(range(a,z)),m['id']
     occupied_maps.update(range(a,z))
+    assert (out/'map_details'/(m['id']+'.md')).exists()
+    assert m['inputs'] and m['output'] and not m['ready_for_tuning_export']
 for a in axes:
     start=int(a['address'],16);w=a['element_bytes']
     assert b''.join(v.to_bytes(w,'big') for v in a['raw_values'])==b[start:start+w*a['count']]
     assert a['ascending'],a['address']
+manifest=json.loads((out/'manifest.json').read_text())
+assert manifest['map_count']==len(maps)
+inventory=json.loads((out/'calibration_accesses.json').read_text())
+for item in inventory['accesses']:
+    a=int(item['address'],16);w=item['width_bytes']
+    assert bytes.fromhex(item['raw_hex'])==b[a:a+w]
+coverage=json.loads((out/'calibration_coverage.json').read_text())
+assert sum(coverage['totals'].values())==0x5000-0x1800
+cursor=0x1800
+for span in coverage['spans']:
+    assert int(span['start'],16)==cursor
+    cursor=int(span['end_exclusive'],16)
+    assert bytes.fromhex(span['raw_hex'])==b[int(span['start'],16):cursor]
+assert cursor==0x5000
 with (out/'functions.tsv').open() as f:fs=list(csv.DictReader(f,delimiter='\t'))
 for f in fs:
     if f['status']=='ok':
