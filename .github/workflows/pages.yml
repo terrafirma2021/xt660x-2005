@@ -1,0 +1,46 @@
+name: Publish XT660X research website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Install site dependency
+        run: python3 -m pip install -r site/requirements.txt
+      - name: Generate and verify pin reference
+        run: |
+          python3 scripts/build_pin_overview.py
+          python3 scripts/verify_pin_overview.py
+          python3 scripts/build_pages.py
+          python3 scripts/verify_pages.py
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy site
+        id: deployment
+        uses: actions/deploy-pages@v4

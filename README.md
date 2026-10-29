@@ -2,6 +2,8 @@
 
 A reverse-engineering project for the Yamaha XT660X 2005 firmware image. The repository contains the unchanged binary, structured C, an address-preserving compilable C translation of every decoded instruction, a complete byte listing, calibration analysis, and an annotated Ghidra program.
 
+**[Open the XT660X research website](https://terrafirma2021.github.io/xt660x-2005/)** for the project overview, searchable map catalogue, [MCU pin explorer](https://terrafirma2021.github.io/xt660x-2005/pins/) and research library. GitHub Pages rebuilds and deploys it after pushes to `main`; refresh the page after deployment to see the latest version.
+
 **Start with the [control-system breakdown](analysis/semantics/README.md)** for coolant/fan, sensor and output identities, RPM/cut logic, spark, fuel, serial diagnostics, startup, checksums, immobilizer behavior, and future XDF/tool definitions. The [full decompilation guide](analysis/full/README.md) and [function index](analysis/full/FUNCTION_INDEX.md) provide the underlying code.
 
 All **15,942 decoded instructions / 42,849 instruction bytes** are translated, all **225 recovered routines** have structured C, and every byte of the **65,536-byte input** is classified. The complete C translation compiles and passes instruction-level comparisons and independent CPU12/lookup fixtures. This describes coverage of the supplied image, not recovery of the original manufacturer's source project.
@@ -69,6 +71,8 @@ The supplied firmware remains unchanged and already contains the owner’s immob
 ## Reproduce
 
 Tools used: Ghidra 12.1.4, JDK 21, Python 3 standard library, and Clang for C validation. The included `XT660-CPU12:BE:16:default` processor is a corrected flat CPU12 model. See [processor setup and corrections](ghidra/README.md) before opening the Ghidra archive.
+
+The [Pages workflow](.github/workflows/pages.yml) generates the website from the current analysis: a home page, searchable catalogue of all maps, the pin explorer and rendered research documents. Raw firmware is not included in the website artifact. To prepare the same site locally, install `python -m pip install -r site/requirements.txt`, then run `python scripts/build_pin_overview.py`, `python scripts/verify_pin_overview.py`, `python scripts/build_pages.py` and `python scripts/verify_pages.py`. The site is written to ignored directory `_site/`; serve it with `python -m http.server --directory _site 8000`.
 
 ```powershell
 .\scripts\run_analysis.ps1 -GhidraHome 'C:\tools\ghidra_12.1.4_PUBLIC' -JavaHome 'C:\tools\jdk-21'
