@@ -1,14 +1,14 @@
 # Yamaha XT660X 2005 firmware analysis
 
-Private repository containing the unchanged supplied binary and a full-image decompilation package: structured C, an address-preserving compilable C translation of every decoded instruction, a complete byte listing, and the annotated Ghidra program.
+A reverse-engineering project for the Yamaha XT660X 2005 firmware image. The repository contains the unchanged binary, structured C, an address-preserving compilable C translation of every decoded instruction, a complete byte listing, calibration analysis, and an annotated Ghidra program.
 
 **Start with [the full decompilation guide](analysis/full/README.md)** and [complete function index](analysis/full/FUNCTION_INDEX.md).
 
 All **15,942 decoded instructions / 42,849 instruction bytes** are translated, all **225 recovered routines** have structured C, and every byte of the **65,536-byte input** is classified. The complete C translation compiles and passes instruction-level comparisons and independent CPU12/lookup fixtures. This describes coverage of the supplied image, not recovery of the original manufacturer's source project.
 
-The deeper pass also fixed three defects in the bundled HC12 processor semantics: indexed word memory dereferencing, ADC overflow, and SBC borrow handling. The corrected processor model and patch are included; the previous uncorrected C must not be used as authoritative.
+The included CPU12 processor model corrects three defects in Ghidra 12.1.4's bundled HC12 semantics: indexed word memory dereferencing, ADC overflow, and SBC borrow handling. The corrections are documented in a reviewable patch and checked with independent instruction fixtures.
 
-[The map atlas](analysis/MAP_ATLAS.md) remains available: 11 grid layouts, 35 uniform-axis curves, and 24 explicit axes. Physical fuel/ignition names and units still require semantic investigation.
+The [calibration map atlas](analysis/MAP_ATLAS.md) documents 11 grid layouts, 35 uniform-axis curves, and 24 explicit axes. Physical fuel/ignition names and units still require semantic investigation.
 
 ## Files
 
