@@ -1,0 +1,46 @@
+:root{color-scheme:light}
+#sitebar #theme-toggle{font:inherit;font-weight:600;padding:7px 11px;border:1px solid #b9cac7;border-radius:5px;background:#f0f5f3;color:#244b45;cursor:pointer;white-space:nowrap}
+#sitebar #theme-toggle:focus-visible{outline:2px solid #08766b;outline-offset:3px}
+.file-index{list-style:none;padding:0;margin:20px 0;background:#fff;border:1px solid #d9e3e1;border-radius:8px;overflow:hidden}
+.file-index li{display:flex;justify-content:space-between;gap:20px;padding:12px 18px;border-bottom:1px solid #e1e8e5;font-size:12px}.file-index li[hidden]{display:none}.file-index li:last-child{border:0}.file-index a{overflow-wrap:anywhere}.file-index span{white-space:nowrap;color:#526970;font-size:11px}
+html[data-theme=dark]{color-scheme:dark;color:#deeaef;background:#0f1921}
+html[data-theme=dark] body{color:#deeaef;background:#0f1921}
+html[data-theme=dark] p,html[data-theme=dark] .muted,html[data-theme=dark] .intro,html[data-theme=dark] .hero-copy,html[data-theme=dark] .filters label,html[data-theme=dark] .result-count,html[data-theme=dark] .counts,html[data-theme=dark] dt{color:#acbfc9}
+html[data-theme=dark] a{color:#7cddcc}html[data-theme=dark] a:hover{color:#b1f3e6}
+html[data-theme=dark] #sitebar{background:#15232d;border-color:#35464f;color:#deeaef}
+html[data-theme=dark] #sitebar a{color:#b4c6ce}html[data-theme=dark] #sitebar .brand{color:#edf5f7}
+html[data-theme=dark] #sitebar small{color:#adbec6}html[data-theme=dark] #sitebar .brand-mark{background:#305665;color:#fff}
+html[data-theme=dark] #sitebar nav a[aria-current=page]{color:#7cddcc;box-shadow:0 2px #7cddcc}
+html[data-theme=dark] #sitebar #theme-toggle{background:#263d45;color:#a6eadc;border-color:#55756f}
+html[data-theme=dark] #sitebar #theme-toggle:focus-visible{outline-color:#7cddcc}
+html[data-theme=dark] .feature,html[data-theme=dark] .map-card,html[data-theme=dark] .research-group,html[data-theme=dark] .document,html[data-theme=dark] .panel,html[data-theme=dark] .file-index{background:#182731;border-color:#35464f;color:#deeaef}
+html[data-theme=dark] .feature:hover{border-color:#72b9aa}
+html[data-theme=dark] .map-card h2 a{color:#deeaef}
+html[data-theme=dark] .kicker,html[data-theme=dark] .eyebrow,html[data-theme=dark] .feature-foot,html[data-theme=dark] .feature h3 span{color:#7cddcc}
+html[data-theme=dark] .section-number,html[data-theme=dark] .stats span,html[data-theme=dark] .map-top,html[data-theme=dark] .site-footer,html[data-theme=dark] footer,html[data-theme=dark] .map-card summary,html[data-theme=dark] .file-index span{color:#acbfc9}
+html[data-theme=dark] .stats,html[data-theme=dark] .stats>div,html[data-theme=dark] .site-footer,html[data-theme=dark] .research-group li,html[data-theme=dark] .file-index li{border-color:#35464f}
+html[data-theme=dark] .progress-panel{background:#1e3438;border-color:#6aa798}
+html[data-theme=dark] .notice{background:#332c20;border-color:#cba45e;color:#ead3a8}
+html[data-theme=dark] .secondary{background:#20343d;border-color:#4b646a;color:#d8e9ec}
+html[data-theme=dark] .primary{background:#176e63;color:#fff}
+html[data-theme=dark] .primary:hover{background:#218172;color:#fff}
+html[data-theme=dark] input,html[data-theme=dark] select{background:#11212b;color:#deeaef;border-color:#51666e}
+html[data-theme=dark] input::placeholder{color:#96adb8}
+html[data-theme=dark] .status,html[data-theme=dark] .pill{background:#2a443e;color:#c1e1d1}
+html[data-theme=dark] .candidate{background:#473a23;color:#f0d2a2}
+html[data-theme=dark] .document th,html[data-theme=dark] th{background:#20343d;color:#b8ccd4}
+html[data-theme=dark] .document td,html[data-theme=dark] .document th,html[data-theme=dark] td,html[data-theme=dark] th{border-color:#3c505b}
+html[data-theme=dark] tbody tr:hover{background:#243c47}
+html[data-theme=dark] .document :not(pre)>code,html[data-theme=dark] code{background:#243c47;color:#d6e7ee}
+html[data-theme=dark] .document pre{background:#0d1b23;color:#d6e7ee}
+html[data-theme=dark] .document pre code{background:transparent}
+html[data-theme=dark] .document blockquote{border-color:#60897e;color:#b7ccc6}
+html[data-theme=dark] .panel button{color:#7cddcc}
+html[data-theme=dark] .legend{border-color:#3c505b}
+/* The inline package drawing retains its category colors and physical geometry. */
+html[data-theme=dark] .diagram svg>rect:first-child{fill:#182731}
+html[data-theme=dark] .diagram svg text[fill="#203247"]{fill:#deeaef}
+html[data-theme=dark] .diagram svg text[fill="#58697b"]{fill:#acbfc9}
+html[data-theme=dark] .pin:hover rect,html[data-theme=dark] .pin:focus rect,html[data-theme=dark] .pin.selected rect{stroke:#e1f4ed}
+@media(max-width:650px){.file-index li{flex-direction:column;gap:4px}#sitebar nav{gap:12px 17px}}
+@media print{#theme-toggle{display:none}}

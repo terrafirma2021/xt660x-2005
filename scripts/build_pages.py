@@ -19,10 +19,10 @@ maps = json.loads((ROOT / 'analysis/maps.json').read_text())
 units = json.loads((SOURCE / 'physical_units.json').read_text())
 unit_by_id = {m['id']: m for m in units['maps']}
 pins = json.loads((SOURCE / 'mcu_pin_overview.json').read_text())
-documents = sorted(set((ROOT / 'analysis').glob('*.md')) | set(SOURCE.glob('*.md')) |
-                   set((ROOT / 'analysis/map_details').glob('*.md')) |
-                   {ROOT / 'analysis/full/README.md', ROOT / 'analysis/full/FUNCTION_INDEX.md'})
-doc_targets = {p.resolve(): Path('docs') / p.relative_to(ROOT / 'analysis').with_suffix('.html') for p in documents}
+tracked_files = subprocess.check_output(['git', 'ls-files', '-z'], cwd=ROOT).decode('utf-8').strip('\0').split('\0')
+documents = sorted(ROOT / p for p in tracked_files if p.endswith('.md'))
+doc_targets = {p.resolve(): (Path('docs') / p.relative_to(ROOT / 'analysis').with_suffix('.html')
+               if p.is_relative_to(ROOT / 'analysis') else Path('docs/repository') / p.relative_to(ROOT).with_suffix('.html')) for p in documents}
 
 def write(path, text):
     target = DEST / path
@@ -35,10 +35,13 @@ def rel(target, current):
 def nav(current, active):
     links = [('Overview', 'index.html'), ('Maps', 'maps/index.html'), ('MCU pins', 'pins/index.html'), ('Research', 'research/index.html')]
     return '<header id="sitebar"><a class="brand" href="'+rel('index.html', current)+'"><span class="brand-mark">XT</span>660X <small>RESEARCH</small></a><nav aria-label="Main navigation">'+''.join(
-        f'<a href="{rel(url,current)}"'+(' aria-current="page"' if label==active else '')+f'>{label}</a>' for label,url in links)+f'<a href="{REPO}">GitHub ↗</a></nav></header>'
+        f'<a href="{rel(url,current)}"'+(' aria-current="page"' if label==active else '')+f'>{label}</a>' for label,url in links)+f'<a href="{REPO}">GitHub ↗</a><button id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">Dark theme</button></nav></header>'
+
+def theme_head(current):
+    return f'<script src="{rel("assets/theme.js",current)}"></script><link rel="stylesheet" href="{rel("assets/theme.css",current)}">'
 
 def shell(title, body, current, active, script=''):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Yamaha XT660X 2005 ECU research: firmware, calibration maps, sensors and MCU pins."><title>{esc(title)} · XT660X Research</title><link rel="stylesheet" href="{rel('assets/site.css',current)}"></head><body>{nav(current,active)}<main class="site-main">{body}</main><footer class="site-footer"><span>XT660X / 2005 / ECU research</span><span>Revision <a href="{REPO}/commit/{revision}">{revision}</a> · Updates after deployment</span></footer>{script}</body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Yamaha XT660X 2005 ECU research: firmware, calibration maps, sensors and MCU pins."><title>{esc(title)} · XT660X Research</title><link rel="stylesheet" href="{rel('assets/site.css',current)}">{theme_head(current)}</head><body>{nav(current,active)}<main class="site-main">{body}</main><footer class="site-footer"><span>XT660X / 2005 / ECU research · <a href="{rel('coverage/index.html',current)}">Content coverage</a></span><span>Revision <a href="{REPO}/commit/{revision}">{revision}</a> · Updates after deployment</span></footer>{script}</body></html>'''
 
 def doc_link(name, label, current='index.html'):
     return f'<a href="{rel(doc_targets[(SOURCE/name).resolve()],current)}">{esc(label)} ↗</a>'
@@ -61,7 +64,7 @@ write('index.html', shell('Overview', home, 'index.html', 'Overview'))
 # Keep the accepted pin UI intact, adding only the shared website navigation.
 pin_page = (SOURCE / 'MCU_PIN_OVERVIEW.html').read_text(encoding='utf-8')
 pin_page = pin_page.replace('href="MCU_PIN_OVERVIEW.md"', 'href="../docs/semantics/MCU_PIN_OVERVIEW.html"')
-pin_page = pin_page.replace('</head>', '<link rel="stylesheet" href="../assets/nav.css"></head>')
+pin_page = pin_page.replace('</head>', '<link rel="stylesheet" href="../assets/nav.css">'+theme_head('pins/index.html')+'</head>')
 pin_page = pin_page.replace('<body>', '<body>'+nav('pins/index.html', 'MCU pins'), 1)
 write('pins/index.html', pin_page)
 for name in ('mcu_pin_overview.json','mcu_pin_overview.svg'):
@@ -90,7 +93,24 @@ research='<div class="page-heading"><div class="kicker">Research library</div><h
 for title,items in groups:
     research+=f'<section class="research-group"><h2>{title}</h2><ul>'+''.join('<li>'+doc_link(file,label,'research/index.html')+'</li>' for file,label in items)+'</ul></section>'
 research+='</div><section class="progress-panel"><div><h2>Underlying code</h2><p>Address-preserving C, function coverage and the original analysis remain available for cross-checking.</p></div><div class="progress-links"><a href="../docs/full/README.html">Full decompilation guide ↗</a><a href="../docs/full/FUNCTION_INDEX.html">Function index ↗</a><a href="'+REPO+'">Repository and files ↗</a></div></section>'
+research+=f'<section class="progress-panel"><div><h2>Complete content index</h2><p>All {len(documents)} tracked Markdown documents are readable on this website. Code, data, validation reports and binaries are indexed with links to GitHub. The topic list above is a starting point, not the full inventory.</p></div><div class="progress-links"><a href="../coverage/">Search every repository file ↗</a><a href="../docs/repository/README.html">Project README ↗</a><a href="../docs/repository/ghidra/README.html">Ghidra setup and processor corrections ↗</a></div></section>'
 write('research/index.html',shell('Research library',research,'research/index.html','Research'))
+
+inventory=[]
+for name in tracked_files:
+    source=(ROOT/name).resolve()
+    if source in doc_targets:
+        destination=rel(doc_targets[source],'coverage/index.html');location='Website document'
+    elif name=='analysis/semantics/MCU_PIN_OVERVIEW.html':
+        destination='../pins/';location='Website explorer'
+    elif name in ('analysis/semantics/mcu_pin_overview.json','analysis/semantics/mcu_pin_overview.svg'):
+        destination='../pins/'+source.name;location='Website asset'
+    else:
+        destination=REPO+'/blob/main/'+quote(name);location='GitHub file'
+    inventory.append(dict(path=name,location=location,url=destination))
+coverage=f'''<div class="page-heading"><div class="kicker">Content coverage</div><h1>Everything in the repository.</h1><p>Search all {len(inventory)} tracked files. All {len(documents)} Markdown documents are rendered here. Code, structured datasets, test reports, Ghidra files and firmware remain in GitHub and are linked below.</p></div><div class="notice">The website covers the written research and provides access to the supporting files. It does not turn every dataset into an interactive view, and neither repository coverage nor a listed map means the reverse engineering is complete.</div><div class="filters"><label>Search files<input id="file-search" type="search" placeholder="Physical units, validation, Ghidra, .c…"></label><label>Opens in<select id="file-location"><option value="">All locations</option><option value="Website">Website</option><option value="GitHub">GitHub</option></select></label></div><p class="result-count" id="file-count" aria-live="polite">{len(inventory)} files</p><ul class="file-index">'''+''.join(f'<li data-search="{esc(item["path"].lower())}" data-location="{item["location"]}"><a href="{esc(item["url"])}">{esc(item["path"])}</a><span>{item["location"]}</span></li>' for item in inventory)+'</ul><p id="file-empty" hidden>No matching files.</p>'
+write('coverage/index.html',shell('Content coverage',coverage,'coverage/index.html','Research','<script src="../assets/coverage.js"></script>'))
+write('coverage/manifest.json',json.dumps(dict(revision=revision,tracked_files=len(inventory),rendered_documents=len(documents),files=inventory),indent=2)+'\n')
 
 class LinkRewriter(HTMLParser):
     def __init__(self,source,target):
