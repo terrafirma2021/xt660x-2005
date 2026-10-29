@@ -9,3 +9,7 @@ body>main:not(.site-main){max-width:1400px}body>main:not(.site-main)>h1{font:ita
 
 /* Connector frame and labels follow the same surface palette as the surrounding panel. */
 .connector-scroll svg>rect:first-child{fill:var(--tag)}.connector-scroll svg text{fill:var(--ink)}.connector-scroll svg text[fill="#a8c3d1"]{fill:var(--muted)}.connector-scroll .connector-slot rect{fill:var(--connector-slot);stroke:var(--muted)}.connector-scroll .connector-slot rect[fill="#1b303b"]{fill:var(--connector-empty)}.connector-scroll .connector-slot:hover rect,.connector-scroll .connector-slot:focus rect,.connector-scroll .connector-slot.selected rect{stroke:var(--accent)}
+
+/* Use the actual Yamaha Motor tuning-fork emblem and wordmark. */
+#sitebar .brand-mark{display:flex;align-items:center;padding-top:0;padding-bottom:0}#sitebar .yamaha-logo{display:block;width:154px;height:auto;max-width:none}html[data-theme=dark] #sitebar .yamaha-logo{filter:brightness(0) invert(1)}
+@media(max-width:1050px){#sitebar .yamaha-logo{width:132px}}@media(max-width:760px){#sitebar .yamaha-logo{width:144px}}

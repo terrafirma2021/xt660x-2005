@@ -2,6 +2,10 @@
 
 This is an independent XT660X research project, not an official Yamaha Motor website. Yamaha names and marks identify the motorcycle and remain the property of their respective owners. No endorsement is implied.
 
+## Yamaha Motor logo
+
+The header uses Yamaha Motor’s tuning-fork emblem and wordmark, sourced from its [official header asset](https://global.yamaha-motor.com/shared/img/rwd_identity.png), served locally as `site/assets/yamaha-motor-logo.png`. The source pixels are unchanged. Dark mode displays the transparent mark in white through CSS for contrast. This mark identifies the motorcycle manufacturer; the independent-project notice above applies.
+
 ## Motorcycle photograph
 
 The blue 2005 XT660X reference photograph is sourced from the [2ri motorcycle image archive](https://www.2ri.de/Images/Big/0/Yamaha_XT660X_2005.jpg). The original image is retained. The hero uses a transparent cutout made with the built-in image-generation tool for light/dark backgrounds; it is presentation artwork, not technical evidence. Photo rights remain with the original rights holder; this project does not claim ownership or grant a new licence to that image.

@@ -38,7 +38,7 @@ def rel(target, current):
 
 def nav(current, active):
     links = [('Overview', 'index.html'), ('Maps', 'maps/index.html'), ('MCU pins', 'pins/index.html'), ('Research', 'research/index.html')]
-    return '<header id="sitebar"><a class="brand" href="'+rel('index.html', current)+'"><span class="brand-mark">YAMAHA</span><span class="brand-model">XT660X<small>THE INSIDE LINE</small></span></a><nav aria-label="Main navigation">'+''.join(
+    return '<header id="sitebar"><a class="brand" href="'+rel('index.html', current)+'"><span class="brand-mark"><img class="yamaha-logo" src="'+rel('assets/yamaha-motor-logo.png',current)+'" width="1042" height="360" alt="Yamaha Motor — Revs Your Heart"></span><span class="brand-model">XT660X<small>THE INSIDE LINE</small></span></a><nav aria-label="Main navigation">'+''.join(
         f'<a href="{rel(url,current)}"'+(' aria-current="page"' if label==active else '')+f'>{label}</a>' for label,url in links)+f'<a href="{REPO}">GitHub ↗</a><button id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">Dark theme</button></nav></header>'
 
 def theme_head(current):
