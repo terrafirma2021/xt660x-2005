@@ -7,12 +7,12 @@ All cells and axes use raw ECU values. Input/output traces and evidence for ever
 
 | Map | Cell address | Rows × columns | Cell width | Row / column axes |
 |---|---|---|---|---|
-| [Load-based fuel quantity (mode flag clear)](map_details/main_quantity_A.md) | 0x1B66 | 45 × 30 | 16-bit BE | 0x1B0C / 0x1AD0 |
+| [Normal load-based fuel quantity](map_details/main_quantity_A.md) | 0x1B66 | 45 × 30 | 16-bit BE | 0x1B0C / 0x1AD0 |
 | [Throttle-based fuel quantity](map_details/main_quantity_B.md) | 0x2688 | 45 × 30 | 16-bit BE | 0x262E / 0x25F2 |
-| [Load-based fuel quantity (mode flag set)](map_details/main_quantity_C.md) | 0x37A8 | 45 × 30 | 16-bit BE | 0x374E / 0x3712 |
-| [Base ignition timing — selection A](map_details/main_u8_A.md) | 0x42AE | 32 × 20 | 8-bit BE | 0x426E / 0x4246 |
-| [Base ignition timing — selection B](map_details/main_u8_B.md) | 0x452E | 32 × 20 | 8-bit BE | 0x426E / 0x4246 |
-| [Base ignition timing — selection C](map_details/main_u8_C.md) | 0x47AE | 32 × 20 | 8-bit BE | 0x426E / 0x4246 |
+| [Sequence-selected alternate load fuel quantity](map_details/main_quantity_C.md) | 0x37A8 | 45 × 30 | 16-bit BE | 0x374E / 0x3712 |
+| [Base ignition timing — neutral-input branch](map_details/main_u8_A.md) | 0x42AE | 32 × 20 | 8-bit BE | 0x426E / 0x4246 |
+| [Base ignition timing — normal ratio-code branch](map_details/main_u8_B.md) | 0x452E | 32 × 20 | 8-bit BE | 0x426E / 0x4246 |
+| [Base ignition timing — extended ratio-code branch](map_details/main_u8_C.md) | 0x47AE | 32 × 20 | 8-bit BE | 0x426E / 0x4246 |
 | [Injection event-phase target](map_details/modulo24_surface.md) | 0x1914 | 10 × 13 | 8-bit BE | 0x18E6 / 0x18FA |
 | [Secondary injector quantity multiplier](map_details/correction_surface_A.md) | 0x1A1A | 12 × 15 | 8-bit BE | 0x1A02 / 0x19E4 |
 | [Fuel normalization offset](map_details/correction_surface_B.md) | 0x3168 | 13 × 10 | 8-bit BE | 0x314E / 0x313A |
@@ -38,15 +38,15 @@ All cells and axes use raw ECU values. Input/output traces and evidence for ever
 | [Relative-throttle qualification threshold vs speed](map_details/curve_3494.md) | 0x3494 | 0x349A | 10 | 8192 / 36864 / 16 |
 | [Transient fuel multiplier vs pressure estimate](map_details/curve_353a.md) | 0x353A | 0x3540 | 8 | 28672 / 28672 / 16 |
 | [Transient fuel multiplier vs intake temperature](map_details/curve_351d.md) | 0x351D | 0x3520 | 25 | 16 / 192 / 32 |
-| [Transient fuel pulse response — family 1, selection A](map_details/curve_34d0.md) | 0x34D0 | 0x34D3 | 7 | 128 / 48 / 32 |
-| [Transient fuel pulse response — family 1, selection B](map_details/curve_34da.md) | 0x34DA | 0x34DD | 7 | 128 / 48 / 32 |
-| [Transient fuel pulse response — family 1, selection C](map_details/curve_34e4.md) | 0x34E4 | 0x34E7 | 7 | 128 / 48 / 32 |
+| [Transient fuel response 1 — neutral-input branch](map_details/curve_34d0.md) | 0x34D0 | 0x34D3 | 7 | 128 / 48 / 32 |
+| [Transient fuel response 1 — low ratio codes](map_details/curve_34da.md) | 0x34DA | 0x34DD | 7 | 128 / 48 / 32 |
+| [Transient fuel response 1 — higher ratio codes](map_details/curve_34e4.md) | 0x34E4 | 0x34E7 | 7 | 128 / 48 / 32 |
 | [Transient fuel multiplier vs throttle](map_details/curve_34ee.md) | 0x34EE | 0x34F4 | 9 | 0 / 32768 / 16 |
-| [Transient fuel pulse response — family 2, selection A](map_details/curve_355d.md) | 0x355D | 0x3560 | 7 | 128 / 48 / 32 |
-| [Transient fuel pulse response — family 2, selection B](map_details/curve_3567.md) | 0x3567 | 0x356A | 7 | 128 / 48 / 32 |
-| [Transient fuel pulse response — family 2, selection C](map_details/curve_3571.md) | 0x3571 | 0x3574 | 7 | 128 / 48 / 32 |
-| [Fuel normalization recovery hold — selection 1](map_details/curve_31ec.md) | 0x31EC | 0x31F2 | 13 | 8192 / 49152 / 16 |
-| [Fuel normalization recovery hold — selection 2](map_details/curve_3200.md) | 0x3200 | 0x3206 | 13 | 8192 / 49152 / 16 |
+| [Transient fuel response 2 — neutral-input branch](map_details/curve_355d.md) | 0x355D | 0x3560 | 7 | 128 / 48 / 32 |
+| [Transient fuel response 2 — normal ratio-code branch](map_details/curve_3567.md) | 0x3567 | 0x356A | 7 | 128 / 48 / 32 |
+| [Transient fuel response 2 — extended ratio-code branch](map_details/curve_3571.md) | 0x3571 | 0x3574 | 7 | 128 / 48 / 32 |
+| [Fuel normalization recovery hold — normal ratio-code branch](map_details/curve_31ec.md) | 0x31EC | 0x31F2 | 13 | 8192 / 49152 / 16 |
+| [Fuel normalization recovery hold — extended ratio-code branch](map_details/curve_3200.md) | 0x3200 | 0x3206 | 13 | 8192 / 49152 / 16 |
 | [Feedback eligibility delay vs coolant](map_details/curve_36c4.md) | 0x36C4 | 0x36C7 | 15 | 16 / 224 / 16 |
 | [Adaptive fuel correction — decrement step](map_details/curve_36a4.md) | 0x36A4 | 0x36AA | 7 | 6144 / 24576 / 16 |
 | [Adaptive fuel correction — increment step](map_details/curve_36b2.md) | 0x36B2 | 0x36B8 | 7 | 6144 / 24576 / 16 |
@@ -67,18 +67,18 @@ All cells and axes use raw ECU values. Input/output traces and evidence for ever
 
 | Map | Cells | Rows x columns | Method |
 |---|---|---|---|
-| [Throttle-delta fuel gain — selection 1](map_details/delta_0985_gain_1.md) | 0x336B | 1 x 23 | 1D_precomputed_axis |
-| [Throttle-delta fuel gain — selection 2](map_details/delta_0985_gain_2.md) | 0x3382 | 1 x 23 | 1D_precomputed_axis |
-| [Throttle-delta fuel gain — selection 3](map_details/delta_0985_gain_3.md) | 0x3399 | 1 x 23 | 1D_precomputed_axis |
-| [Throttle-delta fuel gain — selection 4](map_details/delta_0985_gain_4.md) | 0x33B0 | 1 x 23 | 1D_precomputed_axis |
-| [Throttle-delta fuel gain — selection 5](map_details/delta_0985_gain_5.md) | 0x33C7 | 1 x 23 | 1D_precomputed_axis |
-| [Throttle-delta fuel gain — selection 6](map_details/delta_0985_gain_6.md) | 0x33DE | 1 x 23 | 1D_precomputed_axis |
-| [Load-delta fuel gain — selection 1](map_details/delta_0989_gain_1.md) | 0x33F7 | 1 x 23 | 1D_precomputed_axis |
-| [Load-delta fuel gain — selection 2](map_details/delta_0989_gain_2.md) | 0x340E | 1 x 23 | 1D_precomputed_axis |
-| [Load-delta fuel gain — selection 3](map_details/delta_0989_gain_3.md) | 0x3425 | 1 x 23 | 1D_precomputed_axis |
-| [Load-delta fuel gain — selection 4](map_details/delta_0989_gain_4.md) | 0x343C | 1 x 23 | 1D_precomputed_axis |
-| [Load-delta fuel gain — selection 5](map_details/delta_0989_gain_5.md) | 0x3453 | 1 x 23 | 1D_precomputed_axis |
-| [Load-delta fuel gain — selection 6](map_details/delta_0989_gain_6.md) | 0x346A | 1 x 23 | 1D_precomputed_axis |
+| [Throttle-delta fuel gain — nonnegative, neutral-input](map_details/delta_0985_gain_1.md) | 0x336B | 1 x 23 | 1D_precomputed_axis |
+| [Throttle-delta fuel gain — nonnegative, normal ratio-code](map_details/delta_0985_gain_2.md) | 0x3382 | 1 x 23 | 1D_precomputed_axis |
+| [Throttle-delta fuel gain — nonnegative, extended ratio-code](map_details/delta_0985_gain_3.md) | 0x3399 | 1 x 23 | 1D_precomputed_axis |
+| [Throttle-delta fuel gain — negative, neutral-input](map_details/delta_0985_gain_4.md) | 0x33B0 | 1 x 23 | 1D_precomputed_axis |
+| [Throttle-delta fuel gain — negative, normal ratio-code](map_details/delta_0985_gain_5.md) | 0x33C7 | 1 x 23 | 1D_precomputed_axis |
+| [Throttle-delta fuel gain — negative, extended ratio-code](map_details/delta_0985_gain_6.md) | 0x33DE | 1 x 23 | 1D_precomputed_axis |
+| [Load-delta fuel gain — nonnegative, neutral-input](map_details/delta_0989_gain_1.md) | 0x33F7 | 1 x 23 | 1D_precomputed_axis |
+| [Load-delta fuel gain — nonnegative, normal ratio-code](map_details/delta_0989_gain_2.md) | 0x340E | 1 x 23 | 1D_precomputed_axis |
+| [Load-delta fuel gain — nonnegative, extended ratio-code](map_details/delta_0989_gain_3.md) | 0x3425 | 1 x 23 | 1D_precomputed_axis |
+| [Load-delta fuel gain — negative, neutral-input](map_details/delta_0989_gain_4.md) | 0x343C | 1 x 23 | 1D_precomputed_axis |
+| [Load-delta fuel gain — negative, normal ratio-code](map_details/delta_0989_gain_5.md) | 0x3453 | 1 x 23 | 1D_precomputed_axis |
+| [Load-delta fuel gain — negative, extended ratio-code](map_details/delta_0989_gain_6.md) | 0x346A | 1 x 23 | 1D_precomputed_axis |
 | [Air-induction enable vs speed and throttle](map_details/step_grid_4c44.md) | 0x4C44 | 20 x 10 | 2D_step_grid |
 | [Air-induction enable vs speed and load](map_details/step_grid_4d48.md) | 0x4D48 | 20 x 10 | 2D_step_grid |
 | [Adaptive feedback enable vs speed and throttle](map_details/step_grid_35b0.md) | 0x35B0 | 10 x 10 | 2D_step_grid |

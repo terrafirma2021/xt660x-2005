@@ -1587,16 +1587,16 @@
     "output": "0x0952 or 0x0954",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "RAM 0x0B80 bit 0 clear: normal load fuel path; see semantics/MAP_SELECTORS.md",
     "evidence_addresses": [],
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Load-based fuel quantity (mode flag clear)",
+    "display_name": "Normal load-based fuel quantity",
     "category": "Fuel",
-    "naming_basis": "analysis/semantics/FUEL.md",
-    "naming_note": "A/C use processed load and select on RAM 0x0B80 bit 0 (clear/set); B uses filtered throttle. The mode bit has no established rider-mode or cylinder meaning. Values precede final pulse corrections."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "A is the normal load path; C requires completion of the four-stage road-speed sequence at 0xAD1C\u20130xAF20. Stock timeout 0x3710 = 0 prevents completion from cleared detector state. B uses filtered throttle. Values precede final pulse corrections."
   },
   {
     "id": "main_quantity_B",
@@ -3189,8 +3189,8 @@
     ],
     "display_name": "Throttle-based fuel quantity",
     "category": "Fuel",
-    "naming_basis": "analysis/semantics/FUEL.md",
-    "naming_note": "A/C use processed load and select on RAM 0x0B80 bit 0 (clear/set); B uses filtered throttle. The mode bit has no established rider-mode or cylinder meaning. Values precede final pulse corrections."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "A is the normal load path; C requires completion of the four-stage road-speed sequence at 0xAD1C\u20130xAF20. Stock timeout 0x3710 = 0 prevents completion from cleared detector state. B uses filtered throttle. Values precede final pulse corrections."
   },
   {
     "id": "main_quantity_C",
@@ -4780,16 +4780,16 @@
     "output": "0x0952 or 0x0954",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "RAM 0x0B80 bit 0 set: completed four-stage road-speed sequence; stock zero timeout prevents completion from cleared state; see semantics/MAP_SELECTORS.md",
     "evidence_addresses": [],
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Load-based fuel quantity (mode flag set)",
+    "display_name": "Sequence-selected alternate load fuel quantity",
     "category": "Fuel",
-    "naming_basis": "analysis/semantics/FUEL.md",
-    "naming_note": "A/C use processed load and select on RAM 0x0B80 bit 0 (clear/set); B uses filtered throttle. The mode bit has no established rider-mode or cylinder meaning. Values precede final pulse corrections."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "A is the normal load path; C requires completion of the four-stage road-speed sequence at 0xAD1C\u20130xAF20. Stock timeout 0x3710 = 0 prevents completion from cleared detector state. B uses filtered throttle. Values precede final pulse corrections."
   },
   {
     "id": "main_u8_A",
@@ -5609,16 +5609,16 @@
     "output": "u8 0x0A83 after Q8 rounding; corrected into 0x0A82",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Variant 9 and filtered neutral input PB4 low (0x0896 bit 4 clear)",
     "evidence_addresses": [],
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Base ignition timing \u2014 selection A",
+    "display_name": "Base ignition timing \u2014 neutral-input branch",
     "category": "Ignition",
-    "naming_basis": "analysis/semantics/SPARK.md",
-    "naming_note": "A/B/C distinguish recovered selection branches, not octane or rider modes. A requires variant 9 and 0x0896 bit 4 clear; B/C use the remaining selector threshold. Absolute BTDC remains unresolved."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Neutral-input branch means variant 9 with filtered PB4 low (0x0896 bit 4 clear). Otherwise stock threshold 5 chooses B for ratio codes 0\u20135, C for codes above 5. The recovered normal classifier produces only 0\u20135; fault 42 forces 5. Absolute BTDC remains unresolved."
   },
   {
     "id": "main_u8_B",
@@ -6438,16 +6438,16 @@
     "output": "u8 0x0A83 after Q8 rounding; corrected into 0x0A82",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Outside neutral-input branch: ratio code 0x0898 <= ROM 0x4245 (stock 5)",
     "evidence_addresses": [],
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Base ignition timing \u2014 selection B",
+    "display_name": "Base ignition timing \u2014 normal ratio-code branch",
     "category": "Ignition",
-    "naming_basis": "analysis/semantics/SPARK.md",
-    "naming_note": "A/B/C distinguish recovered selection branches, not octane or rider modes. A requires variant 9 and 0x0896 bit 4 clear; B/C use the remaining selector threshold. Absolute BTDC remains unresolved."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Neutral-input branch means variant 9 with filtered PB4 low (0x0896 bit 4 clear). Otherwise stock threshold 5 chooses B for ratio codes 0\u20135, C for codes above 5. The recovered normal classifier produces only 0\u20135; fault 42 forces 5. Absolute BTDC remains unresolved."
   },
   {
     "id": "main_u8_C",
@@ -7267,16 +7267,16 @@
     "output": "u8 0x0A83 after Q8 rounding; corrected into 0x0A82",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Outside neutral-input branch: ratio code 0x0898 > ROM 0x4245 (stock 5); not emitted by the recovered normal classifier",
     "evidence_addresses": [],
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Base ignition timing \u2014 selection C",
+    "display_name": "Base ignition timing \u2014 extended ratio-code branch",
     "category": "Ignition",
-    "naming_basis": "analysis/semantics/SPARK.md",
-    "naming_note": "A/B/C distinguish recovered selection branches, not octane or rider modes. A requires variant 9 and 0x0896 bit 4 clear; B/C use the remaining selector threshold. Absolute BTDC remains unresolved."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Neutral-input branch means variant 9 with filtered PB4 low (0x0896 bit 4 clear). Otherwise stock threshold 5 chooses B for ratio codes 0\u20135, C for codes above 5. The recovered normal classifier produces only 0\u20135; fault 42 forces 5. Absolute BTDC remains unresolved."
   },
   {
     "id": "modulo24_surface",
@@ -9588,16 +9588,16 @@
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Variant 9 and filtered neutral input PB4 low (0x0896 bit 4 clear)",
     "evidence_addresses": [],
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Transient fuel pulse response \u2014 family 1, selection A",
+    "display_name": "Transient fuel response 1 \u2014 neutral-input branch",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Family 1 feeds RAM 0x0A0C and splits at stock ratio code 1 (low 0\u20131; higher 2\u20135 in normal classification). Family 2 feeds 0x0D04 and splits at 5 (normal 0\u20135; extended above 5). Both give priority to variant 9 with filtered PB4 low. Codes are not established gear numbers; curve output is not final pulse duration."
   },
   {
     "id": "curve_34da",
@@ -9641,16 +9641,16 @@
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Outside neutral-input branch: ratio code 0x0898 <= ROM 0x34CF (stock 1)",
     "evidence_addresses": [],
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Transient fuel pulse response \u2014 family 1, selection B",
+    "display_name": "Transient fuel response 1 \u2014 low ratio codes",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Family 1 feeds RAM 0x0A0C and splits at stock ratio code 1 (low 0\u20131; higher 2\u20135 in normal classification). Family 2 feeds 0x0D04 and splits at 5 (normal 0\u20135; extended above 5). Both give priority to variant 9 with filtered PB4 low. Codes are not established gear numbers; curve output is not final pulse duration."
   },
   {
     "id": "curve_34e4",
@@ -9694,16 +9694,16 @@
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Outside neutral-input branch: ratio code 0x0898 > ROM 0x34CF (stock 1)",
     "evidence_addresses": [],
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Transient fuel pulse response \u2014 family 1, selection C",
+    "display_name": "Transient fuel response 1 \u2014 higher ratio codes",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Family 1 feeds RAM 0x0A0C and splits at stock ratio code 1 (low 0\u20131; higher 2\u20135 in normal classification). Family 2 feeds 0x0D04 and splits at 5 (normal 0\u20135; extended above 5). Both give priority to variant 9 with filtered PB4 low. Codes are not established gear numbers; curve output is not final pulse duration."
   },
   {
     "id": "curve_34ee",
@@ -9808,16 +9808,16 @@
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Variant 9 and filtered neutral input PB4 low (0x0896 bit 4 clear)",
     "evidence_addresses": [],
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Transient fuel pulse response \u2014 family 2, selection A",
+    "display_name": "Transient fuel response 2 \u2014 neutral-input branch",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Family 1 feeds RAM 0x0A0C and splits at stock ratio code 1 (low 0\u20131; higher 2\u20135 in normal classification). Family 2 feeds 0x0D04 and splits at 5 (normal 0\u20135; extended above 5). Both give priority to variant 9 with filtered PB4 low. Codes are not established gear numbers; curve output is not final pulse duration."
   },
   {
     "id": "curve_3567",
@@ -9861,16 +9861,16 @@
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Outside neutral-input branch: ratio code 0x0898 <= ROM 0x355C (stock 5)",
     "evidence_addresses": [],
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Transient fuel pulse response \u2014 family 2, selection B",
+    "display_name": "Transient fuel response 2 \u2014 normal ratio-code branch",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Family 1 feeds RAM 0x0A0C and splits at stock ratio code 1 (low 0\u20131; higher 2\u20135 in normal classification). Family 2 feeds 0x0D04 and splits at 5 (normal 0\u20135; extended above 5). Both give priority to variant 9 with filtered PB4 low. Codes are not established gear numbers; curve output is not final pulse duration."
   },
   {
     "id": "curve_3571",
@@ -9914,16 +9914,16 @@
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Outside neutral-input branch: ratio code 0x0898 > ROM 0x355C (stock 5)",
     "evidence_addresses": [],
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Transient fuel pulse response \u2014 family 2, selection C",
+    "display_name": "Transient fuel response 2 \u2014 extended ratio-code branch",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Family 1 feeds RAM 0x0A0C and splits at stock ratio code 1 (low 0\u20131; higher 2\u20135 in normal classification). Family 2 feeds 0x0D04 and splits at 5 (normal 0\u20135; extended above 5). Both give priority to variant 9 with filtered PB4 low. Codes are not established gear numbers; curve output is not final pulse duration."
   },
   {
     "id": "curve_31ec",
@@ -9973,16 +9973,16 @@
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Ratio code 0x0898 <= ROM 0x31EA (stock 5); consuming normalization state disabled by stock ROM 0x3130 = 0xFF",
     "evidence_addresses": [],
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Fuel normalization recovery hold \u2014 selection 1",
+    "display_name": "Fuel normalization recovery hold \u2014 normal ratio-code branch",
     "category": "Fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "This normal correction state is disabled in the supplied image by ROM 0x3130 = 0xFF. Selection numbers do not imply named riding modes."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "The selector at 0xA448 splits ratio code 0x0898 at ROM 0x31EA (stock 5): normal 0\u20135 selects 0x31EC; extended above 5 selects 0x3200. The consuming normalization state is disabled in this image by ROM 0x3130 = 0xFF."
   },
   {
     "id": "curve_3200",
@@ -10032,16 +10032,16 @@
     "interpolation": "clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented",
     "engineering_decode": null,
     "ready_for_tuning_export": false,
-    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "selection": "Ratio code 0x0898 > ROM 0x31EA (stock 5); consuming normalization state disabled by stock ROM 0x3130 = 0xFF",
     "evidence_addresses": [],
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Fuel normalization recovery hold \u2014 selection 2",
+    "display_name": "Fuel normalization recovery hold \u2014 extended ratio-code branch",
     "category": "Fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "This normal correction state is disabled in the supplied image by ROM 0x3130 = 0xFF. Selection numbers do not imply named riding modes."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "The selector at 0xA448 splits ratio code 0x0898 at ROM 0x31EA (stock 5): normal 0\u20135 selects 0x31EC; extended above 5 selects 0x3200. The consuming normalization state is disabled in this image by ROM 0x3130 = 0xFF."
   },
   {
     "id": "curve_36c4",
@@ -11004,10 +11004,10 @@
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Throttle-delta fuel gain \u2014 selection 1",
+    "display_name": "Throttle-delta fuel gain \u2014 nonnegative, neutral-input",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
   },
   {
     "id": "delta_0985_gain_2",
@@ -11098,10 +11098,10 @@
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Throttle-delta fuel gain \u2014 selection 2",
+    "display_name": "Throttle-delta fuel gain \u2014 nonnegative, normal ratio-code",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
   },
   {
     "id": "delta_0985_gain_3",
@@ -11192,10 +11192,10 @@
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Throttle-delta fuel gain \u2014 selection 3",
+    "display_name": "Throttle-delta fuel gain \u2014 nonnegative, extended ratio-code",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
   },
   {
     "id": "delta_0985_gain_4",
@@ -11286,10 +11286,10 @@
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Throttle-delta fuel gain \u2014 selection 4",
+    "display_name": "Throttle-delta fuel gain \u2014 negative, neutral-input",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
   },
   {
     "id": "delta_0985_gain_5",
@@ -11380,10 +11380,10 @@
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Throttle-delta fuel gain \u2014 selection 5",
+    "display_name": "Throttle-delta fuel gain \u2014 negative, normal ratio-code",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
   },
   {
     "id": "delta_0985_gain_6",
@@ -11474,10 +11474,10 @@
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Throttle-delta fuel gain \u2014 selection 6",
+    "display_name": "Throttle-delta fuel gain \u2014 negative, extended ratio-code",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
   },
   {
     "id": "delta_0989_gain_1",
@@ -11568,10 +11568,10 @@
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Load-delta fuel gain \u2014 selection 1",
+    "display_name": "Load-delta fuel gain \u2014 nonnegative, neutral-input",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
   },
   {
     "id": "delta_0989_gain_2",
@@ -11662,10 +11662,10 @@
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Load-delta fuel gain \u2014 selection 2",
+    "display_name": "Load-delta fuel gain \u2014 nonnegative, normal ratio-code",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
   },
   {
     "id": "delta_0989_gain_3",
@@ -11756,10 +11756,10 @@
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Load-delta fuel gain \u2014 selection 3",
+    "display_name": "Load-delta fuel gain \u2014 nonnegative, extended ratio-code",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
   },
   {
     "id": "delta_0989_gain_4",
@@ -11850,10 +11850,10 @@
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Load-delta fuel gain \u2014 selection 4",
+    "display_name": "Load-delta fuel gain \u2014 negative, neutral-input",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
   },
   {
     "id": "delta_0989_gain_5",
@@ -11944,10 +11944,10 @@
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Load-delta fuel gain \u2014 selection 5",
+    "display_name": "Load-delta fuel gain \u2014 negative, normal ratio-code",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
   },
   {
     "id": "delta_0989_gain_6",
@@ -12038,10 +12038,10 @@
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
     ],
-    "display_name": "Load-delta fuel gain \u2014 selection 6",
+    "display_name": "Load-delta fuel gain \u2014 negative, extended ratio-code",
     "category": "Transient fuel",
-    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
-    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
+    "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
+    "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
   },
   {
     "id": "step_grid_4c44",

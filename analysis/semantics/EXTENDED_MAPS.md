@@ -1,5 +1,7 @@
 # Extended map recovery
 
+The [map-selector trace](MAP_SELECTORS.md) follows the neutral input, road/crank ratio classifier and stock-inactive alternate fuel sequence; it supersedes generic mode-code labels below.
+
 The latest [map-consumer pass](MAP_CONSUMERS.md) adds exact arithmetic and corrects earlier generic roles, including the alternate spark base, relative-throttle thresholds, adaptive steps and injection event map. See [per-map status](MAP_RESOLUTION.md) for current interpretation.
 
 The extended recovery pass brought the catalogue to **68 maps and curves**, adding 22 layouts to the earlier 46. The subsequent [unit-decoding pass](UNIT_DECODING.md) adds three 2×2 normalization grids, bringing the current total to **71**: 19 grids, 36 uniform-axis curves, 14 precomputed-axis curves and two sensor-conversion curves. All have individual [breakdowns](../MAP_DETAILS.md), exact stock values and byte extracts. Stored axes and threshold lists total 32; computed axes are embedded in each map record.

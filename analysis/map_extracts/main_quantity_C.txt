@@ -1,4 +1,4 @@
-Load-based fuel quantity (mode flag set) | ID: main_quantity_C | 0x37A8 | 45 rows x 30 columns | raw values
+Sequence-selected alternate load fuel quantity | ID: main_quantity_C | 0x37A8 | 45 rows x 30 columns | raw values
 code-confirmed layout; unverified physical meaning
 945 945 945 945 945 945 945 945 945 1035 1040 945 1000 1085 1187 1258 1254 1527 1519 1488 1539 1908 1877 1969 2025 2050 2956 3862 4426 5385
 905 905 905 905 905 905 905 905 905 1005 1010 928 975 1080 1186 1259 1281 1365 1508 1458 1539 1908 1877 1969 2010 2092 2977 3862 4426 5385

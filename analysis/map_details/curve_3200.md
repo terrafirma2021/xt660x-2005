@@ -1,11 +1,11 @@
-# Fuel normalization recovery hold — selection 2
+# Fuel normalization recovery hold — extended ratio-code branch
 
 <!-- map-name -->
 Stable ID: `curve_3200`. Category: Fuel.
 
-This normal correction state is disabled in the supplied image by ROM 0x3130 = 0xFF. Selection numbers do not imply named riding modes.
+The selector at 0xA448 splits ratio code 0x0898 at ROM 0x31EA (stock 5): normal 0–5 selects 0x31EC; extended above 5 selects 0x3200. The consuming normalization state is disabled in this image by ROM 0x3130 = 0xFF.
 
-Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_SELECTORS.md).
 <!-- /map-name -->
 
 Alternate hold count before normalization correction returns toward neutral
@@ -16,7 +16,7 @@ Inputs: u16 0x0900 selected speed.
 
 Output: u8 0x09D9, latched into 0x09D7 and compared with 10-ms-task counter 0x09DD.
 
-Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
+Selection: Ratio code 0x0898 > ROM 0x31EA (stock 5); consuming normalization state disabled by stock ROM 0x3130 = 0xFF.
 
 Interpolation: clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented.
 

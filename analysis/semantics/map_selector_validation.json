@@ -1,0 +1,186 @@
+{
+  "result": "passed",
+  "cases": 12523,
+  "checks": {
+    "ratio_classifier_all_bytes_variants_and_fault_override": 1024,
+    "neutral_input_filter_truth_table": 8,
+    "normalization_hold_all_ratio_codes": 256,
+    "spark_all_selector_bytes_variant_and_neutral": 1024,
+    "transient_1_all_selector_bytes_variant_and_neutral": 1024,
+    "transient_2_all_selector_bytes_variant_and_neutral": 1024,
+    "throttle_delta_all_selector_bytes_both_signs_variant_and_neutral": 2048,
+    "load_delta_all_selector_bytes_both_signs_variant_and_neutral": 2048,
+    "road_pulse_snapshot_initialization_rollover_saturation": 12,
+    "conditional_20_pulse_gear_model_full_filters_and_classifier": 3000,
+    "stock_first_stage_duration_boundaries_then_timeout_reset": 5,
+    "stock_later_stage_zero_timeout_all_speed_bytes": 768,
+    "synthetic_four_stage_walk_latch_and_six_reset_gates": 25,
+    "sequence_initial_ratio_code_gate_all_bytes": 256,
+    "sequence_counter_saturates": 1
+  },
+  "conditional_gear_traces": [
+    {
+      "assumed_gear": 1,
+      "pulses_per_crank_revolution": 3.84,
+      "ideal_scaled_code": 76.8,
+      "steady_filtered_range": [
+        76,
+        77
+      ],
+      "steady_selector_codes": [
+        1
+      ]
+    },
+    {
+      "assumed_gear": 2,
+      "pulses_per_crank_revolution": 5.907692307692308,
+      "ideal_scaled_code": 118.15384615384616,
+      "steady_filtered_range": [
+        118,
+        119
+      ],
+      "steady_selector_codes": [
+        2
+      ]
+    },
+    {
+      "assumed_gear": 3,
+      "pulses_per_crank_revolution": 8.347826086956522,
+      "ideal_scaled_code": 166.95652173913044,
+      "steady_filtered_range": [
+        166,
+        168
+      ],
+      "steady_selector_codes": [
+        3
+      ]
+    },
+    {
+      "assumed_gear": 4,
+      "pulses_per_crank_revolution": 10.56,
+      "ideal_scaled_code": 211.2,
+      "steady_filtered_range": [
+        211,
+        212
+      ],
+      "steady_selector_codes": [
+        4
+      ]
+    },
+    {
+      "assumed_gear": 5,
+      "pulses_per_crank_revolution": 12.48,
+      "ideal_scaled_code": 249.6,
+      "steady_filtered_range": [
+        249,
+        250
+      ],
+      "steady_selector_codes": [
+        5
+      ]
+    }
+  ],
+  "stock_ratio_thresholds": [
+    39,
+    96,
+    141,
+    189,
+    230
+  ],
+  "synthetic_sequence_trace": [
+    {
+      "speed_code": 10,
+      "flags": 0,
+      "elapsed": 0
+    },
+    {
+      "speed_code": 20,
+      "flags": 0,
+      "elapsed": 0
+    },
+    {
+      "speed_code": 0,
+      "flags": 64,
+      "elapsed": 0
+    },
+    {
+      "speed_code": 0,
+      "flags": 64,
+      "elapsed": 1
+    },
+    {
+      "speed_code": 0,
+      "flags": 96,
+      "elapsed": 2
+    },
+    {
+      "speed_code": 10,
+      "flags": 96,
+      "elapsed": 3
+    },
+    {
+      "speed_code": 20,
+      "flags": 96,
+      "elapsed": 4
+    },
+    {
+      "speed_code": 0,
+      "flags": 112,
+      "elapsed": 5
+    },
+    {
+      "speed_code": 0,
+      "flags": 112,
+      "elapsed": 6
+    },
+    {
+      "speed_code": 0,
+      "flags": 120,
+      "elapsed": 7
+    },
+    {
+      "speed_code": 10,
+      "flags": 120,
+      "elapsed": 8
+    },
+    {
+      "speed_code": 20,
+      "flags": 120,
+      "elapsed": 9
+    },
+    {
+      "speed_code": 0,
+      "flags": 124,
+      "elapsed": 10
+    },
+    {
+      "speed_code": 0,
+      "flags": 124,
+      "elapsed": 11
+    },
+    {
+      "speed_code": 0,
+      "flags": 126,
+      "elapsed": 12
+    },
+    {
+      "speed_code": 10,
+      "flags": 126,
+      "elapsed": 13
+    },
+    {
+      "speed_code": 20,
+      "flags": 126,
+      "elapsed": 14
+    },
+    {
+      "speed_code": 0,
+      "flags": 127,
+      "elapsed": 15
+    }
+  ],
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "test_script_sha256": "4868d30edd26ba4416830b252f9ebe183df98da8212c8ee112da9f42d5292e55",
+  "compiled_library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
+  "limitations": "Instruction-level fixtures, not a complete boot or hardware simulation. Tests establish code paths and boundaries, not gear-number calibration, neutral circuit polarity, wall-clock periods or mechanical TDC. The successful sequence uses changed calibration bytes only in emulated memory; it is not stock behavior."
+}

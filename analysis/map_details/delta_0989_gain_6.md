@@ -1,11 +1,11 @@
-# Load-delta fuel gain — selection 6
+# Load-delta fuel gain — negative, extended ratio-code
 
 <!-- map-name -->
 Stable ID: `delta_0989_gain_6`. Category: Transient fuel.
 
-Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below.
+Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers.
 
-Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_SELECTORS.md).
 <!-- /map-name -->
 
 Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved

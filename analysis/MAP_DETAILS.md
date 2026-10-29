@@ -4,12 +4,12 @@ Every catalogued map has a byte layout, input/output trace, raw values and nearb
 
 | Map | Cells | Role |
 |---|---|---|
-| [Load-based fuel quantity (mode flag clear)](map_details/main_quantity_A.md) | 0x1B66 | Primary fuel quantity surface A; see semantics/FUEL.md |
+| [Normal load-based fuel quantity](map_details/main_quantity_A.md) | 0x1B66 | Primary fuel quantity surface A; see semantics/FUEL.md |
 | [Throttle-based fuel quantity](map_details/main_quantity_B.md) | 0x2688 | Fuel quantity surface B; see semantics/FUEL.md |
-| [Load-based fuel quantity (mode flag set)](map_details/main_quantity_C.md) | 0x37A8 | Primary fuel quantity surface C; see semantics/FUEL.md |
-| [Base ignition timing — selection A](map_details/main_u8_A.md) | 0x42AE | Base spark timing surface A; see semantics/SPARK.md |
-| [Base ignition timing — selection B](map_details/main_u8_B.md) | 0x452E | Base spark timing surface B; see semantics/SPARK.md |
-| [Base ignition timing — selection C](map_details/main_u8_C.md) | 0x47AE | Base spark timing surface C; see semantics/SPARK.md |
+| [Sequence-selected alternate load fuel quantity](map_details/main_quantity_C.md) | 0x37A8 | Primary fuel quantity surface C; see semantics/FUEL.md |
+| [Base ignition timing — neutral-input branch](map_details/main_u8_A.md) | 0x42AE | Base spark timing surface A; see semantics/SPARK.md |
+| [Base ignition timing — normal ratio-code branch](map_details/main_u8_B.md) | 0x452E | Base spark timing surface B; see semantics/SPARK.md |
+| [Base ignition timing — extended ratio-code branch](map_details/main_u8_C.md) | 0x47AE | Base spark timing surface C; see semantics/SPARK.md |
 | [Injection event-phase target](map_details/modulo24_surface.md) | 0x1914 | Injection event-phase target; reference-rotated modulo-24 interpolation, not pulse duration or absolute BTDC |
 | [Secondary injector quantity multiplier](map_details/correction_surface_A.md) | 0x1A1A | Secondary injector quantity multiplier; cell 128 is unity |
 | [Fuel normalization offset](map_details/correction_surface_B.md) | 0x3168 | Centered correction to the common fuel normalization denominator; neutral 128 |
@@ -30,15 +30,15 @@ Every catalogued map has a byte layout, input/output trace, raw values and nearb
 | [Relative-throttle qualification threshold vs speed](map_details/curve_3494.md) | 0x349A | Filtered relative-throttle threshold in a qualification counter path |
 | [Transient fuel multiplier vs pressure estimate](map_details/curve_353a.md) | 0x3540 | Transient correction |
 | [Transient fuel multiplier vs intake temperature](map_details/curve_351d.md) | 0x3520 | Transient temperature multiplier |
-| [Transient fuel pulse response — family 1, selection A](map_details/curve_34d0.md) | 0x34D3 | Selected transient response curve |
-| [Transient fuel pulse response — family 1, selection B](map_details/curve_34da.md) | 0x34DD | Selected transient response curve |
-| [Transient fuel pulse response — family 1, selection C](map_details/curve_34e4.md) | 0x34E7 | Selected transient response curve |
+| [Transient fuel response 1 — neutral-input branch](map_details/curve_34d0.md) | 0x34D3 | Selected transient response curve |
+| [Transient fuel response 1 — low ratio codes](map_details/curve_34da.md) | 0x34DD | Selected transient response curve |
+| [Transient fuel response 1 — higher ratio codes](map_details/curve_34e4.md) | 0x34E7 | Selected transient response curve |
 | [Transient fuel multiplier vs throttle](map_details/curve_34ee.md) | 0x34F4 | Transient throttle correction |
-| [Transient fuel pulse response — family 2, selection A](map_details/curve_355d.md) | 0x3560 | Selected transient response curve |
-| [Transient fuel pulse response — family 2, selection B](map_details/curve_3567.md) | 0x356A | Selected transient response curve |
-| [Transient fuel pulse response — family 2, selection C](map_details/curve_3571.md) | 0x3574 | Selected transient response curve |
-| [Fuel normalization recovery hold — selection 1](map_details/curve_31ec.md) | 0x31F2 | Hold count before normalization correction returns toward neutral |
-| [Fuel normalization recovery hold — selection 2](map_details/curve_3200.md) | 0x3206 | Alternate hold count before normalization correction returns toward neutral |
+| [Transient fuel response 2 — neutral-input branch](map_details/curve_355d.md) | 0x3560 | Selected transient response curve |
+| [Transient fuel response 2 — normal ratio-code branch](map_details/curve_3567.md) | 0x356A | Selected transient response curve |
+| [Transient fuel response 2 — extended ratio-code branch](map_details/curve_3571.md) | 0x3574 | Selected transient response curve |
+| [Fuel normalization recovery hold — normal ratio-code branch](map_details/curve_31ec.md) | 0x31F2 | Hold count before normalization correction returns toward neutral |
+| [Fuel normalization recovery hold — extended ratio-code branch](map_details/curve_3200.md) | 0x3206 | Alternate hold count before normalization correction returns toward neutral |
 | [Feedback eligibility delay vs coolant](map_details/curve_36c4.md) | 0x36C7 | Delay before feedback eligibility |
 | [Adaptive fuel correction — decrement step](map_details/curve_36a4.md) | 0x36AA | Adaptive correction decrement step; bounds are separate ROM words |
 | [Adaptive fuel correction — increment step](map_details/curve_36b2.md) | 0x36B8 | Adaptive correction increment step; bounds are separate ROM words |
@@ -53,18 +53,18 @@ Every catalogued map has a byte layout, input/output trace, raw values and nearb
 | [Coolant enrichment — throttle-based fuel path](map_details/curve_3327.md) | 0x332A | Additive coolant enrichment contribution for second fuel-gain lane |
 | [Transient fuel pulse contribution vs coolant](map_details/curve_34fd.md) | 0x3500 | Transient temperature correction |
 | [Spark timing bound vs pressure estimate](map_details/curve_4bac.md) | 0x4BB2 | Timing bound consumed at 0x8A2F |
-| [Throttle-delta fuel gain — selection 1](map_details/delta_0985_gain_1.md) | 0x336B | Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved |
-| [Throttle-delta fuel gain — selection 2](map_details/delta_0985_gain_2.md) | 0x3382 | Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved |
-| [Throttle-delta fuel gain — selection 3](map_details/delta_0985_gain_3.md) | 0x3399 | Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved |
-| [Throttle-delta fuel gain — selection 4](map_details/delta_0985_gain_4.md) | 0x33B0 | Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved |
-| [Throttle-delta fuel gain — selection 5](map_details/delta_0985_gain_5.md) | 0x33C7 | Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved |
-| [Throttle-delta fuel gain — selection 6](map_details/delta_0985_gain_6.md) | 0x33DE | Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved |
-| [Load-delta fuel gain — selection 1](map_details/delta_0989_gain_1.md) | 0x33F7 | Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved |
-| [Load-delta fuel gain — selection 2](map_details/delta_0989_gain_2.md) | 0x340E | Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved |
-| [Load-delta fuel gain — selection 3](map_details/delta_0989_gain_3.md) | 0x3425 | Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved |
-| [Load-delta fuel gain — selection 4](map_details/delta_0989_gain_4.md) | 0x343C | Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved |
-| [Load-delta fuel gain — selection 5](map_details/delta_0989_gain_5.md) | 0x3453 | Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved |
-| [Load-delta fuel gain — selection 6](map_details/delta_0989_gain_6.md) | 0x346A | Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved |
+| [Throttle-delta fuel gain — nonnegative, neutral-input](map_details/delta_0985_gain_1.md) | 0x336B | Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved |
+| [Throttle-delta fuel gain — nonnegative, normal ratio-code](map_details/delta_0985_gain_2.md) | 0x3382 | Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved |
+| [Throttle-delta fuel gain — nonnegative, extended ratio-code](map_details/delta_0985_gain_3.md) | 0x3399 | Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved |
+| [Throttle-delta fuel gain — negative, neutral-input](map_details/delta_0985_gain_4.md) | 0x33B0 | Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved |
+| [Throttle-delta fuel gain — negative, normal ratio-code](map_details/delta_0985_gain_5.md) | 0x33C7 | Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved |
+| [Throttle-delta fuel gain — negative, extended ratio-code](map_details/delta_0985_gain_6.md) | 0x33DE | Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved |
+| [Load-delta fuel gain — nonnegative, neutral-input](map_details/delta_0989_gain_1.md) | 0x33F7 | Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved |
+| [Load-delta fuel gain — nonnegative, normal ratio-code](map_details/delta_0989_gain_2.md) | 0x340E | Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved |
+| [Load-delta fuel gain — nonnegative, extended ratio-code](map_details/delta_0989_gain_3.md) | 0x3425 | Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved |
+| [Load-delta fuel gain — negative, neutral-input](map_details/delta_0989_gain_4.md) | 0x343C | Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved |
+| [Load-delta fuel gain — negative, normal ratio-code](map_details/delta_0989_gain_5.md) | 0x3453 | Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved |
+| [Load-delta fuel gain — negative, extended ratio-code](map_details/delta_0989_gain_6.md) | 0x346A | Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved |
 | [Air-induction enable vs speed and throttle](map_details/step_grid_4c44.md) | 0x4C44 | Air-induction solenoid eligibility grid; zero inhibits this eligibility path |
 | [Air-induction enable vs speed and load](map_details/step_grid_4d48.md) | 0x4D48 | Air-induction solenoid eligibility grid; zero inhibits this eligibility path |
 | [Adaptive feedback enable vs speed and throttle](map_details/step_grid_35b0.md) | 0x35B0 | Adaptive feedback eligibility grid; zero clears feedback-enable path |

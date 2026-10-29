@@ -1,5 +1,7 @@
 # Map consumers: fuel, adaptation and injection phase
 
+The [map-selector trace](MAP_SELECTORS.md) follows the neutral input, road/crank ratio classifier and stock-inactive alternate fuel sequence; it supersedes generic mode-code labels below.
+
 This pass follows stored maps through their consumers, rather than assigning units from table appearance. [map_models.py](../../scripts/map_models.py) provides independently written integer formulas; [execution results](map_consumer_validation.json) compare them with the compiled original instructions. [Per-map resolution status](MAP_RESOLUTION.md) and [physical_units.json](physical_units.json) record the results for all 71 layouts.
 
 **A resolved numeric contribution is not necessarily a resolved physical unit.** Some tables contain gains, thresholds, event codes or logical gates. Others only have a meaningful pulse duration when combined with additional tables. Milliseconds, seconds and RPM remain conditional on the clock/crank profiles in [UNIT_DECODING.md](UNIT_DECODING.md). Absolute BTDC and the conflicting temperature scale remain open.
@@ -16,7 +18,7 @@ This pass follows stored maps through their consumers, rather than assigning uni
 | [Relative-throttle qualification threshold vs speed](../map_details/curve_3494.md), cells `0x349A` | Speed-indexed threshold on the same relative-throttle quantity | `0x8FAA` |
 | [Adaptive fuel correction — decrement step](../map_details/curve_36a4.md) / [Adaptive fuel correction — increment step](../map_details/curve_36b2.md) | Adaptive decrement/increment **steps at state transitions**, not bounds | `0xA6D3–0xA73A` |
 | [Pressure-processing offset vs engine speed](../map_details/curve_1880.md) | Centered **additive** pressure-processing offset, not a multiplier | `0xB284–0xB2A1` |
-| [Fuel normalization recovery hold — selection 1](../map_details/curve_31ec.md) / [Fuel normalization recovery hold — selection 2](../map_details/curve_3200.md) | Conditional hold counts before normalization correction recovery | `0x8E2F`, `0xA8C9` |
+| [Fuel normalization recovery hold — normal ratio-code branch](../map_details/curve_31ec.md) / [Fuel normalization recovery hold — extended ratio-code branch](../map_details/curve_3200.md) | Conditional hold counts before normalization correction recovery | `0x8E2F`, `0xA8C9` |
 
 The relative-throttle quantity is `08E6`, a filtered version of `max(ADC10 - learned_closed,0)`. At `0x8F82`, it is capped at 255 into `08EC`. The two threshold curves therefore use ten-bit ADC-count increments above learned closed. They do **not** measure a rate of throttle movement. Angle conversion is still conditional on sensor geometry.
 

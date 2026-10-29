@@ -1,11 +1,11 @@
-# Transient fuel pulse response — family 1, selection C
+# Transient fuel response 1 — higher ratio codes
 
 <!-- map-name -->
 Stable ID: `curve_34e4`. Category: Transient fuel.
 
-Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves.
+Family 1 feeds RAM 0x0A0C and splits at stock ratio code 1 (low 0–1; higher 2–5 in normal classification). Family 2 feeds 0x0D04 and splits at 5 (normal 0–5; extended above 5). Both give priority to variant 9 with filtered PB4 low. Codes are not established gear numbers; curve output is not final pulse duration.
 
-Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_SELECTORS.md).
 <!-- /map-name -->
 
 Selected transient response curve
@@ -16,7 +16,7 @@ Inputs: u8 0x08ED throttle-derived delta.
 
 Output: u8 0x0A0C.
 
-Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
+Selection: Outside neutral-input branch: ratio code 0x0898 > ROM 0x34CF (stock 1).
 
 Interpolation: clamped uniform Q8 linear lookup; output may retain Q8 or take high byte as documented.
 

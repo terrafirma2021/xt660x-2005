@@ -3,9 +3,9 @@
 <!-- map-name -->
 Stable ID: `main_quantity_B`. Category: Fuel.
 
-A/C use processed load and select on RAM 0x0B80 bit 0 (clear/set); B uses filtered throttle. The mode bit has no established rider-mode or cylinder meaning. Values precede final pulse corrections.
+A is the normal load path; C requires completion of the four-stage road-speed sequence at 0xAD1C–0xAF20. Stock timeout 0x3710 = 0 prevents completion from cleared detector state. B uses filtered throttle. Values precede final pulse corrections.
 
-Naming evidence: [recovered derivation](../../analysis/semantics/FUEL.md).
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_SELECTORS.md).
 <!-- /map-name -->
 
 Fuel quantity surface B; see semantics/FUEL.md

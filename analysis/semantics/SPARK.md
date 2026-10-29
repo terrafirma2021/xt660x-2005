@@ -1,5 +1,7 @@
 # Spark maps and timer scheduling
 
+The [map-selector trace](MAP_SELECTORS.md) follows the neutral input, road/crank ratio classifier and stock-inactive alternate fuel sequence; it supersedes generic mode-code labels below.
+
 The [complete planner and normal compare-dispatch derivation](SPARK_SCHEDULER.md) now establishes `fire_time_relative_to_capture6 = A32 - advance` in ordinary unsaturated cases, charge-start timing, MCU set/clear actions and the minimum-charge override. Its 74,832 tests close the earlier planner gap; absolute TDC phase and special-mode dispatch remain separate.
 
 The latest [map-consumer pass](MAP_CONSUMERS.md) adds exact arithmetic and corrects earlier generic roles, including the alternate spark base, relative-throttle thresholds, adaptive steps and injection event map. See [per-map status](MAP_RESOLUTION.md) for current interpretation.
@@ -18,9 +20,9 @@ Diagnostic selector 30 at ROM `0x4EFF` is copied to RAM `0x0D46`. The actuator d
 
 | Cells | Size | Selection condition |
 |---|---|---|
-| Base ignition timing — selection A, `0x42AE` | 32 rows × 20 columns, unsigned bytes | RAM `0x0D87 == 9` and `0x0896:0x10` clear |
-| Base ignition timing — selection B, `0x452E` | Same | Otherwise, RAM `0x0898 <= ROM[0x4245]` |
-| Base ignition timing — selection C, `0x47AE` | Same | Otherwise |
+| Base ignition timing — neutral-input branch, `0x42AE` | 32 rows × 20 columns, unsigned bytes | RAM `0x0D87 == 9` and `0x0896:0x10` clear |
+| Base ignition timing — normal ratio-code branch, `0x452E` | Same | Otherwise, RAM `0x0898 <= ROM[0x4245]` |
+| Base ignition timing — extended ratio-code branch, `0x47AE` | Same | Otherwise |
 
 The row index uses selected engine-speed word `0x0902` and the 32-word axis at `0x426E`. The column index uses word `0x08E8` and the 20-word axis at `0x4246`. If flag `0x088D:0x04` is clear, the column input is replaced by `0xD000`. `0x08E8` is a filtered value derived from the throttle-related path; its exact engineering scale and substitution conditions need further review.
 

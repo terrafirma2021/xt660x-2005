@@ -57,6 +57,10 @@ crank=json.loads((OUT/'crank_reference_validation.json').read_text())
 assert crank['result']=='passed' and crank['firmware_sha256']==catalog['firmware_sha256']
 assert crank['test_script_sha256']==digest(ROOT/'scripts/test_crank_reference.py')
 assert crank['compiled_library_sha256']==full['compiled_library_sha256']
+selectors=json.loads((OUT/'map_selector_validation.json').read_text())
+assert selectors['result']=='passed' and selectors['firmware_sha256']==catalog['firmware_sha256']
+assert selectors['test_script_sha256']==digest(ROOT/'scripts/test_map_selectors.py')
+assert selectors['compiled_library_sha256']==full['compiled_library_sha256']
 assert temperature['firmware_sha256']==catalog['firmware_sha256']
 assert temperature['generator_sha256']==digest(ROOT/'scripts/sensor_profiles.py')
 physical=json.loads((OUT/'physical_units.json').read_text())

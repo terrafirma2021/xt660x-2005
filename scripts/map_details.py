@@ -174,6 +174,18 @@ def extend(maps, axes, image):
         m.setdefault('engineering_decode',None)
         m.setdefault('ready_for_tuning_export',False)
         m.setdefault('selection','See caller evidence; full mode/override conditions not yet exhaustively documented')
+        key=m['id']
+        if key in {'main_quantity_A','main_quantity_C'}:
+            m['selection']='RAM 0x0B80 bit 0 '+('clear: normal load fuel path' if key.endswith('A') else 'set: completed four-stage road-speed sequence; stock zero timeout prevents completion from cleared state')+'; see semantics/MAP_SELECTORS.md'
+        elif key.startswith('main_u8_'):
+            m['selection']={'A':'Variant 9 and filtered neutral input PB4 low (0x0896 bit 4 clear)', 'B':'Outside neutral-input branch: ratio code 0x0898 <= ROM 0x4245 (stock 5)', 'C':'Outside neutral-input branch: ratio code 0x0898 > ROM 0x4245 (stock 5); not emitted by the recovered normal classifier'}[key[-1]]
+        elif key in {'curve_31ec','curve_3200'}:
+            m['selection']='Ratio code 0x0898 '+('<=' if key=='curve_31ec' else '>')+' ROM 0x31EA (stock 5); consuming normalization state disabled by stock ROM 0x3130 = 0xFF'
+        elif key in {'curve_34d0','curve_34da','curve_34e4','curve_355d','curve_3567','curve_3571'}:
+            first=key in {'curve_34d0','curve_34da','curve_34e4'}
+            choices=['curve_34d0','curve_34da','curve_34e4'] if first else ['curve_355d','curve_3567','curve_3571']
+            threshold='0x34CF (stock 1)' if first else '0x355C (stock 5)'
+            m['selection']=['Variant 9 and filtered neutral input PB4 low (0x0896 bit 4 clear)',f'Outside neutral-input branch: ratio code 0x0898 <= ROM {threshold}',f'Outside neutral-input branch: ratio code 0x0898 > ROM {threshold}'][choices.index(key)]
         m.setdefault('evidence_addresses',[])
         m['unresolved']=['Engineering-unit conversions and complete downstream transformation',
                          'Hardware/bench confirmation and safe operating limits']

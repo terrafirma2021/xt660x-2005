@@ -1,11 +1,11 @@
-# Load-based fuel quantity (mode flag clear)
+# Normal load-based fuel quantity
 
 <!-- map-name -->
 Stable ID: `main_quantity_A`. Category: Fuel.
 
-A/C use processed load and select on RAM 0x0B80 bit 0 (clear/set); B uses filtered throttle. The mode bit has no established rider-mode or cylinder meaning. Values precede final pulse corrections.
+A is the normal load path; C requires completion of the four-stage road-speed sequence at 0xAD1C–0xAF20. Stock timeout 0x3710 = 0 prevents completion from cleared detector state. B uses filtered throttle. Values precede final pulse corrections.
 
-Naming evidence: [recovered derivation](../../analysis/semantics/FUEL.md).
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_SELECTORS.md).
 <!-- /map-name -->
 
 Primary fuel quantity surface A; see semantics/FUEL.md
@@ -16,7 +16,7 @@ Inputs: u16 0x0900 selected speed; u16 0x0C90 load code.
 
 Output: 0x0952 or 0x0954.
 
-Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
+Selection: RAM 0x0B80 bit 0 clear: normal load fuel path; see semantics/MAP_SELECTORS.md.
 
 Interpolation: See the helper and axis evidence below; standard grid paths use Q8 indices..
 

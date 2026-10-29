@@ -1,4 +1,4 @@
-Load-based fuel quantity (mode flag clear) | ID: main_quantity_A | 0x1B66 | 45 rows x 30 columns | raw values
+Normal load-based fuel quantity | ID: main_quantity_A | 0x1B66 | 45 rows x 30 columns | raw values
 code-confirmed layout; unverified physical meaning
 915 950 1009 1027 1039 1055 1070 1085 1102 1131 1162 1284 1338 1365 1470 1495 1540 1625 1700 1735 1800 1825 1865 1920 1975 2040 2150 2250 2250 2250
 915 947 983 1028 1040 1055 1067 1085 1103 1128 1162 1285 1344 1365 1470 1495 1540 1625 1700 1735 1800 1825 1865 1920 1975 2040 2150 2250 2250 2250

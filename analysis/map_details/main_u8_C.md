@@ -1,11 +1,11 @@
-# Base ignition timing — selection C
+# Base ignition timing — extended ratio-code branch
 
 <!-- map-name -->
 Stable ID: `main_u8_C`. Category: Ignition.
 
-A/B/C distinguish recovered selection branches, not octane or rider modes. A requires variant 9 and 0x0896 bit 4 clear; B/C use the remaining selector threshold. Absolute BTDC remains unresolved.
+Neutral-input branch means variant 9 with filtered PB4 low (0x0896 bit 4 clear). Otherwise stock threshold 5 chooses B for ratio codes 0–5, C for codes above 5. The recovered normal classifier produces only 0–5; fault 42 forces 5. Absolute BTDC remains unresolved.
 
-Naming evidence: [recovered derivation](../../analysis/semantics/SPARK.md).
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_SELECTORS.md).
 <!-- /map-name -->
 
 Base spark timing surface C; see semantics/SPARK.md
@@ -16,7 +16,7 @@ Inputs: u16 0x0902 selected speed; u16 0x08E8 throttle code; conditional 0xD000 
 
 Output: u8 0x0A83 after Q8 rounding; corrected into 0x0A82.
 
-Selection: See caller evidence; full mode/override conditions not yet exhaustively documented.
+Selection: Outside neutral-input branch: ratio code 0x0898 > ROM 0x4245 (stock 5); not emitted by the recovered normal classifier.
 
 Interpolation: See the helper and axis evidence below; standard grid paths use Q8 indices..
 
