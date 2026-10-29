@@ -60,23 +60,23 @@ void FUN_62aa(void)
     uVar7 = DAT_0b64;
     uVar7 = DAT_08a0;
     bVar1 = DAT_08a0;
-    if (((~bVar1 & 4) != 0) || (bVar1 = DAT_08a0, (bVar1 & 0x20) != 0)) {
+    if (((~bVar1 & 4) == 0) || (bVar1 = DAT_08a0, (bVar1 & 0x20) != 0)) {
       uVar7 = DAT_08a1;
     }
     bVar1 = DAT_08a0;
     if ((bVar1 & 4) == 0) {
       bVar1 = DAT_0884;
       if ((~bVar1 & 0x20) == 0) {
-        bVar1 = DAT_0892;
-        if (((~bVar1 & 0x40) != 0) || (bVar1 = DAT_0880, (~bVar1 & 1) != 0)) goto LAB_63e4;
-        bVar1 = DAT_08a1;
-        bVar1 = ~bVar1 & 2;
-      }
-      else {
         bVar1 = DAT_0888;
         bVar1 = ~bVar1 & 8;
       }
-      if (bVar1 != 0) goto LAB_63e4;
+      else {
+        bVar1 = DAT_0892;
+        if (((~bVar1 & 0x40) == 0) || (bVar1 = DAT_0880, (~bVar1 & 1) == 0)) goto LAB_63e4;
+        bVar1 = DAT_08a1;
+        bVar1 = ~bVar1 & 2;
+      }
+      if (bVar1 == 0) goto LAB_63e4;
     }
     else {
       bVar1 = DAT_0893;

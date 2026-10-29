@@ -8,7 +8,7 @@ void FUN_707c(void)
   undefined2 uVar3;
   
   bVar1 = DAT_0880;
-  if ((~bVar1 & 0x10) == 0) {
+  if ((~bVar1 & 0x10) != 0) {
     bVar1 = DAT_0880;
     DAT_0880 = bVar1 | 0x10;
     uVar3 = DAT_08ca;

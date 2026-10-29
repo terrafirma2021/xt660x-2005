@@ -11,13 +11,9 @@ ushort FUN_ccb0(ushort param_1)
   
   bVar1 = DAT_0020;
   if (((((bVar1 & 1) == 0) || (param_1 = DAT_0024, param_1 != 0xa55a)) &&
-      (bVar1 = DAT_08ae, (bVar1 & 1) != 0)) && (bVar1 = DAT_08ae, (~bVar1 & 0x20) != 0)) {
+      (bVar1 = DAT_08ae, (bVar1 & 1) != 0)) && (bVar1 = DAT_08ae, (~bVar1 & 0x20) == 0)) {
     bVar1 = DAT_08ae;
     if ((~bVar1 & 4) == 0) {
-      bVar1 = DAT_08ae;
-      DAT_08ae = bVar1 | 4;
-    }
-    else {
       bVar1 = DAT_08a4;
       if ((bVar1 & 2) == 0) {
         if ((bVar1 & 4) == 0) {
@@ -127,6 +123,10 @@ ushort FUN_ccb0(ushort param_1)
           DAT_00d2._1_1_ = 0x26;
         }
       }
+    }
+    else {
+      bVar1 = DAT_08ae;
+      DAT_08ae = bVar1 | 4;
     }
   }
   return param_1;

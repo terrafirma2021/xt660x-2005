@@ -72,11 +72,11 @@ void FUN_c063(void)
   }
   bVar3 = DAT_0881;
   if ((~bVar3 & 0x10) == 0) {
-    bVar3 = DAT_0caf;
-    DAT_0caf = (bVar3 + 1) - (0xfe < bVar3);
+    DAT_0caf = 0;
   }
   else {
-    DAT_0caf = 0;
+    bVar3 = DAT_0caf;
+    DAT_0caf = (bVar3 + 1) - (0xfe < bVar3);
   }
   bVar3 = DAT_0adb;
   if ((bVar3 & 0x80) == 0) {

@@ -20,8 +20,8 @@ LAB_f486:
   }
   else {
     bVar1 = DAT_0880;
-    if ((((~bVar1 & 0x40) == 0) && (bVar1 = DAT_0880, (~bVar1 & 4) == 0)) &&
-       (bVar1 = DAT_088d, (~bVar1 & 0x20) == 0)) {
+    if ((((~bVar1 & 0x40) != 0) && (bVar1 = DAT_0880, (~bVar1 & 4) != 0)) &&
+       (bVar1 = DAT_088d, (~bVar1 & 0x20) != 0)) {
       bVar1 = DAT_00e1;
       if ((bVar1 & 8) == 0) goto LAB_f498;
       bVar4 = DAT_0c03;

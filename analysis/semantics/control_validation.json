@@ -1,0 +1,19 @@
+{
+  "result": "passed",
+  "checks": {
+    "coolant_full_routine_all_10bit_inputs": 1024,
+    "intake_temperature_full_routine_all_10bit_inputs": 1024,
+    "fan_normal_fault_hysteresis_and_diagnostic_override": 4096,
+    "coolant_fault_boundaries_and_fallback_after_debounce": 512,
+    "period_cut_flags_all_u16_inputs_both_initial_states": 131072,
+    "reciprocal_speed_conversion_periods_1200_through_65535": 64336,
+    "spark_and_injector_cut_entry_gates": 6,
+    "spark_three_map_selection_all_cell_knots": 1920,
+    "quantity_three_maps_all_cell_knots_and_both_destinations": 8100
+  },
+  "total_cases": 212090,
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "compiled_library_sha256": "31d9ada81daf59bc96e60c30dd6863a4225e2ff59e8221d1e01ed995794fb051",
+  "test_script_sha256": "4865db2afb50a1358df6ea0008bb3363dab625a9263ee491f82610a9c99ec8d6",
+  "scope": "Independent formulas/decision tables versus instruction translation. No peripheral timing, physical units or connector identity certified."
+}

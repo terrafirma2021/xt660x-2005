@@ -4,6 +4,10 @@ The full-image pass supersedes the initial stock-HC12 decompilation. See [the co
 
 Analysis date: 29 October 2026. Original input: `XT660X 2005.bin`, 65,536 bytes.
 
+## Semantic analysis update
+
+The [control-system dossiers](semantics/README.md) add diagnostic-backed sensor and output identities, raw coolant/fan algorithms, speed/cut decisions and map-selection tests. A fourth HC12 model defect, inverted BRSET, was corrected and all code/archive exports regenerated. See [review notes](semantics/REVIEW_NOTES.md); earlier generated flag conditions are superseded. Physical units and full fuel/spark transformations remain open.
+
 ## Architecture and memory
 
 Instructions at `0x5000` decode coherently as CPU12 setup instructions. Calls and table pointers consistently use file offsets as CPU addresses. Embedded markers are `FOR T64 NEW DATAUPDATE '02/01/XX` at `0x1800` and `FOR T64 NEW PROGUPDATE  02/02/22` at `0xF780`.

@@ -998,7 +998,7 @@ case 0xcb8b: { /* 4e018016 | BRSET 0x0001,0x80,0xcba5 | candidate_unreferenced_c
 uint8_t t[3];
 xt_write(t+0,1,(~xt_load(s,0x0001,1)));
 xt_write(t+1,1,(xt_read(t+0,1) & UINT64_C(0x80)));
-xt_write(t+2,1,(xt_read(t+1,1) != UINT64_C(0x0)));
+xt_write(t+2,1,(xt_read(t+1,1) == UINT64_C(0x0)));
 if(xt_read(t+2,1)){s->pc=0xcba5;return XT_OK;}
 s->pc=0xcb8f;return XT_OK;
 }
@@ -1643,7 +1643,7 @@ xt_write(t+0,2,UINT64_C(0x896));
 xt_write(t+2,1,xt_load(s,xt_read(t+0,2),1));
 xt_write(t+3,1,(~xt_read(t+2,1)));
 xt_write(t+4,1,(xt_read(t+3,1) & UINT64_C(0x2)));
-xt_write(t+5,1,(xt_read(t+4,1) != UINT64_C(0x0)));
+xt_write(t+5,1,(xt_read(t+4,1) == UINT64_C(0x0)));
 if(xt_read(t+5,1)){s->pc=0xcc19;return XT_OK;}
 s->pc=0xcbfb;return XT_OK;
 }

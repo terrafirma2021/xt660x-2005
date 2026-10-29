@@ -9,6 +9,17 @@ void FUN_b721(void)
   
   bVar3 = DAT_0891;
   if ((~bVar3 & 2) == 0) {
+    bVar3 = DAT_00e9;
+    if ((bVar3 & 0x10) != 0) {
+      bVar3 = DAT_00f0;
+      DAT_00f0 = bVar3 & 0xf7;
+      bVar3 = DAT_0bd3;
+      DAT_0bd3 = bVar3 & 0xfe;
+      bVar3 = DAT_0891;
+      DAT_0891 = bVar3 & 0xfd;
+    }
+  }
+  else {
     bVar3 = DAT_0bd2;
     DAT_0bd2 = bVar3 & 0xfe;
     bVar3 = DAT_0bd3;
@@ -19,17 +30,6 @@ void FUN_b721(void)
                        );
     uVar1 = DAT_08bb;
     FUN_57e9(0xa27);
-  }
-  else {
-    bVar3 = DAT_00e9;
-    if ((bVar3 & 0x10) != 0) {
-      bVar3 = DAT_00f0;
-      DAT_00f0 = bVar3 & 0xf7;
-      bVar3 = DAT_0bd3;
-      DAT_0bd3 = bVar3 & 0xfe;
-      bVar3 = DAT_0891;
-      DAT_0891 = bVar3 & 0xfd;
-    }
   }
   return;
 }

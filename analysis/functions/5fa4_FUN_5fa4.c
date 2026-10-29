@@ -10,11 +10,11 @@ undefined2 FUN_5fa4(undefined2 param_1)
   bVar1 = DAT_0000;
   if ((~bVar1 & 0x10) == 0) {
     bVar1 = DAT_0000;
-    DAT_0000 = bVar1 | 0x10;
+    DAT_0000 = bVar1 & 0xef;
   }
   else {
     bVar1 = DAT_0000;
-    DAT_0000 = bVar1 & 0xef;
+    DAT_0000 = bVar1 | 0x10;
   }
   return param_1;
 }

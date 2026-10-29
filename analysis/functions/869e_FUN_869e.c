@@ -60,13 +60,13 @@ void FUN_869e(void)
   uVar2 = DAT_0cce;
   DAT_0cc4 = uVar2;
   bVar1 = DAT_08af;
-  if (((((~bVar1 & 0x20) == 0) && (bVar1 = DAT_08af, (~bVar1 & 0x10) == 0)) &&
-      (bVar1 = DAT_08af, (~bVar1 & 8) == 0)) &&
-     ((bVar1 = DAT_08af, (~bVar1 & 4) == 0 && (bVar1 = DAT_089f, (~bVar1 & 0x80) == 0)))) {
+  if (((((~bVar1 & 0x20) != 0) && (bVar1 = DAT_08af, (~bVar1 & 0x10) != 0)) &&
+      (bVar1 = DAT_08af, (~bVar1 & 8) != 0)) &&
+     ((bVar1 = DAT_08af, (~bVar1 & 4) != 0 && (bVar1 = DAT_089f, (~bVar1 & 0x80) != 0)))) {
     sVar3 = DAT_0cc2;
     sVar4 = DAT_0cc4;
     if (((((ushort)(sVar3 - sVar4) <= DAT_189c) &&
-         ((bVar1 = DAT_0881, (~bVar1 & 0x10) == 0 && (uVar9 = DAT_08e8, DAT_18a0 <= uVar9)))) &&
+         ((bVar1 = DAT_0881, (~bVar1 & 0x10) != 0 && (uVar9 = DAT_08e8, DAT_18a0 <= uVar9)))) &&
         ((uVar9 <= DAT_18a2 &&
          (((uVar9 = DAT_0900, DAT_18a4 <= uVar9 && (uVar9 <= DAT_18a6)) &&
           (uVar9 = DAT_0c90, DAT_18a8 <= uVar9)))))) && (uVar9 <= DAT_18aa)) {

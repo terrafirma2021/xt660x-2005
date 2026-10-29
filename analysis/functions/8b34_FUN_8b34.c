@@ -43,8 +43,8 @@ void FUN_8b34(void)
   bVar3 = DAT_0894._1_1_;
   DAT_0894 = CONCAT11(((bVar7 ^ bVar17) & bVar19) + (~(bVar7 ^ bVar17) & bVar3),bVar7);
   cVar18 = DAT_0d57;
-  if (((cVar18 != -0x80) && (bVar7 = DAT_08a0, (~bVar7 & 4) == 0)) &&
-     (bVar7 = DAT_08b2, (~bVar7 & 0x80) == 0)) {
+  if (((cVar18 != -0x80) && (bVar7 = DAT_08a0, (~bVar7 & 4) != 0)) &&
+     (bVar7 = DAT_08b2, (~bVar7 & 0x80) != 0)) {
     bVar7 = DAT_0896._0_1_;
     if ((bVar7 & 1) == 0) {
       bVar7 = DAT_08b6;
@@ -65,7 +65,7 @@ void FUN_8b34(void)
     }
     else {
       bVar7 = DAT_0900._0_1_;
-      if ((bVar7 < DAT_4e4a) || (bVar7 = DAT_0880, (~bVar7 & 1) == 0)) {
+      if ((bVar7 < DAT_4e4a) || (bVar7 = DAT_0880, (~bVar7 & 1) != 0)) {
         bVar7 = DAT_08b6;
         DAT_08b6 = bVar7 & 0xfb;
         DAT_0bc6 = 0;
@@ -78,13 +78,13 @@ void FUN_8b34(void)
           bVar19 = DAT_0d8a;
           if (bVar7 <= bVar19) goto LAB_8bec;
           bVar7 = DAT_08af;
-          if ((~bVar7 & 2) == 0) {
+          if ((~bVar7 & 2) != 0) {
             bVar7 = DAT_08af;
             DAT_08af = bVar7 | 2;
             bVar7 = DAT_0bd2;
             DAT_0bd2 = bVar7 | 0x80;
             bVar7 = DAT_08b8;
-            if ((~bVar7 & 2) == 0) {
+            if ((~bVar7 & 2) != 0) {
               bVar7 = DAT_08b8;
               DAT_08b8 = bVar7 | 2;
               bVar7 = DAT_0bd2;
@@ -235,7 +235,7 @@ LAB_8c00:
   uVar10 = DAT_09d0;
   *puVar20 = uVar10;
   bVar7 = DAT_09e0;
-  if ((~bVar7 & 1) != 0) {
+  if ((~bVar7 & 1) == 0) {
     uVar14 = DAT_09d2;
     DAT_09da = uVar14;
     DAT_0dde = 0;
@@ -274,19 +274,24 @@ LAB_8c00:
   FUN_a462();
   bVar7 = DAT_09cf;
   if ((~bVar7 & 0x40) == 0) {
+LAB_8df9:
+    if ((((DAT_3130 != -0x80) || (bVar7 = DAT_08af, (~bVar7 & 8) == 0)) ||
+        ((bVar7 = DAT_08af, (~bVar7 & 4) == 0 || (bVar7 = DAT_0881, (~bVar7 & 0x10) == 0)))) ||
+       (((cVar18 = DAT_0d87, cVar18 == '\t' && (bVar7 = DAT_0896._0_1_, (bVar7 & 0x10) == 0)) ||
+        (bVar7 = DAT_09cf, (~bVar7 & 0x10) == 0)))) goto LAB_8e37;
+    bVar7 = DAT_09cf;
+    if ((~bVar7 & 1) != 0) {
+      bVar7 = DAT_09cf;
+      DAT_09cf = bVar7 | 1;
+      uVar16 = DAT_09d8;
+      DAT_09d6 = uVar16;
+      uVar16 = DAT_09d9;
+      DAT_09d7 = uVar16;
+    }
+  }
+  else {
     bVar7 = DAT_09cf;
     if ((~bVar7 & 0x80) == 0) {
-      uVar10 = DAT_09d2;
-      uVar11 = DAT_09da;
-      if (((uVar11 <= uVar10) && (DAT_3132 <= uVar10 - uVar11)) && (uVar10 - uVar11 <= DAT_3134)) {
-        uVar14 = DAT_09da;
-        DAT_09d4 = uVar14;
-        bVar7 = DAT_09cf;
-        DAT_09cf = bVar7 | 0x80;
-        goto LAB_8dd1;
-      }
-    }
-    else {
 LAB_8dd1:
       uVar10 = DAT_09d2;
       uVar11 = DAT_09da;
@@ -304,6 +309,17 @@ LAB_8dd1:
         }
       }
     }
+    else {
+      uVar10 = DAT_09d2;
+      uVar11 = DAT_09da;
+      if (((uVar11 <= uVar10) && (DAT_3132 <= uVar10 - uVar11)) && (uVar10 - uVar11 <= DAT_3134)) {
+        uVar14 = DAT_09da;
+        DAT_09d4 = uVar14;
+        bVar7 = DAT_09cf;
+        DAT_09cf = bVar7 | 0x80;
+        goto LAB_8dd1;
+      }
+    }
 LAB_8e37:
     bVar7 = DAT_09cf;
     DAT_09cf = bVar7 & 0x7f;
@@ -312,22 +328,6 @@ LAB_8e37:
     bVar7 = DAT_09cf;
     DAT_09cf = bVar7 & 0xfe;
     DAT_09dc = 0;
-  }
-  else {
-LAB_8df9:
-    if ((((DAT_3130 != -0x80) || (bVar7 = DAT_08af, (~bVar7 & 8) != 0)) ||
-        ((bVar7 = DAT_08af, (~bVar7 & 4) != 0 || (bVar7 = DAT_0881, (~bVar7 & 0x10) != 0)))) ||
-       (((cVar18 = DAT_0d87, cVar18 == '\t' && (bVar7 = DAT_0896._0_1_, (bVar7 & 0x10) == 0)) ||
-        (bVar7 = DAT_09cf, (~bVar7 & 0x10) != 0)))) goto LAB_8e37;
-    bVar7 = DAT_09cf;
-    if ((~bVar7 & 1) == 0) {
-      bVar7 = DAT_09cf;
-      DAT_09cf = bVar7 | 1;
-      uVar16 = DAT_09d8;
-      DAT_09d6 = uVar16;
-      uVar16 = DAT_09d9;
-      DAT_09d7 = uVar16;
-    }
   }
 LAB_8e47:
   bVar7 = DAT_09cf;
@@ -345,7 +345,7 @@ LAB_8e8d:
   }
   else {
     bVar7 = DAT_09cf;
-    if ((~bVar7 & 8) == 0) {
+    if ((~bVar7 & 8) != 0) {
       uVar10 = DAT_09d2;
       uVar11 = DAT_09da;
       if (uVar11 <= uVar10) {
@@ -472,7 +472,7 @@ LAB_8e9f:
   DAT_0a05 = (char)(uVar10 >> 8);
   FUN_a314();
   bVar7 = DAT_08af;
-  if (((~bVar7 & 8) == 0) && (bVar7 = DAT_08af, (~bVar7 & 4) == 0)) {
+  if (((~bVar7 & 8) != 0) && (bVar7 = DAT_08af, (~bVar7 & 4) != 0)) {
     bVar7 = DAT_08ec;
     bVar19 = DAT_0a05;
     if (bVar19 < bVar7) {
@@ -507,6 +507,16 @@ LAB_8fd5:
     bVar7 = DAT_0883;
     if ((~bVar7 & 2) == 0) {
       bVar7 = DAT_0880;
+      if ((~bVar7 & 1) != 0) {
+        DAT_0b6e = 0;
+        bVar7 = DAT_0883;
+        DAT_0883 = bVar7 & 0xfd;
+        bVar7 = DAT_0bf8;
+        DAT_0bf8 = bVar7 | 0x40;
+      }
+    }
+    else {
+      bVar7 = DAT_0880;
       if ((bVar7 & 1) != 0) {
         bVar7 = DAT_0883;
         DAT_0883 = bVar7 | 2;
@@ -516,22 +526,9 @@ LAB_8fd5:
         DAT_0bf8 = bVar7 & 0xdf;
       }
     }
-    else {
-      bVar7 = DAT_0880;
-      if ((~bVar7 & 1) == 0) {
-        DAT_0b6e = 0;
-        bVar7 = DAT_0883;
-        DAT_0883 = bVar7 & 0xfd;
-        bVar7 = DAT_0bf8;
-        DAT_0bf8 = bVar7 | 0x40;
-      }
-    }
   }
   bVar7 = DAT_0880;
   if ((~bVar7 & 1) == 0) {
-    DAT_0b5c = 0;
-  }
-  else {
     bVar7 = DAT_0a2e._0_1_;
     bVar19 = DAT_0d7d;
     if (bVar19 <= bVar7) {
@@ -539,13 +536,13 @@ LAB_8fd5:
       DAT_0880 = bVar7 | 0x44;
     }
     bVar7 = DAT_0d08;
-    if ((((((((~bVar7 & 1) == 0) && (bVar7 = DAT_0884, (~bVar7 & 2) == 0)) &&
-           (bVar7 = DAT_0884, (~bVar7 & 1) == 0)) &&
-          ((bVar7 = DAT_088c, (~bVar7 & 0x80) == 0 && (bVar7 = DAT_0883, (bVar7 & 0x10) != 0)))) &&
-         ((bVar7 = DAT_0881, (~bVar7 & 8) == 0 &&
-          ((cVar18 = DAT_0dd9, cVar18 == -0x80 || (bVar7 = DAT_08b0, (~bVar7 & 8) == 0)))))) &&
-        (bVar7 = DAT_08b1, (~bVar7 & 0x10) == 0)) &&
-       ((bVar7 = DAT_08a0, (~bVar7 & 4) == 0 && (DAT_18df != -0x80)))) {
+    if ((((((((~bVar7 & 1) != 0) && (bVar7 = DAT_0884, (~bVar7 & 2) != 0)) &&
+           (bVar7 = DAT_0884, (~bVar7 & 1) != 0)) &&
+          ((bVar7 = DAT_088c, (~bVar7 & 0x80) != 0 && (bVar7 = DAT_0883, (bVar7 & 0x10) != 0)))) &&
+         ((bVar7 = DAT_0881, (~bVar7 & 8) != 0 &&
+          ((cVar18 = DAT_0dd9, cVar18 == -0x80 || (bVar7 = DAT_08b0, (~bVar7 & 8) != 0)))))) &&
+        (bVar7 = DAT_08b1, (~bVar7 & 0x10) != 0)) &&
+       ((bVar7 = DAT_08a0, (~bVar7 & 4) != 0 && (DAT_18df != -0x80)))) {
       bVar7 = DAT_091b;
       if (0xbf < bVar7) {
         DAT_091b = 0xc0;
@@ -610,6 +607,9 @@ LAB_90dd:
       DAT_0881 = bVar7 | 8;
     }
   }
+  else {
+    DAT_0b5c = 0;
+  }
   bVar7 = DAT_0886;
   if ((((bVar7 & 0x40) == 0) || (bVar7 = DAT_08ed, bVar7 < DAT_34ce)) ||
      (bVar7 = DAT_0b1e, bVar7 < DAT_3553)) {
@@ -629,7 +629,7 @@ LAB_90dd:
     }
     cVar18 = DAT_0d87;
     bVar7 = DAT_354e;
-    if (((((cVar18 == '\t') && (bVar19 = DAT_0896._0_1_, bVar7 = DAT_3548, (~bVar19 & 0x10) != 0))
+    if (((((cVar18 == '\t') && (bVar19 = DAT_0896._0_1_, bVar7 = DAT_3548, (~bVar19 & 0x10) == 0))
          && (bVar19 = DAT_0899, bVar7 = DAT_3549, (bVar19 & 2) == 0)) &&
         ((bVar19 = DAT_0899, bVar7 = DAT_354a, (bVar19 & 4) == 0 &&
          (bVar19 = DAT_0899, bVar7 = DAT_354b, (bVar19 & 8) == 0)))) &&
@@ -643,7 +643,7 @@ LAB_90dd:
   cVar18 = DAT_0b21;
   if (cVar18 == '\x01') {
     bVar7 = DAT_0886;
-    if ((((~bVar7 & 0x40) != 0) || (bVar7 = DAT_0881, (~bVar7 & 0x10) != 0)) ||
+    if ((((~bVar7 & 0x40) == 0) || (bVar7 = DAT_0881, (~bVar7 & 0x10) == 0)) ||
        ((bVar7 = DAT_0900._0_1_, bVar7 < DAT_34c5 || (DAT_34c6 < bVar7)))) goto LAB_931f;
     sVar8 = DAT_08e6;
     bVar7 = (byte)((ushort)(sVar8 << 6) >> 8);
@@ -671,7 +671,7 @@ LAB_9217:
     DAT_0dde = uVar9;
     uVar4 = DAT_08ed;
     cVar18 = DAT_0d87;
-    if ((cVar18 == '\t') && (bVar7 = DAT_0896._0_1_, (~bVar7 & 0x10) == 0)) {
+    if ((cVar18 == '\t') && (bVar7 = DAT_0896._0_1_, (~bVar7 & 0x10) != 0)) {
       pbVar21 = &UNK_34d0;
     }
     else {
@@ -755,11 +755,11 @@ LAB_931f:
     DAT_0a0a = 0;
   }
   bVar7 = DAT_0881;
-  if (((((((bVar7 & 1) != 0) && (bVar7 = DAT_0d08, (~bVar7 & 1) == 0)) &&
-        (bVar7 = DAT_0884, (~bVar7 & 2) == 0)) &&
-       ((bVar7 = DAT_0884, (~bVar7 & 1) == 0 && (bVar7 = DAT_088c, (~bVar7 & 0x80) == 0)))) &&
-      (bVar7 = DAT_08a0, (~bVar7 & 4) == 0)) &&
-     (((cVar18 = DAT_0dd9, cVar18 == -0x80 || (bVar7 = DAT_08b0, (~bVar7 & 8) == 0)) &&
+  if (((((((bVar7 & 1) != 0) && (bVar7 = DAT_0d08, (~bVar7 & 1) != 0)) &&
+        (bVar7 = DAT_0884, (~bVar7 & 2) != 0)) &&
+       ((bVar7 = DAT_0884, (~bVar7 & 1) != 0 && (bVar7 = DAT_088c, (~bVar7 & 0x80) != 0)))) &&
+      (bVar7 = DAT_08a0, (~bVar7 & 4) != 0)) &&
+     (((cVar18 = DAT_0dd9, cVar18 == -0x80 || (bVar7 = DAT_08b0, (~bVar7 & 8) != 0)) &&
       (bVar7 = DAT_08b1, (bVar7 & 0x10) == 0)))) {
     uVar11 = DAT_0a0a;
     uVar12 = DAT_0a12;
@@ -793,7 +793,7 @@ LAB_939e:
     }
     DAT_0928 = sVar8;
     bVar7 = DAT_08b1;
-    if ((~bVar7 & 0x80) == 0) {
+    if ((~bVar7 & 0x80) != 0) {
       bVar7 = DAT_0a17;
       DAT_0a17 = bVar7 | 0x80;
       FUN_c8c9();
@@ -801,7 +801,7 @@ LAB_939e:
       DAT_0a17 = bVar7 & 0x7f;
     }
     cVar18 = DAT_0d87;
-    if ((cVar18 != '\t') && (bVar7 = DAT_08b1, (~bVar7 & 0x80) == 0)) {
+    if ((cVar18 != '\t') && (bVar7 = DAT_08b1, (~bVar7 & 0x80) != 0)) {
       bVar7 = DAT_0a17;
       DAT_0a17 = bVar7 | 0x20;
       FUN_c939();
@@ -814,8 +814,16 @@ LAB_939e:
   bVar7 = DAT_08c0;
   DAT_08c0 = bVar7 | 0x40;
   bVar7 = DAT_0886;
-  if (((((~bVar7 & 0x40) == 0) && (bVar7 = DAT_0881, (~bVar7 & 0x10) == 0)) &&
-      (bVar7 = DAT_0900._0_1_, DAT_3554 <= bVar7)) && (bVar7 <= DAT_3555)) {
+  if (((((~bVar7 & 0x40) == 0) || (bVar7 = DAT_0881, (~bVar7 & 0x10) == 0)) ||
+      (bVar7 = DAT_0900._0_1_, bVar7 < DAT_3554)) || (DAT_3555 < bVar7)) {
+LAB_9429:
+    bVar7 = DAT_0cf2;
+    DAT_0cf2 = bVar7 & 0xfd;
+    bVar7 = DAT_0cf2;
+    if ((~bVar7 & 1) == 0) goto LAB_9438;
+    uVar9 = 0;
+  }
+  else {
     sVar8 = DAT_08e6;
     bVar7 = (byte)((ushort)(sVar8 << 6) >> 8);
     if ((bVar7 < DAT_3556) || (DAT_3557 < bVar7)) goto LAB_9429;
@@ -845,7 +853,7 @@ LAB_9438:
     DAT_0dde = uVar9;
     uVar4 = DAT_08ed;
     cVar18 = DAT_0d87;
-    if ((cVar18 == '\t') && (bVar7 = DAT_0896._0_1_, (~bVar7 & 0x10) == 0)) {
+    if ((cVar18 == '\t') && (bVar7 = DAT_0896._0_1_, (~bVar7 & 0x10) != 0)) {
       pbVar21 = &UNK_355d;
     }
     else {
@@ -875,14 +883,6 @@ LAB_9438:
     else {
       uVar9 = 0xffff;
     }
-  }
-  else {
-LAB_9429:
-    bVar7 = DAT_0cf2;
-    DAT_0cf2 = bVar7 & 0xfd;
-    bVar7 = DAT_0cf2;
-    if ((~bVar7 & 1) != 0) goto LAB_9438;
-    uVar9 = 0;
   }
   DAT_0d02 = uVar9;
   DAT_0cfa = uVar9;
@@ -929,8 +929,13 @@ LAB_9429:
   }
   DAT_0cfc = sVar8;
   bVar7 = DAT_0d08;
-  if ((((~bVar7 & 1) == 0) && (bVar7 = DAT_0884, (~bVar7 & 2) == 0)) &&
-     ((bVar7 = DAT_0884, (~bVar7 & 1) == 0 && (bVar7 = DAT_088c, (~bVar7 & 0x80) == 0)))) {
+  if ((((~bVar7 & 1) == 0) || (bVar7 = DAT_0884, (~bVar7 & 2) == 0)) ||
+     ((bVar7 = DAT_0884, (~bVar7 & 1) == 0 || (bVar7 = DAT_088c, (~bVar7 & 0x80) == 0)))) {
+LAB_9581:
+    bVar7 = DAT_0cf2;
+    DAT_0cf2 = bVar7 & 0xfe;
+  }
+  else {
     bVar7 = DAT_08ed;
     cVar18 = DAT_0d87;
     if ((cVar18 == '\t') && (bVar19 = DAT_0896._0_1_, (bVar19 & 0x10) == 0)) {
@@ -940,22 +945,17 @@ LAB_9429:
     if (bVar7 < DAT_355b) goto LAB_9581;
 LAB_9566:
     cVar18 = DAT_0dd9;
-    if ((((cVar18 != -0x80) && (bVar7 = DAT_08b0, (~bVar7 & 8) != 0)) ||
-        (bVar7 = DAT_08b1, (~bVar7 & 0x10) != 0)) ||
+    if ((((cVar18 != -0x80) && (bVar7 = DAT_08b0, (~bVar7 & 8) == 0)) ||
+        (bVar7 = DAT_08b1, (~bVar7 & 0x10) == 0)) ||
        ((bVar7 = DAT_0ca8, (bVar7 & 1) == 0 || (bVar7 = DAT_08b1, (bVar7 & 0x80) != 0))))
     goto LAB_9581;
     bVar7 = DAT_0cf2;
-    if ((((~bVar7 & 1) == 0) && (bVar7 = DAT_0cf2, (bVar7 & 2) != 0)) &&
-       ((bVar7 = DAT_0cf2, (~bVar7 & 4) == 0 && (cVar18 = DAT_0da4, cVar18 != '\0')))) {
+    if ((((~bVar7 & 1) != 0) && (bVar7 = DAT_0cf2, (bVar7 & 2) != 0)) &&
+       ((bVar7 = DAT_0cf2, (~bVar7 & 4) != 0 && (cVar18 = DAT_0da4, cVar18 != '\0')))) {
       DAT_0cf3 = 0;
       bVar7 = DAT_0cf2;
       DAT_0cf2 = bVar7 | 1;
     }
-  }
-  else {
-LAB_9581:
-    bVar7 = DAT_0cf2;
-    DAT_0cf2 = bVar7 & 0xfe;
   }
   bVar7 = DAT_08c0;
   DAT_08c0 = bVar7 & 0xbf;
@@ -1068,9 +1068,9 @@ LAB_965e:
     if (bVar7 <= DAT_4a2f) goto LAB_96f1;
     bVar19 = DAT_0a89;
     bVar7 = DAT_08ec;
-    if ((((bVar19 < bVar7) || (bVar7 = DAT_08af, (~bVar7 & 8) != 0)) ||
-        (bVar7 = DAT_08af, (~bVar7 & 4) != 0)) ||
-       (((cVar18 = DAT_0d87, cVar18 == '\t' && (bVar7 = DAT_0896._0_1_, (~bVar7 & 0x10) != 0)) ||
+    if ((((bVar19 < bVar7) || (bVar7 = DAT_08af, (~bVar7 & 8) == 0)) ||
+        (bVar7 = DAT_08af, (~bVar7 & 4) == 0)) ||
+       (((cVar18 = DAT_0d87, cVar18 == '\t' && (bVar7 = DAT_0896._0_1_, (~bVar7 & 0x10) == 0)) ||
         (bVar7 = DAT_0885, (bVar7 & 4) == 0)))) goto LAB_96f1;
     bVar7 = DAT_0885;
     DAT_0885 = bVar7 | 0x20;
@@ -1096,32 +1096,32 @@ LAB_96f1:
   DAT_0afd = (bVar7 + 1) - (0xfe < bVar7);
   bVar7 = DAT_0881;
   if ((~bVar7 & 0x10) == 0) {
+    cVar18 = '\0';
+  }
+  else {
     bVar7 = DAT_0afe;
     cVar18 = (bVar7 + 1) - (0xfe < bVar7);
   }
-  else {
-    cVar18 = '\0';
-  }
   DAT_0afe = cVar18;
   bVar7 = DAT_0880;
-  if (((~bVar7 & 1) == 0) && (bVar7 = DAT_0885, (~bVar7 & 0x40) == 0)) {
-    cVar18 = '\0';
-  }
-  else {
+  if (((~bVar7 & 1) == 0) || (bVar7 = DAT_0885, (~bVar7 & 0x40) == 0)) {
     bVar7 = DAT_0b5d;
     cVar18 = (bVar7 + 1) - (0xfe < bVar7);
+  }
+  else {
+    cVar18 = '\0';
   }
   DAT_0b5d = cVar18;
   bVar7 = DAT_09a1;
   if ((~bVar7 & 1) == 0) {
-    bVar7 = DAT_09ab;
-    DAT_09ab = (bVar7 + 1) - (0xfe < bVar7);
-    DAT_09aa = 0;
-  }
-  else {
     bVar7 = DAT_09aa;
     DAT_09aa = (bVar7 + 1) - (0xfe < bVar7);
     DAT_09ab = 0;
+  }
+  else {
+    bVar7 = DAT_09ab;
+    DAT_09ab = (bVar7 + 1) - (0xfe < bVar7);
+    DAT_09aa = 0;
   }
   bVar7 = DAT_091b;
   DAT_091b = (bVar7 + 1) - (0xfe < bVar7);
@@ -1234,8 +1234,8 @@ LAB_986d:
     }
   }
   bVar7 = DAT_0aa6;
-  if ((((~bVar7 & 8) == 0) && (bVar7 = DAT_0aa6, (~bVar7 & 4) == 0)) &&
-     (bVar7 = DAT_0aa6, (~bVar7 & 2) == 0)) {
+  if ((((~bVar7 & 8) != 0) && (bVar7 = DAT_0aa6, (~bVar7 & 4) != 0)) &&
+     (bVar7 = DAT_0aa6, (~bVar7 & 2) != 0)) {
     cVar18 = DAT_0d87;
     if (cVar18 == '\t') {
       cVar18 = DAT_0898;
@@ -1403,7 +1403,7 @@ LAB_9a25:
     }
   }
   bVar7 = DAT_0aa6;
-  if ((~bVar7 & 2) != 0) {
+  if ((~bVar7 & 2) == 0) {
     bVar7 = DAT_0aa6;
     if ((bVar7 & 1) != 0) {
       bVar7 = DAT_0aae;
@@ -1435,7 +1435,7 @@ LAB_9a25:
           }
         }
         bVar7 = DAT_0aa7;
-        if ((~bVar7 & 2) == 0) {
+        if ((~bVar7 & 2) != 0) {
           bVar7 = DAT_0aa6;
           DAT_0aa6 = bVar7 & 0xfe;
           DAT_0aad = 0;
@@ -1447,7 +1447,7 @@ LAB_9a25:
       }
     }
     bVar7 = DAT_0aa6;
-    if ((~bVar7 & 1) == 0) {
+    if ((~bVar7 & 1) != 0) {
       bVar7 = DAT_0aa6;
       DAT_0aa6 = bVar7 & 0xfd;
       DAT_0aaa = 0;
@@ -1461,7 +1461,7 @@ LAB_9a25:
   sVar5 = DAT_0ab6;
   sVar8 = sVar8 - sVar5;
   bVar7 = DAT_0ab2;
-  if ((~bVar7 & 4) == 0) {
+  if ((~bVar7 & 4) != 0) {
     sVar8 = 0;
   }
   if ((char)((ushort)sVar8 >> 8) != '\0') {
@@ -1642,7 +1642,7 @@ LAB_9c4a:
   }
   DAT_0abe = cVar18;
   if ((DAT_4ba7 != -0x80) ||
-     ((((cVar18 = DAT_0d87, cVar18 == '\t' && (bVar7 = DAT_0896._0_1_, (~bVar7 & 0x10) != 0)) ||
+     ((((cVar18 = DAT_0d87, cVar18 == '\t' && (bVar7 = DAT_0896._0_1_, (~bVar7 & 0x10) == 0)) ||
        (bVar7 = DAT_0900._0_1_, DAT_4ba8 <= bVar7)) || (bVar7 = DAT_08ce._0_1_, DAT_4ba9 <= bVar7)))
      ) {
     DAT_0aaf = 0;
@@ -1666,21 +1666,21 @@ LAB_9cbd:
     if (cVar18 == '\t') {
       bVar7 = DAT_08f4;
       if (((bVar7 < DAT_4c03) || (uVar9 = DAT_0992, (ushort)DAT_4c04 << 8 < uVar9)) ||
-         ((uVar9 = DAT_0982, DAT_4c06 < uVar9 || (bVar7 = DAT_0881, (~bVar7 & 0x20) != 0)))) {
+         ((uVar9 = DAT_0982, DAT_4c06 < uVar9 || (bVar7 = DAT_0881, (~bVar7 & 0x20) == 0)))) {
 LAB_9d2a:
         cVar18 = '\0';
 LAB_9d2b:
         DAT_0acf = cVar18;
         bVar7 = DAT_09a1;
-        if (((((~bVar7 & 0x80) == 0) && (bVar7 = DAT_08a0, (~bVar7 & 0x20) == 0)) &&
-            (bVar7 = DAT_08b0, (~bVar7 & 0x10) == 0)) &&
-           (((bVar7 = DAT_08b0, (~bVar7 & 4) == 0 && (bVar7 = DAT_08b0, (~bVar7 & 2) == 0)) &&
-            ((bVar7 = DAT_08b1, (~bVar7 & 0x80) == 0 && (bVar7 = DAT_08b1, (~bVar7 & 0x40) == 0)))))
+        if (((((~bVar7 & 0x80) != 0) && (bVar7 = DAT_08a0, (~bVar7 & 0x20) != 0)) &&
+            (bVar7 = DAT_08b0, (~bVar7 & 0x10) != 0)) &&
+           (((bVar7 = DAT_08b0, (~bVar7 & 4) != 0 && (bVar7 = DAT_08b0, (~bVar7 & 2) != 0)) &&
+            ((bVar7 = DAT_08b1, (~bVar7 & 0x80) != 0 && (bVar7 = DAT_08b1, (~bVar7 & 0x40) != 0)))))
            ) goto LAB_9d51;
       }
       else {
         cVar18 = DAT_0d87;
-        if ((cVar18 != '\t') || (bVar7 = DAT_0896._0_1_, (~bVar7 & 0x10) != 0)) {
+        if ((cVar18 != '\t') || (bVar7 = DAT_0896._0_1_, (~bVar7 & 0x10) == 0)) {
           bVar7 = DAT_0898;
           if ((&DAT_4e11)[bVar7] != '\0') goto LAB_9d03;
           goto LAB_9d2a;
@@ -1750,7 +1750,7 @@ LAB_9db7:
         }
 LAB_9dc0:
         bVar7 = DAT_0880;
-        if ((~bVar7 & 1) == 0) goto LAB_9dc5;
+        if ((~bVar7 & 1) != 0) goto LAB_9dc5;
       }
       bVar7 = DAT_00f0;
       DAT_00f0 = bVar7 & 0xef;
@@ -1768,10 +1768,10 @@ LAB_9dc5:
   }
   bVar7 = DAT_0880;
   if (((bVar7 & 1) == 0) ||
-     ((((bVar7 = DAT_08af, (~bVar7 & 0x40) == 0 && (bVar7 = DAT_08af, (~bVar7 & 2) == 0)) &&
-       ((cVar18 = DAT_0dd9, cVar18 == -0x80 || (bVar7 = DAT_08b0, (~bVar7 & 8) == 0)))) &&
-      (((bVar7 = DAT_08b1, (~bVar7 & 0x10) == 0 && (bVar7 = DAT_08b2, (~bVar7 & 0x80) == 0)) &&
-       (bVar7 = DAT_08b4, (~bVar7 & 8) == 0)))))) {
+     ((((bVar7 = DAT_08af, (~bVar7 & 0x40) != 0 && (bVar7 = DAT_08af, (~bVar7 & 2) != 0)) &&
+       ((cVar18 = DAT_0dd9, cVar18 == -0x80 || (bVar7 = DAT_08b0, (~bVar7 & 8) != 0)))) &&
+      (((bVar7 = DAT_08b1, (~bVar7 & 0x10) != 0 && (bVar7 = DAT_08b2, (~bVar7 & 0x80) != 0)) &&
+       (bVar7 = DAT_08b4, (~bVar7 & 8) != 0)))))) {
     bVar7 = DAT_0884;
     DAT_0884 = bVar7 & 0xdf;
   }
@@ -1792,17 +1792,17 @@ LAB_9e24:
       bVar7 = DAT_0888;
       if ((~bVar7 & 8) == 0) {
         bVar7 = DAT_0888;
-        DAT_0888 = bVar7 | 8;
+        DAT_0888 = bVar7 & 0xf7;
       }
       else {
         bVar7 = DAT_0888;
-        DAT_0888 = bVar7 & 0xf7;
+        DAT_0888 = bVar7 | 8;
       }
       goto LAB_9e24;
     }
   }
   bVar7 = DAT_0889;
-  if ((~bVar7 & 2) != 0) {
+  if ((~bVar7 & 2) == 0) {
     bVar7 = DAT_0bd1;
     bVar7 = (bVar7 + 1) - (0xfe < bVar7);
     DAT_0bd1 = bVar7;
@@ -1841,12 +1841,12 @@ LAB_9e24:
     DAT_0be8 = bVar7 | 0x40;
   }
   cVar18 = DAT_0dd5;
-  if ((cVar18 != -0x80) && (bVar7 = DAT_0d06, (~bVar7 & 0x80) == 0)) {
+  if ((cVar18 != -0x80) && (bVar7 = DAT_0d06, (~bVar7 & 0x80) != 0)) {
     bVar7 = DAT_0d0a;
     DAT_0d0a = (bVar7 + 1) - (0xfe < bVar7);
   }
   cVar18 = DAT_0dd5;
-  if ((cVar18 != -0x80) && (bVar7 = DAT_0d06, (~bVar7 & 0x80) == 0)) {
+  if ((cVar18 != -0x80) && (bVar7 = DAT_0d06, (~bVar7 & 0x80) != 0)) {
     bVar7 = DAT_0d0b;
     bVar7 = (bVar7 + 1) - (0xfe < bVar7);
     DAT_0d0b = bVar7;
@@ -1869,7 +1869,7 @@ LAB_9e24:
   bVar7 = DAT_08d9;
   uVar9 = (ushort)bVar7 * 0x100;
   bVar7 = DAT_0881;
-  if ((~bVar7 & 0x10) == 0) {
+  if ((~bVar7 & 0x10) != 0) {
     uVar11 = DAT_08da;
     uVar10 = uVar9 - uVar11;
     if (uVar9 < uVar11) {
@@ -1887,17 +1887,12 @@ LAB_9e24:
   cVar18 = DAT_0d87;
   if (cVar18 != '\t') {
     bVar7 = DAT_088d;
-    if (((((~bVar7 & 0x20) == 0) && (bVar7 = DAT_0885, (~bVar7 & 0x20) == 0)) &&
-        ((bVar7 = DAT_0889, (~bVar7 & 2) != 0 ||
-         ((bVar7 = DAT_0880, (~bVar7 & 4) != 0 || (bVar7 = DAT_0aa6, (~bVar7 & 4) != 0)))))) ||
-       ((bVar7 = DAT_08ec, DAT_4e28 < bVar7 ||
-        ((((bVar7 = DAT_0abe, DAT_4e29 < bVar7 || (uVar9 = DAT_0900, uVar9 < DAT_4e1e)) ||
-          (bVar7 = DAT_08af, (~bVar7 & 8) != 0)) || (bVar7 = DAT_08af, (~bVar7 & 4) != 0)))))) {
-      bVar7 = DAT_0adb;
-      DAT_0adb = bVar7 & 0x7f;
-      DAT_0adc = 0;
-    }
-    else {
+    if (((((~bVar7 & 0x20) == 0) || (bVar7 = DAT_0885, (~bVar7 & 0x20) == 0)) ||
+        ((bVar7 = DAT_0889, (~bVar7 & 2) != 0 &&
+         ((bVar7 = DAT_0880, (~bVar7 & 4) != 0 && (bVar7 = DAT_0aa6, (~bVar7 & 4) != 0)))))) &&
+       ((bVar7 = DAT_08ec, bVar7 <= DAT_4e28 &&
+        ((((bVar7 = DAT_0abe, bVar7 <= DAT_4e29 && (uVar9 = DAT_0900, DAT_4e1e <= uVar9)) &&
+          (bVar7 = DAT_08af, (~bVar7 & 8) != 0)) && (bVar7 = DAT_08af, (~bVar7 & 4) != 0)))))) {
       bVar7 = DAT_0adb;
       DAT_0adb = bVar7 | 0x80;
       bVar7 = DAT_0adc;
@@ -1905,6 +1900,11 @@ LAB_9e24:
         bVar7 = DAT_0ada;
         DAT_0ada = bVar7 | 0x80;
       }
+    }
+    else {
+      bVar7 = DAT_0adb;
+      DAT_0adb = bVar7 & 0x7f;
+      DAT_0adc = 0;
     }
   }
   cVar18 = DAT_0d87;
@@ -1922,9 +1922,13 @@ LAB_9e24:
         DAT_0ada = bVar7 | 0x20;
       }
       bVar7 = DAT_0ada;
-      if ((((~bVar7 & 0x80) == 0) && (bVar7 = DAT_08b1, (bVar7 & 0x20) == 0)) ||
-         ((uVar9 = DAT_0900, uVar9 < DAT_4e20 ||
-          ((bVar7 = DAT_08af, (~bVar7 & 8) != 0 || (bVar7 = DAT_08af, (~bVar7 & 4) != 0)))))) {
+      if ((((~bVar7 & 0x80) == 0) || (bVar7 = DAT_08b1, (bVar7 & 0x20) != 0)) &&
+         ((uVar9 = DAT_0900, DAT_4e20 <= uVar9 &&
+          ((bVar7 = DAT_08af, (~bVar7 & 8) != 0 && (bVar7 = DAT_08af, (~bVar7 & 4) != 0)))))) {
+        bVar7 = DAT_0ada;
+        DAT_0ada = bVar7 & 0xf3 | 0x70;
+      }
+      else {
         bVar7 = DAT_0ada;
         if ((bVar7 & 0x10) != 0) {
           bVar7 = DAT_0ada;
@@ -1934,19 +1938,19 @@ LAB_9e24:
         bVar7 = DAT_0ada;
         if ((bVar7 & 0x40) != 0) {
           bVar7 = DAT_0ada;
-          if ((~bVar7 & 8) == 0) {
+          if ((~bVar7 & 8) != 0) {
             bVar7 = DAT_0ada;
-            if (((((~bVar7 & 0x80) == 0) && (bVar7 = DAT_08b1, (bVar7 & 0x20) == 0)) ||
+            if (((((~bVar7 & 0x80) != 0) && (bVar7 = DAT_08b1, (bVar7 & 0x20) == 0)) ||
                 (uVar9 = DAT_0900, DAT_4e22 < uVar9)) ||
-               ((bVar7 = DAT_08af, (~bVar7 & 8) != 0 || (bVar7 = DAT_08af, (~bVar7 & 4) != 0))))
+               ((bVar7 = DAT_08af, (~bVar7 & 8) == 0 || (bVar7 = DAT_08af, (~bVar7 & 4) == 0))))
             goto LAB_a04f;
             bVar7 = DAT_0ada;
             DAT_0ada = bVar7 | 8;
           }
           bVar7 = DAT_0ada;
-          if ((((~bVar7 & 0x80) != 0) || (bVar7 = DAT_08b1, (bVar7 & 0x20) != 0)) &&
+          if ((((~bVar7 & 0x80) == 0) || (bVar7 = DAT_08b1, (bVar7 & 0x20) != 0)) &&
              ((uVar9 = DAT_0900, uVar9 < DAT_4e20 &&
-              ((bVar7 = DAT_08af, (~bVar7 & 8) == 0 && (bVar7 = DAT_08af, (~bVar7 & 4) == 0)))))) {
+              ((bVar7 = DAT_08af, (~bVar7 & 8) != 0 && (bVar7 = DAT_08af, (~bVar7 & 4) != 0)))))) {
             bVar7 = DAT_0ada;
             DAT_0ada = bVar7 & 0xef | 100;
             goto LAB_a04f;
@@ -1959,29 +1963,20 @@ LAB_9e24:
           DAT_0ae1 = 0;
         }
       }
-      else {
-        bVar7 = DAT_0ada;
-        DAT_0ada = bVar7 & 0xf3 | 0x70;
-      }
     }
   }
 LAB_a04f:
   cVar18 = DAT_0d87;
   if (cVar18 != '\t') {
     bVar7 = DAT_088d;
-    if (((((~bVar7 & 0x20) == 0) && (bVar7 = DAT_0885, (~bVar7 & 0x20) == 0)) &&
-        ((bVar7 = DAT_0889, (~bVar7 & 2) != 0 ||
-         ((bVar7 = DAT_0880, (~bVar7 & 4) != 0 || (bVar7 = DAT_0aa6, (~bVar7 & 4) != 0)))))) ||
-       (((bVar7 = DAT_08ec, DAT_4e28 < bVar7 ||
-         (((bVar7 = DAT_0abe, DAT_4e29 < bVar7 || (uVar9 = DAT_0900, DAT_4e24 <= uVar9)) ||
-          (bVar7 = DAT_08af, (~bVar7 & 8) != 0)))) ||
-        (((bVar7 = DAT_08af, (~bVar7 & 4) != 0 || (sVar8 = DAT_0ad6, sVar8 != 0)) ||
-         (cVar18 = DAT_0ad9, cVar18 != '\0')))))) {
-      bVar7 = DAT_0adb;
-      DAT_0adb = bVar7 & 0xbf;
-      DAT_0add = 0;
-    }
-    else {
+    if (((((~bVar7 & 0x20) == 0) || (bVar7 = DAT_0885, (~bVar7 & 0x20) == 0)) ||
+        ((bVar7 = DAT_0889, (~bVar7 & 2) != 0 &&
+         ((bVar7 = DAT_0880, (~bVar7 & 4) != 0 && (bVar7 = DAT_0aa6, (~bVar7 & 4) != 0)))))) &&
+       (((bVar7 = DAT_08ec, bVar7 <= DAT_4e28 &&
+         (((bVar7 = DAT_0abe, bVar7 <= DAT_4e29 && (uVar9 = DAT_0900, uVar9 < DAT_4e24)) &&
+          (bVar7 = DAT_08af, (~bVar7 & 8) != 0)))) &&
+        (((bVar7 = DAT_08af, (~bVar7 & 4) != 0 && (sVar8 = DAT_0ad6, sVar8 == 0)) &&
+         (cVar18 = DAT_0ad9, cVar18 == '\0')))))) {
       bVar7 = DAT_0adb;
       DAT_0adb = bVar7 | 0x40;
       bVar7 = DAT_0add;
@@ -1992,6 +1987,11 @@ LAB_a04f:
         DAT_0ad9 = 0;
         DAT_0ae1 = 0;
       }
+    }
+    else {
+      bVar7 = DAT_0adb;
+      DAT_0adb = bVar7 & 0xbf;
+      DAT_0add = 0;
     }
   }
   cVar18 = DAT_0d87;
@@ -2008,13 +2008,13 @@ LAB_a04f:
         bVar7 = DAT_0adb;
         DAT_0adb = bVar7 | 0x20;
         bVar7 = DAT_0ade;
-        if ((DAT_4e57 <= bVar7) && (bVar7 = DAT_08b1, (~bVar7 & 0x20) == 0)) {
+        if ((DAT_4e57 <= bVar7) && (bVar7 = DAT_08b1, (~bVar7 & 0x20) != 0)) {
           bVar7 = DAT_08b1;
           DAT_08b1 = bVar7 | 0x20;
           bVar7 = DAT_0bd2;
           DAT_0bd2 = bVar7 | 0x20;
           bVar7 = DAT_08ba;
-          if ((~bVar7 & 0x20) == 0) {
+          if ((~bVar7 & 0x20) != 0) {
             bVar7 = DAT_08ba;
             DAT_08ba = bVar7 | 0x20;
             bVar7 = DAT_0bd2;
@@ -2029,13 +2029,13 @@ LAB_a04f:
       DAT_0adb = bVar7 | 0x10;
       bVar7 = DAT_0adf;
       if (((DAT_4e57 <= bVar7) &&
-          (((bVar7 = DAT_088d, (~bVar7 & 0x20) != 0 || (bVar7 = DAT_0885, (~bVar7 & 0x20) != 0)) ||
-           ((bVar7 = DAT_0889, (~bVar7 & 2) == 0 &&
-            ((bVar7 = DAT_0880, (~bVar7 & 4) == 0 && (bVar7 = DAT_0aa6, (~bVar7 & 4) == 0)))))))) &&
-         (((bVar7 = DAT_0ada, (~bVar7 & 0x80) != 0 || (bVar7 = DAT_08b1, (bVar7 & 0x20) != 0)) &&
+          (((bVar7 = DAT_088d, (~bVar7 & 0x20) == 0 || (bVar7 = DAT_0885, (~bVar7 & 0x20) == 0)) ||
+           ((bVar7 = DAT_0889, (~bVar7 & 2) != 0 &&
+            ((bVar7 = DAT_0880, (~bVar7 & 4) != 0 && (bVar7 = DAT_0aa6, (~bVar7 & 4) != 0)))))))) &&
+         (((bVar7 = DAT_0ada, (~bVar7 & 0x80) == 0 || (bVar7 = DAT_08b1, (bVar7 & 0x20) != 0)) &&
           ((((((bVar7 = DAT_08ec, bVar7 <= DAT_4e28 && (bVar7 = DAT_0abe, bVar7 <= DAT_4e29)) &&
               (uVar9 = DAT_0900, uVar9 < DAT_4e24)) &&
-             ((bVar7 = DAT_08af, (~bVar7 & 8) == 0 && (bVar7 = DAT_08af, (~bVar7 & 4) == 0)))) &&
+             ((bVar7 = DAT_08af, (~bVar7 & 8) != 0 && (bVar7 = DAT_08af, (~bVar7 & 4) != 0)))) &&
             (sVar8 = DAT_0ad6, sVar8 == 0)) && (cVar18 = DAT_0ad9, cVar18 == '\0')))))) {
         bVar7 = DAT_0adb;
         DAT_0adb = bVar7 | 8;
@@ -2067,6 +2067,47 @@ LAB_a1ae:
   FUN_5fc8();
   bVar7 = DAT_0891;
   if ((~bVar7 & 2) == 0) {
+    bVar7 = DAT_0891;
+    if ((bVar7 & 0x80) == 0) {
+LAB_a1d9:
+      bVar7 = DAT_0bd3;
+      if (bVar7 == 0) {
+LAB_a20e:
+        bVar7 = DAT_0be9;
+        if (bVar7 != 0) {
+          if ((bVar7 & 0x80) != 0) goto LAB_a296;
+          if ((bVar7 & 0x40) != 0) goto LAB_a2af;
+          if ((bVar7 & 4) == 0) goto LAB_a2b9;
+LAB_a2b4:
+          FUN_b7b9();
+        }
+      }
+      else {
+        if ((bVar7 & 0x80) != 0) goto LAB_a282;
+        if ((bVar7 & 0x40) != 0) goto LAB_a287;
+        if ((bVar7 & 0x20) != 0) goto LAB_a28c;
+        if ((bVar7 & 0x10) != 0) goto LAB_a291;
+        if ((bVar7 & 8) != 0) goto LAB_a29b;
+        if ((bVar7 & 4) != 0) goto LAB_a2a0;
+        if ((bVar7 & 2) != 0) goto LAB_a2a5;
+        if ((bVar7 & 1) == 0) goto LAB_a20e;
+LAB_a2aa:
+        FUN_b721();
+      }
+    }
+    else {
+      bVar7 = DAT_0890;
+      if ((~bVar7 & 0x80) == 0) {
+        FUN_b3ec();
+      }
+      else {
+        bVar7 = DAT_0890;
+        if ((~bVar7 & 0x40) != 0) goto LAB_a1d9;
+        FUN_b4c6();
+      }
+    }
+  }
+  else {
     bVar7 = DAT_0891;
     if ((bVar7 & 0x80) == 0) {
 LAB_a24a:
@@ -2136,53 +2177,12 @@ LAB_a282:
     else {
       bVar7 = DAT_088f;
       if ((~bVar7 & 0x80) == 0) {
+        FUN_b3ec();
+      }
+      else {
         bVar7 = DAT_088f;
-        if ((~bVar7 & 0x40) == 0) goto LAB_a24a;
+        if ((~bVar7 & 0x40) != 0) goto LAB_a24a;
         FUN_b4c6();
-      }
-      else {
-        FUN_b3ec();
-      }
-    }
-  }
-  else {
-    bVar7 = DAT_0891;
-    if ((bVar7 & 0x80) == 0) {
-LAB_a1d9:
-      bVar7 = DAT_0bd3;
-      if (bVar7 == 0) {
-LAB_a20e:
-        bVar7 = DAT_0be9;
-        if (bVar7 != 0) {
-          if ((bVar7 & 0x80) != 0) goto LAB_a296;
-          if ((bVar7 & 0x40) != 0) goto LAB_a2af;
-          if ((bVar7 & 4) == 0) goto LAB_a2b9;
-LAB_a2b4:
-          FUN_b7b9();
-        }
-      }
-      else {
-        if ((bVar7 & 0x80) != 0) goto LAB_a282;
-        if ((bVar7 & 0x40) != 0) goto LAB_a287;
-        if ((bVar7 & 0x20) != 0) goto LAB_a28c;
-        if ((bVar7 & 0x10) != 0) goto LAB_a291;
-        if ((bVar7 & 8) != 0) goto LAB_a29b;
-        if ((bVar7 & 4) != 0) goto LAB_a2a0;
-        if ((bVar7 & 2) != 0) goto LAB_a2a5;
-        if ((bVar7 & 1) == 0) goto LAB_a20e;
-LAB_a2aa:
-        FUN_b721();
-      }
-    }
-    else {
-      bVar7 = DAT_0890;
-      if ((~bVar7 & 0x80) == 0) {
-        bVar7 = DAT_0890;
-        if ((~bVar7 & 0x40) == 0) goto LAB_a1d9;
-        FUN_b4c6();
-      }
-      else {
-        FUN_b3ec();
       }
     }
   }

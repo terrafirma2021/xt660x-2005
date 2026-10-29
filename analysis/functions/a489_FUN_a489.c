@@ -42,13 +42,13 @@ void FUN_a489(void)
   }
   else {
     cVar5 = DAT_0d65;
-    if ((cVar5 != -0x80) && (bVar1 = DAT_08b2, (~bVar1 & 0x80) == 0)) {
+    if ((cVar5 != -0x80) && (bVar1 = DAT_08b2, (~bVar1 & 0x80) != 0)) {
       bVar1 = DAT_08b2;
       DAT_08b2 = bVar1 | 0x80;
       bVar1 = DAT_0bd2;
       DAT_0bd2 = bVar1 | 0x10;
       bVar1 = DAT_08bb;
-      if ((~bVar1 & 0x80) == 0) {
+      if ((~bVar1 & 0x80) != 0) {
         bVar1 = DAT_08bb;
         DAT_08bb = bVar1 | 0x80;
         bVar1 = DAT_0bd2;

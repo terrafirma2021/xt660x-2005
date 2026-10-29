@@ -12,7 +12,7 @@ void FUN_f519(void)
   short sVar7;
   
   bVar2 = DAT_088c;
-  if (((~bVar2 & 8) != 0) || (bVar2 = DAT_089a, (~bVar2 & 8) != 0)) {
+  if (((~bVar2 & 8) == 0) || (bVar2 = DAT_089a, (~bVar2 & 8) == 0)) {
     return;
   }
   bVar2 = DAT_08b1;

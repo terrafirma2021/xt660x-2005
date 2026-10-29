@@ -10,7 +10,7 @@ void FUN_5664(void)
   short sVar5;
   
   bVar1 = DAT_088c;
-  if (((((~bVar1 & 2) == 0) && (bVar1 = DAT_089a, (~bVar1 & 2) == 0)) &&
+  if (((((~bVar1 & 2) != 0) && (bVar1 = DAT_089a, (~bVar1 & 2) != 0)) &&
       (bVar1 = DAT_00e1, (bVar1 & 8) == 0)) &&
      (bVar4 = DAT_0c03, bVar1 = DAT_0925, (bVar4 & 0x1f) == bVar1)) {
     sVar5 = DAT_0044;

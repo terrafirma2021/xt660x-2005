@@ -1,0 +1,46 @@
+# Control-system reverse engineering
+
+This directory connects firmware addresses to motorcycle functions, with enough evidence to review each interpretation. It is the starting point for a future XDF or custom calibration tool. It is **not yet a validated tuning definition**.
+
+The analysis applies only to the exact [original image](../../firmware/XT660X%202005.bin), SHA-256 `5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280`. CPU addresses equal file offsets in this image. RAM and peripheral addresses are runtime state, not editable calibration locations.
+
+## Read by area
+
+| Area | Breakdown | Established | Still missing |
+|---|---|---|---|
+| Inputs / outputs | [Hardware and diagnostic cross-references](IO_AND_DIAGNOSTICS.md) | Eight ADC dispatch slots; six logical outputs; several physical identities corroborated by diagnostic numbers | ECU connector pin numbers, board routing, exact ECU identity |
+| Coolant / fan | [Temperature conversion, faults and fan decisions](COOLANT_AND_FAN.md) | Conversion bytes, full normal/fault/override decision, raw threshold boundaries, primary consumers | Verified Celsius encoding and physical fan test |
+| Engine speed / cuts | [Speed calculation and output suppression](RPM_AND_CUTS.md) | Reciprocal calculation, three period-limit pairs, separate road-speed cut flags, conditional injector limits | Confirmed timer timebase / crank geometry, complete interlock meanings |
+| Spark | [Maps through the timing scheduler](SPARK.md) | Three selected byte maps, rounding and downstream correction, timer-3 identity | Absolute crank-angle reference, degrees conversion, all correction meanings |
+| Fuel | [Quantity tables and injector scheduling](FUEL.md) | Main table selection, speed/other input variables, primary timer-6 output, secondary variant gating | Full cell-to-pulse formula, physical units and mode meanings |
+| Tool definitions | [XDF / custom-tool readiness](DEFINITION_READINESS.md) | Byte-backed structured catalogue, evidence links, confidence and unresolved items | Exportable physical conversions, checksums, write/flash validation |
+
+These have different levels of completion. Coolant/fan decisions and the principal raw cut thresholds have direct behavioral fixtures. Spark angle and fuel quantity are traced workstreams, not fully identified engineering calibrations.
+
+## Evidence files
+
+- [catalog.json](catalog.json): 28 calibration records with exact storage, original bytes, role, references, and explicit missing conversion fields; eight ADC channels and six logical outputs.
+- [control_validation.json](control_validation.json): 212,090 isolated control test cases against the compiled instruction translation.
+- [coolant_conversion_samples.json](coolant_conversion_samples.json): all 1,024 possible ten-bit inputs and their internal/diagnostic outputs.
+- Byte-backed instruction excerpts: [sensor/fan](sensor_fan_evidence.txt), [speed/cuts](rpm_cuts_evidence.txt), [spark](spark_evidence.txt), [fuel](fuel_maps_evidence.txt), [road speed](road_speed_evidence.txt).
+- [Review notes and model correction](REVIEW_NOTES.md).
+
+An identification is strongest when independent paths agree: an ADC dispatch, a diagnostic display number, a control consumer, and an actuator diagnostic. A plausible table shape or plausible stock number alone is not enough. Engineering units remain separate from physical role: identifying the coolant function does not by itself prove its Celsius formula.
+
+## Working sequence
+
+1. Establish a function's hardware input/output or diagnostic identity.
+2. Trace every relevant RAM writer and consumer; separate normal, startup, fault and diagnostic paths.
+3. Record ROM locations, widths, endianness, dimensions, axis inputs, rounding, clamps, selectors and exact comparison operators.
+4. Test recovered decisions at boundaries and across inputs against original instructions.
+5. Confirm units/timebases/pin routing using matching hardware evidence.
+6. Promote only validated definitions into an editor. Preserve unresolved hypotheses in the research catalogue.
+
+No firmware setting has been changed. The documentation uses descriptive aliases; original address-based function names remain available for cross-checking. No original source names are claimed.
+
+## Sources
+
+1. Supplied binary and its byte-backed disassembly; all addresses in these notes refer to that image.
+2. [NXP MC9S12T64 reference manual](https://www.nxp.com/docs/en/data-sheet/9S12T64AF16V1.pdf), register tables and ATD / ECT / Port P descriptions. Exact hardware identity remains unconfirmed.
+3. [Freescale CPU12 Reference Manual, Rev. 4, manufacturer document mirrored by University of Florida](https://mil.ufl.edu/4744/docs/hc12/cpu12rm.rev4.pdf), BRSET page 115.
+4. [Yamaha XT660R(S)/XT660X(S), 2004 service manual 5VK1-AE1, third-party mirror of the manufacturer manual](https://scootertuub.nl/motoren/Yamaha/Yamaha%20XT%20660%20R%20X%202004%20Service%20Manual%20%20.pdf), printed pages 7-10 and 7-11, PDF pages 353–354. Used to corroborate diagnostic identities, not to assert that a filename-labelled 2005 dump matches every hardware detail of the 2004 manual. The manual is not redistributed in this repository.

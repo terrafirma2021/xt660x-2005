@@ -130,17 +130,6 @@ LAB_6884:
   DAT_0af2 = puVar8;
   bVar6 = DAT_008b;
   if ((~bVar6 & 8) == 0) {
-    cVar4 = DAT_08c6;
-    DAT_08c6 = cVar4 + '\x01';
-    if ((char)(cVar4 + '\x01') < '\0') {
-      DAT_08c6 = 0;
-      DAT_0083 = 0x20;
-      DAT_0084 = 99;
-      puVar8 = (undefined *)((ushort)puVar8 & 0xff);
-      DAT_0085 = 0;
-    }
-  }
-  else {
     DAT_08c6 = 0;
     uVar3 = DAT_0096;
     DAT_08ca = uVar3;
@@ -169,6 +158,17 @@ LAB_6884:
       }
     }
     DAT_0085 = (char)puVar8;
+  }
+  else {
+    cVar4 = DAT_08c6;
+    DAT_08c6 = cVar4 + '\x01';
+    if ((char)(cVar4 + '\x01') < '\0') {
+      DAT_08c6 = 0;
+      DAT_0083 = 0x20;
+      DAT_0084 = 99;
+      puVar8 = (undefined *)((ushort)puVar8 & 0xff);
+      DAT_0085 = 0;
+    }
   }
   return puVar8;
 }

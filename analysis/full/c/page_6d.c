@@ -196,7 +196,7 @@ xt_write(t+0,2,UINT64_C(0x893));
 xt_write(t+2,1,xt_load(s,xt_read(t+0,2),1));
 xt_write(t+3,1,(~xt_read(t+2,1)));
 xt_write(t+4,1,(xt_read(t+3,1) & UINT64_C(0x40)));
-xt_write(t+5,1,(xt_read(t+4,1) != UINT64_C(0x0)));
+xt_write(t+5,1,(xt_read(t+4,1) == UINT64_C(0x0)));
 if(xt_read(t+5,1)){s->pc=0x6d30;return XT_OK;}
 s->pc=0x6d25;return XT_OK;
 }
@@ -312,7 +312,7 @@ xt_write(t+0,2,UINT64_C(0x888));
 xt_write(t+2,1,xt_load(s,xt_read(t+0,2),1));
 xt_write(t+3,1,(~xt_read(t+2,1)));
 xt_write(t+4,1,(xt_read(t+3,1) & UINT64_C(0x80)));
-xt_write(t+5,1,(xt_read(t+4,1) != UINT64_C(0x0)));
+xt_write(t+5,1,(xt_read(t+4,1) == UINT64_C(0x0)));
 if(xt_read(t+5,1)){s->pc=0x6d4c;return XT_OK;}
 s->pc=0x6d41;return XT_OK;
 }
@@ -322,7 +322,7 @@ xt_write(t+0,2,UINT64_C(0x888));
 xt_write(t+2,1,xt_load(s,xt_read(t+0,2),1));
 xt_write(t+3,1,(~xt_read(t+2,1)));
 xt_write(t+4,1,(xt_read(t+3,1) & UINT64_C(0x1)));
-xt_write(t+5,1,(xt_read(t+4,1) != UINT64_C(0x0)));
+xt_write(t+5,1,(xt_read(t+4,1) == UINT64_C(0x0)));
 if(xt_read(t+5,1)){s->pc=0x6d52;return XT_OK;}
 s->pc=0x6d46;return XT_OK;
 }
@@ -481,7 +481,7 @@ xt_write(t+0,2,UINT64_C(0x8a0));
 xt_write(t+2,1,xt_load(s,xt_read(t+0,2),1));
 xt_write(t+3,1,(~xt_read(t+2,1)));
 xt_write(t+4,1,(xt_read(t+3,1) & UINT64_C(0x4)));
-xt_write(t+5,1,(xt_read(t+4,1) != UINT64_C(0x0)));
+xt_write(t+5,1,(xt_read(t+4,1) == UINT64_C(0x0)));
 if(xt_read(t+5,1)){s->pc=0x6d63;return XT_OK;}
 s->pc=0x6d6c;return XT_OK;
 }
@@ -491,7 +491,7 @@ xt_write(t+0,2,UINT64_C(0x8b2));
 xt_write(t+2,1,xt_load(s,xt_read(t+0,2),1));
 xt_write(t+3,1,(~xt_read(t+2,1)));
 xt_write(t+4,1,(xt_read(t+3,1) & UINT64_C(0x80)));
-xt_write(t+5,1,(xt_read(t+4,1) != UINT64_C(0x0)));
+xt_write(t+5,1,(xt_read(t+4,1) == UINT64_C(0x0)));
 if(xt_read(t+5,1)){s->pc=0x6d63;return XT_OK;}
 s->pc=0x6d71;return XT_OK;
 }
@@ -501,7 +501,7 @@ xt_write(t+0,2,UINT64_C(0x8b1));
 xt_write(t+2,1,xt_load(s,xt_read(t+0,2),1));
 xt_write(t+3,1,(~xt_read(t+2,1)));
 xt_write(t+4,1,(xt_read(t+3,1) & UINT64_C(0x4)));
-xt_write(t+5,1,(xt_read(t+4,1) != UINT64_C(0x0)));
+xt_write(t+5,1,(xt_read(t+4,1) == UINT64_C(0x0)));
 if(xt_read(t+5,1)){s->pc=0x6d7a;return XT_OK;}
 s->pc=0x6d76;return XT_OK;
 }
@@ -531,7 +531,7 @@ xt_write(t+0,2,UINT64_C(0x888));
 xt_write(t+2,1,xt_load(s,xt_read(t+0,2),1));
 xt_write(t+3,1,(~xt_read(t+2,1)));
 xt_write(t+4,1,(xt_read(t+3,1) & UINT64_C(0x2)));
-xt_write(t+5,1,(xt_read(t+4,1) != UINT64_C(0x0)));
+xt_write(t+5,1,(xt_read(t+4,1) == UINT64_C(0x0)));
 if(xt_read(t+5,1)){s->pc=0x6d93;return XT_OK;}
 s->pc=0x6d88;return XT_OK;
 }
@@ -782,7 +782,7 @@ case 0x6dcd: { /* 4e000405 | BRSET 0x0000,0x4,0x6dd6 | FUN_6c5e */
 uint8_t t[3];
 xt_write(t+0,1,(~xt_load(s,0x0000,1)));
 xt_write(t+1,1,(xt_read(t+0,1) & UINT64_C(0x4)));
-xt_write(t+2,1,(xt_read(t+1,1) != UINT64_C(0x0)));
+xt_write(t+2,1,(xt_read(t+1,1) == UINT64_C(0x0)));
 if(xt_read(t+2,1)){s->pc=0x6dd6;return XT_OK;}
 s->pc=0x6dd1;return XT_OK;
 }

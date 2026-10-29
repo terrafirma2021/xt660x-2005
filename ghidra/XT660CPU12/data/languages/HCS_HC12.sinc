@@ -1980,19 +1980,19 @@ with : XGATE=0 {
 :BRSET opr8a_8, msk8, rel8    is Prefix18=0 & op8=0x4E; opr8a_8; msk8; rel8
 {
 	result:1 = ~opr8a_8 & msk8;
-	if (result != 0) goto rel8;
+	if (result == 0) goto rel8;
 }
 
 :BRSET opr16a_8, msk8, rel8    is Prefix18=0 & op8=0x1E; opr16a_8; msk8; rel8
 {
 	result:1 = ~opr16a_8 & msk8;
-	if (result != 0) goto rel8;
+	if (result == 0) goto rel8;
 }
 
 :BRSET indexed1_3, msk8, rel8    is Prefix18=0 & op8=0x0E; indexed1_3; msk8; rel8
 {
 	result:1 = ~indexed1_3 & msk8;
-	if (result != 0) goto rel8;
+	if (result == 0) goto rel8;
 }
 
 :BSET opr8a_8, msk8          is Prefix18=0 & op8=0x4C; opr8a_8; msk8

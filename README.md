@@ -2,13 +2,19 @@
 
 A reverse-engineering project for the Yamaha XT660X 2005 firmware image. The repository contains the unchanged binary, structured C, an address-preserving compilable C translation of every decoded instruction, a complete byte listing, calibration analysis, and an annotated Ghidra program.
 
-**Start with [the full decompilation guide](analysis/full/README.md)** and [complete function index](analysis/full/FUNCTION_INDEX.md).
+**Start with the [control-system breakdown](analysis/semantics/README.md)** for coolant/fan, sensor and output identities, RPM/cut logic, spark, fuel, and future XDF/tool definitions. The [full decompilation guide](analysis/full/README.md) and [function index](analysis/full/FUNCTION_INDEX.md) provide the underlying code.
 
 All **15,942 decoded instructions / 42,849 instruction bytes** are translated, all **225 recovered routines** have structured C, and every byte of the **65,536-byte input** is classified. The complete C translation compiles and passes instruction-level comparisons and independent CPU12/lookup fixtures. This describes coverage of the supplied image, not recovery of the original manufacturer's source project.
 
-The included CPU12 processor model corrects three defects in Ghidra 12.1.4's bundled HC12 semantics: indexed word memory dereferencing, ADC overflow, and SBC borrow handling. The corrections are documented in a reviewable patch and checked with independent instruction fixtures.
+The included CPU12 processor model corrects four defects in Ghidra 12.1.4's bundled HC12 semantics: indexed word memory dereferencing, ADC overflow, SBC borrow handling, and an inverted BRSET condition. The corrections are documented in a reviewable patch and checked with independent instruction fixtures.
 
-The [calibration map atlas](analysis/MAP_ATLAS.md) documents 11 grid layouts, 35 uniform-axis curves, and 24 explicit axes. Physical fuel/ignition names and units still require semantic investigation.
+The [calibration map atlas](analysis/MAP_ATLAS.md) documents 11 grid layouts, 35 uniform-axis curves, and 24 explicit axes. The focused semantic pass adds diagnostic-backed sensor/output identities and raw control behavior. Engineering units and remaining fuel/ignition transformations still require investigation.
+
+## Focused control analysis
+
+The [area guides](analysis/semantics/README.md) document coolant conversion, fan hysteresis and sensor-fault handling; separate spark/injector period limits and road-speed gates; six major map selections; and remaining work for a tuning definition. The [machine-readable catalogue](analysis/semantics/catalog.json) records 28 raw calibrations, eight ADC channels and six logical outputs. [212,090 focused control cases](analysis/semantics/control_validation.json) exercise the recovered behavior, in addition to instruction-level checks.
+
+A branch-condition defect found during this pass materially affected earlier generated C. All generated code and the Ghidra archive have been regenerated; see [review notes](analysis/semantics/REVIEW_NOTES.md). Original firmware bytes are unchanged.
 
 ## Files
 
@@ -28,7 +34,7 @@ SHA-256: `5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280`
 
 The complete decoded application is represented, including structurally recovered unreferenced code. **Complete original-source recovery and identification of every map are not claimed.** The top 2 KiB is all FF, including normal hardware vectors; a call to `0xF8A0` targets that unavailable region. Its bytes cannot be decompiled into absent code.
 
-Vehicle/year attribution comes from the filename. Embedded strings mention T64 and 2002 dates. CPU12 instructions and fixed addresses match an MC9S12T64-style application; the exact ECU part number is unverified. Physical sensor names, engineering units, final fuel/timing scaling, and some special lookup forms still need analysis.
+Vehicle/year attribution comes from the filename. Embedded strings mention T64 and 2002 dates. CPU12 instructions and fixed addresses match an MC9S12T64-style application; the exact ECU part number is unverified. Several sensor/output identities are now corroborated by diagnostic cross-references. Connector pins, engineering units, final fuel/timing scaling, and some special lookup forms still need analysis.
 
 No firmware bytes or settings have been changed. This is an analysis workspace, not a flash-ready tuning definition. No redistribution license is assigned to the supplied firmware.
 

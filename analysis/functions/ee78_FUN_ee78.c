@@ -10,11 +10,11 @@ void FUN_ee78(void)
   short sVar5;
   
   bVar1 = DAT_08a0;
-  if ((~bVar1 & 4) != 0) {
+  if ((~bVar1 & 4) == 0) {
     return;
   }
   bVar1 = DAT_08b2;
-  if ((~bVar1 & 0x80) != 0) {
+  if ((~bVar1 & 0x80) == 0) {
     return;
   }
   bVar1 = DAT_00e1;
@@ -22,39 +22,39 @@ void FUN_ee78(void)
     return;
   }
   bVar1 = DAT_0a92;
-  if ((~bVar1 & 8) != 0) {
+  if ((~bVar1 & 8) == 0) {
     return;
   }
   bVar1 = DAT_0884;
-  if ((~bVar1 & 4) != 0) {
+  if ((~bVar1 & 4) == 0) {
     return;
   }
   bVar1 = DAT_0d08;
-  if ((~bVar1 & 1) != 0) {
+  if ((~bVar1 & 1) == 0) {
     return;
   }
   bVar1 = DAT_0884;
-  if ((~bVar1 & 2) != 0) {
+  if ((~bVar1 & 2) == 0) {
     return;
   }
   bVar1 = DAT_088c;
-  if ((~bVar1 & 0x80) != 0) {
+  if ((~bVar1 & 0x80) == 0) {
     return;
   }
   bVar1 = DAT_0885;
-  if ((~bVar1 & 0x40) != 0) {
+  if ((~bVar1 & 0x40) == 0) {
     return;
   }
   bVar1 = DAT_0bf8;
-  if ((~bVar1 & 0x80) != 0) {
+  if ((~bVar1 & 0x80) == 0) {
     return;
   }
   bVar1 = DAT_088c;
-  if ((~bVar1 & 2) != 0) {
+  if ((~bVar1 & 2) == 0) {
     return;
   }
   bVar1 = DAT_089a;
-  if ((~bVar1 & 2) != 0) {
+  if ((~bVar1 & 2) == 0) {
     return;
   }
   bVar4 = DAT_0c04;

@@ -10,17 +10,11 @@ void FUN_857d(void)
   bVar3 = DAT_088b;
   if ((~bVar3 & 0x40) == 0) {
     bVar3 = DAT_088b;
-    if ((bVar3 & 0x80) != 0) {
-      return;
-    }
-  }
-  else {
-    bVar3 = DAT_088b;
     DAT_088b = bVar3 & 0xbf;
     bVar3 = DAT_0ca8;
-    if (((bVar3 & 1) != 0) && (bVar3 = DAT_0881, (~bVar3 & 0x10) == 0)) {
+    if (((bVar3 & 1) != 0) && (bVar3 = DAT_0881, (~bVar3 & 0x10) != 0)) {
       bVar3 = DAT_088b;
-      if ((~bVar3 & 0x80) != 0) {
+      if ((~bVar3 & 0x80) == 0) {
         return;
       }
       bVar3 = DAT_088b;
@@ -57,6 +51,12 @@ void FUN_857d(void)
       }
       DAT_0a1c = bVar3;
       DAT_0a1d = bVar3;
+    }
+  }
+  else {
+    bVar3 = DAT_088b;
+    if ((bVar3 & 0x80) != 0) {
+      return;
     }
   }
   DAT_0a26 = 0;

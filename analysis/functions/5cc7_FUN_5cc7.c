@@ -26,7 +26,7 @@ void FUN_5cc7(void)
   DAT_0bd5 = extraout_B_01;
   cVar2 = DAT_0d5b;
   bVar3 = extraout_B_01;
-  if ((cVar2 != -0x80) && (bVar1 = DAT_08b2, (~bVar1 & 0x80) == 0)) {
+  if ((cVar2 != -0x80) && (bVar1 = DAT_08b2, (~bVar1 & 0x80) != 0)) {
     bVar3 = extraout_B_01 & 0xf7;
   }
   DAT_08b0 = bVar3;

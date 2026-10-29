@@ -7,7 +7,7 @@ void FUN_5728(void)
   short sVar2;
   byte bVar3;
   
-  while (bVar3 = DAT_0086, (~bVar3 & 0x80) == 0) {
+  while (bVar3 = DAT_0086, (~bVar3 & 0x80) != 0) {
     sVar2 = DAT_0e3c;
     DAT_0e3c = sVar2 + 1;
   }

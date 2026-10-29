@@ -22,28 +22,22 @@ void FUN_6996(undefined2 param_1)
   if (cVar6 != -0x80) {
     uVar2 = DAT_08ca;
     bVar7 = DAT_08a0;
-    if (((~bVar7 & 4) == 0) && (bVar7 = DAT_08b2, (~bVar7 & 0x80) == 0)) {
+    if (((~bVar7 & 4) != 0) && (bVar7 = DAT_08b2, (~bVar7 & 0x80) != 0)) {
       bVar7 = (byte)((ushort)uVar2 >> 8);
       if ((bVar7 < 10) || (0xf5 < bVar7)) {
         bVar7 = DAT_08b5;
         if ((~bVar7 & 0x80) == 0) {
-          bVar7 = DAT_08b5;
-          DAT_08b5 = bVar7 | 0x80;
-          bVar7 = DAT_0bab;
-          DAT_0bab = bVar7 | 8;
-        }
-        else {
           bVar7 = DAT_0b40;
           bVar5 = DAT_0d8a;
           if (bVar5 < bVar7) {
             bVar7 = DAT_08af;
-            if ((~bVar7 & 8) == 0) {
+            if ((~bVar7 & 8) != 0) {
               bVar7 = DAT_08af;
               DAT_08af = bVar7 | 8;
               bVar7 = DAT_0bd2;
               DAT_0bd2 = bVar7 | 0x80;
               bVar7 = DAT_08b8;
-              if ((~bVar7 & 8) == 0) {
+              if ((~bVar7 & 8) != 0) {
                 bVar7 = DAT_08b8;
                 DAT_08b8 = bVar7 | 8;
                 bVar7 = DAT_0bd2;
@@ -56,6 +50,12 @@ void FUN_6996(undefined2 param_1)
             DAT_0889 = bVar7 & 0xfd;
             DAT_0b92 = 0;
           }
+        }
+        else {
+          bVar7 = DAT_08b5;
+          DAT_08b5 = bVar7 | 0x80;
+          bVar7 = DAT_0bab;
+          DAT_0bab = bVar7 | 8;
         }
       }
       else {
@@ -71,7 +71,7 @@ void FUN_6996(undefined2 param_1)
               bVar7 = DAT_0bd2;
               DAT_0bd2 = bVar7 | 0x80;
               bVar7 = DAT_08af;
-              if (((~bVar7 & 4) == 0) && (bVar7 = DAT_08b1, (~bVar7 & 8) == 0)) {
+              if (((~bVar7 & 4) != 0) && (bVar7 = DAT_08b1, (~bVar7 & 8) != 0)) {
                 bVar7 = DAT_0889;
                 DAT_0889 = bVar7 | 2;
                 DAT_0b94 = 0;
@@ -105,15 +105,15 @@ void FUN_6996(undefined2 param_1)
   }
 LAB_6a68:
   bVar7 = DAT_08af;
-  if (((~bVar7 & 8) == 0) && (bVar7 = DAT_08af, (~bVar7 & 4) == 0)) {
+  if (((~bVar7 & 8) == 0) || (bVar7 = DAT_08af, (~bVar7 & 4) == 0)) {
+    DAT_08d0 = DAT_4e60;
+    DAT_08ce = DAT_4e60 << 6;
+  }
+  else {
     uVar1 = DAT_08ca;
     DAT_08d0 = uVar1 >> 6;
     sVar3 = DAT_08e2;
     DAT_08ce = sVar3 << 6;
-  }
-  else {
-    DAT_08d0 = DAT_4e60;
-    DAT_08ce = DAT_4e60 << 6;
   }
   DAT_08c2 = 0x80;
   DAT_08c3 = 0;

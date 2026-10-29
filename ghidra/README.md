@@ -7,8 +7,11 @@ Corrections in [cpu12-corrections.patch](cpu12-corrections.patch):
 1. The HC12 `indexed2_5` constructor exports the word **at** the effective address (`*:2`), not the effective address value. This also fixes indexed word stores and arithmetic/compare operands using that constructor.
 2. ADC overflow is derived from both additions, not the incoming V flag.
 3. SBC flags incorporate incoming borrow in both the outgoing borrow and signed-overflow calculation.
+4. All BRSET forms branch when `(~memory & mask) == 0`; the inherited model used the inverted predicate. The direct/extended BRSET and BRCLR instances are tested with every input byte.
 
 The fixes have independent instruction fixtures and are exercised by the firmware's original lookup routines. Their basis is the instruction semantics in the [NXP MC9S12T64 reference manual](https://www.nxp.com/docs/en/data-sheet/9S12T64AF16V1.pdf). This is not an exhaustive silicon-level certification of the whole upstream language.
+
+The BRSET correction was found during the [control-system semantic pass](../analysis/semantics/REVIEW_NOTES.md). Earlier generated C is superseded for flag-dependent behavior.
 
 ## Headless analysis
 
@@ -20,7 +23,7 @@ Start Ghidra with the same external module property, then import `analysis/XT660
 
 ```powershell
 $module = (Resolve-Path '.\ghidra\XT660CPU12').Path
-$env:GHIDRA_JAVA_OPTIONS = '"-Dghidra.external.modules=' + $module + '"'
+$env:GHIDRA_JAVA_OPTIONS = '-Dghidra.external.modules=' + $module
 & 'C:\tools\ghidra_12.1.4_PUBLIC\ghidraRun.bat'
 ```
 

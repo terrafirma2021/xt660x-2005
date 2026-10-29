@@ -29,20 +29,18 @@ void FUN_ce51(char param_1)
   if ((bVar5 & 0x80) != 0) {
     bVar5 = DAT_08a3;
     if ((~bVar5 & 0x80) == 0) {
+      bVar5 = DAT_08a0;
+      DAT_08a0 = bVar5 & 0x7f;
+      bVar5 = DAT_08a0;
+      DAT_08a0 = bVar5 | 0x40;
+      bVar5 = DAT_08a1;
+      DAT_08a1 = bVar5 & 0x7f;
+      bVar5 = DAT_08a1;
+      DAT_08a1 = bVar5 & 0xbf;
+    }
+    else {
       bVar5 = DAT_08a1;
       if ((~bVar5 & 0x80) == 0) {
-        if (param_1 == -2) {
-          bVar5 = DAT_0020;
-          DAT_0020 = bVar5 | 4;
-          DAT_00cb = 0;
-          bVar5 = DAT_08a1;
-          DAT_08a1 = bVar5 | 0x80;
-          bVar5 = DAT_08a1;
-          DAT_08a1 = bVar5 & 0xfe;
-          goto LAB_d355;
-        }
-      }
-      else {
         bVar5 = DAT_08a1;
         DAT_08a1 = bVar5 & 0xfe;
         if (param_1 != '\x01') {
@@ -58,6 +56,16 @@ void FUN_ce51(char param_1)
           }
         }
       }
+      else if (param_1 == -2) {
+        bVar5 = DAT_0020;
+        DAT_0020 = bVar5 | 4;
+        DAT_00cb = 0;
+        bVar5 = DAT_08a1;
+        DAT_08a1 = bVar5 | 0x80;
+        bVar5 = DAT_08a1;
+        DAT_08a1 = bVar5 & 0xfe;
+        goto LAB_d355;
+      }
       bVar5 = DAT_08a0;
       DAT_08a0 = bVar5 & 0x7f;
       bVar5 = DAT_08a0;
@@ -65,28 +73,12 @@ void FUN_ce51(char param_1)
       bVar5 = DAT_08a1;
       DAT_08a1 = bVar5 & 0x7f;
     }
-    else {
-      bVar5 = DAT_08a0;
-      DAT_08a0 = bVar5 & 0x7f;
-      bVar5 = DAT_08a0;
-      DAT_08a0 = bVar5 | 0x40;
-      bVar5 = DAT_08a1;
-      DAT_08a1 = bVar5 & 0x7f;
-      bVar5 = DAT_08a1;
-      DAT_08a1 = bVar5 & 0xbf;
-    }
     goto LAB_d355;
   }
   bVar5 = DAT_08a0;
-  if ((~bVar5 & 0x40) != 0) {
+  if ((~bVar5 & 0x40) == 0) {
     bVar5 = DAT_08a2;
     if ((~bVar5 & 0x40) == 0) {
-      if (param_1 == -0x36) {
-        bVar5 = DAT_08a2;
-        DAT_08a2 = bVar5 | 0x40;
-      }
-    }
-    else {
       bVar5 = DAT_08a1;
       DAT_08a1 = bVar5 & 0xfe;
       if ((param_1 == -0x35) || (param_1 == -0x34)) {
@@ -144,6 +136,10 @@ void FUN_ce51(char param_1)
         DAT_08a1 = bVar5 | 1;
       }
     }
+    else if (param_1 == -0x36) {
+      bVar5 = DAT_08a2;
+      DAT_08a2 = bVar5 | 0x40;
+    }
     goto LAB_d355;
   }
   bVar5 = DAT_08a0;
@@ -188,7 +184,7 @@ LAB_d23a:
       }
       else {
         bVar5 = DAT_08a2;
-        if ((~bVar5 & 8) == 0) goto LAB_d34e;
+        if ((~bVar5 & 8) != 0) goto LAB_d34e;
         bVar5 = DAT_0b36;
         bVar5 = (bVar5 + 1) - (0xfe < bVar5);
         if (0x3f < bVar5) {
@@ -283,15 +279,9 @@ LAB_d34e:
     goto LAB_d15f;
   }
   bVar5 = DAT_08a0;
-  if ((~bVar5 & 0x10) != 0) {
+  if ((~bVar5 & 0x10) == 0) {
     bVar5 = DAT_08a2;
     if ((~bVar5 & 0x20) == 0) {
-      if (param_1 == -0x36) {
-        bVar5 = DAT_08a2;
-        DAT_08a2 = bVar5 | 0x20;
-      }
-    }
-    else {
       bVar5 = DAT_08a1;
       DAT_08a1 = bVar5 & 0xfe;
       if (param_1 == -0x36) {
@@ -365,10 +355,14 @@ LAB_d34e:
         DAT_08a1 = bVar5 | 1;
       }
     }
+    else if (param_1 == -0x36) {
+      bVar5 = DAT_08a2;
+      DAT_08a2 = bVar5 | 0x20;
+    }
     goto LAB_d355;
   }
   bVar5 = DAT_08a2;
-  if ((~bVar5 & 0x10) == 0) {
+  if ((~bVar5 & 0x10) != 0) {
     if (param_1 == -0x36) {
       bVar5 = DAT_08a2;
       DAT_08a2 = bVar5 | 0x10;
@@ -471,15 +465,15 @@ LAB_d15f:
   DAT_0b39 = bVar5;
   bVar4 = DAT_08a1;
   if ((~bVar4 & 0x20) == 0) {
-    if (6 < bVar5) {
+    if (bVar5 != 0) {
       bVar5 = DAT_08a1;
-      DAT_08a1 = bVar5 | 0x20;
+      DAT_08a1 = bVar5 & 0xdf;
       DAT_0b39 = 0;
     }
   }
-  else if (bVar5 != 0) {
+  else if (6 < bVar5) {
     bVar5 = DAT_08a1;
-    DAT_08a1 = bVar5 & 0xdf;
+    DAT_08a1 = bVar5 | 0x20;
     DAT_0b39 = 0;
   }
 LAB_d355:

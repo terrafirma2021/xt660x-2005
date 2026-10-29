@@ -56,17 +56,17 @@ void FUN_650b(void)
                   if (cVar2 == cVar4) {
                     bVar1 = DAT_0896._0_1_;
                     if ((~bVar1 & 1) == 0) {
-                      cVar4 = '\0';
+                      cVar4 = -0x10;
                     }
                     else {
-                      cVar4 = -0x10;
+                      cVar4 = '\0';
                     }
                   }
                   else {
                     cVar4 = DAT_0d45;
                     if (cVar2 == cVar4) {
                       cVar2 = DAT_0d87;
-                      if ((cVar2 == '\t') && (bVar1 = DAT_0896._0_1_, (~bVar1 & 0x10) == 0)) {
+                      if ((cVar2 == '\t') && (bVar1 = DAT_0896._0_1_, (~bVar1 & 0x10) != 0)) {
                         cVar4 = '\0';
                       }
                       else {

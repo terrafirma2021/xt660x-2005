@@ -50,7 +50,7 @@ void FUN_d36c(byte param_1)
   if (param_1 == 0x3d) {
     DAT_0d0f = 0;
     bVar6 = DAT_0d06;
-    if ((~bVar6 & 0x40) != 0) {
+    if ((~bVar6 & 0x40) == 0) {
       bVar6 = DAT_0d07;
       DAT_0d07 = bVar6 & 0xf7;
       DAT_0d0e = 0;
@@ -105,7 +105,7 @@ LAB_d430:
     if ((char)(uVar4 >> 8) == -0x80) {
       DAT_0d0f = 0;
       bVar6 = DAT_0d06;
-      if ((~bVar6 & 0x40) != 0) {
+      if ((~bVar6 & 0x40) == 0) {
         bVar6 = DAT_0d07;
         DAT_0d07 = bVar6 & 0xf7;
         DAT_0d0e = 0;
@@ -140,12 +140,12 @@ LAB_d430:
       if ((char)(uVar4 >> 8) == '@') {
         DAT_0d0f = 0;
         bVar6 = DAT_0d06;
-        if ((~bVar6 & 0x40) != 0) {
+        if ((~bVar6 & 0x40) == 0) {
           bVar6 = DAT_0d07;
           DAT_0d07 = bVar6 & 0xf7;
           DAT_0d0e = 0;
           bVar6 = DAT_0d08;
-          if ((~bVar6 & 0x80) == 0) {
+          if ((~bVar6 & 0x80) != 0) {
             cVar7 = DAT_0d11;
             bVar6 = DAT_0d12;
             if (bVar6 == 0) {
@@ -179,14 +179,14 @@ LAB_d430:
         if (bVar6 == 0x3f) {
           DAT_0d0f = 0;
           bVar6 = DAT_0d06;
-          if ((~bVar6 & 0x40) != 0) {
+          if ((~bVar6 & 0x40) == 0) {
             bVar6 = DAT_0d07;
             DAT_0d07 = bVar6 & 0xf7;
             DAT_0d0e = 0;
             bVar6 = DAT_0d11;
             if ((2 < bVar6) && (bVar6 < 5)) {
               bVar6 = DAT_0d07;
-              if ((~bVar6 & 0x10) != 0) goto LAB_d430;
+              if ((~bVar6 & 0x10) == 0) goto LAB_d430;
               DAT_0d0c = 0;
               bVar6 = DAT_0d06;
               if ((((bVar6 & 8) != 0) && (bVar6 = DAT_0d08, (bVar6 & 0x40) == 0)) ||
@@ -218,7 +218,7 @@ LAB_d430:
                     DAT_0d08 = bVar6 & 0xfe;
                     DAT_0afc = 0;
                     bVar6 = DAT_0881;
-                    if ((~bVar6 & 0x20) == 0) {
+                    if ((~bVar6 & 0x20) != 0) {
                       bVar6 = DAT_0d08;
                       DAT_0d08 = bVar6 | 2;
                     }

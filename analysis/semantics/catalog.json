@@ -1,0 +1,1500 @@
+{
+  "schema_version": 1,
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "file_address_mapping": "CPU address = file offset for supplied flat image",
+  "purpose": "Evidence registry for later XDF/tool development; no entry currently validated for tuning export.",
+  "calibrations": [
+    {
+      "id": "fan_normal_clear_below",
+      "file_offset": 19454,
+      "cpu_address": "0x4BFE",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "cd",
+      "stock_values": [
+        205
+      ],
+      "role": "Clear PP2 when effective coolant byte is strictly below this value.",
+      "role_confidence": "code-confirmed; fan role corroborated by diagnostic 51",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x71B9",
+          "assembly": "CMPA 0x4bfe"
+        },
+        {
+          "pc": "0x71BC",
+          "assembly": "BCS 0x71ca"
+        },
+        {
+          "pc": "0x71CA",
+          "assembly": "BCLR 0x00f0,0x4"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "71b9",
+          "to": "4bfe",
+          "type": "READ",
+          "function": "FUN_70a3"
+        }
+      ]
+    },
+    {
+      "id": "fan_normal_set_above",
+      "file_offset": 19455,
+      "cpu_address": "0x4BFF",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "d9",
+      "stock_values": [
+        217
+      ],
+      "role": "Set PP2 when effective coolant byte is strictly above this value.",
+      "role_confidence": "code-confirmed; fan role corroborated by diagnostic 51",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x71BE",
+          "assembly": "CMPA 0x4bff"
+        },
+        {
+          "pc": "0x71C1",
+          "assembly": "BEQ 0x71cd"
+        },
+        {
+          "pc": "0x71C3",
+          "assembly": "BCS 0x71cd"
+        },
+        {
+          "pc": "0x71C5",
+          "assembly": "BSET 0x00f0,0x4"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "71be",
+          "to": "4bff",
+          "type": "READ",
+          "function": "FUN_70a3"
+        }
+      ]
+    },
+    {
+      "id": "fan_fault_set_below_road_speed",
+      "file_offset": 19456,
+      "cpu_address": "0x4C00",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "32",
+      "stock_values": [
+        50
+      ],
+      "role": "Fault-route PP2 set below filtered road-speed byte.",
+      "role_confidence": "code-confirmed routing; road-speed units unresolved",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x71A7",
+          "assembly": "LDAA 0xabe"
+        },
+        {
+          "pc": "0x71AA",
+          "assembly": "CMPA 0x4c00"
+        },
+        {
+          "pc": "0x71AD",
+          "assembly": "BCS 0x71c5"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "71aa",
+          "to": "4c00",
+          "type": "READ",
+          "function": "FUN_70a3"
+        }
+      ]
+    },
+    {
+      "id": "fan_fault_clear_above_road_speed",
+      "file_offset": 19457,
+      "cpu_address": "0x4C01",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "3c",
+      "stock_values": [
+        60
+      ],
+      "role": "Fault-route PP2 clear above filtered road-speed byte.",
+      "role_confidence": "code-confirmed routing; road-speed units unresolved",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x71AF",
+          "assembly": "CMPA 0x4c01"
+        },
+        {
+          "pc": "0x71B2",
+          "assembly": "BLS 0x71cd"
+        },
+        {
+          "pc": "0x71B4",
+          "assembly": "BRA 0x71ca"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "71af",
+          "to": "4c01",
+          "type": "READ",
+          "function": "FUN_70a3"
+        }
+      ]
+    },
+    {
+      "id": "coolant_fault_substitute",
+      "file_offset": 20068,
+      "cpu_address": "0x4E64",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "90",
+      "stock_values": [
+        144
+      ],
+      "role": "Effective coolant byte used with fault bit set outside diagnostic mode.",
+      "role_confidence": "code-confirmed; coolant role corroborated by diagnostic 06",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x7145",
+          "assembly": "BRSET 0x8a0,0x4,0x7154"
+        },
+        {
+          "pc": "0x714A",
+          "assembly": "BRCLR 0x8b0,0x80,0x7154"
+        },
+        {
+          "pc": "0x714F",
+          "assembly": "LDAA 0x4e64"
+        },
+        {
+          "pc": "0x7157",
+          "assembly": "STAA 0x8f4"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "714f",
+          "to": "4e64",
+          "type": "READ",
+          "function": "FUN_70a3"
+        }
+      ]
+    },
+    {
+      "id": "intake_temperature_fault_substitute",
+      "file_offset": 20069,
+      "cpu_address": "0x4E65",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "50",
+      "stock_values": [
+        80
+      ],
+      "role": "Intake-temperature substitute under sensor fault outside diagnostic mode.",
+      "role_confidence": "code-confirmed; intake-temperature role corroborated by diagnostic 05",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x702A",
+          "assembly": "BRSET 0x8a0,0x4,0x7034"
+        },
+        {
+          "pc": "0x702F",
+          "assembly": "BRSET 0x8b0,0x40,0x705a"
+        },
+        {
+          "pc": "0x7060",
+          "assembly": "LDAA 0x4e65"
+        },
+        {
+          "pc": "0x7063",
+          "assembly": "STAA 0x8f5"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "7060",
+          "to": "4e65",
+          "type": "READ",
+          "function": "FUN_6fc2"
+        }
+      ]
+    },
+    {
+      "id": "coolant_conversion_values",
+      "file_offset": 20295,
+      "cpu_address": "0x4F47",
+      "storage": {
+        "element_bytes": 1,
+        "count": 29,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "efd2beafa3999088807a746e68635d58534e49433e39332d261f170d00",
+      "stock_values": [
+        239,
+        210,
+        190,
+        175,
+        163,
+        153,
+        144,
+        136,
+        128,
+        122,
+        116,
+        110,
+        104,
+        99,
+        93,
+        88,
+        83,
+        78,
+        73,
+        67,
+        62,
+        57,
+        51,
+        45,
+        38,
+        31,
+        23,
+        13,
+        0
+      ],
+      "role": "ADC conversion knots; raw10 axis 60 + 32*k, with endpoint clamp.",
+      "role_confidence": "code-confirmed conversion; degrees-C encoding unresolved",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x711B",
+          "assembly": "LDX #0x4f44"
+        },
+        {
+          "pc": "0x7121",
+          "assembly": "SUBD #0xf00"
+        },
+        {
+          "pc": "0x7128",
+          "assembly": "LSRD"
+        },
+        {
+          "pc": "0x712B",
+          "assembly": "CPD #0x1c00"
+        },
+        {
+          "pc": "0x7133",
+          "assembly": "JSR 0xc276"
+        }
+      ],
+      "direct_references": []
+    },
+    {
+      "id": "intake_temperature_conversion_values",
+      "file_offset": 20262,
+      "cpu_address": "0x4F26",
+      "storage": {
+        "element_bytes": 1,
+        "count": 33,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "ffffd3b8a6988d837b746d67615b56514c47433e3934302b25201a130c03000000",
+      "stock_values": [
+        255,
+        255,
+        211,
+        184,
+        166,
+        152,
+        141,
+        131,
+        123,
+        116,
+        109,
+        103,
+        97,
+        91,
+        86,
+        81,
+        76,
+        71,
+        67,
+        62,
+        57,
+        52,
+        48,
+        43,
+        37,
+        32,
+        26,
+        19,
+        12,
+        3,
+        0,
+        0,
+        0
+      ],
+      "role": "ADC-high-byte conversion knots; axis 8*k. Last knot is interpolation endpoint.",
+      "role_confidence": "code-confirmed conversion; degrees-C encoding unresolved",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x7034",
+          "assembly": "LDAA 0x8ca"
+        },
+        {
+          "pc": "0x7040",
+          "assembly": "LDX #0x4f23"
+        },
+        {
+          "pc": "0x7043",
+          "assembly": "LDAB #0x20"
+        },
+        {
+          "pc": "0x7046",
+          "assembly": "JSR 0xc1db"
+        }
+      ],
+      "direct_references": []
+    },
+    {
+      "id": "injector_primary_period_cut_resume_at_or_above",
+      "file_offset": 19400,
+      "cpu_address": "0x4BC8",
+      "storage": {
+        "element_bytes": 2,
+        "count": 1,
+        "signed": false,
+        "byte_order": "big"
+      },
+      "stock_hex": "0807",
+      "stock_values": [
+        2055
+      ],
+      "role": "Clear RAM 0x088C mask 0x08 when period >= value.",
+      "role_confidence": "code-confirmed gate and diagnostic output identity",
+      "units": "period ticks",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x758B",
+          "assembly": "CPD 0x4bca"
+        },
+        {
+          "pc": "0xF519",
+          "assembly": "BRSET 0x88c,0x8,0xf530"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "7590",
+          "to": "4bc8",
+          "type": "READ",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    {
+      "id": "injector_primary_period_cut_cut_at_or_below",
+      "file_offset": 19402,
+      "cpu_address": "0x4BCA",
+      "storage": {
+        "element_bytes": 2,
+        "count": 1,
+        "signed": false,
+        "byte_order": "big"
+      },
+      "stock_hex": "0806",
+      "stock_values": [
+        2054
+      ],
+      "role": "Set RAM 0x088C mask 0x08 when period <= value.",
+      "role_confidence": "code-confirmed gate and diagnostic output identity",
+      "units": "period ticks",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x758B",
+          "assembly": "CPD 0x4bca"
+        },
+        {
+          "pc": "0xF519",
+          "assembly": "BRSET 0x88c,0x8,0xf530"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "758b",
+          "to": "4bca",
+          "type": "READ",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    {
+      "id": "spark_period_cut_resume_at_or_above",
+      "file_offset": 19404,
+      "cpu_address": "0x4BCC",
+      "storage": {
+        "element_bytes": 2,
+        "count": 1,
+        "signed": false,
+        "byte_order": "big"
+      },
+      "stock_hex": "0807",
+      "stock_values": [
+        2055
+      ],
+      "role": "Clear RAM 0x088C mask 0x02 when period >= value.",
+      "role_confidence": "code-confirmed gate and diagnostic output identity",
+      "units": "period ticks",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x75B3",
+          "assembly": "CPD 0x4bce"
+        },
+        {
+          "pc": "0x5666",
+          "assembly": "BRSET 0x88c,0x2,0x56b1"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "75b8",
+          "to": "4bcc",
+          "type": "READ",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    {
+      "id": "spark_period_cut_cut_at_or_below",
+      "file_offset": 19406,
+      "cpu_address": "0x4BCE",
+      "storage": {
+        "element_bytes": 2,
+        "count": 1,
+        "signed": false,
+        "byte_order": "big"
+      },
+      "stock_hex": "0806",
+      "stock_values": [
+        2054
+      ],
+      "role": "Set RAM 0x088C mask 0x02 when period <= value.",
+      "role_confidence": "code-confirmed gate and diagnostic output identity",
+      "units": "period ticks",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x75B3",
+          "assembly": "CPD 0x4bce"
+        },
+        {
+          "pc": "0x5666",
+          "assembly": "BRSET 0x88c,0x2,0x56b1"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "75b3",
+          "to": "4bce",
+          "type": "READ",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    {
+      "id": "injector_secondary_period_cut_resume_at_or_above",
+      "file_offset": 19408,
+      "cpu_address": "0x4BD0",
+      "storage": {
+        "element_bytes": 2,
+        "count": 1,
+        "signed": false,
+        "byte_order": "big"
+      },
+      "stock_hex": "0807",
+      "stock_values": [
+        2055
+      ],
+      "role": "Clear RAM 0x088C mask 0x04 when period >= value.",
+      "role_confidence": "code-confirmed secondary timer gate; channel disabled by stock variant 9",
+      "units": "period ticks",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x759F",
+          "assembly": "CPD 0x4bd2"
+        },
+        {
+          "pc": "0xF59E",
+          "assembly": "BRSET 0x88c,0x4,0xf5ad"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "75a4",
+          "to": "4bd0",
+          "type": "READ",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    {
+      "id": "injector_secondary_period_cut_cut_at_or_below",
+      "file_offset": 19410,
+      "cpu_address": "0x4BD2",
+      "storage": {
+        "element_bytes": 2,
+        "count": 1,
+        "signed": false,
+        "byte_order": "big"
+      },
+      "stock_hex": "0806",
+      "stock_values": [
+        2054
+      ],
+      "role": "Set RAM 0x088C mask 0x04 when period <= value.",
+      "role_confidence": "code-confirmed secondary timer gate; channel disabled by stock variant 9",
+      "units": "period ticks",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x759F",
+          "assembly": "CPD 0x4bd2"
+        },
+        {
+          "pc": "0xF59E",
+          "assembly": "BRSET 0x88c,0x4,0xf5ad"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "759f",
+          "to": "4bd2",
+          "type": "READ",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    {
+      "id": "injector_primary_road_speed_cut_clear_below",
+      "file_offset": 19423,
+      "cpu_address": "0x4BDF",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "fd",
+      "stock_values": [
+        253
+      ],
+      "role": "Clear RAM 0x089A mask 0x08 when road-speed byte < value.",
+      "role_confidence": "code-confirmed; physical speed scale unresolved",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x6259",
+          "assembly": "LDAA 0xabe"
+        },
+        {
+          "pc": "0xF51E",
+          "assembly": "BRSET 0x89a,0x8,0xf530"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "6261",
+          "to": "4bdf",
+          "type": "READ",
+          "function": "FUN_6259"
+        }
+      ]
+    },
+    {
+      "id": "injector_primary_road_speed_cut_set_at_or_above",
+      "file_offset": 19424,
+      "cpu_address": "0x4BE0",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "fe",
+      "stock_values": [
+        254
+      ],
+      "role": "Set RAM 0x089A mask 0x08 when road-speed byte >= value.",
+      "role_confidence": "code-confirmed; physical speed scale unresolved",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x6259",
+          "assembly": "LDAA 0xabe"
+        },
+        {
+          "pc": "0xF51E",
+          "assembly": "BRSET 0x89a,0x8,0xf530"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "625c",
+          "to": "4be0",
+          "type": "READ",
+          "function": "FUN_6259"
+        }
+      ]
+    },
+    {
+      "id": "spark_road_speed_cut_clear_below",
+      "file_offset": 19425,
+      "cpu_address": "0x4BE1",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "fe",
+      "stock_values": [
+        254
+      ],
+      "role": "Clear RAM 0x089A mask 0x02 when road-speed byte < value.",
+      "role_confidence": "code-confirmed; physical speed scale unresolved",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x6259",
+          "assembly": "LDAA 0xabe"
+        },
+        {
+          "pc": "0x566B",
+          "assembly": "BRSET 0x89a,0x2,0x56b1"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "6289",
+          "to": "4be1",
+          "type": "READ",
+          "function": "FUN_6259"
+        }
+      ]
+    },
+    {
+      "id": "spark_road_speed_cut_set_at_or_above",
+      "file_offset": 19426,
+      "cpu_address": "0x4BE2",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "ff",
+      "stock_values": [
+        255
+      ],
+      "role": "Set RAM 0x089A mask 0x02 when road-speed byte >= value.",
+      "role_confidence": "code-confirmed; physical speed scale unresolved",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x6259",
+          "assembly": "LDAA 0xabe"
+        },
+        {
+          "pc": "0x566B",
+          "assembly": "BRSET 0x89a,0x2,0x56b1"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "6284",
+          "to": "4be2",
+          "type": "READ",
+          "function": "FUN_6259"
+        }
+      ]
+    },
+    {
+      "id": "injector_secondary_road_speed_cut_clear_below",
+      "file_offset": 19427,
+      "cpu_address": "0x4BE3",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "fd",
+      "stock_values": [
+        253
+      ],
+      "role": "Clear RAM 0x089A mask 0x04 when road-speed byte < value.",
+      "role_confidence": "code-confirmed; physical speed scale unresolved",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x6259",
+          "assembly": "LDAA 0xabe"
+        },
+        {
+          "pc": "0xF5A3",
+          "assembly": "BRSET 0x89a,0x4,0xf5ad"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "6275",
+          "to": "4be3",
+          "type": "READ",
+          "function": "FUN_6259"
+        }
+      ]
+    },
+    {
+      "id": "injector_secondary_road_speed_cut_set_at_or_above",
+      "file_offset": 19428,
+      "cpu_address": "0x4BE4",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "fe",
+      "stock_values": [
+        254
+      ],
+      "role": "Set RAM 0x089A mask 0x04 when road-speed byte >= value.",
+      "role_confidence": "code-confirmed; physical speed scale unresolved",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x6259",
+          "assembly": "LDAA 0xabe"
+        },
+        {
+          "pc": "0xF5A3",
+          "assembly": "BRSET 0x89a,0x4,0xf5ad"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "6270",
+          "to": "4be4",
+          "type": "READ",
+          "function": "FUN_6259"
+        }
+      ]
+    },
+    {
+      "id": "conditional_injector_primary_cut_resume_above",
+      "file_offset": 13480,
+      "cpu_address": "0x34A8",
+      "storage": {
+        "element_bytes": 2,
+        "count": 1,
+        "signed": false,
+        "byte_order": "big"
+      },
+      "stock_hex": "063b",
+      "stock_values": [
+        1595
+      ],
+      "role": "Clear 0x0886 mask 4 when period > value; only evaluated while 0x08B1 mask 8 set.",
+      "role_confidence": "code-confirmed conditional secondary limit; initiating fault meaning unresolved",
+      "units": "period ticks",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x77C6",
+          "assembly": "BRSET 0x8b1,0x8,0x77d5"
+        },
+        {
+          "pc": "0x77DD",
+          "assembly": "CPD 0x34a8"
+        },
+        {
+          "pc": "0xF4E0",
+          "assembly": "BRSET 0x886,0x4,0xf4fc"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "77dd",
+          "to": "34a8",
+          "type": "READ",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    {
+      "id": "conditional_injector_primary_cut_at_or_below",
+      "file_offset": 13482,
+      "cpu_address": "0x34AA",
+      "storage": {
+        "element_bytes": 2,
+        "count": 1,
+        "signed": false,
+        "byte_order": "big"
+      },
+      "stock_hex": "062a",
+      "stock_values": [
+        1578
+      ],
+      "role": "Set 0x0886 mask 4 when period <= value under same gate.",
+      "role_confidence": "code-confirmed conditional secondary limit; initiating fault meaning unresolved",
+      "units": "period ticks",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x77D8",
+          "assembly": "CPD 0x34aa"
+        },
+        {
+          "pc": "0x77DB",
+          "assembly": "BLS 0x77e8"
+        },
+        {
+          "pc": "0xF4E0",
+          "assembly": "BRSET 0x886,0x4,0xf4fc"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "77d8",
+          "to": "34aa",
+          "type": "READ",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    {
+      "id": "conditional_injector_secondary_cut_resume_above",
+      "file_offset": 13484,
+      "cpu_address": "0x34AC",
+      "storage": {
+        "element_bytes": 2,
+        "count": 1,
+        "signed": false,
+        "byte_order": "big"
+      },
+      "stock_hex": "063b",
+      "stock_values": [
+        1595
+      ],
+      "role": "Clear 0x0886 mask 2 when period > value under same gate.",
+      "role_confidence": "code-confirmed secondary-channel limit; stock variant disables output",
+      "units": "period ticks",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x77F1",
+          "assembly": "CPD 0x34ac"
+        },
+        {
+          "pc": "0xF4FC",
+          "assembly": "BRSET 0x886,0x2,0xf518"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "77f1",
+          "to": "34ac",
+          "type": "READ",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    {
+      "id": "conditional_injector_secondary_cut_at_or_below",
+      "file_offset": 13486,
+      "cpu_address": "0x34AE",
+      "storage": {
+        "element_bytes": 2,
+        "count": 1,
+        "signed": false,
+        "byte_order": "big"
+      },
+      "stock_hex": "062a",
+      "stock_values": [
+        1578
+      ],
+      "role": "Set 0x0886 mask 2 when period <= value under same gate.",
+      "role_confidence": "code-confirmed secondary-channel limit; stock variant disables output",
+      "units": "period ticks",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x77EC",
+          "assembly": "CPD 0x34ae"
+        },
+        {
+          "pc": "0xF4FC",
+          "assembly": "BRSET 0x886,0x2,0xf518"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "77ec",
+          "to": "34ae",
+          "type": "READ",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    {
+      "id": "engine_speed_source_selector",
+      "file_offset": 6359,
+      "cpu_address": "0x18D7",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "01",
+      "stock_values": [
+        1
+      ],
+      "role": "Zero selects instantaneous/filtered pair; nonzero selects 0x0906 for both downstream speed variables.",
+      "role_confidence": "code-confirmed",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x7482",
+          "assembly": "LDAA 0x18d7"
+        },
+        {
+          "pc": "0x7485",
+          "assembly": "BNE 0x7495"
+        },
+        {
+          "pc": "0x7495",
+          "assembly": "LDD 0x906"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "7482",
+          "to": "18d7",
+          "type": "READ",
+          "function": "FUN_73a5"
+        }
+      ]
+    },
+    {
+      "id": "variant_selector",
+      "file_offset": 6355,
+      "cpu_address": "0x18D3",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "09",
+      "stock_values": [
+        9
+      ],
+      "role": "Copied to 0x0D87; stock 9 selects variant-specific paths including disabling timer-7 injector entry.",
+      "role_confidence": "code-confirmed; do not treat as user-facing mode switch",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x611E",
+          "assembly": "MOVB 0x18d3,0xd87"
+        },
+        {
+          "pc": "0xF592",
+          "assembly": "LDAA 0xd87"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "5020",
+          "to": "18d3",
+          "type": "READ",
+          "function": "application_init"
+        },
+        {
+          "from": "611e",
+          "to": "18d3",
+          "type": "READ",
+          "function": "FUN_5fc8"
+        }
+      ]
+    },
+    {
+      "id": "road_speed_pulse_gain",
+      "file_offset": 19412,
+      "cpu_address": "0x4BD4",
+      "storage": {
+        "element_bytes": 2,
+        "count": 1,
+        "signed": false,
+        "byte_order": "big"
+      },
+      "stock_hex": "0017",
+      "stock_values": [
+        23
+      ],
+      "role": "Gain applied to saturated pulse-count delta before two-stage filtering to 0x0ABE.",
+      "role_confidence": "code-confirmed; timebase/wheel calibration unresolved",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x9B15",
+          "assembly": "SUBD 0xab6"
+        },
+        {
+          "pc": "0x9B32",
+          "assembly": "LDD 0x4bd4"
+        },
+        {
+          "pc": "0x9B35",
+          "assembly": "EMUL"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "9b32",
+          "to": "4bd4",
+          "type": "READ",
+          "function": "FUN_99fd"
+        }
+      ]
+    },
+    {
+      "id": "road_speed_filter_factor",
+      "file_offset": 19414,
+      "cpu_address": "0x4BD6",
+      "storage": {
+        "element_bytes": 1,
+        "count": 1,
+        "signed": false,
+        "byte_order": null
+      },
+      "stock_hex": "3c",
+      "stock_values": [
+        60
+      ],
+      "role": "Factor in two-stage road-speed filter.",
+      "role_confidence": "code-confirmed",
+      "units": "raw",
+      "engineering_decode": null,
+      "engineering_encode": null,
+      "ready_for_tuning_export": false,
+      "remaining_requirements": [
+        "Validate engineering scale and physical behavior.",
+        "Establish image integrity/checksum and flashing requirements."
+      ],
+      "evidence": [
+        {
+          "pc": "0x9B63",
+          "assembly": "LDAB 0x4bd6"
+        },
+        {
+          "pc": "0x9BF7",
+          "assembly": "LDAB 0x4bd6"
+        },
+        {
+          "pc": "0x9C26",
+          "assembly": "LDAB 0x4bd6"
+        }
+      ],
+      "direct_references": [
+        {
+          "from": "9b63",
+          "to": "4bd6",
+          "type": "READ",
+          "function": "FUN_99fd"
+        },
+        {
+          "from": "9ba0",
+          "to": "4bd6",
+          "type": "READ",
+          "function": "FUN_99fd"
+        },
+        {
+          "from": "9bf7",
+          "to": "4bd6",
+          "type": "READ",
+          "function": "FUN_99fd"
+        },
+        {
+          "from": "9c26",
+          "to": "4bd6",
+          "type": "READ",
+          "function": "FUN_99fd"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "signal": "coolant_temperature",
+      "adc_channel": 6,
+      "handler": "0x70A3",
+      "raw_ram": "0x08D6",
+      "effective_ram": "0x08F4",
+      "diagnostic_code": 6,
+      "role_confidence": "service-manual diagnostic cross-reference",
+      "ecu_connector_pin": null
+    },
+    {
+      "signal": "intake_air_temperature",
+      "adc_channel": 3,
+      "handler": "0x6FC2",
+      "raw_ram": "0x08D8",
+      "effective_ram": "0x08F5",
+      "diagnostic_code": 5,
+      "role_confidence": "service-manual diagnostic cross-reference",
+      "ecu_connector_pin": null
+    },
+    {
+      "signal": "throttle_position",
+      "adc_channel": 0,
+      "handler": "0x6996",
+      "raw_ram": "0x08CA",
+      "effective_ram": "0x08D0",
+      "diagnostic_code": 1,
+      "role_confidence": "service-manual diagnostic cross-reference",
+      "ecu_connector_pin": null
+    },
+    {
+      "signal": "intake_air_pressure",
+      "adc_channel": 1,
+      "handler": "0x6AA5",
+      "raw_ram": "0x0CA2",
+      "effective_ram": null,
+      "diagnostic_code": 3,
+      "role_confidence": "service-manual diagnostic cross-reference",
+      "ecu_connector_pin": null
+    },
+    {
+      "signal": "oxygen_signal_candidate",
+      "adc_channel": 2,
+      "handler": "0x6AF6",
+      "raw_ram": "0x08DC",
+      "effective_ram": null,
+      "diagnostic_code": null,
+      "role_confidence": "unconfirmed physical signal",
+      "ecu_connector_pin": null
+    },
+    {
+      "signal": "fuel_system_voltage",
+      "adc_channel": 4,
+      "handler": "0x6C5E",
+      "raw_ram": "0x0BCE",
+      "effective_ram": "0x08D9",
+      "diagnostic_code": 9,
+      "role_confidence": "service-manual diagnostic cross-reference",
+      "ecu_connector_pin": null
+    },
+    {
+      "signal": "lean_angle_switch",
+      "adc_channel": 5,
+      "handler": "0x71EB",
+      "raw_ram": "0x08DD",
+      "effective_ram": null,
+      "diagnostic_code": 8,
+      "role_confidence": "service-manual diagnostic cross-reference",
+      "ecu_connector_pin": null
+    },
+    {
+      "signal": "unidentified_analogue",
+      "adc_channel": 7,
+      "handler": "0x707C",
+      "raw_ram": "0x08D2",
+      "effective_ram": null,
+      "diagnostic_code": null,
+      "role_confidence": "unconfirmed physical signal",
+      "ecu_connector_pin": null
+    }
+  ],
+  "outputs": [
+    {
+      "signal": "ignition_coil",
+      "mcu_channel": "PT3 / timer channel 3",
+      "compare_address": "0x0056",
+      "diagnostic_code": 30,
+      "test_routine": "0xB900",
+      "ecu_connector_pin": null
+    },
+    {
+      "signal": "primary_injector",
+      "mcu_channel": "PT6 / timer channel 6",
+      "compare_address": "0x005C",
+      "diagnostic_code": 36,
+      "test_routine": "0xB97F",
+      "ecu_connector_pin": null
+    },
+    {
+      "signal": "secondary_injector_candidate",
+      "mcu_channel": "PT7 / timer channel 7",
+      "compare_address": "0x005E",
+      "diagnostic_code": 37,
+      "test_routine": "0xBA06",
+      "ecu_connector_pin": null,
+      "note": "Code present but F592 exits for stock variant 9; physical population unconfirmed."
+    },
+    {
+      "signal": "fan_relay",
+      "mcu_channel": "PP2",
+      "port_address": "0x00F0",
+      "mask": 4,
+      "diagnostic_code": 51,
+      "test_routine": "0xBB45",
+      "ecu_connector_pin": null
+    },
+    {
+      "signal": "air_induction_solenoid",
+      "mcu_channel": "PP1",
+      "port_address": "0x00F0",
+      "mask": 2,
+      "diagnostic_code": 48,
+      "test_routine": "0xBA8D",
+      "ecu_connector_pin": null
+    },
+    {
+      "signal": "headlight_relay",
+      "mcu_channel": "PP4",
+      "port_address": "0x00F0",
+      "mask": 16,
+      "diagnostic_code": 52,
+      "test_routine": "0xBBA1",
+      "ecu_connector_pin": null
+    }
+  ],
+  "integrity": {
+    "checksum_algorithm": null,
+    "checksum_ranges": null,
+    "flash_procedure": null
+  },
+  "processor_model_sha256": "a8f092145064bd5f7e50b1e838b8956d9df9ef47c3de0b6cea1b54fc7cbee6b3"
+}

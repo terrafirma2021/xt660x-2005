@@ -23,7 +23,7 @@ void FUN_6aa5(undefined *param_1)
   }
   DAT_0aea = cVar4;
   bVar1 = DAT_089f;
-  if ((~bVar1 & 0x20) == 0) {
+  if ((~bVar1 & 0x20) != 0) {
     uVar3 = DAT_0ca2;
     DAT_0ca6 = uVar3;
     uVar2 = DAT_0c86;

@@ -1,10 +1,10 @@
 {
   "instructions_tested": 15942,
   "instruction_states": 31884,
-  "checks_including_helper_knots": 35109,
-  "raw_ir_sha256": "5dad2cf7dde991805ad867e1c11b613a8392f96116a745fa6a01babb8b3d1cfc",
-  "compiled_library_sha256": "3591d2b8dc2e2c0f116465db7aa3284a63fd51f7cd36960edce99e6f4bc91a3c",
-  "c_sources_sha256": "442d6d8d98c44817172920e0151d6ac8cce5cea72e71498ab1272fde048f6678",
+  "checks_including_helper_knots": 285989,
+  "raw_ir_sha256": "8ffa5fc8f793e48b8682be547412361a211f5bc2d6370fd76dfadbec0ca72b3f",
+  "compiled_library_sha256": "31d9ada81daf59bc96e60c30dd6863a4225e2ff59e8221d1e01ed995794fb051",
+  "c_sources_sha256": "a445187c868be831f091cb1717a507bc9f07c3e573e1d7fe5ccd941c06092d7d",
   "differential_reference": "Independent Python evaluator of exported raw p-code; confirms C translation consistency, not silicon equivalence.",
   "independent_cpu12_fixtures": [
     "SUBD indexed reads a word, not its address",
@@ -14,6 +14,7 @@
     "ADC includes incoming carry in signed overflow",
     "SBC includes incoming borrow in outgoing carry",
     "ADC #0 and SBC #0/#255: exhaustive A, incoming carry and stale V combinations",
+    "BRSET/BRCLR direct and extended: 250880 exhaustive byte cases; targets and unchanged CCR checked",
     "JSR pushes the correct return address",
     "Uniform byte-axis helper matches all 15 original table knots",
     "Uniform word-axis helper matches all 11 original table knots",

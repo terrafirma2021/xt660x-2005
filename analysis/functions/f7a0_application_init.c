@@ -354,7 +354,7 @@ void application_init(void)
       FUN_87e7();
     }
     bVar6 = DAT_0882;
-    if ((~bVar6 & 0x80) != 0) {
+    if ((~bVar6 & 0x80) == 0) {
       DAT_0ffc = 0x53f2;
       FUN_73a5();
       uVar7 = DAT_0a2e;
@@ -377,14 +377,14 @@ void application_init(void)
         FUN_55b6();
       }
       bVar6 = DAT_08a0;
-      if ((((((~bVar6 & 4) == 0) && (bVar6 = DAT_08b2, (~bVar6 & 0x80) == 0)) &&
+      if ((((((~bVar6 & 4) != 0) && (bVar6 = DAT_08b2, (~bVar6 & 0x80) != 0)) &&
            (puVar2 = (undefined *)DAT_08f8, puVar2 < &UNK_2800)) &&
-          ((((bVar6 = DAT_0884, (~bVar6 & 4) == 0 && (bVar6 = DAT_0d08, (~bVar6 & 1) == 0)) &&
-            ((bVar6 = DAT_0884, (~bVar6 & 2) == 0 &&
-             ((bVar6 = DAT_088c, (~bVar6 & 0x80) == 0 && (bVar6 = DAT_0885, (~bVar6 & 0x40) == 0))))
-            )) && (bVar6 = DAT_0bf8, (~bVar6 & 0x80) == 0)))) &&
-         (((bVar6 = DAT_089b, (~bVar6 & 0x80) == 0 && (bVar6 = DAT_089b, (~bVar6 & 8) == 0)) &&
-          (bVar6 = DAT_0880, (~bVar6 & 0x40) == 0)))) {
+          ((((bVar6 = DAT_0884, (~bVar6 & 4) != 0 && (bVar6 = DAT_0d08, (~bVar6 & 1) != 0)) &&
+            ((bVar6 = DAT_0884, (~bVar6 & 2) != 0 &&
+             ((bVar6 = DAT_088c, (~bVar6 & 0x80) != 0 && (bVar6 = DAT_0885, (~bVar6 & 0x40) != 0))))
+            )) && (bVar6 = DAT_0bf8, (~bVar6 & 0x80) != 0)))) &&
+         (((bVar6 = DAT_089b, (~bVar6 & 0x80) != 0 && (bVar6 = DAT_089b, (~bVar6 & 8) != 0)) &&
+          (bVar6 = DAT_0880, (~bVar6 & 0x40) != 0)))) {
         DAT_0ffc = 0x5477;
         FUN_5664();
       }

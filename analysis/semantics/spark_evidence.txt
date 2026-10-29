@@ -1,0 +1,386 @@
+Original instruction bytes; operands use CPU addresses = file offsets.
+Firmware SHA256: 5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280
+
+Range 0x5407 .. 0x547A exclusive
+5407  b60c03        LDAA 0xc03
+540a  841f          ANDA #0x1f
+540c  8102          CMPA #0x2
+540e  2506          BCS 0x5416
+5410  8106          CMPA #0x6
+5412  2402          BCC 0x5416
+5414  201f          BRA 0x5435
+5416  b60a82        LDAA 0xa82
+5419  1654f0        JSR 0x54f0
+541c  1410          SEI
+541e  b60de3        LDAA 0xde3
+5421  7a0924        STAA 0x924
+5424  fc0de5        LDD 0xde5
+5427  7c0a94        STD 0xa94
+542a  fc0de7        LDD 0xde7
+542d  7c0aa4        STD 0xaa4
+5430  10ef          CLI
+5432  1655b6        JSR 0x55b6
+5435  1e08a0043d    BRSET 0x8a0,0x4,0x5477
+543a  1e08b28038    BRSET 0x8b2,0x80,0x5477
+543f  fc08f8        LDD 0x8f8
+5442  8c2800        CPD #0x2800
+5445  2430          BCC 0x5477
+5447  1e0884042b    BRSET 0x884,0x4,0x5477
+544c  1e0d080126    BRSET 0xd08,0x1,0x5477
+5451  1e08840221    BRSET 0x884,0x2,0x5477
+5456  1e088c801c    BRSET 0x88c,0x80,0x5477
+545b  1e08854017    BRSET 0x885,0x40,0x5477
+5460  1e0bf88012    BRSET 0xbf8,0x80,0x5477
+5465  1e089b800d    BRSET 0x89b,0x80,0x5477
+546a  1e089b0808    BRSET 0x89b,0x8,0x5477
+546f  1e08804003    BRSET 0x880,0x40,0x5477
+5474  165664        JSR 0x5664
+5477  1d088280      BCLR 0x882,0x80
+
+Range 0x54F0 .. 0x55B6 exclusive
+54f0  7a0dde        STAA 0xdde
+54f3  7a0ddf        STAA 0xddf
+54f6  ce0ddf        LDX #0xddf
+54f9  fd0a36        LDY 0xa36
+54fc  16c21c        JSR 0xc21c
+54ff  7c0de0        STD 0xde0
+5502  f60a8b        LDAB 0xa8b
+5505  87            CLRA
+5506  f30de0        ADDD 0xde0
+5509  2403          BCC 0x550e
+550b  ccffff        LDD #0xffff
+550e  b34f9e        SUBD 0x4f9e
+5511  2402          BCC 0x5515
+5513  87            CLRA
+5514  c7            CLRB
+5515  7c0de5        STD 0xde5
+5518  fc0a32        LDD 0xa32
+551b  b30de5        SUBD 0xde5
+551e  2513          BCS 0x5533
+5520  bc0db4        CPD 0xdb4
+5523  2402          BCC 0x5527
+5525  200c          BRA 0x5533
+5527  7c0de7        STD 0xde7
+552a  8606          LDAA #0x6
+552c  7a0de3        STAA 0xde3
+552f  18200082      LBRA 0x55b5
+5533  fc0a32        LDD 0xa32
+5536  f30a30        ADDD 0xa30
+5539  2403          BCC 0x553e
+553b  ccffff        LDD #0xffff
+553e  b30de5        SUBD 0xde5
+5541  251c          BCS 0x555f
+5543  bc0db4        CPD 0xdb4
+5546  240d          BCC 0x5555
+5548  f30a30        ADDD 0xa30
+554b  7c0de7        STD 0xde7
+554e  8604          LDAA #0x4
+5550  7a0de3        STAA 0xde3
+5553  2060          BRA 0x55b5
+5555  7c0de7        STD 0xde7
+5558  8605          LDAA #0x5
+555a  7a0de3        STAA 0xde3
+555d  2056          BRA 0x55b5
+555f  fc0a32        LDD 0xa32
+5562  f30a30        ADDD 0xa30
+5565  2403          BCC 0x556a
+5567  ccffff        LDD #0xffff
+556a  f30a30        ADDD 0xa30
+556d  2403          BCC 0x5572
+556f  ccffff        LDD #0xffff
+5572  b30de5        SUBD 0xde5
+5575  251c          BCS 0x5593
+5577  bc0db4        CPD 0xdb4
+557a  240d          BCC 0x5589
+557c  f30a30        ADDD 0xa30
+557f  7c0de7        STD 0xde7
+5582  8603          LDAA #0x3
+5584  7a0de3        STAA 0xde3
+5587  202c          BRA 0x55b5
+5589  7c0de7        STD 0xde7
+558c  8604          LDAA #0x4
+558e  7a0de3        STAA 0xde3
+5591  2022          BRA 0x55b5
+5593  fc0a32        LDD 0xa32
+5596  f30a36        ADDD 0xa36
+5599  2403          BCC 0x559e
+559b  ccffff        LDD #0xffff
+559e  b30de5        SUBD 0xde5
+55a1  2507          BCS 0x55aa
+55a3  bc0db4        CPD 0xdb4
+55a6  2405          BCC 0x55ad
+55a8  2000          BRA 0x55aa
+55aa  fc0db4        LDD 0xdb4
+55ad  7c0de7        STD 0xde7
+55b0  8603          LDAA #0x3
+55b2  7a0de3        STAA 0xde3
+55b5  3d            RTS
+
+Range 0x8827 .. 0x88B1 exclusive
+8827  fc0902        LDD 0x902
+882a  7c0ba2        STD 0xba2
+882d  cc426e        LDD #0x426e
+8830  7c0ba4        STD 0xba4
+8833  8620          LDAA #0x20
+8835  16ca49        JSR 0xca49
+8838  7c0914        STD 0x914
+883b  fc08f8        LDD 0x8f8
+883e  16cc63        JSR 0xcc63
+8841  7c0918        STD 0x918
+8844  1e08804003    BRSET 0x880,0x40,0x884c
+8849  06885d        JMP 0x885d
+884c  c640          LDAB #0x40
+884e  7b0a82        STAB 0xa82
+8851  c680          LDAB #0x80
+8853  7b0a86        STAB 0xa86
+8856  1d088702      BCLR 0x887,0x2
+885a  068a89        JMP 0x8a89
+885d  fc08e8        LDD 0x8e8
+8860  1e088d0403    BRSET 0x88d,0x4,0x8868
+8865  ccd000        LDD #0xd000
+8868  7c0ba2        STD 0xba2
+886b  cc4246        LDD #0x4246
+886e  7c0ba4        STD 0xba4
+8871  8614          LDAA #0x14
+8873  16ca49        JSR 0xca49
+8876  7c0916        STD 0x916
+8879  fc0914        LDD 0x914
+887c  7c0dde        STD 0xdde
+887f  fc0916        LDD 0x916
+8882  7c0de0        STD 0xde0
+8885  f60d87        LDAB 0xd87
+8888  c109          CMPB #0x9
+888a  260a          BNE 0x8896
+888c  1e08961005    BRSET 0x896,0x10,0x8896
+8891  ce42ab        LDX #0x42ab
+8894  2010          BRA 0x88a6
+8896  f60898        LDAB 0x898
+8899  f14245        CMPB 0x4245
+889c  2205          BHI 0x88a3
+889e  ce452b        LDX #0x452b
+88a1  2003          BRA 0x88a6
+88a3  ce47ab        LDX #0x47ab
+88a6  c614          LDAB #0x14
+88a8  16c32d        JSR 0xc32d
+88ab  c30080        ADDD #0x80
+88ae  7a0a83        STAA 0xa83
+
+Range 0x8A2F .. 0x8A89 exclusive
+8a2f  b60a83        LDAA 0xa83
+8a32  b10d05        CMPA 0xd05
+8a35  2403          BCC 0x8a3a
+8a37  b60d05        LDAA 0xd05
+8a3a  f60a86        LDAB 0xa86
+8a3d  12            MUL
+8a3e  49            LSRD
+8a3f  49            LSRD
+8a40  49            LSRD
+8a41  49            LSRD
+8a42  49            LSRD
+8a43  49            LSRD
+8a44  49            LSRD
+8a45  7c0dde        STD 0xdde
+8a48  1f0ada401f    BRCLR 0xada,0x40,0x8a6c
+8a4d  f00ad8        SUBB 0xad8
+8a50  8200          SBCA #0x0
+8a52  250e          BCS 0x8a62
+8a54  8100          CMPA #0x0
+8a56  260f          BNE 0x8a67
+8a58  f14e30        CMPB 0x4e30
+8a5b  220a          BHI 0x8a67
+8a5d  f14e2f        CMPB 0x4e2f
+8a60  240e          BCC 0x8a70
+8a62  f64e2f        LDAB 0x4e2f
+8a65  2009          BRA 0x8a70
+8a67  f64e30        LDAB 0x4e30
+8a6a  2004          BRA 0x8a70
+8a6c  8100          CMPA #0x0
+8a6e  2605          BNE 0x8a75
+8a70  f14242        CMPB 0x4242
+8a73  2503          BCS 0x8a78
+8a75  f64242        LDAB 0x4242
+8a78  7b0a82        STAB 0xa82
+8a7b  1d088702      BCLR 0x887,0x2
+8a7f  1f08800405    BRCLR 0x880,0x4,0x8a89
+8a84  8680          LDAA #0x80
+8a86  7a0a86        STAA 0xa86
+
+Range 0xED29 .. 0xEE78 exclusive
+ed29  1f08804413    BRCLR 0x880,0x44,0xed41
+ed2e  1e08804007    BRSET 0x880,0x40,0xed3a
+ed33  16ee78        JSR 0xee78
+ed36  16edc3        JSR 0xedc3
+ed39  3d            RTS
+ed3a  16ee19        JSR 0xee19
+ed3d  16edc3        JSR 0xedc3
+ed40  3d            RTS
+ed41  16ee78        JSR 0xee78
+ed44  f60c04        LDAB 0xc04
+ed47  c106          CMPB #0x6
+ed49  2616          BNE 0xed61
+ed4b  1e088d200c    BRSET 0x88d,0x20,0xed5c
+ed50  b60a82        LDAA 0xa82
+ed53  8140          CMPA #0x40
+ed55  230a          BLS 0xed61
+ed57  1f0a920805    BRCLR 0xa92,0x8,0xed61
+ed5c  16edc3        JSR 0xedc3
+ed5f  200b          BRA 0xed6c
+ed61  c103          CMPB #0x3
+ed63  2507          BCS 0xed6c
+ed65  c107          CMPB #0x7
+ed67  2403          BCC 0xed6c
+ed69  16ef6d        JSR 0xef6d
+ed6c  3d            RTS
+ed6d  1e08854005    BRSET 0x885,0x40,0xed77
+ed72  1f08840201    BRCLR 0x884,0x2,0xed78
+ed77  3d            RTS
+ed78  f60c04        LDAB 0xc04
+ed7b  c107          CMPB #0x7
+ed7d  2701          BEQ 0xed80
+ed7f  3d            RTS
+ed80  1e0880401e    BRSET 0x880,0x40,0xeda3
+ed85  b60a2e        LDAA 0xa2e
+ed88  b10d9e        CMPA 0xd9e
+ed8b  2516          BCS 0xeda3
+ed8d  dc44          LDD 0x0044
+ed8f  b30b7a        SUBD 0xb7a
+ed92  bc0a9a        CPD 0xa9a
+ed95  2a0c          BPL 0xeda3
+ed97  1c0a9302      BSET 0xa93,0x2
+ed9b  fc0b7a        LDD 0xb7a
+ed9e  f30a9a        ADDD 0xa9a
+eda1  2006          BRA 0xeda9
+eda3  1d0a9302      BCLR 0xa93,0x2
+eda7  dc44          LDD 0x0044
+eda9  c3000a        ADDD #0xa
+edac  5c56          STD 0x0056
+edae  4d4c08        BCLR 0x004c,0x8
+edb1  9649          LDAA 0x0049
+edb3  8a80          ORAA #0x80
+edb5  84bf          ANDA #0xbf
+edb7  5a49          STAA 0x0049
+edb9  8608          LDAA #0x8
+edbb  5a4e          STAA 0x004e
+edbd  1c0a9280      BSET 0xa92,0x80
+edc1  3d            RTS
+edc2  3d            RTS
+edc3  1e08854005    BRSET 0x885,0x40,0xedcd
+edc8  1f08840201    BRCLR 0x884,0x2,0xedce
+edcd  3d            RTS
+edce  f60c04        LDAB 0xc04
+edd1  c106          CMPB #0x6
+edd3  2701          BEQ 0xedd6
+edd5  3d            RTS
+edd6  1e0880401e    BRSET 0x880,0x40,0xedf9
+eddb  b60a2e        LDAA 0xa2e
+edde  b10d9e        CMPA 0xd9e
+ede1  2516          BCS 0xedf9
+ede3  dc44          LDD 0x0044
+ede5  b30b7a        SUBD 0xb7a
+ede8  bc0a9a        CPD 0xa9a
+edeb  2a0c          BPL 0xedf9
+eded  1c0a9302      BSET 0xa93,0x2
+edf1  fc0b7a        LDD 0xb7a
+edf4  f30a9a        ADDD 0xa9a
+edf7  2006          BRA 0xedff
+edf9  1d0a9302      BCLR 0xa93,0x2
+edfd  dc44          LDD 0x0044
+edff  c3000a        ADDD #0xa
+ee02  5c56          STD 0x0056
+ee04  4d4c08        BCLR 0x004c,0x8
+ee07  9649          LDAA 0x0049
+ee09  8a80          ORAA #0x80
+ee0b  84bf          ANDA #0xbf
+ee0d  5a49          STAA 0x0049
+ee0f  8608          LDAA #0x8
+ee11  5a4e          STAA 0x004e
+ee13  1c0a9280      BSET 0xa92,0x80
+ee17  3d            RTS
+ee18  3d            RTS
+ee19  1e08a00459    BRSET 0x8a0,0x4,0xee77
+ee1e  1e08b28054    BRSET 0x8b2,0x80,0xee77
+ee23  1e0880804f    BRSET 0x880,0x80,0xee77
+ee28  1e0884044a    BRSET 0x884,0x4,0xee77
+ee2d  1e0d080145    BRSET 0xd08,0x1,0xee77
+ee32  1e08840240    BRSET 0x884,0x2,0xee77
+ee37  1e088c803b    BRSET 0x88c,0x80,0xee77
+ee3c  1e08854036    BRSET 0x885,0x40,0xee77
+ee41  1e0bf88031    BRSET 0xbf8,0x80,0xee77
+ee46  f60c04        LDAB 0xc04
+ee49  1e088c020d    BRSET 0x88c,0x2,0xee5b
+ee4e  1e089a0208    BRSET 0x89a,0x2,0xee5b
+ee53  c104          CMPB #0x4
+ee55  2705          BEQ 0xee5c
+ee57  c105          CMPB #0x5
+ee59  2701          BEQ 0xee5c
+ee5b  3d            RTS
+ee5c  dc44          LDD 0x0044
+ee5e  c3000a        ADDD #0xa
+ee61  7c0b7a        STD 0xb7a
+ee64  5c56          STD 0x0056
+ee66  4d4c08        BCLR 0x004c,0x8
+ee69  9649          LDAA 0x0049
+ee6b  8ac0          ORAA #0xc0
+ee6d  5a49          STAA 0x0049
+ee6f  8608          LDAA #0x8
+ee71  5a4e          STAA 0x004e
+ee73  1c0a9208      BSET 0xa92,0x8
+ee77  3d            RTS
+
+Range 0xB900 .. 0xB97F exclusive
+b900  b60be4        LDAA 0xbe4
+b903  8b01          ADDA #0x1
+b905  8200          SBCA #0x0
+b907  7a0be4        STAA 0xbe4
+b90a  b14f0d        CMPA 0x4f0d
+b90d  256f          BCS 0xb97e
+b90f  b60be3        LDAA 0xbe3
+b912  8b01          ADDA #0x1
+b914  8200          SBCA #0x0
+b916  7a0be3        STAA 0xbe3
+b919  b14f0b        CMPA 0x4f0b
+b91c  230d          BLS 0xb92b
+b91e  1d089310      BCLR 0x893,0x10
+b922  1d089340      BCLR 0x893,0x40
+b926  790be3        CLR 0xbe3
+b929  2050          BRA 0xb97b
+b92b  1c089304      BSET 0x893,0x4
+b92f  dc44          LDD 0x0044
+b931  c30002        ADDD #0x2
+b934  5c56          STD 0x0056
+b936  4d4c08        BCLR 0x004c,0x8
+b939  9649          LDAA 0x0049
+b93b  8ac0          ORAA #0xc0
+b93d  5a49          STAA 0x0049
+b93f  8608          LDAA #0x8
+b941  5a4e          STAA 0x004e
+b943  dc44          LDD 0x0044
+b945  d356          ADDD 0x0056
+b947  d356          ADDD 0x0056
+b949  d356          ADDD 0x0056
+b94b  d356          ADDD 0x0056
+b94d  d356          ADDD 0x0056
+b94f  d356          ADDD 0x0056
+b951  d356          ADDD 0x0056
+b953  d356          ADDD 0x0056
+b955  d356          ADDD 0x0056
+b957  d356          ADDD 0x0056
+b959  d356          ADDD 0x0056
+b95b  d356          ADDD 0x0056
+b95d  d356          ADDD 0x0056
+b95f  d356          ADDD 0x0056
+b961  d356          ADDD 0x0056
+b963  d356          ADDD 0x0056
+b965  fc4f12        LDD 0x4f12
+b968  d356          ADDD 0x0056
+b96a  5c56          STD 0x0056
+b96c  4d4c08        BCLR 0x004c,0x8
+b96f  9649          LDAA 0x0049
+b971  8a80          ORAA #0x80
+b973  84bf          ANDA #0xbf
+b975  5a49          STAA 0x0049
+b977  8608          LDAA #0x8
+b979  5a4e          STAA 0x004e
+b97b  790be4        CLR 0xbe4
+b97e  3d            RTS
+

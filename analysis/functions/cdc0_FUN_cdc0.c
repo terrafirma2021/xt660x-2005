@@ -15,7 +15,7 @@ ushort FUN_cdc0(ushort param_1)
   bVar1 = DAT_0020;
   if (((bVar1 & 1) == 0) || (param_1 = DAT_0024, param_1 != 0xa55a)) {
     bVar1 = DAT_08ae;
-    if ((~bVar1 & 0x40) != 0) {
+    if ((~bVar1 & 0x40) == 0) {
       uVar2 = DAT_0ae4;
       DAT_0ae6 = uVar2;
       sVar7 = DAT_0ab0;
@@ -23,7 +23,7 @@ ushort FUN_cdc0(ushort param_1)
       sVar4 = DAT_0ae6;
       sVar7 = sVar7 - sVar4;
       bVar1 = DAT_08a2;
-      if ((~bVar1 & 1) == 0) {
+      if ((~bVar1 & 1) != 0) {
         sVar7 = 0;
       }
       if ((char)((ushort)sVar7 >> 8) != '\0') {
@@ -46,7 +46,7 @@ ushort FUN_cdc0(ushort param_1)
           DAT_0e1e = (char)uVar3;
           DAT_0d10 = (char)uVar3;
           cVar5 = DAT_0dd5;
-          if ((cVar5 == -0x80) || (bVar1 = DAT_0d06, (~bVar1 & 0x80) != 0)) {
+          if ((cVar5 == -0x80) || (bVar1 = DAT_0d06, (~bVar1 & 0x80) == 0)) {
             uVar8 = FUN_ce51(param_1);
           }
           else {

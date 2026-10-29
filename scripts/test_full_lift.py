@@ -3,7 +3,7 @@
 Independent p-code interpreter compares every translated instruction with two states.
 CPU12 semantic fixtures independently check indexed words, carry/borrow, stack and axes.
 """
-import ctypes as ct, json, random, sys, collections, hashlib
+import ctypes as ct, json, random, sys, collections, hashlib, re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];FULL=ROOT/'analysis/full'
 rows=[json.loads(s) for s in (FULL/'instructions.jsonl').read_text().splitlines()]
@@ -115,6 +115,21 @@ for operation,operand in [('ADCA',0),('SBCA',0),('SBCA',255)]:
                 assert s.reg[0]==result and s.reg[49]&15==flags,(operation,a,operand,carry,old_overflow)
                 checks+=1
 fixtures.append('ADC #0 and SBC #0/#255: exhaustive A, incoming carry and stale V combinations')
+# Direct/ext BRSET and BRCLR: every input byte for every firmware instance.
+# Expected predicate comes from CPU12RM Rev.4 p115, not from exported p-code.
+branch_cases=0
+for row in rows:
+    m=re.fullmatch(r'(BRSET|BRCLR) (0x[0-9a-f]+),(0x[0-9a-f]+),(0x[0-9a-f]+)',row['assembly'])
+    if not m:continue
+    op,addr,bitmask,target=m.groups();addr=int(addr,16);bitmask=int(bitmask,16);target=int(target,16)
+    for value in range(256):
+        s=state(row['address']);s.ram[addr]=value;s.reg[49]=0xa5
+        taken=(value&bitmask)==(bitmask if op=='BRSET' else 0)
+        assert lib.xt_step(ct.byref(s))==0
+        assert s.pc==(target if taken else row['address']+len(row['bytes'])//2),(row['assembly'],value,s.pc)
+        assert s.reg[49]==0xa5 and s.ram[addr]==value
+        branch_cases+=1;checks+=1
+fixtures.append(f'BRSET/BRCLR direct and extended: {branch_cases} exhaustive byte cases; targets and unchanged CCR checked')
 single(0x5083,lambda s:None,lambda s:s.pc==0x5fa4 and rd(s.reg,42,2)==0x0fee and rd(s.ram,0x0fee,2)==0x5086,'JSR pushes the correct return address')
 
 def run_func(entry,regsetup,ramsetup=lambda s:None):

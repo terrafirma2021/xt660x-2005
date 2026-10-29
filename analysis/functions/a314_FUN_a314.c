@@ -10,15 +10,6 @@ void FUN_a314(void)
   
   bVar4 = DAT_0886;
   if ((~bVar4 & 0x40) == 0) {
-    bVar4 = DAT_0a05;
-    cVar3 = bVar4 + DAT_34a4;
-    if (CARRY1(bVar4,DAT_34a4)) {
-      cVar3 = -1;
-    }
-    DAT_0a06 = cVar3;
-    DAT_0b1a = 0;
-  }
-  else {
     bVar4 = DAT_08ec;
     bVar1 = DAT_0a05;
     if (bVar4 <= bVar1) {
@@ -43,6 +34,15 @@ void FUN_a314(void)
         }
       }
     }
+  }
+  else {
+    bVar4 = DAT_0a05;
+    cVar3 = bVar4 + DAT_34a4;
+    if (CARRY1(bVar4,DAT_34a4)) {
+      cVar3 = -1;
+    }
+    DAT_0a06 = cVar3;
+    DAT_0b1a = 0;
   }
   uVar2 = DAT_08ec;
   DAT_0a07 = uVar2;

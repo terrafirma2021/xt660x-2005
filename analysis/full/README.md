@@ -34,7 +34,7 @@ There are zero unclassified bytes and zero decoded instructions without a contai
 
 The main routine at `0x5000` now includes the previously unowned continuation `0x52D0–0x54EF`. Its recovered body grew from 720 to 1,264 bytes. Lookup routines now have explicit register argument/return storage. Shared RAM is conservatively volatile, and the structured pass does not discard unreachable blocks or assume readonly memory for simplification.
 
-More importantly, the bundled HC12 language had incorrect indexed 16-bit memory semantics: `SUBD 0,X` could become subtraction of X itself, and `LDY 4,X` could become X+4 rather than a memory read. The repository's processor model fixes this, plus ADC overflow and SBC borrow propagation. [The patch](../../ghidra/cpu12-corrections.patch) is reviewable. Both the structured C and complete C were regenerated with the corrected model.
+More importantly, the bundled HC12 language had incorrect indexed 16-bit memory semantics: `SUBD 0,X` could become subtraction of X itself, and `LDY 4,X` could become X+4 rather than a memory read. The repository's processor model fixes this, plus ADC overflow, SBC borrow propagation, and the inverted BRSET condition. [The patch](../../ghidra/cpu12-corrections.patch) is reviewable. Both the structured C and complete C were regenerated with the corrected model.
 
 Remaining structured-decompiler warnings concern stack-pointer setup and infinite-loop blocks. They remain listed in [decompiler_warnings.tsv](decompiler_warnings.tsv). The low-level translation independently retains every decoded instruction even when the high-level presentation is imperfect.
 
@@ -45,9 +45,10 @@ From the repository root on Linux/WSL, with Clang or GCC:
 ```sh
 clang -std=c11 -O0 -fPIC -shared analysis/full/c/page_*.c analysis/full/c/dispatch.c -o /tmp/libxt660_full.so
 python3 scripts/test_full_lift.py /tmp/libxt660_full.so
+python3 scripts/test_control_semantics.py /tmp/libxt660_full.so
 ```
 
-The verification uses an independent Python p-code evaluator for **31,884 instruction states**, plus CPU12 fixtures and lookup results at original table knots. Indexed word loads, arithmetic carry/borrow, call-stack writes, curve values and major-axis searches are checked. [Validation results](validation.json) distinguish translation consistency from hardware equivalence.
+The verification uses an independent Python p-code evaluator for **31,884 instruction states**, plus independent CPU12 fixtures, including 250,880 direct/extended bit-branch cases, and lookup results at original table knots. Indexed word loads, arithmetic carry/borrow, bit-branch predicates, call-stack writes, curve values and major-axis searches are checked. The separate [control tests](../semantics/control_validation.json) exercise 212,090 temperature, fan, speed/cut and map-selection cases. [Validation results](validation.json) distinguish translation consistency from hardware equivalence.
 
 `xt_step` executes one translated instruction against explicit register/RAM state; `xt_run` runs a bounded number of steps. The host must supply peripheral state and interrupt effects. This is not a cycle-accurate ECU simulator, a live firmware image, or a replacement flash. Self-modifying code is not re-decoded. Undefined divide-by-zero behavior reports `XT_DIVZERO`; execution into missing boot bytes reports `XT_MISSING_BOOT`.
 

@@ -1,0 +1,5122 @@
+[
+  {
+    "adc_10bit": 0,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 1,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 2,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 3,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 4,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 5,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 6,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 7,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 8,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 9,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 10,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 11,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 12,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 13,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 14,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 15,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 16,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 17,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 18,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 19,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 20,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 21,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 22,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 23,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 24,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 25,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 26,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 27,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 28,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 29,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 30,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 31,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 32,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 33,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 34,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 35,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 36,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 37,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 38,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 39,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 40,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 41,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 42,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 43,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 44,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 45,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 46,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 47,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 48,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 49,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 50,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 51,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 52,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 53,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 54,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 55,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 56,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 57,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 58,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 59,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 60,
+    "coolant_internal": 239,
+    "diagnostic_payload": 149
+  },
+  {
+    "adc_10bit": 61,
+    "coolant_internal": 238,
+    "diagnostic_payload": 148
+  },
+  {
+    "adc_10bit": 62,
+    "coolant_internal": 237,
+    "diagnostic_payload": 148
+  },
+  {
+    "adc_10bit": 63,
+    "coolant_internal": 236,
+    "diagnostic_payload": 147
+  },
+  {
+    "adc_10bit": 64,
+    "coolant_internal": 235,
+    "diagnostic_payload": 146
+  },
+  {
+    "adc_10bit": 65,
+    "coolant_internal": 234,
+    "diagnostic_payload": 146
+  },
+  {
+    "adc_10bit": 66,
+    "coolant_internal": 233,
+    "diagnostic_payload": 145
+  },
+  {
+    "adc_10bit": 67,
+    "coolant_internal": 232,
+    "diagnostic_payload": 145
+  },
+  {
+    "adc_10bit": 68,
+    "coolant_internal": 231,
+    "diagnostic_payload": 144
+  },
+  {
+    "adc_10bit": 69,
+    "coolant_internal": 230,
+    "diagnostic_payload": 143
+  },
+  {
+    "adc_10bit": 70,
+    "coolant_internal": 229,
+    "diagnostic_payload": 143
+  },
+  {
+    "adc_10bit": 71,
+    "coolant_internal": 229,
+    "diagnostic_payload": 143
+  },
+  {
+    "adc_10bit": 72,
+    "coolant_internal": 228,
+    "diagnostic_payload": 142
+  },
+  {
+    "adc_10bit": 73,
+    "coolant_internal": 227,
+    "diagnostic_payload": 141
+  },
+  {
+    "adc_10bit": 74,
+    "coolant_internal": 226,
+    "diagnostic_payload": 141
+  },
+  {
+    "adc_10bit": 75,
+    "coolant_internal": 225,
+    "diagnostic_payload": 140
+  },
+  {
+    "adc_10bit": 76,
+    "coolant_internal": 224,
+    "diagnostic_payload": 140
+  },
+  {
+    "adc_10bit": 77,
+    "coolant_internal": 223,
+    "diagnostic_payload": 139
+  },
+  {
+    "adc_10bit": 78,
+    "coolant_internal": 222,
+    "diagnostic_payload": 138
+  },
+  {
+    "adc_10bit": 79,
+    "coolant_internal": 221,
+    "diagnostic_payload": 138
+  },
+  {
+    "adc_10bit": 80,
+    "coolant_internal": 220,
+    "diagnostic_payload": 137
+  },
+  {
+    "adc_10bit": 81,
+    "coolant_internal": 219,
+    "diagnostic_payload": 136
+  },
+  {
+    "adc_10bit": 82,
+    "coolant_internal": 219,
+    "diagnostic_payload": 136
+  },
+  {
+    "adc_10bit": 83,
+    "coolant_internal": 218,
+    "diagnostic_payload": 136
+  },
+  {
+    "adc_10bit": 84,
+    "coolant_internal": 217,
+    "diagnostic_payload": 135
+  },
+  {
+    "adc_10bit": 85,
+    "coolant_internal": 216,
+    "diagnostic_payload": 135
+  },
+  {
+    "adc_10bit": 86,
+    "coolant_internal": 215,
+    "diagnostic_payload": 134
+  },
+  {
+    "adc_10bit": 87,
+    "coolant_internal": 214,
+    "diagnostic_payload": 133
+  },
+  {
+    "adc_10bit": 88,
+    "coolant_internal": 213,
+    "diagnostic_payload": 133
+  },
+  {
+    "adc_10bit": 89,
+    "coolant_internal": 212,
+    "diagnostic_payload": 132
+  },
+  {
+    "adc_10bit": 90,
+    "coolant_internal": 211,
+    "diagnostic_payload": 131
+  },
+  {
+    "adc_10bit": 91,
+    "coolant_internal": 210,
+    "diagnostic_payload": 131
+  },
+  {
+    "adc_10bit": 92,
+    "coolant_internal": 210,
+    "diagnostic_payload": 131
+  },
+  {
+    "adc_10bit": 93,
+    "coolant_internal": 209,
+    "diagnostic_payload": 130
+  },
+  {
+    "adc_10bit": 94,
+    "coolant_internal": 208,
+    "diagnostic_payload": 130
+  },
+  {
+    "adc_10bit": 95,
+    "coolant_internal": 208,
+    "diagnostic_payload": 130
+  },
+  {
+    "adc_10bit": 96,
+    "coolant_internal": 207,
+    "diagnostic_payload": 129
+  },
+  {
+    "adc_10bit": 97,
+    "coolant_internal": 206,
+    "diagnostic_payload": 128
+  },
+  {
+    "adc_10bit": 98,
+    "coolant_internal": 206,
+    "diagnostic_payload": 128
+  },
+  {
+    "adc_10bit": 99,
+    "coolant_internal": 205,
+    "diagnostic_payload": 128
+  },
+  {
+    "adc_10bit": 100,
+    "coolant_internal": 205,
+    "diagnostic_payload": 128
+  },
+  {
+    "adc_10bit": 101,
+    "coolant_internal": 204,
+    "diagnostic_payload": 127
+  },
+  {
+    "adc_10bit": 102,
+    "coolant_internal": 203,
+    "diagnostic_payload": 126
+  },
+  {
+    "adc_10bit": 103,
+    "coolant_internal": 203,
+    "diagnostic_payload": 126
+  },
+  {
+    "adc_10bit": 104,
+    "coolant_internal": 202,
+    "diagnostic_payload": 126
+  },
+  {
+    "adc_10bit": 105,
+    "coolant_internal": 201,
+    "diagnostic_payload": 125
+  },
+  {
+    "adc_10bit": 106,
+    "coolant_internal": 201,
+    "diagnostic_payload": 125
+  },
+  {
+    "adc_10bit": 107,
+    "coolant_internal": 200,
+    "diagnostic_payload": 125
+  },
+  {
+    "adc_10bit": 108,
+    "coolant_internal": 200,
+    "diagnostic_payload": 125
+  },
+  {
+    "adc_10bit": 109,
+    "coolant_internal": 199,
+    "diagnostic_payload": 124
+  },
+  {
+    "adc_10bit": 110,
+    "coolant_internal": 198,
+    "diagnostic_payload": 123
+  },
+  {
+    "adc_10bit": 111,
+    "coolant_internal": 198,
+    "diagnostic_payload": 123
+  },
+  {
+    "adc_10bit": 112,
+    "coolant_internal": 197,
+    "diagnostic_payload": 123
+  },
+  {
+    "adc_10bit": 113,
+    "coolant_internal": 196,
+    "diagnostic_payload": 122
+  },
+  {
+    "adc_10bit": 114,
+    "coolant_internal": 196,
+    "diagnostic_payload": 122
+  },
+  {
+    "adc_10bit": 115,
+    "coolant_internal": 195,
+    "diagnostic_payload": 121
+  },
+  {
+    "adc_10bit": 116,
+    "coolant_internal": 195,
+    "diagnostic_payload": 121
+  },
+  {
+    "adc_10bit": 117,
+    "coolant_internal": 194,
+    "diagnostic_payload": 121
+  },
+  {
+    "adc_10bit": 118,
+    "coolant_internal": 193,
+    "diagnostic_payload": 120
+  },
+  {
+    "adc_10bit": 119,
+    "coolant_internal": 193,
+    "diagnostic_payload": 120
+  },
+  {
+    "adc_10bit": 120,
+    "coolant_internal": 192,
+    "diagnostic_payload": 120
+  },
+  {
+    "adc_10bit": 121,
+    "coolant_internal": 191,
+    "diagnostic_payload": 119
+  },
+  {
+    "adc_10bit": 122,
+    "coolant_internal": 191,
+    "diagnostic_payload": 119
+  },
+  {
+    "adc_10bit": 123,
+    "coolant_internal": 190,
+    "diagnostic_payload": 118
+  },
+  {
+    "adc_10bit": 124,
+    "coolant_internal": 190,
+    "diagnostic_payload": 118
+  },
+  {
+    "adc_10bit": 125,
+    "coolant_internal": 189,
+    "diagnostic_payload": 118
+  },
+  {
+    "adc_10bit": 126,
+    "coolant_internal": 189,
+    "diagnostic_payload": 118
+  },
+  {
+    "adc_10bit": 127,
+    "coolant_internal": 188,
+    "diagnostic_payload": 117
+  },
+  {
+    "adc_10bit": 128,
+    "coolant_internal": 188,
+    "diagnostic_payload": 117
+  },
+  {
+    "adc_10bit": 129,
+    "coolant_internal": 187,
+    "diagnostic_payload": 116
+  },
+  {
+    "adc_10bit": 130,
+    "coolant_internal": 187,
+    "diagnostic_payload": 116
+  },
+  {
+    "adc_10bit": 131,
+    "coolant_internal": 186,
+    "diagnostic_payload": 116
+  },
+  {
+    "adc_10bit": 132,
+    "coolant_internal": 186,
+    "diagnostic_payload": 116
+  },
+  {
+    "adc_10bit": 133,
+    "coolant_internal": 185,
+    "diagnostic_payload": 115
+  },
+  {
+    "adc_10bit": 134,
+    "coolant_internal": 185,
+    "diagnostic_payload": 115
+  },
+  {
+    "adc_10bit": 135,
+    "coolant_internal": 184,
+    "diagnostic_payload": 115
+  },
+  {
+    "adc_10bit": 136,
+    "coolant_internal": 184,
+    "diagnostic_payload": 115
+  },
+  {
+    "adc_10bit": 137,
+    "coolant_internal": 183,
+    "diagnostic_payload": 114
+  },
+  {
+    "adc_10bit": 138,
+    "coolant_internal": 183,
+    "diagnostic_payload": 114
+  },
+  {
+    "adc_10bit": 139,
+    "coolant_internal": 182,
+    "diagnostic_payload": 113
+  },
+  {
+    "adc_10bit": 140,
+    "coolant_internal": 182,
+    "diagnostic_payload": 113
+  },
+  {
+    "adc_10bit": 141,
+    "coolant_internal": 182,
+    "diagnostic_payload": 113
+  },
+  {
+    "adc_10bit": 142,
+    "coolant_internal": 181,
+    "diagnostic_payload": 113
+  },
+  {
+    "adc_10bit": 143,
+    "coolant_internal": 181,
+    "diagnostic_payload": 113
+  },
+  {
+    "adc_10bit": 144,
+    "coolant_internal": 180,
+    "diagnostic_payload": 112
+  },
+  {
+    "adc_10bit": 145,
+    "coolant_internal": 180,
+    "diagnostic_payload": 112
+  },
+  {
+    "adc_10bit": 146,
+    "coolant_internal": 179,
+    "diagnostic_payload": 111
+  },
+  {
+    "adc_10bit": 147,
+    "coolant_internal": 179,
+    "diagnostic_payload": 111
+  },
+  {
+    "adc_10bit": 148,
+    "coolant_internal": 178,
+    "diagnostic_payload": 111
+  },
+  {
+    "adc_10bit": 149,
+    "coolant_internal": 178,
+    "diagnostic_payload": 111
+  },
+  {
+    "adc_10bit": 150,
+    "coolant_internal": 177,
+    "diagnostic_payload": 110
+  },
+  {
+    "adc_10bit": 151,
+    "coolant_internal": 177,
+    "diagnostic_payload": 110
+  },
+  {
+    "adc_10bit": 152,
+    "coolant_internal": 176,
+    "diagnostic_payload": 110
+  },
+  {
+    "adc_10bit": 153,
+    "coolant_internal": 176,
+    "diagnostic_payload": 110
+  },
+  {
+    "adc_10bit": 154,
+    "coolant_internal": 175,
+    "diagnostic_payload": 109
+  },
+  {
+    "adc_10bit": 155,
+    "coolant_internal": 175,
+    "diagnostic_payload": 109
+  },
+  {
+    "adc_10bit": 156,
+    "coolant_internal": 175,
+    "diagnostic_payload": 109
+  },
+  {
+    "adc_10bit": 157,
+    "coolant_internal": 174,
+    "diagnostic_payload": 108
+  },
+  {
+    "adc_10bit": 158,
+    "coolant_internal": 174,
+    "diagnostic_payload": 108
+  },
+  {
+    "adc_10bit": 159,
+    "coolant_internal": 173,
+    "diagnostic_payload": 108
+  },
+  {
+    "adc_10bit": 160,
+    "coolant_internal": 173,
+    "diagnostic_payload": 108
+  },
+  {
+    "adc_10bit": 161,
+    "coolant_internal": 173,
+    "diagnostic_payload": 108
+  },
+  {
+    "adc_10bit": 162,
+    "coolant_internal": 172,
+    "diagnostic_payload": 107
+  },
+  {
+    "adc_10bit": 163,
+    "coolant_internal": 172,
+    "diagnostic_payload": 107
+  },
+  {
+    "adc_10bit": 164,
+    "coolant_internal": 172,
+    "diagnostic_payload": 107
+  },
+  {
+    "adc_10bit": 165,
+    "coolant_internal": 171,
+    "diagnostic_payload": 106
+  },
+  {
+    "adc_10bit": 166,
+    "coolant_internal": 171,
+    "diagnostic_payload": 106
+  },
+  {
+    "adc_10bit": 167,
+    "coolant_internal": 170,
+    "diagnostic_payload": 106
+  },
+  {
+    "adc_10bit": 168,
+    "coolant_internal": 170,
+    "diagnostic_payload": 106
+  },
+  {
+    "adc_10bit": 169,
+    "coolant_internal": 170,
+    "diagnostic_payload": 106
+  },
+  {
+    "adc_10bit": 170,
+    "coolant_internal": 169,
+    "diagnostic_payload": 105
+  },
+  {
+    "adc_10bit": 171,
+    "coolant_internal": 169,
+    "diagnostic_payload": 105
+  },
+  {
+    "adc_10bit": 172,
+    "coolant_internal": 169,
+    "diagnostic_payload": 105
+  },
+  {
+    "adc_10bit": 173,
+    "coolant_internal": 168,
+    "diagnostic_payload": 105
+  },
+  {
+    "adc_10bit": 174,
+    "coolant_internal": 168,
+    "diagnostic_payload": 105
+  },
+  {
+    "adc_10bit": 175,
+    "coolant_internal": 167,
+    "diagnostic_payload": 104
+  },
+  {
+    "adc_10bit": 176,
+    "coolant_internal": 167,
+    "diagnostic_payload": 104
+  },
+  {
+    "adc_10bit": 177,
+    "coolant_internal": 167,
+    "diagnostic_payload": 104
+  },
+  {
+    "adc_10bit": 178,
+    "coolant_internal": 166,
+    "diagnostic_payload": 103
+  },
+  {
+    "adc_10bit": 179,
+    "coolant_internal": 166,
+    "diagnostic_payload": 103
+  },
+  {
+    "adc_10bit": 180,
+    "coolant_internal": 166,
+    "diagnostic_payload": 103
+  },
+  {
+    "adc_10bit": 181,
+    "coolant_internal": 165,
+    "diagnostic_payload": 103
+  },
+  {
+    "adc_10bit": 182,
+    "coolant_internal": 165,
+    "diagnostic_payload": 103
+  },
+  {
+    "adc_10bit": 183,
+    "coolant_internal": 164,
+    "diagnostic_payload": 102
+  },
+  {
+    "adc_10bit": 184,
+    "coolant_internal": 164,
+    "diagnostic_payload": 102
+  },
+  {
+    "adc_10bit": 185,
+    "coolant_internal": 164,
+    "diagnostic_payload": 102
+  },
+  {
+    "adc_10bit": 186,
+    "coolant_internal": 163,
+    "diagnostic_payload": 101
+  },
+  {
+    "adc_10bit": 187,
+    "coolant_internal": 163,
+    "diagnostic_payload": 101
+  },
+  {
+    "adc_10bit": 188,
+    "coolant_internal": 163,
+    "diagnostic_payload": 101
+  },
+  {
+    "adc_10bit": 189,
+    "coolant_internal": 162,
+    "diagnostic_payload": 101
+  },
+  {
+    "adc_10bit": 190,
+    "coolant_internal": 162,
+    "diagnostic_payload": 101
+  },
+  {
+    "adc_10bit": 191,
+    "coolant_internal": 162,
+    "diagnostic_payload": 101
+  },
+  {
+    "adc_10bit": 192,
+    "coolant_internal": 161,
+    "diagnostic_payload": 100
+  },
+  {
+    "adc_10bit": 193,
+    "coolant_internal": 161,
+    "diagnostic_payload": 100
+  },
+  {
+    "adc_10bit": 194,
+    "coolant_internal": 161,
+    "diagnostic_payload": 100
+  },
+  {
+    "adc_10bit": 195,
+    "coolant_internal": 160,
+    "diagnostic_payload": 100
+  },
+  {
+    "adc_10bit": 196,
+    "coolant_internal": 160,
+    "diagnostic_payload": 100
+  },
+  {
+    "adc_10bit": 197,
+    "coolant_internal": 160,
+    "diagnostic_payload": 100
+  },
+  {
+    "adc_10bit": 198,
+    "coolant_internal": 159,
+    "diagnostic_payload": 99
+  },
+  {
+    "adc_10bit": 199,
+    "coolant_internal": 159,
+    "diagnostic_payload": 99
+  },
+  {
+    "adc_10bit": 200,
+    "coolant_internal": 159,
+    "diagnostic_payload": 99
+  },
+  {
+    "adc_10bit": 201,
+    "coolant_internal": 158,
+    "diagnostic_payload": 98
+  },
+  {
+    "adc_10bit": 202,
+    "coolant_internal": 158,
+    "diagnostic_payload": 98
+  },
+  {
+    "adc_10bit": 203,
+    "coolant_internal": 158,
+    "diagnostic_payload": 98
+  },
+  {
+    "adc_10bit": 204,
+    "coolant_internal": 158,
+    "diagnostic_payload": 98
+  },
+  {
+    "adc_10bit": 205,
+    "coolant_internal": 157,
+    "diagnostic_payload": 98
+  },
+  {
+    "adc_10bit": 206,
+    "coolant_internal": 157,
+    "diagnostic_payload": 98
+  },
+  {
+    "adc_10bit": 207,
+    "coolant_internal": 157,
+    "diagnostic_payload": 98
+  },
+  {
+    "adc_10bit": 208,
+    "coolant_internal": 156,
+    "diagnostic_payload": 97
+  },
+  {
+    "adc_10bit": 209,
+    "coolant_internal": 156,
+    "diagnostic_payload": 97
+  },
+  {
+    "adc_10bit": 210,
+    "coolant_internal": 156,
+    "diagnostic_payload": 97
+  },
+  {
+    "adc_10bit": 211,
+    "coolant_internal": 155,
+    "diagnostic_payload": 96
+  },
+  {
+    "adc_10bit": 212,
+    "coolant_internal": 155,
+    "diagnostic_payload": 96
+  },
+  {
+    "adc_10bit": 213,
+    "coolant_internal": 155,
+    "diagnostic_payload": 96
+  },
+  {
+    "adc_10bit": 214,
+    "coolant_internal": 154,
+    "diagnostic_payload": 96
+  },
+  {
+    "adc_10bit": 215,
+    "coolant_internal": 154,
+    "diagnostic_payload": 96
+  },
+  {
+    "adc_10bit": 216,
+    "coolant_internal": 154,
+    "diagnostic_payload": 96
+  },
+  {
+    "adc_10bit": 217,
+    "coolant_internal": 153,
+    "diagnostic_payload": 95
+  },
+  {
+    "adc_10bit": 218,
+    "coolant_internal": 153,
+    "diagnostic_payload": 95
+  },
+  {
+    "adc_10bit": 219,
+    "coolant_internal": 153,
+    "diagnostic_payload": 95
+  },
+  {
+    "adc_10bit": 220,
+    "coolant_internal": 153,
+    "diagnostic_payload": 95
+  },
+  {
+    "adc_10bit": 221,
+    "coolant_internal": 152,
+    "diagnostic_payload": 95
+  },
+  {
+    "adc_10bit": 222,
+    "coolant_internal": 152,
+    "diagnostic_payload": 95
+  },
+  {
+    "adc_10bit": 223,
+    "coolant_internal": 152,
+    "diagnostic_payload": 95
+  },
+  {
+    "adc_10bit": 224,
+    "coolant_internal": 151,
+    "diagnostic_payload": 94
+  },
+  {
+    "adc_10bit": 225,
+    "coolant_internal": 151,
+    "diagnostic_payload": 94
+  },
+  {
+    "adc_10bit": 226,
+    "coolant_internal": 151,
+    "diagnostic_payload": 94
+  },
+  {
+    "adc_10bit": 227,
+    "coolant_internal": 151,
+    "diagnostic_payload": 94
+  },
+  {
+    "adc_10bit": 228,
+    "coolant_internal": 150,
+    "diagnostic_payload": 93
+  },
+  {
+    "adc_10bit": 229,
+    "coolant_internal": 150,
+    "diagnostic_payload": 93
+  },
+  {
+    "adc_10bit": 230,
+    "coolant_internal": 150,
+    "diagnostic_payload": 93
+  },
+  {
+    "adc_10bit": 231,
+    "coolant_internal": 149,
+    "diagnostic_payload": 93
+  },
+  {
+    "adc_10bit": 232,
+    "coolant_internal": 149,
+    "diagnostic_payload": 93
+  },
+  {
+    "adc_10bit": 233,
+    "coolant_internal": 149,
+    "diagnostic_payload": 93
+  },
+  {
+    "adc_10bit": 234,
+    "coolant_internal": 149,
+    "diagnostic_payload": 93
+  },
+  {
+    "adc_10bit": 235,
+    "coolant_internal": 148,
+    "diagnostic_payload": 92
+  },
+  {
+    "adc_10bit": 236,
+    "coolant_internal": 148,
+    "diagnostic_payload": 92
+  },
+  {
+    "adc_10bit": 237,
+    "coolant_internal": 148,
+    "diagnostic_payload": 92
+  },
+  {
+    "adc_10bit": 238,
+    "coolant_internal": 147,
+    "diagnostic_payload": 91
+  },
+  {
+    "adc_10bit": 239,
+    "coolant_internal": 147,
+    "diagnostic_payload": 91
+  },
+  {
+    "adc_10bit": 240,
+    "coolant_internal": 147,
+    "diagnostic_payload": 91
+  },
+  {
+    "adc_10bit": 241,
+    "coolant_internal": 147,
+    "diagnostic_payload": 91
+  },
+  {
+    "adc_10bit": 242,
+    "coolant_internal": 146,
+    "diagnostic_payload": 91
+  },
+  {
+    "adc_10bit": 243,
+    "coolant_internal": 146,
+    "diagnostic_payload": 91
+  },
+  {
+    "adc_10bit": 244,
+    "coolant_internal": 146,
+    "diagnostic_payload": 91
+  },
+  {
+    "adc_10bit": 245,
+    "coolant_internal": 145,
+    "diagnostic_payload": 90
+  },
+  {
+    "adc_10bit": 246,
+    "coolant_internal": 145,
+    "diagnostic_payload": 90
+  },
+  {
+    "adc_10bit": 247,
+    "coolant_internal": 145,
+    "diagnostic_payload": 90
+  },
+  {
+    "adc_10bit": 248,
+    "coolant_internal": 145,
+    "diagnostic_payload": 90
+  },
+  {
+    "adc_10bit": 249,
+    "coolant_internal": 144,
+    "diagnostic_payload": 90
+  },
+  {
+    "adc_10bit": 250,
+    "coolant_internal": 144,
+    "diagnostic_payload": 90
+  },
+  {
+    "adc_10bit": 251,
+    "coolant_internal": 144,
+    "diagnostic_payload": 90
+  },
+  {
+    "adc_10bit": 252,
+    "coolant_internal": 144,
+    "diagnostic_payload": 90
+  },
+  {
+    "adc_10bit": 253,
+    "coolant_internal": 143,
+    "diagnostic_payload": 89
+  },
+  {
+    "adc_10bit": 254,
+    "coolant_internal": 143,
+    "diagnostic_payload": 89
+  },
+  {
+    "adc_10bit": 255,
+    "coolant_internal": 143,
+    "diagnostic_payload": 89
+  },
+  {
+    "adc_10bit": 256,
+    "coolant_internal": 143,
+    "diagnostic_payload": 89
+  },
+  {
+    "adc_10bit": 257,
+    "coolant_internal": 142,
+    "diagnostic_payload": 88
+  },
+  {
+    "adc_10bit": 258,
+    "coolant_internal": 142,
+    "diagnostic_payload": 88
+  },
+  {
+    "adc_10bit": 259,
+    "coolant_internal": 142,
+    "diagnostic_payload": 88
+  },
+  {
+    "adc_10bit": 260,
+    "coolant_internal": 142,
+    "diagnostic_payload": 88
+  },
+  {
+    "adc_10bit": 261,
+    "coolant_internal": 141,
+    "diagnostic_payload": 88
+  },
+  {
+    "adc_10bit": 262,
+    "coolant_internal": 141,
+    "diagnostic_payload": 88
+  },
+  {
+    "adc_10bit": 263,
+    "coolant_internal": 141,
+    "diagnostic_payload": 88
+  },
+  {
+    "adc_10bit": 264,
+    "coolant_internal": 141,
+    "diagnostic_payload": 88
+  },
+  {
+    "adc_10bit": 265,
+    "coolant_internal": 140,
+    "diagnostic_payload": 87
+  },
+  {
+    "adc_10bit": 266,
+    "coolant_internal": 140,
+    "diagnostic_payload": 87
+  },
+  {
+    "adc_10bit": 267,
+    "coolant_internal": 140,
+    "diagnostic_payload": 87
+  },
+  {
+    "adc_10bit": 268,
+    "coolant_internal": 140,
+    "diagnostic_payload": 87
+  },
+  {
+    "adc_10bit": 269,
+    "coolant_internal": 139,
+    "diagnostic_payload": 86
+  },
+  {
+    "adc_10bit": 270,
+    "coolant_internal": 139,
+    "diagnostic_payload": 86
+  },
+  {
+    "adc_10bit": 271,
+    "coolant_internal": 139,
+    "diagnostic_payload": 86
+  },
+  {
+    "adc_10bit": 272,
+    "coolant_internal": 139,
+    "diagnostic_payload": 86
+  },
+  {
+    "adc_10bit": 273,
+    "coolant_internal": 138,
+    "diagnostic_payload": 86
+  },
+  {
+    "adc_10bit": 274,
+    "coolant_internal": 138,
+    "diagnostic_payload": 86
+  },
+  {
+    "adc_10bit": 275,
+    "coolant_internal": 138,
+    "diagnostic_payload": 86
+  },
+  {
+    "adc_10bit": 276,
+    "coolant_internal": 138,
+    "diagnostic_payload": 86
+  },
+  {
+    "adc_10bit": 277,
+    "coolant_internal": 137,
+    "diagnostic_payload": 85
+  },
+  {
+    "adc_10bit": 278,
+    "coolant_internal": 137,
+    "diagnostic_payload": 85
+  },
+  {
+    "adc_10bit": 279,
+    "coolant_internal": 137,
+    "diagnostic_payload": 85
+  },
+  {
+    "adc_10bit": 280,
+    "coolant_internal": 137,
+    "diagnostic_payload": 85
+  },
+  {
+    "adc_10bit": 281,
+    "coolant_internal": 136,
+    "diagnostic_payload": 85
+  },
+  {
+    "adc_10bit": 282,
+    "coolant_internal": 136,
+    "diagnostic_payload": 85
+  },
+  {
+    "adc_10bit": 283,
+    "coolant_internal": 136,
+    "diagnostic_payload": 85
+  },
+  {
+    "adc_10bit": 284,
+    "coolant_internal": 136,
+    "diagnostic_payload": 85
+  },
+  {
+    "adc_10bit": 285,
+    "coolant_internal": 135,
+    "diagnostic_payload": 84
+  },
+  {
+    "adc_10bit": 286,
+    "coolant_internal": 135,
+    "diagnostic_payload": 84
+  },
+  {
+    "adc_10bit": 287,
+    "coolant_internal": 135,
+    "diagnostic_payload": 84
+  },
+  {
+    "adc_10bit": 288,
+    "coolant_internal": 135,
+    "diagnostic_payload": 84
+  },
+  {
+    "adc_10bit": 289,
+    "coolant_internal": 134,
+    "diagnostic_payload": 83
+  },
+  {
+    "adc_10bit": 290,
+    "coolant_internal": 134,
+    "diagnostic_payload": 83
+  },
+  {
+    "adc_10bit": 291,
+    "coolant_internal": 134,
+    "diagnostic_payload": 83
+  },
+  {
+    "adc_10bit": 292,
+    "coolant_internal": 134,
+    "diagnostic_payload": 83
+  },
+  {
+    "adc_10bit": 293,
+    "coolant_internal": 133,
+    "diagnostic_payload": 83
+  },
+  {
+    "adc_10bit": 294,
+    "coolant_internal": 133,
+    "diagnostic_payload": 83
+  },
+  {
+    "adc_10bit": 295,
+    "coolant_internal": 133,
+    "diagnostic_payload": 83
+  },
+  {
+    "adc_10bit": 296,
+    "coolant_internal": 133,
+    "diagnostic_payload": 83
+  },
+  {
+    "adc_10bit": 297,
+    "coolant_internal": 132,
+    "diagnostic_payload": 82
+  },
+  {
+    "adc_10bit": 298,
+    "coolant_internal": 132,
+    "diagnostic_payload": 82
+  },
+  {
+    "adc_10bit": 299,
+    "coolant_internal": 132,
+    "diagnostic_payload": 82
+  },
+  {
+    "adc_10bit": 300,
+    "coolant_internal": 132,
+    "diagnostic_payload": 82
+  },
+  {
+    "adc_10bit": 301,
+    "coolant_internal": 131,
+    "diagnostic_payload": 81
+  },
+  {
+    "adc_10bit": 302,
+    "coolant_internal": 131,
+    "diagnostic_payload": 81
+  },
+  {
+    "adc_10bit": 303,
+    "coolant_internal": 131,
+    "diagnostic_payload": 81
+  },
+  {
+    "adc_10bit": 304,
+    "coolant_internal": 131,
+    "diagnostic_payload": 81
+  },
+  {
+    "adc_10bit": 305,
+    "coolant_internal": 130,
+    "diagnostic_payload": 81
+  },
+  {
+    "adc_10bit": 306,
+    "coolant_internal": 130,
+    "diagnostic_payload": 81
+  },
+  {
+    "adc_10bit": 307,
+    "coolant_internal": 130,
+    "diagnostic_payload": 81
+  },
+  {
+    "adc_10bit": 308,
+    "coolant_internal": 130,
+    "diagnostic_payload": 81
+  },
+  {
+    "adc_10bit": 309,
+    "coolant_internal": 129,
+    "diagnostic_payload": 80
+  },
+  {
+    "adc_10bit": 310,
+    "coolant_internal": 129,
+    "diagnostic_payload": 80
+  },
+  {
+    "adc_10bit": 311,
+    "coolant_internal": 129,
+    "diagnostic_payload": 80
+  },
+  {
+    "adc_10bit": 312,
+    "coolant_internal": 129,
+    "diagnostic_payload": 80
+  },
+  {
+    "adc_10bit": 313,
+    "coolant_internal": 128,
+    "diagnostic_payload": 80
+  },
+  {
+    "adc_10bit": 314,
+    "coolant_internal": 128,
+    "diagnostic_payload": 80
+  },
+  {
+    "adc_10bit": 315,
+    "coolant_internal": 128,
+    "diagnostic_payload": 80
+  },
+  {
+    "adc_10bit": 316,
+    "coolant_internal": 128,
+    "diagnostic_payload": 80
+  },
+  {
+    "adc_10bit": 317,
+    "coolant_internal": 127,
+    "diagnostic_payload": 79
+  },
+  {
+    "adc_10bit": 318,
+    "coolant_internal": 127,
+    "diagnostic_payload": 79
+  },
+  {
+    "adc_10bit": 319,
+    "coolant_internal": 127,
+    "diagnostic_payload": 79
+  },
+  {
+    "adc_10bit": 320,
+    "coolant_internal": 127,
+    "diagnostic_payload": 79
+  },
+  {
+    "adc_10bit": 321,
+    "coolant_internal": 127,
+    "diagnostic_payload": 79
+  },
+  {
+    "adc_10bit": 322,
+    "coolant_internal": 126,
+    "diagnostic_payload": 78
+  },
+  {
+    "adc_10bit": 323,
+    "coolant_internal": 126,
+    "diagnostic_payload": 78
+  },
+  {
+    "adc_10bit": 324,
+    "coolant_internal": 126,
+    "diagnostic_payload": 78
+  },
+  {
+    "adc_10bit": 325,
+    "coolant_internal": 126,
+    "diagnostic_payload": 78
+  },
+  {
+    "adc_10bit": 326,
+    "coolant_internal": 126,
+    "diagnostic_payload": 78
+  },
+  {
+    "adc_10bit": 327,
+    "coolant_internal": 125,
+    "diagnostic_payload": 78
+  },
+  {
+    "adc_10bit": 328,
+    "coolant_internal": 125,
+    "diagnostic_payload": 78
+  },
+  {
+    "adc_10bit": 329,
+    "coolant_internal": 125,
+    "diagnostic_payload": 78
+  },
+  {
+    "adc_10bit": 330,
+    "coolant_internal": 125,
+    "diagnostic_payload": 78
+  },
+  {
+    "adc_10bit": 331,
+    "coolant_internal": 125,
+    "diagnostic_payload": 78
+  },
+  {
+    "adc_10bit": 332,
+    "coolant_internal": 125,
+    "diagnostic_payload": 78
+  },
+  {
+    "adc_10bit": 333,
+    "coolant_internal": 124,
+    "diagnostic_payload": 77
+  },
+  {
+    "adc_10bit": 334,
+    "coolant_internal": 124,
+    "diagnostic_payload": 77
+  },
+  {
+    "adc_10bit": 335,
+    "coolant_internal": 124,
+    "diagnostic_payload": 77
+  },
+  {
+    "adc_10bit": 336,
+    "coolant_internal": 124,
+    "diagnostic_payload": 77
+  },
+  {
+    "adc_10bit": 337,
+    "coolant_internal": 124,
+    "diagnostic_payload": 77
+  },
+  {
+    "adc_10bit": 338,
+    "coolant_internal": 123,
+    "diagnostic_payload": 76
+  },
+  {
+    "adc_10bit": 339,
+    "coolant_internal": 123,
+    "diagnostic_payload": 76
+  },
+  {
+    "adc_10bit": 340,
+    "coolant_internal": 123,
+    "diagnostic_payload": 76
+  },
+  {
+    "adc_10bit": 341,
+    "coolant_internal": 123,
+    "diagnostic_payload": 76
+  },
+  {
+    "adc_10bit": 342,
+    "coolant_internal": 123,
+    "diagnostic_payload": 76
+  },
+  {
+    "adc_10bit": 343,
+    "coolant_internal": 122,
+    "diagnostic_payload": 76
+  },
+  {
+    "adc_10bit": 344,
+    "coolant_internal": 122,
+    "diagnostic_payload": 76
+  },
+  {
+    "adc_10bit": 345,
+    "coolant_internal": 122,
+    "diagnostic_payload": 76
+  },
+  {
+    "adc_10bit": 346,
+    "coolant_internal": 122,
+    "diagnostic_payload": 76
+  },
+  {
+    "adc_10bit": 347,
+    "coolant_internal": 122,
+    "diagnostic_payload": 76
+  },
+  {
+    "adc_10bit": 348,
+    "coolant_internal": 122,
+    "diagnostic_payload": 76
+  },
+  {
+    "adc_10bit": 349,
+    "coolant_internal": 121,
+    "diagnostic_payload": 75
+  },
+  {
+    "adc_10bit": 350,
+    "coolant_internal": 121,
+    "diagnostic_payload": 75
+  },
+  {
+    "adc_10bit": 351,
+    "coolant_internal": 121,
+    "diagnostic_payload": 75
+  },
+  {
+    "adc_10bit": 352,
+    "coolant_internal": 121,
+    "diagnostic_payload": 75
+  },
+  {
+    "adc_10bit": 353,
+    "coolant_internal": 121,
+    "diagnostic_payload": 75
+  },
+  {
+    "adc_10bit": 354,
+    "coolant_internal": 120,
+    "diagnostic_payload": 75
+  },
+  {
+    "adc_10bit": 355,
+    "coolant_internal": 120,
+    "diagnostic_payload": 75
+  },
+  {
+    "adc_10bit": 356,
+    "coolant_internal": 120,
+    "diagnostic_payload": 75
+  },
+  {
+    "adc_10bit": 357,
+    "coolant_internal": 120,
+    "diagnostic_payload": 75
+  },
+  {
+    "adc_10bit": 358,
+    "coolant_internal": 120,
+    "diagnostic_payload": 75
+  },
+  {
+    "adc_10bit": 359,
+    "coolant_internal": 119,
+    "diagnostic_payload": 74
+  },
+  {
+    "adc_10bit": 360,
+    "coolant_internal": 119,
+    "diagnostic_payload": 74
+  },
+  {
+    "adc_10bit": 361,
+    "coolant_internal": 119,
+    "diagnostic_payload": 74
+  },
+  {
+    "adc_10bit": 362,
+    "coolant_internal": 119,
+    "diagnostic_payload": 74
+  },
+  {
+    "adc_10bit": 363,
+    "coolant_internal": 119,
+    "diagnostic_payload": 74
+  },
+  {
+    "adc_10bit": 364,
+    "coolant_internal": 119,
+    "diagnostic_payload": 74
+  },
+  {
+    "adc_10bit": 365,
+    "coolant_internal": 118,
+    "diagnostic_payload": 73
+  },
+  {
+    "adc_10bit": 366,
+    "coolant_internal": 118,
+    "diagnostic_payload": 73
+  },
+  {
+    "adc_10bit": 367,
+    "coolant_internal": 118,
+    "diagnostic_payload": 73
+  },
+  {
+    "adc_10bit": 368,
+    "coolant_internal": 118,
+    "diagnostic_payload": 73
+  },
+  {
+    "adc_10bit": 369,
+    "coolant_internal": 118,
+    "diagnostic_payload": 73
+  },
+  {
+    "adc_10bit": 370,
+    "coolant_internal": 117,
+    "diagnostic_payload": 73
+  },
+  {
+    "adc_10bit": 371,
+    "coolant_internal": 117,
+    "diagnostic_payload": 73
+  },
+  {
+    "adc_10bit": 372,
+    "coolant_internal": 117,
+    "diagnostic_payload": 73
+  },
+  {
+    "adc_10bit": 373,
+    "coolant_internal": 117,
+    "diagnostic_payload": 73
+  },
+  {
+    "adc_10bit": 374,
+    "coolant_internal": 117,
+    "diagnostic_payload": 73
+  },
+  {
+    "adc_10bit": 375,
+    "coolant_internal": 116,
+    "diagnostic_payload": 72
+  },
+  {
+    "adc_10bit": 376,
+    "coolant_internal": 116,
+    "diagnostic_payload": 72
+  },
+  {
+    "adc_10bit": 377,
+    "coolant_internal": 116,
+    "diagnostic_payload": 72
+  },
+  {
+    "adc_10bit": 378,
+    "coolant_internal": 116,
+    "diagnostic_payload": 72
+  },
+  {
+    "adc_10bit": 379,
+    "coolant_internal": 116,
+    "diagnostic_payload": 72
+  },
+  {
+    "adc_10bit": 380,
+    "coolant_internal": 116,
+    "diagnostic_payload": 72
+  },
+  {
+    "adc_10bit": 381,
+    "coolant_internal": 115,
+    "diagnostic_payload": 71
+  },
+  {
+    "adc_10bit": 382,
+    "coolant_internal": 115,
+    "diagnostic_payload": 71
+  },
+  {
+    "adc_10bit": 383,
+    "coolant_internal": 115,
+    "diagnostic_payload": 71
+  },
+  {
+    "adc_10bit": 384,
+    "coolant_internal": 115,
+    "diagnostic_payload": 71
+  },
+  {
+    "adc_10bit": 385,
+    "coolant_internal": 115,
+    "diagnostic_payload": 71
+  },
+  {
+    "adc_10bit": 386,
+    "coolant_internal": 114,
+    "diagnostic_payload": 71
+  },
+  {
+    "adc_10bit": 387,
+    "coolant_internal": 114,
+    "diagnostic_payload": 71
+  },
+  {
+    "adc_10bit": 388,
+    "coolant_internal": 114,
+    "diagnostic_payload": 71
+  },
+  {
+    "adc_10bit": 389,
+    "coolant_internal": 114,
+    "diagnostic_payload": 71
+  },
+  {
+    "adc_10bit": 390,
+    "coolant_internal": 114,
+    "diagnostic_payload": 71
+  },
+  {
+    "adc_10bit": 391,
+    "coolant_internal": 113,
+    "diagnostic_payload": 70
+  },
+  {
+    "adc_10bit": 392,
+    "coolant_internal": 113,
+    "diagnostic_payload": 70
+  },
+  {
+    "adc_10bit": 393,
+    "coolant_internal": 113,
+    "diagnostic_payload": 70
+  },
+  {
+    "adc_10bit": 394,
+    "coolant_internal": 113,
+    "diagnostic_payload": 70
+  },
+  {
+    "adc_10bit": 395,
+    "coolant_internal": 113,
+    "diagnostic_payload": 70
+  },
+  {
+    "adc_10bit": 396,
+    "coolant_internal": 113,
+    "diagnostic_payload": 70
+  },
+  {
+    "adc_10bit": 397,
+    "coolant_internal": 112,
+    "diagnostic_payload": 70
+  },
+  {
+    "adc_10bit": 398,
+    "coolant_internal": 112,
+    "diagnostic_payload": 70
+  },
+  {
+    "adc_10bit": 399,
+    "coolant_internal": 112,
+    "diagnostic_payload": 70
+  },
+  {
+    "adc_10bit": 400,
+    "coolant_internal": 112,
+    "diagnostic_payload": 70
+  },
+  {
+    "adc_10bit": 401,
+    "coolant_internal": 112,
+    "diagnostic_payload": 70
+  },
+  {
+    "adc_10bit": 402,
+    "coolant_internal": 111,
+    "diagnostic_payload": 69
+  },
+  {
+    "adc_10bit": 403,
+    "coolant_internal": 111,
+    "diagnostic_payload": 69
+  },
+  {
+    "adc_10bit": 404,
+    "coolant_internal": 111,
+    "diagnostic_payload": 69
+  },
+  {
+    "adc_10bit": 405,
+    "coolant_internal": 111,
+    "diagnostic_payload": 69
+  },
+  {
+    "adc_10bit": 406,
+    "coolant_internal": 111,
+    "diagnostic_payload": 69
+  },
+  {
+    "adc_10bit": 407,
+    "coolant_internal": 110,
+    "diagnostic_payload": 68
+  },
+  {
+    "adc_10bit": 408,
+    "coolant_internal": 110,
+    "diagnostic_payload": 68
+  },
+  {
+    "adc_10bit": 409,
+    "coolant_internal": 110,
+    "diagnostic_payload": 68
+  },
+  {
+    "adc_10bit": 410,
+    "coolant_internal": 110,
+    "diagnostic_payload": 68
+  },
+  {
+    "adc_10bit": 411,
+    "coolant_internal": 110,
+    "diagnostic_payload": 68
+  },
+  {
+    "adc_10bit": 412,
+    "coolant_internal": 110,
+    "diagnostic_payload": 68
+  },
+  {
+    "adc_10bit": 413,
+    "coolant_internal": 109,
+    "diagnostic_payload": 68
+  },
+  {
+    "adc_10bit": 414,
+    "coolant_internal": 109,
+    "diagnostic_payload": 68
+  },
+  {
+    "adc_10bit": 415,
+    "coolant_internal": 109,
+    "diagnostic_payload": 68
+  },
+  {
+    "adc_10bit": 416,
+    "coolant_internal": 109,
+    "diagnostic_payload": 68
+  },
+  {
+    "adc_10bit": 417,
+    "coolant_internal": 109,
+    "diagnostic_payload": 68
+  },
+  {
+    "adc_10bit": 418,
+    "coolant_internal": 108,
+    "diagnostic_payload": 67
+  },
+  {
+    "adc_10bit": 419,
+    "coolant_internal": 108,
+    "diagnostic_payload": 67
+  },
+  {
+    "adc_10bit": 420,
+    "coolant_internal": 108,
+    "diagnostic_payload": 67
+  },
+  {
+    "adc_10bit": 421,
+    "coolant_internal": 108,
+    "diagnostic_payload": 67
+  },
+  {
+    "adc_10bit": 422,
+    "coolant_internal": 108,
+    "diagnostic_payload": 67
+  },
+  {
+    "adc_10bit": 423,
+    "coolant_internal": 107,
+    "diagnostic_payload": 66
+  },
+  {
+    "adc_10bit": 424,
+    "coolant_internal": 107,
+    "diagnostic_payload": 66
+  },
+  {
+    "adc_10bit": 425,
+    "coolant_internal": 107,
+    "diagnostic_payload": 66
+  },
+  {
+    "adc_10bit": 426,
+    "coolant_internal": 107,
+    "diagnostic_payload": 66
+  },
+  {
+    "adc_10bit": 427,
+    "coolant_internal": 107,
+    "diagnostic_payload": 66
+  },
+  {
+    "adc_10bit": 428,
+    "coolant_internal": 107,
+    "diagnostic_payload": 66
+  },
+  {
+    "adc_10bit": 429,
+    "coolant_internal": 106,
+    "diagnostic_payload": 66
+  },
+  {
+    "adc_10bit": 430,
+    "coolant_internal": 106,
+    "diagnostic_payload": 66
+  },
+  {
+    "adc_10bit": 431,
+    "coolant_internal": 106,
+    "diagnostic_payload": 66
+  },
+  {
+    "adc_10bit": 432,
+    "coolant_internal": 106,
+    "diagnostic_payload": 66
+  },
+  {
+    "adc_10bit": 433,
+    "coolant_internal": 106,
+    "diagnostic_payload": 66
+  },
+  {
+    "adc_10bit": 434,
+    "coolant_internal": 105,
+    "diagnostic_payload": 65
+  },
+  {
+    "adc_10bit": 435,
+    "coolant_internal": 105,
+    "diagnostic_payload": 65
+  },
+  {
+    "adc_10bit": 436,
+    "coolant_internal": 105,
+    "diagnostic_payload": 65
+  },
+  {
+    "adc_10bit": 437,
+    "coolant_internal": 105,
+    "diagnostic_payload": 65
+  },
+  {
+    "adc_10bit": 438,
+    "coolant_internal": 105,
+    "diagnostic_payload": 65
+  },
+  {
+    "adc_10bit": 439,
+    "coolant_internal": 104,
+    "diagnostic_payload": 65
+  },
+  {
+    "adc_10bit": 440,
+    "coolant_internal": 104,
+    "diagnostic_payload": 65
+  },
+  {
+    "adc_10bit": 441,
+    "coolant_internal": 104,
+    "diagnostic_payload": 65
+  },
+  {
+    "adc_10bit": 442,
+    "coolant_internal": 104,
+    "diagnostic_payload": 65
+  },
+  {
+    "adc_10bit": 443,
+    "coolant_internal": 104,
+    "diagnostic_payload": 65
+  },
+  {
+    "adc_10bit": 444,
+    "coolant_internal": 104,
+    "diagnostic_payload": 65
+  },
+  {
+    "adc_10bit": 445,
+    "coolant_internal": 103,
+    "diagnostic_payload": 64
+  },
+  {
+    "adc_10bit": 446,
+    "coolant_internal": 103,
+    "diagnostic_payload": 64
+  },
+  {
+    "adc_10bit": 447,
+    "coolant_internal": 103,
+    "diagnostic_payload": 64
+  },
+  {
+    "adc_10bit": 448,
+    "coolant_internal": 103,
+    "diagnostic_payload": 64
+  },
+  {
+    "adc_10bit": 449,
+    "coolant_internal": 103,
+    "diagnostic_payload": 64
+  },
+  {
+    "adc_10bit": 450,
+    "coolant_internal": 103,
+    "diagnostic_payload": 64
+  },
+  {
+    "adc_10bit": 451,
+    "coolant_internal": 102,
+    "diagnostic_payload": 63
+  },
+  {
+    "adc_10bit": 452,
+    "coolant_internal": 102,
+    "diagnostic_payload": 63
+  },
+  {
+    "adc_10bit": 453,
+    "coolant_internal": 102,
+    "diagnostic_payload": 63
+  },
+  {
+    "adc_10bit": 454,
+    "coolant_internal": 102,
+    "diagnostic_payload": 63
+  },
+  {
+    "adc_10bit": 455,
+    "coolant_internal": 102,
+    "diagnostic_payload": 63
+  },
+  {
+    "adc_10bit": 456,
+    "coolant_internal": 102,
+    "diagnostic_payload": 63
+  },
+  {
+    "adc_10bit": 457,
+    "coolant_internal": 101,
+    "diagnostic_payload": 63
+  },
+  {
+    "adc_10bit": 458,
+    "coolant_internal": 101,
+    "diagnostic_payload": 63
+  },
+  {
+    "adc_10bit": 459,
+    "coolant_internal": 101,
+    "diagnostic_payload": 63
+  },
+  {
+    "adc_10bit": 460,
+    "coolant_internal": 101,
+    "diagnostic_payload": 63
+  },
+  {
+    "adc_10bit": 461,
+    "coolant_internal": 101,
+    "diagnostic_payload": 63
+  },
+  {
+    "adc_10bit": 462,
+    "coolant_internal": 101,
+    "diagnostic_payload": 63
+  },
+  {
+    "adc_10bit": 463,
+    "coolant_internal": 101,
+    "diagnostic_payload": 63
+  },
+  {
+    "adc_10bit": 464,
+    "coolant_internal": 100,
+    "diagnostic_payload": 62
+  },
+  {
+    "adc_10bit": 465,
+    "coolant_internal": 100,
+    "diagnostic_payload": 62
+  },
+  {
+    "adc_10bit": 466,
+    "coolant_internal": 100,
+    "diagnostic_payload": 62
+  },
+  {
+    "adc_10bit": 467,
+    "coolant_internal": 100,
+    "diagnostic_payload": 62
+  },
+  {
+    "adc_10bit": 468,
+    "coolant_internal": 100,
+    "diagnostic_payload": 62
+  },
+  {
+    "adc_10bit": 469,
+    "coolant_internal": 100,
+    "diagnostic_payload": 62
+  },
+  {
+    "adc_10bit": 470,
+    "coolant_internal": 99,
+    "diagnostic_payload": 61
+  },
+  {
+    "adc_10bit": 471,
+    "coolant_internal": 99,
+    "diagnostic_payload": 61
+  },
+  {
+    "adc_10bit": 472,
+    "coolant_internal": 99,
+    "diagnostic_payload": 61
+  },
+  {
+    "adc_10bit": 473,
+    "coolant_internal": 99,
+    "diagnostic_payload": 61
+  },
+  {
+    "adc_10bit": 474,
+    "coolant_internal": 99,
+    "diagnostic_payload": 61
+  },
+  {
+    "adc_10bit": 475,
+    "coolant_internal": 99,
+    "diagnostic_payload": 61
+  },
+  {
+    "adc_10bit": 476,
+    "coolant_internal": 99,
+    "diagnostic_payload": 61
+  },
+  {
+    "adc_10bit": 477,
+    "coolant_internal": 98,
+    "diagnostic_payload": 61
+  },
+  {
+    "adc_10bit": 478,
+    "coolant_internal": 98,
+    "diagnostic_payload": 61
+  },
+  {
+    "adc_10bit": 479,
+    "coolant_internal": 98,
+    "diagnostic_payload": 61
+  },
+  {
+    "adc_10bit": 480,
+    "coolant_internal": 98,
+    "diagnostic_payload": 61
+  },
+  {
+    "adc_10bit": 481,
+    "coolant_internal": 98,
+    "diagnostic_payload": 61
+  },
+  {
+    "adc_10bit": 482,
+    "coolant_internal": 97,
+    "diagnostic_payload": 60
+  },
+  {
+    "adc_10bit": 483,
+    "coolant_internal": 97,
+    "diagnostic_payload": 60
+  },
+  {
+    "adc_10bit": 484,
+    "coolant_internal": 97,
+    "diagnostic_payload": 60
+  },
+  {
+    "adc_10bit": 485,
+    "coolant_internal": 97,
+    "diagnostic_payload": 60
+  },
+  {
+    "adc_10bit": 486,
+    "coolant_internal": 97,
+    "diagnostic_payload": 60
+  },
+  {
+    "adc_10bit": 487,
+    "coolant_internal": 96,
+    "diagnostic_payload": 60
+  },
+  {
+    "adc_10bit": 488,
+    "coolant_internal": 96,
+    "diagnostic_payload": 60
+  },
+  {
+    "adc_10bit": 489,
+    "coolant_internal": 96,
+    "diagnostic_payload": 60
+  },
+  {
+    "adc_10bit": 490,
+    "coolant_internal": 96,
+    "diagnostic_payload": 60
+  },
+  {
+    "adc_10bit": 491,
+    "coolant_internal": 96,
+    "diagnostic_payload": 60
+  },
+  {
+    "adc_10bit": 492,
+    "coolant_internal": 96,
+    "diagnostic_payload": 60
+  },
+  {
+    "adc_10bit": 493,
+    "coolant_internal": 95,
+    "diagnostic_payload": 59
+  },
+  {
+    "adc_10bit": 494,
+    "coolant_internal": 95,
+    "diagnostic_payload": 59
+  },
+  {
+    "adc_10bit": 495,
+    "coolant_internal": 95,
+    "diagnostic_payload": 59
+  },
+  {
+    "adc_10bit": 496,
+    "coolant_internal": 95,
+    "diagnostic_payload": 59
+  },
+  {
+    "adc_10bit": 497,
+    "coolant_internal": 95,
+    "diagnostic_payload": 59
+  },
+  {
+    "adc_10bit": 498,
+    "coolant_internal": 94,
+    "diagnostic_payload": 58
+  },
+  {
+    "adc_10bit": 499,
+    "coolant_internal": 94,
+    "diagnostic_payload": 58
+  },
+  {
+    "adc_10bit": 500,
+    "coolant_internal": 94,
+    "diagnostic_payload": 58
+  },
+  {
+    "adc_10bit": 501,
+    "coolant_internal": 94,
+    "diagnostic_payload": 58
+  },
+  {
+    "adc_10bit": 502,
+    "coolant_internal": 94,
+    "diagnostic_payload": 58
+  },
+  {
+    "adc_10bit": 503,
+    "coolant_internal": 93,
+    "diagnostic_payload": 58
+  },
+  {
+    "adc_10bit": 504,
+    "coolant_internal": 93,
+    "diagnostic_payload": 58
+  },
+  {
+    "adc_10bit": 505,
+    "coolant_internal": 93,
+    "diagnostic_payload": 58
+  },
+  {
+    "adc_10bit": 506,
+    "coolant_internal": 93,
+    "diagnostic_payload": 58
+  },
+  {
+    "adc_10bit": 507,
+    "coolant_internal": 93,
+    "diagnostic_payload": 58
+  },
+  {
+    "adc_10bit": 508,
+    "coolant_internal": 93,
+    "diagnostic_payload": 58
+  },
+  {
+    "adc_10bit": 509,
+    "coolant_internal": 92,
+    "diagnostic_payload": 57
+  },
+  {
+    "adc_10bit": 510,
+    "coolant_internal": 92,
+    "diagnostic_payload": 57
+  },
+  {
+    "adc_10bit": 511,
+    "coolant_internal": 92,
+    "diagnostic_payload": 57
+  },
+  {
+    "adc_10bit": 512,
+    "coolant_internal": 92,
+    "diagnostic_payload": 57
+  },
+  {
+    "adc_10bit": 513,
+    "coolant_internal": 92,
+    "diagnostic_payload": 57
+  },
+  {
+    "adc_10bit": 514,
+    "coolant_internal": 92,
+    "diagnostic_payload": 57
+  },
+  {
+    "adc_10bit": 515,
+    "coolant_internal": 91,
+    "diagnostic_payload": 56
+  },
+  {
+    "adc_10bit": 516,
+    "coolant_internal": 91,
+    "diagnostic_payload": 56
+  },
+  {
+    "adc_10bit": 517,
+    "coolant_internal": 91,
+    "diagnostic_payload": 56
+  },
+  {
+    "adc_10bit": 518,
+    "coolant_internal": 91,
+    "diagnostic_payload": 56
+  },
+  {
+    "adc_10bit": 519,
+    "coolant_internal": 91,
+    "diagnostic_payload": 56
+  },
+  {
+    "adc_10bit": 520,
+    "coolant_internal": 91,
+    "diagnostic_payload": 56
+  },
+  {
+    "adc_10bit": 521,
+    "coolant_internal": 90,
+    "diagnostic_payload": 56
+  },
+  {
+    "adc_10bit": 522,
+    "coolant_internal": 90,
+    "diagnostic_payload": 56
+  },
+  {
+    "adc_10bit": 523,
+    "coolant_internal": 90,
+    "diagnostic_payload": 56
+  },
+  {
+    "adc_10bit": 524,
+    "coolant_internal": 90,
+    "diagnostic_payload": 56
+  },
+  {
+    "adc_10bit": 525,
+    "coolant_internal": 90,
+    "diagnostic_payload": 56
+  },
+  {
+    "adc_10bit": 526,
+    "coolant_internal": 90,
+    "diagnostic_payload": 56
+  },
+  {
+    "adc_10bit": 527,
+    "coolant_internal": 90,
+    "diagnostic_payload": 56
+  },
+  {
+    "adc_10bit": 528,
+    "coolant_internal": 89,
+    "diagnostic_payload": 55
+  },
+  {
+    "adc_10bit": 529,
+    "coolant_internal": 89,
+    "diagnostic_payload": 55
+  },
+  {
+    "adc_10bit": 530,
+    "coolant_internal": 89,
+    "diagnostic_payload": 55
+  },
+  {
+    "adc_10bit": 531,
+    "coolant_internal": 89,
+    "diagnostic_payload": 55
+  },
+  {
+    "adc_10bit": 532,
+    "coolant_internal": 89,
+    "diagnostic_payload": 55
+  },
+  {
+    "adc_10bit": 533,
+    "coolant_internal": 89,
+    "diagnostic_payload": 55
+  },
+  {
+    "adc_10bit": 534,
+    "coolant_internal": 88,
+    "diagnostic_payload": 55
+  },
+  {
+    "adc_10bit": 535,
+    "coolant_internal": 88,
+    "diagnostic_payload": 55
+  },
+  {
+    "adc_10bit": 536,
+    "coolant_internal": 88,
+    "diagnostic_payload": 55
+  },
+  {
+    "adc_10bit": 537,
+    "coolant_internal": 88,
+    "diagnostic_payload": 55
+  },
+  {
+    "adc_10bit": 538,
+    "coolant_internal": 88,
+    "diagnostic_payload": 55
+  },
+  {
+    "adc_10bit": 539,
+    "coolant_internal": 88,
+    "diagnostic_payload": 55
+  },
+  {
+    "adc_10bit": 540,
+    "coolant_internal": 88,
+    "diagnostic_payload": 55
+  },
+  {
+    "adc_10bit": 541,
+    "coolant_internal": 87,
+    "diagnostic_payload": 54
+  },
+  {
+    "adc_10bit": 542,
+    "coolant_internal": 87,
+    "diagnostic_payload": 54
+  },
+  {
+    "adc_10bit": 543,
+    "coolant_internal": 87,
+    "diagnostic_payload": 54
+  },
+  {
+    "adc_10bit": 544,
+    "coolant_internal": 87,
+    "diagnostic_payload": 54
+  },
+  {
+    "adc_10bit": 545,
+    "coolant_internal": 87,
+    "diagnostic_payload": 54
+  },
+  {
+    "adc_10bit": 546,
+    "coolant_internal": 87,
+    "diagnostic_payload": 54
+  },
+  {
+    "adc_10bit": 547,
+    "coolant_internal": 86,
+    "diagnostic_payload": 53
+  },
+  {
+    "adc_10bit": 548,
+    "coolant_internal": 86,
+    "diagnostic_payload": 53
+  },
+  {
+    "adc_10bit": 549,
+    "coolant_internal": 86,
+    "diagnostic_payload": 53
+  },
+  {
+    "adc_10bit": 550,
+    "coolant_internal": 86,
+    "diagnostic_payload": 53
+  },
+  {
+    "adc_10bit": 551,
+    "coolant_internal": 86,
+    "diagnostic_payload": 53
+  },
+  {
+    "adc_10bit": 552,
+    "coolant_internal": 86,
+    "diagnostic_payload": 53
+  },
+  {
+    "adc_10bit": 553,
+    "coolant_internal": 85,
+    "diagnostic_payload": 53
+  },
+  {
+    "adc_10bit": 554,
+    "coolant_internal": 85,
+    "diagnostic_payload": 53
+  },
+  {
+    "adc_10bit": 555,
+    "coolant_internal": 85,
+    "diagnostic_payload": 53
+  },
+  {
+    "adc_10bit": 556,
+    "coolant_internal": 85,
+    "diagnostic_payload": 53
+  },
+  {
+    "adc_10bit": 557,
+    "coolant_internal": 85,
+    "diagnostic_payload": 53
+  },
+  {
+    "adc_10bit": 558,
+    "coolant_internal": 85,
+    "diagnostic_payload": 53
+  },
+  {
+    "adc_10bit": 559,
+    "coolant_internal": 85,
+    "diagnostic_payload": 53
+  },
+  {
+    "adc_10bit": 560,
+    "coolant_internal": 84,
+    "diagnostic_payload": 52
+  },
+  {
+    "adc_10bit": 561,
+    "coolant_internal": 84,
+    "diagnostic_payload": 52
+  },
+  {
+    "adc_10bit": 562,
+    "coolant_internal": 84,
+    "diagnostic_payload": 52
+  },
+  {
+    "adc_10bit": 563,
+    "coolant_internal": 84,
+    "diagnostic_payload": 52
+  },
+  {
+    "adc_10bit": 564,
+    "coolant_internal": 84,
+    "diagnostic_payload": 52
+  },
+  {
+    "adc_10bit": 565,
+    "coolant_internal": 84,
+    "diagnostic_payload": 52
+  },
+  {
+    "adc_10bit": 566,
+    "coolant_internal": 83,
+    "diagnostic_payload": 51
+  },
+  {
+    "adc_10bit": 567,
+    "coolant_internal": 83,
+    "diagnostic_payload": 51
+  },
+  {
+    "adc_10bit": 568,
+    "coolant_internal": 83,
+    "diagnostic_payload": 51
+  },
+  {
+    "adc_10bit": 569,
+    "coolant_internal": 83,
+    "diagnostic_payload": 51
+  },
+  {
+    "adc_10bit": 570,
+    "coolant_internal": 83,
+    "diagnostic_payload": 51
+  },
+  {
+    "adc_10bit": 571,
+    "coolant_internal": 83,
+    "diagnostic_payload": 51
+  },
+  {
+    "adc_10bit": 572,
+    "coolant_internal": 83,
+    "diagnostic_payload": 51
+  },
+  {
+    "adc_10bit": 573,
+    "coolant_internal": 82,
+    "diagnostic_payload": 51
+  },
+  {
+    "adc_10bit": 574,
+    "coolant_internal": 82,
+    "diagnostic_payload": 51
+  },
+  {
+    "adc_10bit": 575,
+    "coolant_internal": 82,
+    "diagnostic_payload": 51
+  },
+  {
+    "adc_10bit": 576,
+    "coolant_internal": 82,
+    "diagnostic_payload": 51
+  },
+  {
+    "adc_10bit": 577,
+    "coolant_internal": 82,
+    "diagnostic_payload": 51
+  },
+  {
+    "adc_10bit": 578,
+    "coolant_internal": 82,
+    "diagnostic_payload": 51
+  },
+  {
+    "adc_10bit": 579,
+    "coolant_internal": 81,
+    "diagnostic_payload": 50
+  },
+  {
+    "adc_10bit": 580,
+    "coolant_internal": 81,
+    "diagnostic_payload": 50
+  },
+  {
+    "adc_10bit": 581,
+    "coolant_internal": 81,
+    "diagnostic_payload": 50
+  },
+  {
+    "adc_10bit": 582,
+    "coolant_internal": 81,
+    "diagnostic_payload": 50
+  },
+  {
+    "adc_10bit": 583,
+    "coolant_internal": 81,
+    "diagnostic_payload": 50
+  },
+  {
+    "adc_10bit": 584,
+    "coolant_internal": 81,
+    "diagnostic_payload": 50
+  },
+  {
+    "adc_10bit": 585,
+    "coolant_internal": 80,
+    "diagnostic_payload": 50
+  },
+  {
+    "adc_10bit": 586,
+    "coolant_internal": 80,
+    "diagnostic_payload": 50
+  },
+  {
+    "adc_10bit": 587,
+    "coolant_internal": 80,
+    "diagnostic_payload": 50
+  },
+  {
+    "adc_10bit": 588,
+    "coolant_internal": 80,
+    "diagnostic_payload": 50
+  },
+  {
+    "adc_10bit": 589,
+    "coolant_internal": 80,
+    "diagnostic_payload": 50
+  },
+  {
+    "adc_10bit": 590,
+    "coolant_internal": 80,
+    "diagnostic_payload": 50
+  },
+  {
+    "adc_10bit": 591,
+    "coolant_internal": 80,
+    "diagnostic_payload": 50
+  },
+  {
+    "adc_10bit": 592,
+    "coolant_internal": 79,
+    "diagnostic_payload": 49
+  },
+  {
+    "adc_10bit": 593,
+    "coolant_internal": 79,
+    "diagnostic_payload": 49
+  },
+  {
+    "adc_10bit": 594,
+    "coolant_internal": 79,
+    "diagnostic_payload": 49
+  },
+  {
+    "adc_10bit": 595,
+    "coolant_internal": 79,
+    "diagnostic_payload": 49
+  },
+  {
+    "adc_10bit": 596,
+    "coolant_internal": 79,
+    "diagnostic_payload": 49
+  },
+  {
+    "adc_10bit": 597,
+    "coolant_internal": 79,
+    "diagnostic_payload": 49
+  },
+  {
+    "adc_10bit": 598,
+    "coolant_internal": 78,
+    "diagnostic_payload": 48
+  },
+  {
+    "adc_10bit": 599,
+    "coolant_internal": 78,
+    "diagnostic_payload": 48
+  },
+  {
+    "adc_10bit": 600,
+    "coolant_internal": 78,
+    "diagnostic_payload": 48
+  },
+  {
+    "adc_10bit": 601,
+    "coolant_internal": 78,
+    "diagnostic_payload": 48
+  },
+  {
+    "adc_10bit": 602,
+    "coolant_internal": 78,
+    "diagnostic_payload": 48
+  },
+  {
+    "adc_10bit": 603,
+    "coolant_internal": 78,
+    "diagnostic_payload": 48
+  },
+  {
+    "adc_10bit": 604,
+    "coolant_internal": 78,
+    "diagnostic_payload": 48
+  },
+  {
+    "adc_10bit": 605,
+    "coolant_internal": 77,
+    "diagnostic_payload": 48
+  },
+  {
+    "adc_10bit": 606,
+    "coolant_internal": 77,
+    "diagnostic_payload": 48
+  },
+  {
+    "adc_10bit": 607,
+    "coolant_internal": 77,
+    "diagnostic_payload": 48
+  },
+  {
+    "adc_10bit": 608,
+    "coolant_internal": 77,
+    "diagnostic_payload": 48
+  },
+  {
+    "adc_10bit": 609,
+    "coolant_internal": 77,
+    "diagnostic_payload": 48
+  },
+  {
+    "adc_10bit": 610,
+    "coolant_internal": 77,
+    "diagnostic_payload": 48
+  },
+  {
+    "adc_10bit": 611,
+    "coolant_internal": 76,
+    "diagnostic_payload": 47
+  },
+  {
+    "adc_10bit": 612,
+    "coolant_internal": 76,
+    "diagnostic_payload": 47
+  },
+  {
+    "adc_10bit": 613,
+    "coolant_internal": 76,
+    "diagnostic_payload": 47
+  },
+  {
+    "adc_10bit": 614,
+    "coolant_internal": 76,
+    "diagnostic_payload": 47
+  },
+  {
+    "adc_10bit": 615,
+    "coolant_internal": 76,
+    "diagnostic_payload": 47
+  },
+  {
+    "adc_10bit": 616,
+    "coolant_internal": 76,
+    "diagnostic_payload": 47
+  },
+  {
+    "adc_10bit": 617,
+    "coolant_internal": 75,
+    "diagnostic_payload": 46
+  },
+  {
+    "adc_10bit": 618,
+    "coolant_internal": 75,
+    "diagnostic_payload": 46
+  },
+  {
+    "adc_10bit": 619,
+    "coolant_internal": 75,
+    "diagnostic_payload": 46
+  },
+  {
+    "adc_10bit": 620,
+    "coolant_internal": 75,
+    "diagnostic_payload": 46
+  },
+  {
+    "adc_10bit": 621,
+    "coolant_internal": 75,
+    "diagnostic_payload": 46
+  },
+  {
+    "adc_10bit": 622,
+    "coolant_internal": 75,
+    "diagnostic_payload": 46
+  },
+  {
+    "adc_10bit": 623,
+    "coolant_internal": 75,
+    "diagnostic_payload": 46
+  },
+  {
+    "adc_10bit": 624,
+    "coolant_internal": 74,
+    "diagnostic_payload": 46
+  },
+  {
+    "adc_10bit": 625,
+    "coolant_internal": 74,
+    "diagnostic_payload": 46
+  },
+  {
+    "adc_10bit": 626,
+    "coolant_internal": 74,
+    "diagnostic_payload": 46
+  },
+  {
+    "adc_10bit": 627,
+    "coolant_internal": 74,
+    "diagnostic_payload": 46
+  },
+  {
+    "adc_10bit": 628,
+    "coolant_internal": 74,
+    "diagnostic_payload": 46
+  },
+  {
+    "adc_10bit": 629,
+    "coolant_internal": 74,
+    "diagnostic_payload": 46
+  },
+  {
+    "adc_10bit": 630,
+    "coolant_internal": 73,
+    "diagnostic_payload": 45
+  },
+  {
+    "adc_10bit": 631,
+    "coolant_internal": 73,
+    "diagnostic_payload": 45
+  },
+  {
+    "adc_10bit": 632,
+    "coolant_internal": 73,
+    "diagnostic_payload": 45
+  },
+  {
+    "adc_10bit": 633,
+    "coolant_internal": 73,
+    "diagnostic_payload": 45
+  },
+  {
+    "adc_10bit": 634,
+    "coolant_internal": 73,
+    "diagnostic_payload": 45
+  },
+  {
+    "adc_10bit": 635,
+    "coolant_internal": 73,
+    "diagnostic_payload": 45
+  },
+  {
+    "adc_10bit": 636,
+    "coolant_internal": 73,
+    "diagnostic_payload": 45
+  },
+  {
+    "adc_10bit": 637,
+    "coolant_internal": 72,
+    "diagnostic_payload": 45
+  },
+  {
+    "adc_10bit": 638,
+    "coolant_internal": 72,
+    "diagnostic_payload": 45
+  },
+  {
+    "adc_10bit": 639,
+    "coolant_internal": 72,
+    "diagnostic_payload": 45
+  },
+  {
+    "adc_10bit": 640,
+    "coolant_internal": 72,
+    "diagnostic_payload": 45
+  },
+  {
+    "adc_10bit": 641,
+    "coolant_internal": 72,
+    "diagnostic_payload": 45
+  },
+  {
+    "adc_10bit": 642,
+    "coolant_internal": 71,
+    "diagnostic_payload": 44
+  },
+  {
+    "adc_10bit": 643,
+    "coolant_internal": 71,
+    "diagnostic_payload": 44
+  },
+  {
+    "adc_10bit": 644,
+    "coolant_internal": 71,
+    "diagnostic_payload": 44
+  },
+  {
+    "adc_10bit": 645,
+    "coolant_internal": 71,
+    "diagnostic_payload": 44
+  },
+  {
+    "adc_10bit": 646,
+    "coolant_internal": 71,
+    "diagnostic_payload": 44
+  },
+  {
+    "adc_10bit": 647,
+    "coolant_internal": 70,
+    "diagnostic_payload": 43
+  },
+  {
+    "adc_10bit": 648,
+    "coolant_internal": 70,
+    "diagnostic_payload": 43
+  },
+  {
+    "adc_10bit": 649,
+    "coolant_internal": 70,
+    "diagnostic_payload": 43
+  },
+  {
+    "adc_10bit": 650,
+    "coolant_internal": 70,
+    "diagnostic_payload": 43
+  },
+  {
+    "adc_10bit": 651,
+    "coolant_internal": 70,
+    "diagnostic_payload": 43
+  },
+  {
+    "adc_10bit": 652,
+    "coolant_internal": 70,
+    "diagnostic_payload": 43
+  },
+  {
+    "adc_10bit": 653,
+    "coolant_internal": 69,
+    "diagnostic_payload": 43
+  },
+  {
+    "adc_10bit": 654,
+    "coolant_internal": 69,
+    "diagnostic_payload": 43
+  },
+  {
+    "adc_10bit": 655,
+    "coolant_internal": 69,
+    "diagnostic_payload": 43
+  },
+  {
+    "adc_10bit": 656,
+    "coolant_internal": 69,
+    "diagnostic_payload": 43
+  },
+  {
+    "adc_10bit": 657,
+    "coolant_internal": 69,
+    "diagnostic_payload": 43
+  },
+  {
+    "adc_10bit": 658,
+    "coolant_internal": 68,
+    "diagnostic_payload": 42
+  },
+  {
+    "adc_10bit": 659,
+    "coolant_internal": 68,
+    "diagnostic_payload": 42
+  },
+  {
+    "adc_10bit": 660,
+    "coolant_internal": 68,
+    "diagnostic_payload": 42
+  },
+  {
+    "adc_10bit": 661,
+    "coolant_internal": 68,
+    "diagnostic_payload": 42
+  },
+  {
+    "adc_10bit": 662,
+    "coolant_internal": 68,
+    "diagnostic_payload": 42
+  },
+  {
+    "adc_10bit": 663,
+    "coolant_internal": 67,
+    "diagnostic_payload": 41
+  },
+  {
+    "adc_10bit": 664,
+    "coolant_internal": 67,
+    "diagnostic_payload": 41
+  },
+  {
+    "adc_10bit": 665,
+    "coolant_internal": 67,
+    "diagnostic_payload": 41
+  },
+  {
+    "adc_10bit": 666,
+    "coolant_internal": 67,
+    "diagnostic_payload": 41
+  },
+  {
+    "adc_10bit": 667,
+    "coolant_internal": 67,
+    "diagnostic_payload": 41
+  },
+  {
+    "adc_10bit": 668,
+    "coolant_internal": 67,
+    "diagnostic_payload": 41
+  },
+  {
+    "adc_10bit": 669,
+    "coolant_internal": 66,
+    "diagnostic_payload": 41
+  },
+  {
+    "adc_10bit": 670,
+    "coolant_internal": 66,
+    "diagnostic_payload": 41
+  },
+  {
+    "adc_10bit": 671,
+    "coolant_internal": 66,
+    "diagnostic_payload": 41
+  },
+  {
+    "adc_10bit": 672,
+    "coolant_internal": 66,
+    "diagnostic_payload": 41
+  },
+  {
+    "adc_10bit": 673,
+    "coolant_internal": 66,
+    "diagnostic_payload": 41
+  },
+  {
+    "adc_10bit": 674,
+    "coolant_internal": 66,
+    "diagnostic_payload": 41
+  },
+  {
+    "adc_10bit": 675,
+    "coolant_internal": 65,
+    "diagnostic_payload": 40
+  },
+  {
+    "adc_10bit": 676,
+    "coolant_internal": 65,
+    "diagnostic_payload": 40
+  },
+  {
+    "adc_10bit": 677,
+    "coolant_internal": 65,
+    "diagnostic_payload": 40
+  },
+  {
+    "adc_10bit": 678,
+    "coolant_internal": 65,
+    "diagnostic_payload": 40
+  },
+  {
+    "adc_10bit": 679,
+    "coolant_internal": 65,
+    "diagnostic_payload": 40
+  },
+  {
+    "adc_10bit": 680,
+    "coolant_internal": 65,
+    "diagnostic_payload": 40
+  },
+  {
+    "adc_10bit": 681,
+    "coolant_internal": 64,
+    "diagnostic_payload": 40
+  },
+  {
+    "adc_10bit": 682,
+    "coolant_internal": 64,
+    "diagnostic_payload": 40
+  },
+  {
+    "adc_10bit": 683,
+    "coolant_internal": 64,
+    "diagnostic_payload": 40
+  },
+  {
+    "adc_10bit": 684,
+    "coolant_internal": 64,
+    "diagnostic_payload": 40
+  },
+  {
+    "adc_10bit": 685,
+    "coolant_internal": 64,
+    "diagnostic_payload": 40
+  },
+  {
+    "adc_10bit": 686,
+    "coolant_internal": 64,
+    "diagnostic_payload": 40
+  },
+  {
+    "adc_10bit": 687,
+    "coolant_internal": 64,
+    "diagnostic_payload": 40
+  },
+  {
+    "adc_10bit": 688,
+    "coolant_internal": 63,
+    "diagnostic_payload": 39
+  },
+  {
+    "adc_10bit": 689,
+    "coolant_internal": 63,
+    "diagnostic_payload": 39
+  },
+  {
+    "adc_10bit": 690,
+    "coolant_internal": 63,
+    "diagnostic_payload": 39
+  },
+  {
+    "adc_10bit": 691,
+    "coolant_internal": 63,
+    "diagnostic_payload": 39
+  },
+  {
+    "adc_10bit": 692,
+    "coolant_internal": 63,
+    "diagnostic_payload": 39
+  },
+  {
+    "adc_10bit": 693,
+    "coolant_internal": 63,
+    "diagnostic_payload": 39
+  },
+  {
+    "adc_10bit": 694,
+    "coolant_internal": 62,
+    "diagnostic_payload": 38
+  },
+  {
+    "adc_10bit": 695,
+    "coolant_internal": 62,
+    "diagnostic_payload": 38
+  },
+  {
+    "adc_10bit": 696,
+    "coolant_internal": 62,
+    "diagnostic_payload": 38
+  },
+  {
+    "adc_10bit": 697,
+    "coolant_internal": 62,
+    "diagnostic_payload": 38
+  },
+  {
+    "adc_10bit": 698,
+    "coolant_internal": 62,
+    "diagnostic_payload": 38
+  },
+  {
+    "adc_10bit": 699,
+    "coolant_internal": 62,
+    "diagnostic_payload": 38
+  },
+  {
+    "adc_10bit": 700,
+    "coolant_internal": 62,
+    "diagnostic_payload": 38
+  },
+  {
+    "adc_10bit": 701,
+    "coolant_internal": 61,
+    "diagnostic_payload": 38
+  },
+  {
+    "adc_10bit": 702,
+    "coolant_internal": 61,
+    "diagnostic_payload": 38
+  },
+  {
+    "adc_10bit": 703,
+    "coolant_internal": 61,
+    "diagnostic_payload": 38
+  },
+  {
+    "adc_10bit": 704,
+    "coolant_internal": 61,
+    "diagnostic_payload": 38
+  },
+  {
+    "adc_10bit": 705,
+    "coolant_internal": 61,
+    "diagnostic_payload": 38
+  },
+  {
+    "adc_10bit": 706,
+    "coolant_internal": 61,
+    "diagnostic_payload": 38
+  },
+  {
+    "adc_10bit": 707,
+    "coolant_internal": 60,
+    "diagnostic_payload": 37
+  },
+  {
+    "adc_10bit": 708,
+    "coolant_internal": 60,
+    "diagnostic_payload": 37
+  },
+  {
+    "adc_10bit": 709,
+    "coolant_internal": 60,
+    "diagnostic_payload": 37
+  },
+  {
+    "adc_10bit": 710,
+    "coolant_internal": 60,
+    "diagnostic_payload": 37
+  },
+  {
+    "adc_10bit": 711,
+    "coolant_internal": 60,
+    "diagnostic_payload": 37
+  },
+  {
+    "adc_10bit": 712,
+    "coolant_internal": 60,
+    "diagnostic_payload": 37
+  },
+  {
+    "adc_10bit": 713,
+    "coolant_internal": 59,
+    "diagnostic_payload": 36
+  },
+  {
+    "adc_10bit": 714,
+    "coolant_internal": 59,
+    "diagnostic_payload": 36
+  },
+  {
+    "adc_10bit": 715,
+    "coolant_internal": 59,
+    "diagnostic_payload": 36
+  },
+  {
+    "adc_10bit": 716,
+    "coolant_internal": 59,
+    "diagnostic_payload": 36
+  },
+  {
+    "adc_10bit": 717,
+    "coolant_internal": 59,
+    "diagnostic_payload": 36
+  },
+  {
+    "adc_10bit": 718,
+    "coolant_internal": 59,
+    "diagnostic_payload": 36
+  },
+  {
+    "adc_10bit": 719,
+    "coolant_internal": 59,
+    "diagnostic_payload": 36
+  },
+  {
+    "adc_10bit": 720,
+    "coolant_internal": 58,
+    "diagnostic_payload": 36
+  },
+  {
+    "adc_10bit": 721,
+    "coolant_internal": 58,
+    "diagnostic_payload": 36
+  },
+  {
+    "adc_10bit": 722,
+    "coolant_internal": 58,
+    "diagnostic_payload": 36
+  },
+  {
+    "adc_10bit": 723,
+    "coolant_internal": 58,
+    "diagnostic_payload": 36
+  },
+  {
+    "adc_10bit": 724,
+    "coolant_internal": 58,
+    "diagnostic_payload": 36
+  },
+  {
+    "adc_10bit": 725,
+    "coolant_internal": 58,
+    "diagnostic_payload": 36
+  },
+  {
+    "adc_10bit": 726,
+    "coolant_internal": 57,
+    "diagnostic_payload": 35
+  },
+  {
+    "adc_10bit": 727,
+    "coolant_internal": 57,
+    "diagnostic_payload": 35
+  },
+  {
+    "adc_10bit": 728,
+    "coolant_internal": 57,
+    "diagnostic_payload": 35
+  },
+  {
+    "adc_10bit": 729,
+    "coolant_internal": 57,
+    "diagnostic_payload": 35
+  },
+  {
+    "adc_10bit": 730,
+    "coolant_internal": 57,
+    "diagnostic_payload": 35
+  },
+  {
+    "adc_10bit": 731,
+    "coolant_internal": 57,
+    "diagnostic_payload": 35
+  },
+  {
+    "adc_10bit": 732,
+    "coolant_internal": 57,
+    "diagnostic_payload": 35
+  },
+  {
+    "adc_10bit": 733,
+    "coolant_internal": 56,
+    "diagnostic_payload": 35
+  },
+  {
+    "adc_10bit": 734,
+    "coolant_internal": 56,
+    "diagnostic_payload": 35
+  },
+  {
+    "adc_10bit": 735,
+    "coolant_internal": 56,
+    "diagnostic_payload": 35
+  },
+  {
+    "adc_10bit": 736,
+    "coolant_internal": 56,
+    "diagnostic_payload": 35
+  },
+  {
+    "adc_10bit": 737,
+    "coolant_internal": 56,
+    "diagnostic_payload": 35
+  },
+  {
+    "adc_10bit": 738,
+    "coolant_internal": 55,
+    "diagnostic_payload": 34
+  },
+  {
+    "adc_10bit": 739,
+    "coolant_internal": 55,
+    "diagnostic_payload": 34
+  },
+  {
+    "adc_10bit": 740,
+    "coolant_internal": 55,
+    "diagnostic_payload": 34
+  },
+  {
+    "adc_10bit": 741,
+    "coolant_internal": 55,
+    "diagnostic_payload": 34
+  },
+  {
+    "adc_10bit": 742,
+    "coolant_internal": 55,
+    "diagnostic_payload": 34
+  },
+  {
+    "adc_10bit": 743,
+    "coolant_internal": 54,
+    "diagnostic_payload": 33
+  },
+  {
+    "adc_10bit": 744,
+    "coolant_internal": 54,
+    "diagnostic_payload": 33
+  },
+  {
+    "adc_10bit": 745,
+    "coolant_internal": 54,
+    "diagnostic_payload": 33
+  },
+  {
+    "adc_10bit": 746,
+    "coolant_internal": 54,
+    "diagnostic_payload": 33
+  },
+  {
+    "adc_10bit": 747,
+    "coolant_internal": 54,
+    "diagnostic_payload": 33
+  },
+  {
+    "adc_10bit": 748,
+    "coolant_internal": 54,
+    "diagnostic_payload": 33
+  },
+  {
+    "adc_10bit": 749,
+    "coolant_internal": 53,
+    "diagnostic_payload": 33
+  },
+  {
+    "adc_10bit": 750,
+    "coolant_internal": 53,
+    "diagnostic_payload": 33
+  },
+  {
+    "adc_10bit": 751,
+    "coolant_internal": 53,
+    "diagnostic_payload": 33
+  },
+  {
+    "adc_10bit": 752,
+    "coolant_internal": 53,
+    "diagnostic_payload": 33
+  },
+  {
+    "adc_10bit": 753,
+    "coolant_internal": 53,
+    "diagnostic_payload": 33
+  },
+  {
+    "adc_10bit": 754,
+    "coolant_internal": 52,
+    "diagnostic_payload": 32
+  },
+  {
+    "adc_10bit": 755,
+    "coolant_internal": 52,
+    "diagnostic_payload": 32
+  },
+  {
+    "adc_10bit": 756,
+    "coolant_internal": 52,
+    "diagnostic_payload": 32
+  },
+  {
+    "adc_10bit": 757,
+    "coolant_internal": 52,
+    "diagnostic_payload": 32
+  },
+  {
+    "adc_10bit": 758,
+    "coolant_internal": 52,
+    "diagnostic_payload": 32
+  },
+  {
+    "adc_10bit": 759,
+    "coolant_internal": 51,
+    "diagnostic_payload": 31
+  },
+  {
+    "adc_10bit": 760,
+    "coolant_internal": 51,
+    "diagnostic_payload": 31
+  },
+  {
+    "adc_10bit": 761,
+    "coolant_internal": 51,
+    "diagnostic_payload": 31
+  },
+  {
+    "adc_10bit": 762,
+    "coolant_internal": 51,
+    "diagnostic_payload": 31
+  },
+  {
+    "adc_10bit": 763,
+    "coolant_internal": 51,
+    "diagnostic_payload": 31
+  },
+  {
+    "adc_10bit": 764,
+    "coolant_internal": 51,
+    "diagnostic_payload": 31
+  },
+  {
+    "adc_10bit": 765,
+    "coolant_internal": 50,
+    "diagnostic_payload": 31
+  },
+  {
+    "adc_10bit": 766,
+    "coolant_internal": 50,
+    "diagnostic_payload": 31
+  },
+  {
+    "adc_10bit": 767,
+    "coolant_internal": 50,
+    "diagnostic_payload": 31
+  },
+  {
+    "adc_10bit": 768,
+    "coolant_internal": 50,
+    "diagnostic_payload": 31
+  },
+  {
+    "adc_10bit": 769,
+    "coolant_internal": 50,
+    "diagnostic_payload": 31
+  },
+  {
+    "adc_10bit": 770,
+    "coolant_internal": 49,
+    "diagnostic_payload": 30
+  },
+  {
+    "adc_10bit": 771,
+    "coolant_internal": 49,
+    "diagnostic_payload": 30
+  },
+  {
+    "adc_10bit": 772,
+    "coolant_internal": 49,
+    "diagnostic_payload": 30
+  },
+  {
+    "adc_10bit": 773,
+    "coolant_internal": 49,
+    "diagnostic_payload": 30
+  },
+  {
+    "adc_10bit": 774,
+    "coolant_internal": 49,
+    "diagnostic_payload": 30
+  },
+  {
+    "adc_10bit": 775,
+    "coolant_internal": 48,
+    "diagnostic_payload": 30
+  },
+  {
+    "adc_10bit": 776,
+    "coolant_internal": 48,
+    "diagnostic_payload": 30
+  },
+  {
+    "adc_10bit": 777,
+    "coolant_internal": 48,
+    "diagnostic_payload": 30
+  },
+  {
+    "adc_10bit": 778,
+    "coolant_internal": 48,
+    "diagnostic_payload": 30
+  },
+  {
+    "adc_10bit": 779,
+    "coolant_internal": 48,
+    "diagnostic_payload": 30
+  },
+  {
+    "adc_10bit": 780,
+    "coolant_internal": 48,
+    "diagnostic_payload": 30
+  },
+  {
+    "adc_10bit": 781,
+    "coolant_internal": 47,
+    "diagnostic_payload": 29
+  },
+  {
+    "adc_10bit": 782,
+    "coolant_internal": 47,
+    "diagnostic_payload": 29
+  },
+  {
+    "adc_10bit": 783,
+    "coolant_internal": 47,
+    "diagnostic_payload": 29
+  },
+  {
+    "adc_10bit": 784,
+    "coolant_internal": 47,
+    "diagnostic_payload": 29
+  },
+  {
+    "adc_10bit": 785,
+    "coolant_internal": 47,
+    "diagnostic_payload": 29
+  },
+  {
+    "adc_10bit": 786,
+    "coolant_internal": 46,
+    "diagnostic_payload": 28
+  },
+  {
+    "adc_10bit": 787,
+    "coolant_internal": 46,
+    "diagnostic_payload": 28
+  },
+  {
+    "adc_10bit": 788,
+    "coolant_internal": 46,
+    "diagnostic_payload": 28
+  },
+  {
+    "adc_10bit": 789,
+    "coolant_internal": 46,
+    "diagnostic_payload": 28
+  },
+  {
+    "adc_10bit": 790,
+    "coolant_internal": 46,
+    "diagnostic_payload": 28
+  },
+  {
+    "adc_10bit": 791,
+    "coolant_internal": 45,
+    "diagnostic_payload": 28
+  },
+  {
+    "adc_10bit": 792,
+    "coolant_internal": 45,
+    "diagnostic_payload": 28
+  },
+  {
+    "adc_10bit": 793,
+    "coolant_internal": 45,
+    "diagnostic_payload": 28
+  },
+  {
+    "adc_10bit": 794,
+    "coolant_internal": 45,
+    "diagnostic_payload": 28
+  },
+  {
+    "adc_10bit": 795,
+    "coolant_internal": 45,
+    "diagnostic_payload": 28
+  },
+  {
+    "adc_10bit": 796,
+    "coolant_internal": 45,
+    "diagnostic_payload": 28
+  },
+  {
+    "adc_10bit": 797,
+    "coolant_internal": 44,
+    "diagnostic_payload": 27
+  },
+  {
+    "adc_10bit": 798,
+    "coolant_internal": 44,
+    "diagnostic_payload": 27
+  },
+  {
+    "adc_10bit": 799,
+    "coolant_internal": 44,
+    "diagnostic_payload": 27
+  },
+  {
+    "adc_10bit": 800,
+    "coolant_internal": 44,
+    "diagnostic_payload": 27
+  },
+  {
+    "adc_10bit": 801,
+    "coolant_internal": 43,
+    "diagnostic_payload": 26
+  },
+  {
+    "adc_10bit": 802,
+    "coolant_internal": 43,
+    "diagnostic_payload": 26
+  },
+  {
+    "adc_10bit": 803,
+    "coolant_internal": 43,
+    "diagnostic_payload": 26
+  },
+  {
+    "adc_10bit": 804,
+    "coolant_internal": 43,
+    "diagnostic_payload": 26
+  },
+  {
+    "adc_10bit": 805,
+    "coolant_internal": 43,
+    "diagnostic_payload": 26
+  },
+  {
+    "adc_10bit": 806,
+    "coolant_internal": 42,
+    "diagnostic_payload": 26
+  },
+  {
+    "adc_10bit": 807,
+    "coolant_internal": 42,
+    "diagnostic_payload": 26
+  },
+  {
+    "adc_10bit": 808,
+    "coolant_internal": 42,
+    "diagnostic_payload": 26
+  },
+  {
+    "adc_10bit": 809,
+    "coolant_internal": 42,
+    "diagnostic_payload": 26
+  },
+  {
+    "adc_10bit": 810,
+    "coolant_internal": 41,
+    "diagnostic_payload": 25
+  },
+  {
+    "adc_10bit": 811,
+    "coolant_internal": 41,
+    "diagnostic_payload": 25
+  },
+  {
+    "adc_10bit": 812,
+    "coolant_internal": 41,
+    "diagnostic_payload": 25
+  },
+  {
+    "adc_10bit": 813,
+    "coolant_internal": 41,
+    "diagnostic_payload": 25
+  },
+  {
+    "adc_10bit": 814,
+    "coolant_internal": 41,
+    "diagnostic_payload": 25
+  },
+  {
+    "adc_10bit": 815,
+    "coolant_internal": 40,
+    "diagnostic_payload": 25
+  },
+  {
+    "adc_10bit": 816,
+    "coolant_internal": 40,
+    "diagnostic_payload": 25
+  },
+  {
+    "adc_10bit": 817,
+    "coolant_internal": 40,
+    "diagnostic_payload": 25
+  },
+  {
+    "adc_10bit": 818,
+    "coolant_internal": 40,
+    "diagnostic_payload": 25
+  },
+  {
+    "adc_10bit": 819,
+    "coolant_internal": 39,
+    "diagnostic_payload": 24
+  },
+  {
+    "adc_10bit": 820,
+    "coolant_internal": 39,
+    "diagnostic_payload": 24
+  },
+  {
+    "adc_10bit": 821,
+    "coolant_internal": 39,
+    "diagnostic_payload": 24
+  },
+  {
+    "adc_10bit": 822,
+    "coolant_internal": 39,
+    "diagnostic_payload": 24
+  },
+  {
+    "adc_10bit": 823,
+    "coolant_internal": 39,
+    "diagnostic_payload": 24
+  },
+  {
+    "adc_10bit": 824,
+    "coolant_internal": 38,
+    "diagnostic_payload": 23
+  },
+  {
+    "adc_10bit": 825,
+    "coolant_internal": 38,
+    "diagnostic_payload": 23
+  },
+  {
+    "adc_10bit": 826,
+    "coolant_internal": 38,
+    "diagnostic_payload": 23
+  },
+  {
+    "adc_10bit": 827,
+    "coolant_internal": 38,
+    "diagnostic_payload": 23
+  },
+  {
+    "adc_10bit": 828,
+    "coolant_internal": 38,
+    "diagnostic_payload": 23
+  },
+  {
+    "adc_10bit": 829,
+    "coolant_internal": 37,
+    "diagnostic_payload": 23
+  },
+  {
+    "adc_10bit": 830,
+    "coolant_internal": 37,
+    "diagnostic_payload": 23
+  },
+  {
+    "adc_10bit": 831,
+    "coolant_internal": 37,
+    "diagnostic_payload": 23
+  },
+  {
+    "adc_10bit": 832,
+    "coolant_internal": 37,
+    "diagnostic_payload": 23
+  },
+  {
+    "adc_10bit": 833,
+    "coolant_internal": 36,
+    "diagnostic_payload": 22
+  },
+  {
+    "adc_10bit": 834,
+    "coolant_internal": 36,
+    "diagnostic_payload": 22
+  },
+  {
+    "adc_10bit": 835,
+    "coolant_internal": 36,
+    "diagnostic_payload": 22
+  },
+  {
+    "adc_10bit": 836,
+    "coolant_internal": 36,
+    "diagnostic_payload": 22
+  },
+  {
+    "adc_10bit": 837,
+    "coolant_internal": 36,
+    "diagnostic_payload": 22
+  },
+  {
+    "adc_10bit": 838,
+    "coolant_internal": 35,
+    "diagnostic_payload": 21
+  },
+  {
+    "adc_10bit": 839,
+    "coolant_internal": 35,
+    "diagnostic_payload": 21
+  },
+  {
+    "adc_10bit": 840,
+    "coolant_internal": 35,
+    "diagnostic_payload": 21
+  },
+  {
+    "adc_10bit": 841,
+    "coolant_internal": 35,
+    "diagnostic_payload": 21
+  },
+  {
+    "adc_10bit": 842,
+    "coolant_internal": 34,
+    "diagnostic_payload": 21
+  },
+  {
+    "adc_10bit": 843,
+    "coolant_internal": 34,
+    "diagnostic_payload": 21
+  },
+  {
+    "adc_10bit": 844,
+    "coolant_internal": 34,
+    "diagnostic_payload": 21
+  },
+  {
+    "adc_10bit": 845,
+    "coolant_internal": 34,
+    "diagnostic_payload": 21
+  },
+  {
+    "adc_10bit": 846,
+    "coolant_internal": 34,
+    "diagnostic_payload": 21
+  },
+  {
+    "adc_10bit": 847,
+    "coolant_internal": 33,
+    "diagnostic_payload": 20
+  },
+  {
+    "adc_10bit": 848,
+    "coolant_internal": 33,
+    "diagnostic_payload": 20
+  },
+  {
+    "adc_10bit": 849,
+    "coolant_internal": 33,
+    "diagnostic_payload": 20
+  },
+  {
+    "adc_10bit": 850,
+    "coolant_internal": 33,
+    "diagnostic_payload": 20
+  },
+  {
+    "adc_10bit": 851,
+    "coolant_internal": 32,
+    "diagnostic_payload": 20
+  },
+  {
+    "adc_10bit": 852,
+    "coolant_internal": 32,
+    "diagnostic_payload": 20
+  },
+  {
+    "adc_10bit": 853,
+    "coolant_internal": 32,
+    "diagnostic_payload": 20
+  },
+  {
+    "adc_10bit": 854,
+    "coolant_internal": 32,
+    "diagnostic_payload": 20
+  },
+  {
+    "adc_10bit": 855,
+    "coolant_internal": 32,
+    "diagnostic_payload": 20
+  },
+  {
+    "adc_10bit": 856,
+    "coolant_internal": 31,
+    "diagnostic_payload": 19
+  },
+  {
+    "adc_10bit": 857,
+    "coolant_internal": 31,
+    "diagnostic_payload": 19
+  },
+  {
+    "adc_10bit": 858,
+    "coolant_internal": 31,
+    "diagnostic_payload": 19
+  },
+  {
+    "adc_10bit": 859,
+    "coolant_internal": 31,
+    "diagnostic_payload": 19
+  },
+  {
+    "adc_10bit": 860,
+    "coolant_internal": 31,
+    "diagnostic_payload": 19
+  },
+  {
+    "adc_10bit": 861,
+    "coolant_internal": 30,
+    "diagnostic_payload": 18
+  },
+  {
+    "adc_10bit": 862,
+    "coolant_internal": 30,
+    "diagnostic_payload": 18
+  },
+  {
+    "adc_10bit": 863,
+    "coolant_internal": 30,
+    "diagnostic_payload": 18
+  },
+  {
+    "adc_10bit": 864,
+    "coolant_internal": 30,
+    "diagnostic_payload": 18
+  },
+  {
+    "adc_10bit": 865,
+    "coolant_internal": 29,
+    "diagnostic_payload": 18
+  },
+  {
+    "adc_10bit": 866,
+    "coolant_internal": 29,
+    "diagnostic_payload": 18
+  },
+  {
+    "adc_10bit": 867,
+    "coolant_internal": 29,
+    "diagnostic_payload": 18
+  },
+  {
+    "adc_10bit": 868,
+    "coolant_internal": 29,
+    "diagnostic_payload": 18
+  },
+  {
+    "adc_10bit": 869,
+    "coolant_internal": 28,
+    "diagnostic_payload": 17
+  },
+  {
+    "adc_10bit": 870,
+    "coolant_internal": 28,
+    "diagnostic_payload": 17
+  },
+  {
+    "adc_10bit": 871,
+    "coolant_internal": 28,
+    "diagnostic_payload": 17
+  },
+  {
+    "adc_10bit": 872,
+    "coolant_internal": 28,
+    "diagnostic_payload": 17
+  },
+  {
+    "adc_10bit": 873,
+    "coolant_internal": 27,
+    "diagnostic_payload": 16
+  },
+  {
+    "adc_10bit": 874,
+    "coolant_internal": 27,
+    "diagnostic_payload": 16
+  },
+  {
+    "adc_10bit": 875,
+    "coolant_internal": 27,
+    "diagnostic_payload": 16
+  },
+  {
+    "adc_10bit": 876,
+    "coolant_internal": 27,
+    "diagnostic_payload": 16
+  },
+  {
+    "adc_10bit": 877,
+    "coolant_internal": 26,
+    "diagnostic_payload": 16
+  },
+  {
+    "adc_10bit": 878,
+    "coolant_internal": 26,
+    "diagnostic_payload": 16
+  },
+  {
+    "adc_10bit": 879,
+    "coolant_internal": 26,
+    "diagnostic_payload": 16
+  },
+  {
+    "adc_10bit": 880,
+    "coolant_internal": 26,
+    "diagnostic_payload": 16
+  },
+  {
+    "adc_10bit": 881,
+    "coolant_internal": 25,
+    "diagnostic_payload": 15
+  },
+  {
+    "adc_10bit": 882,
+    "coolant_internal": 25,
+    "diagnostic_payload": 15
+  },
+  {
+    "adc_10bit": 883,
+    "coolant_internal": 25,
+    "diagnostic_payload": 15
+  },
+  {
+    "adc_10bit": 884,
+    "coolant_internal": 25,
+    "diagnostic_payload": 15
+  },
+  {
+    "adc_10bit": 885,
+    "coolant_internal": 24,
+    "diagnostic_payload": 15
+  },
+  {
+    "adc_10bit": 886,
+    "coolant_internal": 24,
+    "diagnostic_payload": 15
+  },
+  {
+    "adc_10bit": 887,
+    "coolant_internal": 24,
+    "diagnostic_payload": 15
+  },
+  {
+    "adc_10bit": 888,
+    "coolant_internal": 24,
+    "diagnostic_payload": 15
+  },
+  {
+    "adc_10bit": 889,
+    "coolant_internal": 23,
+    "diagnostic_payload": 14
+  },
+  {
+    "adc_10bit": 890,
+    "coolant_internal": 23,
+    "diagnostic_payload": 14
+  },
+  {
+    "adc_10bit": 891,
+    "coolant_internal": 23,
+    "diagnostic_payload": 14
+  },
+  {
+    "adc_10bit": 892,
+    "coolant_internal": 23,
+    "diagnostic_payload": 14
+  },
+  {
+    "adc_10bit": 893,
+    "coolant_internal": 22,
+    "diagnostic_payload": 13
+  },
+  {
+    "adc_10bit": 894,
+    "coolant_internal": 22,
+    "diagnostic_payload": 13
+  },
+  {
+    "adc_10bit": 895,
+    "coolant_internal": 22,
+    "diagnostic_payload": 13
+  },
+  {
+    "adc_10bit": 896,
+    "coolant_internal": 21,
+    "diagnostic_payload": 13
+  },
+  {
+    "adc_10bit": 897,
+    "coolant_internal": 21,
+    "diagnostic_payload": 13
+  },
+  {
+    "adc_10bit": 898,
+    "coolant_internal": 21,
+    "diagnostic_payload": 13
+  },
+  {
+    "adc_10bit": 899,
+    "coolant_internal": 20,
+    "diagnostic_payload": 12
+  },
+  {
+    "adc_10bit": 900,
+    "coolant_internal": 20,
+    "diagnostic_payload": 12
+  },
+  {
+    "adc_10bit": 901,
+    "coolant_internal": 20,
+    "diagnostic_payload": 12
+  },
+  {
+    "adc_10bit": 902,
+    "coolant_internal": 19,
+    "diagnostic_payload": 11
+  },
+  {
+    "adc_10bit": 903,
+    "coolant_internal": 19,
+    "diagnostic_payload": 11
+  },
+  {
+    "adc_10bit": 904,
+    "coolant_internal": 19,
+    "diagnostic_payload": 11
+  },
+  {
+    "adc_10bit": 905,
+    "coolant_internal": 18,
+    "diagnostic_payload": 11
+  },
+  {
+    "adc_10bit": 906,
+    "coolant_internal": 18,
+    "diagnostic_payload": 11
+  },
+  {
+    "adc_10bit": 907,
+    "coolant_internal": 18,
+    "diagnostic_payload": 11
+  },
+  {
+    "adc_10bit": 908,
+    "coolant_internal": 18,
+    "diagnostic_payload": 11
+  },
+  {
+    "adc_10bit": 909,
+    "coolant_internal": 17,
+    "diagnostic_payload": 10
+  },
+  {
+    "adc_10bit": 910,
+    "coolant_internal": 17,
+    "diagnostic_payload": 10
+  },
+  {
+    "adc_10bit": 911,
+    "coolant_internal": 17,
+    "diagnostic_payload": 10
+  },
+  {
+    "adc_10bit": 912,
+    "coolant_internal": 16,
+    "diagnostic_payload": 10
+  },
+  {
+    "adc_10bit": 913,
+    "coolant_internal": 16,
+    "diagnostic_payload": 10
+  },
+  {
+    "adc_10bit": 914,
+    "coolant_internal": 16,
+    "diagnostic_payload": 10
+  },
+  {
+    "adc_10bit": 915,
+    "coolant_internal": 15,
+    "diagnostic_payload": 9
+  },
+  {
+    "adc_10bit": 916,
+    "coolant_internal": 15,
+    "diagnostic_payload": 9
+  },
+  {
+    "adc_10bit": 917,
+    "coolant_internal": 15,
+    "diagnostic_payload": 9
+  },
+  {
+    "adc_10bit": 918,
+    "coolant_internal": 14,
+    "diagnostic_payload": 8
+  },
+  {
+    "adc_10bit": 919,
+    "coolant_internal": 14,
+    "diagnostic_payload": 8
+  },
+  {
+    "adc_10bit": 920,
+    "coolant_internal": 14,
+    "diagnostic_payload": 8
+  },
+  {
+    "adc_10bit": 921,
+    "coolant_internal": 13,
+    "diagnostic_payload": 8
+  },
+  {
+    "adc_10bit": 922,
+    "coolant_internal": 13,
+    "diagnostic_payload": 8
+  },
+  {
+    "adc_10bit": 923,
+    "coolant_internal": 13,
+    "diagnostic_payload": 8
+  },
+  {
+    "adc_10bit": 924,
+    "coolant_internal": 13,
+    "diagnostic_payload": 8
+  },
+  {
+    "adc_10bit": 925,
+    "coolant_internal": 12,
+    "diagnostic_payload": 7
+  },
+  {
+    "adc_10bit": 926,
+    "coolant_internal": 12,
+    "diagnostic_payload": 7
+  },
+  {
+    "adc_10bit": 927,
+    "coolant_internal": 11,
+    "diagnostic_payload": 6
+  },
+  {
+    "adc_10bit": 928,
+    "coolant_internal": 11,
+    "diagnostic_payload": 6
+  },
+  {
+    "adc_10bit": 929,
+    "coolant_internal": 10,
+    "diagnostic_payload": 6
+  },
+  {
+    "adc_10bit": 930,
+    "coolant_internal": 10,
+    "diagnostic_payload": 6
+  },
+  {
+    "adc_10bit": 931,
+    "coolant_internal": 10,
+    "diagnostic_payload": 6
+  },
+  {
+    "adc_10bit": 932,
+    "coolant_internal": 9,
+    "diagnostic_payload": 5
+  },
+  {
+    "adc_10bit": 933,
+    "coolant_internal": 9,
+    "diagnostic_payload": 5
+  },
+  {
+    "adc_10bit": 934,
+    "coolant_internal": 8,
+    "diagnostic_payload": 5
+  },
+  {
+    "adc_10bit": 935,
+    "coolant_internal": 8,
+    "diagnostic_payload": 5
+  },
+  {
+    "adc_10bit": 936,
+    "coolant_internal": 8,
+    "diagnostic_payload": 5
+  },
+  {
+    "adc_10bit": 937,
+    "coolant_internal": 7,
+    "diagnostic_payload": 4
+  },
+  {
+    "adc_10bit": 938,
+    "coolant_internal": 7,
+    "diagnostic_payload": 4
+  },
+  {
+    "adc_10bit": 939,
+    "coolant_internal": 6,
+    "diagnostic_payload": 3
+  },
+  {
+    "adc_10bit": 940,
+    "coolant_internal": 6,
+    "diagnostic_payload": 3
+  },
+  {
+    "adc_10bit": 941,
+    "coolant_internal": 6,
+    "diagnostic_payload": 3
+  },
+  {
+    "adc_10bit": 942,
+    "coolant_internal": 5,
+    "diagnostic_payload": 3
+  },
+  {
+    "adc_10bit": 943,
+    "coolant_internal": 5,
+    "diagnostic_payload": 3
+  },
+  {
+    "adc_10bit": 944,
+    "coolant_internal": 4,
+    "diagnostic_payload": 2
+  },
+  {
+    "adc_10bit": 945,
+    "coolant_internal": 4,
+    "diagnostic_payload": 2
+  },
+  {
+    "adc_10bit": 946,
+    "coolant_internal": 4,
+    "diagnostic_payload": 2
+  },
+  {
+    "adc_10bit": 947,
+    "coolant_internal": 3,
+    "diagnostic_payload": 1
+  },
+  {
+    "adc_10bit": 948,
+    "coolant_internal": 3,
+    "diagnostic_payload": 1
+  },
+  {
+    "adc_10bit": 949,
+    "coolant_internal": 2,
+    "diagnostic_payload": 1
+  },
+  {
+    "adc_10bit": 950,
+    "coolant_internal": 2,
+    "diagnostic_payload": 1
+  },
+  {
+    "adc_10bit": 951,
+    "coolant_internal": 2,
+    "diagnostic_payload": 1
+  },
+  {
+    "adc_10bit": 952,
+    "coolant_internal": 1,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 953,
+    "coolant_internal": 1,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 954,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 955,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 956,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 957,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 958,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 959,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 960,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 961,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 962,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 963,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 964,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 965,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 966,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 967,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 968,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 969,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 970,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 971,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 972,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 973,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 974,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 975,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 976,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 977,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 978,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 979,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 980,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 981,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 982,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 983,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 984,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 985,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 986,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 987,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 988,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 989,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 990,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 991,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 992,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 993,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 994,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 995,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 996,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 997,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 998,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 999,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1000,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1001,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1002,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1003,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1004,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1005,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1006,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1007,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1008,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1009,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1010,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1011,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1012,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1013,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1014,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1015,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1016,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1017,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1018,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1019,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1020,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1021,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1022,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  },
+  {
+    "adc_10bit": 1023,
+    "coolant_internal": 0,
+    "diagnostic_payload": 0
+  }
+]

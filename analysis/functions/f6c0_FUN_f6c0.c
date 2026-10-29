@@ -14,28 +14,15 @@ void FUN_f6c0(void)
   if ((bVar1 & 0x80) == 0) {
     bVar1 = DAT_0a18;
     if ((~bVar1 & 0x20) == 0) {
-      sVar5 = DAT_0b74;
-    }
-    else {
       bVar1 = DAT_0a18;
       DAT_0a18 = bVar1 & 0xdf;
       sVar5 = DAT_092c;
     }
+    else {
+      sVar5 = DAT_0b74;
+    }
     bVar1 = DAT_0cf2;
     if ((~bVar1 & 1) == 0) {
-      bVar1 = DAT_0cf2;
-      if ((bVar1 & 4) != 0) {
-        bVar1 = DAT_0cf4;
-        bVar1 = (bVar1 + 1) - (0xfe < bVar1);
-        DAT_0cf4 = bVar1;
-        bVar3 = DAT_0da5;
-        if (bVar3 <= bVar1) {
-          bVar1 = DAT_0cf2;
-          DAT_0cf2 = bVar1 & 0xfb;
-        }
-      }
-    }
-    else {
       bVar1 = DAT_0cf3;
       bVar1 = (bVar1 + 1) - (0xfe < bVar1);
       DAT_0cf3 = bVar1;
@@ -51,6 +38,19 @@ void FUN_f6c0(void)
         }
       }
       sVar5 = DAT_0cfc;
+    }
+    else {
+      bVar1 = DAT_0cf2;
+      if ((bVar1 & 4) != 0) {
+        bVar1 = DAT_0cf4;
+        bVar1 = (bVar1 + 1) - (0xfe < bVar1);
+        DAT_0cf4 = bVar1;
+        bVar3 = DAT_0da5;
+        if (bVar3 <= bVar1) {
+          bVar1 = DAT_0cf2;
+          DAT_0cf2 = bVar1 & 0xfb;
+        }
+      }
     }
     sVar2 = DAT_005e;
     DAT_005e = sVar5 + sVar2;

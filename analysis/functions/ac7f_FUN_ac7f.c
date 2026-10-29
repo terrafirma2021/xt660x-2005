@@ -13,14 +13,19 @@ void FUN_ac7f(void)
   bVar4 = DAT_08bf;
   DAT_08bf = bVar4 | 2;
   bVar4 = DAT_08a0;
-  if ((~bVar4 & 4) == 0) {
+  if ((~bVar4 & 4) != 0) {
     bVar4 = DAT_08b2;
     if ((~bVar4 & 0x80) == 0) {
+LAB_ace6:
+      bVar4 = DAT_0000;
+      DAT_0000 = bVar4 & 0xfb;
+    }
+    else {
       bVar4 = DAT_0d08;
-      if (((((~bVar4 & 1) != 0) || (bVar4 = DAT_0884, (~bVar4 & 2) != 0)) ||
-          (bVar4 = DAT_0884, (~bVar4 & 1) != 0)) ||
-         (((cVar1 = DAT_0dd9, cVar1 != -0x80 && (bVar4 = DAT_08b0, (~bVar4 & 8) != 0)) ||
-          (bVar4 = DAT_08b1, (~bVar4 & 0x10) != 0)))) {
+      if (((((~bVar4 & 1) == 0) || (bVar4 = DAT_0884, (~bVar4 & 2) == 0)) ||
+          (bVar4 = DAT_0884, (~bVar4 & 1) == 0)) ||
+         (((cVar1 = DAT_0dd9, cVar1 != -0x80 && (bVar4 = DAT_08b0, (~bVar4 & 8) == 0)) ||
+          (bVar4 = DAT_08b1, (~bVar4 & 0x10) == 0)))) {
         DAT_0afb = 0xff;
         DAT_0afc = 0xff;
         goto LAB_ace6;
@@ -36,11 +41,6 @@ void FUN_ac7f(void)
       }
       bVar4 = DAT_0000;
       DAT_0000 = bVar4 | 4;
-    }
-    else {
-LAB_ace6:
-      bVar4 = DAT_0000;
-      DAT_0000 = bVar4 & 0xfb;
     }
     bVar4 = DAT_0afc;
     DAT_0afc = (bVar4 + 1) - (0xfe < bVar4);
@@ -64,18 +64,57 @@ LAB_ad00:
     if (cVar1 != cVar2) goto LAB_ad00;
   }
   bVar4 = DAT_08af;
-  if ((((((~bVar4 & 8) != 0) || (bVar4 = DAT_08af, (~bVar4 & 4) != 0)) ||
-       (bVar4 = DAT_08af, (~bVar4 & 0x20) != 0)) ||
-      ((bVar4 = DAT_08af, (~bVar4 & 0x10) != 0 || (bVar4 = DAT_08b1, (bVar4 & 8) != 0)))) ||
+  if ((((((~bVar4 & 8) == 0) || (bVar4 = DAT_08af, (~bVar4 & 4) == 0)) ||
+       (bVar4 = DAT_08af, (~bVar4 & 0x20) == 0)) ||
+      ((bVar4 = DAT_08af, (~bVar4 & 0x10) == 0 || (bVar4 = DAT_08b1, (bVar4 & 8) != 0)))) ||
      (bVar4 = DAT_08e8._0_1_, DAT_370e < bVar4)) goto LAB_ada9;
   bVar4 = DAT_0b80;
-  if ((~bVar4 & 1) == 0) {
+  if ((~bVar4 & 1) != 0) {
     bVar4 = DAT_0b80;
     if ((bVar4 & 4) == 0) {
       bVar4 = DAT_0b80;
       if ((bVar4 & 0x10) == 0) {
         bVar4 = DAT_0b80;
         if ((~bVar4 & 0x40) == 0) {
+          uVar3 = DAT_0b8a;
+          bVar4 = (byte)(uVar3 + 1);
+          uVar3 = CONCAT11((char)(uVar3 + 1 >> 8) - (bVar4 < (0xfffe < uVar3)),
+                           bVar4 - (0xfffe < uVar3));
+          DAT_0b8a = uVar3;
+          if (DAT_3710 < uVar3) goto LAB_ada9;
+          bVar4 = DAT_0b80;
+          if ((~bVar4 & 0x20) != 0) {
+            uVar3 = DAT_0b84;
+            bVar4 = (byte)(uVar3 + 1);
+            uVar3 = CONCAT11((char)(uVar3 + 1 >> 8) - (bVar4 < (0xfffe < uVar3)),
+                             bVar4 - (0xfffe < uVar3));
+            DAT_0b84 = uVar3;
+            if (uVar3 < DAT_36f6) goto LAB_af24;
+            bVar4 = DAT_0b80;
+            DAT_0b80 = bVar4 | 0x20;
+            DAT_0b84 = 0;
+          }
+          bVar4 = DAT_0abe;
+          if ((bVar4 < DAT_36f8) || (DAT_36f9 < bVar4)) {
+            bVar4 = DAT_0b81;
+            if ((bVar4 & 4) != 0) {
+              uVar3 = DAT_0b84;
+              if ((uVar3 < DAT_36fa) || (DAT_36fc < uVar3)) goto LAB_ada9;
+              bVar4 = DAT_0b80;
+              DAT_0b80 = bVar4 | 0x10;
+              DAT_0b86 = 0;
+            }
+          }
+          else {
+            bVar4 = DAT_0b81;
+            DAT_0b81 = bVar4 | 4;
+            uVar3 = DAT_0b84;
+            bVar4 = (byte)(uVar3 + 1);
+            DAT_0b84 = CONCAT11((char)(uVar3 + 1 >> 8) - (bVar4 < (0xfffe < uVar3)),
+                                bVar4 - (0xfffe < uVar3));
+          }
+        }
+        else {
           DAT_0b8a = 0;
           cVar1 = DAT_0898;
           if (cVar1 == DAT_4e8d) {
@@ -110,45 +149,6 @@ LAB_ada9:
             DAT_0b8a = 0;
           }
         }
-        else {
-          uVar3 = DAT_0b8a;
-          bVar4 = (byte)(uVar3 + 1);
-          uVar3 = CONCAT11((char)(uVar3 + 1 >> 8) - (bVar4 < (0xfffe < uVar3)),
-                           bVar4 - (0xfffe < uVar3));
-          DAT_0b8a = uVar3;
-          if (DAT_3710 < uVar3) goto LAB_ada9;
-          bVar4 = DAT_0b80;
-          if ((~bVar4 & 0x20) == 0) {
-            uVar3 = DAT_0b84;
-            bVar4 = (byte)(uVar3 + 1);
-            uVar3 = CONCAT11((char)(uVar3 + 1 >> 8) - (bVar4 < (0xfffe < uVar3)),
-                             bVar4 - (0xfffe < uVar3));
-            DAT_0b84 = uVar3;
-            if (uVar3 < DAT_36f6) goto LAB_af24;
-            bVar4 = DAT_0b80;
-            DAT_0b80 = bVar4 | 0x20;
-            DAT_0b84 = 0;
-          }
-          bVar4 = DAT_0abe;
-          if ((bVar4 < DAT_36f8) || (DAT_36f9 < bVar4)) {
-            bVar4 = DAT_0b81;
-            if ((bVar4 & 4) != 0) {
-              uVar3 = DAT_0b84;
-              if ((uVar3 < DAT_36fa) || (DAT_36fc < uVar3)) goto LAB_ada9;
-              bVar4 = DAT_0b80;
-              DAT_0b80 = bVar4 | 0x10;
-              DAT_0b86 = 0;
-            }
-          }
-          else {
-            bVar4 = DAT_0b81;
-            DAT_0b81 = bVar4 | 4;
-            uVar3 = DAT_0b84;
-            bVar4 = (byte)(uVar3 + 1);
-            DAT_0b84 = CONCAT11((char)(uVar3 + 1 >> 8) - (bVar4 < (0xfffe < uVar3)),
-                                bVar4 - (0xfffe < uVar3));
-          }
-        }
       }
       else {
         uVar3 = DAT_0b8a;
@@ -158,7 +158,7 @@ LAB_ada9:
         DAT_0b8a = uVar3;
         if (DAT_3710 < uVar3) goto LAB_ada9;
         bVar4 = DAT_0b80;
-        if ((~bVar4 & 8) == 0) {
+        if ((~bVar4 & 8) != 0) {
           uVar3 = DAT_0b86;
           bVar4 = (byte)(uVar3 + 1);
           uVar3 = CONCAT11((char)(uVar3 + 1 >> 8) - (bVar4 < (0xfffe < uVar3)),
@@ -198,7 +198,7 @@ LAB_ada9:
       DAT_0b8a = uVar3;
       if (DAT_3710 < uVar3) goto LAB_ada9;
       bVar4 = DAT_0b80;
-      if ((~bVar4 & 2) == 0) {
+      if ((~bVar4 & 2) != 0) {
         uVar3 = DAT_0b88;
         bVar4 = (byte)(uVar3 + 1);
         uVar3 = CONCAT11((char)(uVar3 + 1 >> 8) - (bVar4 < (0xfffe < uVar3)),

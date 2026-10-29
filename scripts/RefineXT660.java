@@ -46,6 +46,7 @@ public class RefineXT660 extends GhidraScript {
         prototype(0xc1f2,new String[]{"input_raw","table"},new String[]{"D","IX"});
         prototype(0xc21c,new String[]{"value","scale_address"},new String[]{"IY","IX"});
         prototype(0xc227,new String[]{"value","scale_address"},new String[]{"IY","IX"});
+        prototype(0xc276,new String[]{"index_q8","table_bias"},new String[]{"D","IX"});
         prototype(0xc243,new String[]{"value","factor"},new String[]{"D","IY"});
         prototype(0xc32d,new String[]{"table_bias","columns"},new String[]{"IX","B"});
         prototype(0xc372,new String[]{"fraction","table_bias"},new String[]{"A","IX"});

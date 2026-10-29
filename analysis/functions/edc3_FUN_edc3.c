@@ -11,24 +11,24 @@ void FUN_edc3(void)
   short sVar6;
   
   bVar1 = DAT_0885;
-  if (((~bVar1 & 0x40) == 0) && (bVar1 = DAT_0884, (bVar1 & 2) == 0)) {
+  if (((~bVar1 & 0x40) != 0) && (bVar1 = DAT_0884, (bVar1 & 2) == 0)) {
     cVar4 = DAT_0c04;
     if (cVar4 != '\x06') {
       return;
     }
     bVar1 = DAT_0880;
-    if ((((~bVar1 & 0x40) == 0) && (bVar1 = DAT_0a2e._0_1_, bVar5 = DAT_0d9e, bVar5 <= bVar1)) &&
-       (sVar6 = DAT_0044, sVar3 = DAT_0b7a, sVar2 = DAT_0a9a, (sVar6 - sVar3) - sVar2 < 0)) {
+    if ((((~bVar1 & 0x40) == 0) || (bVar1 = DAT_0a2e._0_1_, bVar5 = DAT_0d9e, bVar1 < bVar5)) ||
+       (sVar6 = DAT_0044, sVar3 = DAT_0b7a, sVar2 = DAT_0a9a, -1 < (sVar6 - sVar3) - sVar2)) {
+      bVar1 = DAT_0a93;
+      DAT_0a93 = bVar1 & 0xfd;
+      sVar6 = DAT_0044;
+    }
+    else {
       bVar1 = DAT_0a93;
       DAT_0a93 = bVar1 | 2;
       sVar6 = DAT_0b7a;
       sVar2 = DAT_0a9a;
       sVar6 = sVar6 + sVar2;
-    }
-    else {
-      bVar1 = DAT_0a93;
-      DAT_0a93 = bVar1 & 0xfd;
-      sVar6 = DAT_0044;
     }
     DAT_0056 = sVar6 + 10;
     bVar1 = DAT_004c;

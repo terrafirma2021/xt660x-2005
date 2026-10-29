@@ -58,31 +58,31 @@ void FUN_592e(void)
   DAT_0a00 = cVar3;
   FUN_5fa4();
   cVar2 = DAT_0d63;
-  if ((cVar2 != -0x80) && (bVar1 = DAT_08b2, (~bVar1 & 0x80) == 0)) {
+  if ((cVar2 != -0x80) && (bVar1 = DAT_08b2, (~bVar1 & 0x80) != 0)) {
     bVar1 = DAT_08b4;
-    if (((~bVar1 & 2) == 0) && (bVar1 = DAT_08b4, (~bVar1 & 1) == 0)) {
+    if (((~bVar1 & 2) == 0) || (bVar1 = DAT_08b4, (~bVar1 & 1) == 0)) {
+      bVar1 = DAT_08b1;
+      if ((~bVar1 & 2) != 0) {
+        bVar1 = DAT_08b1;
+        DAT_08b1 = bVar1 | 2;
+        bVar1 = DAT_0bd2;
+        DAT_0bd2 = bVar1 | 0x20;
+        bVar1 = DAT_08ba;
+        if ((~bVar1 & 2) != 0) {
+          bVar1 = DAT_08ba;
+          DAT_08ba = bVar1 | 2;
+          bVar1 = DAT_0bd2;
+          DAT_0bd2 = bVar1 | 2;
+        }
+      }
+    }
+    else {
       bVar1 = DAT_08b1;
       if ((bVar1 & 2) != 0) {
         bVar1 = DAT_08b1;
         DAT_08b1 = bVar1 & 0xfd;
         bVar1 = DAT_0bd2;
         DAT_0bd2 = bVar1 | 0x20;
-      }
-    }
-    else {
-      bVar1 = DAT_08b1;
-      if ((~bVar1 & 2) == 0) {
-        bVar1 = DAT_08b1;
-        DAT_08b1 = bVar1 | 2;
-        bVar1 = DAT_0bd2;
-        DAT_0bd2 = bVar1 | 0x20;
-        bVar1 = DAT_08ba;
-        if ((~bVar1 & 2) == 0) {
-          bVar1 = DAT_08ba;
-          DAT_08ba = bVar1 | 2;
-          bVar1 = DAT_0bd2;
-          DAT_0bd2 = bVar1 | 2;
-        }
       }
     }
   }

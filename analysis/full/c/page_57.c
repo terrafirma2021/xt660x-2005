@@ -205,7 +205,7 @@ case 0x5728: { /* 4e86800b | BRSET 0x0086,0x80,0x5737 | FUN_5728 */
 uint8_t t[3];
 xt_write(t+0,1,(~xt_load(s,0x0086,1)));
 xt_write(t+1,1,(xt_read(t+0,1) & UINT64_C(0x80)));
-xt_write(t+2,1,(xt_read(t+1,1) != UINT64_C(0x0)));
+xt_write(t+2,1,(xt_read(t+1,1) == UINT64_C(0x0)));
 if(xt_read(t+2,1)){s->pc=0x5737;return XT_OK;}
 s->pc=0x572c;return XT_OK;
 }

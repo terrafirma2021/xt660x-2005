@@ -13,9 +13,9 @@ void FUN_f592(void)
   short sVar8;
   
   cVar5 = DAT_0d87;
-  if ((((cVar5 == '\t') || (bVar2 = DAT_088c, (~bVar2 & 0x10) != 0)) ||
-      (bVar2 = DAT_088c, (~bVar2 & 4) != 0)) ||
-     ((bVar2 = DAT_089a, (~bVar2 & 4) != 0 || (bVar2 = DAT_08b1, (bVar2 & 0x80) != 0)))) {
+  if ((((cVar5 == '\t') || (bVar2 = DAT_088c, (~bVar2 & 0x10) == 0)) ||
+      (bVar2 = DAT_088c, (~bVar2 & 4) == 0)) ||
+     ((bVar2 = DAT_089a, (~bVar2 & 4) == 0 || (bVar2 = DAT_08b1, (bVar2 & 0x80) != 0)))) {
     return;
   }
   bVar2 = DAT_09cf;

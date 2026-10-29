@@ -15,11 +15,11 @@ void FUN_b817(void)
   DAT_0882 = bVar1 & 0xf7;
   bVar1 = DAT_0881;
   if ((~bVar1 & 0x10) == 0) {
-    bVar1 = DAT_0afa;
-    cVar4 = (bVar1 + 1) - (0xfe < bVar1);
+    cVar4 = '\0';
   }
   else {
-    cVar4 = '\0';
+    bVar1 = DAT_0afa;
+    cVar4 = (bVar1 + 1) - (0xfe < bVar1);
   }
   DAT_0afa = cVar4;
   bVar1 = DAT_09a1;

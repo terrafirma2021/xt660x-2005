@@ -28,10 +28,10 @@ void candidate_unreferenced_e294(void)
   DAT_0bca = 6;
   cVar12 = DAT_0d61;
   if ((((cVar12 != -0x80) && (cVar12 = DAT_0d87, cVar12 == '\t')) &&
-      (bVar11 = DAT_08a0, (~bVar11 & 4) == 0)) && (bVar11 = DAT_08b2, (~bVar11 & 0x80) == 0)) {
+      (bVar11 = DAT_08a0, (~bVar11 & 4) != 0)) && (bVar11 = DAT_08b2, (~bVar11 & 0x80) != 0)) {
     cVar12 = DAT_0d87;
     if (((cVar12 == '\t') && (bVar11 = DAT_0896._0_1_, (bVar11 & 0x10) == 0)) ||
-       (bVar11 = DAT_0881, (~bVar11 & 0x10) != 0)) {
+       (bVar11 = DAT_0881, (~bVar11 & 0x10) == 0)) {
       DAT_0bcc = 0;
       DAT_0bcd = 0;
     }
@@ -44,13 +44,13 @@ void candidate_unreferenced_e294(void)
           bVar5 = DAT_0d88;
           if (bVar11 <= bVar5) goto LAB_e34d;
           bVar11 = DAT_08b1;
-          if ((~bVar11 & 8) == 0) {
+          if ((~bVar11 & 8) != 0) {
             bVar11 = DAT_08b1;
             DAT_08b1 = bVar11 | 8;
             bVar11 = DAT_0bd2;
             DAT_0bd2 = bVar11 | 0x20;
             bVar11 = DAT_08ba;
-            if ((~bVar11 & 8) == 0) {
+            if ((~bVar11 & 8) != 0) {
               bVar11 = DAT_08ba;
               DAT_08ba = bVar11 | 8;
               bVar11 = DAT_0bd2;
@@ -75,7 +75,7 @@ void candidate_unreferenced_e294(void)
             bVar11 = DAT_0bd2;
             DAT_0bd2 = bVar11 | 0x20;
             bVar11 = DAT_08af;
-            if (((~bVar11 & 8) == 0) && (bVar11 = DAT_08af, (~bVar11 & 4) == 0)) {
+            if (((~bVar11 & 8) != 0) && (bVar11 = DAT_08af, (~bVar11 & 4) != 0)) {
               bVar11 = DAT_0889;
               DAT_0889 = bVar11 | 2;
               DAT_0b94 = 0;
@@ -106,7 +106,7 @@ LAB_e34d:
   DAT_0898 = uVar17;
   do {
     bVar11 = DAT_008b;
-    if ((~bVar11 & 2) != 0) {
+    if ((~bVar11 & 2) == 0) {
       uVar13 = DAT_0092;
       DAT_08cc = uVar13;
       bVar11 = DAT_088d;
@@ -123,7 +123,7 @@ LAB_e37e:
   DAT_088d = bVar11 & 0xfe;
   FUN_f39d();
   bVar11 = DAT_088d;
-  if ((~bVar11 & 2) == 0) {
+  if ((~bVar11 & 2) != 0) {
     puVar19 = &DAT_0c42;
     puVar18 = &DAT_0c58;
     bVar11 = DAT_0bfe;
@@ -141,8 +141,8 @@ LAB_e37e:
     DAT_08c3 = 0;
   }
   cVar12 = DAT_0d53;
-  if (((cVar12 != -0x80) && (bVar11 = DAT_08a0, (~bVar11 & 4) == 0)) &&
-     (bVar11 = DAT_08b2, (~bVar11 & 0x80) == 0)) {
+  if (((cVar12 != -0x80) && (bVar11 = DAT_08a0, (~bVar11 & 4) != 0)) &&
+     (bVar11 = DAT_08b2, (~bVar11 & 0x80) != 0)) {
     uVar13 = DAT_0c40;
     bVar11 = (byte)((ushort)uVar13 >> 8);
     if ((bVar11 < 0x1a) || (0xf5 < bVar11)) {
@@ -156,13 +156,13 @@ LAB_e37e:
       else {
         bVar11 = DAT_0b3e;
         bVar5 = DAT_0d89;
-        if ((bVar5 < bVar11) && (bVar11 = DAT_08af, (~bVar11 & 0x20) == 0)) {
+        if ((bVar5 < bVar11) && (bVar11 = DAT_08af, (~bVar11 & 0x20) != 0)) {
           bVar11 = DAT_08af;
           DAT_08af = bVar11 | 0x20;
           bVar11 = DAT_0bd2;
           DAT_0bd2 = bVar11 | 0x80;
           bVar11 = DAT_08b8;
-          if ((~bVar11 & 0x20) == 0) {
+          if ((~bVar11 & 0x20) != 0) {
             bVar11 = DAT_08b8;
             DAT_08b8 = bVar11 | 0x20;
             bVar11 = DAT_0bd2;
@@ -212,14 +212,13 @@ LAB_e37e:
     DAT_0c9a = uVar13;
 LAB_e461:
     bVar11 = DAT_08af;
-    if (((~bVar11 & 0x20) == 0) && (bVar11 = DAT_08af, (bVar11 & 0x10) == 0)) {
+    if (((~bVar11 & 0x20) == 0) || (bVar11 = DAT_08af, (bVar11 & 0x10) != 0)) {
+      uVar13 = DAT_0da8;
+      DAT_0c8a = uVar13;
+    }
+    else {
       bVar11 = DAT_0ca8;
       if ((~bVar11 & 1) == 0) {
-        uVar13 = DAT_0c88;
-        DAT_0c8a = uVar13;
-        DAT_0c94 = uVar13;
-      }
-      else {
         cVar12 = DAT_0d8d;
         if (cVar12 == '\x01') {
 LAB_e491:
@@ -639,10 +638,11 @@ LAB_e491:
           DAT_0c94 = uVar13;
         }
       }
-    }
-    else {
-      uVar13 = DAT_0da8;
-      DAT_0c8a = uVar13;
+      else {
+        uVar13 = DAT_0c88;
+        DAT_0c8a = uVar13;
+        DAT_0c94 = uVar13;
+      }
     }
     uVar13 = DAT_08f2;
     FUN_f3b7();
@@ -682,12 +682,12 @@ LAB_e491:
 LAB_ea7c:
     DAT_0c8c = puVar14;
     bVar11 = DAT_0ca8;
-    if ((~bVar11 & 1) == 0) {
+    if ((~bVar11 & 1) != 0) {
       bVar11 = DAT_0ca8;
       if ((bVar11 & 2) == 0) {
 LAB_eaa2:
         bVar11 = DAT_0ca8;
-        if ((~bVar11 & 2) == 0) {
+        if ((~bVar11 & 2) != 0) {
           uVar15 = DAT_0c9a;
           uVar4 = DAT_0c9c;
           if ((uVar4 < uVar15) && (uVar8 = DAT_0dac, uVar8 <= uVar15 - uVar4)) {
@@ -734,7 +734,7 @@ LAB_eac0:
     }
   }
   bVar11 = DAT_0889;
-  if ((((~bVar11 & 4) == 0) && (bVar11 = DAT_0885, (~bVar11 & 0x80) == 0)) &&
+  if ((((~bVar11 & 4) != 0) && (bVar11 = DAT_0885, (~bVar11 & 0x80) != 0)) &&
      (bVar11 = DAT_0889, (bVar11 & 0x10) != 0)) {
     bVar11 = DAT_0889;
     DAT_0889 = bVar11 | 8;
@@ -803,7 +803,7 @@ LAB_eb49:
     DAT_0a53 = bVar11;
   }
   cVar12 = DAT_0dd5;
-  if ((cVar12 != -0x80) && (bVar11 = DAT_0d06, (~bVar11 & 0x80) == 0)) {
+  if ((cVar12 != -0x80) && (bVar11 = DAT_0d06, (~bVar11 & 0x80) != 0)) {
     bVar11 = DAT_0a2e._0_1_;
     bVar5 = DAT_0dd8;
     if (bVar11 < bVar5) {
@@ -811,7 +811,7 @@ LAB_eb49:
       if (bVar11 < bVar5) {
         bVar11 = DAT_0d0a;
         bVar5 = DAT_0dd6;
-        if ((bVar11 < bVar5) && (bVar11 = DAT_0d08, (~bVar11 & 8) == 0)) {
+        if ((bVar11 < bVar5) && (bVar11 = DAT_0d08, (~bVar11 & 8) != 0)) {
           bVar11 = DAT_0d08;
           DAT_0d08 = bVar11 & 0xfe;
           DAT_0afc = 0;
@@ -830,7 +830,7 @@ LAB_eb49:
     cVar12 = DAT_0c04;
     if (cVar12 != '\0') goto LAB_ec8f;
     bVar11 = DAT_0ada;
-    if (((~bVar11 & 0x10) != 0) || (bVar11 = DAT_0ada, (bVar11 & 4) != 0)) {
+    if (((~bVar11 & 0x10) == 0) || (bVar11 = DAT_0ada, (bVar11 & 4) != 0)) {
       bVar11 = DAT_0ae1;
       bVar11 = (bVar11 + 1) - (0xfe < bVar11);
       DAT_0ae1 = bVar11;

@@ -11,7 +11,7 @@ void FUN_ef6d(byte param_1)
   short sVar6;
   
   bVar1 = DAT_08a0;
-  if (((~bVar1 & 4) != 0) || (bVar1 = DAT_08b2, (~bVar1 & 0x80) != 0)) {
+  if (((~bVar1 & 4) == 0) || (bVar1 = DAT_08b2, (~bVar1 & 0x80) == 0)) {
     return;
   }
   bVar1 = DAT_0924;
@@ -20,7 +20,7 @@ void FUN_ef6d(byte param_1)
       return;
     }
     bVar1 = DAT_0a92;
-    if ((~bVar1 & 0x80) != 0) {
+    if ((~bVar1 & 0x80) == 0) {
       return;
     }
     uVar5 = DAT_0db4;
@@ -29,12 +29,12 @@ void FUN_ef6d(byte param_1)
   bVar1 = DAT_00e1;
   if ((bVar1 & 8) == 0) {
     bVar1 = DAT_088c;
-    if ((((((~bVar1 & 2) == 0) && (bVar1 = DAT_089a, (~bVar1 & 2) == 0)) &&
-         (bVar1 = DAT_089b, (~bVar1 & 0x80) == 0)) &&
-        (((bVar1 = DAT_0884, (~bVar1 & 4) == 0 && (bVar1 = DAT_0d08, (~bVar1 & 1) == 0)) &&
-         ((bVar1 = DAT_0884, (~bVar1 & 2) == 0 &&
-          ((bVar1 = DAT_088c, (~bVar1 & 0x80) == 0 && (bVar1 = DAT_0885, (~bVar1 & 0x40) == 0)))))))
-        ) && ((bVar1 = DAT_0bf8, (~bVar1 & 0x80) == 0 && (bVar1 = DAT_0a92, (~bVar1 & 8) == 0)))) {
+    if ((((((~bVar1 & 2) != 0) && (bVar1 = DAT_089a, (~bVar1 & 2) != 0)) &&
+         (bVar1 = DAT_089b, (~bVar1 & 0x80) != 0)) &&
+        (((bVar1 = DAT_0884, (~bVar1 & 4) != 0 && (bVar1 = DAT_0d08, (~bVar1 & 1) != 0)) &&
+         ((bVar1 = DAT_0884, (~bVar1 & 2) != 0 &&
+          ((bVar1 = DAT_088c, (~bVar1 & 0x80) != 0 && (bVar1 = DAT_0885, (~bVar1 & 0x40) != 0)))))))
+        ) && ((bVar1 = DAT_0bf8, (~bVar1 & 0x80) != 0 && (bVar1 = DAT_0a92, (~bVar1 & 8) != 0)))) {
       sVar6 = DAT_0af0;
       sVar2 = DAT_0db0;
       DAT_0b7a = sVar6 + sVar2;
@@ -50,9 +50,9 @@ void FUN_ef6d(byte param_1)
     return;
   }
   bVar1 = DAT_0884;
-  if ((((((~bVar1 & 4) != 0) || (bVar1 = DAT_0884, (~bVar1 & 2) != 0)) ||
-       (bVar1 = DAT_0885, (~bVar1 & 0x40) != 0)) ||
-      ((bVar1 = DAT_0bf8, (~bVar1 & 0x80) != 0 || (bVar1 = DAT_088d, (~bVar1 & 0x20) != 0)))) ||
+  if ((((((~bVar1 & 4) == 0) || (bVar1 = DAT_0884, (~bVar1 & 2) == 0)) ||
+       (bVar1 = DAT_0885, (~bVar1 & 0x40) == 0)) ||
+      ((bVar1 = DAT_0bf8, (~bVar1 & 0x80) == 0 || (bVar1 = DAT_088d, (~bVar1 & 0x20) == 0)))) ||
      (bVar1 = DAT_0880, (bVar1 & 4) != 0)) {
     return;
   }

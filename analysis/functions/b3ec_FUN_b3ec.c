@@ -8,9 +8,9 @@ void FUN_b3ec(void)
   byte bVar3;
   
   bVar3 = DAT_0891;
-  if ((~bVar3 & 0x40) == 0) {
+  if ((~bVar3 & 0x40) != 0) {
     bVar3 = DAT_0891;
-    if ((~bVar3 & 2) == 0) {
+    if ((~bVar3 & 2) != 0) {
       bVar3 = DAT_088f;
       DAT_088f = bVar3 & 0x7f;
       bVar3 = DAT_0890;
@@ -35,9 +35,9 @@ void FUN_b3ec(void)
     DAT_0891 = bVar3 & 0xfd;
   }
   bVar3 = DAT_0891;
-  if ((~bVar3 & 0x20) == 0) {
+  if ((~bVar3 & 0x20) != 0) {
     bVar3 = DAT_0891;
-    if ((~bVar3 & 2) == 0) {
+    if ((~bVar3 & 2) != 0) {
       uVar1 = DAT_09fc;
       FUN_57e9(&DAT_0a02);
       return;
@@ -54,9 +54,9 @@ void FUN_b3ec(void)
     DAT_0891 = bVar3 & 0xfd;
   }
   bVar3 = DAT_0891;
-  if ((~bVar3 & 0x10) == 0) {
+  if ((~bVar3 & 0x10) != 0) {
     bVar3 = DAT_0891;
-    if ((~bVar3 & 2) == 0) {
+    if ((~bVar3 & 2) != 0) {
       uVar1 = DAT_09fc;
       FUN_57e9(&DAT_0a04);
       return;
@@ -73,9 +73,9 @@ void FUN_b3ec(void)
     DAT_0891 = bVar3 & 0xfd;
   }
   bVar3 = DAT_0891;
-  if ((~bVar3 & 8) == 0) {
+  if ((~bVar3 & 8) != 0) {
     bVar3 = DAT_0891;
-    if ((~bVar3 & 2) == 0) {
+    if ((~bVar3 & 2) != 0) {
       uVar1 = DAT_0b30._0_1_;
       FUN_57e9(&DAT_0a06);
       return;
@@ -92,13 +92,9 @@ void FUN_b3ec(void)
     DAT_0891 = bVar3 & 0xfd;
   }
   bVar3 = DAT_0891;
-  if ((~bVar3 & 4) == 0) {
+  if ((~bVar3 & 4) != 0) {
     bVar3 = DAT_0891;
     if ((~bVar3 & 2) == 0) {
-      uVar1 = DAT_0b30._1_1_;
-      FUN_57e9(&DAT_0a07);
-    }
-    else {
       bVar3 = DAT_00e9;
       if ((bVar3 & 0x10) != 0) {
         bVar3 = DAT_00f0;
@@ -107,6 +103,10 @@ void FUN_b3ec(void)
         bVar3 = DAT_0890;
         DAT_0890 = bVar3 & 0x7f;
       }
+    }
+    else {
+      uVar1 = DAT_0b30._1_1_;
+      FUN_57e9(&DAT_0a07);
     }
   }
   return;
