@@ -61,6 +61,10 @@ selectors=json.loads((OUT/'map_selector_validation.json').read_text())
 assert selectors['result']=='passed' and selectors['firmware_sha256']==catalog['firmware_sha256']
 assert selectors['test_script_sha256']==digest(ROOT/'scripts/test_map_selectors.py')
 assert selectors['compiled_library_sha256']==full['compiled_library_sha256']
+connector=json.loads((OUT/'connector_path_validation.json').read_text())
+assert connector['result']=='passed' and connector['firmware_sha256']==catalog['firmware_sha256']
+assert connector['test_script_sha256']==digest(ROOT/'scripts/test_connector_paths.py')
+assert connector['compiled_library_sha256']==full['compiled_library_sha256']
 assert temperature['firmware_sha256']==catalog['firmware_sha256']
 assert temperature['generator_sha256']==digest(ROOT/'scripts/sensor_profiles.py')
 physical=json.loads((OUT/'physical_units.json').read_text())

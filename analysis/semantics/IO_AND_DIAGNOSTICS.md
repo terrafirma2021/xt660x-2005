@@ -32,6 +32,8 @@ The TDM manual identifies code 37 as injector #2, supporting the secondary-injec
 
 Diagnostic 20 reads filtered PORTB bit 0 (`0x0896` bit 0), identifying the sidestand/start-interlock path. For variant 9, diagnostic 21 reads filtered PORTB bit 4, identifying neutral; other variants return a fixed diagnostic response. The external interlock network must be considered before assigning either MCU input directly to a switch wire.
 
+The [route audit](CONNECTOR_ROUTE_AUDIT.md) withdraws the previously fixed B/Y-to-PB0 and L/B-to-PB4 wire pairing. Diagnostic identities remain established; overlapping manual interlock references do not prove that physical pair. It also adds instruction tests for starter debounce, fault-19 qualification and the relay/supply feedback.
+
 ## ADC dispatch
 
 `0x68CF` reads word `0x0096` into `0x08CA`. The low three bits of `0x0085` select one of eight big-endian pointers at `0x6968`. `0x68E7` calls the selected routine with the sampled word in D. Under the working MCU register map, these registers are ATDDR3 and ATDCTL5. **Result register number 3 is not the physical sensor-channel number**; channel selection comes from ATDCTL5.
@@ -56,7 +58,7 @@ The normal scheduler does not give all channels equal priority. Over a 16-step c
 | PT3 / timer channel 3, compare `0x0056` | Ignition coil | `0x5664`, `0xED29`, `0xEE78`, `0xEF6D` |
 | PT6 / timer channel 6, compare `0x005C` | Primary injector | `0xF519 → 0xC55B` |
 | PT7 / timer channel 7, compare `0x005E` | Secondary injector-like code path | `0xF592 → 0xC712`, disabled here by variant 9 |
-| PA2, `0x0000` mask 4 | Fuel-injection system relay; diagnostic 50 | `0xACD9`, `0xACE6`; diagnostic activation clears the bit at `0xBB23` |
+| PA2, `0x0000` mask 4 | Fuel-injection system relay; diagnostic 50 | Normal prime sets PA2 at `0xACD9`, stop clears it at `0xACE6`; diagnostic 50 cycles low at `0xBB23`, then high at `0xBB41` |
 | PP2, `0x00F0` mask 4 | Fan relay | `0x7190–0x71CC` |
 | PP1, `0x00F0` mask 2 | Air-induction solenoid | Output identity established; full control strategy pending |
 | PP4, `0x00F0` mask 16 | Headlight relay | Output identity established; full control strategy pending |

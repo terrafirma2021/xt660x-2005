@@ -54,11 +54,11 @@
 <rect x="932" y="62" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
 <text x="968" y="84" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">U13</text>
 <text x="968" y="113" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">O</text></g>
-<g class="connector-slot" data-connector="L01" role="button" tabindex="0" aria-label="L01: B/Y, Starting / sidestand interlock network">
+<g class="connector-slot" data-connector="L01" role="button" tabindex="0" aria-label="L01: B/Y, Starting-permission relay network">
 <rect x="32" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
 <text x="68" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L01</text>
 <text x="68" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">B/Y</text></g>
-<g class="connector-slot" data-connector="L02" role="button" tabindex="0" aria-label="L02: L/B, Neutral-state input through relay unit">
+<g class="connector-slot" data-connector="L02" role="button" tabindex="0" aria-label="L02: L/B, Interlock input with overlapping manual references">
 <rect x="107" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
 <text x="143" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L02</text>
 <text x="143" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">L/B</text></g>
@@ -94,7 +94,7 @@
 <rect x="707" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
 <text x="743" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L10</text>
 <text x="743" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">Y/B</text></g>
-<g class="connector-slot" data-connector="L11" role="button" tabindex="0" aria-label="L11: R/L, Fuel-injection relay output / system supply">
+<g class="connector-slot" data-connector="L11" role="button" tabindex="0" aria-label="L11: R/L, Fuel-injection relay output / system supply monitor">
 <rect x="782" y="140" width="72" height="68" rx="4" fill="#274654" stroke="#7895a6"/>
 <text x="818" y="162" text-anchor="middle" fill="#a8c3d1" font-family="sans-serif" font-size="13">L11</text>
 <text x="818" y="191" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20">R/L</text></g>

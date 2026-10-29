@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
-  "generator_sha256": "ef7af51eca621a8bba058438527b09ce665564d1334180aa13be087a69dccb12",
-  "template_sha256": "d1d41492aa094ecd1d891e868a912a51d78503ef3b001b02c13086858a3304c2",
+  "generator_sha256": "83650a832a06dd4a743a775b99bff50cd48ef83cd6c8993714d5ec87e6741e9e",
+  "template_sha256": "0df7af0506a2e77525c686212b20f303ac51a0a19b8a079371b8a51d2046624f",
   "target": "Supplied XT660X 2005 image; variant 9",
   "package_assumption": "MC9S12T64 80-pin LQFP, top view, conditional on physical chip identification. CPU/register evidence fits this family; chip marking has not been supplied.",
   "connector_policy": "All 26 manual connector positions are inventoried separately using upper/lower drawing coordinates. OEM cavity numbers and view-side convention are not printed; function links are not measured board continuity.",
@@ -11,16 +11,20 @@
     "source_url": "https://scootertuub.nl/motoren/Yamaha/Yamaha%20XT%20660%20R%20X%202004%20Service%20Manual%20%20.pdf",
     "source_pdf_pages": [
       345,
+      358,
       362,
+      363,
       379,
+      400,
+      444,
       458,
       462
     ],
     "target_scope": "Manual reference for 2004 XT660R/X, correlated with the supplied 2005-labelled image; exact ECU part number is unconfirmed.",
     "orientation": "As drawn in the manual, with the small tab symbol above. The inspected drawing does not state mating-face versus wire-entry view. Do not mirror or assign OEM numbers without establishing that view.",
     "coordinate_policy": "U01-U13 and L01-L13 mean upper/lower row, counted left to right in the printed drawing. They are research coordinates, not Yamaha cavity numbers.",
-    "link_policy": "Function corroborated joins the manual circuit to a firmware diagnostic identity. Candidate association is weaker. No connector-to-MCU board continuity has been measured.",
-    "generator_sha256": "2f6fc395380276fb71ae3e20f0b448da36ba6ec0bf81e27acb8dc68a0e183a36",
+    "link_policy": "Function corroborated joins manual circuit evidence to recovered firmware behavior. Candidate association is weaker. Unresolved alternatives lists possible inputs, not an electrical join to both pins. No connector-to-MCU board continuity has been measured.",
+    "generator_sha256": "0bfa22f4247d38598254f68d311c1450c651299ed3fe8e62e60afd86042bf5fe",
     "slots": [
       {
         "position": "U01",
@@ -49,8 +53,8 @@
           69,
           70
         ],
-        "association": "Candidate association",
-        "path": "Y/L joins the ECU, meter and immobilizer in the manual. SCI1 RX/TX handles their software exchange; the external line interface joining both MCU signals has not been traced.",
+        "association": "Function corroborated",
+        "path": "The manual explicitly calls Y/L the immobilizer-to-ECU signal lead (PDF page 444); page 462 also joins the meter. SCI1 handles the recovered dashboard/authentication exchanges. RX/TX are logical sides of that function, not two direct connections to the harness. Transceiver wiring and line voltage remain unverified.",
         "oem_cavity_number": null,
         "continuity_verified": false,
         "source_pdf_pages": [
@@ -239,12 +243,13 @@
         "row": "Lower",
         "column": 1,
         "wire": "B/Y",
-        "role": "Starting / sidestand interlock network",
+        "role": "Starting-permission relay network",
         "mcu_package_pins": [
-          20
+          20,
+          24
         ],
-        "association": "Candidate association",
-        "path": "Manual B/Y joins ECU to the relay/interlock network. Diagnostic 20 identifies PB0 as sidestand/start-interlock input, but this particular electrical join is not board-proven.",
+        "association": "Unresolved alternatives",
+        "path": "B/Y joins the relay/diode network. The previous fixed PB0 association is withdrawn: fault 19 explicitly names L/B instead. PB0 and PB4 are alternative logical-input candidates, not a claim that this wire joins both MCU pins. The shared neutral/clutch/sidestand paths prevent a direct switch label without resolving the board route.",
         "oem_cavity_number": null,
         "continuity_verified": false,
         "source_pdf_pages": [
@@ -256,12 +261,13 @@
         "row": "Lower",
         "column": 2,
         "wire": "L/B",
-        "role": "Neutral-state input through relay unit",
+        "role": "Interlock input with overlapping manual references",
         "mcu_package_pins": [
+          20,
           24
         ],
-        "association": "Function corroborated",
-        "path": "Fault-42 instructions identify relay L/Y to ECU L/B (PDF page 362). Diagnostic 21 reads filtered PB4 for variant 9. This is not the raw Sb wire at the neutral switch.",
+        "association": "Unresolved alternatives",
+        "path": "Fault 19 identifies L/B for diagnostic 20 (PB0), while fault 42 also directs neutral-switch checks through relay L/Y to ECU L/B (PDF pages 358/362). The earlier fixed PB4 link is withdrawn. These references involve shared relay/diode paths and do not establish a unique MCU wire route. PB0/PB4 here are alternatives, not electrically joined pins.",
         "oem_cavity_number": null,
         "continuity_verified": false,
         "source_pdf_pages": [
@@ -407,12 +413,12 @@
         "row": "Lower",
         "column": 11,
         "wire": "R/L",
-        "role": "Fuel-injection relay output / system supply",
+        "role": "Fuel-injection relay output / system supply monitor",
         "mcu_package_pins": [
           63
         ],
-        "association": "Candidate association",
-        "path": "Manual R/L supplies ECU, injector and fuel pump from the fuel-injection relay. ATD4/PAD4 monitors fuel-system supply; assigning this terminal to that divider remains a candidate, not a continuity result.",
+        "association": "Function corroborated",
+        "path": "Fault 43 explicitly tests relay-to-ECU R/L using diagnostic 09 (PDF page 363). That diagnostic reads the ATD4-derived payload; the same handler checks PA2 command against the supply-present state and substitutes raw 154 on fault. This corroborates the monitor function; its divider/protection components and continuity remain untraced.",
         "oem_cavity_number": null,
         "continuity_verified": false,
         "source_pdf_pages": [
@@ -1102,7 +1108,7 @@
         "0x0896"
       ],
       "diagnostic": 20,
-      "xt_wire": "B/Y at L01 in the manual drawing (candidate association)",
+      "xt_wire": "B/Y at L01 in the manual drawing (unresolved alternatives); L/B at L02 in the manual drawing (unresolved alternatives)",
       "ecu_connector_cavity": null,
       "evidence_instructions": [
         {
@@ -1130,7 +1136,14 @@
           "row": "Lower",
           "column": 1,
           "wire": "B/Y",
-          "association": "Candidate association"
+          "association": "Unresolved alternatives"
+        },
+        {
+          "position": "L02",
+          "row": "Lower",
+          "column": 2,
+          "wire": "L/B",
+          "association": "Unresolved alternatives"
         }
       ]
     },
@@ -1242,7 +1255,7 @@
         "0x0896"
       ],
       "diagnostic": 21,
-      "xt_wire": "L/B at L02 in the manual drawing (function corroborated)",
+      "xt_wire": "B/Y at L01 in the manual drawing (unresolved alternatives); L/B at L02 in the manual drawing (unresolved alternatives)",
       "ecu_connector_cavity": null,
       "evidence_instructions": [
         {
@@ -1266,11 +1279,18 @@
       ],
       "ecu_connector_positions": [
         {
+          "position": "L01",
+          "row": "Lower",
+          "column": 1,
+          "wire": "B/Y",
+          "association": "Unresolved alternatives"
+        },
+        {
           "position": "L02",
           "row": "Lower",
           "column": 2,
           "wire": "L/B",
-          "association": "Function corroborated"
+          "association": "Unresolved alternatives"
         }
       ]
     },
@@ -1761,7 +1781,7 @@
       "category": "actuator",
       "status": "Corroborated",
       "role": "Fuel-injection system relay command",
-      "function": "Diagnostic 50 and normal priming/run logic operate PA2. Controls fuel-system power through a relay driver, not the fuel pump motor directly. Diagnostic activation clears the MCU bit.",
+      "function": "Diagnostic 50 and normal priming/run logic operate PA2. Normal priming sets PA2 and inhibiting paths clear it; voltage feedback expects supply present with PA2 high. Diagnostic 50 cycles low then high. The harness is reached through a relay driver, not directly from the MCU.",
       "register": "PORTA 0x0000 bit2",
       "evidence": [
         "0xBB23",
@@ -2207,7 +2227,7 @@
         "0x0AEC"
       ],
       "diagnostic": 9,
-      "xt_wire": "R/L at L11 in the manual drawing (candidate association)",
+      "xt_wire": "R/L at L11 in the manual drawing (function corroborated)",
       "ecu_connector_cavity": null,
       "evidence_instructions": [
         {
@@ -2229,7 +2249,7 @@
           "row": "Lower",
           "column": 11,
           "wire": "R/L",
-          "association": "Candidate association"
+          "association": "Function corroborated"
         }
       ]
     },
@@ -2408,7 +2428,7 @@
       ],
       "ram": [],
       "diagnostic": null,
-      "xt_wire": "Y/L at U02 in the manual drawing (candidate association)",
+      "xt_wire": "Y/L at U02 in the manual drawing (function corroborated)",
       "ecu_connector_cavity": null,
       "evidence_instructions": [
         {
@@ -2430,7 +2450,7 @@
           "row": "Upper",
           "column": 2,
           "wire": "Y/L",
-          "association": "Candidate association"
+          "association": "Function corroborated"
         }
       ]
     },
@@ -2448,7 +2468,7 @@
       ],
       "ram": [],
       "diagnostic": null,
-      "xt_wire": "Y/L at U02 in the manual drawing (candidate association)",
+      "xt_wire": "Y/L at U02 in the manual drawing (function corroborated)",
       "ecu_connector_cavity": null,
       "evidence_instructions": [
         {
@@ -2470,7 +2490,7 @@
           "row": "Upper",
           "column": 2,
           "wire": "Y/L",
-          "association": "Candidate association"
+          "association": "Function corroborated"
         }
       ]
     },
@@ -2741,10 +2761,14 @@
         353,
         354,
         355,
+        358,
         361,
         362,
+        363,
         379,
         397,
+        400,
+        444,
         458,
         462
       ]

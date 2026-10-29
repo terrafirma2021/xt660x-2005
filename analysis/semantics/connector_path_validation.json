@@ -1,0 +1,20 @@
+{
+  "result": "passed",
+  "cases": 10344,
+  "checks": {
+    "PB1_debounce_all_variants_levels_initial_states_boundaries": 7168,
+    "PB1_interrupted_activation_sequence": 8,
+    "headlight_command_request_override_all_port_values": 512,
+    "start_warning_all_six_fault_combinations_and_tip_bypass": 256,
+    "diagnostic20_21_all_variants_both_input_levels": 1024,
+    "PB0_interlock_debounce_boundaries": 24,
+    "fault19_qualification_and_strict_counter_boundary": 48,
+    "ATD4_supply_latch_and_diagnostic_payload_all_raw_bytes": 256,
+    "fault43_command_supply_mismatch_and_fallback_boundaries": 24,
+    "relay_diagnostic_prime_stop_port_actions": 1024
+  },
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "test_script_sha256": "51a1ded092e8bd2dff4391241d569cc9a68651f95760f18e5a8ec99948ea6e3a",
+  "compiled_library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
+  "limitations": "Synthetic software fixtures; no connector continuity, voltage measurement, transceiver test or complete ECU boot. Counter values are routine invocations or preseeded timer states, not independently measured milliseconds. Wire assignments require separate manual/board evidence."
+}

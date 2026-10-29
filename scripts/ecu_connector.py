@@ -16,8 +16,8 @@ ROWS = [
 CIRCUITS = {
  'L/W': ('Starter-relay control network', [21], 'Candidate association',
          'The drawing joins ECU L/W to the starter-relay/cut-off relay network. Filtered PB1 drives the debounced 0x0880 bit 0 state at 0xCBEF; that state participates in fault-19 and headlight suppression paths. This supports a starter-request interpretation, but the L/W-to-PB1 board route is not verified.'),
- 'Y/L': ('Meter / immobilizer communication line', [69,70], 'Candidate association',
-         'Y/L joins the ECU, meter and immobilizer in the manual. SCI1 RX/TX handles their software exchange; the external line interface joining both MCU signals has not been traced.'),
+ 'Y/L': ('Meter / immobilizer communication line', [69,70], 'Function corroborated',
+         'The manual explicitly calls Y/L the immobilizer-to-ECU signal lead (PDF page 444); page 462 also joins the meter. SCI1 handles the recovered dashboard/authentication exchanges. RX/TX are logical sides of that function, not two direct connections to the harness. Transceiver wiring and line voltage remain unverified.'),
  'Y/G': ('Lean-angle sensor signal', [64], 'Function corroborated',
          'Manual signal Y/G; diagnostic 08 selects ATD5. Protection/conditioning lies between terminal and PAD5.'),
  'W': ('Vehicle-speed sensor signal', [1], 'Function corroborated',
@@ -36,10 +36,10 @@ CIRCUITS = {
          'Manual ECU R/B runs to the injector control terminal; R/L supplies the injector separately. Diagnostic 36 commands PT6/TC6. A power driver lies between MCU and harness. Other R/B wires elsewhere in the harness are not this ECU net.'),
  'O': ('Ignition-coil control', [2], 'Function corroborated',
        'Manual O runs to the ignition coil primary; diagnostic 30 commands PT3/TC3. A coil power driver separates the MCU command from this terminal.'),
- 'B/Y': ('Starting / sidestand interlock network', [20], 'Candidate association',
-         'Manual B/Y joins ECU to the relay/interlock network. Diagnostic 20 identifies PB0 as sidestand/start-interlock input, but this particular electrical join is not board-proven.'),
- 'L/B': ('Neutral-state input through relay unit', [24], 'Function corroborated',
-         'Fault-42 instructions identify relay L/Y to ECU L/B (PDF page 362). Diagnostic 21 reads filtered PB4 for variant 9. This is not the raw Sb wire at the neutral switch.'),
+ 'B/Y': ('Starting-permission relay network', [20,24], 'Unresolved alternatives',
+         'B/Y joins the relay/diode network. The previous fixed PB0 association is withdrawn: fault 19 explicitly names L/B instead. PB0 and PB4 are alternative logical-input candidates, not a claim that this wire joins both MCU pins. The shared neutral/clutch/sidestand paths prevent a direct switch label without resolving the board route.'),
+ 'L/B': ('Interlock input with overlapping manual references', [20,24], 'Unresolved alternatives',
+         'Fault 19 identifies L/B for diagnostic 20 (PB0), while fault 42 also directs neutral-switch checks through relay L/Y to ECU L/B (PDF pages 358/362). The earlier fixed PB4 link is withdrawn. These references involve shared relay/diode paths and do not establish a unique MCU wire route. PB0/PB4 here are alternatives, not electrically joined pins.'),
  'G/R': ('Coolant-temperature sensor signal', [65], 'Function corroborated',
          'Manual G/R and diagnostic 06 identify ATD6/PAD6. Thermistor bias/protection and the exact PCB route are not mapped.'),
  'Br/W': ('Intake-air-temperature sensor signal', [62], 'Function corroborated',
@@ -56,8 +56,8 @@ CIRCUITS = {
          'Manual G/Y runs to the radiator-fan relay coil; diagnostic 51 commands PP2/PWM2. The fan motor has a separate supply circuit.'),
  'Y/B': ('Headlight-relay control', [16], 'Function corroborated',
          'Manual Y/B runs to the headlight relay coil; diagnostic 52 commands PP4/PWM4. The board driver is not identified.'),
- 'R/L': ('Fuel-injection relay output / system supply', [63], 'Candidate association',
-         'Manual R/L supplies ECU, injector and fuel pump from the fuel-injection relay. ATD4/PAD4 monitors fuel-system supply; assigning this terminal to that divider remains a candidate, not a continuity result.'),
+ 'R/L': ('Fuel-injection relay output / system supply monitor', [63], 'Function corroborated',
+         'Fault 43 explicitly tests relay-to-ECU R/L using diagnostic 09 (PDF page 363). That diagnostic reads the ATD4-derived payload; the same handler checks PA2 command against the supply-present state and substitutes raw 154 on fault. This corroborates the monitor function; its divider/protection components and continuity remain untraced.'),
  'B': ('Harness ground', [], 'Internal rail',
        'The diagram connects ECU B to ground. The division between power, digital and analog grounds inside the ECU is not established.'),
 }
@@ -80,11 +80,11 @@ def build_connector(pins, generator_path):
         if pin['ecu_connector_positions'] and not pin['xt_wire']:
             pin['xt_wire']='; '.join(f"{s['wire']} at {s['position']} in the manual drawing ({s['association'].lower()})" for s in pin['ecu_connector_positions'])
     return dict(source_title='Yamaha XT660R/X 2004 service manual 5VK1-AE1',source_url=XT,
-        source_pdf_pages=[345,362,379,458,462],
+        source_pdf_pages=[345,358,362,363,379,400,444,458,462],
         target_scope='Manual reference for 2004 XT660R/X, correlated with the supplied 2005-labelled image; exact ECU part number is unconfirmed.',
         orientation='As drawn in the manual, with the small tab symbol above. The inspected drawing does not state mating-face versus wire-entry view. Do not mirror or assign OEM numbers without establishing that view.',
         coordinate_policy='U01-U13 and L01-L13 mean upper/lower row, counted left to right in the printed drawing. They are research coordinates, not Yamaha cavity numbers.',
-        link_policy='Function corroborated joins the manual circuit to a firmware diagnostic identity. Candidate association is weaker. No connector-to-MCU board continuity has been measured.',
+        link_policy='Function corroborated joins manual circuit evidence to recovered firmware behavior. Candidate association is weaker. Unresolved alternatives lists possible inputs, not an electrical join to both pins. No connector-to-MCU board continuity has been measured.',
         generator_sha256=hashlib.sha256(generator_path.read_bytes()).hexdigest(),slots=slots)
 
 def connector_svg(connector):
@@ -111,6 +111,7 @@ def write_connector_doc(connector,pins,out):
         '![ECU connector positions as drawn](ecu_connector.svg)','',
         '[Open the interactive connector and MCU reference](MCU_PIN_OVERVIEW.html#ecu-connector)','',
         '## What each link establishes','',connector['link_policy'],'',
+        'The [candidate-route audit](CONNECTOR_ROUTE_AUDIT.md) adds fault-43 and communication-wire corroboration, tests starter/interlock behavior, and withdraws the previously fixed B/Y-to-PB0 and L/B-to-PB4 pair. The manual references overlap; the physical pair is unresolved.','',
         'A harness terminal may reach an ADC through conditioning, drive a transistor controlled by a GPIO, or join a supply/ground network serving several circuits. Package pin numbers below remain conditional on the MC9S12T64 80-pin identification. The external drawing cannot identify the intervening PCB components or make these direct electrical connections.','',
         '| Drawing position | Wire | External circuit | Related MCU signal / package pin | Link evidence |',
         '|---|---|---|---|---|']

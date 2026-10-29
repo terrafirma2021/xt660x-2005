@@ -14,14 +14,16 @@ U01-U13 and L01-L13 mean upper/lower row, counted left to right in the printed d
 
 ## What each link establishes
 
-Function corroborated joins the manual circuit to a firmware diagnostic identity. Candidate association is weaker. No connector-to-MCU board continuity has been measured.
+Function corroborated joins manual circuit evidence to recovered firmware behavior. Candidate association is weaker. Unresolved alternatives lists possible inputs, not an electrical join to both pins. No connector-to-MCU board continuity has been measured.
+
+The [candidate-route audit](CONNECTOR_ROUTE_AUDIT.md) adds fault-43 and communication-wire corroboration, tests starter/interlock behavior, and withdraws the previously fixed B/Y-to-PB0 and L/B-to-PB4 pair. The manual references overlap; the physical pair is unresolved.
 
 A harness terminal may reach an ADC through conditioning, drive a transistor controlled by a GPIO, or join a supply/ground network serving several circuits. Package pin numbers below remain conditional on the MC9S12T64 80-pin identification. The external drawing cannot identify the intervening PCB components or make these direct electrical connections.
 
 | Drawing position | Wire | External circuit | Related MCU signal / package pin | Link evidence |
 |---|---|---|---|---|
 | U01 (upper 1) | L/W | Starter-relay control network | PB1 / 21 | Candidate association |
-| U02 (upper 2) | Y/L | Meter / immobilizer communication line | PS2/RxD1 / 69, PS3/TxD1 / 70 | Candidate association |
+| U02 (upper 2) | Y/L | Meter / immobilizer communication line | PS2/RxD1 / 69, PS3/TxD1 / 70 | Function corroborated |
 | U03 (upper 3) | Y/G | Lean-angle sensor signal | PAD5/AN5 / 64 | Function corroborated |
 | U04 (upper 4) | Cross | Cross-marked position | Not established | No connection shown |
 | U05 (upper 5) | W | Vehicle-speed sensor signal | PT2/IOC2 / 1 | Function corroborated |
@@ -33,8 +35,8 @@ A harness terminal may reach an ADC through conditioning, drive a transistor con
 | U11 (upper 11) | R | ECU power feed | Internal rail; exact MCU joins untraced | Internal rail |
 | U12 (upper 12) | R/B | Primary fuel-injector control | PT6/IOC6 / 5 | Function corroborated |
 | U13 (upper 13) | O | Ignition-coil control | PT3/IOC3 / 2 | Function corroborated |
-| L01 (lower 1) | B/Y | Starting / sidestand interlock network | PB0 / 20 | Candidate association |
-| L02 (lower 2) | L/B | Neutral-state input through relay unit | PB4 / 24 | Function corroborated |
+| L01 (lower 1) | B/Y | Starting-permission relay network | PB0 / 20, PB4 / 24 | Unresolved alternatives |
+| L02 (lower 2) | L/B | Interlock input with overlapping manual references | PB0 / 20, PB4 / 24 | Unresolved alternatives |
 | L03 (lower 3) | G/R | Coolant-temperature sensor signal | PAD6/AN6 / 65 | Function corroborated |
 | L04 (lower 4) | Br/W | Intake-air-temperature sensor signal | PAD3/AN3 / 62 | Function corroborated |
 | L05 (lower 5) | P/W | Intake-pressure sensor signal | PAD1/AN1 / 60 | Function corroborated |
@@ -43,7 +45,7 @@ A harness terminal may reach an ADC through conditioning, drive a transistor con
 | L08 (lower 8) | L/R | Fuel-injection-system relay control | PA2 / 47 | Function corroborated |
 | L09 (lower 9) | G/Y | Radiator-fan relay control | PP2/PWM2 / 14 | Function corroborated |
 | L10 (lower 10) | Y/B | Headlight-relay control | PP4/PWM4 / 16 | Function corroborated |
-| L11 (lower 11) | R/L | Fuel-injection relay output / system supply | PAD4/AN4 / 63 | Candidate association |
+| L11 (lower 11) | R/L | Fuel-injection relay output / system supply monitor | PAD4/AN4 / 63 | Function corroborated |
 | L12 (lower 12) | Cross | Cross-marked position | Not established | No connection shown |
 | L13 (lower 13) | B | Harness ground | Internal rail; exact MCU joins untraced | Internal rail |
 
@@ -57,11 +59,11 @@ Related MCU function: **PB1**, conditional package pin **21**; candidate associa
 
 ### U02 - Y/L - Meter / immobilizer communication line
 
-Y/L joins the ECU, meter and immobilizer in the manual. SCI1 RX/TX handles their software exchange; the external line interface joining both MCU signals has not been traced.
+The manual explicitly calls Y/L the immobilizer-to-ECU signal lead (PDF page 444); page 462 also joins the meter. SCI1 handles the recovered dashboard/authentication exchanges. RX/TX are logical sides of that function, not two direct connections to the harness. Transceiver wiring and line voltage remain unverified.
 
-Related MCU function: **PS2/RxD1**, conditional package pin **69**; candidate association. Firmware anchors: `0x5073`, `0xCDC0`.
+Related MCU function: **PS2/RxD1**, conditional package pin **69**; function corroborated. Firmware anchors: `0x5073`, `0xCDC0`.
 
-Related MCU function: **PS3/TxD1**, conditional package pin **70**; candidate association. Firmware anchors: `0xCCA9`, `0xCDBB`.
+Related MCU function: **PS3/TxD1**, conditional package pin **70**; function corroborated. Firmware anchors: `0xCCA9`, `0xCDBB`.
 
 ### U03 - Y/G - Lean-angle sensor signal
 
@@ -111,17 +113,21 @@ Manual O runs to the ignition coil primary; diagnostic 30 commands PT3/TC3. A co
 
 Related MCU function: **PT3/IOC3**, conditional package pin **2**; function corroborated. Firmware anchors: `0xB900`, `0xEF50`, `0xEFDE`.
 
-### L01 - B/Y - Starting / sidestand interlock network
+### L01 - B/Y - Starting-permission relay network
 
-Manual B/Y joins ECU to the relay/interlock network. Diagnostic 20 identifies PB0 as sidestand/start-interlock input, but this particular electrical join is not board-proven.
+B/Y joins the relay/diode network. The previous fixed PB0 association is withdrawn: fault 19 explicitly names L/B instead. PB0 and PB4 are alternative logical-input candidates, not a claim that this wire joins both MCU pins. The shared neutral/clutch/sidestand paths prevent a direct switch label without resolving the board route.
 
-Related MCU function: **PB0**, conditional package pin **20**; candidate association. Firmware anchors: `0x8B45`, `0x8B57`, `0x6583`.
+Related MCU function: **PB0**, conditional package pin **20**; unresolved alternatives. Firmware anchors: `0x8B45`, `0x8B57`, `0x6583`.
 
-### L02 - L/B - Neutral-state input through relay unit
+Related MCU function: **PB4**, conditional package pin **24**; unresolved alternatives. Firmware anchors: `0x8B45`, `0x6599`, `0x65A0`.
 
-Fault-42 instructions identify relay L/Y to ECU L/B (PDF page 362). Diagnostic 21 reads filtered PB4 for variant 9. This is not the raw Sb wire at the neutral switch.
+### L02 - L/B - Interlock input with overlapping manual references
 
-Related MCU function: **PB4**, conditional package pin **24**; function corroborated. Firmware anchors: `0x8B45`, `0x6599`, `0x65A0`.
+Fault 19 identifies L/B for diagnostic 20 (PB0), while fault 42 also directs neutral-switch checks through relay L/Y to ECU L/B (PDF pages 358/362). The earlier fixed PB4 link is withdrawn. These references involve shared relay/diode paths and do not establish a unique MCU wire route. PB0/PB4 here are alternatives, not electrically joined pins.
+
+Related MCU function: **PB0**, conditional package pin **20**; unresolved alternatives. Firmware anchors: `0x8B45`, `0x8B57`, `0x6583`.
+
+Related MCU function: **PB4**, conditional package pin **24**; unresolved alternatives. Firmware anchors: `0x8B45`, `0x6599`, `0x65A0`.
 
 ### L03 - G/R - Coolant-temperature sensor signal
 
@@ -169,11 +175,11 @@ Manual Y/B runs to the headlight relay coil; diagnostic 52 commands PP4/PWM4. Th
 
 Related MCU function: **PP4/PWM4**, conditional package pin **16**; function corroborated. Firmware anchors: `0x9DC5`, `0x9DCA`, `0xBBD7`.
 
-### L11 - R/L - Fuel-injection relay output / system supply
+### L11 - R/L - Fuel-injection relay output / system supply monitor
 
-Manual R/L supplies ECU, injector and fuel pump from the fuel-injection relay. ATD4/PAD4 monitors fuel-system supply; assigning this terminal to that divider remains a candidate, not a continuity result.
+Fault 43 explicitly tests relay-to-ECU R/L using diagnostic 09 (PDF page 363). That diagnostic reads the ATD4-derived payload; the same handler checks PA2 command against the supply-present state and substitutes raw 154 on fault. This corroborates the monitor function; its divider/protection components and continuity remain untraced.
 
-Related MCU function: **PAD4/AN4**, conditional package pin **63**; candidate association. Firmware anchors: `0x6C5E`, `0x6577`.
+Related MCU function: **PAD4/AN4**, conditional package pin **63**; function corroborated. Firmware anchors: `0x6C5E`, `0x6577`.
 
 ### L13 - B - Harness ground
 

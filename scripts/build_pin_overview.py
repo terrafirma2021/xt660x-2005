@@ -79,7 +79,7 @@ assign(6,'actuator','Decoded','Secondary injector code path',
        'Diagnostic 37 can operate TC7. Stock variant 9 skips normal second-injector scheduling. TDM diagnostic 37 identifies injector #2, but XT board population and TDM MCU routing are unknown.',
        'PT7 / TC7 0x005E',(0xba06,0xf592,0xc712),(0x92c,),37)
 assign(47,'actuator','Corroborated','Fuel-injection system relay command',
-       'Diagnostic 50 and normal priming/run logic operate PA2. Controls fuel-system power through a relay driver, not the fuel pump motor directly. Diagnostic activation clears the MCU bit.',
+       'Diagnostic 50 and normal priming/run logic operate PA2. Normal priming sets PA2 and inhibiting paths clear it; voltage feedback expects supply present with PA2 high. Diagnostic 50 cycles low then high. The harness is reached through a relay driver, not directly from the MCU.',
        'PORTA 0x0000 bit2',(0xbb23,0xbb41,0xacd9,0xace6),(),50)
 assign(13,'actuator','Corroborated','Air-induction solenoid command',
        'Controls the secondary-air system used in the exhaust/emissions path. This is distinct from the throttle body and from a TDM intake solenoid.',
@@ -134,7 +134,7 @@ for pin in [7,8,9,28,29,30,32,36,37,38,41,42,43,44,78]:
                'Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.')
 
 sources=[dict(id='mcu',title='NXP MC9S12T64 revision 1.1.1',url=MCU,pdf_pages=[60,86,251,253,385]),
-         dict(id='xt',title='Yamaha XT660R/X 2004 service manual',url=XT,pdf_pages=[345,353,354,355,361,362,379,397,458,462]),
+         dict(id='xt',title='Yamaha XT660R/X 2004 service manual',url=XT,pdf_pages=[345,353,354,355,358,361,362,363,379,397,400,444,458,462]),
          dict(id='tdm',title='Yamaha TDM900 service manual',url=TDM,pdf_pages=[365,373])]
 comparison=[
     ['TPS, MAP, IAT, coolant, lean angle, vehicle speed, CPS','Listed in XT reference','Also listed in TDM reference','Same function does not establish the same MCU or connector pin.'],
@@ -168,7 +168,7 @@ def build():
     lines=['# XT660X MCU pin overview and TDM comparison','',
            '**80-pin MC9S12T64 reference, conditional on confirming the chip marking.** The firmware/register map supports this family; actual package identity has not been verified. Pin numbers below refer to the MCU, never the ECU connector.','',
            '[Interactive overview](MCU_PIN_OVERVIEW.html) | [ECU connector positions](ECU_CONNECTOR.md) | [Machine-readable catalogue](mcu_pin_overview.json) | [Package drawing](mcu_pin_overview.svg)','',
-           'The [ECU connector inventory](ECU_CONNECTOR.md) now accounts for the manual drawing\'s 26 positions, including the 23 wire-labelled positions and three crosses. Fourteen circuits have corroborated MCU function links; four have candidate associations; five identify power/return networks with untraced internal joins. These are function associations through board circuitry, not direct-wire claims.','',
+           'The [ECU connector inventory](ECU_CONNECTOR.md) accounts for all 26 drawn positions: 15 function-correlated circuits, one candidate starter association, two unresolved interlock alternatives, five power/return networks and three crosses. The [route audit](CONNECTOR_ROUTE_AUDIT.md) explains the evidence and corrections. These are function associations through board circuitry, not direct-wire claims.','',
            'The overview covers all 80 package positions. Corroborated means firmware dataflow plus Yamaha diagnostic identity; Decoded means a software role is established; Candidate means a physical role is tentative. Datasheet entries identify package functions only. Unassigned does not mean unused.','',
            '## Sensors and switch inputs','',
            '| MCU pin | Signal | Function | Status | Diagnostic |','|---:|---|---|---|---|']

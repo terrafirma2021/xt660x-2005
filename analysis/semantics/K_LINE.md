@@ -2,7 +2,7 @@
 
 [Area index](README.md) · [Serial link](K_LINE.md) · [Diagnostics](DIAGNOSTICS.md) · [Startup](STARTUP.md) · [Checksums](CHECKSUMS.md) · [Immobilizer](IMMOBILIZER.md) · [Verification](PROTOCOL_VERIFICATION.md)
 
-The recovered application uses SCI1 for a byte-oriented request/reply link. Identifying its external wire as K-line still requires board or harness evidence; the binary does not establish connector pins, voltage levels or transceiver wiring.
+The recovered application uses SCI1 for a byte-oriented request/reply link. The [connector route audit](CONNECTOR_ROUTE_AUDIT.md) now correlates this function with the manual's Y/L meter/immobilizer signal lead, drawing position U02. Calling the electrical interface K-line still requires board/waveform evidence: line voltage, transceiver and ISO compliance are not established.
 
 | Address or routine | Decoded role |
 |---|---|
