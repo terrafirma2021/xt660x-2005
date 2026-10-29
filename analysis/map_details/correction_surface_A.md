@@ -1,4 +1,12 @@
-# correction_surface_A
+# Secondary injector quantity multiplier
+
+<!-- map-name -->
+Stable ID: `correction_surface_A`. Category: Fuel.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Secondary injector quantity multiplier; cell 128 is unity
 

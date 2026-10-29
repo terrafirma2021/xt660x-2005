@@ -8,15 +8,15 @@ This pass follows stored maps through their consumers, rather than assigning uni
 
 | Map | Corrected interpretation | Evidence |
 |---|---|---|
-| `modulo24_surface`, cells `0x1914` | Injection event-phase target; not fuel quantity | `0x7B92 → 0xEC98 → 0x0A1E/0x0A1C → 0xF4F2` |
-| `correction_surface_A`, cells `0x1A1A` | Secondary injector quantity multiplier; cell 128 is unity | `0x84FA`, also startup/transient consumers |
-| `correction_surface_B`, cells `0x3168` | Centered correction to common normalization, latched through `09D6 → CD4` | `0x8E29`, `0x8E59`, `0x7EF6` |
-| `correction_surface_D`, cells `0x4A60` | Alternate base spark code selected in a special mode; replaces the normal base | `0x8979`, `0x899E` |
-| `curve_4a33`, cells `0x4A36` | Coolant-indexed threshold on filtered relative throttle position, not spark-angle correction | `0x96BA` compares A89 with 08EC |
-| `curve_3494`, cells `0x349A` | Speed-indexed threshold on the same relative-throttle quantity | `0x8FAA` |
-| `curve_36a4` / `curve_36b2` | Adaptive decrement/increment **steps at state transitions**, not bounds | `0xA6D3–0xA73A` |
-| `curve_1880` | Centered **additive** pressure-processing offset, not a multiplier | `0xB284–0xB2A1` |
-| `curve_31ec` / `curve_3200` | Conditional hold counts before normalization correction recovery | `0x8E2F`, `0xA8C9` |
+| [Injection event-phase target](../map_details/modulo24_surface.md), cells `0x1914` | Injection event-phase target; not fuel quantity | `0x7B92 → 0xEC98 → 0x0A1E/0x0A1C → 0xF4F2` |
+| [Secondary injector quantity multiplier](../map_details/correction_surface_A.md), cells `0x1A1A` | Secondary injector quantity multiplier; cell 128 is unity | `0x84FA`, also startup/transient consumers |
+| [Fuel normalization offset](../map_details/correction_surface_B.md), cells `0x3168` | Centered correction to common normalization, latched through `09D6 → CD4` | `0x8E29`, `0x8E59`, `0x7EF6` |
+| [Alternate base ignition timing vs speed and coolant](../map_details/correction_surface_D.md), cells `0x4A60` | Alternate base spark code selected in a special mode; replaces the normal base | `0x8979`, `0x899E` |
+| [Alternate ignition mode — throttle threshold vs coolant](../map_details/curve_4a33.md), cells `0x4A36` | Coolant-indexed threshold on filtered relative throttle position, not spark-angle correction | `0x96BA` compares A89 with 08EC |
+| [Relative-throttle qualification threshold vs speed](../map_details/curve_3494.md), cells `0x349A` | Speed-indexed threshold on the same relative-throttle quantity | `0x8FAA` |
+| [Adaptive fuel correction — decrement step](../map_details/curve_36a4.md) / [Adaptive fuel correction — increment step](../map_details/curve_36b2.md) | Adaptive decrement/increment **steps at state transitions**, not bounds | `0xA6D3–0xA73A` |
+| [Pressure-processing offset vs engine speed](../map_details/curve_1880.md) | Centered **additive** pressure-processing offset, not a multiplier | `0xB284–0xB2A1` |
+| [Fuel normalization recovery hold — selection 1](../map_details/curve_31ec.md) / [Fuel normalization recovery hold — selection 2](../map_details/curve_3200.md) | Conditional hold counts before normalization correction recovery | `0x8E2F`, `0xA8C9` |
 
 The relative-throttle quantity is `08E6`, a filtered version of `max(ADC10 - learned_closed,0)`. At `0x8F82`, it is capped at 255 into `08EC`. The two threshold curves therefore use ten-bit ADC-count increments above learned closed. They do **not** measure a rate of throttle movement. Angle conversion is still conditional on sensor geometry.
 
@@ -56,17 +56,17 @@ These are additions to a reference gain, not standalone percentages of the final
 
 ### Pressure factors
 
-The pressure-indexed curve `0x323C` and `correction_surface_C` combine as:
+The pressure-indexed curve `0x323C` and [Fuel correction gain vs speed and load](../map_details/correction_surface_C.md) combine as:
 
 ```
 0970 = min(255, floor(curve_323c * correction_surface_C / 128))
 ```
 
-Both are 128-centered reference multipliers, but their product is capped at 255 before use. Editing one can therefore have no further effect after the combined value saturates. `curve_32e0` supplies the other lane's pressure factor `0978`. Its reference value is also 128. This does not make the processed-load axis a directly measured kPa axis.
+Both are 128-centered reference multipliers, but their product is capped at 255 before use. Editing one can therefore have no further effect after the combined value saturates. [Throttle-path fuel multiplier vs pressure estimate](../map_details/curve_32e0.md) supplies the other lane's pressure factor `0978`. Its reference value is also 128. This does not make the processed-load axis a directly measured kPa axis.
 
 ### Post-start states
 
-`curve_32ef` / `curve_3301` initialize Q8 words `0994` / `0996`. On each execution of this fuel-update block:
+[Post-start enrichment — fast-decay state](../map_details/curve_32ef.md) / [Post-start enrichment — slow-decay state](../map_details/curve_3301.md) initialize Q8 words `0994` / `0996`. On each execution of this fuel-update block:
 
 ```
 0994 = 2 * max(0, floor(0994/2) - ROM[3313])
@@ -90,9 +90,9 @@ The blend weights sum to **255**, not 256. Even equal quantities are therefore s
 
 When `0CA8:1` is clear, the global factor is `ROM[19D4]*4/256`, rounded to nearest integer tick and saturated. Stock `19D4=32` makes that factor **one half**. When the bit is set, that factor is skipped. The result plus `095E` becomes the primary duration request `092A`. A main-table cell expressed in nominal milliseconds is therefore not the final pulse duration.
 
-The secondary calculation uses `CE6/CEA`, `95D`, `0962/0966`, and the same blend. It then applies `correction_surface_A` as `2*CEC/256`, with rounding, **before** its normal quantity bounds and global factor. There is an early overflow branch that sets the request to `0xFFFF` and skips the later bounds. The two chains are not interchangeable in a faithful simulator. Variant 9 skips the normal secondary injector scheduler; these arithmetic paths can still be present in shared code.
+The secondary calculation uses `CE6/CEA`, `95D`, `0962/0966`, and the same blend. It then applies [Secondary injector quantity multiplier](../map_details/correction_surface_A.md) as `2*CEC/256`, with rounding, **before** its normal quantity bounds and global factor. There is an early overflow branch that sets the request to `0xFFFF` and skips the later bounds. The two chains are not interchangeable in a faithful simulator. Variant 9 skips the normal secondary injector scheduler; these arithmetic paths can still be present in shared code.
 
-`curve_34b0` scales a centered additive correction at `0x8623`:
+[Centered fuel-correction gain vs engine speed](../map_details/curve_34b0.md) scales a centered additive correction at `0x8623`:
 
 ```
 result = clamp(128 + signed_round((input-128)*cell/256),0,255)
@@ -102,7 +102,7 @@ Thus this curve is a Q8 gain on a correction around 128. It does not multiply th
 
 ## Startup fuel and separate transient pulses
 
-The startup base `curve_1996` retains its Q8 interpolation result in `0934`. Its complete product is:
+The startup base [Startup fuel base quantity vs coolant](../map_details/curve_1996.md) retains its Q8 interpolation result in `0934`. Its complete product is:
 
 ```
 g = Q8(speed_cell * throttle_cell, IAT_cell+384)
@@ -144,7 +144,7 @@ The coolant gains come from `3357` and `3345`, respectively. The negative side h
 
 ## Adaptation and time thresholds
 
-At a feedback-state transition, `curve_36a4` or `curve_36b2` supplies a byte that is shifted left eight and subtracted from or added to `097E`. Subsequent non-transition iterations use the separate word steps `36A0/36A2`, both stock 6. Actual clamps are the separate words at `36C0/36C2`, stock 6554 and 58982.
+At a feedback-state transition, [Adaptive fuel correction — decrement step](../map_details/curve_36a4.md) or [Adaptive fuel correction — increment step](../map_details/curve_36b2.md) supplies a byte that is shifted left eight and subtracted from or added to `097E`. Subsequent non-transition iterations use the separate word steps `36A0/36A2`, both stock 6. Actual clamps are the separate words at `36C0/36C2`, stock 6554 and 58982.
 
 One curve cell is a transition step of `100/256` normalized percentage points; stock cell 4 therefore represents **1.5625 percentage points**, before other multipliers. It is not a 4% bound, and it is not necessarily applied on every task iteration.
 
@@ -160,7 +160,7 @@ Counters saturate, reset or advance conditionally. These are nominal count thres
 
 ## Pressure offset versus pressure gain
 
-`curve_1880` modifies a pressure-coordinate word as `CB4=clamp(CB2+64*(cell-128),0,65535)`. Stock cells 128 add zero. In contrast, RAM-copied `curve_1854` rescales the signed distance from origin 7863:
+[Pressure-processing offset vs engine speed](../map_details/curve_1880.md) modifies a pressure-coordinate word as `CB4=clamp(CB2+64*(cell-128),0,65535)`. Stock cells 128 add zero. In contrast, RAM-copied [Pressure-to-load processing gain](../map_details/curve_1854.md) rescales the signed distance from origin 7863:
 
 ```
 C90 = clamp(7863 + signed_round((C8E-7863)*cell/128),0,65535)
@@ -170,7 +170,7 @@ The first is an offset; the second is a gain about an origin. Their values and i
 
 ## Injection event-phase map
 
-`modulo24_surface` is now identified as an injection event target. Helper `0xC521` rotates both endpoint codes around reference `0D7E`, interpolates in that rotated coordinate, and rotates back. It does not simply choose the shortest arc between two cells.
+[Injection event-phase target](../map_details/modulo24_surface.md) is now identified as an injection event target. Helper `0xC521` rotates both endpoint codes around reference `0D7E`, interpolates in that rotated coordinate, and rotates back. It does not simply choose the shortest arc between two cells.
 
 After lookup, code 11 becomes 10; codes 23 and above become 22. `0xEC98` copies or conditionally slews the target into `0A1E`, later latched to `0A1C`. The primary dispatcher at `0xF4F2` compares `0A1C` with either `0C04` or `0923`, selected by mode, and calls the normal injector entry on equality. The secondary target has a separate offset path.
 
@@ -178,7 +178,7 @@ Tests cover all endpoint pairs in the 24-code helper at several fractions/refere
 
 ## Active versus dormant calibrations
 
-The common-normalization correction state requires `ROM[3130] == 0x80`; stock is `0xFF`. Its disabled path clears the relevant state and restores `CD4=128`. Therefore `correction_surface_B` and its `31EC/3200` hold values are present and looked up, but this normal correction state is disabled in the supplied image. Tests verify neutral restoration for every prior flag-byte value.
+The common-normalization correction state requires `ROM[3130] == 0x80`; stock is `0xFF`. Its disabled path clears the relevant state and restores `CD4=128`. Therefore [Fuel normalization offset](../map_details/correction_surface_B.md) and its `31EC/3200` hold values are present and looked up, but this normal correction state is disabled in the supplied image. Tests verify neutral restoration for every prior flag-byte value.
 
 Both stock feedback-eligibility grids `35B0` and `363C` contain only zeros, so their normal gates reject eligibility. This is not evidence that every diagnostic or alternate path is disabled. Likewise, the secondary quantity multiplier's existence does not override the variant-9 normal scheduling gate.
 

@@ -1,4 +1,12 @@
-# correction_surface_C
+# Fuel correction gain vs speed and load
+
+<!-- map-name -->
+Stable ID: `correction_surface_C`. Category: Fuel.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Fuel correction surface
 

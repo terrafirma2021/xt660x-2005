@@ -1,4 +1,12 @@
-# curve_1854
+# Pressure-to-load processing gain
+
+<!-- map-name -->
+Stable ID: `curve_1854`. Category: Sensor processing.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Pressure/load-processing gain copied to RAM 0x0DBA
 

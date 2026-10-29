@@ -36,6 +36,10 @@ if($LASTEXITCODE -ne 0){throw 'Checksum correction failed'}
 if($LASTEXITCODE -ne 0){throw 'Temperature profile inference failed'}
 & $Python (Join-Path $PSScriptRoot 'decode_units.py')
 if($LASTEXITCODE -ne 0){throw 'Unit catalogue failed'}
+& $Python (Join-Path $PSScriptRoot 'map_names.py')
+if($LASTEXITCODE -ne 0){throw 'Map naming failed'}
+& $Python (Join-Path $PSScriptRoot 'verify_map_names.py')
+if($LASTEXITCODE -ne 0){throw 'Map name verification failed'}
 & $Python (Join-Path $PSScriptRoot 'verify_analysis.py')
 if($LASTEXITCODE -ne 0){throw 'Verification failed'}
 & $Python (Join-Path $PSScriptRoot 'build_pin_overview.py')

@@ -1,4 +1,12 @@
-# curve_3200
+# Fuel normalization recovery hold — selection 2
+
+<!-- map-name -->
+Stable ID: `curve_3200`. Category: Fuel.
+
+This normal correction state is disabled in the supplied image by ROM 0x3130 = 0xFF. Selection numbers do not imply named riding modes.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Alternate hold count before normalization correction returns toward neutral
 

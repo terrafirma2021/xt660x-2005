@@ -1,6 +1,14 @@
-# dwell_supply_speed
+# Ignition dwell contribution vs speed and supply
 
-Spark output timing/dwell candidate; timer units and electrical interpretation unresolved
+<!-- map-name -->
+Stable ID: `dwell_supply_speed`. Category: Ignition.
+
+Role follows the recovered time/charge scheduler. Timer units depend on the nominal clock profile. A dwell contribution is not the final complete dwell duration, and a time correction is not absolute BTDC.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/SPARK_SCHEDULER.md).
+<!-- /map-name -->
+
+Coil charge-duration contribution combined with other dwell terms; physical timer scale remains conditional
 
 Cells: **0x4B12–4B98**, 15 rows × 9 columns, 8-bit unsigned big-endian values.
 

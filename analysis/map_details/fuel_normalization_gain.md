@@ -1,4 +1,12 @@
-# fuel_normalization_gain
+# Fuel normalization denominator gain
+
+<!-- map-name -->
+Stable ID: `fuel_normalization_gain`. Category: Fuel.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Dimensionless gain in the denominator of common fuel multiplier 0x0CE2
 

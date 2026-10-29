@@ -1,6 +1,14 @@
-# timing_speed_4f81
+# Spark time correction — XT variant 9
 
-Speed correction in spark-timing path; final degree conversion unresolved
+<!-- map-name -->
+Stable ID: `timing_speed_4f81`. Category: Ignition.
+
+Role follows the recovered time/charge scheduler. Timer units depend on the nominal clock profile. A dwell contribution is not the final complete dwell duration, and a time correction is not absolute BTDC.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/SPARK_SCHEDULER.md).
+<!-- /map-name -->
+
+Speed-indexed additive time correction in the spark planner; timer ticks, not absolute spark degrees
 
 Cells: **0x4F81–4F9D**, 1 rows × 29 columns, 8-bit unsigned big-endian values.
 

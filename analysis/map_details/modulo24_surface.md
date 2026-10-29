@@ -1,4 +1,12 @@
-# modulo24_surface
+# Injection event-phase target
+
+<!-- map-name -->
+Stable ID: `modulo24_surface`. Category: Fuel.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Injection event-phase target; reference-rotated modulo-24 interpolation, not pulse duration or absolute BTDC
 

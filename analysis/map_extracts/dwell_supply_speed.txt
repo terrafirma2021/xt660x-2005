@@ -1,4 +1,4 @@
-dwell_supply_speed | 0x4B12 | 15 rows x 9 columns | raw values
+Ignition dwell contribution vs speed and supply | ID: dwell_supply_speed | 0x4B12 | 15 rows x 9 columns | raw values
 instruction-traced layout and raw dataflow; engineering units unresolved
 164 150 136 130 124 118 112 110 108
 164 150 136 130 124 118 112 110 108

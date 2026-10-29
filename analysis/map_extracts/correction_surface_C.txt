@@ -1,4 +1,4 @@
-correction_surface_C | 0x3280 | 8 rows x 12 columns | raw values
+Fuel correction gain vs speed and load | ID: correction_surface_C | 0x3280 | 8 rows x 12 columns | raw values
 code-confirmed layout; unverified physical meaning
 128 128 128 128 128 128 128 128 128 128 128 128
 128 128 128 128 128 128 128 128 128 128 128 128

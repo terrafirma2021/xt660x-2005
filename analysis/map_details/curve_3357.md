@@ -1,4 +1,12 @@
-# curve_3357
+# Negative transient fuel gain vs coolant
+
+<!-- map-name -->
+Stable ID: `curve_3357`. Category: Transient fuel.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Coolant-dependent correction
 

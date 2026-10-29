@@ -1,4 +1,12 @@
-# fuel_normalization_load
+# Load-based fuel normalization input
+
+<!-- map-name -->
+Stable ID: `fuel_normalization_load`. Category: Fuel.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Fuel normalization input; selected when ROM 0x3114 equals 0x80
 

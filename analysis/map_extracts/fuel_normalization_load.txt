@@ -1,4 +1,4 @@
-fuel_normalization_load | 0x311E | 2 rows x 2 columns | raw values
+Load-based fuel normalization input | ID: fuel_normalization_load | 0x311E | 2 rows x 2 columns | raw values
 code-confirmed layout; unverified physical meaning
 166 166
 166 166

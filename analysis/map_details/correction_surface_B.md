@@ -1,4 +1,12 @@
-# correction_surface_B
+# Fuel normalization offset
+
+<!-- map-name -->
+Stable ID: `correction_surface_B`. Category: Fuel.
+
+This normal correction state is disabled in the supplied image by ROM 0x3130 = 0xFF. Selection numbers do not imply named riding modes.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Centered correction to the common fuel normalization denominator; neutral 128
 

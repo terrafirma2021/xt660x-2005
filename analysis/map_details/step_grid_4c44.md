@@ -1,4 +1,12 @@
-# step_grid_4c44
+# Air-induction enable vs speed and throttle
+
+<!-- map-name -->
+Stable ID: `step_grid_4c44`. Category: Air induction.
+
+Logical eligibility gate: zero inhibits the path; nonzero permits further tests. It is not a physical percentage or a complete enable decision. Both stock adaptive-feedback grids contain only zero.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/EXTENDED_MAPS.md).
+<!-- /map-name -->
 
 Air-induction solenoid eligibility grid; zero inhibits this eligibility path
 

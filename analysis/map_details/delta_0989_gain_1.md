@@ -1,6 +1,14 @@
-# delta_0989_gain_1
+# Load-delta fuel gain — selection 1
 
-Gain applied to a signed transient-delta path; physical delta identity unresolved
+<!-- map-name -->
+Stable ID: `delta_0989_gain_1`. Category: Transient fuel.
+
+Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
+
+Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved
 
 Cells: **0x33F7–340D**, 1 rows × 23 columns, 8-bit unsigned big-endian values.
 

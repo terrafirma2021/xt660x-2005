@@ -1,4 +1,12 @@
-# intake_temperature_conversion
+# Intake air temperature sensor conversion
+
+<!-- map-name -->
+Stable ID: `intake_temperature_conversion`. Category: Sensor processing.
+
+Sensor identity is corroborated. The internal-code-to-Celsius profile remains conditional on the sensor circuit and ECU identification.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/TEMPERATURE_PROFILE.md).
+<!-- /map-name -->
 
 Sensor conversion to internal temperature code; Celsius offset unresolved
 

@@ -1,4 +1,4 @@
-correction_surface_A | 0x1A1A | 12 rows x 15 columns | raw values
+Secondary injector quantity multiplier | ID: correction_surface_A | 0x1A1A | 12 rows x 15 columns | raw values
 code-confirmed layout; unverified physical meaning
 128 128 128 128 128 128 128 128 128 128 128 128 128 128 128
 128 128 128 128 128 128 128 128 128 128 128 128 128 128 128

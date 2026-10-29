@@ -1,3 +1,3 @@
-curve_32ef | 0x32F2 | 1 rows x 15 columns | raw values
+Post-start enrichment — fast-decay state | ID: curve_32ef | 0x32F2 | 1 rows x 15 columns | raw values
 code-confirmed lookup/header; raw scaling only
 137 108 80 62 46 34 23 18 17 12 8 6 4 4 4

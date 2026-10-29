@@ -1,4 +1,12 @@
-# curve_36c4
+# Feedback eligibility delay vs coolant
+
+<!-- map-name -->
+Stable ID: `curve_36c4`. Category: Feedback.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Delay before feedback eligibility
 

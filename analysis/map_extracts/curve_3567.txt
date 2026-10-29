@@ -1,3 +1,3 @@
-curve_3567 | 0x356A | 1 rows x 7 columns | raw values
+Transient fuel pulse response — family 2, selection B | ID: curve_3567 | 0x356A | 1 rows x 7 columns | raw values
 code-confirmed lookup/header; raw scaling only
 18 21 29 22 22 33 22

@@ -1,4 +1,4 @@
-main_u8_A | 0x42AE | 32 rows x 20 columns | raw values
+Base ignition timing — selection A | ID: main_u8_A | 0x42AE | 32 rows x 20 columns | raw values
 code-confirmed layout; unverified physical meaning
 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64
 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64

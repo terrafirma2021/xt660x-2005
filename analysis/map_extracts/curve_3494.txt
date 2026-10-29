@@ -1,3 +1,3 @@
-curve_3494 | 0x349A | 1 rows x 10 columns | raw values
+Relative-throttle qualification threshold vs speed | ID: curve_3494 | 0x349A | 1 rows x 10 columns | raw values
 code-confirmed lookup/header; raw scaling only
 4 4 4 4 4 4 4 4 4 4

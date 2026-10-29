@@ -1,4 +1,4 @@
-modulo24_surface | 0x1914 | 10 rows x 13 columns | raw values
+Injection event-phase target | ID: modulo24_surface | 0x1914 | 10 rows x 13 columns | raw values
 code-confirmed layout; unverified physical meaning
 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0

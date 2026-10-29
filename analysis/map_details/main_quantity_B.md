@@ -1,4 +1,12 @@
-# main_quantity_B
+# Throttle-based fuel quantity
+
+<!-- map-name -->
+Stable ID: `main_quantity_B`. Category: Fuel.
+
+A/C use processed load and select on RAM 0x0B80 bit 0 (clear/set); B uses filtered throttle. The mode bit has no established rider-mode or cylinder meaning. Values precede final pulse corrections.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/FUEL.md).
+<!-- /map-name -->
 
 Fuel quantity surface B; see semantics/FUEL.md
 

@@ -1,4 +1,12 @@
-# curve_4234
+# Injector pulse compensation vs supply
+
+<!-- map-name -->
+Stable ID: `curve_4234`. Category: Fuel.
+
+An additive supply-dependent pulse correction is established. Injector dead time remains a candidate physical interpretation, so it is not the primary name.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Additive injection-pulse compensation; deadtime candidate
 

@@ -1,4 +1,12 @@
-# curve_32ef
+# Post-start enrichment — fast-decay state
+
+<!-- map-name -->
+Stable ID: `curve_32ef`. Category: Fuel.
+
+Fast/slow describe the relative decay with stock decrement bytes 123/2. They are alternative enrichment states, not two terms to add; wall-clock decay time remains mode-dependent.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 First post-start enrichment state; maximum of both states feeds normal fuel gain
 

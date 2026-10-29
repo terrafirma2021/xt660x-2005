@@ -1592,7 +1592,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Load-based fuel quantity (mode flag clear)",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/FUEL.md",
+    "naming_note": "A/C use processed load and select on RAM 0x0B80 bit 0 (clear/set); B uses filtered throttle. The mode bit has no established rider-mode or cylinder meaning. Values precede final pulse corrections."
   },
   {
     "id": "main_quantity_B",
@@ -3182,7 +3186,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Throttle-based fuel quantity",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/FUEL.md",
+    "naming_note": "A/C use processed load and select on RAM 0x0B80 bit 0 (clear/set); B uses filtered throttle. The mode bit has no established rider-mode or cylinder meaning. Values precede final pulse corrections."
   },
   {
     "id": "main_quantity_C",
@@ -4777,7 +4785,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Load-based fuel quantity (mode flag set)",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/FUEL.md",
+    "naming_note": "A/C use processed load and select on RAM 0x0B80 bit 0 (clear/set); B uses filtered throttle. The mode bit has no established rider-mode or cylinder meaning. Values precede final pulse corrections."
   },
   {
     "id": "main_u8_A",
@@ -5602,7 +5614,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Base ignition timing \u2014 selection A",
+    "category": "Ignition",
+    "naming_basis": "analysis/semantics/SPARK.md",
+    "naming_note": "A/B/C distinguish recovered selection branches, not octane or rider modes. A requires variant 9 and 0x0896 bit 4 clear; B/C use the remaining selector threshold. Absolute BTDC remains unresolved."
   },
   {
     "id": "main_u8_B",
@@ -6427,7 +6443,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Base ignition timing \u2014 selection B",
+    "category": "Ignition",
+    "naming_basis": "analysis/semantics/SPARK.md",
+    "naming_note": "A/B/C distinguish recovered selection branches, not octane or rider modes. A requires variant 9 and 0x0896 bit 4 clear; B/C use the remaining selector threshold. Absolute BTDC remains unresolved."
   },
   {
     "id": "main_u8_C",
@@ -7252,7 +7272,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Base ignition timing \u2014 selection C",
+    "category": "Ignition",
+    "naming_basis": "analysis/semantics/SPARK.md",
+    "naming_note": "A/B/C distinguish recovered selection branches, not octane or rider modes. A requires variant 9 and 0x0896 bit 4 clear; B/C use the remaining selector threshold. Absolute BTDC remains unresolved."
   },
   {
     "id": "modulo24_surface",
@@ -7494,7 +7518,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Injection event-phase target",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "correction_surface_A",
@@ -7794,7 +7822,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Secondary injector quantity multiplier",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "correction_surface_B",
@@ -8042,7 +8074,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Fuel normalization offset",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "This normal correction state is disabled in the supplied image by ROM 0x3130 = 0xFF. Selection numbers do not imply named riding modes."
   },
   {
     "id": "correction_surface_C",
@@ -8243,7 +8279,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Fuel correction gain vs speed and load",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "correction_surface_D",
@@ -8507,7 +8547,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Alternate base ignition timing vs speed and coolant",
+    "category": "Ignition",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "fuel_normalization_load",
@@ -8588,7 +8632,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Load-based fuel normalization input",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "fuel_normalization_throttle",
@@ -8669,7 +8717,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Throttle-based fuel normalization input",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "fuel_normalization_gain",
@@ -8750,7 +8802,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Fuel normalization denominator gain",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_18b6",
@@ -8807,7 +8863,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Feedback startup delay vs coolant",
+    "category": "Feedback",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_1996",
@@ -8870,7 +8930,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Startup fuel base quantity vs coolant",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_32ef",
@@ -8933,7 +8997,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Post-start enrichment \u2014 fast-decay state",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Fast/slow describe the relative decay with stock decrement bytes 123/2. They are alternative enrichment states, not two terms to add; wall-clock decay time remains mode-dependent."
   },
   {
     "id": "curve_3301",
@@ -8996,7 +9064,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Post-start enrichment \u2014 slow-decay state",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Fast/slow describe the relative decay with stock decrement bytes 123/2. They are alternative enrichment states, not two terms to add; wall-clock decay time remains mode-dependent."
   },
   {
     "id": "curve_4234",
@@ -9051,7 +9123,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Injector pulse compensation vs supply",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "An additive supply-dependent pulse correction is established. Injector dead time remains a candidate physical interpretation, so it is not the primary name."
   },
   {
     "id": "curve_19c6",
@@ -9101,7 +9177,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Startup fuel multiplier vs pressure estimate",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_19ba",
@@ -9149,7 +9229,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Startup fuel multiplier vs throttle",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_19a8",
@@ -9202,7 +9286,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Startup fuel multiplier vs engine speed",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_34b0",
@@ -9259,7 +9347,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Centered fuel-correction gain vs engine speed",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_3494",
@@ -9311,7 +9403,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Relative-throttle qualification threshold vs speed",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_353a",
@@ -9367,7 +9463,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Transient fuel multiplier vs pressure estimate",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_351d",
@@ -9440,7 +9540,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Transient fuel multiplier vs intake temperature",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_34d0",
@@ -9489,7 +9593,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Transient fuel pulse response \u2014 family 1, selection A",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
   },
   {
     "id": "curve_34da",
@@ -9538,7 +9646,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Transient fuel pulse response \u2014 family 1, selection B",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
   },
   {
     "id": "curve_34e4",
@@ -9587,7 +9699,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Transient fuel pulse response \u2014 family 1, selection C",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
   },
   {
     "id": "curve_34ee",
@@ -9644,7 +9760,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Transient fuel multiplier vs throttle",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_355d",
@@ -9693,7 +9813,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Transient fuel pulse response \u2014 family 2, selection A",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
   },
   {
     "id": "curve_3567",
@@ -9742,7 +9866,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Transient fuel pulse response \u2014 family 2, selection B",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
   },
   {
     "id": "curve_3571",
@@ -9791,7 +9919,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Transient fuel pulse response \u2014 family 2, selection C",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
   },
   {
     "id": "curve_31ec",
@@ -9846,7 +9978,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Fuel normalization recovery hold \u2014 selection 1",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "This normal correction state is disabled in the supplied image by ROM 0x3130 = 0xFF. Selection numbers do not imply named riding modes."
   },
   {
     "id": "curve_3200",
@@ -9901,7 +10037,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Fuel normalization recovery hold \u2014 selection 2",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "This normal correction state is disabled in the supplied image by ROM 0x3130 = 0xFF. Selection numbers do not imply named riding modes."
   },
   {
     "id": "curve_36c4",
@@ -9958,7 +10098,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Feedback eligibility delay vs coolant",
+    "category": "Feedback",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_36a4",
@@ -10007,7 +10151,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Adaptive fuel correction \u2014 decrement step",
+    "category": "Feedback",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_36b2",
@@ -10056,7 +10204,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Adaptive fuel correction \u2014 increment step",
+    "category": "Feedback",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_3220",
@@ -10123,7 +10275,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Fuel multiplier vs intake temperature",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_3345",
@@ -10180,7 +10336,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Positive transient fuel gain vs coolant",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_3357",
@@ -10237,7 +10397,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Negative transient fuel gain vs coolant",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_1880",
@@ -10299,7 +10463,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Pressure-processing offset vs engine speed",
+    "category": "Sensor processing",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_323c",
@@ -10362,7 +10530,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Load-path fuel multiplier vs pressure estimate",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_32e0",
@@ -10412,7 +10584,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Throttle-path fuel multiplier vs pressure estimate",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_4a33",
@@ -10469,7 +10645,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Alternate ignition mode \u2014 throttle threshold vs coolant",
+    "category": "Ignition",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_3315",
@@ -10526,7 +10706,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Coolant enrichment \u2014 load-based fuel path",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_3327",
@@ -10583,7 +10767,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Coolant enrichment \u2014 throttle-based fuel path",
+    "category": "Fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_34fd",
@@ -10654,7 +10842,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Transient fuel pulse contribution vs coolant",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "curve_4bac",
@@ -10717,7 +10909,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Spark timing bound vs pressure estimate",
+    "category": "Ignition",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   },
   {
     "id": "delta_0985_gain_1",
@@ -10762,7 +10958,7 @@
       "u16 RAM 0x0900: selected speed code"
     ],
     "output": "u8 RAM 0x098D",
-    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "physical_role": "Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved",
     "evidence_addresses": [
       "0x7A49",
       "0x7A81",
@@ -10807,7 +11003,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Throttle-delta fuel gain \u2014 selection 1",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
   },
   {
     "id": "delta_0985_gain_2",
@@ -10852,7 +11052,7 @@
       "u16 RAM 0x0900: selected speed code"
     ],
     "output": "u8 RAM 0x098D",
-    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "physical_role": "Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved",
     "evidence_addresses": [
       "0x7A56",
       "0x7A81",
@@ -10897,7 +11097,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Throttle-delta fuel gain \u2014 selection 2",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
   },
   {
     "id": "delta_0985_gain_3",
@@ -10942,7 +11146,7 @@
       "u16 RAM 0x0900: selected speed code"
     ],
     "output": "u8 RAM 0x098D",
-    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "physical_role": "Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved",
     "evidence_addresses": [
       "0x7A5B",
       "0x7A81",
@@ -10987,7 +11191,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Throttle-delta fuel gain \u2014 selection 3",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
   },
   {
     "id": "delta_0985_gain_4",
@@ -11032,7 +11240,7 @@
       "u16 RAM 0x0900: selected speed code"
     ],
     "output": "u8 RAM 0x098D",
-    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "physical_role": "Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved",
     "evidence_addresses": [
       "0x7A69",
       "0x7A81",
@@ -11077,7 +11285,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Throttle-delta fuel gain \u2014 selection 4",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
   },
   {
     "id": "delta_0985_gain_5",
@@ -11122,7 +11334,7 @@
       "u16 RAM 0x0900: selected speed code"
     ],
     "output": "u8 RAM 0x098D",
-    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "physical_role": "Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved",
     "evidence_addresses": [
       "0x7A76",
       "0x7A81",
@@ -11167,7 +11379,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Throttle-delta fuel gain \u2014 selection 5",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
   },
   {
     "id": "delta_0985_gain_6",
@@ -11212,7 +11428,7 @@
       "u16 RAM 0x0900: selected speed code"
     ],
     "output": "u8 RAM 0x098D",
-    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "physical_role": "Gain applied to signed throttle-coordinate delta; calibrated physical rate remains unresolved",
     "evidence_addresses": [
       "0x7A7B",
       "0x7A81",
@@ -11257,7 +11473,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Throttle-delta fuel gain \u2014 selection 6",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
   },
   {
     "id": "delta_0989_gain_1",
@@ -11302,7 +11522,7 @@
       "u16 RAM 0x0900: selected speed code"
     ],
     "output": "u8 RAM 0x098E",
-    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "physical_role": "Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved",
     "evidence_addresses": [
       "0x78D6",
       "0x790E",
@@ -11347,7 +11567,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Load-delta fuel gain \u2014 selection 1",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
   },
   {
     "id": "delta_0989_gain_2",
@@ -11392,7 +11616,7 @@
       "u16 RAM 0x0900: selected speed code"
     ],
     "output": "u8 RAM 0x098E",
-    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "physical_role": "Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved",
     "evidence_addresses": [
       "0x78E3",
       "0x790E",
@@ -11437,7 +11661,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Load-delta fuel gain \u2014 selection 2",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
   },
   {
     "id": "delta_0989_gain_3",
@@ -11482,7 +11710,7 @@
       "u16 RAM 0x0900: selected speed code"
     ],
     "output": "u8 RAM 0x098E",
-    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "physical_role": "Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved",
     "evidence_addresses": [
       "0x78E8",
       "0x790E",
@@ -11527,7 +11755,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Load-delta fuel gain \u2014 selection 3",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
   },
   {
     "id": "delta_0989_gain_4",
@@ -11572,7 +11804,7 @@
       "u16 RAM 0x0900: selected speed code"
     ],
     "output": "u8 RAM 0x098E",
-    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "physical_role": "Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved",
     "evidence_addresses": [
       "0x78F6",
       "0x790E",
@@ -11617,7 +11849,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Load-delta fuel gain \u2014 selection 4",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
   },
   {
     "id": "delta_0989_gain_5",
@@ -11662,7 +11898,7 @@
       "u16 RAM 0x0900: selected speed code"
     ],
     "output": "u8 RAM 0x098E",
-    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "physical_role": "Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved",
     "evidence_addresses": [
       "0x7903",
       "0x790E",
@@ -11707,7 +11943,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Load-delta fuel gain \u2014 selection 5",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
   },
   {
     "id": "delta_0989_gain_6",
@@ -11752,7 +11992,7 @@
       "u16 RAM 0x0900: selected speed code"
     ],
     "output": "u8 RAM 0x098E",
-    "physical_role": "Gain applied to a signed transient-delta path; physical delta identity unresolved",
+    "physical_role": "Gain applied to signed load-processing-coordinate delta; calibrated physical rate remains unresolved",
     "evidence_addresses": [
       "0x7908",
       "0x790E",
@@ -11797,7 +12037,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Load-delta fuel gain \u2014 selection 6",
+    "category": "Transient fuel",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
   },
   {
     "id": "step_grid_4c44",
@@ -12133,7 +12377,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Air-induction enable vs speed and throttle",
+    "category": "Air induction",
+    "naming_basis": "analysis/semantics/EXTENDED_MAPS.md",
+    "naming_note": "Logical eligibility gate: zero inhibits the path; nonzero permits further tests. It is not a physical percentage or a complete enable decision. Both stock adaptive-feedback grids contain only zero."
   },
   {
     "id": "step_grid_4d48",
@@ -12469,7 +12717,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Air-induction enable vs speed and load",
+    "category": "Air induction",
+    "naming_basis": "analysis/semantics/EXTENDED_MAPS.md",
+    "naming_note": "Logical eligibility gate: zero inhibits the path; nonzero permits further tests. It is not a physical percentage or a complete enable decision. Both stock adaptive-feedback grids contain only zero."
   },
   {
     "id": "step_grid_35b0",
@@ -12675,7 +12927,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Adaptive feedback enable vs speed and throttle",
+    "category": "Feedback",
+    "naming_basis": "analysis/semantics/EXTENDED_MAPS.md",
+    "naming_note": "Logical eligibility gate: zero inhibits the path; nonzero permits further tests. It is not a physical percentage or a complete enable decision. Both stock adaptive-feedback grids contain only zero."
   },
   {
     "id": "step_grid_363c",
@@ -12881,7 +13137,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Adaptive feedback enable vs speed and load",
+    "category": "Feedback",
+    "naming_basis": "analysis/semantics/EXTENDED_MAPS.md",
+    "naming_note": "Logical eligibility gate: zero inhibits the path; nonzero permits further tests. It is not a physical percentage or a complete enable decision. Both stock adaptive-feedback grids contain only zero."
   },
   {
     "id": "timing_speed_4f64",
@@ -12932,7 +13192,7 @@
       "u16 RAM 0x08F8: instantaneous speed code"
     ],
     "output": "u8 RAM 0x0A8B",
-    "physical_role": "Speed correction in spark-timing path; final degree conversion unresolved",
+    "physical_role": "Speed-indexed additive time correction in the spark planner; timer ticks, not absolute spark degrees",
     "evidence_addresses": [
       "0x88D1",
       "0x88EE"
@@ -12982,7 +13242,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Spark time correction \u2014 other variants",
+    "category": "Ignition",
+    "naming_basis": "analysis/semantics/SPARK_SCHEDULER.md",
+    "naming_note": "Role follows the recovered time/charge scheduler. Timer units depend on the nominal clock profile. A dwell contribution is not the final complete dwell duration, and a time correction is not absolute BTDC."
   },
   {
     "id": "timing_speed_4f81",
@@ -13033,7 +13297,7 @@
       "u16 RAM 0x08F8: instantaneous speed code"
     ],
     "output": "u8 RAM 0x0A8B",
-    "physical_role": "Speed correction in spark-timing path; final degree conversion unresolved",
+    "physical_role": "Speed-indexed additive time correction in the spark planner; timer ticks, not absolute spark degrees",
     "evidence_addresses": [
       "0x88D1",
       "0x88EE"
@@ -13083,7 +13347,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Spark time correction \u2014 XT variant 9",
+    "category": "Ignition",
+    "naming_basis": "analysis/semantics/SPARK_SCHEDULER.md",
+    "naming_note": "Role follows the recovered time/charge scheduler. Timer units depend on the nominal clock profile. A dwell contribution is not the final complete dwell duration, and a time correction is not absolute BTDC."
   },
   {
     "id": "dwell_supply_speed",
@@ -13269,7 +13537,7 @@
       "u8 RAM 0x08D9: supply code"
     ],
     "output": "u16 RAM 0x0A98 = rounded cell * 32; added to RAM 0x0A9C * 32, limited into 0x0A96",
-    "physical_role": "Spark output timing/dwell candidate; timer units and electrical interpretation unresolved",
+    "physical_role": "Coil charge-duration contribution combined with other dwell terms; physical timer scale remains conditional",
     "evidence_addresses": [
       "0x8AD4",
       "0x8ADB",
@@ -13324,7 +13592,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Ignition dwell contribution vs speed and supply",
+    "category": "Ignition",
+    "naming_basis": "analysis/semantics/SPARK_SCHEDULER.md",
+    "naming_note": "Role follows the recovered time/charge scheduler. Timer units depend on the nominal clock profile. A dwell contribution is not the final complete dwell duration, and a time correction is not absolute BTDC."
   },
   {
     "id": "coolant_sensor_conversion",
@@ -13424,7 +13696,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Coolant sensor conversion",
+    "category": "Sensor processing",
+    "naming_basis": "analysis/semantics/TEMPERATURE_PROFILE.md",
+    "naming_note": "Sensor identity is corroborated. The internal-code-to-Celsius profile remains conditional on the sensor circuit and ECU identification."
   },
   {
     "id": "intake_temperature_conversion",
@@ -13532,7 +13808,11 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Intake air temperature sensor conversion",
+    "category": "Sensor processing",
+    "naming_basis": "analysis/semantics/TEMPERATURE_PROFILE.md",
+    "naming_note": "Sensor identity is corroborated. The internal-code-to-Celsius profile remains conditional on the sensor circuit and ECU identification."
   },
   {
     "id": "curve_1854",
@@ -13606,6 +13886,10 @@
     "unresolved": [
       "Engineering-unit conversions and complete downstream transformation",
       "Hardware/bench confirmation and safe operating limits"
-    ]
+    ],
+    "display_name": "Pressure-to-load processing gain",
+    "category": "Sensor processing",
+    "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+    "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
   }
 ]

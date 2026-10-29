@@ -12,9 +12,9 @@ All three grids have 45 rows × 30 columns, unsigned big-endian 16-bit cells. In
 
 | Grid cells | Speed row axis | Other column axis | Selection / result |
 |---|---|---|---|
-| A: `0x1B66` | `0x1B0C`, input `0x0900` | `0x1AD0`, input `0x0C90` | Selected when `0x0B80:0x01` clear; result `0x0952` or `0x0954` |
-| C: `0x37A8` | `0x374E`, input `0x0900` | `0x3712`, input `0x0C90` | Selected when `0x0B80:0x01` set; same result pair |
-| B: `0x2688` | `0x262E`, input `0x0900` | `0x25F2`, input derived from `0x08E8` | Separate lookup; result `0x0956` or `0x0958` |
+| Load-based fuel quantity (mode flag clear), A: `0x1B66` | `0x1B0C`, input `0x0900` | `0x1AD0`, input `0x0C90` | Selected when `0x0B80:0x01` clear; result `0x0952` or `0x0954` |
+| Load-based fuel quantity (mode flag set), C: `0x37A8` | `0x374E`, input `0x0900` | `0x3712`, input `0x0C90` | Selected when `0x0B80:0x01` set; same result pair |
+| Throttle-based fuel quantity, B: `0x2688` | `0x262E`, input `0x0900` | `0x25F2`, input derived from `0x08E8` | Separate lookup; result `0x0956` or `0x0958` |
 
 RAM `0x0A16:0x02` chooses which member of each output pair receives the lookup. The mode bits' physical names are not established. Do not label these grids as cylinder 1/2 or economy/sport from the paired storage alone.
 

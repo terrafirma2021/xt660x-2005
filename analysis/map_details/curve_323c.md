@@ -1,4 +1,12 @@
-# curve_323c
+# Load-path fuel multiplier vs pressure estimate
+
+<!-- map-name -->
+Stable ID: `curve_323c`. Category: Fuel.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Multiplier for correction_surface_C
 

@@ -1,3 +1,3 @@
-curve_34ee | 0x34F4 | 1 rows x 9 columns | raw values
+Transient fuel multiplier vs throttle | ID: curve_34ee | 0x34F4 | 1 rows x 9 columns | raw values
 code-confirmed lookup/header; raw scaling only
 148 148 138 133 131 128 122 115 115

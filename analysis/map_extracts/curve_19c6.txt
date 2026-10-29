@@ -1,3 +1,3 @@
-curve_19c6 | 0x19CC | 1 rows x 8 columns | raw values
+Startup fuel multiplier vs pressure estimate | ID: curve_19c6 | 0x19CC | 1 rows x 8 columns | raw values
 code-confirmed lookup/header; raw scaling only
 78 89 99 110 121 131 142 152

@@ -1,3 +1,3 @@
-curve_19ba | 0x19C0 | 1 rows x 6 columns | raw values
+Startup fuel multiplier vs throttle | ID: curve_19ba | 0x19C0 | 1 rows x 6 columns | raw values
 code-confirmed lookup/header; raw scaling only
 64 128 128 128 128 128

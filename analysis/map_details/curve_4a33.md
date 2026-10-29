@@ -1,4 +1,12 @@
-# curve_4a33
+# Alternate ignition mode — throttle threshold vs coolant
+
+<!-- map-name -->
+Stable ID: `curve_4a33`. Category: Ignition.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Filtered relative-throttle threshold enabling alternate spark mode; not a spark-angle correction
 

@@ -1,4 +1,4 @@
-correction_surface_D | 0x4A60 | 10 rows x 15 columns | raw values
+Alternate base ignition timing vs speed and coolant | ID: correction_surface_D | 0x4A60 | 10 rows x 15 columns | raw values
 code-confirmed layout; unverified physical meaning
 78 78 78 78 78 78 78 78 78 64 64 64 64 64 64
 78 78 78 78 78 78 78 64 64 64 64 64 64 64 64

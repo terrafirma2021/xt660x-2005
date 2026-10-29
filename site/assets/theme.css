@@ -1,4 +1,6 @@
 :root{color-scheme:light}
+.map-category{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#526970;margin-bottom:9px}.map-card .map-id{font-size:11px;overflow-wrap:anywhere;margin-bottom:15px}
+html[data-theme=dark] .map-category{color:#acbfc9}
 #sitebar #theme-toggle{font:inherit;font-weight:600;padding:7px 11px;border:1px solid #b9cac7;border-radius:5px;background:#f0f5f3;color:#244b45;cursor:pointer;white-space:nowrap}
 #sitebar #theme-toggle:focus-visible{outline:2px solid #08766b;outline-offset:3px}
 .file-index{list-style:none;padding:0;margin:20px 0;background:#fff;border:1px solid #d9e3e1;border-radius:8px;overflow:hidden}

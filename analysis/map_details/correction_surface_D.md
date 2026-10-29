@@ -1,4 +1,12 @@
-# correction_surface_D
+# Alternate base ignition timing vs speed and coolant
+
+<!-- map-name -->
+Stable ID: `correction_surface_D`. Category: Ignition.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Alternate base spark surface; replaces the normal base in this mode, not an additive correction
 

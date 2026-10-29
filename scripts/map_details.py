@@ -51,7 +51,8 @@ def extend(maps, axes, image):
                     f'otherwise RAM 0x0898 > ROM {hx(selector)}'][i%3]
             add(f'{group}_gain_{i+1}',base+3,1,23,'1D_precomputed_axis',
                 ['u16 RAM 0x0900: selected speed code'],f'u8 RAM {hx(dest)}',
-                'Gain applied to a signed transient-delta path; physical delta identity unresolved',
+                ('Gain applied to signed throttle-coordinate delta' if group=='delta_0985' else
+                 'Gain applied to signed load-processing-coordinate delta')+'; calibrated physical rate remains unresolved',
                 [pc,call,0xcc7b],base=base,col=speed_axis,
                 interpolation='0xC1DB linear Q8; caller takes high byte (floor)',
                 selection=f'RAM {hx(flag)} bit 7 {sign}; {choice}')
@@ -74,14 +75,14 @@ def extend(maps, axes, image):
     for base in [0x4f61,0x4f7e]:
         add(f'timing_speed_{base+3:04x}',base+3,1,29,'1D_precomputed_axis',
             ['u16 RAM 0x08F8: instantaneous speed code'], 'u8 RAM 0x0A8B',
-            'Speed correction in spark-timing path; final degree conversion unresolved',
+            'Speed-indexed additive time correction in the spark planner; timer ticks, not absolute spark degrees',
             [0x88d1,0x88ee],base=base,col=timing_axis,
             selection='RAM 0x0D87 '+('!= 9' if base==0x4f61 else '== 9'),
             interpolation='0xC28D with one row; linear Q8 rounded to nearest byte')
     add('dwell_supply_speed',0x4b12,15,9,'2D_special_grid',
         ['u16 RAM 0x0900: selected speed code','u8 RAM 0x08D9: supply code'],
         'u16 RAM 0x0A98 = rounded cell * 32; added to RAM 0x0A9C * 32, limited into 0x0A96',
-        'Spark output timing/dwell candidate; timer units and electrical interpretation unresolved',
+        'Coil charge-duration contribution combined with other dwell terms; physical timer scale remains conditional',
         [0x8ad4,0x8adb,0x8ae6,0x8b20],base=0x4b0f,
         row=implied(list(range(4096,61441,4096)),'u16 RAM 0x0900','q8=clamp(input-4096,0,57344)//16'),
         col=implied(list(range(83,212,16)),'u8 RAM 0x08D9','input<26 substitutes 179; q8=clamp(input-83,0,128)*16'),
@@ -187,8 +188,8 @@ def write_dossiers(maps, out, instructions):
     rows=list(instructions.values())
     positions={int(r['address'],16):i for i,r in enumerate(rows)}
     for m in maps:
-        index.append(f"| [{m['id']}](map_details/{m['id']}.md) | {m['data_address']} | {m['physical_role']} |")
-        lines=[f"# {m['id']}",'',m['physical_role'],'',
+        index.append(f"| [{m['display_name']}](map_details/{m['id']}.md) | {m['data_address']} | {m['physical_role']} |")
+        lines=[f"# {m['display_name']}",'',m['physical_role'],'',
             f"Cells: **{m['data_address']}–{int(m['end_exclusive'],16)-1:04X}**, {m['rows']} rows × {m['columns']} columns, {m['element_bytes']*8}-bit unsigned big-endian values.",'',
             'Inputs: '+ '; '.join(m['inputs'])+'.','', 'Output: '+m['output']+'.','',
             'Selection: '+m['selection']+'.','',

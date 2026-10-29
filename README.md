@@ -20,6 +20,8 @@ The [variant analysis](analysis/semantics/VARIANTS.md) confirms that this image 
 
 The [map-consumer breakdown](analysis/semantics/MAP_CONSUMERS.md) now reconstructs normal and startup fuel arithmetic, post-start decay, transient pulses, adaptive steps and injection event timing. [Per-map status](analysis/semantics/MAP_RESOLUTION.md) distinguishes gains, thresholds, logical gates, conditional physical values and unresolved scales, including stock-disabled families.
 
+All 71 maps now have [reviewed descriptive names](analysis/MAP_NAMES.md) derived from the recovered roles. The website, map dossiers, atlas, unit catalogue and text extracts use these names. Original IDs such as `main_quantity_C` remain as stable reference keys and URL/file names; its display name is **Load-based fuel quantity (mode flag set)**. Unidentified selection modes are not labelled as cylinders, riding modes or octane grades.
+
 The [temperature profile](analysis/semantics/TEMPERATURE_PROFILE.md) supplies conditional Celsius values for both sensor tables and 14 map axes. All 256 variant values were tested against the temperature routines; the fixed conversions and fallbacks stay unchanged, while spark correction selection changes. The XT660X target is retained; TDM manual data is comparison evidence. The [spark scheduler](analysis/semantics/SPARK_SCHEDULER.md) now has independently tested charge/fire planning and minimum-dwell handling. These passes add 141,432 instruction-execution cases.
 
 ## Checksum-corrected image
@@ -87,6 +89,8 @@ python scripts/catalog_maps.py
 python scripts/catalog_calibration_accesses.py
 python scripts/sensor_profiles.py
 python scripts/decode_units.py
+python scripts/map_names.py
+python scripts/verify_map_names.py
 python scripts/fix_startup_checksum.py
 python scripts/build_pin_overview.py
 python scripts/verify_pin_overview.py

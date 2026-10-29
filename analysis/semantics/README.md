@@ -33,6 +33,7 @@ These have different levels of completion. Coolant/fan decisions and the princip
 
 ## Evidence files
 
+- [Map names and stable references](../MAP_NAMES.md): the reviewed name, existing ID, address and naming evidence for all 71 maps. Names describe functions; IDs remain stable for code and cross-references.
 - [mcu_pin_overview.json](mcu_pin_overview.json): all 80 package positions, 97 instruction anchors, diagnostic identities, harness references and explicit uncertainty; [package drawing](mcu_pin_overview.svg).
 - [catalog.json](catalog.json): 28 calibration records with exact storage, original bytes, role, references, and explicit missing conversion fields; eight ADC channels and six logical outputs.
 - [control_validation.json](control_validation.json): 212,090 isolated control test cases against the compiled instruction translation.

@@ -1,4 +1,12 @@
-# fuel_normalization_throttle
+# Throttle-based fuel normalization input
+
+<!-- map-name -->
+Stable ID: `fuel_normalization_throttle`. Category: Fuel.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Fuel normalization input; selected when ROM 0x3114 does not equal 0x80
 

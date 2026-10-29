@@ -5,6 +5,7 @@ No tuning changes or engineering-unit assumptions are made. Python standard libr
 from pathlib import Path
 import csv, json, re, math, hashlib, collections
 from map_details import extend, write_dossiers
+from map_names import apply_names
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'analysis'
@@ -129,6 +130,7 @@ for x in loads:
         item['calls'].append({'pointer_load':hx(x['load']),'call':hx(call),'helper':hx(h),'function':x['function']})
 maps.extend(uniform.values())
 extend(maps,axes,BIN)
+apply_names(maps)
 uniform={int(m['pointer_base'],16):m for m in maps if m['kind']=='1D_uniform_axis'}
 save('maps.json',maps)
 save('axes.json',list(axes.values()))
@@ -162,7 +164,7 @@ for m in maps:
     a=int(m['data_address'],16);z=int(m['end_exclusive'],16)
     (mapdir/(m['id']+'.bin')).write_bytes(BIN[a:z])
     (mapdir/(m['id']+'.txt')).write_text('\n'.join([
-        f"{m['id']} | {m['data_address']} | {m['rows']} rows x {m['columns']} columns | raw values",
+        f"{m['display_name']} | ID: {m['id']} | {m['data_address']} | {m['rows']} rows x {m['columns']} columns | raw values",
         m['confidence'],*[' '.join(str(v) for v in row) for row in m['raw_values']]])+'\n',encoding='utf-8')
 
 # Exact byte preservation, searchable hexdump, and strings for independent analysis.
@@ -183,15 +185,15 @@ lines=['# Calibration map atlas','',
  'Addresses below are file offsets and the working flat CPU12 addresses. Actual cell addresses differ from the pointers passed to the lookup helpers.',
  'All cells and axes use raw ECU values. Input/output traces and evidence for every map are in [the per-map breakdown](MAP_DETAILS.md). Physical units and tuning limits remain unresolved. This is an analysis catalogue, not a flash definition.',
  '', '## Confirmed grid layouts','',
- '| ID | Cell address | Rows × columns | Cell width | Row / column axes |',
+ '| Map | Cell address | Rows × columns | Cell width | Row / column axes |',
  '|---|---|---|---|---|']
-for m in maps[:len(GRIDS)]:lines.append(f"| {m['id']} | {m['data_address']} | {m['rows']} × {m['columns']} | {m['element_bytes']*8}-bit BE | {m['row_axis']['address']} / {m['column_axis']['address']} |")
-lines+=['','## Uniform-axis curves','','| Header | Cells | Points | Input minimum / span / factor |','|---|---|---|---|']
-for m in uniform.values():lines.append(f"| {m['pointer_base']} | {m['data_address']} | {m['columns']} | {m['input_min_raw']} / {m['input_span_raw']} / {m['index_factor_raw']} |")
-lines+=['','## Computed-axis, sensor and inline step tables','','| ID | Cells | Rows x columns | Method |','|---|---|---|---|']
+for m in maps[:len(GRIDS)]:lines.append(f"| [{m['display_name']}](map_details/{m['id']}.md) | {m['data_address']} | {m['rows']} × {m['columns']} | {m['element_bytes']*8}-bit BE | {m['row_axis']['address']} / {m['column_axis']['address']} |")
+lines+=['','## Uniform-axis curves','','| Map | Header | Cells | Points | Input minimum / span / factor |','|---|---|---|---|---|']
+for m in uniform.values():lines.append(f"| [{m['display_name']}](map_details/{m['id']}.md) | {m['pointer_base']} | {m['data_address']} | {m['columns']} | {m['input_min_raw']} / {m['input_span_raw']} / {m['index_factor_raw']} |")
+lines+=['','## Computed-axis, sensor and inline step tables','','| Map | Cells | Rows x columns | Method |','|---|---|---|---|']
 for m in maps:
     if m['kind'] in ('2D_grid','1D_uniform_axis'):continue
-    lines.append(f"| [{m['id']}](map_details/{m['id']}.md) | {m['data_address']} | {m['rows']} x {m['columns']} | {m['kind']} |")
+    lines.append(f"| [{m['display_name']}](map_details/{m['id']}.md) | {m['data_address']} | {m['rows']} x {m['columns']} | {m['kind']} |")
 lines+=['','## Evidence and use','',
  '`maps.json` contains every extracted grid/curve, its raw values, axes and caller addresses. `map_extracts/` has byte-exact cell payloads and plain-text matrices.',
  '`axes.json` records code-confirmed axis pointers, counts, raw breakpoints and input load instructions. `calibration_pointer_loads.json` includes pointer loads not yet classified as maps.',

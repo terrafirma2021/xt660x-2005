@@ -1,4 +1,12 @@
-# curve_3494
+# Relative-throttle qualification threshold vs speed
+
+<!-- map-name -->
+Stable ID: `curve_3494`. Category: Fuel.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Filtered relative-throttle threshold in a qualification counter path
 

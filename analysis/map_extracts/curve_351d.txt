@@ -1,3 +1,3 @@
-curve_351d | 0x3520 | 1 rows x 25 columns | raw values
+Transient fuel multiplier vs intake temperature | ID: curve_351d | 0x3520 | 1 rows x 25 columns | raw values
 code-confirmed lookup/header; raw scaling only
 158 153 148 143 138 135 133 130 128 125 122 120 117 115 112 110 107 98 89 80 71 64 56 48 40

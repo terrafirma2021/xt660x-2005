@@ -1,4 +1,12 @@
-# curve_19a8
+# Startup fuel multiplier vs engine speed
+
+<!-- map-name -->
+Stable ID: `curve_19a8`. Category: Fuel.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Startup fuel multiplier
 

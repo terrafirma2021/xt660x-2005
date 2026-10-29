@@ -1,4 +1,12 @@
-# curve_34ee
+# Transient fuel multiplier vs throttle
+
+<!-- map-name -->
+Stable ID: `curve_34ee`. Category: Transient fuel.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Transient throttle correction
 

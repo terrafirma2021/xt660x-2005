@@ -1,4 +1,12 @@
-# curve_36b2
+# Adaptive fuel correction — increment step
+
+<!-- map-name -->
+Stable ID: `curve_36b2`. Category: Feedback.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Adaptive correction increment step; bounds are separate ROM words
 

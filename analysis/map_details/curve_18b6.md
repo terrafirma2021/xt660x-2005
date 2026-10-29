@@ -1,4 +1,12 @@
-# curve_18b6
+# Feedback startup delay vs coolant
+
+<!-- map-name -->
+Stable ID: `curve_18b6`. Category: Feedback.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Coolant-dependent delay before feedback eligibility
 

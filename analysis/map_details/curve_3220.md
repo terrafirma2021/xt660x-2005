@@ -1,4 +1,12 @@
-# curve_3220
+# Fuel multiplier vs intake temperature
+
+<!-- map-name -->
+Stable ID: `curve_3220`. Category: Fuel.
+
+Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Fuel temperature multiplier; used with offset 0x0180
 

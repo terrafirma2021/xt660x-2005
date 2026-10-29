@@ -1,4 +1,12 @@
-# curve_355d
+# Transient fuel pulse response — family 2, selection A
+
+<!-- map-name -->
+Stable ID: `curve_355d`. Category: Transient fuel.
+
+Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/MAP_CONSUMERS.md).
+<!-- /map-name -->
 
 Selected transient response curve
 

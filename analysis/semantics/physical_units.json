@@ -1735,7 +1735,11 @@
       ],
       "requires": [
         "nominal_xt_timer"
-      ]
+      ],
+      "display_name": "Load-based fuel quantity (mode flag clear)",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/FUEL.md",
+      "naming_note": "A/C use processed load and select on RAM 0x0B80 bit 0 (clear/set); B uses filtered throttle. The mode bit has no established rider-mode or cylinder meaning. Values precede final pulse corrections."
     },
     {
       "id": "main_quantity_B",
@@ -3245,7 +3249,11 @@
       ],
       "requires": [
         "nominal_xt_timer"
-      ]
+      ],
+      "display_name": "Throttle-based fuel quantity",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/FUEL.md",
+      "naming_note": "A/C use processed load and select on RAM 0x0B80 bit 0 (clear/set); B uses filtered throttle. The mode bit has no established rider-mode or cylinder meaning. Values precede final pulse corrections."
     },
     {
       "id": "main_quantity_C",
@@ -4755,7 +4763,11 @@
       ],
       "requires": [
         "nominal_xt_timer"
-      ]
+      ],
+      "display_name": "Load-based fuel quantity (mode flag set)",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/FUEL.md",
+      "naming_note": "A/C use processed load and select on RAM 0x0B80 bit 0 (clear/set); B uses filtered throttle. The mode bit has no established rider-mode or cylinder meaning. Values precede final pulse corrections."
     },
     {
       "id": "main_u8_A",
@@ -5516,7 +5528,11 @@
       ],
       "requires": [
         "nominal_xt_crank"
-      ]
+      ],
+      "display_name": "Base ignition timing \u2014 selection A",
+      "category": "Ignition",
+      "naming_basis": "analysis/semantics/SPARK.md",
+      "naming_note": "A/B/C distinguish recovered selection branches, not octane or rider modes. A requires variant 9 and 0x0896 bit 4 clear; B/C use the remaining selector threshold. Absolute BTDC remains unresolved."
     },
     {
       "id": "main_u8_B",
@@ -6277,7 +6293,11 @@
       ],
       "requires": [
         "nominal_xt_crank"
-      ]
+      ],
+      "display_name": "Base ignition timing \u2014 selection B",
+      "category": "Ignition",
+      "naming_basis": "analysis/semantics/SPARK.md",
+      "naming_note": "A/B/C distinguish recovered selection branches, not octane or rider modes. A requires variant 9 and 0x0896 bit 4 clear; B/C use the remaining selector threshold. Absolute BTDC remains unresolved."
     },
     {
       "id": "main_u8_C",
@@ -7038,7 +7058,11 @@
       ],
       "requires": [
         "nominal_xt_crank"
-      ]
+      ],
+      "display_name": "Base ignition timing \u2014 selection C",
+      "category": "Ignition",
+      "naming_basis": "analysis/semantics/SPARK.md",
+      "naming_note": "A/B/C distinguish recovered selection branches, not octane or rider modes. A requires variant 9 and 0x0896 bit 4 clear; B/C use the remaining selector threshold. Absolute BTDC remains unresolved."
     },
     {
       "id": "modulo24_surface",
@@ -7232,7 +7256,11 @@
         "0xEC98",
         "0x85AB",
         "0xF4F2"
-      ]
+      ],
+      "display_name": "Injection event-phase target",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "correction_surface_A",
@@ -7478,7 +7506,11 @@
         "0x7C42",
         "0x94E8"
       ],
-      "stock_activation": "Used in secondary-quantity arithmetic; variant 9 skips the normal secondary injector scheduling entry. Diagnostic paths are separate."
+      "stock_activation": "Used in secondary-quantity arithmetic; variant 9 skips the normal secondary injector scheduling entry. Diagnostic paths are separate.",
+      "display_name": "Secondary injector quantity multiplier",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "correction_surface_B",
@@ -7671,7 +7703,11 @@
         ]
       ],
       "requires": [],
-      "stock_activation": "Normal state path is disabled: ROM 0x3130 is 0xFF; 0x8DF9 requires exactly 0x80. The disabled path resets CD4 to 128. Lookup presence alone does not establish an active effect."
+      "stock_activation": "Normal state path is disabled: ROM 0x3130 is 0xFF; 0x8DF9 requires exactly 0x80. The disabled path resets CD4 to 128. Lookup presence alone does not establish an active effect.",
+      "display_name": "Fuel normalization offset",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "This normal correction state is disabled in the supplied image by ROM 0x3130 = 0xFF. Selection numbers do not imply named riding modes."
     },
     {
       "id": "correction_surface_C",
@@ -7819,7 +7855,11 @@
       "consumer_evidence": [
         "0xB3CC",
         "0x82D6"
-      ]
+      ],
+      "display_name": "Fuel correction gain vs speed and load",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "correction_surface_D",
@@ -8054,7 +8094,11 @@
       "consumer_evidence": [
         "0x8979",
         "0x899E"
-      ]
+      ],
+      "display_name": "Alternate base ignition timing vs speed and coolant",
+      "category": "Ignition",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "fuel_normalization_load",
@@ -8077,7 +8121,11 @@
           ]
         }
       ],
-      "decoded_context": "Combined code is clamp(selected_cell+CD4-128,0,255); used through (code+128), not a proven AFR encoding."
+      "decoded_context": "Combined code is clamp(selected_cell+CD4-128,0,255); used through (code+128), not a proven AFR encoding.",
+      "display_name": "Load-based fuel normalization input",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "fuel_normalization_throttle",
@@ -8100,7 +8148,11 @@
           ]
         }
       ],
-      "decoded_context": "Combined code is clamp(selected_cell+CD4-128,0,255); used through (code+128), not a proven AFR encoding."
+      "decoded_context": "Combined code is clamp(selected_cell+CD4-128,0,255); used through (code+128), not a proven AFR encoding.",
+      "display_name": "Throttle-based fuel normalization input",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "fuel_normalization_gain",
@@ -8119,7 +8171,11 @@
           100.0
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Fuel normalization denominator gain",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_18b6",
@@ -8197,7 +8253,11 @@
       ],
       "requires": [
         "nominal_xt_timer"
-      ]
+      ],
+      "display_name": "Feedback startup delay vs coolant",
+      "category": "Feedback",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_1996",
@@ -8275,7 +8335,11 @@
       ],
       "requires": [
         "nominal_xt_timer"
-      ]
+      ],
+      "display_name": "Startup fuel base quantity vs coolant",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_32ef",
@@ -8351,7 +8415,11 @@
           12.5
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Post-start enrichment \u2014 fast-decay state",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Fast/slow describe the relative decay with stock decrement bytes 123/2. They are alternative enrichment states, not two terms to add; wall-clock decay time remains mode-dependent."
     },
     {
       "id": "curve_3301",
@@ -8427,7 +8495,11 @@
           6.25
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Post-start enrichment \u2014 slow-decay state",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Fast/slow describe the relative decay with stock decrement bytes 123/2. They are alternative enrichment states, not two terms to add; wall-clock decay time remains mode-dependent."
     },
     {
       "id": "curve_4234",
@@ -8449,7 +8521,11 @@
       ],
       "requires": [
         "nominal_xt_timer"
-      ]
+      ],
+      "display_name": "Injector pulse compensation vs supply",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "An additive supply-dependent pulse correction is established. Injector dead time remains a candidate physical interpretation, so it is not the primary name."
     },
     {
       "id": "curve_19c6",
@@ -8470,7 +8546,11 @@
           118.75
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Startup fuel multiplier vs pressure estimate",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_19ba",
@@ -8489,7 +8569,11 @@
           100.0
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Startup fuel multiplier vs throttle",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_19a8",
@@ -8554,7 +8638,11 @@
           31.25
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Startup fuel multiplier vs engine speed",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_34b0",
@@ -8636,7 +8724,11 @@
       "consumer_evidence": [
         "0x8623",
         "0x8323"
-      ]
+      ],
+      "display_name": "Centered fuel-correction gain vs engine speed",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_3494",
@@ -8704,7 +8796,11 @@
         "0x8C99",
         "0x8F82",
         "0x8FAA"
-      ]
+      ],
+      "display_name": "Relative-throttle qualification threshold vs speed",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_353a",
@@ -8725,7 +8821,11 @@
           118.75
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Transient fuel multiplier vs pressure estimate",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_351d",
@@ -8831,7 +8931,11 @@
           165.625
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Transient fuel multiplier vs intake temperature",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_34d0",
@@ -8847,7 +8951,11 @@
         "0x9274",
         "0x9495",
         "0x94BA"
-      ]
+      ],
+      "display_name": "Transient fuel pulse response \u2014 family 1, selection A",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
     },
     {
       "id": "curve_34da",
@@ -8863,7 +8971,11 @@
         "0x9274",
         "0x9495",
         "0x94BA"
-      ]
+      ],
+      "display_name": "Transient fuel pulse response \u2014 family 1, selection B",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
     },
     {
       "id": "curve_34e4",
@@ -8879,7 +8991,11 @@
         "0x9274",
         "0x9495",
         "0x94BA"
-      ]
+      ],
+      "display_name": "Transient fuel pulse response \u2014 family 1, selection C",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
     },
     {
       "id": "curve_34ee",
@@ -8901,7 +9017,11 @@
           89.84375
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Transient fuel multiplier vs throttle",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_355d",
@@ -8917,7 +9037,11 @@
         "0x9274",
         "0x9495",
         "0x94BA"
-      ]
+      ],
+      "display_name": "Transient fuel pulse response \u2014 family 2, selection A",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
     },
     {
       "id": "curve_3567",
@@ -8933,7 +9057,11 @@
         "0x9274",
         "0x9495",
         "0x94BA"
-      ]
+      ],
+      "display_name": "Transient fuel pulse response \u2014 family 2, selection B",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
     },
     {
       "id": "curve_3571",
@@ -8949,7 +9077,11 @@
         "0x9274",
         "0x9495",
         "0x94BA"
-      ]
+      ],
+      "display_name": "Transient fuel pulse response \u2014 family 2, selection C",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Family 1 feeds RAM 0x0A0C; family 2 feeds 0x0D04. A/B/C distinguish the three choices within each family, not cylinders or rider modes. Pulse duration depends on their joint product with other curves."
     },
     {
       "id": "curve_31ec",
@@ -9023,7 +9155,11 @@
       "requires": [
         "nominal_xt_timer"
       ],
-      "stock_activation": "Normal state path is disabled: ROM 0x3130 is 0xFF; 0x8DF9 requires exactly 0x80. The disabled path resets CD4 to 128. Lookup presence alone does not establish an active effect."
+      "stock_activation": "Normal state path is disabled: ROM 0x3130 is 0xFF; 0x8DF9 requires exactly 0x80. The disabled path resets CD4 to 128. Lookup presence alone does not establish an active effect.",
+      "display_name": "Fuel normalization recovery hold \u2014 selection 1",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "This normal correction state is disabled in the supplied image by ROM 0x3130 = 0xFF. Selection numbers do not imply named riding modes."
     },
     {
       "id": "curve_3200",
@@ -9097,7 +9233,11 @@
       "requires": [
         "nominal_xt_timer"
       ],
-      "stock_activation": "Normal state path is disabled: ROM 0x3130 is 0xFF; 0x8DF9 requires exactly 0x80. The disabled path resets CD4 to 128. Lookup presence alone does not establish an active effect."
+      "stock_activation": "Normal state path is disabled: ROM 0x3130 is 0xFF; 0x8DF9 requires exactly 0x80. The disabled path resets CD4 to 128. Lookup presence alone does not establish an active effect.",
+      "display_name": "Fuel normalization recovery hold \u2014 selection 2",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "This normal correction state is disabled in the supplied image by ROM 0x3130 = 0xFF. Selection numbers do not imply named riding modes."
     },
     {
       "id": "curve_36c4",
@@ -9175,7 +9315,11 @@
       ],
       "requires": [
         "nominal_xt_timer"
-      ]
+      ],
+      "display_name": "Feedback eligibility delay vs coolant",
+      "category": "Feedback",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_36a4",
@@ -9228,7 +9372,11 @@
           1.5625
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Adaptive fuel correction \u2014 decrement step",
+      "category": "Feedback",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_36b2",
@@ -9281,7 +9429,11 @@
           1.5625
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Adaptive fuel correction \u2014 increment step",
+      "category": "Feedback",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_3220",
@@ -9388,7 +9540,11 @@
         ]
       ],
       "requires": [],
-      "decoded_context": "Converted percentage applies to the normal-running consumer at 0x828C/0x82A6. Startup consumer at 0x7BF1 has different stage scaling."
+      "decoded_context": "Converted percentage applies to the normal-running consumer at 0x828C/0x82A6. Startup consumer at 0x7BF1 has different stage scaling.",
+      "display_name": "Fuel multiplier vs intake temperature",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_3345",
@@ -9464,7 +9620,11 @@
           9.375
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Positive transient fuel gain vs coolant",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_3357",
@@ -9540,7 +9700,11 @@
           16.40625
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Negative transient fuel gain vs coolant",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_1880",
@@ -9632,7 +9796,11 @@
           0
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Pressure-processing offset vs engine speed",
+      "category": "Sensor processing",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_323c",
@@ -9671,7 +9839,11 @@
       "consumer_evidence": [
         "0xB3CF",
         "0x82D6"
-      ]
+      ],
+      "display_name": "Load-path fuel multiplier vs pressure estimate",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_32e0",
@@ -9692,7 +9864,11 @@
           118.75
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Throttle-path fuel multiplier vs pressure estimate",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_4a33",
@@ -9774,7 +9950,11 @@
         "0x8C99",
         "0x8F82",
         "0x96BA"
-      ]
+      ],
+      "display_name": "Alternate ignition mode \u2014 throttle threshold vs coolant",
+      "category": "Ignition",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_3315",
@@ -9850,7 +10030,11 @@
           1.5625
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Coolant enrichment \u2014 load-based fuel path",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_3327",
@@ -9926,7 +10110,11 @@
           1.5625
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Coolant enrichment \u2014 throttle-based fuel path",
+      "category": "Fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_34fd",
@@ -10018,7 +10206,11 @@
         "0x9274",
         "0x9495",
         "0x94BA"
-      ]
+      ],
+      "display_name": "Transient fuel pulse contribution vs coolant",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "curve_4bac",
@@ -10059,7 +10251,11 @@
       "consumer_evidence": [
         "0x89A9",
         "0x8A2F"
-      ]
+      ],
+      "display_name": "Spark timing bound vs pressure estimate",
+      "category": "Ignition",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     },
     {
       "id": "delta_0985_gain_1",
@@ -10130,7 +10326,11 @@
           0.0
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Throttle-delta fuel gain \u2014 selection 1",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
     },
     {
       "id": "delta_0985_gain_2",
@@ -10201,7 +10401,11 @@
           0.0
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Throttle-delta fuel gain \u2014 selection 2",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
     },
     {
       "id": "delta_0985_gain_3",
@@ -10272,7 +10476,11 @@
           0.0
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Throttle-delta fuel gain \u2014 selection 3",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
     },
     {
       "id": "delta_0985_gain_4",
@@ -10343,7 +10551,11 @@
           4.98046875
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Throttle-delta fuel gain \u2014 selection 4",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
     },
     {
       "id": "delta_0985_gain_5",
@@ -10414,7 +10626,11 @@
           4.98046875
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Throttle-delta fuel gain \u2014 selection 5",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
     },
     {
       "id": "delta_0985_gain_6",
@@ -10485,7 +10701,11 @@
           4.98046875
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Throttle-delta fuel gain \u2014 selection 6",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
     },
     {
       "id": "delta_0989_gain_1",
@@ -10556,7 +10776,11 @@
           0.0
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Load-delta fuel gain \u2014 selection 1",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
     },
     {
       "id": "delta_0989_gain_2",
@@ -10627,7 +10851,11 @@
           0.0
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Load-delta fuel gain \u2014 selection 2",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
     },
     {
       "id": "delta_0989_gain_3",
@@ -10698,7 +10926,11 @@
           0.0
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Load-delta fuel gain \u2014 selection 3",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
     },
     {
       "id": "delta_0989_gain_4",
@@ -10769,7 +11001,11 @@
           1.46484375
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Load-delta fuel gain \u2014 selection 4",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
     },
     {
       "id": "delta_0989_gain_5",
@@ -10840,7 +11076,11 @@
           1.46484375
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Load-delta fuel gain \u2014 selection 5",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
     },
     {
       "id": "delta_0989_gain_6",
@@ -10911,7 +11151,11 @@
           1.46484375
         ]
       ],
-      "requires": []
+      "requires": [],
+      "display_name": "Load-delta fuel gain \u2014 selection 6",
+      "category": "Transient fuel",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Throttle/load identify internal coordinate deltas, not calibrated physical rates. Selection numbers preserve the six documented sign/variant/threshold branches; see Selection below."
     },
     {
       "id": "step_grid_4c44",
@@ -11194,7 +11438,11 @@
         ]
       ],
       "requires": [],
-      "decoded_context": "Eligibility: zero inhibits the documented path; nonzero permits its next tests. Not a continuous physical quantity."
+      "decoded_context": "Eligibility: zero inhibits the documented path; nonzero permits its next tests. Not a continuous physical quantity.",
+      "display_name": "Air-induction enable vs speed and throttle",
+      "category": "Air induction",
+      "naming_basis": "analysis/semantics/EXTENDED_MAPS.md",
+      "naming_note": "Logical eligibility gate: zero inhibits the path; nonzero permits further tests. It is not a physical percentage or a complete enable decision. Both stock adaptive-feedback grids contain only zero."
     },
     {
       "id": "step_grid_4d48",
@@ -11477,7 +11725,11 @@
         ]
       ],
       "requires": [],
-      "decoded_context": "Eligibility: zero inhibits the documented path; nonzero permits its next tests. Not a continuous physical quantity."
+      "decoded_context": "Eligibility: zero inhibits the documented path; nonzero permits its next tests. Not a continuous physical quantity.",
+      "display_name": "Air-induction enable vs speed and load",
+      "category": "Air induction",
+      "naming_basis": "analysis/semantics/EXTENDED_MAPS.md",
+      "naming_note": "Logical eligibility gate: zero inhibits the path; nonzero permits further tests. It is not a physical percentage or a complete enable decision. Both stock adaptive-feedback grids contain only zero."
     },
     {
       "id": "step_grid_35b0",
@@ -11631,7 +11883,11 @@
       ],
       "requires": [],
       "decoded_context": "Eligibility: zero inhibits the documented path; nonzero permits its next tests. Not a continuous physical quantity.",
-      "stock_activation": "Every stock cell is zero, rejecting this normal feedback-eligibility gate."
+      "stock_activation": "Every stock cell is zero, rejecting this normal feedback-eligibility gate.",
+      "display_name": "Adaptive feedback enable vs speed and throttle",
+      "category": "Feedback",
+      "naming_basis": "analysis/semantics/EXTENDED_MAPS.md",
+      "naming_note": "Logical eligibility gate: zero inhibits the path; nonzero permits further tests. It is not a physical percentage or a complete enable decision. Both stock adaptive-feedback grids contain only zero."
     },
     {
       "id": "step_grid_363c",
@@ -11785,7 +12041,11 @@
       ],
       "requires": [],
       "decoded_context": "Eligibility: zero inhibits the documented path; nonzero permits its next tests. Not a continuous physical quantity.",
-      "stock_activation": "Every stock cell is zero, rejecting this normal feedback-eligibility gate."
+      "stock_activation": "Every stock cell is zero, rejecting this normal feedback-eligibility gate.",
+      "display_name": "Adaptive feedback enable vs speed and load",
+      "category": "Feedback",
+      "naming_basis": "analysis/semantics/EXTENDED_MAPS.md",
+      "naming_note": "Logical eligibility gate: zero inhibits the path; nonzero permits further tests. It is not a physical percentage or a complete enable decision. Both stock adaptive-feedback grids contain only zero."
     },
     {
       "id": "timing_speed_4f64",
@@ -11870,7 +12130,11 @@
       ],
       "requires": [
         "nominal_xt_timer"
-      ]
+      ],
+      "display_name": "Spark time correction \u2014 other variants",
+      "category": "Ignition",
+      "naming_basis": "analysis/semantics/SPARK_SCHEDULER.md",
+      "naming_note": "Role follows the recovered time/charge scheduler. Timer units depend on the nominal clock profile. A dwell contribution is not the final complete dwell duration, and a time correction is not absolute BTDC."
     },
     {
       "id": "timing_speed_4f81",
@@ -11955,7 +12219,11 @@
       ],
       "requires": [
         "nominal_xt_timer"
-      ]
+      ],
+      "display_name": "Spark time correction \u2014 XT variant 9",
+      "category": "Ignition",
+      "naming_basis": "analysis/semantics/SPARK_SCHEDULER.md",
+      "naming_note": "Role follows the recovered time/charge scheduler. Timer units depend on the nominal clock profile. A dwell contribution is not the final complete dwell duration, and a time correction is not absolute BTDC."
     },
     {
       "id": "dwell_supply_speed",
@@ -12160,7 +12428,11 @@
       ],
       "requires": [
         "nominal_xt_timer"
-      ]
+      ],
+      "display_name": "Ignition dwell contribution vs speed and supply",
+      "category": "Ignition",
+      "naming_basis": "analysis/semantics/SPARK_SCHEDULER.md",
+      "naming_note": "Role follows the recovered time/charge scheduler. Timer units depend on the nominal clock profile. A dwell contribution is not the final complete dwell duration, and a time correction is not absolute BTDC."
     },
     {
       "id": "coolant_sensor_conversion",
@@ -12204,7 +12476,11 @@
       ],
       "requires": [
         "yamaha_temperature_candidate"
-      ]
+      ],
+      "display_name": "Coolant sensor conversion",
+      "category": "Sensor processing",
+      "naming_basis": "analysis/semantics/TEMPERATURE_PROFILE.md",
+      "naming_note": "Sensor identity is corroborated. The internal-code-to-Celsius profile remains conditional on the sensor circuit and ECU identification."
     },
     {
       "id": "intake_temperature_conversion",
@@ -12252,7 +12528,11 @@
       ],
       "requires": [
         "yamaha_temperature_candidate"
-      ]
+      ],
+      "display_name": "Intake air temperature sensor conversion",
+      "category": "Sensor processing",
+      "naming_basis": "analysis/semantics/TEMPERATURE_PROFILE.md",
+      "naming_note": "Sensor identity is corroborated. The internal-code-to-Celsius profile remains conditional on the sensor circuit and ECU identification."
     },
     {
       "id": "curve_1854",
@@ -12291,7 +12571,11 @@
       "consumer_evidence": [
         "0x9609",
         "0x965E"
-      ]
+      ],
+      "display_name": "Pressure-to-load processing gain",
+      "category": "Sensor processing",
+      "naming_basis": "analysis/semantics/MAP_CONSUMERS.md",
+      "naming_note": "Descriptive alias based on recovered dataflow; it does not establish physical axis units or tuning readiness."
     }
   ],
   "unresolved_sensor_hypotheses": {

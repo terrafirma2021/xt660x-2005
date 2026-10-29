@@ -1,4 +1,12 @@
-# main_u8_B
+# Base ignition timing — selection B
+
+<!-- map-name -->
+Stable ID: `main_u8_B`. Category: Ignition.
+
+A/B/C distinguish recovered selection branches, not octane or rider modes. A requires variant 9 and 0x0896 bit 4 clear; B/C use the remaining selector threshold. Absolute BTDC remains unresolved.
+
+Naming evidence: [recovered derivation](../../analysis/semantics/SPARK.md).
+<!-- /map-name -->
 
 Base spark timing surface B; see semantics/SPARK.md
 
