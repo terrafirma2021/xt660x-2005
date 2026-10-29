@@ -36,6 +36,44 @@
  }
  
  macro subtraction_flags1(register, operand, result) {	
+@@ -981,17 +992,17 @@
+ {
+ 	op1:1 = indexed1_5;
+ 
+-	result:1 = A + op1 + $(C);
+-	addition_flags1(A, op1, result);
+-	A = result;
+-}
+-
+-:ADCB iopr8i                 is Prefix18=0 & (op8=0xC9); iopr8i
+-{
+-	op1:1 = iopr8i;
+-
+ 	local result:1;
+ 	additionWithCarry(A, op1, result);
++	A = result;
++}
++
++:ADCB iopr8i                 is Prefix18=0 & (op8=0xC9); iopr8i
++{
++	op1:1 = iopr8i;
++
++	local result:1;
++	additionWithCarry(B, op1, result);
+ 	
+ 	B = result;
+ }
+@@ -1000,8 +1011,8 @@
+ {
+ 	op1:1 = opr8a_8;
+ 
+-	result:1 = B + op1 + $(C);
+-	addition_flags1(B, op1, result);
++	local result:1;
++	additionWithCarry(B, op1, result);
+ 	B = result;
+ }
+ 
 @@ -1969,19 +1980,19 @@
  :BRSET opr8a_8, msk8, rel8    is Prefix18=0 & op8=0x4E; opr8a_8; msk8; rel8
  {

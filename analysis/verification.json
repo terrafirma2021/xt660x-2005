@@ -2,9 +2,9 @@
   "original_sha256_verified": true,
   "instruction_count": 15942,
   "instruction_bytes": 42849,
-  "map_extracts_verified": 68,
+  "map_extracts_verified": 71,
   "axis_extracts_verified": 32,
-  "decoded_calibration_cell_bytes": 12313,
+  "decoded_calibration_cell_bytes": 12325,
   "functions_decompiled": 225,
   "functions_failed": 0,
   "unavailable_targets": [

@@ -95,6 +95,9 @@ GRIDS=[
  (0x3165,13,10,1,0x314e,0x313a,'correction_surface_B','physical role unverified'),
  (0x327d,8,12,1,0x3270,0x3258,'correction_surface_C','physical role unverified'),
  (0x4a5d,10,15,1,0x4a56,0x4a46,'correction_surface_D','physical role unverified'),
+ (0x311b,2,2,1,0x311a,0x3116,'fuel_normalization_load','Fuel normalization input selected by ROM 0x3114'),
+ (0x3127,2,2,1,0x3126,0x3122,'fuel_normalization_throttle','Fuel normalization input selected by ROM 0x3114'),
+ (0x3219,2,2,1,0x321a,0x3216,'fuel_normalization_gain','Dimensionless gain in common fuel normalization denominator'),
 ]
 maps=[]
 for base,nr,nc,width,ra,ca,name,note in GRIDS:

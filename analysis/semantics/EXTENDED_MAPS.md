@@ -1,6 +1,6 @@
 # Extended map recovery
 
-The catalogue now contains **68 maps and curves**: 16 grids, 36 uniform-axis curves, 14 precomputed-axis curves and two sensor-conversion curves. This pass adds 22 layouts to the earlier 46. All have individual [breakdowns](../MAP_DETAILS.md), exact stock values and byte extracts. Stored axes and threshold lists total 32; computed axes are embedded in each map record.
+The extended recovery pass brought the catalogue to **68 maps and curves**, adding 22 layouts to the earlier 46. The subsequent [unit-decoding pass](UNIT_DECODING.md) adds three 2×2 normalization grids, bringing the current total to **71**: 19 grids, 36 uniform-axis curves, 14 precomputed-axis curves and two sensor-conversion curves. All have individual [breakdowns](../MAP_DETAILS.md), exact stock values and byte extracts. Stored axes and threshold lists total 32; computed axes are embedded in each map record.
 
 This is structural and raw-dataflow recovery. Complete engineering-unit definitions and identification of every remaining calibration are still open work.
 
@@ -41,7 +41,7 @@ The two 29-point speed curves at `0x4F64` and `0x4F81` use helper `0xC28D` with 
 
 The 15 × 9 grid at `0x4B12` takes speed `0x0900` and supply code `0x08D9`. Low supply inputs below 26 substitute 179 before indexing. Column knots are `83 + 16k`; row knots are `4096 + 4096k`. Interpolation rounds the two column results to bytes before interpolating and rounding along rows. Treating it as a single floating-point bilinear expression can differ by one cell unit.
 
-Its rounded result is multiplied by 32 into `0x0A98`; a second contribution is added and the request is limited into `0x0A96`. A flag can override the table with ROM `0x4BAB`. The timing/dwell interpretation is supported by its output path, but electrical dwell duration and timer units remain unresolved.
+Its rounded result is multiplied by 32 into `0x0A98`; a second contribution is added and the request is limited into `0x0A96`. A flag can override the table with ROM `0x4BAB`. The [unit derivation](UNIT_DECODING.md) establishes the 32-tick cell contribution and a service-correlated nominal 0.064 ms per cell. Actual electrical timing still needs hardware confirmation.
 
 ## A curve copied into RAM
 

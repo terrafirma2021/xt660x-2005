@@ -1,0 +1,4 @@
+fuel_normalization_throttle | 0x312A | 2 rows x 2 columns | raw values
+code-confirmed layout; unverified physical meaning
+166 166
+166 166

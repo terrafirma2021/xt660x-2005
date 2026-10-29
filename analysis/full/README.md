@@ -46,6 +46,8 @@ From the repository root on Linux/WSL, with Clang or GCC:
 clang -std=c11 -O0 -fPIC -shared analysis/full/c/page_*.c analysis/full/c/dispatch.c -o /tmp/libxt660_full.so
 python3 scripts/test_full_lift.py /tmp/libxt660_full.so
 python3 scripts/test_control_semantics.py /tmp/libxt660_full.so
+python3 scripts/test_extended_maps.py /tmp/libxt660_full.so
+python3 scripts/test_units_variants.py /tmp/libxt660_full.so
 ```
 
 The verification uses an independent Python p-code evaluator for **31,884 instruction states**, plus independent CPU12 fixtures, including 250,880 direct/extended bit-branch cases, and lookup results at original table knots. Indexed word loads, arithmetic carry/borrow, bit-branch predicates, call-stack writes, curve values and major-axis searches are checked. The separate [control tests](../semantics/control_validation.json) exercise 212,090 temperature, fan, speed/cut and map-selection cases. [Validation results](validation.json) distinguish translation consistency from hardware equivalence.

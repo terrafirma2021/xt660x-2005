@@ -34,6 +34,16 @@ assert extended['result']=='passed'
 assert extended['firmware_sha256']==catalog['firmware_sha256']
 assert extended['test_script_sha256']==digest(ROOT/'scripts/test_extended_maps.py')
 assert extended['compiled_library_sha256']==full['compiled_library_sha256']
+units=json.loads((OUT/'units_variant_validation.json').read_text())
+assert units['result']=='passed' and units['firmware_sha256']==catalog['firmware_sha256']
+assert units['test_script_sha256']==digest(ROOT/'scripts/test_units_variants.py')
+assert units['conversion_script_sha256']==digest(ROOT/'scripts/decode_units.py')
+assert units['compiled_library_sha256']==full['compiled_library_sha256']
+physical=json.loads((OUT/'physical_units.json').read_text())
+maps=json.loads((ROOT/'analysis/maps.json').read_text())
+assert physical['firmware_sha256']==catalog['firmware_sha256']
+assert {m['id'] for m in physical['maps']}=={m['id'] for m in maps}
+assert all(not m['ready_for_tuning_export'] for m in physical['maps'])
 fixed_path=ROOT/'firmware/XT660X 2005 startup-checksum-fixed.bin'
 fixed=fixed_path.read_bytes()
 fix=json.loads((OUT/'checksum_fix.json').read_text())
@@ -52,4 +62,4 @@ for doc in OUT.glob('*.md'):
         if '://' in target or target.startswith('#'):continue
         target=target.split('#')[0].replace('%20',' ')
         assert (doc.parent/target).exists(),(doc.name,target)
-print(f"Verified {len(catalog['calibrations'])} focused calibrations, corrected image, instruction bytes, both control-test reports, archive hash and semantic document links.")
+print(f"Verified {len(catalog['calibrations'])} focused calibrations, {len(maps)} unit records, corrected image, instruction bytes, all control/unit-test reports, archive hash and semantic document links.")

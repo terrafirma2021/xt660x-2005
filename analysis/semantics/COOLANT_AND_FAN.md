@@ -1,5 +1,7 @@
 # Coolant conversion and fan control
 
+The [unit-decoding pass](UNIT_DECODING.md) records the candidate Celsius scale and its conflict with the manufacturer coolant fallback specification; it is not silently assigned to the fan thresholds.
+
 **Physical role: strongly corroborated by diagnostics 06 and 51. Raw algorithm: traced and behavior-tested. Celsius conversion and connector pins: unresolved.** See [byte-backed evidence](sensor_fan_evidence.txt).
 
 ```mermaid

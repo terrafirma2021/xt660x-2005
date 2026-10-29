@@ -1,7 +1,7 @@
 {
   "description": "Bytes outside catalogued cells, actual uniform headers, and used explicit axes. Biased grid pointers do not claim header coverage. Includes scalars, flags, unused threshold words and other data; not all are maps.",
-  "covered_bytes": 13440,
-  "uncatalogued_bytes": 896,
+  "covered_bytes": 13452,
+  "uncatalogued_bytes": 884,
   "ranges": [
     {
       "start": "0x1800",
@@ -52,16 +52,10 @@
       "raw_hex": "0000"
     },
     {
-      "start": "0x311E",
-      "end_exclusive": "0x3122",
-      "bytes": 4,
-      "raw_hex": "a6a6a6a6"
-    },
-    {
-      "start": "0x312A",
+      "start": "0x312E",
       "end_exclusive": "0x313A",
-      "bytes": 16,
-      "raw_hex": "a6a6a6a67005ff000001000105000002"
+      "bytes": 12,
+      "raw_hex": "7005ff000001000105000002"
     },
     {
       "start": "0x31EA",
@@ -80,12 +74,6 @@
       "end_exclusive": "0x3216",
       "bytes": 3,
       "raw_hex": "200500"
-    },
-    {
-      "start": "0x321C",
-      "end_exclusive": "0x3220",
-      "bytes": 4,
-      "raw_hex": "80808080"
     },
     {
       "start": "0x3257",

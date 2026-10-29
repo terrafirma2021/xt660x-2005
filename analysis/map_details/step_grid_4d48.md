@@ -12,7 +12,7 @@ Selection: See caller evidence; full mode/override conditions not yet exhaustive
 
 Interpolation: none; strict > threshold selects upper bin; equality stays in lower bin.
 
-**Engineering conversion is unresolved; tuning export is disabled.**
+**Tuning export is disabled.** Conditional conversions and unresolved physical references are recorded per map in the [engineering-unit companion](../semantics/physical_units.json); see the [derivation](../semantics/UNIT_DECODING.md).
 
 ## Row Axis
 

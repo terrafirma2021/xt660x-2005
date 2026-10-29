@@ -19,8 +19,6 @@ if($LASTEXITCODE -ne 0){throw 'Ghidra analysis failed'}
 if($LASTEXITCODE -ne 0){throw 'Ghidra database export failed'}
 & $Python (Join-Path $PSScriptRoot 'catalog_maps.py')
 if($LASTEXITCODE -ne 0){throw 'Map extraction failed'}
-& $Python (Join-Path $PSScriptRoot 'verify_analysis.py')
-if($LASTEXITCODE -ne 0){throw 'Verification failed'}
 & $Python (Join-Path $PSScriptRoot 'lift_full.py')
 if($LASTEXITCODE -ne 0){throw 'Complete C generation failed'}
 & $Python (Join-Path $PSScriptRoot 'audit_full.py')
@@ -34,3 +32,7 @@ if($LASTEXITCODE -ne 0){throw 'Semantic catalogue failed'}
 if($LASTEXITCODE -ne 0){throw 'Calibration access inventory failed'}
 & $Python (Join-Path $PSScriptRoot 'fix_startup_checksum.py')
 if($LASTEXITCODE -ne 0){throw 'Checksum correction failed'}
+& $Python (Join-Path $PSScriptRoot 'decode_units.py')
+if($LASTEXITCODE -ne 0){throw 'Unit catalogue failed'}
+& $Python (Join-Path $PSScriptRoot 'verify_analysis.py')
+if($LASTEXITCODE -ne 0){throw 'Verification failed'}

@@ -4,9 +4,9 @@
   "total_bytes": 14336,
   "description": "Byte accounting, not proof that every map or physical meaning is decoded. No-static-access bytes can still be used indirectly.",
   "totals": {
-    "no_classified_layout_or_static_access": 307,
+    "no_classified_layout_or_static_access": 295,
     "static_access_role_unresolved": 552,
-    "catalogued_map_header_cells_or_axis": 13440,
+    "catalogued_map_header_cells_or_axis": 13452,
     "focused_semantic_parameter": 37
   },
   "spans": [
@@ -413,34 +413,18 @@
     },
     {
       "start": "0x3116",
-      "end_exclusive": "0x311E",
-      "bytes": 8,
+      "end_exclusive": "0x312E",
+      "bytes": 24,
       "status": "catalogued_map_header_cells_or_axis",
-      "raw_hex": "2700ba800c00ff00",
+      "raw_hex": "2700ba800c00ff00a6a6a6a6148066800c00ff00a6a6a6a6",
       "access_addresses": []
     },
     {
-      "start": "0x311E",
-      "end_exclusive": "0x3122",
-      "bytes": 4,
-      "status": "no_classified_layout_or_static_access",
-      "raw_hex": "a6a6a6a6",
-      "access_addresses": []
-    },
-    {
-      "start": "0x3122",
-      "end_exclusive": "0x312A",
-      "bytes": 8,
-      "status": "catalogued_map_header_cells_or_axis",
-      "raw_hex": "148066800c00ff00",
-      "access_addresses": []
-    },
-    {
-      "start": "0x312A",
+      "start": "0x312E",
       "end_exclusive": "0x312F",
-      "bytes": 5,
+      "bytes": 1,
       "status": "no_classified_layout_or_static_access",
-      "raw_hex": "a6a6a6a670",
+      "raw_hex": "70",
       "access_addresses": []
     },
     {
@@ -563,26 +547,10 @@
     },
     {
       "start": "0x3216",
-      "end_exclusive": "0x321C",
-      "bytes": 6,
-      "status": "catalogued_map_header_cells_or_axis",
-      "raw_hex": "2700ba8046f6",
-      "access_addresses": []
-    },
-    {
-      "start": "0x321C",
-      "end_exclusive": "0x3220",
-      "bytes": 4,
-      "status": "no_classified_layout_or_static_access",
-      "raw_hex": "80808080",
-      "access_addresses": []
-    },
-    {
-      "start": "0x3220",
       "end_exclusive": "0x3257",
-      "bytes": 55,
+      "bytes": 65,
       "status": "catalogued_map_header_cells_or_axis",
-      "raw_hex": "10c0209e99948f8a8785827f7d7a787573706e6b686663615e5c5957720050000040505255585a5d606265676a6d6f7275777a7d7f8284",
+      "raw_hex": "2700ba8046f68080808010c0209e99948f8a8785827f7d7a787573706e6b686663615e5c5957720050000040505255585a5d606265676a6d6f7275777a7d7f8284",
       "access_addresses": []
     },
     {

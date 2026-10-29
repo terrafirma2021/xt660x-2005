@@ -1,5 +1,7 @@
 # Spark maps and timer scheduling
 
+The [unit-decoding pass](UNIT_DECODING.md) now gives the exact code-to-timer equation, conditional relative crank-angle scale and nominal dwell-duration scale. Absolute BTDC phase remains unresolved.
+
 **Physical output is identified through diagnostic 30. Main map lookup and parts of the scheduling arithmetic are traced. Absolute degrees and all correction meanings are not yet resolved.** See [instruction excerpts](spark_evidence.txt).
 
 ## Output identity

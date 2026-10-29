@@ -13,7 +13,9 @@ The analysis applies only to the exact [supplied image](../../firmware/XT660X%20
 | Engine speed / cuts | [Speed calculation and output suppression](RPM_AND_CUTS.md) | Reciprocal calculation, three period-limit pairs, separate road-speed cut flags, conditional injector limits | Confirmed timer timebase / crank geometry, complete interlock meanings |
 | Spark | [Maps through the timing scheduler](SPARK.md) | Three selected byte maps, rounding and downstream correction, timer-3 identity | Absolute crank-angle reference, degrees conversion, all correction meanings |
 | Fuel | [Quantity tables and injector scheduling](FUEL.md) | Main table selection, speed/other input variables, primary timer-6 output, secondary variant gating | Full cell-to-pulse formula, physical units and mode meanings |
-| Extended maps | [New families and dataflow](EXTENDED_MAPS.md) | 68 layouts, per-map breakdowns, computed axes, step grids, RAM-copied curve | Remaining scalars/indirect data and complete engineering conversions |
+| Units | [Engineering derivation](UNIT_DECODING.md) | Conditional timer/RPM/relative-angle conversions, contribution gains and exact normalization | Absolute TDC reference and confirmed sensor scales |
+| Variants | [Second injector and configuration](VARIANTS.md) | Variant 9 skips the second normal injector entry; separate diagnostic path remains | Exact donor models and physical second-channel hardware |
+| Extended maps | [New families and dataflow](EXTENDED_MAPS.md) | 71 layouts, per-map breakdowns, computed axes, step grids, RAM-copied curve | Remaining scalars/indirect data and complete engineering conversions |
 | Checksum | [Corrected image and validation](CHECKSUM.md) | Startup algorithm, range and passing corrected file | Factory adjustment field and actual boot-region content |
 | Serial link | [SCI1 and K-line identification](K_LINE.md) | Byte requests, five-byte replies, register/divisor setup | Physical wire/pins, actual clock and waveform timing |
 | Dashboard diagnostics | [Commands, menu and fault codes](DIAGNOSTICS.md) | Startup bytes, button states, 19 selectable items, fault bitmap | Fully validated display units and live captures |
@@ -29,6 +31,8 @@ These have different levels of completion. Coolant/fan decisions and the princip
 - [catalog.json](catalog.json): 28 calibration records with exact storage, original bytes, role, references, and explicit missing conversion fields; eight ADC channels and six logical outputs.
 - [control_validation.json](control_validation.json): 212,090 isolated control test cases against the compiled instruction translation.
 - [extended_map_validation.json](extended_map_validation.json): 150,614 additional cases, including the delivered checksum correction.
+- [physical_units.json](physical_units.json): all 71 maps accounted for, with named assumptions on converted values.
+- [units_variant_validation.json](units_variant_validation.json): independent unit arithmetic, scheduler and variant fixtures.
 - [Every map's breakdown](../MAP_DETAILS.md) and [remaining calibration inventory](../REMAINING_CALIBRATIONS.md).
 - [coolant_conversion_samples.json](coolant_conversion_samples.json): all 1,024 possible ten-bit inputs and their internal/diagnostic outputs.
 - Byte-backed instruction excerpts: [sensor/fan](sensor_fan_evidence.txt), [speed/cuts](rpm_cuts_evidence.txt), [spark](spark_evidence.txt), [fuel](fuel_maps_evidence.txt), [road speed](road_speed_evidence.txt).

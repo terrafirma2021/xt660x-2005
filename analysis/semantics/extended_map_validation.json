@@ -31,6 +31,6 @@
   "corrected_image_sha256": "972ac93e76cb632470092d88c2a57e910daae69c02d6cdef52f1cad72f6909e7",
   "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
   "test_script_sha256": "ecc86c13b58a8d70a376b003ef178d9db4e1efce2ce4ee95cea563ca203d0834",
-  "compiled_library_sha256": "31d9ada81daf59bc96e60c30dd6863a4225e2ff59e8221d1e01ed995794fb051",
+  "compiled_library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
   "limitations": "Isolated execution of the compiled instruction translation; no peripheral model or vehicle validation. Synthetic fixtures modify only temporary process memory."
 }

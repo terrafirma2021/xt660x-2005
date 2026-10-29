@@ -1,10 +1,10 @@
 {
   "instructions_tested": 15942,
   "instruction_states": 31884,
-  "checks_including_helper_knots": 285989,
-  "raw_ir_sha256": "8ffa5fc8f793e48b8682be547412361a211f5bc2d6370fd76dfadbec0ca72b3f",
-  "compiled_library_sha256": "31d9ada81daf59bc96e60c30dd6863a4225e2ff59e8221d1e01ed995794fb051",
-  "c_sources_sha256": "a445187c868be831f091cb1717a507bc9f07c3e573e1d7fe5ccd941c06092d7d",
+  "checks_including_helper_knots": 344357,
+  "raw_ir_sha256": "6ca52efd1a1601bd2f8ff117a05665e10034866343f478c161b8f52366f18bbf",
+  "compiled_library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
+  "c_sources_sha256": "243276e236dcd7ab7e7f2b63d6d887f780894ae3e3c799b340db7417382d362f",
   "differential_reference": "Independent Python evaluator of exported raw p-code; confirms C translation consistency, not silicon equivalence.",
   "independent_cpu12_fixtures": [
     "SUBD indexed reads a word, not its address",
@@ -14,6 +14,7 @@
     "ADC includes incoming carry in signed overflow",
     "SBC includes incoming borrow in outgoing carry",
     "ADC #0 and SBC #0/#255: exhaustive A, incoming carry and stale V combinations",
+    "Every ADCB immediate instance: exhaustive B/carry/stale V with a distinct A accumulator",
     "BRSET/BRCLR direct and extended: 250880 exhaustive byte cases; targets and unchanged CCR checked",
     "JSR pushes the correct return address",
     "Uniform byte-axis helper matches all 15 original table knots",

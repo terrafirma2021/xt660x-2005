@@ -1,0 +1,25 @@
+{
+  "result": "passed",
+  "cases": 149180,
+  "checks": {
+    "second_normal_injector_entry_all_256_variant_values": 256,
+    "primary_normal_injector_entry_all_256_variant_values": 256,
+    "both_diagnostic_injector_handlers_including_variant_9": 6,
+    "2500_tick_scheduler_and_four_tick_task_divider": 1200,
+    "diagnostic_five_repeats_and_fan_100_task_on_windows": 2,
+    "pressure_payload_all_u16_inputs": 65536,
+    "supply_payload_all_u8_inputs": 256,
+    "normalization_all_65536_code_gain_pairs": 65536,
+    "normalization_varied_reference_synthetic_ram": 1000,
+    "three_new_grids_asymmetric_knots": 12,
+    "normalization_selector_is_exact_128_not_bit_test": 256,
+    "saturated_q8_scaling_random_pairs": 10000,
+    "spark_code_period_scaling_and_offset_boundaries": 4608,
+    "dwell_byte_to_timer_ticks_all_values": 256
+  },
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "test_script_sha256": "b3ab0981d3be47807bc87f56de777e0a43e74a28170b5993e73d4c847f0494a8",
+  "conversion_script_sha256": "19d6e876b34f38b4e7b1e0734a2aa638b9ec4c60b193d2dda2ae164c44cc1420",
+  "compiled_library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
+  "limitations": "Isolated instruction execution with RAM-backed peripherals. Physical units, oscillator rate, sensor circuitry, crank/TDC geometry and hardware outputs are not validated by these tests."
+}

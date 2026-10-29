@@ -12,7 +12,7 @@ Selection: See caller evidence; full mode/override conditions not yet exhaustive
 
 Interpolation: linear Q8, high byte (floor); last intake-temperature knot is an interpolation endpoint beyond ADC maximum 1023.
 
-**Engineering conversion is unresolved; tuning export is disabled.**
+**Tuning export is disabled.** Conditional conversions and unresolved physical references are recorded per map in the [engineering-unit companion](../semantics/physical_units.json); see the [derivation](../semantics/UNIT_DECODING.md).
 
 ## Column Axis
 

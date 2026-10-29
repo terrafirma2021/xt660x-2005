@@ -18,6 +18,9 @@ All cells and axes use raw ECU values. Input/output traces and evidence for ever
 | correction_surface_B | 0x3168 | 13 × 10 | 8-bit BE | 0x314E / 0x313A |
 | correction_surface_C | 0x3280 | 8 × 12 | 8-bit BE | 0x3270 / 0x3258 |
 | correction_surface_D | 0x4A60 | 10 × 15 | 8-bit BE | 0x4A56 / 0x4A46 |
+| fuel_normalization_load | 0x311E | 2 × 2 | 8-bit BE | 0x311A / 0x3116 |
+| fuel_normalization_throttle | 0x312A | 2 × 2 | 8-bit BE | 0x3126 / 0x3122 |
+| fuel_normalization_gain | 0x321C | 2 × 2 | 8-bit BE | 0x321A / 0x3216 |
 
 ## Uniform-axis curves
 

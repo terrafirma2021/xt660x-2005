@@ -387,7 +387,7 @@ LAB_d34e:
     else {
       if (cVar1 != -0x34) goto LAB_d15f;
       cVar1 = DAT_0aed;
-      DAT_0aed = (cVar1 == '\0') + -0x34;
+      DAT_0aed = cVar1 + -1 + (cVar1 == '\0');
     }
     cVar1 = DAT_0aee;
     if (cVar1 == -0x3f) {
@@ -454,7 +454,7 @@ LAB_d34e:
     bVar5 = (bVar5 + 1) - (0xfe < bVar5);
     if (0x1f < bVar5) {
       cVar1 = DAT_0aed;
-      DAT_0aed = bVar5 + (cVar1 == '\0');
+      DAT_0aed = cVar1 + -1 + (cVar1 == '\0');
       bVar5 = bVar5 - 8;
     }
     DAT_0b37 = bVar5;

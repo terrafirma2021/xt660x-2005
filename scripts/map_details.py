@@ -147,6 +147,9 @@ def extend(maps, axes, image):
       0x4bac:('u16 0x08F2 pressure-derived estimate','u8 0x0D05','Timing bound consumed at 0x8A2F'),
     }
     grid_traces={
+      'fuel_normalization_load':(['u16 0x0900 selected speed','u16 0x0C90 load code'],'u8 0x0CD2','Fuel normalization input; selected when ROM 0x3114 equals 0x80'),
+      'fuel_normalization_throttle':(['u16 0x0900 selected speed','u16 0x08E8 throttle code'],'u8 0x0CD3','Fuel normalization input; selected when ROM 0x3114 does not equal 0x80'),
+      'fuel_normalization_gain':(['u8 0x0CD0 combined normalization code','u16 0x0C90 load code'],'u8 0x0CD5','Dimensionless gain in the denominator of common fuel multiplier 0x0CE2'),
       'main_quantity_A':(['u16 0x0900 selected speed','u16 0x0C90 load code'],'0x0952 or 0x0954','Primary fuel quantity surface A; see semantics/FUEL.md'),
       'main_quantity_B':(['u16 0x0900 selected speed','u16 0x08E8 throttle code; fault substitution ROM 0x4E62'],'0x0956 or 0x0958','Fuel quantity surface B; see semantics/FUEL.md'),
       'main_quantity_C':(['u16 0x0900 selected speed','u16 0x0C90 load code'],'0x0952 or 0x0954','Primary fuel quantity surface C; see semantics/FUEL.md'),
@@ -190,7 +193,7 @@ def write_dossiers(maps, out, instructions):
             'Inputs: '+ '; '.join(m['inputs'])+'.','', 'Output: '+m['output']+'.','',
             'Selection: '+m['selection']+'.','',
             'Interpolation: '+m.get('interpolation','See the helper and axis evidence below; standard grid paths use Q8 indices.')+'.','',
-            '**Engineering conversion is unresolved; tuning export is disabled.**','']
+            '**Tuning export is disabled.** Conditional conversions and unresolved physical references are recorded per map in the [engineering-unit companion](../semantics/physical_units.json); see the [derivation](../semantics/UNIT_DECODING.md).','']
         for key in ['row_axis','column_axis']:
             if key in m:
                 a=m[key]

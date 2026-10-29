@@ -4,9 +4,9 @@ This inventory accounts for every byte in `0x1800–0x4FFF`. Coverage labels rec
 
 | Evidence category | Bytes |
 |---|---:|
-| no_classified_layout_or_static_access | 307 |
+| no_classified_layout_or_static_access | 295 |
 | static_access_role_unresolved | 552 |
-| catalogued_map_header_cells_or_axis | 13440 |
+| catalogued_map_header_cells_or_axis | 13452 |
 | focused_semantic_parameter | 37 |
 
 The access inventory contains **502 address/width/access combinations** with caller instructions and stock values. Mixed-width accesses are retained separately.
@@ -48,8 +48,7 @@ The access inventory contains **502 address/width/access combinations** with cal
 | 0x1ACF–0x1AD0 | 1 | no_classified_layout_or_static_access |  |
 | 0x3114–0x3115 | 1 | static_access_role_unresolved | 0x3114 |
 | 0x3115–0x3116 | 1 | no_classified_layout_or_static_access |  |
-| 0x311E–0x3122 | 4 | no_classified_layout_or_static_access |  |
-| 0x312A–0x312F | 5 | no_classified_layout_or_static_access |  |
+| 0x312E–0x312F | 1 | no_classified_layout_or_static_access |  |
 | 0x312F–0x3131 | 2 | static_access_role_unresolved | 0x312F, 0x3130 |
 | 0x3131–0x3132 | 1 | no_classified_layout_or_static_access |  |
 | 0x3132–0x3137 | 5 | static_access_role_unresolved | 0x3132, 0x3134, 0x3136 |
@@ -60,7 +59,6 @@ The access inventory contains **502 address/width/access combinations** with cal
 | 0x31FF–0x3200 | 1 | no_classified_layout_or_static_access |  |
 | 0x3213–0x3215 | 2 | static_access_role_unresolved | 0x3213, 0x3214 |
 | 0x3215–0x3216 | 1 | no_classified_layout_or_static_access |  |
-| 0x321C–0x3220 | 4 | no_classified_layout_or_static_access |  |
 | 0x3257–0x3258 | 1 | no_classified_layout_or_static_access |  |
 | 0x32EE–0x32EF | 1 | static_access_role_unresolved | 0x32EE |
 | 0x3313–0x3315 | 2 | static_access_role_unresolved | 0x3313, 0x3314 |

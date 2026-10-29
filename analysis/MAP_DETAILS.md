@@ -15,6 +15,9 @@ Every catalogued map has a byte layout, input/output trace, raw values and nearb
 | [correction_surface_B](map_details/correction_surface_B.md) | 0x3168 | Control correction |
 | [correction_surface_C](map_details/correction_surface_C.md) | 0x3280 | Fuel correction surface |
 | [correction_surface_D](map_details/correction_surface_D.md) | 0x4A60 | Temperature/speed correction in spark path |
+| [fuel_normalization_load](map_details/fuel_normalization_load.md) | 0x311E | Fuel normalization input; selected when ROM 0x3114 equals 0x80 |
+| [fuel_normalization_throttle](map_details/fuel_normalization_throttle.md) | 0x312A | Fuel normalization input; selected when ROM 0x3114 does not equal 0x80 |
+| [fuel_normalization_gain](map_details/fuel_normalization_gain.md) | 0x321C | Dimensionless gain in the denominator of common fuel multiplier 0x0CE2 |
 | [curve_18b6](map_details/curve_18b6.md) | 0x18B9 | Coolant-dependent feedback threshold |
 | [curve_1996](map_details/curve_1996.md) | 0x1999 | Startup fuel base quantity |
 | [curve_32ef](map_details/curve_32ef.md) | 0x32F2 | Startup/reset state curve |

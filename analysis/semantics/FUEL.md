@@ -1,5 +1,7 @@
 # Fuel quantity maps and injector scheduling
 
+The [unit-decoding pass](UNIT_DECODING.md) now derives the common normalization multiplier, three additional 2×2 grids, nominal timer-duration cell units and contribution gains. The [variant tests](VARIANTS.md) distinguish the second normal injector gate from its diagnostic handler.
+
 **Primary injector output is identified by diagnostic 36. Major table layout/selection and timer-duration consumers are established. Complete physical cell-to-fuel/pulse conversion remains open.** See [instruction excerpts](fuel_maps_evidence.txt) and the [map atlas](../MAP_ATLAS.md).
 
 ## Major quantity grids

@@ -1,0 +1,4 @@
+fuel_normalization_gain | 0x321C | 2 rows x 2 columns | raw values
+code-confirmed layout; unverified physical meaning
+128 128
+128 128

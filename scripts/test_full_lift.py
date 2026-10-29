@@ -115,6 +115,21 @@ for operation,operand in [('ADCA',0),('SBCA',0),('SBCA',255)]:
                 assert s.reg[0]==result and s.reg[49]&15==flags,(operation,a,operand,carry,old_overflow)
                 checks+=1
 fixtures.append('ADC #0 and SBC #0/#255: exhaustive A, incoming carry and stale V combinations')
+# Different A and B values are essential: a shared-value fixture misses a wrong
+# source accumulator. Check every ADCB immediate instance in the actual image.
+for row in rows:
+    if row['assembly']!='ADCB #0x0':continue
+    for b in range(256):
+        for carry in range(2):
+            for old_overflow in range(2):
+                a=b^0xa5
+                s=state(row['address']);s.reg[0]=a;s.reg[1]=b;s.reg[49]=carry|(old_overflow<<1)
+                assert lib.xt_step(ct.byref(s))==0
+                result=(b+carry)&255
+                flags=((result>>7)<<3)|((result==0)<<2)|((b==127 and carry==1)<<1)|(b+carry>255)
+                assert s.reg[0]==a and s.reg[1]==result and s.reg[49]&15==flags,(row['address'],a,b,carry)
+                checks+=1
+fixtures.append('Every ADCB immediate instance: exhaustive B/carry/stale V with a distinct A accumulator')
 # Direct/ext BRSET and BRCLR: every input byte for every firmware instance.
 # Expected predicate comes from CPU12RM Rev.4 p115, not from exported p-code.
 branch_cases=0

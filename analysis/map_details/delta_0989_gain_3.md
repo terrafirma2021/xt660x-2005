@@ -12,7 +12,7 @@ Selection: RAM 0x0989 bit 7 set; otherwise RAM 0x0898 > ROM 0x33F5.
 
 Interpolation: 0xC1DB linear Q8; caller takes high byte (floor).
 
-**Engineering conversion is unresolved; tuning export is disabled.**
+**Tuning export is disabled.** Conditional conversions and unresolved physical references are recorded per map in the [engineering-unit companion](../semantics/physical_units.json); see the [derivation](../semantics/UNIT_DECODING.md).
 
 ## Column Axis
 

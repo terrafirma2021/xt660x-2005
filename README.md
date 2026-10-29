@@ -6,11 +6,13 @@ A reverse-engineering project for the Yamaha XT660X 2005 firmware image. The rep
 
 All **15,942 decoded instructions / 42,849 instruction bytes** are translated, all **225 recovered routines** have structured C, and every byte of the **65,536-byte input** is classified. The complete C translation compiles and passes instruction-level comparisons and independent CPU12/lookup fixtures. This describes coverage of the supplied image, not recovery of the original manufacturer's source project.
 
-The included CPU12 processor model corrects four defects in Ghidra 12.1.4's bundled HC12 semantics: indexed word memory dereferencing, ADC overflow, SBC borrow handling, and an inverted BRSET condition. The corrections are documented in a reviewable patch and checked with independent instruction fixtures.
+The included CPU12 processor model corrects defects in Ghidra 12.1.4's bundled HC12 semantics: indexed word memory dereferencing, ADC overflow, SBC borrow handling, an inverted BRSET condition, and immediate ADCB reading the wrong accumulator. The corrections are documented in a reviewable patch and checked with independent instruction fixtures.
 
-The [calibration map atlas](analysis/MAP_ATLAS.md) now documents **68 maps and curves**, with a [separate breakdown for every map](analysis/MAP_DETAILS.md): 16 grids, 36 uniform-axis curves, 14 precomputed-axis curves and two sensor-conversion curves. It includes 32 stored axes/threshold lists and computed axes. Engineering units and remaining fuel/ignition transformations still require investigation.
+The [calibration map atlas](analysis/MAP_ATLAS.md) now documents **71 maps and curves**, with a [separate breakdown for every map](analysis/MAP_DETAILS.md): 19 grids, 36 uniform-axis curves, 14 precomputed-axis curves and two sensor-conversion curves. It includes 32 stored axes/threshold lists and computed axes. The [unit derivation](analysis/semantics/UNIT_DECODING.md) and [read-only conversion catalogue](analysis/semantics/physical_units.json) provide 15 dimensionless or conditional physical cell conversions and nominal speed axes for 32 maps. Absolute spark reference and several sensor scales remain unresolved.
 
-The [extended recovery pass](analysis/semantics/EXTENDED_MAPS.md) adds 22 previously missing layouts: transient fuel gains, air-induction and feedback eligibility grids, spark-path tables, sensor conversions, and a curve copied into RAM. [Remaining calibration work](analysis/REMAINING_CALIBRATIONS.md) accounts for every outstanding span and links 502 static address/width/access records. Catalogue coverage is not a claim that every physical map meaning is resolved.
+The [extended recovery pass](analysis/semantics/EXTENDED_MAPS.md) adds 22 previously missing layouts: transient fuel gains, air-induction and feedback eligibility grids, spark-path tables, sensor conversions, and a curve copied into RAM. [Remaining calibration work](analysis/REMAINING_CALIBRATIONS.md) accounts for every outstanding span and links 502 static address/width/access records. Three more 2×2 fuel-normalization maps are now recovered and their common multiplier is decoded. Catalogue coverage is not a claim that every physical map meaning is resolved.
+
+The [variant analysis](analysis/semantics/VARIANTS.md) confirms that this image selects variant 9, which skips the second normal injector entry. A second diagnostic injector handler remains present; this does not establish complete twin-cylinder hardware or firmware support. The latest tests also exposed and corrected an ADCB accumulator defect in the decompiler model, and the generated analysis has been rebuilt.
 
 ## Checksum-corrected image
 
@@ -23,6 +25,8 @@ The [area guides](analysis/semantics/README.md) document coolant conversion, fan
 A branch-condition defect found during this pass materially affected earlier generated C. All generated code and the Ghidra archive have been regenerated; see [review notes](analysis/semantics/REVIEW_NOTES.md). Original firmware bytes are unchanged.
 
 [150,614 additional cases](analysis/semantics/extended_map_validation.json) verify computed axes, selector branches, step-grid boundaries, special-grid interpolation, the RAM-copied curve and the checksum-corrected file.
+
+[149,180 unit and variant cases](analysis/semantics/units_variant_validation.json) check normalization, scheduler cadence, sensor payload arithmetic, relative spark scheduling and both injector paths. The rebuilt full translation passes 344,357 checks, including independent accumulator tests at every immediate-ADCB site.
 
 ## Communication and immobilizer analysis
 
@@ -65,6 +69,7 @@ To regenerate only the catalogue and validate its bytes:
 ```powershell
 python scripts/catalog_maps.py
 python scripts/catalog_calibration_accesses.py
+python scripts/decode_units.py
 python scripts/fix_startup_checksum.py
 python scripts/verify_analysis.py
 ```

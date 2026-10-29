@@ -12,7 +12,7 @@ Selection: RAM 0x088D bit 0x40 overrides lookup result with ROM 0x4BAB.
 
 Interpolation: 0xC28D: round column interpolation to bytes, then round row interpolation.
 
-**Engineering conversion is unresolved; tuning export is disabled.**
+**Tuning export is disabled.** Conditional conversions and unresolved physical references are recorded per map in the [engineering-unit companion](../semantics/physical_units.json); see the [derivation](../semantics/UNIT_DECODING.md).
 
 ## Row Axis
 

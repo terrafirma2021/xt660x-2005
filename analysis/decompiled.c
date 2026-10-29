@@ -2411,36 +2411,38 @@ undefined2 FUN_66d6(void)
 
 {
   char cVar1;
-  byte bVar2;
-  byte bVar3;
+  char cVar2;
+  short sVar3;
+  byte bVar5;
   short sVar4;
-  short sVar5;
-  ushort uVar6;
+  byte bVar6;
+  ushort uVar7;
   
   do {
     cVar1 = DAT_0b71;
-    uVar6 = (ushort)(byte)(cVar1 + 1);
-    sVar5 = RAM0b67;
-    sVar4 = RAM0b69;
-    while (uVar6 = uVar6 - 1, uVar6 != 0) {
-      bVar3 = -(char)(sVar4 >> 0xf);
-      sVar4 = sVar4 << 1;
-      bVar2 = (byte)((ushort)(sVar5 << 1) >> 8);
-      sVar5 = CONCAT11(bVar2 + CARRY1(bVar2,bVar3),bVar2 + bVar3);
+    uVar7 = (ushort)(byte)(cVar1 + 1);
+    sVar4 = RAM0b67;
+    sVar3 = RAM0b69;
+    while (uVar7 = uVar7 - 1, uVar7 != 0) {
+      bVar6 = -(char)(sVar3 >> 0xf);
+      sVar3 = sVar3 << 1;
+      bVar5 = (byte)(sVar4 << 1);
+      sVar4 = CONCAT11((char)((ushort)(sVar4 << 1) >> 8) + CARRY1(bVar5,bVar6),bVar5 + bVar6);
     }
     do {
       cVar1 = DAT_0b71;
       DAT_0b71 = cVar1 + '\x01';
-      bVar3 = (byte)((ushort)(sVar5 << 1) >> 8);
-      cVar1 = (char)(sVar4 >> 0xf);
-      if (sVar5 < 0) {
-        bVar2 = -cVar1;
-        return CONCAT11(bVar3 + CARRY1(bVar3,bVar2),bVar3 + bVar2);
+      bVar6 = (byte)(sVar4 << 1);
+      cVar2 = (char)((ushort)(sVar4 << 1) >> 8);
+      cVar1 = (char)(sVar3 >> 0xf);
+      if (sVar4 < 0) {
+        bVar5 = -cVar1;
+        return CONCAT11(cVar2 + CARRY1(bVar6,bVar5),bVar6 + bVar5);
       }
-      bVar2 = -cVar1;
-      sVar4 = sVar4 * 2;
-      sVar5 = CONCAT11(bVar3 + CARRY1(bVar3,bVar2),bVar3 + bVar2);
-    } while ((sVar5 != 0) || (sVar4 != 0));
+      bVar5 = -cVar1;
+      sVar3 = sVar3 * 2;
+      sVar4 = CONCAT11(cVar2 + CARRY1(bVar6,bVar5),bVar6 + bVar5);
+    } while ((sVar4 != 0) || (sVar3 != 0));
     DAT_0b71 = 0;
   } while( true );
 }
@@ -4844,9 +4846,9 @@ LAB_7b07:
     uVar6 = DAT_0932;
     iVar1 = (uint)uVar6 * (uint)bVar12 * 2;
     uVar6 = (ushort)iVar1;
-    bVar12 = (byte)((uint)iVar1 >> 0x18);
+    bVar12 = (byte)((uint)iVar1 >> 0x10);
     cVar14 = bVar12 + (0xff7f < uVar6);
-    if (CONCAT11(bVar12 + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
+    if (CONCAT11((char)((uint)iVar1 >> 0x18) + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
       DAT_0dde._0_1_ = cVar14;
       RAM0ddf = uVar6 + 0x80;
       uVar9 = DAT_0dde;
@@ -5087,13 +5089,15 @@ LAB_7fa5:
   else {
     bVar13 = DAT_0cd5;
     if (bVar13 == 0) goto LAB_7fa5;
-    uVar6 = (ushort)bVar13 * 2 * (bVar12 + 0x80);
-    uVar9 = (ushort)(0xff7f < uVar6);
-    DAT_0dde = uVar9;
+    iVar1 = (uint)bVar13 * 2 * (uint)(bVar12 + 0x80);
+    uVar6 = (ushort)iVar1;
+    bVar12 = (byte)((uint)iVar1 >> 0x10);
+    uVar7 = CONCAT11(CARRY1(bVar12,0xff7f < uVar6),bVar12 + (0xff7f < uVar6));
+    DAT_0dde = uVar7;
     DAT_0de0._0_1_ = (char)(uVar6 + 0x80 >> 8);
     uVar6 = RAM0ddf;
     if ((uVar6 == 0) || (DAT_1ace == 0)) goto LAB_7fa5;
-    uVar7 = FUN_c407(DAT_1ace + 0x80,uVar9);
+    uVar7 = FUN_c407(DAT_1ace + 0x80,uVar7);
     if ((char)((ushort)uVar7 >> 8) == '\0') {
       DAT_0dde._0_1_ = (char)uVar7;
       bVar12 = DAT_0dde._0_1_;
@@ -5375,9 +5379,9 @@ LAB_830d:
       if ((~bVar12 & 1) != 0) {
         iVar1 = (uint)DAT_19d4 * 4 * (uint)uVar9;
         uVar6 = (ushort)iVar1;
-        bVar12 = (byte)((uint)iVar1 >> 0x18);
+        bVar12 = (byte)((uint)iVar1 >> 0x10);
         cVar14 = bVar12 + (0xff7f < uVar6);
-        if (CONCAT11(bVar12 + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
+        if (CONCAT11((char)((uint)iVar1 >> 0x18) + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
           DAT_0dde._0_1_ = cVar14;
           RAM0ddf = uVar6 + 0x80;
           uVar9 = DAT_0dde;
@@ -5468,9 +5472,9 @@ LAB_830d:
     uVar6 = DAT_094c;
     iVar1 = (uint)uVar6 * (uint)bVar12 * 2;
     uVar6 = (ushort)iVar1;
-    bVar12 = (byte)((uint)iVar1 >> 0x18);
+    bVar12 = (byte)((uint)iVar1 >> 0x10);
     cVar14 = bVar12 + (0xff7f < uVar6);
-    if (CONCAT11(bVar12 + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
+    if (CONCAT11((char)((uint)iVar1 >> 0x18) + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
       DAT_0dde._0_1_ = cVar14;
       RAM0ddf = uVar6 + 0x80;
       uVar6 = DAT_0dde;
@@ -5483,9 +5487,9 @@ LAB_830d:
       if ((~bVar12 & 1) != 0) {
         iVar1 = (uint)DAT_19d4 * 4 * (uint)uVar9;
         uVar6 = (ushort)iVar1;
-        bVar12 = (byte)((uint)iVar1 >> 0x18);
+        bVar12 = (byte)((uint)iVar1 >> 0x10);
         cVar14 = bVar12 + (0xff7f < uVar6);
-        if (CONCAT11(bVar12 + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
+        if (CONCAT11((char)((uint)iVar1 >> 0x18) + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
           DAT_0dde._0_1_ = cVar14;
           RAM0ddf = uVar6 + 0x80;
           uVar9 = DAT_0dde;
@@ -5536,9 +5540,9 @@ LAB_8563:
   if ((~bVar12 & 1) != 0) {
     iVar1 = (uint)DAT_19d4 * 4 * (uint)uVar6;
     uVar6 = (ushort)iVar1;
-    bVar12 = (byte)((uint)iVar1 >> 0x18);
+    bVar12 = (byte)((uint)iVar1 >> 0x10);
     cVar14 = bVar12 + (0xff7f < uVar6);
-    if (CONCAT11(bVar12 + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
+    if (CONCAT11((char)((uint)iVar1 >> 0x18) + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
       DAT_0dde._0_1_ = cVar14;
       RAM0ddf = uVar6 + 0x80;
       uVar6 = DAT_0dde;
@@ -5560,9 +5564,9 @@ LAB_8563:
   uVar6 = DAT_094c;
   iVar1 = (uint)uVar6 * (uint)bVar12 * 2;
   uVar6 = (ushort)iVar1;
-  bVar12 = (byte)((uint)iVar1 >> 0x18);
+  bVar12 = (byte)((uint)iVar1 >> 0x10);
   cVar14 = bVar12 + (0xff7f < uVar6);
-  if (CONCAT11(bVar12 + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
+  if (CONCAT11((char)((uint)iVar1 >> 0x18) + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
     DAT_0dde._0_1_ = cVar14;
     RAM0ddf = uVar6 + 0x80;
     uVar6 = DAT_0dde;
@@ -5575,9 +5579,9 @@ LAB_8563:
     if ((~bVar12 & 1) != 0) {
       iVar1 = (uint)DAT_19d4 * 4 * (uint)uVar9;
       uVar6 = (ushort)iVar1;
-      bVar12 = (byte)((uint)iVar1 >> 0x18);
+      bVar12 = (byte)((uint)iVar1 >> 0x10);
       cVar14 = bVar12 + (0xff7f < uVar6);
-      if (CONCAT11(bVar12 + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
+      if (CONCAT11((char)((uint)iVar1 >> 0x18) + CARRY1(bVar12,0xff7f < uVar6),cVar14) < 0x100) {
         DAT_0dde._0_1_ = cVar14;
         RAM0ddf = uVar6 + 0x80;
         uVar9 = DAT_0dde;
@@ -6328,8 +6332,9 @@ LAB_8c00:
   DAT_0bba = bVar7;
   if (3 < bVar7) {
     sVar8 = DAT_0bb4;
-    bVar7 = (byte)((ushort)(sVar8 + -1) >> 8);
-    DAT_0bb4 = CONCAT11(bVar7 + CARRY1(bVar7,sVar8 == 0),bVar7 + (sVar8 == 0));
+    bVar7 = (byte)(sVar8 + -1);
+    DAT_0bb4 = CONCAT11((char)((ushort)(sVar8 + -1) >> 8) + CARRY1(bVar7,sVar8 == 0),
+                        bVar7 + (sVar8 == 0));
     DAT_0bba = 0;
   }
   uVar9 = DAT_0bb0;
@@ -6351,8 +6356,9 @@ LAB_8c00:
   DAT_08ef = bVar7;
   if (3 < bVar7) {
     sVar8 = DAT_08e0;
-    bVar7 = (byte)((ushort)(sVar8 + -1) >> 8);
-    DAT_08e0 = CONCAT11(bVar7 + CARRY1(bVar7,sVar8 == 0),bVar7 + (sVar8 == 0));
+    bVar7 = (byte)(sVar8 + -1);
+    DAT_08e0 = CONCAT11((char)((ushort)(sVar8 + -1) >> 8) + CARRY1(bVar7,sVar8 == 0),
+                        bVar7 + (sVar8 == 0));
     DAT_08ef = 0;
   }
   uVar9 = DAT_08d0;
@@ -6775,9 +6781,9 @@ LAB_8fd5:
       bVar7 = DAT_0a08;
       iVar2 = (uint)bVar7 * 0x100 * (uint)bVar19 * 2;
       uVar10 = (ushort)iVar2;
-      bVar7 = (byte)((uint)iVar2 >> 0x18);
+      bVar7 = (byte)((uint)iVar2 >> 0x10);
       cVar18 = bVar7 + (0xff7f < uVar10);
-      uVar11 = CONCAT11(bVar7 + CARRY1(bVar7,0xff7f < uVar10),cVar18);
+      uVar11 = CONCAT11((char)((uint)iVar2 >> 0x18) + CARRY1(bVar7,0xff7f < uVar10),cVar18);
       uVar9 = uVar10 + 0x80;
       if (uVar11 < 0x100) {
         DAT_0dde._0_1_ = cVar18;
@@ -6982,9 +6988,9 @@ LAB_931f:
     uVar9 = DAT_0a14;
     iVar2 = (uint)uVar9 * (uint)bVar7 * 2;
     uVar9 = (ushort)iVar2;
-    bVar7 = (byte)((uint)iVar2 >> 0x18);
+    bVar7 = (byte)((uint)iVar2 >> 0x10);
     cVar18 = bVar7 + (0xff7f < uVar9);
-    if (CONCAT11(bVar7 + CARRY1(bVar7,0xff7f < uVar9),cVar18) < 0x100) {
+    if (CONCAT11((char)((uint)iVar2 >> 0x18) + CARRY1(bVar7,0xff7f < uVar9),cVar18) < 0x100) {
       uVar10 = CONCAT11(cVar18,(char)(uVar9 + 0x80 >> 8));
       uVar9 = DAT_095e;
       sVar8 = uVar10 + uVar9;
@@ -7107,9 +7113,9 @@ LAB_9438:
   uVar9 = DAT_0d02;
   iVar2 = (uint)uVar9 * (uint)bVar7 * 2;
   uVar9 = (ushort)iVar2;
-  bVar7 = (byte)((uint)iVar2 >> 0x18);
+  bVar7 = (byte)((uint)iVar2 >> 0x10);
   cVar18 = bVar7 + (0xff7f < uVar9);
-  if (CONCAT11(bVar7 + CARRY1(bVar7,0xff7f < uVar9),cVar18) < 0x100) {
+  if (CONCAT11((char)((uint)iVar2 >> 0x18) + CARRY1(bVar7,0xff7f < uVar9),cVar18) < 0x100) {
     DAT_0dde._0_1_ = cVar18;
     RAM0ddf = uVar9 + 0x80;
     uVar9 = DAT_0dde;
@@ -7205,9 +7211,9 @@ LAB_9566:
     iVar2 = (uint)CONCAT11((~(byte)((ushort)puVar13 >> 8) + 1) - ((char)-(char)puVar13 != '\0'),
                            -(char)puVar13) * (uint)bVar7 * 2;
     uVar9 = (ushort)iVar2;
-    bVar7 = (byte)((uint)iVar2 >> 0x18);
+    bVar7 = (byte)((uint)iVar2 >> 0x10);
     cVar18 = bVar7 + (0xff7f < uVar9);
-    if (CONCAT11(bVar7 + CARRY1(bVar7,0xff7f < uVar9),cVar18) < 0x100) {
+    if (CONCAT11((char)((uint)iVar2 >> 0x18) + CARRY1(bVar7,0xff7f < uVar9),cVar18) < 0x100) {
       DAT_0dde._0_1_ = cVar18;
       RAM0ddf = uVar9 + 0x80;
       puVar6 = (undefined *)DAT_0dde;
@@ -7219,9 +7225,9 @@ LAB_9566:
   else {
     iVar2 = ZEXT24(puVar13) * (uint)bVar7 * 2;
     uVar9 = (ushort)iVar2;
-    bVar7 = (byte)((uint)iVar2 >> 0x18);
+    bVar7 = (byte)((uint)iVar2 >> 0x10);
     cVar18 = bVar7 + (0xff7f < uVar9);
-    if (CONCAT11(bVar7 + CARRY1(bVar7,0xff7f < uVar9),cVar18) < 0x100) {
+    if (CONCAT11((char)((uint)iVar2 >> 0x18) + CARRY1(bVar7,0xff7f < uVar9),cVar18) < 0x100) {
       DAT_0dde._0_1_ = cVar18;
       RAM0ddf = uVar9 + 0x80;
       uVar9 = DAT_0dde;
@@ -17930,13 +17936,16 @@ ushort scale_u16_by_u8(ushort value,byte *scale_address)
 ushort scale_u16_by_u8_rounded(ushort value,byte *scale_address)
 
 {
+  byte bVar2;
   ushort uVar1;
   
-  if (false) {
+  uVar1 = (ushort)((uint)*scale_address * (uint)value);
+  bVar2 = (byte)((uint)*scale_address * (uint)value >> 0x10);
+  if (CARRY1(bVar2,0xff7f < uVar1)) {
     uVar1 = 0xffff;
   }
   else {
-    uVar1 = CONCAT11(0xff7f < *scale_address * value,(char)(*scale_address * value + 0x80 >> 8));
+    uVar1 = CONCAT11(bVar2 + (0xff7f < uVar1),(char)(uVar1 + 0x80 >> 8));
   }
   return uVar1;
 }
@@ -20000,7 +20009,7 @@ LAB_d34e:
     else {
       if (cVar1 != -0x34) goto LAB_d15f;
       cVar1 = DAT_0aed;
-      DAT_0aed = (cVar1 == '\0') + -0x34;
+      DAT_0aed = cVar1 + -1 + (cVar1 == '\0');
     }
     cVar1 = DAT_0aee;
     if (cVar1 == -0x3f) {
@@ -20067,7 +20076,7 @@ LAB_d34e:
     bVar5 = (bVar5 + 1) - (0xfe < bVar5);
     if (0x1f < bVar5) {
       cVar1 = DAT_0aed;
-      DAT_0aed = bVar5 + (cVar1 == '\0');
+      DAT_0aed = cVar1 + -1 + (cVar1 == '\0');
       bVar5 = bVar5 - 8;
     }
     DAT_0b37 = bVar5;
@@ -21623,7 +21632,7 @@ LAB_de81:
         bVar8 = DAT_088b;
         if ((~bVar8 & 0x80) == 0) {
           cVar17 = DAT_0a20;
-          DAT_0a20 = bVar9 + (cVar17 == '\0');
+          DAT_0a20 = cVar17 + -1 + (cVar17 == '\0');
         }
         else {
           DAT_0a20 = 0;
@@ -21634,7 +21643,7 @@ LAB_de81:
         bVar8 = DAT_088b;
         if ((~bVar8 & 0x80) == 0) {
           cVar17 = DAT_0a21;
-          DAT_0a21 = bVar9 + (cVar17 == '\0');
+          DAT_0a21 = cVar17 + -1 + (cVar17 == '\0');
         }
         else {
           DAT_0a21 = 0;
@@ -21680,7 +21689,7 @@ LAB_de81:
         bVar9 = DAT_088b;
         if ((~bVar9 & 0x80) == 0) {
           cVar17 = DAT_0a20;
-          DAT_0a20 = bVar8 + (cVar17 == '\0');
+          DAT_0a20 = cVar17 + -1 + (cVar17 == '\0');
         }
         else {
           DAT_0a20 = 0;
@@ -21698,7 +21707,7 @@ LAB_de81:
         bVar9 = DAT_088b;
         if ((~bVar9 & 0x80) == 0) {
           cVar17 = DAT_0a21;
-          DAT_0a21 = bVar8 + (cVar17 == '\0');
+          DAT_0a21 = cVar17 + -1 + (cVar17 == '\0');
         }
         else {
           DAT_0a21 = 0;
@@ -22192,9 +22201,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d8f;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22203,9 +22212,9 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           uVar15 = RAM0c9f;
           DAT_0dfa = uVar15 / 2;
           uVar18 = DAT_0ca0._1_1_;
@@ -22236,9 +22245,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d8f;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22247,17 +22256,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar8 = DAT_0d96;
           uVar15 = (&DAT_0c58)[bVar8];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d90;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22266,9 +22275,9 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           uVar15 = RAM0c9f;
           DAT_0dfa = uVar15 / 3;
           uVar18 = DAT_0ca0._1_1_;
@@ -22299,9 +22308,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d8f;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22310,17 +22319,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar8 = DAT_0d96;
           uVar15 = (&DAT_0c58)[bVar8];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d90;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22329,17 +22338,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar8 = DAT_0d97;
           uVar15 = (&DAT_0c58)[bVar8];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d91;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22348,9 +22357,9 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           uVar15 = RAM0c9f;
           DAT_0dfa = uVar15 / 4;
           uVar18 = DAT_0ca0._1_1_;
@@ -22381,9 +22390,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d8f;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22392,17 +22401,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar8 = DAT_0d96;
           uVar15 = (&DAT_0c58)[bVar8];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d90;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22411,17 +22420,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar8 = DAT_0d97;
           uVar15 = (&DAT_0c58)[bVar8];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d91;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22430,17 +22439,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar8 = DAT_0d98;
           uVar15 = (&DAT_0c58)[bVar8];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d92;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22449,9 +22458,9 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           uVar15 = RAM0c9f;
           DAT_0dfa = uVar15 / 5;
           uVar18 = DAT_0ca0._1_1_;
@@ -22483,9 +22492,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d8f;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22494,17 +22503,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar8 = DAT_0d96;
           uVar15 = (&DAT_0c58)[bVar8];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d90;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22513,17 +22522,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar8 = DAT_0d97;
           uVar15 = (&DAT_0c58)[bVar8];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d91;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22532,17 +22541,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar8 = DAT_0d98;
           uVar15 = (&DAT_0c58)[bVar8];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d92;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22551,17 +22560,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar8 = DAT_0d99;
           uVar15 = (&DAT_0c58)[bVar8];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar15,uVar4)),
-                              bVar9 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar9 = DAT_0d93;
           iVar2 = (uint)bVar9 * (uint)(ushort)(&DAT_0c58)[bVar8];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -22570,9 +22579,9 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar9 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar9 + CARRY1(bVar9,CARRY2(uVar4,uVar15)),
-                              bVar9 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           uVar15 = RAM0c9f;
           DAT_0dfa = uVar15 / 6;
           uVar18 = DAT_0ca0._1_1_;
@@ -22604,9 +22613,9 @@ LAB_e491:
       iVar2 = (uint)CONCAT11((~(byte)((ushort)puVar14 >> 8) + 1) - ((char)-(char)puVar14 != '\0'),
                              -(char)puVar14) * (uint)bVar9 * 2;
       uVar15 = (ushort)iVar2;
-      bVar9 = (byte)((uint)iVar2 >> 0x18);
+      bVar9 = (byte)((uint)iVar2 >> 0x10);
       cVar17 = bVar9 + (0xff7f < uVar15);
-      if (CONCAT11(bVar9 + CARRY1(bVar9,0xff7f < uVar15),cVar17) < 0x100) {
+      if (CONCAT11((char)((uint)iVar2 >> 0x18) + CARRY1(bVar9,0xff7f < uVar15),cVar17) < 0x100) {
         DAT_0e04._0_1_ = cVar17;
         RAM0e05 = uVar15 + 0x80;
         puVar7 = (undefined *)DAT_0e04;
@@ -22618,9 +22627,9 @@ LAB_e491:
     else {
       iVar2 = ZEXT24(puVar14) * (uint)bVar9 * 2;
       uVar15 = (ushort)iVar2;
-      bVar9 = (byte)((uint)iVar2 >> 0x18);
+      bVar9 = (byte)((uint)iVar2 >> 0x10);
       cVar17 = bVar9 + (0xff7f < uVar15);
-      if (CONCAT11(bVar9 + CARRY1(bVar9,0xff7f < uVar15),cVar17) < 0x100) {
+      if (CONCAT11((char)((uint)iVar2 >> 0x18) + CARRY1(bVar9,0xff7f < uVar15),cVar17) < 0x100) {
         DAT_0e04._0_1_ = cVar17;
         RAM0e05 = uVar15 + 0x80;
         uVar15 = DAT_0e04;
@@ -23200,7 +23209,7 @@ LAB_de81:
         bVar9 = DAT_088b;
         if ((~bVar9 & 0x80) == 0) {
           cVar17 = DAT_0a20;
-          DAT_0a20 = bVar11 + (cVar17 == '\0');
+          DAT_0a20 = cVar17 + -1 + (cVar17 == '\0');
         }
         else {
           DAT_0a20 = 0;
@@ -23211,7 +23220,7 @@ LAB_de81:
         bVar9 = DAT_088b;
         if ((~bVar9 & 0x80) == 0) {
           cVar17 = DAT_0a21;
-          DAT_0a21 = bVar11 + (cVar17 == '\0');
+          DAT_0a21 = cVar17 + -1 + (cVar17 == '\0');
         }
         else {
           DAT_0a21 = 0;
@@ -23257,7 +23266,7 @@ LAB_de81:
         bVar11 = DAT_088b;
         if ((~bVar11 & 0x80) == 0) {
           cVar17 = DAT_0a20;
-          DAT_0a20 = bVar9 + (cVar17 == '\0');
+          DAT_0a20 = cVar17 + -1 + (cVar17 == '\0');
         }
         else {
           DAT_0a20 = 0;
@@ -23275,7 +23284,7 @@ LAB_de81:
         bVar11 = DAT_088b;
         if ((~bVar11 & 0x80) == 0) {
           cVar17 = DAT_0a21;
-          DAT_0a21 = bVar9 + (cVar17 == '\0');
+          DAT_0a21 = cVar17 + -1 + (cVar17 == '\0');
         }
         else {
           DAT_0a21 = 0;
@@ -23769,9 +23778,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d8f;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -23780,9 +23789,9 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           uVar14 = RAM0c9f;
           DAT_0dfa = uVar14 / 2;
           uVar18 = DAT_0ca0._1_1_;
@@ -23813,9 +23822,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d8f;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -23824,17 +23833,17 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           bVar9 = DAT_0d96;
           uVar14 = (&DAT_0c58)[bVar9];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d90;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -23843,9 +23852,9 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           uVar14 = RAM0c9f;
           DAT_0dfa = uVar14 / 3;
           uVar18 = DAT_0ca0._1_1_;
@@ -23876,9 +23885,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d8f;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -23887,17 +23896,17 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           bVar9 = DAT_0d96;
           uVar14 = (&DAT_0c58)[bVar9];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d90;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -23906,17 +23915,17 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           bVar9 = DAT_0d97;
           uVar14 = (&DAT_0c58)[bVar9];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d91;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -23925,9 +23934,9 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           uVar14 = RAM0c9f;
           DAT_0dfa = uVar14 / 4;
           uVar18 = DAT_0ca0._1_1_;
@@ -23958,9 +23967,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d8f;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -23969,17 +23978,17 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           bVar9 = DAT_0d96;
           uVar14 = (&DAT_0c58)[bVar9];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d90;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -23988,17 +23997,17 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           bVar9 = DAT_0d97;
           uVar14 = (&DAT_0c58)[bVar9];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d91;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24007,17 +24016,17 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           bVar9 = DAT_0d98;
           uVar14 = (&DAT_0c58)[bVar9];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d92;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24026,9 +24035,9 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           uVar14 = RAM0c9f;
           DAT_0dfa = uVar14 / 5;
           uVar18 = DAT_0ca0._1_1_;
@@ -24060,9 +24069,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d8f;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24071,17 +24080,17 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           bVar9 = DAT_0d96;
           uVar14 = (&DAT_0c58)[bVar9];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d90;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24090,17 +24099,17 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           bVar9 = DAT_0d97;
           uVar14 = (&DAT_0c58)[bVar9];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d91;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24109,17 +24118,17 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           bVar9 = DAT_0d98;
           uVar14 = (&DAT_0c58)[bVar9];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d92;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24128,17 +24137,17 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           bVar9 = DAT_0d99;
           uVar14 = (&DAT_0c58)[bVar9];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar14 + uVar4;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar14,uVar4)),
-                              bVar11 + CARRY2(uVar14,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar14,uVar4)),
+                              (byte)uVar12 + CARRY2(uVar14,uVar4));
           bVar11 = DAT_0d93;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar9];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24147,9 +24156,9 @@ LAB_e491:
           uVar14 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar14;
           uVar12 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar12 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar14)),
-                              bVar11 + CARRY2(uVar4,uVar14));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar12 >> 8) +
+                              CARRY1((byte)uVar12,CARRY2(uVar4,uVar14)),
+                              (byte)uVar12 + CARRY2(uVar4,uVar14));
           uVar14 = RAM0c9f;
           DAT_0dfa = uVar14 / 6;
           uVar18 = DAT_0ca0._1_1_;
@@ -24181,9 +24190,9 @@ LAB_e491:
       iVar2 = (uint)CONCAT11((~(byte)((ushort)puVar13 >> 8) + 1) - ((char)-(char)puVar13 != '\0'),
                              -(char)puVar13) * (uint)bVar11 * 2;
       uVar14 = (ushort)iVar2;
-      bVar11 = (byte)((uint)iVar2 >> 0x18);
+      bVar11 = (byte)((uint)iVar2 >> 0x10);
       cVar17 = bVar11 + (0xff7f < uVar14);
-      if (CONCAT11(bVar11 + CARRY1(bVar11,0xff7f < uVar14),cVar17) < 0x100) {
+      if (CONCAT11((char)((uint)iVar2 >> 0x18) + CARRY1(bVar11,0xff7f < uVar14),cVar17) < 0x100) {
         DAT_0e04._0_1_ = cVar17;
         RAM0e05 = uVar14 + 0x80;
         puVar5 = (undefined *)DAT_0e04;
@@ -24195,9 +24204,9 @@ LAB_e491:
     else {
       iVar2 = ZEXT24(puVar13) * (uint)bVar11 * 2;
       uVar14 = (ushort)iVar2;
-      bVar11 = (byte)((uint)iVar2 >> 0x18);
+      bVar11 = (byte)((uint)iVar2 >> 0x10);
       cVar17 = bVar11 + (0xff7f < uVar14);
-      if (CONCAT11(bVar11 + CARRY1(bVar11,0xff7f < uVar14),cVar17) < 0x100) {
+      if (CONCAT11((char)((uint)iVar2 >> 0x18) + CARRY1(bVar11,0xff7f < uVar14),cVar17) < 0x100) {
         DAT_0e04._0_1_ = cVar17;
         RAM0e05 = uVar14 + 0x80;
         uVar14 = DAT_0e04;
@@ -24663,9 +24672,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d8f;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24674,9 +24683,9 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           uVar15 = RAM0c9f;
           DAT_0dfa = uVar15 / 2;
           uVar17 = DAT_0ca0._1_1_;
@@ -24707,9 +24716,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d8f;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24718,17 +24727,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar5 = DAT_0d96;
           uVar15 = (&DAT_0c58)[bVar5];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d90;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24737,9 +24746,9 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           uVar15 = RAM0c9f;
           DAT_0dfa = uVar15 / 3;
           uVar17 = DAT_0ca0._1_1_;
@@ -24770,9 +24779,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d8f;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24781,17 +24790,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar5 = DAT_0d96;
           uVar15 = (&DAT_0c58)[bVar5];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d90;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24800,17 +24809,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar5 = DAT_0d97;
           uVar15 = (&DAT_0c58)[bVar5];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d91;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24819,9 +24828,9 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           uVar15 = RAM0c9f;
           DAT_0dfa = uVar15 / 4;
           uVar17 = DAT_0ca0._1_1_;
@@ -24852,9 +24861,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d8f;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24863,17 +24872,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar5 = DAT_0d96;
           uVar15 = (&DAT_0c58)[bVar5];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d90;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24882,17 +24891,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar5 = DAT_0d97;
           uVar15 = (&DAT_0c58)[bVar5];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d91;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24901,17 +24910,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar5 = DAT_0d98;
           uVar15 = (&DAT_0c58)[bVar5];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d92;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24920,9 +24929,9 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           uVar15 = RAM0c9f;
           DAT_0dfa = uVar15 / 5;
           uVar17 = DAT_0ca0._1_1_;
@@ -24954,9 +24963,9 @@ LAB_e491:
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d8f;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24965,17 +24974,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar5 = DAT_0d96;
           uVar15 = (&DAT_0c58)[bVar5];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d90;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -24984,17 +24993,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar5 = DAT_0d97;
           uVar15 = (&DAT_0c58)[bVar5];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d91;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -25003,17 +25012,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar5 = DAT_0d98;
           uVar15 = (&DAT_0c58)[bVar5];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d92;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -25022,17 +25031,17 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           bVar5 = DAT_0d99;
           uVar15 = (&DAT_0c58)[bVar5];
           uVar4 = DAT_0ca0;
           DAT_0ca0 = uVar15 + uVar4;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
-                              bVar11 + CARRY2(uVar15,uVar4));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar15,uVar4)),
+                              (byte)uVar13 + CARRY2(uVar15,uVar4));
           bVar11 = DAT_0d93;
           iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
           RAM0df6 = (short)((uint)iVar2 >> 0x10);
@@ -25041,9 +25050,9 @@ LAB_e491:
           uVar15 = DAT_0ca0;
           DAT_0ca0 = uVar4 + uVar15;
           uVar13 = DAT_0c9e;
-          bVar11 = (byte)((ushort)uVar13 >> 8);
-          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
-                              bVar11 + CARRY2(uVar4,uVar15));
+          DAT_0c9e = CONCAT11((char)((ushort)uVar13 >> 8) +
+                              CARRY1((byte)uVar13,CARRY2(uVar4,uVar15)),
+                              (byte)uVar13 + CARRY2(uVar4,uVar15));
           uVar15 = RAM0c9f;
           DAT_0dfa = uVar15 / 6;
           uVar17 = DAT_0ca0._1_1_;
@@ -25075,9 +25084,9 @@ LAB_e491:
       iVar2 = (uint)CONCAT11((~(byte)((ushort)puVar14 >> 8) + 1) - ((char)-(char)puVar14 != '\0'),
                              -(char)puVar14) * (uint)bVar11 * 2;
       uVar15 = (ushort)iVar2;
-      bVar11 = (byte)((uint)iVar2 >> 0x18);
+      bVar11 = (byte)((uint)iVar2 >> 0x10);
       cVar12 = bVar11 + (0xff7f < uVar15);
-      if (CONCAT11(bVar11 + CARRY1(bVar11,0xff7f < uVar15),cVar12) < 0x100) {
+      if (CONCAT11((char)((uint)iVar2 >> 0x18) + CARRY1(bVar11,0xff7f < uVar15),cVar12) < 0x100) {
         DAT_0e04._0_1_ = cVar12;
         RAM0e05 = uVar15 + 0x80;
         puVar6 = (undefined *)DAT_0e04;
@@ -25089,9 +25098,9 @@ LAB_e491:
     else {
       iVar2 = ZEXT24(puVar14) * (uint)bVar11 * 2;
       uVar15 = (ushort)iVar2;
-      bVar11 = (byte)((uint)iVar2 >> 0x18);
+      bVar11 = (byte)((uint)iVar2 >> 0x10);
       cVar12 = bVar11 + (0xff7f < uVar15);
-      if (CONCAT11(bVar11 + CARRY1(bVar11,0xff7f < uVar15),cVar12) < 0x100) {
+      if (CONCAT11((char)((uint)iVar2 >> 0x18) + CARRY1(bVar11,0xff7f < uVar15),cVar12) < 0x100) {
         DAT_0e04._0_1_ = cVar12;
         RAM0e05 = uVar15 + 0x80;
         uVar15 = DAT_0e04;

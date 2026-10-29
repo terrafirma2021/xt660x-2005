@@ -62,3 +62,7 @@ python3 scripts/verify_semantics.py
 ```
 
 The control fixtures use supplied ROM values and controlled RAM/register inputs. They check decisions and table results against the original instruction translation, not live ECU waveforms. Table-knot tests do not prove every interpolated point or physical scaling.
+
+## Conditional engineering companion
+
+[physical_units.json](physical_units.json) now provides per-map conversion status, named clock/crank assumptions, converted cell values for 15 maps and nominal speed axes for 32 maps. [UNIT_DECODING.md](UNIT_DECODING.md) separates exact arithmetic from inferred physical scales and conflicting sensor evidence. An editor must display these assumptions and must not relabel relative spark angle as BTDC, treat load as measured kPa, or silently enable writes because a conversion is present.

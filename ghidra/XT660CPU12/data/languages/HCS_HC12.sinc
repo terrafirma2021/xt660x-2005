@@ -992,8 +992,8 @@ with : XGATE=0 {
 {
 	op1:1 = indexed1_5;
 
-	result:1 = A + op1 + $(C);
-	addition_flags1(A, op1, result);
+	local result:1;
+	additionWithCarry(A, op1, result);
 	A = result;
 }
 
@@ -1002,7 +1002,7 @@ with : XGATE=0 {
 	op1:1 = iopr8i;
 
 	local result:1;
-	additionWithCarry(A, op1, result);
+	additionWithCarry(B, op1, result);
 	
 	B = result;
 }
@@ -1011,8 +1011,8 @@ with : XGATE=0 {
 {
 	op1:1 = opr8a_8;
 
-	result:1 = B + op1 + $(C);
-	addition_flags1(B, op1, result);
+	local result:1;
+	additionWithCarry(B, op1, result);
 	B = result;
 }
 

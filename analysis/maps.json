@@ -8510,6 +8510,249 @@
     ]
   },
   {
+    "id": "fuel_normalization_load",
+    "kind": "2D_grid",
+    "confidence": "code-confirmed layout; unverified physical meaning",
+    "pointer_base": "0x311B",
+    "data_address": "0x311E",
+    "end_exclusive": "0x3122",
+    "rows": 2,
+    "columns": 2,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "row_axis": {
+      "address": "0x311A",
+      "count": 2,
+      "element_bytes": 2,
+      "byte_order": "big",
+      "raw_values": [
+        3072,
+        65280
+      ],
+      "ascending": true,
+      "calls": [
+        {
+          "call": "0x7E6E",
+          "input": "LDD 0x900",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    "column_axis": {
+      "address": "0x3116",
+      "count": 2,
+      "element_bytes": 2,
+      "byte_order": "big",
+      "raw_values": [
+        9984,
+        47744
+      ],
+      "ascending": true,
+      "calls": [
+        {
+          "call": "0x7E82",
+          "input": "LDD 0xc90",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    "physical_role": "Fuel normalization input; selected when ROM 0x3114 equals 0x80",
+    "units": "raw ECU values",
+    "calls": [
+      {
+        "pointer_load": "0x7E96",
+        "calls": [
+          "0x7E99"
+        ]
+      }
+    ],
+    "raw_values": [
+      [
+        166,
+        166
+      ],
+      [
+        166,
+        166
+      ]
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed",
+      "u16 0x0C90 load code"
+    ],
+    "output": "u8 0x0CD2",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "fuel_normalization_throttle",
+    "kind": "2D_grid",
+    "confidence": "code-confirmed layout; unverified physical meaning",
+    "pointer_base": "0x3127",
+    "data_address": "0x312A",
+    "end_exclusive": "0x312E",
+    "rows": 2,
+    "columns": 2,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "row_axis": {
+      "address": "0x3126",
+      "count": 2,
+      "element_bytes": 2,
+      "byte_order": "big",
+      "raw_values": [
+        3072,
+        65280
+      ],
+      "ascending": true,
+      "calls": [
+        {
+          "call": "0x7EB0",
+          "input": "LDD 0x900",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    "column_axis": {
+      "address": "0x3122",
+      "count": 2,
+      "element_bytes": 2,
+      "byte_order": "big",
+      "raw_values": [
+        5248,
+        26240
+      ],
+      "ascending": true,
+      "calls": [
+        {
+          "call": "0x7EC4",
+          "input": "LDD 0x8e8",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    "physical_role": "Fuel normalization input; selected when ROM 0x3114 does not equal 0x80",
+    "units": "raw ECU values",
+    "calls": [
+      {
+        "pointer_load": "0x7ED8",
+        "calls": [
+          "0x7EDB"
+        ]
+      }
+    ],
+    "raw_values": [
+      [
+        166,
+        166
+      ],
+      [
+        166,
+        166
+      ]
+    ],
+    "inputs": [
+      "u16 0x0900 selected speed",
+      "u16 0x08E8 throttle code"
+    ],
+    "output": "u8 0x0CD3",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
+    "id": "fuel_normalization_gain",
+    "kind": "2D_grid",
+    "confidence": "code-confirmed layout; unverified physical meaning",
+    "pointer_base": "0x3219",
+    "data_address": "0x321C",
+    "end_exclusive": "0x3220",
+    "rows": 2,
+    "columns": 2,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "row_axis": {
+      "address": "0x321A",
+      "count": 2,
+      "element_bytes": 1,
+      "byte_order": "big",
+      "raw_values": [
+        70,
+        246
+      ],
+      "ascending": true,
+      "calls": [
+        {
+          "call": "0x7F1C",
+          "input": "LDAA 0xcd0",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    "column_axis": {
+      "address": "0x3216",
+      "count": 2,
+      "element_bytes": 2,
+      "byte_order": "big",
+      "raw_values": [
+        9984,
+        47744
+      ],
+      "ascending": true,
+      "calls": [
+        {
+          "call": "0x7F30",
+          "input": "LDD 0xc90",
+          "function": "FUN_74b8"
+        }
+      ]
+    },
+    "physical_role": "Dimensionless gain in the denominator of common fuel multiplier 0x0CE2",
+    "units": "raw ECU values",
+    "calls": [
+      {
+        "pointer_load": "0x7F44",
+        "calls": [
+          "0x7F47"
+        ]
+      }
+    ],
+    "raw_values": [
+      [
+        128,
+        128
+      ],
+      [
+        128,
+        128
+      ]
+    ],
+    "inputs": [
+      "u8 0x0CD0 combined normalization code",
+      "u16 0x0C90 load code"
+    ],
+    "output": "u8 0x0CD5",
+    "engineering_decode": null,
+    "ready_for_tuning_export": false,
+    "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
+    "evidence_addresses": [],
+    "unresolved": [
+      "Engineering-unit conversions and complete downstream transformation",
+      "Hardware/bench confirmation and safe operating limits"
+    ]
+  },
+  {
     "id": "curve_18b6",
     "kind": "1D_uniform_axis",
     "confidence": "code-confirmed lookup/header; raw scaling only",

@@ -1,5 +1,7 @@
 # Engine speed, spark cut and fuel cut
 
+The [unit-decoding pass](UNIT_DECODING.md) now derives conditional RPM scaling using the service-correlated nominal clock and explicit crank-pattern assumption. Those assumptions are carried with the converted axes.
+
 **Established:** raw speed calculation, three separate period-based cut flags, separate road-speed flags, and their output consumers. **Not established:** a verified RPM conversion or every reason for disabling ignition/injection. [Instruction evidence](rpm_cuts_evidence.txt) is authoritative for comparisons.
 
 ## Engine-speed variables

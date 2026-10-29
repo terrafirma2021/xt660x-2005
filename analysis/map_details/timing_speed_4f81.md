@@ -12,7 +12,7 @@ Selection: RAM 0x0D87 == 9.
 
 Interpolation: 0xC28D with one row; linear Q8 rounded to nearest byte.
 
-**Engineering conversion is unresolved; tuning export is disabled.**
+**Tuning export is disabled.** Conditional conversions and unresolved physical references are recorded per map in the [engineering-unit companion](../semantics/physical_units.json); see the [derivation](../semantics/UNIT_DECODING.md).
 
 ## Column Axis
 
