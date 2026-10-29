@@ -66,4 +66,7 @@ A05 compared against min(255,08E6), a filtered relative TPS count; not a throttl
 
 Consumer instruction addresses: `0x8C99`, `0x8F82`, `0x8FAA`.
 
+uniform_input conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
+Converted values: 1600, 2400, 3200, 4000, 4800, 5600, 6400, 7200, 8000, 8800.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

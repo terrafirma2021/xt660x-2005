@@ -113,4 +113,7 @@ base dwell contribution; additional dwell and speed clamps still apply
 
 Required profiles: `nominal_xt_timer`. These are assumptions, not measured hardware parameters.
 
+row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
+Converted values: 800, 1600, 2400, 3200, 4000, 4800, 5600, 6400, 7200, 8000, 8800, 9600, 10400, 11200, 12000.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

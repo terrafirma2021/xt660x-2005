@@ -11,8 +11,10 @@ The analysis applies only to the exact [supplied image](../../firmware/XT660X%20
 | Inputs / outputs | [Hardware and diagnostic cross-references](IO_AND_DIAGNOSTICS.md) | Eight ADC dispatch slots; six logical outputs; several physical identities corroborated by diagnostic numbers | ECU connector pin numbers, board routing, exact ECU identity |
 | Coolant / fan | [Temperature conversion, faults and fan decisions](COOLANT_AND_FAN.md) | Conversion bytes, full normal/fault/override decision, raw threshold boundaries, primary consumers | Verified Celsius encoding and physical fan test |
 | Engine speed / cuts | [Speed calculation and output suppression](RPM_AND_CUTS.md) | Reciprocal calculation, three period-limit pairs, separate road-speed cut flags, conditional injector limits | Confirmed timer timebase / crank geometry, complete interlock meanings |
+| Temperature profile | [Celsius inference and variant checks](TEMPERATURE_PROFILE.md) | Conditional sensor and 14-map-axis conversion, resistance consistency, selector tests | Confirmed board transfer and XT/TDM fallback discrepancy |
+| Spark scheduler | [Planner and compare dispatch](SPARK_SCHEDULER.md) | Exact event-relative normal fire/charge timing, digital edge actions, minimum-charge override | Absolute TDC and complete special-mode timelines |
 | Spark | [Maps through the timing scheduler](SPARK.md) | Three selected byte maps, rounding and downstream correction, timer-3 identity | Absolute crank-angle reference, degrees conversion, all correction meanings |
-| Fuel | [Quantity tables and injector scheduling](FUEL.md) | Main table selection, speed/other input variables, primary timer-6 output, secondary variant gating | Full cell-to-pulse formula, physical units and mode meanings |
+| Fuel | [Quantity tables and injector scheduling](FUEL.md) | Main table selection, speed/other input variables, primary timer-6 output, secondary variant gating | Confirmed sensor units and complete mode coverage |
 | Map consumers | [Fuel products, adaptation and event timing](MAP_CONSUMERS.md) | Exact normal/startup fuel chains, transient products, corrected roles, injection phase dispatch and dormant families | Sensor physical references, absolute crank phase and complete mode coverage |
 | Units | [Engineering derivation](UNIT_DECODING.md) | Conditional timer/RPM/relative-angle conversions, contribution gains and exact normalization | Absolute TDC reference and confirmed sensor scales |
 | Variants | [Second injector and configuration](VARIANTS.md) | Variant 9 skips the second normal injector entry; separate diagnostic path remains | Exact donor models and physical second-channel hardware |
@@ -34,6 +36,9 @@ These have different levels of completion. Coolant/fan decisions and the princip
 - [extended_map_validation.json](extended_map_validation.json): 150,614 additional cases, including the delivered checksum correction.
 - [MAP_RESOLUTION.md](MAP_RESOLUTION.md): current per-map status; cell interpretation does not imply every axis or mode is resolved.
 - [map_consumer_validation.json](map_consumer_validation.json): 259,216 consumer checks with independent integer models.
+- [spark_schedule_validation.json](spark_schedule_validation.json): 74,832 planner and compare-dispatch checks.
+- [sensor_variant_validation.json](sensor_variant_validation.json): 66,600 temperature and variant-selected spark-curve checks.
+- [temperature_profile.json](temperature_profile.json): quantified sensor-profile assumptions, resistance comparisons and all ADC inputs.
 - [physical_units.json](physical_units.json): all 71 maps accounted for, with named assumptions on converted values.
 - [units_variant_validation.json](units_variant_validation.json): independent unit arithmetic, scheduler and variant fixtures.
 - [Every map's breakdown](../MAP_DETAILS.md) and [remaining calibration inventory](../REMAINING_CALIBRATIONS.md).

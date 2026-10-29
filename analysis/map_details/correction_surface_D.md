@@ -88,4 +88,10 @@ Used instead of A83 when 0885 bit 0x20 selects alternate spark mode; floor(max(s
 
 Consumer instruction addresses: `0x8979`, `0x899E`.
 
+row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
+Converted values: 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900.
+
+column_axis conversion: `temperature_celsius_candidate`; requires `yamaha_temperature_candidate`.
+Converted values: -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

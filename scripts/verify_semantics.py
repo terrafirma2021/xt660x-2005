@@ -44,11 +44,32 @@ assert consumers['result']=='passed' and consumers['firmware_sha256']==catalog['
 assert consumers['test_script_sha256']==digest(ROOT/'scripts/test_map_consumers.py')
 assert consumers['model_script_sha256']==digest(ROOT/'scripts/map_models.py')
 assert consumers['compiled_library_sha256']==full['compiled_library_sha256']
+for report_name,test_name,model_name in [
+    ('spark_schedule_validation.json','test_spark_schedule.py','spark_models.py'),
+    ('sensor_variant_validation.json','test_sensor_variants.py','sensor_profiles.py')]:
+    report=json.loads((OUT/report_name).read_text())
+    assert report['result']=='passed' and report['firmware_sha256']==catalog['firmware_sha256']
+    assert report['test_script_sha256']==digest(ROOT/'scripts'/test_name)
+    assert report['model_script_sha256']==digest(ROOT/'scripts'/model_name)
+    assert report['compiled_library_sha256']==full['compiled_library_sha256']
+temperature=json.loads((OUT/'temperature_profile.json').read_text())
+assert temperature['firmware_sha256']==catalog['firmware_sha256']
+assert temperature['generator_sha256']==digest(ROOT/'scripts/sensor_profiles.py')
 physical=json.loads((OUT/'physical_units.json').read_text())
 maps=json.loads((ROOT/'analysis/maps.json').read_text())
 assert physical['firmware_sha256']==catalog['firmware_sha256']
 assert {m['id'] for m in physical['maps']}=={m['id'] for m in maps}
 assert all(not m['ready_for_tuning_export'] for m in physical['maps'])
+by_id={m['id']:m for m in maps}
+for record in physical['maps']:
+    if record['cell_conversion']=='temperature_celsius_candidate':
+        assert record['converted_cell_values']==[[v*.625-30 for v in row] for row in by_id[record['id']]['raw_values']]
+    for axis in record['axis_conversions']:
+        assert all(p in physical['profiles'] for p in axis['requires'])
+        if axis['conversion']=='temperature_celsius_candidate':
+            knots=axis.get('raw_ideal_knots')
+            if knots is None:knots=by_id[record['id']][axis['axis']]['raw_values']
+            assert axis['values']==[v*.625-30 for v in knots]
 fixed_path=ROOT/'firmware/XT660X 2005 startup-checksum-fixed.bin'
 fixed=fixed_path.read_bytes()
 fix=json.loads((OUT/'checksum_fix.json').read_text())

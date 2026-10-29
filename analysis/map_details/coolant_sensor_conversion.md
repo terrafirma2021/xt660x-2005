@@ -58,6 +58,12 @@ Addresses refer to the unchanged image. Windows around entry/call sites provide 
 <!-- generated-unit-decoding -->
 ## Recovered consumer and unit interpretation
 
-unresolved cell conversion.
+conditional physical conversion.
+
+Conversion: `raw*0.625-30`; unit: **candidate degC**.
+
+Inferred temperature profile; consistent with sensor resistances and TDM fallback values, but XT660 manual coolant fallback differs. See TEMPERATURE_PROFILE.md.
+
+Required profiles: `yamaha_temperature_candidate`. These are assumptions, not measured hardware parameters.
 
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

@@ -139,4 +139,7 @@ timer duration before downstream corrections
 
 Required profiles: `nominal_xt_timer`. These are assumptions, not measured hardware parameters.
 
+row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
+Converted values: 600, 800, 1000, 1150, 1300, 1450, 1600, 1750, 1900, 2050, 2200, 2350, 2500, 2750, 3000, 3250, 3500, 3750, 4000, 4250, 4500, 4750, 5000, 5250, 5500, 5750, 6000, 6250, 6500, 6750, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000, 11500, 12550, 12600, 12650, 12700, 12750.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

@@ -1,0 +1,7482 @@
+{
+  "schema_version": 1,
+  "profile": {
+    "celsius_per_code": 0.625,
+    "offset_celsius": -30,
+    "status": "inferred conditional profile; ECU identity and analog circuit unconfirmed",
+    "basis": "Both digital curves admit a constant ratiometric NTC pullup across XT660 resistance specifications. TDM900 fail-safe values match both fallback codes under this formula.",
+    "conflict": "XT660 2004 manual specifies coolant fail-safe 80 C; this formula gives 60 C. TDM900 specifies 60 C. This does not identify this dump as TDM900 firmware or prove its board matches either manual.",
+    "requires": [
+      "NTC to ground with constant pullup to ADC reference",
+      "sensor specifications apply to this ECU",
+      "affine temperature-code interpretation"
+    ],
+    "evidence": [
+      "0x6FC2",
+      "0x70A3",
+      "0x4E64",
+      "0x4E65",
+      "0x4F26",
+      "0x4F47"
+    ]
+  },
+  "fits": {
+    "coolant_candidate": {
+      "slope": 0.625,
+      "offset": -30,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2320,
+            2590
+          ],
+          "adc_bins": [
+            584,
+            591
+          ],
+          "compatible_pullup_ohms": [
+            1692.9729729729731,
+            1951.3698630136985
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            310,
+            326
+          ],
+          "adc_bins": [
+            151,
+            153
+          ],
+          "compatible_pullup_ohms": [
+            1751.2987012987014,
+            1884.7549668874171
+          ]
+        },
+        {
+          "celsius": 110,
+          "resistance_ohms": [
+            140,
+            145
+          ],
+          "adc_bins": [
+            75,
+            76
+          ],
+          "compatible_pullup_ohms": [
+            1721.818181818182,
+            1834.7333333333333
+          ]
+        }
+      ],
+      "consistent_constant_pullup": true,
+      "common_pullup_interval_ohms": [
+        1751.2987012987014,
+        1834.7333333333333
+      ]
+    },
+    "intake_candidate": {
+      "slope": 0.625,
+      "offset": -30,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2210,
+            2690
+          ],
+          "adc_bins": [
+            480,
+            487
+          ],
+          "compatible_pullup_ohms": [
+            2427.377049180328,
+            3048.6666666666665
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            290,
+            354
+          ],
+          "adc_bins": [
+            108,
+            111
+          ],
+          "compatible_pullup_ohms": [
+            2361.428571428571,
+            3002.4444444444443
+          ]
+        }
+      ],
+      "consistent_constant_pullup": true,
+      "common_pullup_interval_ohms": [
+        2427.377049180328,
+        3002.4444444444443
+      ]
+    },
+    "coolant_offset_forced_to_80_fallback": {
+      "slope": 0.625,
+      "offset": -10,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2320,
+            2590
+          ],
+          "adc_bins": [
+            774,
+            780
+          ],
+          "compatible_pullup_ohms": [
+            721.843790012804,
+            836.5633074935402
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            310,
+            326
+          ],
+          "adc_bins": [
+            248,
+            252
+          ],
+          "compatible_pullup_ohms": [
+            944.7035573122529,
+            1020.0645161290322
+          ]
+        },
+        {
+          "celsius": 110,
+          "resistance_ohms": [
+            140,
+            145
+          ],
+          "adc_bins": [
+            119,
+            120
+          ],
+          "compatible_pullup_ohms": [
+            1044.7933884297522,
+            1102.7310924369747
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    "coolant_common_affine_forced_through_XT_fallbacks": {
+      "slope": 0.9375,
+      "offset": -55,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2320,
+            2590
+          ],
+          "adc_bins": [
+            584,
+            591
+          ],
+          "compatible_pullup_ohms": [
+            1692.9729729729731,
+            1951.3698630136985
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            310,
+            326
+          ],
+          "adc_bins": [
+            248,
+            252
+          ],
+          "compatible_pullup_ohms": [
+            944.7035573122529,
+            1020.0645161290322
+          ]
+        },
+        {
+          "celsius": 110,
+          "resistance_ohms": [
+            140,
+            145
+          ],
+          "adc_bins": [
+            151,
+            153
+          ],
+          "compatible_pullup_ohms": [
+            790.909090909091,
+            838.3112582781457
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    "intake_common_affine_forced_through_XT_fallbacks": {
+      "slope": 0.9375,
+      "offset": -55,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2210,
+            2690
+          ],
+          "adc_bins": [
+            480,
+            487
+          ],
+          "compatible_pullup_ohms": [
+            2427.377049180328,
+            3048.6666666666665
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            290,
+            354
+          ],
+          "adc_bins": [
+            180,
+            183
+          ],
+          "compatible_pullup_ohms": [
+            1323.9130434782608,
+            1659.8666666666668
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    }
+  },
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "generator_sha256": "19904f0439f4f0e7960bb9d3b346e8c9c5cc4da9f23108d8d2014baaf06592f5",
+  "assumptions": "Ideal 10-bit ratiometric ADC; ADC bin width 1/1024; NTC to ground; constant pullup; published sensor resistance intervals. Output tolerance covers one code plus the next input group (one ADC count for coolant, four for IAT because two input bits are discarded). This is a consistency test, not uniqueness proof or a component measurement.",
+  "sources": [
+    {
+      "title": "Yamaha XT660R/X 2004 service manual",
+      "pdf_pages": [
+        44,
+        347,
+        430
+      ],
+      "sections": [
+        "2-18 electrical specifications",
+        "7-4 fail-safe actions",
+        "8-48 coolant sensor"
+      ],
+      "url": "https://scootertuub.nl/motoren/Yamaha/Yamaha%20XT%20660%20R%20X%202004%20Service%20Manual%20%20.pdf"
+    },
+    {
+      "title": "Yamaha TDM900 service manual",
+      "pdf_pages": [
+        367,
+        447
+      ],
+      "sections": [
+        "7-4 fail-safe actions",
+        "8-47 coolant sensor"
+      ],
+      "url": "https://biker.ee/manuals/yamaha/Yamaha-TDM900-2002-2007_Workshop_Service_Repair_Manual.pdf"
+    }
+  ],
+  "fallback_values": {
+    "coolant_raw": 144,
+    "coolant_candidate_celsius": 60.0,
+    "intake_raw": 80,
+    "intake_candidate_celsius": 20.0
+  },
+  "fan_normal_hysteresis": {
+    "lower_address": "0x4BFE",
+    "upper_address": "0x4BFF",
+    "clear_if_raw_less_than": 205,
+    "set_if_raw_greater_than": 217,
+    "last_clear_code_celsius": 97.5,
+    "first_set_code_celsius": 106.25,
+    "condition": "Uses this profile only. Fault, override and diagnostic paths can independently operate the fan."
+  },
+  "all_adc_values": [
+    {
+      "adc10": 0,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 1,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 2,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 3,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 4,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 5,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 6,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 7,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 8,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 9,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 10,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 11,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 12,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 13,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 14,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 15,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 16,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 17,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 18,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 19,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 20,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 21,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 22,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 23,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 24,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 25,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 26,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 27,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 28,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 29,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 30,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 31,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 32,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 33,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 34,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 35,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 255,
+      "intake_candidate_celsius": 129.375
+    },
+    {
+      "adc10": 36,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 249,
+      "intake_candidate_celsius": 125.625
+    },
+    {
+      "adc10": 37,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 249,
+      "intake_candidate_celsius": 125.625
+    },
+    {
+      "adc10": 38,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 249,
+      "intake_candidate_celsius": 125.625
+    },
+    {
+      "adc10": 39,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 249,
+      "intake_candidate_celsius": 125.625
+    },
+    {
+      "adc10": 40,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 244,
+      "intake_candidate_celsius": 122.5
+    },
+    {
+      "adc10": 41,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 244,
+      "intake_candidate_celsius": 122.5
+    },
+    {
+      "adc10": 42,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 244,
+      "intake_candidate_celsius": 122.5
+    },
+    {
+      "adc10": 43,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 244,
+      "intake_candidate_celsius": 122.5
+    },
+    {
+      "adc10": 44,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 238,
+      "intake_candidate_celsius": 118.75
+    },
+    {
+      "adc10": 45,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 238,
+      "intake_candidate_celsius": 118.75
+    },
+    {
+      "adc10": 46,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 238,
+      "intake_candidate_celsius": 118.75
+    },
+    {
+      "adc10": 47,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 238,
+      "intake_candidate_celsius": 118.75
+    },
+    {
+      "adc10": 48,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 233,
+      "intake_candidate_celsius": 115.625
+    },
+    {
+      "adc10": 49,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 233,
+      "intake_candidate_celsius": 115.625
+    },
+    {
+      "adc10": 50,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 233,
+      "intake_candidate_celsius": 115.625
+    },
+    {
+      "adc10": 51,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 233,
+      "intake_candidate_celsius": 115.625
+    },
+    {
+      "adc10": 52,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 227,
+      "intake_candidate_celsius": 111.875
+    },
+    {
+      "adc10": 53,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 227,
+      "intake_candidate_celsius": 111.875
+    },
+    {
+      "adc10": 54,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 227,
+      "intake_candidate_celsius": 111.875
+    },
+    {
+      "adc10": 55,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 227,
+      "intake_candidate_celsius": 111.875
+    },
+    {
+      "adc10": 56,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 222,
+      "intake_candidate_celsius": 108.75
+    },
+    {
+      "adc10": 57,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 222,
+      "intake_candidate_celsius": 108.75
+    },
+    {
+      "adc10": 58,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 222,
+      "intake_candidate_celsius": 108.75
+    },
+    {
+      "adc10": 59,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 222,
+      "intake_candidate_celsius": 108.75
+    },
+    {
+      "adc10": 60,
+      "coolant_code": 239,
+      "coolant_candidate_celsius": 119.375,
+      "intake_code": 216,
+      "intake_candidate_celsius": 105.0
+    },
+    {
+      "adc10": 61,
+      "coolant_code": 238,
+      "coolant_candidate_celsius": 118.75,
+      "intake_code": 216,
+      "intake_candidate_celsius": 105.0
+    },
+    {
+      "adc10": 62,
+      "coolant_code": 237,
+      "coolant_candidate_celsius": 118.125,
+      "intake_code": 216,
+      "intake_candidate_celsius": 105.0
+    },
+    {
+      "adc10": 63,
+      "coolant_code": 236,
+      "coolant_candidate_celsius": 117.5,
+      "intake_code": 216,
+      "intake_candidate_celsius": 105.0
+    },
+    {
+      "adc10": 64,
+      "coolant_code": 235,
+      "coolant_candidate_celsius": 116.875,
+      "intake_code": 211,
+      "intake_candidate_celsius": 101.875
+    },
+    {
+      "adc10": 65,
+      "coolant_code": 234,
+      "coolant_candidate_celsius": 116.25,
+      "intake_code": 211,
+      "intake_candidate_celsius": 101.875
+    },
+    {
+      "adc10": 66,
+      "coolant_code": 233,
+      "coolant_candidate_celsius": 115.625,
+      "intake_code": 211,
+      "intake_candidate_celsius": 101.875
+    },
+    {
+      "adc10": 67,
+      "coolant_code": 232,
+      "coolant_candidate_celsius": 115.0,
+      "intake_code": 211,
+      "intake_candidate_celsius": 101.875
+    },
+    {
+      "adc10": 68,
+      "coolant_code": 231,
+      "coolant_candidate_celsius": 114.375,
+      "intake_code": 207,
+      "intake_candidate_celsius": 99.375
+    },
+    {
+      "adc10": 69,
+      "coolant_code": 230,
+      "coolant_candidate_celsius": 113.75,
+      "intake_code": 207,
+      "intake_candidate_celsius": 99.375
+    },
+    {
+      "adc10": 70,
+      "coolant_code": 229,
+      "coolant_candidate_celsius": 113.125,
+      "intake_code": 207,
+      "intake_candidate_celsius": 99.375
+    },
+    {
+      "adc10": 71,
+      "coolant_code": 229,
+      "coolant_candidate_celsius": 113.125,
+      "intake_code": 207,
+      "intake_candidate_celsius": 99.375
+    },
+    {
+      "adc10": 72,
+      "coolant_code": 228,
+      "coolant_candidate_celsius": 112.5,
+      "intake_code": 204,
+      "intake_candidate_celsius": 97.5
+    },
+    {
+      "adc10": 73,
+      "coolant_code": 227,
+      "coolant_candidate_celsius": 111.875,
+      "intake_code": 204,
+      "intake_candidate_celsius": 97.5
+    },
+    {
+      "adc10": 74,
+      "coolant_code": 226,
+      "coolant_candidate_celsius": 111.25,
+      "intake_code": 204,
+      "intake_candidate_celsius": 97.5
+    },
+    {
+      "adc10": 75,
+      "coolant_code": 225,
+      "coolant_candidate_celsius": 110.625,
+      "intake_code": 204,
+      "intake_candidate_celsius": 97.5
+    },
+    {
+      "adc10": 76,
+      "coolant_code": 224,
+      "coolant_candidate_celsius": 110.0,
+      "intake_code": 200,
+      "intake_candidate_celsius": 95.0
+    },
+    {
+      "adc10": 77,
+      "coolant_code": 223,
+      "coolant_candidate_celsius": 109.375,
+      "intake_code": 200,
+      "intake_candidate_celsius": 95.0
+    },
+    {
+      "adc10": 78,
+      "coolant_code": 222,
+      "coolant_candidate_celsius": 108.75,
+      "intake_code": 200,
+      "intake_candidate_celsius": 95.0
+    },
+    {
+      "adc10": 79,
+      "coolant_code": 221,
+      "coolant_candidate_celsius": 108.125,
+      "intake_code": 200,
+      "intake_candidate_celsius": 95.0
+    },
+    {
+      "adc10": 80,
+      "coolant_code": 220,
+      "coolant_candidate_celsius": 107.5,
+      "intake_code": 197,
+      "intake_candidate_celsius": 93.125
+    },
+    {
+      "adc10": 81,
+      "coolant_code": 219,
+      "coolant_candidate_celsius": 106.875,
+      "intake_code": 197,
+      "intake_candidate_celsius": 93.125
+    },
+    {
+      "adc10": 82,
+      "coolant_code": 219,
+      "coolant_candidate_celsius": 106.875,
+      "intake_code": 197,
+      "intake_candidate_celsius": 93.125
+    },
+    {
+      "adc10": 83,
+      "coolant_code": 218,
+      "coolant_candidate_celsius": 106.25,
+      "intake_code": 197,
+      "intake_candidate_celsius": 93.125
+    },
+    {
+      "adc10": 84,
+      "coolant_code": 217,
+      "coolant_candidate_celsius": 105.625,
+      "intake_code": 194,
+      "intake_candidate_celsius": 91.25
+    },
+    {
+      "adc10": 85,
+      "coolant_code": 216,
+      "coolant_candidate_celsius": 105.0,
+      "intake_code": 194,
+      "intake_candidate_celsius": 91.25
+    },
+    {
+      "adc10": 86,
+      "coolant_code": 215,
+      "coolant_candidate_celsius": 104.375,
+      "intake_code": 194,
+      "intake_candidate_celsius": 91.25
+    },
+    {
+      "adc10": 87,
+      "coolant_code": 214,
+      "coolant_candidate_celsius": 103.75,
+      "intake_code": 194,
+      "intake_candidate_celsius": 91.25
+    },
+    {
+      "adc10": 88,
+      "coolant_code": 213,
+      "coolant_candidate_celsius": 103.125,
+      "intake_code": 190,
+      "intake_candidate_celsius": 88.75
+    },
+    {
+      "adc10": 89,
+      "coolant_code": 212,
+      "coolant_candidate_celsius": 102.5,
+      "intake_code": 190,
+      "intake_candidate_celsius": 88.75
+    },
+    {
+      "adc10": 90,
+      "coolant_code": 211,
+      "coolant_candidate_celsius": 101.875,
+      "intake_code": 190,
+      "intake_candidate_celsius": 88.75
+    },
+    {
+      "adc10": 91,
+      "coolant_code": 210,
+      "coolant_candidate_celsius": 101.25,
+      "intake_code": 190,
+      "intake_candidate_celsius": 88.75
+    },
+    {
+      "adc10": 92,
+      "coolant_code": 210,
+      "coolant_candidate_celsius": 101.25,
+      "intake_code": 187,
+      "intake_candidate_celsius": 86.875
+    },
+    {
+      "adc10": 93,
+      "coolant_code": 209,
+      "coolant_candidate_celsius": 100.625,
+      "intake_code": 187,
+      "intake_candidate_celsius": 86.875
+    },
+    {
+      "adc10": 94,
+      "coolant_code": 208,
+      "coolant_candidate_celsius": 100.0,
+      "intake_code": 187,
+      "intake_candidate_celsius": 86.875
+    },
+    {
+      "adc10": 95,
+      "coolant_code": 208,
+      "coolant_candidate_celsius": 100.0,
+      "intake_code": 187,
+      "intake_candidate_celsius": 86.875
+    },
+    {
+      "adc10": 96,
+      "coolant_code": 207,
+      "coolant_candidate_celsius": 99.375,
+      "intake_code": 184,
+      "intake_candidate_celsius": 85.0
+    },
+    {
+      "adc10": 97,
+      "coolant_code": 206,
+      "coolant_candidate_celsius": 98.75,
+      "intake_code": 184,
+      "intake_candidate_celsius": 85.0
+    },
+    {
+      "adc10": 98,
+      "coolant_code": 206,
+      "coolant_candidate_celsius": 98.75,
+      "intake_code": 184,
+      "intake_candidate_celsius": 85.0
+    },
+    {
+      "adc10": 99,
+      "coolant_code": 205,
+      "coolant_candidate_celsius": 98.125,
+      "intake_code": 184,
+      "intake_candidate_celsius": 85.0
+    },
+    {
+      "adc10": 100,
+      "coolant_code": 205,
+      "coolant_candidate_celsius": 98.125,
+      "intake_code": 181,
+      "intake_candidate_celsius": 83.125
+    },
+    {
+      "adc10": 101,
+      "coolant_code": 204,
+      "coolant_candidate_celsius": 97.5,
+      "intake_code": 181,
+      "intake_candidate_celsius": 83.125
+    },
+    {
+      "adc10": 102,
+      "coolant_code": 203,
+      "coolant_candidate_celsius": 96.875,
+      "intake_code": 181,
+      "intake_candidate_celsius": 83.125
+    },
+    {
+      "adc10": 103,
+      "coolant_code": 203,
+      "coolant_candidate_celsius": 96.875,
+      "intake_code": 181,
+      "intake_candidate_celsius": 83.125
+    },
+    {
+      "adc10": 104,
+      "coolant_code": 202,
+      "coolant_candidate_celsius": 96.25,
+      "intake_code": 179,
+      "intake_candidate_celsius": 81.875
+    },
+    {
+      "adc10": 105,
+      "coolant_code": 201,
+      "coolant_candidate_celsius": 95.625,
+      "intake_code": 179,
+      "intake_candidate_celsius": 81.875
+    },
+    {
+      "adc10": 106,
+      "coolant_code": 201,
+      "coolant_candidate_celsius": 95.625,
+      "intake_code": 179,
+      "intake_candidate_celsius": 81.875
+    },
+    {
+      "adc10": 107,
+      "coolant_code": 200,
+      "coolant_candidate_celsius": 95.0,
+      "intake_code": 179,
+      "intake_candidate_celsius": 81.875
+    },
+    {
+      "adc10": 108,
+      "coolant_code": 200,
+      "coolant_candidate_celsius": 95.0,
+      "intake_code": 177,
+      "intake_candidate_celsius": 80.625
+    },
+    {
+      "adc10": 109,
+      "coolant_code": 199,
+      "coolant_candidate_celsius": 94.375,
+      "intake_code": 177,
+      "intake_candidate_celsius": 80.625
+    },
+    {
+      "adc10": 110,
+      "coolant_code": 198,
+      "coolant_candidate_celsius": 93.75,
+      "intake_code": 177,
+      "intake_candidate_celsius": 80.625
+    },
+    {
+      "adc10": 111,
+      "coolant_code": 198,
+      "coolant_candidate_celsius": 93.75,
+      "intake_code": 177,
+      "intake_candidate_celsius": 80.625
+    },
+    {
+      "adc10": 112,
+      "coolant_code": 197,
+      "coolant_candidate_celsius": 93.125,
+      "intake_code": 175,
+      "intake_candidate_celsius": 79.375
+    },
+    {
+      "adc10": 113,
+      "coolant_code": 196,
+      "coolant_candidate_celsius": 92.5,
+      "intake_code": 175,
+      "intake_candidate_celsius": 79.375
+    },
+    {
+      "adc10": 114,
+      "coolant_code": 196,
+      "coolant_candidate_celsius": 92.5,
+      "intake_code": 175,
+      "intake_candidate_celsius": 79.375
+    },
+    {
+      "adc10": 115,
+      "coolant_code": 195,
+      "coolant_candidate_celsius": 91.875,
+      "intake_code": 175,
+      "intake_candidate_celsius": 79.375
+    },
+    {
+      "adc10": 116,
+      "coolant_code": 195,
+      "coolant_candidate_celsius": 91.875,
+      "intake_code": 172,
+      "intake_candidate_celsius": 77.5
+    },
+    {
+      "adc10": 117,
+      "coolant_code": 194,
+      "coolant_candidate_celsius": 91.25,
+      "intake_code": 172,
+      "intake_candidate_celsius": 77.5
+    },
+    {
+      "adc10": 118,
+      "coolant_code": 193,
+      "coolant_candidate_celsius": 90.625,
+      "intake_code": 172,
+      "intake_candidate_celsius": 77.5
+    },
+    {
+      "adc10": 119,
+      "coolant_code": 193,
+      "coolant_candidate_celsius": 90.625,
+      "intake_code": 172,
+      "intake_candidate_celsius": 77.5
+    },
+    {
+      "adc10": 120,
+      "coolant_code": 192,
+      "coolant_candidate_celsius": 90.0,
+      "intake_code": 170,
+      "intake_candidate_celsius": 76.25
+    },
+    {
+      "adc10": 121,
+      "coolant_code": 191,
+      "coolant_candidate_celsius": 89.375,
+      "intake_code": 170,
+      "intake_candidate_celsius": 76.25
+    },
+    {
+      "adc10": 122,
+      "coolant_code": 191,
+      "coolant_candidate_celsius": 89.375,
+      "intake_code": 170,
+      "intake_candidate_celsius": 76.25
+    },
+    {
+      "adc10": 123,
+      "coolant_code": 190,
+      "coolant_candidate_celsius": 88.75,
+      "intake_code": 170,
+      "intake_candidate_celsius": 76.25
+    },
+    {
+      "adc10": 124,
+      "coolant_code": 190,
+      "coolant_candidate_celsius": 88.75,
+      "intake_code": 168,
+      "intake_candidate_celsius": 75.0
+    },
+    {
+      "adc10": 125,
+      "coolant_code": 189,
+      "coolant_candidate_celsius": 88.125,
+      "intake_code": 168,
+      "intake_candidate_celsius": 75.0
+    },
+    {
+      "adc10": 126,
+      "coolant_code": 189,
+      "coolant_candidate_celsius": 88.125,
+      "intake_code": 168,
+      "intake_candidate_celsius": 75.0
+    },
+    {
+      "adc10": 127,
+      "coolant_code": 188,
+      "coolant_candidate_celsius": 87.5,
+      "intake_code": 168,
+      "intake_candidate_celsius": 75.0
+    },
+    {
+      "adc10": 128,
+      "coolant_code": 188,
+      "coolant_candidate_celsius": 87.5,
+      "intake_code": 166,
+      "intake_candidate_celsius": 73.75
+    },
+    {
+      "adc10": 129,
+      "coolant_code": 187,
+      "coolant_candidate_celsius": 86.875,
+      "intake_code": 166,
+      "intake_candidate_celsius": 73.75
+    },
+    {
+      "adc10": 130,
+      "coolant_code": 187,
+      "coolant_candidate_celsius": 86.875,
+      "intake_code": 166,
+      "intake_candidate_celsius": 73.75
+    },
+    {
+      "adc10": 131,
+      "coolant_code": 186,
+      "coolant_candidate_celsius": 86.25,
+      "intake_code": 166,
+      "intake_candidate_celsius": 73.75
+    },
+    {
+      "adc10": 132,
+      "coolant_code": 186,
+      "coolant_candidate_celsius": 86.25,
+      "intake_code": 164,
+      "intake_candidate_celsius": 72.5
+    },
+    {
+      "adc10": 133,
+      "coolant_code": 185,
+      "coolant_candidate_celsius": 85.625,
+      "intake_code": 164,
+      "intake_candidate_celsius": 72.5
+    },
+    {
+      "adc10": 134,
+      "coolant_code": 185,
+      "coolant_candidate_celsius": 85.625,
+      "intake_code": 164,
+      "intake_candidate_celsius": 72.5
+    },
+    {
+      "adc10": 135,
+      "coolant_code": 184,
+      "coolant_candidate_celsius": 85.0,
+      "intake_code": 164,
+      "intake_candidate_celsius": 72.5
+    },
+    {
+      "adc10": 136,
+      "coolant_code": 184,
+      "coolant_candidate_celsius": 85.0,
+      "intake_code": 162,
+      "intake_candidate_celsius": 71.25
+    },
+    {
+      "adc10": 137,
+      "coolant_code": 183,
+      "coolant_candidate_celsius": 84.375,
+      "intake_code": 162,
+      "intake_candidate_celsius": 71.25
+    },
+    {
+      "adc10": 138,
+      "coolant_code": 183,
+      "coolant_candidate_celsius": 84.375,
+      "intake_code": 162,
+      "intake_candidate_celsius": 71.25
+    },
+    {
+      "adc10": 139,
+      "coolant_code": 182,
+      "coolant_candidate_celsius": 83.75,
+      "intake_code": 162,
+      "intake_candidate_celsius": 71.25
+    },
+    {
+      "adc10": 140,
+      "coolant_code": 182,
+      "coolant_candidate_celsius": 83.75,
+      "intake_code": 160,
+      "intake_candidate_celsius": 70.0
+    },
+    {
+      "adc10": 141,
+      "coolant_code": 182,
+      "coolant_candidate_celsius": 83.75,
+      "intake_code": 160,
+      "intake_candidate_celsius": 70.0
+    },
+    {
+      "adc10": 142,
+      "coolant_code": 181,
+      "coolant_candidate_celsius": 83.125,
+      "intake_code": 160,
+      "intake_candidate_celsius": 70.0
+    },
+    {
+      "adc10": 143,
+      "coolant_code": 181,
+      "coolant_candidate_celsius": 83.125,
+      "intake_code": 160,
+      "intake_candidate_celsius": 70.0
+    },
+    {
+      "adc10": 144,
+      "coolant_code": 180,
+      "coolant_candidate_celsius": 82.5,
+      "intake_code": 159,
+      "intake_candidate_celsius": 69.375
+    },
+    {
+      "adc10": 145,
+      "coolant_code": 180,
+      "coolant_candidate_celsius": 82.5,
+      "intake_code": 159,
+      "intake_candidate_celsius": 69.375
+    },
+    {
+      "adc10": 146,
+      "coolant_code": 179,
+      "coolant_candidate_celsius": 81.875,
+      "intake_code": 159,
+      "intake_candidate_celsius": 69.375
+    },
+    {
+      "adc10": 147,
+      "coolant_code": 179,
+      "coolant_candidate_celsius": 81.875,
+      "intake_code": 159,
+      "intake_candidate_celsius": 69.375
+    },
+    {
+      "adc10": 148,
+      "coolant_code": 178,
+      "coolant_candidate_celsius": 81.25,
+      "intake_code": 157,
+      "intake_candidate_celsius": 68.125
+    },
+    {
+      "adc10": 149,
+      "coolant_code": 178,
+      "coolant_candidate_celsius": 81.25,
+      "intake_code": 157,
+      "intake_candidate_celsius": 68.125
+    },
+    {
+      "adc10": 150,
+      "coolant_code": 177,
+      "coolant_candidate_celsius": 80.625,
+      "intake_code": 157,
+      "intake_candidate_celsius": 68.125
+    },
+    {
+      "adc10": 151,
+      "coolant_code": 177,
+      "coolant_candidate_celsius": 80.625,
+      "intake_code": 157,
+      "intake_candidate_celsius": 68.125
+    },
+    {
+      "adc10": 152,
+      "coolant_code": 176,
+      "coolant_candidate_celsius": 80.0,
+      "intake_code": 155,
+      "intake_candidate_celsius": 66.875
+    },
+    {
+      "adc10": 153,
+      "coolant_code": 176,
+      "coolant_candidate_celsius": 80.0,
+      "intake_code": 155,
+      "intake_candidate_celsius": 66.875
+    },
+    {
+      "adc10": 154,
+      "coolant_code": 175,
+      "coolant_candidate_celsius": 79.375,
+      "intake_code": 155,
+      "intake_candidate_celsius": 66.875
+    },
+    {
+      "adc10": 155,
+      "coolant_code": 175,
+      "coolant_candidate_celsius": 79.375,
+      "intake_code": 155,
+      "intake_candidate_celsius": 66.875
+    },
+    {
+      "adc10": 156,
+      "coolant_code": 175,
+      "coolant_candidate_celsius": 79.375,
+      "intake_code": 153,
+      "intake_candidate_celsius": 65.625
+    },
+    {
+      "adc10": 157,
+      "coolant_code": 174,
+      "coolant_candidate_celsius": 78.75,
+      "intake_code": 153,
+      "intake_candidate_celsius": 65.625
+    },
+    {
+      "adc10": 158,
+      "coolant_code": 174,
+      "coolant_candidate_celsius": 78.75,
+      "intake_code": 153,
+      "intake_candidate_celsius": 65.625
+    },
+    {
+      "adc10": 159,
+      "coolant_code": 173,
+      "coolant_candidate_celsius": 78.125,
+      "intake_code": 153,
+      "intake_candidate_celsius": 65.625
+    },
+    {
+      "adc10": 160,
+      "coolant_code": 173,
+      "coolant_candidate_celsius": 78.125,
+      "intake_code": 152,
+      "intake_candidate_celsius": 65.0
+    },
+    {
+      "adc10": 161,
+      "coolant_code": 173,
+      "coolant_candidate_celsius": 78.125,
+      "intake_code": 152,
+      "intake_candidate_celsius": 65.0
+    },
+    {
+      "adc10": 162,
+      "coolant_code": 172,
+      "coolant_candidate_celsius": 77.5,
+      "intake_code": 152,
+      "intake_candidate_celsius": 65.0
+    },
+    {
+      "adc10": 163,
+      "coolant_code": 172,
+      "coolant_candidate_celsius": 77.5,
+      "intake_code": 152,
+      "intake_candidate_celsius": 65.0
+    },
+    {
+      "adc10": 164,
+      "coolant_code": 172,
+      "coolant_candidate_celsius": 77.5,
+      "intake_code": 150,
+      "intake_candidate_celsius": 63.75
+    },
+    {
+      "adc10": 165,
+      "coolant_code": 171,
+      "coolant_candidate_celsius": 76.875,
+      "intake_code": 150,
+      "intake_candidate_celsius": 63.75
+    },
+    {
+      "adc10": 166,
+      "coolant_code": 171,
+      "coolant_candidate_celsius": 76.875,
+      "intake_code": 150,
+      "intake_candidate_celsius": 63.75
+    },
+    {
+      "adc10": 167,
+      "coolant_code": 170,
+      "coolant_candidate_celsius": 76.25,
+      "intake_code": 150,
+      "intake_candidate_celsius": 63.75
+    },
+    {
+      "adc10": 168,
+      "coolant_code": 170,
+      "coolant_candidate_celsius": 76.25,
+      "intake_code": 149,
+      "intake_candidate_celsius": 63.125
+    },
+    {
+      "adc10": 169,
+      "coolant_code": 170,
+      "coolant_candidate_celsius": 76.25,
+      "intake_code": 149,
+      "intake_candidate_celsius": 63.125
+    },
+    {
+      "adc10": 170,
+      "coolant_code": 169,
+      "coolant_candidate_celsius": 75.625,
+      "intake_code": 149,
+      "intake_candidate_celsius": 63.125
+    },
+    {
+      "adc10": 171,
+      "coolant_code": 169,
+      "coolant_candidate_celsius": 75.625,
+      "intake_code": 149,
+      "intake_candidate_celsius": 63.125
+    },
+    {
+      "adc10": 172,
+      "coolant_code": 169,
+      "coolant_candidate_celsius": 75.625,
+      "intake_code": 147,
+      "intake_candidate_celsius": 61.875
+    },
+    {
+      "adc10": 173,
+      "coolant_code": 168,
+      "coolant_candidate_celsius": 75.0,
+      "intake_code": 147,
+      "intake_candidate_celsius": 61.875
+    },
+    {
+      "adc10": 174,
+      "coolant_code": 168,
+      "coolant_candidate_celsius": 75.0,
+      "intake_code": 147,
+      "intake_candidate_celsius": 61.875
+    },
+    {
+      "adc10": 175,
+      "coolant_code": 167,
+      "coolant_candidate_celsius": 74.375,
+      "intake_code": 147,
+      "intake_candidate_celsius": 61.875
+    },
+    {
+      "adc10": 176,
+      "coolant_code": 167,
+      "coolant_candidate_celsius": 74.375,
+      "intake_code": 146,
+      "intake_candidate_celsius": 61.25
+    },
+    {
+      "adc10": 177,
+      "coolant_code": 167,
+      "coolant_candidate_celsius": 74.375,
+      "intake_code": 146,
+      "intake_candidate_celsius": 61.25
+    },
+    {
+      "adc10": 178,
+      "coolant_code": 166,
+      "coolant_candidate_celsius": 73.75,
+      "intake_code": 146,
+      "intake_candidate_celsius": 61.25
+    },
+    {
+      "adc10": 179,
+      "coolant_code": 166,
+      "coolant_candidate_celsius": 73.75,
+      "intake_code": 146,
+      "intake_candidate_celsius": 61.25
+    },
+    {
+      "adc10": 180,
+      "coolant_code": 166,
+      "coolant_candidate_celsius": 73.75,
+      "intake_code": 145,
+      "intake_candidate_celsius": 60.625
+    },
+    {
+      "adc10": 181,
+      "coolant_code": 165,
+      "coolant_candidate_celsius": 73.125,
+      "intake_code": 145,
+      "intake_candidate_celsius": 60.625
+    },
+    {
+      "adc10": 182,
+      "coolant_code": 165,
+      "coolant_candidate_celsius": 73.125,
+      "intake_code": 145,
+      "intake_candidate_celsius": 60.625
+    },
+    {
+      "adc10": 183,
+      "coolant_code": 164,
+      "coolant_candidate_celsius": 72.5,
+      "intake_code": 145,
+      "intake_candidate_celsius": 60.625
+    },
+    {
+      "adc10": 184,
+      "coolant_code": 164,
+      "coolant_candidate_celsius": 72.5,
+      "intake_code": 143,
+      "intake_candidate_celsius": 59.375
+    },
+    {
+      "adc10": 185,
+      "coolant_code": 164,
+      "coolant_candidate_celsius": 72.5,
+      "intake_code": 143,
+      "intake_candidate_celsius": 59.375
+    },
+    {
+      "adc10": 186,
+      "coolant_code": 163,
+      "coolant_candidate_celsius": 71.875,
+      "intake_code": 143,
+      "intake_candidate_celsius": 59.375
+    },
+    {
+      "adc10": 187,
+      "coolant_code": 163,
+      "coolant_candidate_celsius": 71.875,
+      "intake_code": 143,
+      "intake_candidate_celsius": 59.375
+    },
+    {
+      "adc10": 188,
+      "coolant_code": 163,
+      "coolant_candidate_celsius": 71.875,
+      "intake_code": 142,
+      "intake_candidate_celsius": 58.75
+    },
+    {
+      "adc10": 189,
+      "coolant_code": 162,
+      "coolant_candidate_celsius": 71.25,
+      "intake_code": 142,
+      "intake_candidate_celsius": 58.75
+    },
+    {
+      "adc10": 190,
+      "coolant_code": 162,
+      "coolant_candidate_celsius": 71.25,
+      "intake_code": 142,
+      "intake_candidate_celsius": 58.75
+    },
+    {
+      "adc10": 191,
+      "coolant_code": 162,
+      "coolant_candidate_celsius": 71.25,
+      "intake_code": 142,
+      "intake_candidate_celsius": 58.75
+    },
+    {
+      "adc10": 192,
+      "coolant_code": 161,
+      "coolant_candidate_celsius": 70.625,
+      "intake_code": 141,
+      "intake_candidate_celsius": 58.125
+    },
+    {
+      "adc10": 193,
+      "coolant_code": 161,
+      "coolant_candidate_celsius": 70.625,
+      "intake_code": 141,
+      "intake_candidate_celsius": 58.125
+    },
+    {
+      "adc10": 194,
+      "coolant_code": 161,
+      "coolant_candidate_celsius": 70.625,
+      "intake_code": 141,
+      "intake_candidate_celsius": 58.125
+    },
+    {
+      "adc10": 195,
+      "coolant_code": 160,
+      "coolant_candidate_celsius": 70.0,
+      "intake_code": 141,
+      "intake_candidate_celsius": 58.125
+    },
+    {
+      "adc10": 196,
+      "coolant_code": 160,
+      "coolant_candidate_celsius": 70.0,
+      "intake_code": 139,
+      "intake_candidate_celsius": 56.875
+    },
+    {
+      "adc10": 197,
+      "coolant_code": 160,
+      "coolant_candidate_celsius": 70.0,
+      "intake_code": 139,
+      "intake_candidate_celsius": 56.875
+    },
+    {
+      "adc10": 198,
+      "coolant_code": 159,
+      "coolant_candidate_celsius": 69.375,
+      "intake_code": 139,
+      "intake_candidate_celsius": 56.875
+    },
+    {
+      "adc10": 199,
+      "coolant_code": 159,
+      "coolant_candidate_celsius": 69.375,
+      "intake_code": 139,
+      "intake_candidate_celsius": 56.875
+    },
+    {
+      "adc10": 200,
+      "coolant_code": 159,
+      "coolant_candidate_celsius": 69.375,
+      "intake_code": 138,
+      "intake_candidate_celsius": 56.25
+    },
+    {
+      "adc10": 201,
+      "coolant_code": 158,
+      "coolant_candidate_celsius": 68.75,
+      "intake_code": 138,
+      "intake_candidate_celsius": 56.25
+    },
+    {
+      "adc10": 202,
+      "coolant_code": 158,
+      "coolant_candidate_celsius": 68.75,
+      "intake_code": 138,
+      "intake_candidate_celsius": 56.25
+    },
+    {
+      "adc10": 203,
+      "coolant_code": 158,
+      "coolant_candidate_celsius": 68.75,
+      "intake_code": 138,
+      "intake_candidate_celsius": 56.25
+    },
+    {
+      "adc10": 204,
+      "coolant_code": 158,
+      "coolant_candidate_celsius": 68.75,
+      "intake_code": 137,
+      "intake_candidate_celsius": 55.625
+    },
+    {
+      "adc10": 205,
+      "coolant_code": 157,
+      "coolant_candidate_celsius": 68.125,
+      "intake_code": 137,
+      "intake_candidate_celsius": 55.625
+    },
+    {
+      "adc10": 206,
+      "coolant_code": 157,
+      "coolant_candidate_celsius": 68.125,
+      "intake_code": 137,
+      "intake_candidate_celsius": 55.625
+    },
+    {
+      "adc10": 207,
+      "coolant_code": 157,
+      "coolant_candidate_celsius": 68.125,
+      "intake_code": 137,
+      "intake_candidate_celsius": 55.625
+    },
+    {
+      "adc10": 208,
+      "coolant_code": 156,
+      "coolant_candidate_celsius": 67.5,
+      "intake_code": 136,
+      "intake_candidate_celsius": 55.0
+    },
+    {
+      "adc10": 209,
+      "coolant_code": 156,
+      "coolant_candidate_celsius": 67.5,
+      "intake_code": 136,
+      "intake_candidate_celsius": 55.0
+    },
+    {
+      "adc10": 210,
+      "coolant_code": 156,
+      "coolant_candidate_celsius": 67.5,
+      "intake_code": 136,
+      "intake_candidate_celsius": 55.0
+    },
+    {
+      "adc10": 211,
+      "coolant_code": 155,
+      "coolant_candidate_celsius": 66.875,
+      "intake_code": 136,
+      "intake_candidate_celsius": 55.0
+    },
+    {
+      "adc10": 212,
+      "coolant_code": 155,
+      "coolant_candidate_celsius": 66.875,
+      "intake_code": 134,
+      "intake_candidate_celsius": 53.75
+    },
+    {
+      "adc10": 213,
+      "coolant_code": 155,
+      "coolant_candidate_celsius": 66.875,
+      "intake_code": 134,
+      "intake_candidate_celsius": 53.75
+    },
+    {
+      "adc10": 214,
+      "coolant_code": 154,
+      "coolant_candidate_celsius": 66.25,
+      "intake_code": 134,
+      "intake_candidate_celsius": 53.75
+    },
+    {
+      "adc10": 215,
+      "coolant_code": 154,
+      "coolant_candidate_celsius": 66.25,
+      "intake_code": 134,
+      "intake_candidate_celsius": 53.75
+    },
+    {
+      "adc10": 216,
+      "coolant_code": 154,
+      "coolant_candidate_celsius": 66.25,
+      "intake_code": 133,
+      "intake_candidate_celsius": 53.125
+    },
+    {
+      "adc10": 217,
+      "coolant_code": 153,
+      "coolant_candidate_celsius": 65.625,
+      "intake_code": 133,
+      "intake_candidate_celsius": 53.125
+    },
+    {
+      "adc10": 218,
+      "coolant_code": 153,
+      "coolant_candidate_celsius": 65.625,
+      "intake_code": 133,
+      "intake_candidate_celsius": 53.125
+    },
+    {
+      "adc10": 219,
+      "coolant_code": 153,
+      "coolant_candidate_celsius": 65.625,
+      "intake_code": 133,
+      "intake_candidate_celsius": 53.125
+    },
+    {
+      "adc10": 220,
+      "coolant_code": 153,
+      "coolant_candidate_celsius": 65.625,
+      "intake_code": 132,
+      "intake_candidate_celsius": 52.5
+    },
+    {
+      "adc10": 221,
+      "coolant_code": 152,
+      "coolant_candidate_celsius": 65.0,
+      "intake_code": 132,
+      "intake_candidate_celsius": 52.5
+    },
+    {
+      "adc10": 222,
+      "coolant_code": 152,
+      "coolant_candidate_celsius": 65.0,
+      "intake_code": 132,
+      "intake_candidate_celsius": 52.5
+    },
+    {
+      "adc10": 223,
+      "coolant_code": 152,
+      "coolant_candidate_celsius": 65.0,
+      "intake_code": 132,
+      "intake_candidate_celsius": 52.5
+    },
+    {
+      "adc10": 224,
+      "coolant_code": 151,
+      "coolant_candidate_celsius": 64.375,
+      "intake_code": 131,
+      "intake_candidate_celsius": 51.875
+    },
+    {
+      "adc10": 225,
+      "coolant_code": 151,
+      "coolant_candidate_celsius": 64.375,
+      "intake_code": 131,
+      "intake_candidate_celsius": 51.875
+    },
+    {
+      "adc10": 226,
+      "coolant_code": 151,
+      "coolant_candidate_celsius": 64.375,
+      "intake_code": 131,
+      "intake_candidate_celsius": 51.875
+    },
+    {
+      "adc10": 227,
+      "coolant_code": 151,
+      "coolant_candidate_celsius": 64.375,
+      "intake_code": 131,
+      "intake_candidate_celsius": 51.875
+    },
+    {
+      "adc10": 228,
+      "coolant_code": 150,
+      "coolant_candidate_celsius": 63.75,
+      "intake_code": 130,
+      "intake_candidate_celsius": 51.25
+    },
+    {
+      "adc10": 229,
+      "coolant_code": 150,
+      "coolant_candidate_celsius": 63.75,
+      "intake_code": 130,
+      "intake_candidate_celsius": 51.25
+    },
+    {
+      "adc10": 230,
+      "coolant_code": 150,
+      "coolant_candidate_celsius": 63.75,
+      "intake_code": 130,
+      "intake_candidate_celsius": 51.25
+    },
+    {
+      "adc10": 231,
+      "coolant_code": 149,
+      "coolant_candidate_celsius": 63.125,
+      "intake_code": 130,
+      "intake_candidate_celsius": 51.25
+    },
+    {
+      "adc10": 232,
+      "coolant_code": 149,
+      "coolant_candidate_celsius": 63.125,
+      "intake_code": 129,
+      "intake_candidate_celsius": 50.625
+    },
+    {
+      "adc10": 233,
+      "coolant_code": 149,
+      "coolant_candidate_celsius": 63.125,
+      "intake_code": 129,
+      "intake_candidate_celsius": 50.625
+    },
+    {
+      "adc10": 234,
+      "coolant_code": 149,
+      "coolant_candidate_celsius": 63.125,
+      "intake_code": 129,
+      "intake_candidate_celsius": 50.625
+    },
+    {
+      "adc10": 235,
+      "coolant_code": 148,
+      "coolant_candidate_celsius": 62.5,
+      "intake_code": 129,
+      "intake_candidate_celsius": 50.625
+    },
+    {
+      "adc10": 236,
+      "coolant_code": 148,
+      "coolant_candidate_celsius": 62.5,
+      "intake_code": 128,
+      "intake_candidate_celsius": 50.0
+    },
+    {
+      "adc10": 237,
+      "coolant_code": 148,
+      "coolant_candidate_celsius": 62.5,
+      "intake_code": 128,
+      "intake_candidate_celsius": 50.0
+    },
+    {
+      "adc10": 238,
+      "coolant_code": 147,
+      "coolant_candidate_celsius": 61.875,
+      "intake_code": 128,
+      "intake_candidate_celsius": 50.0
+    },
+    {
+      "adc10": 239,
+      "coolant_code": 147,
+      "coolant_candidate_celsius": 61.875,
+      "intake_code": 128,
+      "intake_candidate_celsius": 50.0
+    },
+    {
+      "adc10": 240,
+      "coolant_code": 147,
+      "coolant_candidate_celsius": 61.875,
+      "intake_code": 127,
+      "intake_candidate_celsius": 49.375
+    },
+    {
+      "adc10": 241,
+      "coolant_code": 147,
+      "coolant_candidate_celsius": 61.875,
+      "intake_code": 127,
+      "intake_candidate_celsius": 49.375
+    },
+    {
+      "adc10": 242,
+      "coolant_code": 146,
+      "coolant_candidate_celsius": 61.25,
+      "intake_code": 127,
+      "intake_candidate_celsius": 49.375
+    },
+    {
+      "adc10": 243,
+      "coolant_code": 146,
+      "coolant_candidate_celsius": 61.25,
+      "intake_code": 127,
+      "intake_candidate_celsius": 49.375
+    },
+    {
+      "adc10": 244,
+      "coolant_code": 146,
+      "coolant_candidate_celsius": 61.25,
+      "intake_code": 126,
+      "intake_candidate_celsius": 48.75
+    },
+    {
+      "adc10": 245,
+      "coolant_code": 145,
+      "coolant_candidate_celsius": 60.625,
+      "intake_code": 126,
+      "intake_candidate_celsius": 48.75
+    },
+    {
+      "adc10": 246,
+      "coolant_code": 145,
+      "coolant_candidate_celsius": 60.625,
+      "intake_code": 126,
+      "intake_candidate_celsius": 48.75
+    },
+    {
+      "adc10": 247,
+      "coolant_code": 145,
+      "coolant_candidate_celsius": 60.625,
+      "intake_code": 126,
+      "intake_candidate_celsius": 48.75
+    },
+    {
+      "adc10": 248,
+      "coolant_code": 145,
+      "coolant_candidate_celsius": 60.625,
+      "intake_code": 125,
+      "intake_candidate_celsius": 48.125
+    },
+    {
+      "adc10": 249,
+      "coolant_code": 144,
+      "coolant_candidate_celsius": 60.0,
+      "intake_code": 125,
+      "intake_candidate_celsius": 48.125
+    },
+    {
+      "adc10": 250,
+      "coolant_code": 144,
+      "coolant_candidate_celsius": 60.0,
+      "intake_code": 125,
+      "intake_candidate_celsius": 48.125
+    },
+    {
+      "adc10": 251,
+      "coolant_code": 144,
+      "coolant_candidate_celsius": 60.0,
+      "intake_code": 125,
+      "intake_candidate_celsius": 48.125
+    },
+    {
+      "adc10": 252,
+      "coolant_code": 144,
+      "coolant_candidate_celsius": 60.0,
+      "intake_code": 124,
+      "intake_candidate_celsius": 47.5
+    },
+    {
+      "adc10": 253,
+      "coolant_code": 143,
+      "coolant_candidate_celsius": 59.375,
+      "intake_code": 124,
+      "intake_candidate_celsius": 47.5
+    },
+    {
+      "adc10": 254,
+      "coolant_code": 143,
+      "coolant_candidate_celsius": 59.375,
+      "intake_code": 124,
+      "intake_candidate_celsius": 47.5
+    },
+    {
+      "adc10": 255,
+      "coolant_code": 143,
+      "coolant_candidate_celsius": 59.375,
+      "intake_code": 124,
+      "intake_candidate_celsius": 47.5
+    },
+    {
+      "adc10": 256,
+      "coolant_code": 143,
+      "coolant_candidate_celsius": 59.375,
+      "intake_code": 123,
+      "intake_candidate_celsius": 46.875
+    },
+    {
+      "adc10": 257,
+      "coolant_code": 142,
+      "coolant_candidate_celsius": 58.75,
+      "intake_code": 123,
+      "intake_candidate_celsius": 46.875
+    },
+    {
+      "adc10": 258,
+      "coolant_code": 142,
+      "coolant_candidate_celsius": 58.75,
+      "intake_code": 123,
+      "intake_candidate_celsius": 46.875
+    },
+    {
+      "adc10": 259,
+      "coolant_code": 142,
+      "coolant_candidate_celsius": 58.75,
+      "intake_code": 123,
+      "intake_candidate_celsius": 46.875
+    },
+    {
+      "adc10": 260,
+      "coolant_code": 142,
+      "coolant_candidate_celsius": 58.75,
+      "intake_code": 122,
+      "intake_candidate_celsius": 46.25
+    },
+    {
+      "adc10": 261,
+      "coolant_code": 141,
+      "coolant_candidate_celsius": 58.125,
+      "intake_code": 122,
+      "intake_candidate_celsius": 46.25
+    },
+    {
+      "adc10": 262,
+      "coolant_code": 141,
+      "coolant_candidate_celsius": 58.125,
+      "intake_code": 122,
+      "intake_candidate_celsius": 46.25
+    },
+    {
+      "adc10": 263,
+      "coolant_code": 141,
+      "coolant_candidate_celsius": 58.125,
+      "intake_code": 122,
+      "intake_candidate_celsius": 46.25
+    },
+    {
+      "adc10": 264,
+      "coolant_code": 141,
+      "coolant_candidate_celsius": 58.125,
+      "intake_code": 121,
+      "intake_candidate_celsius": 45.625
+    },
+    {
+      "adc10": 265,
+      "coolant_code": 140,
+      "coolant_candidate_celsius": 57.5,
+      "intake_code": 121,
+      "intake_candidate_celsius": 45.625
+    },
+    {
+      "adc10": 266,
+      "coolant_code": 140,
+      "coolant_candidate_celsius": 57.5,
+      "intake_code": 121,
+      "intake_candidate_celsius": 45.625
+    },
+    {
+      "adc10": 267,
+      "coolant_code": 140,
+      "coolant_candidate_celsius": 57.5,
+      "intake_code": 121,
+      "intake_candidate_celsius": 45.625
+    },
+    {
+      "adc10": 268,
+      "coolant_code": 140,
+      "coolant_candidate_celsius": 57.5,
+      "intake_code": 120,
+      "intake_candidate_celsius": 45.0
+    },
+    {
+      "adc10": 269,
+      "coolant_code": 139,
+      "coolant_candidate_celsius": 56.875,
+      "intake_code": 120,
+      "intake_candidate_celsius": 45.0
+    },
+    {
+      "adc10": 270,
+      "coolant_code": 139,
+      "coolant_candidate_celsius": 56.875,
+      "intake_code": 120,
+      "intake_candidate_celsius": 45.0
+    },
+    {
+      "adc10": 271,
+      "coolant_code": 139,
+      "coolant_candidate_celsius": 56.875,
+      "intake_code": 120,
+      "intake_candidate_celsius": 45.0
+    },
+    {
+      "adc10": 272,
+      "coolant_code": 139,
+      "coolant_candidate_celsius": 56.875,
+      "intake_code": 119,
+      "intake_candidate_celsius": 44.375
+    },
+    {
+      "adc10": 273,
+      "coolant_code": 138,
+      "coolant_candidate_celsius": 56.25,
+      "intake_code": 119,
+      "intake_candidate_celsius": 44.375
+    },
+    {
+      "adc10": 274,
+      "coolant_code": 138,
+      "coolant_candidate_celsius": 56.25,
+      "intake_code": 119,
+      "intake_candidate_celsius": 44.375
+    },
+    {
+      "adc10": 275,
+      "coolant_code": 138,
+      "coolant_candidate_celsius": 56.25,
+      "intake_code": 119,
+      "intake_candidate_celsius": 44.375
+    },
+    {
+      "adc10": 276,
+      "coolant_code": 138,
+      "coolant_candidate_celsius": 56.25,
+      "intake_code": 118,
+      "intake_candidate_celsius": 43.75
+    },
+    {
+      "adc10": 277,
+      "coolant_code": 137,
+      "coolant_candidate_celsius": 55.625,
+      "intake_code": 118,
+      "intake_candidate_celsius": 43.75
+    },
+    {
+      "adc10": 278,
+      "coolant_code": 137,
+      "coolant_candidate_celsius": 55.625,
+      "intake_code": 118,
+      "intake_candidate_celsius": 43.75
+    },
+    {
+      "adc10": 279,
+      "coolant_code": 137,
+      "coolant_candidate_celsius": 55.625,
+      "intake_code": 118,
+      "intake_candidate_celsius": 43.75
+    },
+    {
+      "adc10": 280,
+      "coolant_code": 137,
+      "coolant_candidate_celsius": 55.625,
+      "intake_code": 117,
+      "intake_candidate_celsius": 43.125
+    },
+    {
+      "adc10": 281,
+      "coolant_code": 136,
+      "coolant_candidate_celsius": 55.0,
+      "intake_code": 117,
+      "intake_candidate_celsius": 43.125
+    },
+    {
+      "adc10": 282,
+      "coolant_code": 136,
+      "coolant_candidate_celsius": 55.0,
+      "intake_code": 117,
+      "intake_candidate_celsius": 43.125
+    },
+    {
+      "adc10": 283,
+      "coolant_code": 136,
+      "coolant_candidate_celsius": 55.0,
+      "intake_code": 117,
+      "intake_candidate_celsius": 43.125
+    },
+    {
+      "adc10": 284,
+      "coolant_code": 136,
+      "coolant_candidate_celsius": 55.0,
+      "intake_code": 116,
+      "intake_candidate_celsius": 42.5
+    },
+    {
+      "adc10": 285,
+      "coolant_code": 135,
+      "coolant_candidate_celsius": 54.375,
+      "intake_code": 116,
+      "intake_candidate_celsius": 42.5
+    },
+    {
+      "adc10": 286,
+      "coolant_code": 135,
+      "coolant_candidate_celsius": 54.375,
+      "intake_code": 116,
+      "intake_candidate_celsius": 42.5
+    },
+    {
+      "adc10": 287,
+      "coolant_code": 135,
+      "coolant_candidate_celsius": 54.375,
+      "intake_code": 116,
+      "intake_candidate_celsius": 42.5
+    },
+    {
+      "adc10": 288,
+      "coolant_code": 135,
+      "coolant_candidate_celsius": 54.375,
+      "intake_code": 116,
+      "intake_candidate_celsius": 42.5
+    },
+    {
+      "adc10": 289,
+      "coolant_code": 134,
+      "coolant_candidate_celsius": 53.75,
+      "intake_code": 116,
+      "intake_candidate_celsius": 42.5
+    },
+    {
+      "adc10": 290,
+      "coolant_code": 134,
+      "coolant_candidate_celsius": 53.75,
+      "intake_code": 116,
+      "intake_candidate_celsius": 42.5
+    },
+    {
+      "adc10": 291,
+      "coolant_code": 134,
+      "coolant_candidate_celsius": 53.75,
+      "intake_code": 116,
+      "intake_candidate_celsius": 42.5
+    },
+    {
+      "adc10": 292,
+      "coolant_code": 134,
+      "coolant_candidate_celsius": 53.75,
+      "intake_code": 115,
+      "intake_candidate_celsius": 41.875
+    },
+    {
+      "adc10": 293,
+      "coolant_code": 133,
+      "coolant_candidate_celsius": 53.125,
+      "intake_code": 115,
+      "intake_candidate_celsius": 41.875
+    },
+    {
+      "adc10": 294,
+      "coolant_code": 133,
+      "coolant_candidate_celsius": 53.125,
+      "intake_code": 115,
+      "intake_candidate_celsius": 41.875
+    },
+    {
+      "adc10": 295,
+      "coolant_code": 133,
+      "coolant_candidate_celsius": 53.125,
+      "intake_code": 115,
+      "intake_candidate_celsius": 41.875
+    },
+    {
+      "adc10": 296,
+      "coolant_code": 133,
+      "coolant_candidate_celsius": 53.125,
+      "intake_code": 114,
+      "intake_candidate_celsius": 41.25
+    },
+    {
+      "adc10": 297,
+      "coolant_code": 132,
+      "coolant_candidate_celsius": 52.5,
+      "intake_code": 114,
+      "intake_candidate_celsius": 41.25
+    },
+    {
+      "adc10": 298,
+      "coolant_code": 132,
+      "coolant_candidate_celsius": 52.5,
+      "intake_code": 114,
+      "intake_candidate_celsius": 41.25
+    },
+    {
+      "adc10": 299,
+      "coolant_code": 132,
+      "coolant_candidate_celsius": 52.5,
+      "intake_code": 114,
+      "intake_candidate_celsius": 41.25
+    },
+    {
+      "adc10": 300,
+      "coolant_code": 132,
+      "coolant_candidate_celsius": 52.5,
+      "intake_code": 113,
+      "intake_candidate_celsius": 40.625
+    },
+    {
+      "adc10": 301,
+      "coolant_code": 131,
+      "coolant_candidate_celsius": 51.875,
+      "intake_code": 113,
+      "intake_candidate_celsius": 40.625
+    },
+    {
+      "adc10": 302,
+      "coolant_code": 131,
+      "coolant_candidate_celsius": 51.875,
+      "intake_code": 113,
+      "intake_candidate_celsius": 40.625
+    },
+    {
+      "adc10": 303,
+      "coolant_code": 131,
+      "coolant_candidate_celsius": 51.875,
+      "intake_code": 113,
+      "intake_candidate_celsius": 40.625
+    },
+    {
+      "adc10": 304,
+      "coolant_code": 131,
+      "coolant_candidate_celsius": 51.875,
+      "intake_code": 112,
+      "intake_candidate_celsius": 40.0
+    },
+    {
+      "adc10": 305,
+      "coolant_code": 130,
+      "coolant_candidate_celsius": 51.25,
+      "intake_code": 112,
+      "intake_candidate_celsius": 40.0
+    },
+    {
+      "adc10": 306,
+      "coolant_code": 130,
+      "coolant_candidate_celsius": 51.25,
+      "intake_code": 112,
+      "intake_candidate_celsius": 40.0
+    },
+    {
+      "adc10": 307,
+      "coolant_code": 130,
+      "coolant_candidate_celsius": 51.25,
+      "intake_code": 112,
+      "intake_candidate_celsius": 40.0
+    },
+    {
+      "adc10": 308,
+      "coolant_code": 130,
+      "coolant_candidate_celsius": 51.25,
+      "intake_code": 111,
+      "intake_candidate_celsius": 39.375
+    },
+    {
+      "adc10": 309,
+      "coolant_code": 129,
+      "coolant_candidate_celsius": 50.625,
+      "intake_code": 111,
+      "intake_candidate_celsius": 39.375
+    },
+    {
+      "adc10": 310,
+      "coolant_code": 129,
+      "coolant_candidate_celsius": 50.625,
+      "intake_code": 111,
+      "intake_candidate_celsius": 39.375
+    },
+    {
+      "adc10": 311,
+      "coolant_code": 129,
+      "coolant_candidate_celsius": 50.625,
+      "intake_code": 111,
+      "intake_candidate_celsius": 39.375
+    },
+    {
+      "adc10": 312,
+      "coolant_code": 129,
+      "coolant_candidate_celsius": 50.625,
+      "intake_code": 110,
+      "intake_candidate_celsius": 38.75
+    },
+    {
+      "adc10": 313,
+      "coolant_code": 128,
+      "coolant_candidate_celsius": 50.0,
+      "intake_code": 110,
+      "intake_candidate_celsius": 38.75
+    },
+    {
+      "adc10": 314,
+      "coolant_code": 128,
+      "coolant_candidate_celsius": 50.0,
+      "intake_code": 110,
+      "intake_candidate_celsius": 38.75
+    },
+    {
+      "adc10": 315,
+      "coolant_code": 128,
+      "coolant_candidate_celsius": 50.0,
+      "intake_code": 110,
+      "intake_candidate_celsius": 38.75
+    },
+    {
+      "adc10": 316,
+      "coolant_code": 128,
+      "coolant_candidate_celsius": 50.0,
+      "intake_code": 109,
+      "intake_candidate_celsius": 38.125
+    },
+    {
+      "adc10": 317,
+      "coolant_code": 127,
+      "coolant_candidate_celsius": 49.375,
+      "intake_code": 109,
+      "intake_candidate_celsius": 38.125
+    },
+    {
+      "adc10": 318,
+      "coolant_code": 127,
+      "coolant_candidate_celsius": 49.375,
+      "intake_code": 109,
+      "intake_candidate_celsius": 38.125
+    },
+    {
+      "adc10": 319,
+      "coolant_code": 127,
+      "coolant_candidate_celsius": 49.375,
+      "intake_code": 109,
+      "intake_candidate_celsius": 38.125
+    },
+    {
+      "adc10": 320,
+      "coolant_code": 127,
+      "coolant_candidate_celsius": 49.375,
+      "intake_code": 109,
+      "intake_candidate_celsius": 38.125
+    },
+    {
+      "adc10": 321,
+      "coolant_code": 127,
+      "coolant_candidate_celsius": 49.375,
+      "intake_code": 109,
+      "intake_candidate_celsius": 38.125
+    },
+    {
+      "adc10": 322,
+      "coolant_code": 126,
+      "coolant_candidate_celsius": 48.75,
+      "intake_code": 109,
+      "intake_candidate_celsius": 38.125
+    },
+    {
+      "adc10": 323,
+      "coolant_code": 126,
+      "coolant_candidate_celsius": 48.75,
+      "intake_code": 109,
+      "intake_candidate_celsius": 38.125
+    },
+    {
+      "adc10": 324,
+      "coolant_code": 126,
+      "coolant_candidate_celsius": 48.75,
+      "intake_code": 108,
+      "intake_candidate_celsius": 37.5
+    },
+    {
+      "adc10": 325,
+      "coolant_code": 126,
+      "coolant_candidate_celsius": 48.75,
+      "intake_code": 108,
+      "intake_candidate_celsius": 37.5
+    },
+    {
+      "adc10": 326,
+      "coolant_code": 126,
+      "coolant_candidate_celsius": 48.75,
+      "intake_code": 108,
+      "intake_candidate_celsius": 37.5
+    },
+    {
+      "adc10": 327,
+      "coolant_code": 125,
+      "coolant_candidate_celsius": 48.125,
+      "intake_code": 108,
+      "intake_candidate_celsius": 37.5
+    },
+    {
+      "adc10": 328,
+      "coolant_code": 125,
+      "coolant_candidate_celsius": 48.125,
+      "intake_code": 107,
+      "intake_candidate_celsius": 36.875
+    },
+    {
+      "adc10": 329,
+      "coolant_code": 125,
+      "coolant_candidate_celsius": 48.125,
+      "intake_code": 107,
+      "intake_candidate_celsius": 36.875
+    },
+    {
+      "adc10": 330,
+      "coolant_code": 125,
+      "coolant_candidate_celsius": 48.125,
+      "intake_code": 107,
+      "intake_candidate_celsius": 36.875
+    },
+    {
+      "adc10": 331,
+      "coolant_code": 125,
+      "coolant_candidate_celsius": 48.125,
+      "intake_code": 107,
+      "intake_candidate_celsius": 36.875
+    },
+    {
+      "adc10": 332,
+      "coolant_code": 125,
+      "coolant_candidate_celsius": 48.125,
+      "intake_code": 106,
+      "intake_candidate_celsius": 36.25
+    },
+    {
+      "adc10": 333,
+      "coolant_code": 124,
+      "coolant_candidate_celsius": 47.5,
+      "intake_code": 106,
+      "intake_candidate_celsius": 36.25
+    },
+    {
+      "adc10": 334,
+      "coolant_code": 124,
+      "coolant_candidate_celsius": 47.5,
+      "intake_code": 106,
+      "intake_candidate_celsius": 36.25
+    },
+    {
+      "adc10": 335,
+      "coolant_code": 124,
+      "coolant_candidate_celsius": 47.5,
+      "intake_code": 106,
+      "intake_candidate_celsius": 36.25
+    },
+    {
+      "adc10": 336,
+      "coolant_code": 124,
+      "coolant_candidate_celsius": 47.5,
+      "intake_code": 106,
+      "intake_candidate_celsius": 36.25
+    },
+    {
+      "adc10": 337,
+      "coolant_code": 124,
+      "coolant_candidate_celsius": 47.5,
+      "intake_code": 106,
+      "intake_candidate_celsius": 36.25
+    },
+    {
+      "adc10": 338,
+      "coolant_code": 123,
+      "coolant_candidate_celsius": 46.875,
+      "intake_code": 106,
+      "intake_candidate_celsius": 36.25
+    },
+    {
+      "adc10": 339,
+      "coolant_code": 123,
+      "coolant_candidate_celsius": 46.875,
+      "intake_code": 106,
+      "intake_candidate_celsius": 36.25
+    },
+    {
+      "adc10": 340,
+      "coolant_code": 123,
+      "coolant_candidate_celsius": 46.875,
+      "intake_code": 105,
+      "intake_candidate_celsius": 35.625
+    },
+    {
+      "adc10": 341,
+      "coolant_code": 123,
+      "coolant_candidate_celsius": 46.875,
+      "intake_code": 105,
+      "intake_candidate_celsius": 35.625
+    },
+    {
+      "adc10": 342,
+      "coolant_code": 123,
+      "coolant_candidate_celsius": 46.875,
+      "intake_code": 105,
+      "intake_candidate_celsius": 35.625
+    },
+    {
+      "adc10": 343,
+      "coolant_code": 122,
+      "coolant_candidate_celsius": 46.25,
+      "intake_code": 105,
+      "intake_candidate_celsius": 35.625
+    },
+    {
+      "adc10": 344,
+      "coolant_code": 122,
+      "coolant_candidate_celsius": 46.25,
+      "intake_code": 104,
+      "intake_candidate_celsius": 35.0
+    },
+    {
+      "adc10": 345,
+      "coolant_code": 122,
+      "coolant_candidate_celsius": 46.25,
+      "intake_code": 104,
+      "intake_candidate_celsius": 35.0
+    },
+    {
+      "adc10": 346,
+      "coolant_code": 122,
+      "coolant_candidate_celsius": 46.25,
+      "intake_code": 104,
+      "intake_candidate_celsius": 35.0
+    },
+    {
+      "adc10": 347,
+      "coolant_code": 122,
+      "coolant_candidate_celsius": 46.25,
+      "intake_code": 104,
+      "intake_candidate_celsius": 35.0
+    },
+    {
+      "adc10": 348,
+      "coolant_code": 122,
+      "coolant_candidate_celsius": 46.25,
+      "intake_code": 103,
+      "intake_candidate_celsius": 34.375
+    },
+    {
+      "adc10": 349,
+      "coolant_code": 121,
+      "coolant_candidate_celsius": 45.625,
+      "intake_code": 103,
+      "intake_candidate_celsius": 34.375
+    },
+    {
+      "adc10": 350,
+      "coolant_code": 121,
+      "coolant_candidate_celsius": 45.625,
+      "intake_code": 103,
+      "intake_candidate_celsius": 34.375
+    },
+    {
+      "adc10": 351,
+      "coolant_code": 121,
+      "coolant_candidate_celsius": 45.625,
+      "intake_code": 103,
+      "intake_candidate_celsius": 34.375
+    },
+    {
+      "adc10": 352,
+      "coolant_code": 121,
+      "coolant_candidate_celsius": 45.625,
+      "intake_code": 103,
+      "intake_candidate_celsius": 34.375
+    },
+    {
+      "adc10": 353,
+      "coolant_code": 121,
+      "coolant_candidate_celsius": 45.625,
+      "intake_code": 103,
+      "intake_candidate_celsius": 34.375
+    },
+    {
+      "adc10": 354,
+      "coolant_code": 120,
+      "coolant_candidate_celsius": 45.0,
+      "intake_code": 103,
+      "intake_candidate_celsius": 34.375
+    },
+    {
+      "adc10": 355,
+      "coolant_code": 120,
+      "coolant_candidate_celsius": 45.0,
+      "intake_code": 103,
+      "intake_candidate_celsius": 34.375
+    },
+    {
+      "adc10": 356,
+      "coolant_code": 120,
+      "coolant_candidate_celsius": 45.0,
+      "intake_code": 102,
+      "intake_candidate_celsius": 33.75
+    },
+    {
+      "adc10": 357,
+      "coolant_code": 120,
+      "coolant_candidate_celsius": 45.0,
+      "intake_code": 102,
+      "intake_candidate_celsius": 33.75
+    },
+    {
+      "adc10": 358,
+      "coolant_code": 120,
+      "coolant_candidate_celsius": 45.0,
+      "intake_code": 102,
+      "intake_candidate_celsius": 33.75
+    },
+    {
+      "adc10": 359,
+      "coolant_code": 119,
+      "coolant_candidate_celsius": 44.375,
+      "intake_code": 102,
+      "intake_candidate_celsius": 33.75
+    },
+    {
+      "adc10": 360,
+      "coolant_code": 119,
+      "coolant_candidate_celsius": 44.375,
+      "intake_code": 101,
+      "intake_candidate_celsius": 33.125
+    },
+    {
+      "adc10": 361,
+      "coolant_code": 119,
+      "coolant_candidate_celsius": 44.375,
+      "intake_code": 101,
+      "intake_candidate_celsius": 33.125
+    },
+    {
+      "adc10": 362,
+      "coolant_code": 119,
+      "coolant_candidate_celsius": 44.375,
+      "intake_code": 101,
+      "intake_candidate_celsius": 33.125
+    },
+    {
+      "adc10": 363,
+      "coolant_code": 119,
+      "coolant_candidate_celsius": 44.375,
+      "intake_code": 101,
+      "intake_candidate_celsius": 33.125
+    },
+    {
+      "adc10": 364,
+      "coolant_code": 119,
+      "coolant_candidate_celsius": 44.375,
+      "intake_code": 100,
+      "intake_candidate_celsius": 32.5
+    },
+    {
+      "adc10": 365,
+      "coolant_code": 118,
+      "coolant_candidate_celsius": 43.75,
+      "intake_code": 100,
+      "intake_candidate_celsius": 32.5
+    },
+    {
+      "adc10": 366,
+      "coolant_code": 118,
+      "coolant_candidate_celsius": 43.75,
+      "intake_code": 100,
+      "intake_candidate_celsius": 32.5
+    },
+    {
+      "adc10": 367,
+      "coolant_code": 118,
+      "coolant_candidate_celsius": 43.75,
+      "intake_code": 100,
+      "intake_candidate_celsius": 32.5
+    },
+    {
+      "adc10": 368,
+      "coolant_code": 118,
+      "coolant_candidate_celsius": 43.75,
+      "intake_code": 100,
+      "intake_candidate_celsius": 32.5
+    },
+    {
+      "adc10": 369,
+      "coolant_code": 118,
+      "coolant_candidate_celsius": 43.75,
+      "intake_code": 100,
+      "intake_candidate_celsius": 32.5
+    },
+    {
+      "adc10": 370,
+      "coolant_code": 117,
+      "coolant_candidate_celsius": 43.125,
+      "intake_code": 100,
+      "intake_candidate_celsius": 32.5
+    },
+    {
+      "adc10": 371,
+      "coolant_code": 117,
+      "coolant_candidate_celsius": 43.125,
+      "intake_code": 100,
+      "intake_candidate_celsius": 32.5
+    },
+    {
+      "adc10": 372,
+      "coolant_code": 117,
+      "coolant_candidate_celsius": 43.125,
+      "intake_code": 99,
+      "intake_candidate_celsius": 31.875
+    },
+    {
+      "adc10": 373,
+      "coolant_code": 117,
+      "coolant_candidate_celsius": 43.125,
+      "intake_code": 99,
+      "intake_candidate_celsius": 31.875
+    },
+    {
+      "adc10": 374,
+      "coolant_code": 117,
+      "coolant_candidate_celsius": 43.125,
+      "intake_code": 99,
+      "intake_candidate_celsius": 31.875
+    },
+    {
+      "adc10": 375,
+      "coolant_code": 116,
+      "coolant_candidate_celsius": 42.5,
+      "intake_code": 99,
+      "intake_candidate_celsius": 31.875
+    },
+    {
+      "adc10": 376,
+      "coolant_code": 116,
+      "coolant_candidate_celsius": 42.5,
+      "intake_code": 98,
+      "intake_candidate_celsius": 31.25
+    },
+    {
+      "adc10": 377,
+      "coolant_code": 116,
+      "coolant_candidate_celsius": 42.5,
+      "intake_code": 98,
+      "intake_candidate_celsius": 31.25
+    },
+    {
+      "adc10": 378,
+      "coolant_code": 116,
+      "coolant_candidate_celsius": 42.5,
+      "intake_code": 98,
+      "intake_candidate_celsius": 31.25
+    },
+    {
+      "adc10": 379,
+      "coolant_code": 116,
+      "coolant_candidate_celsius": 42.5,
+      "intake_code": 98,
+      "intake_candidate_celsius": 31.25
+    },
+    {
+      "adc10": 380,
+      "coolant_code": 116,
+      "coolant_candidate_celsius": 42.5,
+      "intake_code": 97,
+      "intake_candidate_celsius": 30.625
+    },
+    {
+      "adc10": 381,
+      "coolant_code": 115,
+      "coolant_candidate_celsius": 41.875,
+      "intake_code": 97,
+      "intake_candidate_celsius": 30.625
+    },
+    {
+      "adc10": 382,
+      "coolant_code": 115,
+      "coolant_candidate_celsius": 41.875,
+      "intake_code": 97,
+      "intake_candidate_celsius": 30.625
+    },
+    {
+      "adc10": 383,
+      "coolant_code": 115,
+      "coolant_candidate_celsius": 41.875,
+      "intake_code": 97,
+      "intake_candidate_celsius": 30.625
+    },
+    {
+      "adc10": 384,
+      "coolant_code": 115,
+      "coolant_candidate_celsius": 41.875,
+      "intake_code": 97,
+      "intake_candidate_celsius": 30.625
+    },
+    {
+      "adc10": 385,
+      "coolant_code": 115,
+      "coolant_candidate_celsius": 41.875,
+      "intake_code": 97,
+      "intake_candidate_celsius": 30.625
+    },
+    {
+      "adc10": 386,
+      "coolant_code": 114,
+      "coolant_candidate_celsius": 41.25,
+      "intake_code": 97,
+      "intake_candidate_celsius": 30.625
+    },
+    {
+      "adc10": 387,
+      "coolant_code": 114,
+      "coolant_candidate_celsius": 41.25,
+      "intake_code": 97,
+      "intake_candidate_celsius": 30.625
+    },
+    {
+      "adc10": 388,
+      "coolant_code": 114,
+      "coolant_candidate_celsius": 41.25,
+      "intake_code": 96,
+      "intake_candidate_celsius": 30.0
+    },
+    {
+      "adc10": 389,
+      "coolant_code": 114,
+      "coolant_candidate_celsius": 41.25,
+      "intake_code": 96,
+      "intake_candidate_celsius": 30.0
+    },
+    {
+      "adc10": 390,
+      "coolant_code": 114,
+      "coolant_candidate_celsius": 41.25,
+      "intake_code": 96,
+      "intake_candidate_celsius": 30.0
+    },
+    {
+      "adc10": 391,
+      "coolant_code": 113,
+      "coolant_candidate_celsius": 40.625,
+      "intake_code": 96,
+      "intake_candidate_celsius": 30.0
+    },
+    {
+      "adc10": 392,
+      "coolant_code": 113,
+      "coolant_candidate_celsius": 40.625,
+      "intake_code": 95,
+      "intake_candidate_celsius": 29.375
+    },
+    {
+      "adc10": 393,
+      "coolant_code": 113,
+      "coolant_candidate_celsius": 40.625,
+      "intake_code": 95,
+      "intake_candidate_celsius": 29.375
+    },
+    {
+      "adc10": 394,
+      "coolant_code": 113,
+      "coolant_candidate_celsius": 40.625,
+      "intake_code": 95,
+      "intake_candidate_celsius": 29.375
+    },
+    {
+      "adc10": 395,
+      "coolant_code": 113,
+      "coolant_candidate_celsius": 40.625,
+      "intake_code": 95,
+      "intake_candidate_celsius": 29.375
+    },
+    {
+      "adc10": 396,
+      "coolant_code": 113,
+      "coolant_candidate_celsius": 40.625,
+      "intake_code": 94,
+      "intake_candidate_celsius": 28.75
+    },
+    {
+      "adc10": 397,
+      "coolant_code": 112,
+      "coolant_candidate_celsius": 40.0,
+      "intake_code": 94,
+      "intake_candidate_celsius": 28.75
+    },
+    {
+      "adc10": 398,
+      "coolant_code": 112,
+      "coolant_candidate_celsius": 40.0,
+      "intake_code": 94,
+      "intake_candidate_celsius": 28.75
+    },
+    {
+      "adc10": 399,
+      "coolant_code": 112,
+      "coolant_candidate_celsius": 40.0,
+      "intake_code": 94,
+      "intake_candidate_celsius": 28.75
+    },
+    {
+      "adc10": 400,
+      "coolant_code": 112,
+      "coolant_candidate_celsius": 40.0,
+      "intake_code": 94,
+      "intake_candidate_celsius": 28.75
+    },
+    {
+      "adc10": 401,
+      "coolant_code": 112,
+      "coolant_candidate_celsius": 40.0,
+      "intake_code": 94,
+      "intake_candidate_celsius": 28.75
+    },
+    {
+      "adc10": 402,
+      "coolant_code": 111,
+      "coolant_candidate_celsius": 39.375,
+      "intake_code": 94,
+      "intake_candidate_celsius": 28.75
+    },
+    {
+      "adc10": 403,
+      "coolant_code": 111,
+      "coolant_candidate_celsius": 39.375,
+      "intake_code": 94,
+      "intake_candidate_celsius": 28.75
+    },
+    {
+      "adc10": 404,
+      "coolant_code": 111,
+      "coolant_candidate_celsius": 39.375,
+      "intake_code": 93,
+      "intake_candidate_celsius": 28.125
+    },
+    {
+      "adc10": 405,
+      "coolant_code": 111,
+      "coolant_candidate_celsius": 39.375,
+      "intake_code": 93,
+      "intake_candidate_celsius": 28.125
+    },
+    {
+      "adc10": 406,
+      "coolant_code": 111,
+      "coolant_candidate_celsius": 39.375,
+      "intake_code": 93,
+      "intake_candidate_celsius": 28.125
+    },
+    {
+      "adc10": 407,
+      "coolant_code": 110,
+      "coolant_candidate_celsius": 38.75,
+      "intake_code": 93,
+      "intake_candidate_celsius": 28.125
+    },
+    {
+      "adc10": 408,
+      "coolant_code": 110,
+      "coolant_candidate_celsius": 38.75,
+      "intake_code": 92,
+      "intake_candidate_celsius": 27.5
+    },
+    {
+      "adc10": 409,
+      "coolant_code": 110,
+      "coolant_candidate_celsius": 38.75,
+      "intake_code": 92,
+      "intake_candidate_celsius": 27.5
+    },
+    {
+      "adc10": 410,
+      "coolant_code": 110,
+      "coolant_candidate_celsius": 38.75,
+      "intake_code": 92,
+      "intake_candidate_celsius": 27.5
+    },
+    {
+      "adc10": 411,
+      "coolant_code": 110,
+      "coolant_candidate_celsius": 38.75,
+      "intake_code": 92,
+      "intake_candidate_celsius": 27.5
+    },
+    {
+      "adc10": 412,
+      "coolant_code": 110,
+      "coolant_candidate_celsius": 38.75,
+      "intake_code": 91,
+      "intake_candidate_celsius": 26.875
+    },
+    {
+      "adc10": 413,
+      "coolant_code": 109,
+      "coolant_candidate_celsius": 38.125,
+      "intake_code": 91,
+      "intake_candidate_celsius": 26.875
+    },
+    {
+      "adc10": 414,
+      "coolant_code": 109,
+      "coolant_candidate_celsius": 38.125,
+      "intake_code": 91,
+      "intake_candidate_celsius": 26.875
+    },
+    {
+      "adc10": 415,
+      "coolant_code": 109,
+      "coolant_candidate_celsius": 38.125,
+      "intake_code": 91,
+      "intake_candidate_celsius": 26.875
+    },
+    {
+      "adc10": 416,
+      "coolant_code": 109,
+      "coolant_candidate_celsius": 38.125,
+      "intake_code": 91,
+      "intake_candidate_celsius": 26.875
+    },
+    {
+      "adc10": 417,
+      "coolant_code": 109,
+      "coolant_candidate_celsius": 38.125,
+      "intake_code": 91,
+      "intake_candidate_celsius": 26.875
+    },
+    {
+      "adc10": 418,
+      "coolant_code": 108,
+      "coolant_candidate_celsius": 37.5,
+      "intake_code": 91,
+      "intake_candidate_celsius": 26.875
+    },
+    {
+      "adc10": 419,
+      "coolant_code": 108,
+      "coolant_candidate_celsius": 37.5,
+      "intake_code": 91,
+      "intake_candidate_celsius": 26.875
+    },
+    {
+      "adc10": 420,
+      "coolant_code": 108,
+      "coolant_candidate_celsius": 37.5,
+      "intake_code": 90,
+      "intake_candidate_celsius": 26.25
+    },
+    {
+      "adc10": 421,
+      "coolant_code": 108,
+      "coolant_candidate_celsius": 37.5,
+      "intake_code": 90,
+      "intake_candidate_celsius": 26.25
+    },
+    {
+      "adc10": 422,
+      "coolant_code": 108,
+      "coolant_candidate_celsius": 37.5,
+      "intake_code": 90,
+      "intake_candidate_celsius": 26.25
+    },
+    {
+      "adc10": 423,
+      "coolant_code": 107,
+      "coolant_candidate_celsius": 36.875,
+      "intake_code": 90,
+      "intake_candidate_celsius": 26.25
+    },
+    {
+      "adc10": 424,
+      "coolant_code": 107,
+      "coolant_candidate_celsius": 36.875,
+      "intake_code": 89,
+      "intake_candidate_celsius": 25.625
+    },
+    {
+      "adc10": 425,
+      "coolant_code": 107,
+      "coolant_candidate_celsius": 36.875,
+      "intake_code": 89,
+      "intake_candidate_celsius": 25.625
+    },
+    {
+      "adc10": 426,
+      "coolant_code": 107,
+      "coolant_candidate_celsius": 36.875,
+      "intake_code": 89,
+      "intake_candidate_celsius": 25.625
+    },
+    {
+      "adc10": 427,
+      "coolant_code": 107,
+      "coolant_candidate_celsius": 36.875,
+      "intake_code": 89,
+      "intake_candidate_celsius": 25.625
+    },
+    {
+      "adc10": 428,
+      "coolant_code": 107,
+      "coolant_candidate_celsius": 36.875,
+      "intake_code": 89,
+      "intake_candidate_celsius": 25.625
+    },
+    {
+      "adc10": 429,
+      "coolant_code": 106,
+      "coolant_candidate_celsius": 36.25,
+      "intake_code": 89,
+      "intake_candidate_celsius": 25.625
+    },
+    {
+      "adc10": 430,
+      "coolant_code": 106,
+      "coolant_candidate_celsius": 36.25,
+      "intake_code": 89,
+      "intake_candidate_celsius": 25.625
+    },
+    {
+      "adc10": 431,
+      "coolant_code": 106,
+      "coolant_candidate_celsius": 36.25,
+      "intake_code": 89,
+      "intake_candidate_celsius": 25.625
+    },
+    {
+      "adc10": 432,
+      "coolant_code": 106,
+      "coolant_candidate_celsius": 36.25,
+      "intake_code": 88,
+      "intake_candidate_celsius": 25.0
+    },
+    {
+      "adc10": 433,
+      "coolant_code": 106,
+      "coolant_candidate_celsius": 36.25,
+      "intake_code": 88,
+      "intake_candidate_celsius": 25.0
+    },
+    {
+      "adc10": 434,
+      "coolant_code": 105,
+      "coolant_candidate_celsius": 35.625,
+      "intake_code": 88,
+      "intake_candidate_celsius": 25.0
+    },
+    {
+      "adc10": 435,
+      "coolant_code": 105,
+      "coolant_candidate_celsius": 35.625,
+      "intake_code": 88,
+      "intake_candidate_celsius": 25.0
+    },
+    {
+      "adc10": 436,
+      "coolant_code": 105,
+      "coolant_candidate_celsius": 35.625,
+      "intake_code": 87,
+      "intake_candidate_celsius": 24.375
+    },
+    {
+      "adc10": 437,
+      "coolant_code": 105,
+      "coolant_candidate_celsius": 35.625,
+      "intake_code": 87,
+      "intake_candidate_celsius": 24.375
+    },
+    {
+      "adc10": 438,
+      "coolant_code": 105,
+      "coolant_candidate_celsius": 35.625,
+      "intake_code": 87,
+      "intake_candidate_celsius": 24.375
+    },
+    {
+      "adc10": 439,
+      "coolant_code": 104,
+      "coolant_candidate_celsius": 35.0,
+      "intake_code": 87,
+      "intake_candidate_celsius": 24.375
+    },
+    {
+      "adc10": 440,
+      "coolant_code": 104,
+      "coolant_candidate_celsius": 35.0,
+      "intake_code": 87,
+      "intake_candidate_celsius": 24.375
+    },
+    {
+      "adc10": 441,
+      "coolant_code": 104,
+      "coolant_candidate_celsius": 35.0,
+      "intake_code": 87,
+      "intake_candidate_celsius": 24.375
+    },
+    {
+      "adc10": 442,
+      "coolant_code": 104,
+      "coolant_candidate_celsius": 35.0,
+      "intake_code": 87,
+      "intake_candidate_celsius": 24.375
+    },
+    {
+      "adc10": 443,
+      "coolant_code": 104,
+      "coolant_candidate_celsius": 35.0,
+      "intake_code": 87,
+      "intake_candidate_celsius": 24.375
+    },
+    {
+      "adc10": 444,
+      "coolant_code": 104,
+      "coolant_candidate_celsius": 35.0,
+      "intake_code": 86,
+      "intake_candidate_celsius": 23.75
+    },
+    {
+      "adc10": 445,
+      "coolant_code": 103,
+      "coolant_candidate_celsius": 34.375,
+      "intake_code": 86,
+      "intake_candidate_celsius": 23.75
+    },
+    {
+      "adc10": 446,
+      "coolant_code": 103,
+      "coolant_candidate_celsius": 34.375,
+      "intake_code": 86,
+      "intake_candidate_celsius": 23.75
+    },
+    {
+      "adc10": 447,
+      "coolant_code": 103,
+      "coolant_candidate_celsius": 34.375,
+      "intake_code": 86,
+      "intake_candidate_celsius": 23.75
+    },
+    {
+      "adc10": 448,
+      "coolant_code": 103,
+      "coolant_candidate_celsius": 34.375,
+      "intake_code": 86,
+      "intake_candidate_celsius": 23.75
+    },
+    {
+      "adc10": 449,
+      "coolant_code": 103,
+      "coolant_candidate_celsius": 34.375,
+      "intake_code": 86,
+      "intake_candidate_celsius": 23.75
+    },
+    {
+      "adc10": 450,
+      "coolant_code": 103,
+      "coolant_candidate_celsius": 34.375,
+      "intake_code": 86,
+      "intake_candidate_celsius": 23.75
+    },
+    {
+      "adc10": 451,
+      "coolant_code": 102,
+      "coolant_candidate_celsius": 33.75,
+      "intake_code": 86,
+      "intake_candidate_celsius": 23.75
+    },
+    {
+      "adc10": 452,
+      "coolant_code": 102,
+      "coolant_candidate_celsius": 33.75,
+      "intake_code": 85,
+      "intake_candidate_celsius": 23.125
+    },
+    {
+      "adc10": 453,
+      "coolant_code": 102,
+      "coolant_candidate_celsius": 33.75,
+      "intake_code": 85,
+      "intake_candidate_celsius": 23.125
+    },
+    {
+      "adc10": 454,
+      "coolant_code": 102,
+      "coolant_candidate_celsius": 33.75,
+      "intake_code": 85,
+      "intake_candidate_celsius": 23.125
+    },
+    {
+      "adc10": 455,
+      "coolant_code": 102,
+      "coolant_candidate_celsius": 33.75,
+      "intake_code": 85,
+      "intake_candidate_celsius": 23.125
+    },
+    {
+      "adc10": 456,
+      "coolant_code": 102,
+      "coolant_candidate_celsius": 33.75,
+      "intake_code": 84,
+      "intake_candidate_celsius": 22.5
+    },
+    {
+      "adc10": 457,
+      "coolant_code": 101,
+      "coolant_candidate_celsius": 33.125,
+      "intake_code": 84,
+      "intake_candidate_celsius": 22.5
+    },
+    {
+      "adc10": 458,
+      "coolant_code": 101,
+      "coolant_candidate_celsius": 33.125,
+      "intake_code": 84,
+      "intake_candidate_celsius": 22.5
+    },
+    {
+      "adc10": 459,
+      "coolant_code": 101,
+      "coolant_candidate_celsius": 33.125,
+      "intake_code": 84,
+      "intake_candidate_celsius": 22.5
+    },
+    {
+      "adc10": 460,
+      "coolant_code": 101,
+      "coolant_candidate_celsius": 33.125,
+      "intake_code": 84,
+      "intake_candidate_celsius": 22.5
+    },
+    {
+      "adc10": 461,
+      "coolant_code": 101,
+      "coolant_candidate_celsius": 33.125,
+      "intake_code": 84,
+      "intake_candidate_celsius": 22.5
+    },
+    {
+      "adc10": 462,
+      "coolant_code": 101,
+      "coolant_candidate_celsius": 33.125,
+      "intake_code": 84,
+      "intake_candidate_celsius": 22.5
+    },
+    {
+      "adc10": 463,
+      "coolant_code": 101,
+      "coolant_candidate_celsius": 33.125,
+      "intake_code": 84,
+      "intake_candidate_celsius": 22.5
+    },
+    {
+      "adc10": 464,
+      "coolant_code": 100,
+      "coolant_candidate_celsius": 32.5,
+      "intake_code": 83,
+      "intake_candidate_celsius": 21.875
+    },
+    {
+      "adc10": 465,
+      "coolant_code": 100,
+      "coolant_candidate_celsius": 32.5,
+      "intake_code": 83,
+      "intake_candidate_celsius": 21.875
+    },
+    {
+      "adc10": 466,
+      "coolant_code": 100,
+      "coolant_candidate_celsius": 32.5,
+      "intake_code": 83,
+      "intake_candidate_celsius": 21.875
+    },
+    {
+      "adc10": 467,
+      "coolant_code": 100,
+      "coolant_candidate_celsius": 32.5,
+      "intake_code": 83,
+      "intake_candidate_celsius": 21.875
+    },
+    {
+      "adc10": 468,
+      "coolant_code": 100,
+      "coolant_candidate_celsius": 32.5,
+      "intake_code": 82,
+      "intake_candidate_celsius": 21.25
+    },
+    {
+      "adc10": 469,
+      "coolant_code": 100,
+      "coolant_candidate_celsius": 32.5,
+      "intake_code": 82,
+      "intake_candidate_celsius": 21.25
+    },
+    {
+      "adc10": 470,
+      "coolant_code": 99,
+      "coolant_candidate_celsius": 31.875,
+      "intake_code": 82,
+      "intake_candidate_celsius": 21.25
+    },
+    {
+      "adc10": 471,
+      "coolant_code": 99,
+      "coolant_candidate_celsius": 31.875,
+      "intake_code": 82,
+      "intake_candidate_celsius": 21.25
+    },
+    {
+      "adc10": 472,
+      "coolant_code": 99,
+      "coolant_candidate_celsius": 31.875,
+      "intake_code": 82,
+      "intake_candidate_celsius": 21.25
+    },
+    {
+      "adc10": 473,
+      "coolant_code": 99,
+      "coolant_candidate_celsius": 31.875,
+      "intake_code": 82,
+      "intake_candidate_celsius": 21.25
+    },
+    {
+      "adc10": 474,
+      "coolant_code": 99,
+      "coolant_candidate_celsius": 31.875,
+      "intake_code": 82,
+      "intake_candidate_celsius": 21.25
+    },
+    {
+      "adc10": 475,
+      "coolant_code": 99,
+      "coolant_candidate_celsius": 31.875,
+      "intake_code": 82,
+      "intake_candidate_celsius": 21.25
+    },
+    {
+      "adc10": 476,
+      "coolant_code": 99,
+      "coolant_candidate_celsius": 31.875,
+      "intake_code": 81,
+      "intake_candidate_celsius": 20.625
+    },
+    {
+      "adc10": 477,
+      "coolant_code": 98,
+      "coolant_candidate_celsius": 31.25,
+      "intake_code": 81,
+      "intake_candidate_celsius": 20.625
+    },
+    {
+      "adc10": 478,
+      "coolant_code": 98,
+      "coolant_candidate_celsius": 31.25,
+      "intake_code": 81,
+      "intake_candidate_celsius": 20.625
+    },
+    {
+      "adc10": 479,
+      "coolant_code": 98,
+      "coolant_candidate_celsius": 31.25,
+      "intake_code": 81,
+      "intake_candidate_celsius": 20.625
+    },
+    {
+      "adc10": 480,
+      "coolant_code": 98,
+      "coolant_candidate_celsius": 31.25,
+      "intake_code": 81,
+      "intake_candidate_celsius": 20.625
+    },
+    {
+      "adc10": 481,
+      "coolant_code": 98,
+      "coolant_candidate_celsius": 31.25,
+      "intake_code": 81,
+      "intake_candidate_celsius": 20.625
+    },
+    {
+      "adc10": 482,
+      "coolant_code": 97,
+      "coolant_candidate_celsius": 30.625,
+      "intake_code": 81,
+      "intake_candidate_celsius": 20.625
+    },
+    {
+      "adc10": 483,
+      "coolant_code": 97,
+      "coolant_candidate_celsius": 30.625,
+      "intake_code": 81,
+      "intake_candidate_celsius": 20.625
+    },
+    {
+      "adc10": 484,
+      "coolant_code": 97,
+      "coolant_candidate_celsius": 30.625,
+      "intake_code": 80,
+      "intake_candidate_celsius": 20.0
+    },
+    {
+      "adc10": 485,
+      "coolant_code": 97,
+      "coolant_candidate_celsius": 30.625,
+      "intake_code": 80,
+      "intake_candidate_celsius": 20.0
+    },
+    {
+      "adc10": 486,
+      "coolant_code": 97,
+      "coolant_candidate_celsius": 30.625,
+      "intake_code": 80,
+      "intake_candidate_celsius": 20.0
+    },
+    {
+      "adc10": 487,
+      "coolant_code": 96,
+      "coolant_candidate_celsius": 30.0,
+      "intake_code": 80,
+      "intake_candidate_celsius": 20.0
+    },
+    {
+      "adc10": 488,
+      "coolant_code": 96,
+      "coolant_candidate_celsius": 30.0,
+      "intake_code": 79,
+      "intake_candidate_celsius": 19.375
+    },
+    {
+      "adc10": 489,
+      "coolant_code": 96,
+      "coolant_candidate_celsius": 30.0,
+      "intake_code": 79,
+      "intake_candidate_celsius": 19.375
+    },
+    {
+      "adc10": 490,
+      "coolant_code": 96,
+      "coolant_candidate_celsius": 30.0,
+      "intake_code": 79,
+      "intake_candidate_celsius": 19.375
+    },
+    {
+      "adc10": 491,
+      "coolant_code": 96,
+      "coolant_candidate_celsius": 30.0,
+      "intake_code": 79,
+      "intake_candidate_celsius": 19.375
+    },
+    {
+      "adc10": 492,
+      "coolant_code": 96,
+      "coolant_candidate_celsius": 30.0,
+      "intake_code": 79,
+      "intake_candidate_celsius": 19.375
+    },
+    {
+      "adc10": 493,
+      "coolant_code": 95,
+      "coolant_candidate_celsius": 29.375,
+      "intake_code": 79,
+      "intake_candidate_celsius": 19.375
+    },
+    {
+      "adc10": 494,
+      "coolant_code": 95,
+      "coolant_candidate_celsius": 29.375,
+      "intake_code": 79,
+      "intake_candidate_celsius": 19.375
+    },
+    {
+      "adc10": 495,
+      "coolant_code": 95,
+      "coolant_candidate_celsius": 29.375,
+      "intake_code": 79,
+      "intake_candidate_celsius": 19.375
+    },
+    {
+      "adc10": 496,
+      "coolant_code": 95,
+      "coolant_candidate_celsius": 29.375,
+      "intake_code": 78,
+      "intake_candidate_celsius": 18.75
+    },
+    {
+      "adc10": 497,
+      "coolant_code": 95,
+      "coolant_candidate_celsius": 29.375,
+      "intake_code": 78,
+      "intake_candidate_celsius": 18.75
+    },
+    {
+      "adc10": 498,
+      "coolant_code": 94,
+      "coolant_candidate_celsius": 28.75,
+      "intake_code": 78,
+      "intake_candidate_celsius": 18.75
+    },
+    {
+      "adc10": 499,
+      "coolant_code": 94,
+      "coolant_candidate_celsius": 28.75,
+      "intake_code": 78,
+      "intake_candidate_celsius": 18.75
+    },
+    {
+      "adc10": 500,
+      "coolant_code": 94,
+      "coolant_candidate_celsius": 28.75,
+      "intake_code": 77,
+      "intake_candidate_celsius": 18.125
+    },
+    {
+      "adc10": 501,
+      "coolant_code": 94,
+      "coolant_candidate_celsius": 28.75,
+      "intake_code": 77,
+      "intake_candidate_celsius": 18.125
+    },
+    {
+      "adc10": 502,
+      "coolant_code": 94,
+      "coolant_candidate_celsius": 28.75,
+      "intake_code": 77,
+      "intake_candidate_celsius": 18.125
+    },
+    {
+      "adc10": 503,
+      "coolant_code": 93,
+      "coolant_candidate_celsius": 28.125,
+      "intake_code": 77,
+      "intake_candidate_celsius": 18.125
+    },
+    {
+      "adc10": 504,
+      "coolant_code": 93,
+      "coolant_candidate_celsius": 28.125,
+      "intake_code": 77,
+      "intake_candidate_celsius": 18.125
+    },
+    {
+      "adc10": 505,
+      "coolant_code": 93,
+      "coolant_candidate_celsius": 28.125,
+      "intake_code": 77,
+      "intake_candidate_celsius": 18.125
+    },
+    {
+      "adc10": 506,
+      "coolant_code": 93,
+      "coolant_candidate_celsius": 28.125,
+      "intake_code": 77,
+      "intake_candidate_celsius": 18.125
+    },
+    {
+      "adc10": 507,
+      "coolant_code": 93,
+      "coolant_candidate_celsius": 28.125,
+      "intake_code": 77,
+      "intake_candidate_celsius": 18.125
+    },
+    {
+      "adc10": 508,
+      "coolant_code": 93,
+      "coolant_candidate_celsius": 28.125,
+      "intake_code": 76,
+      "intake_candidate_celsius": 17.5
+    },
+    {
+      "adc10": 509,
+      "coolant_code": 92,
+      "coolant_candidate_celsius": 27.5,
+      "intake_code": 76,
+      "intake_candidate_celsius": 17.5
+    },
+    {
+      "adc10": 510,
+      "coolant_code": 92,
+      "coolant_candidate_celsius": 27.5,
+      "intake_code": 76,
+      "intake_candidate_celsius": 17.5
+    },
+    {
+      "adc10": 511,
+      "coolant_code": 92,
+      "coolant_candidate_celsius": 27.5,
+      "intake_code": 76,
+      "intake_candidate_celsius": 17.5
+    },
+    {
+      "adc10": 512,
+      "coolant_code": 92,
+      "coolant_candidate_celsius": 27.5,
+      "intake_code": 76,
+      "intake_candidate_celsius": 17.5
+    },
+    {
+      "adc10": 513,
+      "coolant_code": 92,
+      "coolant_candidate_celsius": 27.5,
+      "intake_code": 76,
+      "intake_candidate_celsius": 17.5
+    },
+    {
+      "adc10": 514,
+      "coolant_code": 92,
+      "coolant_candidate_celsius": 27.5,
+      "intake_code": 76,
+      "intake_candidate_celsius": 17.5
+    },
+    {
+      "adc10": 515,
+      "coolant_code": 91,
+      "coolant_candidate_celsius": 26.875,
+      "intake_code": 76,
+      "intake_candidate_celsius": 17.5
+    },
+    {
+      "adc10": 516,
+      "coolant_code": 91,
+      "coolant_candidate_celsius": 26.875,
+      "intake_code": 75,
+      "intake_candidate_celsius": 16.875
+    },
+    {
+      "adc10": 517,
+      "coolant_code": 91,
+      "coolant_candidate_celsius": 26.875,
+      "intake_code": 75,
+      "intake_candidate_celsius": 16.875
+    },
+    {
+      "adc10": 518,
+      "coolant_code": 91,
+      "coolant_candidate_celsius": 26.875,
+      "intake_code": 75,
+      "intake_candidate_celsius": 16.875
+    },
+    {
+      "adc10": 519,
+      "coolant_code": 91,
+      "coolant_candidate_celsius": 26.875,
+      "intake_code": 75,
+      "intake_candidate_celsius": 16.875
+    },
+    {
+      "adc10": 520,
+      "coolant_code": 91,
+      "coolant_candidate_celsius": 26.875,
+      "intake_code": 74,
+      "intake_candidate_celsius": 16.25
+    },
+    {
+      "adc10": 521,
+      "coolant_code": 90,
+      "coolant_candidate_celsius": 26.25,
+      "intake_code": 74,
+      "intake_candidate_celsius": 16.25
+    },
+    {
+      "adc10": 522,
+      "coolant_code": 90,
+      "coolant_candidate_celsius": 26.25,
+      "intake_code": 74,
+      "intake_candidate_celsius": 16.25
+    },
+    {
+      "adc10": 523,
+      "coolant_code": 90,
+      "coolant_candidate_celsius": 26.25,
+      "intake_code": 74,
+      "intake_candidate_celsius": 16.25
+    },
+    {
+      "adc10": 524,
+      "coolant_code": 90,
+      "coolant_candidate_celsius": 26.25,
+      "intake_code": 74,
+      "intake_candidate_celsius": 16.25
+    },
+    {
+      "adc10": 525,
+      "coolant_code": 90,
+      "coolant_candidate_celsius": 26.25,
+      "intake_code": 74,
+      "intake_candidate_celsius": 16.25
+    },
+    {
+      "adc10": 526,
+      "coolant_code": 90,
+      "coolant_candidate_celsius": 26.25,
+      "intake_code": 74,
+      "intake_candidate_celsius": 16.25
+    },
+    {
+      "adc10": 527,
+      "coolant_code": 90,
+      "coolant_candidate_celsius": 26.25,
+      "intake_code": 74,
+      "intake_candidate_celsius": 16.25
+    },
+    {
+      "adc10": 528,
+      "coolant_code": 89,
+      "coolant_candidate_celsius": 25.625,
+      "intake_code": 73,
+      "intake_candidate_celsius": 15.625
+    },
+    {
+      "adc10": 529,
+      "coolant_code": 89,
+      "coolant_candidate_celsius": 25.625,
+      "intake_code": 73,
+      "intake_candidate_celsius": 15.625
+    },
+    {
+      "adc10": 530,
+      "coolant_code": 89,
+      "coolant_candidate_celsius": 25.625,
+      "intake_code": 73,
+      "intake_candidate_celsius": 15.625
+    },
+    {
+      "adc10": 531,
+      "coolant_code": 89,
+      "coolant_candidate_celsius": 25.625,
+      "intake_code": 73,
+      "intake_candidate_celsius": 15.625
+    },
+    {
+      "adc10": 532,
+      "coolant_code": 89,
+      "coolant_candidate_celsius": 25.625,
+      "intake_code": 72,
+      "intake_candidate_celsius": 15.0
+    },
+    {
+      "adc10": 533,
+      "coolant_code": 89,
+      "coolant_candidate_celsius": 25.625,
+      "intake_code": 72,
+      "intake_candidate_celsius": 15.0
+    },
+    {
+      "adc10": 534,
+      "coolant_code": 88,
+      "coolant_candidate_celsius": 25.0,
+      "intake_code": 72,
+      "intake_candidate_celsius": 15.0
+    },
+    {
+      "adc10": 535,
+      "coolant_code": 88,
+      "coolant_candidate_celsius": 25.0,
+      "intake_code": 72,
+      "intake_candidate_celsius": 15.0
+    },
+    {
+      "adc10": 536,
+      "coolant_code": 88,
+      "coolant_candidate_celsius": 25.0,
+      "intake_code": 72,
+      "intake_candidate_celsius": 15.0
+    },
+    {
+      "adc10": 537,
+      "coolant_code": 88,
+      "coolant_candidate_celsius": 25.0,
+      "intake_code": 72,
+      "intake_candidate_celsius": 15.0
+    },
+    {
+      "adc10": 538,
+      "coolant_code": 88,
+      "coolant_candidate_celsius": 25.0,
+      "intake_code": 72,
+      "intake_candidate_celsius": 15.0
+    },
+    {
+      "adc10": 539,
+      "coolant_code": 88,
+      "coolant_candidate_celsius": 25.0,
+      "intake_code": 72,
+      "intake_candidate_celsius": 15.0
+    },
+    {
+      "adc10": 540,
+      "coolant_code": 88,
+      "coolant_candidate_celsius": 25.0,
+      "intake_code": 71,
+      "intake_candidate_celsius": 14.375
+    },
+    {
+      "adc10": 541,
+      "coolant_code": 87,
+      "coolant_candidate_celsius": 24.375,
+      "intake_code": 71,
+      "intake_candidate_celsius": 14.375
+    },
+    {
+      "adc10": 542,
+      "coolant_code": 87,
+      "coolant_candidate_celsius": 24.375,
+      "intake_code": 71,
+      "intake_candidate_celsius": 14.375
+    },
+    {
+      "adc10": 543,
+      "coolant_code": 87,
+      "coolant_candidate_celsius": 24.375,
+      "intake_code": 71,
+      "intake_candidate_celsius": 14.375
+    },
+    {
+      "adc10": 544,
+      "coolant_code": 87,
+      "coolant_candidate_celsius": 24.375,
+      "intake_code": 71,
+      "intake_candidate_celsius": 14.375
+    },
+    {
+      "adc10": 545,
+      "coolant_code": 87,
+      "coolant_candidate_celsius": 24.375,
+      "intake_code": 71,
+      "intake_candidate_celsius": 14.375
+    },
+    {
+      "adc10": 546,
+      "coolant_code": 87,
+      "coolant_candidate_celsius": 24.375,
+      "intake_code": 71,
+      "intake_candidate_celsius": 14.375
+    },
+    {
+      "adc10": 547,
+      "coolant_code": 86,
+      "coolant_candidate_celsius": 23.75,
+      "intake_code": 71,
+      "intake_candidate_celsius": 14.375
+    },
+    {
+      "adc10": 548,
+      "coolant_code": 86,
+      "coolant_candidate_celsius": 23.75,
+      "intake_code": 70,
+      "intake_candidate_celsius": 13.75
+    },
+    {
+      "adc10": 549,
+      "coolant_code": 86,
+      "coolant_candidate_celsius": 23.75,
+      "intake_code": 70,
+      "intake_candidate_celsius": 13.75
+    },
+    {
+      "adc10": 550,
+      "coolant_code": 86,
+      "coolant_candidate_celsius": 23.75,
+      "intake_code": 70,
+      "intake_candidate_celsius": 13.75
+    },
+    {
+      "adc10": 551,
+      "coolant_code": 86,
+      "coolant_candidate_celsius": 23.75,
+      "intake_code": 70,
+      "intake_candidate_celsius": 13.75
+    },
+    {
+      "adc10": 552,
+      "coolant_code": 86,
+      "coolant_candidate_celsius": 23.75,
+      "intake_code": 70,
+      "intake_candidate_celsius": 13.75
+    },
+    {
+      "adc10": 553,
+      "coolant_code": 85,
+      "coolant_candidate_celsius": 23.125,
+      "intake_code": 70,
+      "intake_candidate_celsius": 13.75
+    },
+    {
+      "adc10": 554,
+      "coolant_code": 85,
+      "coolant_candidate_celsius": 23.125,
+      "intake_code": 70,
+      "intake_candidate_celsius": 13.75
+    },
+    {
+      "adc10": 555,
+      "coolant_code": 85,
+      "coolant_candidate_celsius": 23.125,
+      "intake_code": 70,
+      "intake_candidate_celsius": 13.75
+    },
+    {
+      "adc10": 556,
+      "coolant_code": 85,
+      "coolant_candidate_celsius": 23.125,
+      "intake_code": 69,
+      "intake_candidate_celsius": 13.125
+    },
+    {
+      "adc10": 557,
+      "coolant_code": 85,
+      "coolant_candidate_celsius": 23.125,
+      "intake_code": 69,
+      "intake_candidate_celsius": 13.125
+    },
+    {
+      "adc10": 558,
+      "coolant_code": 85,
+      "coolant_candidate_celsius": 23.125,
+      "intake_code": 69,
+      "intake_candidate_celsius": 13.125
+    },
+    {
+      "adc10": 559,
+      "coolant_code": 85,
+      "coolant_candidate_celsius": 23.125,
+      "intake_code": 69,
+      "intake_candidate_celsius": 13.125
+    },
+    {
+      "adc10": 560,
+      "coolant_code": 84,
+      "coolant_candidate_celsius": 22.5,
+      "intake_code": 69,
+      "intake_candidate_celsius": 13.125
+    },
+    {
+      "adc10": 561,
+      "coolant_code": 84,
+      "coolant_candidate_celsius": 22.5,
+      "intake_code": 69,
+      "intake_candidate_celsius": 13.125
+    },
+    {
+      "adc10": 562,
+      "coolant_code": 84,
+      "coolant_candidate_celsius": 22.5,
+      "intake_code": 69,
+      "intake_candidate_celsius": 13.125
+    },
+    {
+      "adc10": 563,
+      "coolant_code": 84,
+      "coolant_candidate_celsius": 22.5,
+      "intake_code": 69,
+      "intake_candidate_celsius": 13.125
+    },
+    {
+      "adc10": 564,
+      "coolant_code": 84,
+      "coolant_candidate_celsius": 22.5,
+      "intake_code": 68,
+      "intake_candidate_celsius": 12.5
+    },
+    {
+      "adc10": 565,
+      "coolant_code": 84,
+      "coolant_candidate_celsius": 22.5,
+      "intake_code": 68,
+      "intake_candidate_celsius": 12.5
+    },
+    {
+      "adc10": 566,
+      "coolant_code": 83,
+      "coolant_candidate_celsius": 21.875,
+      "intake_code": 68,
+      "intake_candidate_celsius": 12.5
+    },
+    {
+      "adc10": 567,
+      "coolant_code": 83,
+      "coolant_candidate_celsius": 21.875,
+      "intake_code": 68,
+      "intake_candidate_celsius": 12.5
+    },
+    {
+      "adc10": 568,
+      "coolant_code": 83,
+      "coolant_candidate_celsius": 21.875,
+      "intake_code": 68,
+      "intake_candidate_celsius": 12.5
+    },
+    {
+      "adc10": 569,
+      "coolant_code": 83,
+      "coolant_candidate_celsius": 21.875,
+      "intake_code": 68,
+      "intake_candidate_celsius": 12.5
+    },
+    {
+      "adc10": 570,
+      "coolant_code": 83,
+      "coolant_candidate_celsius": 21.875,
+      "intake_code": 68,
+      "intake_candidate_celsius": 12.5
+    },
+    {
+      "adc10": 571,
+      "coolant_code": 83,
+      "coolant_candidate_celsius": 21.875,
+      "intake_code": 68,
+      "intake_candidate_celsius": 12.5
+    },
+    {
+      "adc10": 572,
+      "coolant_code": 83,
+      "coolant_candidate_celsius": 21.875,
+      "intake_code": 67,
+      "intake_candidate_celsius": 11.875
+    },
+    {
+      "adc10": 573,
+      "coolant_code": 82,
+      "coolant_candidate_celsius": 21.25,
+      "intake_code": 67,
+      "intake_candidate_celsius": 11.875
+    },
+    {
+      "adc10": 574,
+      "coolant_code": 82,
+      "coolant_candidate_celsius": 21.25,
+      "intake_code": 67,
+      "intake_candidate_celsius": 11.875
+    },
+    {
+      "adc10": 575,
+      "coolant_code": 82,
+      "coolant_candidate_celsius": 21.25,
+      "intake_code": 67,
+      "intake_candidate_celsius": 11.875
+    },
+    {
+      "adc10": 576,
+      "coolant_code": 82,
+      "coolant_candidate_celsius": 21.25,
+      "intake_code": 67,
+      "intake_candidate_celsius": 11.875
+    },
+    {
+      "adc10": 577,
+      "coolant_code": 82,
+      "coolant_candidate_celsius": 21.25,
+      "intake_code": 67,
+      "intake_candidate_celsius": 11.875
+    },
+    {
+      "adc10": 578,
+      "coolant_code": 82,
+      "coolant_candidate_celsius": 21.25,
+      "intake_code": 67,
+      "intake_candidate_celsius": 11.875
+    },
+    {
+      "adc10": 579,
+      "coolant_code": 81,
+      "coolant_candidate_celsius": 20.625,
+      "intake_code": 67,
+      "intake_candidate_celsius": 11.875
+    },
+    {
+      "adc10": 580,
+      "coolant_code": 81,
+      "coolant_candidate_celsius": 20.625,
+      "intake_code": 66,
+      "intake_candidate_celsius": 11.25
+    },
+    {
+      "adc10": 581,
+      "coolant_code": 81,
+      "coolant_candidate_celsius": 20.625,
+      "intake_code": 66,
+      "intake_candidate_celsius": 11.25
+    },
+    {
+      "adc10": 582,
+      "coolant_code": 81,
+      "coolant_candidate_celsius": 20.625,
+      "intake_code": 66,
+      "intake_candidate_celsius": 11.25
+    },
+    {
+      "adc10": 583,
+      "coolant_code": 81,
+      "coolant_candidate_celsius": 20.625,
+      "intake_code": 66,
+      "intake_candidate_celsius": 11.25
+    },
+    {
+      "adc10": 584,
+      "coolant_code": 81,
+      "coolant_candidate_celsius": 20.625,
+      "intake_code": 65,
+      "intake_candidate_celsius": 10.625
+    },
+    {
+      "adc10": 585,
+      "coolant_code": 80,
+      "coolant_candidate_celsius": 20.0,
+      "intake_code": 65,
+      "intake_candidate_celsius": 10.625
+    },
+    {
+      "adc10": 586,
+      "coolant_code": 80,
+      "coolant_candidate_celsius": 20.0,
+      "intake_code": 65,
+      "intake_candidate_celsius": 10.625
+    },
+    {
+      "adc10": 587,
+      "coolant_code": 80,
+      "coolant_candidate_celsius": 20.0,
+      "intake_code": 65,
+      "intake_candidate_celsius": 10.625
+    },
+    {
+      "adc10": 588,
+      "coolant_code": 80,
+      "coolant_candidate_celsius": 20.0,
+      "intake_code": 65,
+      "intake_candidate_celsius": 10.625
+    },
+    {
+      "adc10": 589,
+      "coolant_code": 80,
+      "coolant_candidate_celsius": 20.0,
+      "intake_code": 65,
+      "intake_candidate_celsius": 10.625
+    },
+    {
+      "adc10": 590,
+      "coolant_code": 80,
+      "coolant_candidate_celsius": 20.0,
+      "intake_code": 65,
+      "intake_candidate_celsius": 10.625
+    },
+    {
+      "adc10": 591,
+      "coolant_code": 80,
+      "coolant_candidate_celsius": 20.0,
+      "intake_code": 65,
+      "intake_candidate_celsius": 10.625
+    },
+    {
+      "adc10": 592,
+      "coolant_code": 79,
+      "coolant_candidate_celsius": 19.375,
+      "intake_code": 64,
+      "intake_candidate_celsius": 10.0
+    },
+    {
+      "adc10": 593,
+      "coolant_code": 79,
+      "coolant_candidate_celsius": 19.375,
+      "intake_code": 64,
+      "intake_candidate_celsius": 10.0
+    },
+    {
+      "adc10": 594,
+      "coolant_code": 79,
+      "coolant_candidate_celsius": 19.375,
+      "intake_code": 64,
+      "intake_candidate_celsius": 10.0
+    },
+    {
+      "adc10": 595,
+      "coolant_code": 79,
+      "coolant_candidate_celsius": 19.375,
+      "intake_code": 64,
+      "intake_candidate_celsius": 10.0
+    },
+    {
+      "adc10": 596,
+      "coolant_code": 79,
+      "coolant_candidate_celsius": 19.375,
+      "intake_code": 63,
+      "intake_candidate_celsius": 9.375
+    },
+    {
+      "adc10": 597,
+      "coolant_code": 79,
+      "coolant_candidate_celsius": 19.375,
+      "intake_code": 63,
+      "intake_candidate_celsius": 9.375
+    },
+    {
+      "adc10": 598,
+      "coolant_code": 78,
+      "coolant_candidate_celsius": 18.75,
+      "intake_code": 63,
+      "intake_candidate_celsius": 9.375
+    },
+    {
+      "adc10": 599,
+      "coolant_code": 78,
+      "coolant_candidate_celsius": 18.75,
+      "intake_code": 63,
+      "intake_candidate_celsius": 9.375
+    },
+    {
+      "adc10": 600,
+      "coolant_code": 78,
+      "coolant_candidate_celsius": 18.75,
+      "intake_code": 63,
+      "intake_candidate_celsius": 9.375
+    },
+    {
+      "adc10": 601,
+      "coolant_code": 78,
+      "coolant_candidate_celsius": 18.75,
+      "intake_code": 63,
+      "intake_candidate_celsius": 9.375
+    },
+    {
+      "adc10": 602,
+      "coolant_code": 78,
+      "coolant_candidate_celsius": 18.75,
+      "intake_code": 63,
+      "intake_candidate_celsius": 9.375
+    },
+    {
+      "adc10": 603,
+      "coolant_code": 78,
+      "coolant_candidate_celsius": 18.75,
+      "intake_code": 63,
+      "intake_candidate_celsius": 9.375
+    },
+    {
+      "adc10": 604,
+      "coolant_code": 78,
+      "coolant_candidate_celsius": 18.75,
+      "intake_code": 62,
+      "intake_candidate_celsius": 8.75
+    },
+    {
+      "adc10": 605,
+      "coolant_code": 77,
+      "coolant_candidate_celsius": 18.125,
+      "intake_code": 62,
+      "intake_candidate_celsius": 8.75
+    },
+    {
+      "adc10": 606,
+      "coolant_code": 77,
+      "coolant_candidate_celsius": 18.125,
+      "intake_code": 62,
+      "intake_candidate_celsius": 8.75
+    },
+    {
+      "adc10": 607,
+      "coolant_code": 77,
+      "coolant_candidate_celsius": 18.125,
+      "intake_code": 62,
+      "intake_candidate_celsius": 8.75
+    },
+    {
+      "adc10": 608,
+      "coolant_code": 77,
+      "coolant_candidate_celsius": 18.125,
+      "intake_code": 62,
+      "intake_candidate_celsius": 8.75
+    },
+    {
+      "adc10": 609,
+      "coolant_code": 77,
+      "coolant_candidate_celsius": 18.125,
+      "intake_code": 62,
+      "intake_candidate_celsius": 8.75
+    },
+    {
+      "adc10": 610,
+      "coolant_code": 77,
+      "coolant_candidate_celsius": 18.125,
+      "intake_code": 62,
+      "intake_candidate_celsius": 8.75
+    },
+    {
+      "adc10": 611,
+      "coolant_code": 76,
+      "coolant_candidate_celsius": 17.5,
+      "intake_code": 62,
+      "intake_candidate_celsius": 8.75
+    },
+    {
+      "adc10": 612,
+      "coolant_code": 76,
+      "coolant_candidate_celsius": 17.5,
+      "intake_code": 61,
+      "intake_candidate_celsius": 8.125
+    },
+    {
+      "adc10": 613,
+      "coolant_code": 76,
+      "coolant_candidate_celsius": 17.5,
+      "intake_code": 61,
+      "intake_candidate_celsius": 8.125
+    },
+    {
+      "adc10": 614,
+      "coolant_code": 76,
+      "coolant_candidate_celsius": 17.5,
+      "intake_code": 61,
+      "intake_candidate_celsius": 8.125
+    },
+    {
+      "adc10": 615,
+      "coolant_code": 76,
+      "coolant_candidate_celsius": 17.5,
+      "intake_code": 61,
+      "intake_candidate_celsius": 8.125
+    },
+    {
+      "adc10": 616,
+      "coolant_code": 76,
+      "coolant_candidate_celsius": 17.5,
+      "intake_code": 60,
+      "intake_candidate_celsius": 7.5
+    },
+    {
+      "adc10": 617,
+      "coolant_code": 75,
+      "coolant_candidate_celsius": 16.875,
+      "intake_code": 60,
+      "intake_candidate_celsius": 7.5
+    },
+    {
+      "adc10": 618,
+      "coolant_code": 75,
+      "coolant_candidate_celsius": 16.875,
+      "intake_code": 60,
+      "intake_candidate_celsius": 7.5
+    },
+    {
+      "adc10": 619,
+      "coolant_code": 75,
+      "coolant_candidate_celsius": 16.875,
+      "intake_code": 60,
+      "intake_candidate_celsius": 7.5
+    },
+    {
+      "adc10": 620,
+      "coolant_code": 75,
+      "coolant_candidate_celsius": 16.875,
+      "intake_code": 60,
+      "intake_candidate_celsius": 7.5
+    },
+    {
+      "adc10": 621,
+      "coolant_code": 75,
+      "coolant_candidate_celsius": 16.875,
+      "intake_code": 60,
+      "intake_candidate_celsius": 7.5
+    },
+    {
+      "adc10": 622,
+      "coolant_code": 75,
+      "coolant_candidate_celsius": 16.875,
+      "intake_code": 60,
+      "intake_candidate_celsius": 7.5
+    },
+    {
+      "adc10": 623,
+      "coolant_code": 75,
+      "coolant_candidate_celsius": 16.875,
+      "intake_code": 60,
+      "intake_candidate_celsius": 7.5
+    },
+    {
+      "adc10": 624,
+      "coolant_code": 74,
+      "coolant_candidate_celsius": 16.25,
+      "intake_code": 59,
+      "intake_candidate_celsius": 6.875
+    },
+    {
+      "adc10": 625,
+      "coolant_code": 74,
+      "coolant_candidate_celsius": 16.25,
+      "intake_code": 59,
+      "intake_candidate_celsius": 6.875
+    },
+    {
+      "adc10": 626,
+      "coolant_code": 74,
+      "coolant_candidate_celsius": 16.25,
+      "intake_code": 59,
+      "intake_candidate_celsius": 6.875
+    },
+    {
+      "adc10": 627,
+      "coolant_code": 74,
+      "coolant_candidate_celsius": 16.25,
+      "intake_code": 59,
+      "intake_candidate_celsius": 6.875
+    },
+    {
+      "adc10": 628,
+      "coolant_code": 74,
+      "coolant_candidate_celsius": 16.25,
+      "intake_code": 58,
+      "intake_candidate_celsius": 6.25
+    },
+    {
+      "adc10": 629,
+      "coolant_code": 74,
+      "coolant_candidate_celsius": 16.25,
+      "intake_code": 58,
+      "intake_candidate_celsius": 6.25
+    },
+    {
+      "adc10": 630,
+      "coolant_code": 73,
+      "coolant_candidate_celsius": 15.625,
+      "intake_code": 58,
+      "intake_candidate_celsius": 6.25
+    },
+    {
+      "adc10": 631,
+      "coolant_code": 73,
+      "coolant_candidate_celsius": 15.625,
+      "intake_code": 58,
+      "intake_candidate_celsius": 6.25
+    },
+    {
+      "adc10": 632,
+      "coolant_code": 73,
+      "coolant_candidate_celsius": 15.625,
+      "intake_code": 58,
+      "intake_candidate_celsius": 6.25
+    },
+    {
+      "adc10": 633,
+      "coolant_code": 73,
+      "coolant_candidate_celsius": 15.625,
+      "intake_code": 58,
+      "intake_candidate_celsius": 6.25
+    },
+    {
+      "adc10": 634,
+      "coolant_code": 73,
+      "coolant_candidate_celsius": 15.625,
+      "intake_code": 58,
+      "intake_candidate_celsius": 6.25
+    },
+    {
+      "adc10": 635,
+      "coolant_code": 73,
+      "coolant_candidate_celsius": 15.625,
+      "intake_code": 58,
+      "intake_candidate_celsius": 6.25
+    },
+    {
+      "adc10": 636,
+      "coolant_code": 73,
+      "coolant_candidate_celsius": 15.625,
+      "intake_code": 57,
+      "intake_candidate_celsius": 5.625
+    },
+    {
+      "adc10": 637,
+      "coolant_code": 72,
+      "coolant_candidate_celsius": 15.0,
+      "intake_code": 57,
+      "intake_candidate_celsius": 5.625
+    },
+    {
+      "adc10": 638,
+      "coolant_code": 72,
+      "coolant_candidate_celsius": 15.0,
+      "intake_code": 57,
+      "intake_candidate_celsius": 5.625
+    },
+    {
+      "adc10": 639,
+      "coolant_code": 72,
+      "coolant_candidate_celsius": 15.0,
+      "intake_code": 57,
+      "intake_candidate_celsius": 5.625
+    },
+    {
+      "adc10": 640,
+      "coolant_code": 72,
+      "coolant_candidate_celsius": 15.0,
+      "intake_code": 57,
+      "intake_candidate_celsius": 5.625
+    },
+    {
+      "adc10": 641,
+      "coolant_code": 72,
+      "coolant_candidate_celsius": 15.0,
+      "intake_code": 57,
+      "intake_candidate_celsius": 5.625
+    },
+    {
+      "adc10": 642,
+      "coolant_code": 71,
+      "coolant_candidate_celsius": 14.375,
+      "intake_code": 57,
+      "intake_candidate_celsius": 5.625
+    },
+    {
+      "adc10": 643,
+      "coolant_code": 71,
+      "coolant_candidate_celsius": 14.375,
+      "intake_code": 57,
+      "intake_candidate_celsius": 5.625
+    },
+    {
+      "adc10": 644,
+      "coolant_code": 71,
+      "coolant_candidate_celsius": 14.375,
+      "intake_code": 56,
+      "intake_candidate_celsius": 5.0
+    },
+    {
+      "adc10": 645,
+      "coolant_code": 71,
+      "coolant_candidate_celsius": 14.375,
+      "intake_code": 56,
+      "intake_candidate_celsius": 5.0
+    },
+    {
+      "adc10": 646,
+      "coolant_code": 71,
+      "coolant_candidate_celsius": 14.375,
+      "intake_code": 56,
+      "intake_candidate_celsius": 5.0
+    },
+    {
+      "adc10": 647,
+      "coolant_code": 70,
+      "coolant_candidate_celsius": 13.75,
+      "intake_code": 56,
+      "intake_candidate_celsius": 5.0
+    },
+    {
+      "adc10": 648,
+      "coolant_code": 70,
+      "coolant_candidate_celsius": 13.75,
+      "intake_code": 55,
+      "intake_candidate_celsius": 4.375
+    },
+    {
+      "adc10": 649,
+      "coolant_code": 70,
+      "coolant_candidate_celsius": 13.75,
+      "intake_code": 55,
+      "intake_candidate_celsius": 4.375
+    },
+    {
+      "adc10": 650,
+      "coolant_code": 70,
+      "coolant_candidate_celsius": 13.75,
+      "intake_code": 55,
+      "intake_candidate_celsius": 4.375
+    },
+    {
+      "adc10": 651,
+      "coolant_code": 70,
+      "coolant_candidate_celsius": 13.75,
+      "intake_code": 55,
+      "intake_candidate_celsius": 4.375
+    },
+    {
+      "adc10": 652,
+      "coolant_code": 70,
+      "coolant_candidate_celsius": 13.75,
+      "intake_code": 55,
+      "intake_candidate_celsius": 4.375
+    },
+    {
+      "adc10": 653,
+      "coolant_code": 69,
+      "coolant_candidate_celsius": 13.125,
+      "intake_code": 55,
+      "intake_candidate_celsius": 4.375
+    },
+    {
+      "adc10": 654,
+      "coolant_code": 69,
+      "coolant_candidate_celsius": 13.125,
+      "intake_code": 55,
+      "intake_candidate_celsius": 4.375
+    },
+    {
+      "adc10": 655,
+      "coolant_code": 69,
+      "coolant_candidate_celsius": 13.125,
+      "intake_code": 55,
+      "intake_candidate_celsius": 4.375
+    },
+    {
+      "adc10": 656,
+      "coolant_code": 69,
+      "coolant_candidate_celsius": 13.125,
+      "intake_code": 54,
+      "intake_candidate_celsius": 3.75
+    },
+    {
+      "adc10": 657,
+      "coolant_code": 69,
+      "coolant_candidate_celsius": 13.125,
+      "intake_code": 54,
+      "intake_candidate_celsius": 3.75
+    },
+    {
+      "adc10": 658,
+      "coolant_code": 68,
+      "coolant_candidate_celsius": 12.5,
+      "intake_code": 54,
+      "intake_candidate_celsius": 3.75
+    },
+    {
+      "adc10": 659,
+      "coolant_code": 68,
+      "coolant_candidate_celsius": 12.5,
+      "intake_code": 54,
+      "intake_candidate_celsius": 3.75
+    },
+    {
+      "adc10": 660,
+      "coolant_code": 68,
+      "coolant_candidate_celsius": 12.5,
+      "intake_code": 53,
+      "intake_candidate_celsius": 3.125
+    },
+    {
+      "adc10": 661,
+      "coolant_code": 68,
+      "coolant_candidate_celsius": 12.5,
+      "intake_code": 53,
+      "intake_candidate_celsius": 3.125
+    },
+    {
+      "adc10": 662,
+      "coolant_code": 68,
+      "coolant_candidate_celsius": 12.5,
+      "intake_code": 53,
+      "intake_candidate_celsius": 3.125
+    },
+    {
+      "adc10": 663,
+      "coolant_code": 67,
+      "coolant_candidate_celsius": 11.875,
+      "intake_code": 53,
+      "intake_candidate_celsius": 3.125
+    },
+    {
+      "adc10": 664,
+      "coolant_code": 67,
+      "coolant_candidate_celsius": 11.875,
+      "intake_code": 53,
+      "intake_candidate_celsius": 3.125
+    },
+    {
+      "adc10": 665,
+      "coolant_code": 67,
+      "coolant_candidate_celsius": 11.875,
+      "intake_code": 53,
+      "intake_candidate_celsius": 3.125
+    },
+    {
+      "adc10": 666,
+      "coolant_code": 67,
+      "coolant_candidate_celsius": 11.875,
+      "intake_code": 53,
+      "intake_candidate_celsius": 3.125
+    },
+    {
+      "adc10": 667,
+      "coolant_code": 67,
+      "coolant_candidate_celsius": 11.875,
+      "intake_code": 53,
+      "intake_candidate_celsius": 3.125
+    },
+    {
+      "adc10": 668,
+      "coolant_code": 67,
+      "coolant_candidate_celsius": 11.875,
+      "intake_code": 52,
+      "intake_candidate_celsius": 2.5
+    },
+    {
+      "adc10": 669,
+      "coolant_code": 66,
+      "coolant_candidate_celsius": 11.25,
+      "intake_code": 52,
+      "intake_candidate_celsius": 2.5
+    },
+    {
+      "adc10": 670,
+      "coolant_code": 66,
+      "coolant_candidate_celsius": 11.25,
+      "intake_code": 52,
+      "intake_candidate_celsius": 2.5
+    },
+    {
+      "adc10": 671,
+      "coolant_code": 66,
+      "coolant_candidate_celsius": 11.25,
+      "intake_code": 52,
+      "intake_candidate_celsius": 2.5
+    },
+    {
+      "adc10": 672,
+      "coolant_code": 66,
+      "coolant_candidate_celsius": 11.25,
+      "intake_code": 52,
+      "intake_candidate_celsius": 2.5
+    },
+    {
+      "adc10": 673,
+      "coolant_code": 66,
+      "coolant_candidate_celsius": 11.25,
+      "intake_code": 52,
+      "intake_candidate_celsius": 2.5
+    },
+    {
+      "adc10": 674,
+      "coolant_code": 66,
+      "coolant_candidate_celsius": 11.25,
+      "intake_code": 52,
+      "intake_candidate_celsius": 2.5
+    },
+    {
+      "adc10": 675,
+      "coolant_code": 65,
+      "coolant_candidate_celsius": 10.625,
+      "intake_code": 52,
+      "intake_candidate_celsius": 2.5
+    },
+    {
+      "adc10": 676,
+      "coolant_code": 65,
+      "coolant_candidate_celsius": 10.625,
+      "intake_code": 51,
+      "intake_candidate_celsius": 1.875
+    },
+    {
+      "adc10": 677,
+      "coolant_code": 65,
+      "coolant_candidate_celsius": 10.625,
+      "intake_code": 51,
+      "intake_candidate_celsius": 1.875
+    },
+    {
+      "adc10": 678,
+      "coolant_code": 65,
+      "coolant_candidate_celsius": 10.625,
+      "intake_code": 51,
+      "intake_candidate_celsius": 1.875
+    },
+    {
+      "adc10": 679,
+      "coolant_code": 65,
+      "coolant_candidate_celsius": 10.625,
+      "intake_code": 51,
+      "intake_candidate_celsius": 1.875
+    },
+    {
+      "adc10": 680,
+      "coolant_code": 65,
+      "coolant_candidate_celsius": 10.625,
+      "intake_code": 51,
+      "intake_candidate_celsius": 1.875
+    },
+    {
+      "adc10": 681,
+      "coolant_code": 64,
+      "coolant_candidate_celsius": 10.0,
+      "intake_code": 51,
+      "intake_candidate_celsius": 1.875
+    },
+    {
+      "adc10": 682,
+      "coolant_code": 64,
+      "coolant_candidate_celsius": 10.0,
+      "intake_code": 51,
+      "intake_candidate_celsius": 1.875
+    },
+    {
+      "adc10": 683,
+      "coolant_code": 64,
+      "coolant_candidate_celsius": 10.0,
+      "intake_code": 51,
+      "intake_candidate_celsius": 1.875
+    },
+    {
+      "adc10": 684,
+      "coolant_code": 64,
+      "coolant_candidate_celsius": 10.0,
+      "intake_code": 50,
+      "intake_candidate_celsius": 1.25
+    },
+    {
+      "adc10": 685,
+      "coolant_code": 64,
+      "coolant_candidate_celsius": 10.0,
+      "intake_code": 50,
+      "intake_candidate_celsius": 1.25
+    },
+    {
+      "adc10": 686,
+      "coolant_code": 64,
+      "coolant_candidate_celsius": 10.0,
+      "intake_code": 50,
+      "intake_candidate_celsius": 1.25
+    },
+    {
+      "adc10": 687,
+      "coolant_code": 64,
+      "coolant_candidate_celsius": 10.0,
+      "intake_code": 50,
+      "intake_candidate_celsius": 1.25
+    },
+    {
+      "adc10": 688,
+      "coolant_code": 63,
+      "coolant_candidate_celsius": 9.375,
+      "intake_code": 50,
+      "intake_candidate_celsius": 1.25
+    },
+    {
+      "adc10": 689,
+      "coolant_code": 63,
+      "coolant_candidate_celsius": 9.375,
+      "intake_code": 50,
+      "intake_candidate_celsius": 1.25
+    },
+    {
+      "adc10": 690,
+      "coolant_code": 63,
+      "coolant_candidate_celsius": 9.375,
+      "intake_code": 50,
+      "intake_candidate_celsius": 1.25
+    },
+    {
+      "adc10": 691,
+      "coolant_code": 63,
+      "coolant_candidate_celsius": 9.375,
+      "intake_code": 50,
+      "intake_candidate_celsius": 1.25
+    },
+    {
+      "adc10": 692,
+      "coolant_code": 63,
+      "coolant_candidate_celsius": 9.375,
+      "intake_code": 49,
+      "intake_candidate_celsius": 0.625
+    },
+    {
+      "adc10": 693,
+      "coolant_code": 63,
+      "coolant_candidate_celsius": 9.375,
+      "intake_code": 49,
+      "intake_candidate_celsius": 0.625
+    },
+    {
+      "adc10": 694,
+      "coolant_code": 62,
+      "coolant_candidate_celsius": 8.75,
+      "intake_code": 49,
+      "intake_candidate_celsius": 0.625
+    },
+    {
+      "adc10": 695,
+      "coolant_code": 62,
+      "coolant_candidate_celsius": 8.75,
+      "intake_code": 49,
+      "intake_candidate_celsius": 0.625
+    },
+    {
+      "adc10": 696,
+      "coolant_code": 62,
+      "coolant_candidate_celsius": 8.75,
+      "intake_code": 49,
+      "intake_candidate_celsius": 0.625
+    },
+    {
+      "adc10": 697,
+      "coolant_code": 62,
+      "coolant_candidate_celsius": 8.75,
+      "intake_code": 49,
+      "intake_candidate_celsius": 0.625
+    },
+    {
+      "adc10": 698,
+      "coolant_code": 62,
+      "coolant_candidate_celsius": 8.75,
+      "intake_code": 49,
+      "intake_candidate_celsius": 0.625
+    },
+    {
+      "adc10": 699,
+      "coolant_code": 62,
+      "coolant_candidate_celsius": 8.75,
+      "intake_code": 49,
+      "intake_candidate_celsius": 0.625
+    },
+    {
+      "adc10": 700,
+      "coolant_code": 62,
+      "coolant_candidate_celsius": 8.75,
+      "intake_code": 48,
+      "intake_candidate_celsius": 0.0
+    },
+    {
+      "adc10": 701,
+      "coolant_code": 61,
+      "coolant_candidate_celsius": 8.125,
+      "intake_code": 48,
+      "intake_candidate_celsius": 0.0
+    },
+    {
+      "adc10": 702,
+      "coolant_code": 61,
+      "coolant_candidate_celsius": 8.125,
+      "intake_code": 48,
+      "intake_candidate_celsius": 0.0
+    },
+    {
+      "adc10": 703,
+      "coolant_code": 61,
+      "coolant_candidate_celsius": 8.125,
+      "intake_code": 48,
+      "intake_candidate_celsius": 0.0
+    },
+    {
+      "adc10": 704,
+      "coolant_code": 61,
+      "coolant_candidate_celsius": 8.125,
+      "intake_code": 48,
+      "intake_candidate_celsius": 0.0
+    },
+    {
+      "adc10": 705,
+      "coolant_code": 61,
+      "coolant_candidate_celsius": 8.125,
+      "intake_code": 48,
+      "intake_candidate_celsius": 0.0
+    },
+    {
+      "adc10": 706,
+      "coolant_code": 61,
+      "coolant_candidate_celsius": 8.125,
+      "intake_code": 48,
+      "intake_candidate_celsius": 0.0
+    },
+    {
+      "adc10": 707,
+      "coolant_code": 60,
+      "coolant_candidate_celsius": 7.5,
+      "intake_code": 48,
+      "intake_candidate_celsius": 0.0
+    },
+    {
+      "adc10": 708,
+      "coolant_code": 60,
+      "coolant_candidate_celsius": 7.5,
+      "intake_code": 47,
+      "intake_candidate_celsius": -0.625
+    },
+    {
+      "adc10": 709,
+      "coolant_code": 60,
+      "coolant_candidate_celsius": 7.5,
+      "intake_code": 47,
+      "intake_candidate_celsius": -0.625
+    },
+    {
+      "adc10": 710,
+      "coolant_code": 60,
+      "coolant_candidate_celsius": 7.5,
+      "intake_code": 47,
+      "intake_candidate_celsius": -0.625
+    },
+    {
+      "adc10": 711,
+      "coolant_code": 60,
+      "coolant_candidate_celsius": 7.5,
+      "intake_code": 47,
+      "intake_candidate_celsius": -0.625
+    },
+    {
+      "adc10": 712,
+      "coolant_code": 60,
+      "coolant_candidate_celsius": 7.5,
+      "intake_code": 46,
+      "intake_candidate_celsius": -1.25
+    },
+    {
+      "adc10": 713,
+      "coolant_code": 59,
+      "coolant_candidate_celsius": 6.875,
+      "intake_code": 46,
+      "intake_candidate_celsius": -1.25
+    },
+    {
+      "adc10": 714,
+      "coolant_code": 59,
+      "coolant_candidate_celsius": 6.875,
+      "intake_code": 46,
+      "intake_candidate_celsius": -1.25
+    },
+    {
+      "adc10": 715,
+      "coolant_code": 59,
+      "coolant_candidate_celsius": 6.875,
+      "intake_code": 46,
+      "intake_candidate_celsius": -1.25
+    },
+    {
+      "adc10": 716,
+      "coolant_code": 59,
+      "coolant_candidate_celsius": 6.875,
+      "intake_code": 46,
+      "intake_candidate_celsius": -1.25
+    },
+    {
+      "adc10": 717,
+      "coolant_code": 59,
+      "coolant_candidate_celsius": 6.875,
+      "intake_code": 46,
+      "intake_candidate_celsius": -1.25
+    },
+    {
+      "adc10": 718,
+      "coolant_code": 59,
+      "coolant_candidate_celsius": 6.875,
+      "intake_code": 46,
+      "intake_candidate_celsius": -1.25
+    },
+    {
+      "adc10": 719,
+      "coolant_code": 59,
+      "coolant_candidate_celsius": 6.875,
+      "intake_code": 46,
+      "intake_candidate_celsius": -1.25
+    },
+    {
+      "adc10": 720,
+      "coolant_code": 58,
+      "coolant_candidate_celsius": 6.25,
+      "intake_code": 45,
+      "intake_candidate_celsius": -1.875
+    },
+    {
+      "adc10": 721,
+      "coolant_code": 58,
+      "coolant_candidate_celsius": 6.25,
+      "intake_code": 45,
+      "intake_candidate_celsius": -1.875
+    },
+    {
+      "adc10": 722,
+      "coolant_code": 58,
+      "coolant_candidate_celsius": 6.25,
+      "intake_code": 45,
+      "intake_candidate_celsius": -1.875
+    },
+    {
+      "adc10": 723,
+      "coolant_code": 58,
+      "coolant_candidate_celsius": 6.25,
+      "intake_code": 45,
+      "intake_candidate_celsius": -1.875
+    },
+    {
+      "adc10": 724,
+      "coolant_code": 58,
+      "coolant_candidate_celsius": 6.25,
+      "intake_code": 44,
+      "intake_candidate_celsius": -2.5
+    },
+    {
+      "adc10": 725,
+      "coolant_code": 58,
+      "coolant_candidate_celsius": 6.25,
+      "intake_code": 44,
+      "intake_candidate_celsius": -2.5
+    },
+    {
+      "adc10": 726,
+      "coolant_code": 57,
+      "coolant_candidate_celsius": 5.625,
+      "intake_code": 44,
+      "intake_candidate_celsius": -2.5
+    },
+    {
+      "adc10": 727,
+      "coolant_code": 57,
+      "coolant_candidate_celsius": 5.625,
+      "intake_code": 44,
+      "intake_candidate_celsius": -2.5
+    },
+    {
+      "adc10": 728,
+      "coolant_code": 57,
+      "coolant_candidate_celsius": 5.625,
+      "intake_code": 44,
+      "intake_candidate_celsius": -2.5
+    },
+    {
+      "adc10": 729,
+      "coolant_code": 57,
+      "coolant_candidate_celsius": 5.625,
+      "intake_code": 44,
+      "intake_candidate_celsius": -2.5
+    },
+    {
+      "adc10": 730,
+      "coolant_code": 57,
+      "coolant_candidate_celsius": 5.625,
+      "intake_code": 44,
+      "intake_candidate_celsius": -2.5
+    },
+    {
+      "adc10": 731,
+      "coolant_code": 57,
+      "coolant_candidate_celsius": 5.625,
+      "intake_code": 44,
+      "intake_candidate_celsius": -2.5
+    },
+    {
+      "adc10": 732,
+      "coolant_code": 57,
+      "coolant_candidate_celsius": 5.625,
+      "intake_code": 43,
+      "intake_candidate_celsius": -3.125
+    },
+    {
+      "adc10": 733,
+      "coolant_code": 56,
+      "coolant_candidate_celsius": 5.0,
+      "intake_code": 43,
+      "intake_candidate_celsius": -3.125
+    },
+    {
+      "adc10": 734,
+      "coolant_code": 56,
+      "coolant_candidate_celsius": 5.0,
+      "intake_code": 43,
+      "intake_candidate_celsius": -3.125
+    },
+    {
+      "adc10": 735,
+      "coolant_code": 56,
+      "coolant_candidate_celsius": 5.0,
+      "intake_code": 43,
+      "intake_candidate_celsius": -3.125
+    },
+    {
+      "adc10": 736,
+      "coolant_code": 56,
+      "coolant_candidate_celsius": 5.0,
+      "intake_code": 43,
+      "intake_candidate_celsius": -3.125
+    },
+    {
+      "adc10": 737,
+      "coolant_code": 56,
+      "coolant_candidate_celsius": 5.0,
+      "intake_code": 43,
+      "intake_candidate_celsius": -3.125
+    },
+    {
+      "adc10": 738,
+      "coolant_code": 55,
+      "coolant_candidate_celsius": 4.375,
+      "intake_code": 43,
+      "intake_candidate_celsius": -3.125
+    },
+    {
+      "adc10": 739,
+      "coolant_code": 55,
+      "coolant_candidate_celsius": 4.375,
+      "intake_code": 43,
+      "intake_candidate_celsius": -3.125
+    },
+    {
+      "adc10": 740,
+      "coolant_code": 55,
+      "coolant_candidate_celsius": 4.375,
+      "intake_code": 42,
+      "intake_candidate_celsius": -3.75
+    },
+    {
+      "adc10": 741,
+      "coolant_code": 55,
+      "coolant_candidate_celsius": 4.375,
+      "intake_code": 42,
+      "intake_candidate_celsius": -3.75
+    },
+    {
+      "adc10": 742,
+      "coolant_code": 55,
+      "coolant_candidate_celsius": 4.375,
+      "intake_code": 42,
+      "intake_candidate_celsius": -3.75
+    },
+    {
+      "adc10": 743,
+      "coolant_code": 54,
+      "coolant_candidate_celsius": 3.75,
+      "intake_code": 42,
+      "intake_candidate_celsius": -3.75
+    },
+    {
+      "adc10": 744,
+      "coolant_code": 54,
+      "coolant_candidate_celsius": 3.75,
+      "intake_code": 41,
+      "intake_candidate_celsius": -4.375
+    },
+    {
+      "adc10": 745,
+      "coolant_code": 54,
+      "coolant_candidate_celsius": 3.75,
+      "intake_code": 41,
+      "intake_candidate_celsius": -4.375
+    },
+    {
+      "adc10": 746,
+      "coolant_code": 54,
+      "coolant_candidate_celsius": 3.75,
+      "intake_code": 41,
+      "intake_candidate_celsius": -4.375
+    },
+    {
+      "adc10": 747,
+      "coolant_code": 54,
+      "coolant_candidate_celsius": 3.75,
+      "intake_code": 41,
+      "intake_candidate_celsius": -4.375
+    },
+    {
+      "adc10": 748,
+      "coolant_code": 54,
+      "coolant_candidate_celsius": 3.75,
+      "intake_code": 40,
+      "intake_candidate_celsius": -5.0
+    },
+    {
+      "adc10": 749,
+      "coolant_code": 53,
+      "coolant_candidate_celsius": 3.125,
+      "intake_code": 40,
+      "intake_candidate_celsius": -5.0
+    },
+    {
+      "adc10": 750,
+      "coolant_code": 53,
+      "coolant_candidate_celsius": 3.125,
+      "intake_code": 40,
+      "intake_candidate_celsius": -5.0
+    },
+    {
+      "adc10": 751,
+      "coolant_code": 53,
+      "coolant_candidate_celsius": 3.125,
+      "intake_code": 40,
+      "intake_candidate_celsius": -5.0
+    },
+    {
+      "adc10": 752,
+      "coolant_code": 53,
+      "coolant_candidate_celsius": 3.125,
+      "intake_code": 40,
+      "intake_candidate_celsius": -5.0
+    },
+    {
+      "adc10": 753,
+      "coolant_code": 53,
+      "coolant_candidate_celsius": 3.125,
+      "intake_code": 40,
+      "intake_candidate_celsius": -5.0
+    },
+    {
+      "adc10": 754,
+      "coolant_code": 52,
+      "coolant_candidate_celsius": 2.5,
+      "intake_code": 40,
+      "intake_candidate_celsius": -5.0
+    },
+    {
+      "adc10": 755,
+      "coolant_code": 52,
+      "coolant_candidate_celsius": 2.5,
+      "intake_code": 40,
+      "intake_candidate_celsius": -5.0
+    },
+    {
+      "adc10": 756,
+      "coolant_code": 52,
+      "coolant_candidate_celsius": 2.5,
+      "intake_code": 39,
+      "intake_candidate_celsius": -5.625
+    },
+    {
+      "adc10": 757,
+      "coolant_code": 52,
+      "coolant_candidate_celsius": 2.5,
+      "intake_code": 39,
+      "intake_candidate_celsius": -5.625
+    },
+    {
+      "adc10": 758,
+      "coolant_code": 52,
+      "coolant_candidate_celsius": 2.5,
+      "intake_code": 39,
+      "intake_candidate_celsius": -5.625
+    },
+    {
+      "adc10": 759,
+      "coolant_code": 51,
+      "coolant_candidate_celsius": 1.875,
+      "intake_code": 39,
+      "intake_candidate_celsius": -5.625
+    },
+    {
+      "adc10": 760,
+      "coolant_code": 51,
+      "coolant_candidate_celsius": 1.875,
+      "intake_code": 38,
+      "intake_candidate_celsius": -6.25
+    },
+    {
+      "adc10": 761,
+      "coolant_code": 51,
+      "coolant_candidate_celsius": 1.875,
+      "intake_code": 38,
+      "intake_candidate_celsius": -6.25
+    },
+    {
+      "adc10": 762,
+      "coolant_code": 51,
+      "coolant_candidate_celsius": 1.875,
+      "intake_code": 38,
+      "intake_candidate_celsius": -6.25
+    },
+    {
+      "adc10": 763,
+      "coolant_code": 51,
+      "coolant_candidate_celsius": 1.875,
+      "intake_code": 38,
+      "intake_candidate_celsius": -6.25
+    },
+    {
+      "adc10": 764,
+      "coolant_code": 51,
+      "coolant_candidate_celsius": 1.875,
+      "intake_code": 37,
+      "intake_candidate_celsius": -6.875
+    },
+    {
+      "adc10": 765,
+      "coolant_code": 50,
+      "coolant_candidate_celsius": 1.25,
+      "intake_code": 37,
+      "intake_candidate_celsius": -6.875
+    },
+    {
+      "adc10": 766,
+      "coolant_code": 50,
+      "coolant_candidate_celsius": 1.25,
+      "intake_code": 37,
+      "intake_candidate_celsius": -6.875
+    },
+    {
+      "adc10": 767,
+      "coolant_code": 50,
+      "coolant_candidate_celsius": 1.25,
+      "intake_code": 37,
+      "intake_candidate_celsius": -6.875
+    },
+    {
+      "adc10": 768,
+      "coolant_code": 50,
+      "coolant_candidate_celsius": 1.25,
+      "intake_code": 37,
+      "intake_candidate_celsius": -6.875
+    },
+    {
+      "adc10": 769,
+      "coolant_code": 50,
+      "coolant_candidate_celsius": 1.25,
+      "intake_code": 37,
+      "intake_candidate_celsius": -6.875
+    },
+    {
+      "adc10": 770,
+      "coolant_code": 49,
+      "coolant_candidate_celsius": 0.625,
+      "intake_code": 37,
+      "intake_candidate_celsius": -6.875
+    },
+    {
+      "adc10": 771,
+      "coolant_code": 49,
+      "coolant_candidate_celsius": 0.625,
+      "intake_code": 37,
+      "intake_candidate_celsius": -6.875
+    },
+    {
+      "adc10": 772,
+      "coolant_code": 49,
+      "coolant_candidate_celsius": 0.625,
+      "intake_code": 36,
+      "intake_candidate_celsius": -7.5
+    },
+    {
+      "adc10": 773,
+      "coolant_code": 49,
+      "coolant_candidate_celsius": 0.625,
+      "intake_code": 36,
+      "intake_candidate_celsius": -7.5
+    },
+    {
+      "adc10": 774,
+      "coolant_code": 49,
+      "coolant_candidate_celsius": 0.625,
+      "intake_code": 36,
+      "intake_candidate_celsius": -7.5
+    },
+    {
+      "adc10": 775,
+      "coolant_code": 48,
+      "coolant_candidate_celsius": 0.0,
+      "intake_code": 36,
+      "intake_candidate_celsius": -7.5
+    },
+    {
+      "adc10": 776,
+      "coolant_code": 48,
+      "coolant_candidate_celsius": 0.0,
+      "intake_code": 35,
+      "intake_candidate_celsius": -8.125
+    },
+    {
+      "adc10": 777,
+      "coolant_code": 48,
+      "coolant_candidate_celsius": 0.0,
+      "intake_code": 35,
+      "intake_candidate_celsius": -8.125
+    },
+    {
+      "adc10": 778,
+      "coolant_code": 48,
+      "coolant_candidate_celsius": 0.0,
+      "intake_code": 35,
+      "intake_candidate_celsius": -8.125
+    },
+    {
+      "adc10": 779,
+      "coolant_code": 48,
+      "coolant_candidate_celsius": 0.0,
+      "intake_code": 35,
+      "intake_candidate_celsius": -8.125
+    },
+    {
+      "adc10": 780,
+      "coolant_code": 48,
+      "coolant_candidate_celsius": 0.0,
+      "intake_code": 35,
+      "intake_candidate_celsius": -8.125
+    },
+    {
+      "adc10": 781,
+      "coolant_code": 47,
+      "coolant_candidate_celsius": -0.625,
+      "intake_code": 35,
+      "intake_candidate_celsius": -8.125
+    },
+    {
+      "adc10": 782,
+      "coolant_code": 47,
+      "coolant_candidate_celsius": -0.625,
+      "intake_code": 35,
+      "intake_candidate_celsius": -8.125
+    },
+    {
+      "adc10": 783,
+      "coolant_code": 47,
+      "coolant_candidate_celsius": -0.625,
+      "intake_code": 35,
+      "intake_candidate_celsius": -8.125
+    },
+    {
+      "adc10": 784,
+      "coolant_code": 47,
+      "coolant_candidate_celsius": -0.625,
+      "intake_code": 34,
+      "intake_candidate_celsius": -8.75
+    },
+    {
+      "adc10": 785,
+      "coolant_code": 47,
+      "coolant_candidate_celsius": -0.625,
+      "intake_code": 34,
+      "intake_candidate_celsius": -8.75
+    },
+    {
+      "adc10": 786,
+      "coolant_code": 46,
+      "coolant_candidate_celsius": -1.25,
+      "intake_code": 34,
+      "intake_candidate_celsius": -8.75
+    },
+    {
+      "adc10": 787,
+      "coolant_code": 46,
+      "coolant_candidate_celsius": -1.25,
+      "intake_code": 34,
+      "intake_candidate_celsius": -8.75
+    },
+    {
+      "adc10": 788,
+      "coolant_code": 46,
+      "coolant_candidate_celsius": -1.25,
+      "intake_code": 33,
+      "intake_candidate_celsius": -9.375
+    },
+    {
+      "adc10": 789,
+      "coolant_code": 46,
+      "coolant_candidate_celsius": -1.25,
+      "intake_code": 33,
+      "intake_candidate_celsius": -9.375
+    },
+    {
+      "adc10": 790,
+      "coolant_code": 46,
+      "coolant_candidate_celsius": -1.25,
+      "intake_code": 33,
+      "intake_candidate_celsius": -9.375
+    },
+    {
+      "adc10": 791,
+      "coolant_code": 45,
+      "coolant_candidate_celsius": -1.875,
+      "intake_code": 33,
+      "intake_candidate_celsius": -9.375
+    },
+    {
+      "adc10": 792,
+      "coolant_code": 45,
+      "coolant_candidate_celsius": -1.875,
+      "intake_code": 33,
+      "intake_candidate_celsius": -9.375
+    },
+    {
+      "adc10": 793,
+      "coolant_code": 45,
+      "coolant_candidate_celsius": -1.875,
+      "intake_code": 33,
+      "intake_candidate_celsius": -9.375
+    },
+    {
+      "adc10": 794,
+      "coolant_code": 45,
+      "coolant_candidate_celsius": -1.875,
+      "intake_code": 33,
+      "intake_candidate_celsius": -9.375
+    },
+    {
+      "adc10": 795,
+      "coolant_code": 45,
+      "coolant_candidate_celsius": -1.875,
+      "intake_code": 33,
+      "intake_candidate_celsius": -9.375
+    },
+    {
+      "adc10": 796,
+      "coolant_code": 45,
+      "coolant_candidate_celsius": -1.875,
+      "intake_code": 32,
+      "intake_candidate_celsius": -10.0
+    },
+    {
+      "adc10": 797,
+      "coolant_code": 44,
+      "coolant_candidate_celsius": -2.5,
+      "intake_code": 32,
+      "intake_candidate_celsius": -10.0
+    },
+    {
+      "adc10": 798,
+      "coolant_code": 44,
+      "coolant_candidate_celsius": -2.5,
+      "intake_code": 32,
+      "intake_candidate_celsius": -10.0
+    },
+    {
+      "adc10": 799,
+      "coolant_code": 44,
+      "coolant_candidate_celsius": -2.5,
+      "intake_code": 32,
+      "intake_candidate_celsius": -10.0
+    },
+    {
+      "adc10": 800,
+      "coolant_code": 44,
+      "coolant_candidate_celsius": -2.5,
+      "intake_code": 32,
+      "intake_candidate_celsius": -10.0
+    },
+    {
+      "adc10": 801,
+      "coolant_code": 43,
+      "coolant_candidate_celsius": -3.125,
+      "intake_code": 32,
+      "intake_candidate_celsius": -10.0
+    },
+    {
+      "adc10": 802,
+      "coolant_code": 43,
+      "coolant_candidate_celsius": -3.125,
+      "intake_code": 32,
+      "intake_candidate_celsius": -10.0
+    },
+    {
+      "adc10": 803,
+      "coolant_code": 43,
+      "coolant_candidate_celsius": -3.125,
+      "intake_code": 32,
+      "intake_candidate_celsius": -10.0
+    },
+    {
+      "adc10": 804,
+      "coolant_code": 43,
+      "coolant_candidate_celsius": -3.125,
+      "intake_code": 31,
+      "intake_candidate_celsius": -10.625
+    },
+    {
+      "adc10": 805,
+      "coolant_code": 43,
+      "coolant_candidate_celsius": -3.125,
+      "intake_code": 31,
+      "intake_candidate_celsius": -10.625
+    },
+    {
+      "adc10": 806,
+      "coolant_code": 42,
+      "coolant_candidate_celsius": -3.75,
+      "intake_code": 31,
+      "intake_candidate_celsius": -10.625
+    },
+    {
+      "adc10": 807,
+      "coolant_code": 42,
+      "coolant_candidate_celsius": -3.75,
+      "intake_code": 31,
+      "intake_candidate_celsius": -10.625
+    },
+    {
+      "adc10": 808,
+      "coolant_code": 42,
+      "coolant_candidate_celsius": -3.75,
+      "intake_code": 30,
+      "intake_candidate_celsius": -11.25
+    },
+    {
+      "adc10": 809,
+      "coolant_code": 42,
+      "coolant_candidate_celsius": -3.75,
+      "intake_code": 30,
+      "intake_candidate_celsius": -11.25
+    },
+    {
+      "adc10": 810,
+      "coolant_code": 41,
+      "coolant_candidate_celsius": -4.375,
+      "intake_code": 30,
+      "intake_candidate_celsius": -11.25
+    },
+    {
+      "adc10": 811,
+      "coolant_code": 41,
+      "coolant_candidate_celsius": -4.375,
+      "intake_code": 30,
+      "intake_candidate_celsius": -11.25
+    },
+    {
+      "adc10": 812,
+      "coolant_code": 41,
+      "coolant_candidate_celsius": -4.375,
+      "intake_code": 29,
+      "intake_candidate_celsius": -11.875
+    },
+    {
+      "adc10": 813,
+      "coolant_code": 41,
+      "coolant_candidate_celsius": -4.375,
+      "intake_code": 29,
+      "intake_candidate_celsius": -11.875
+    },
+    {
+      "adc10": 814,
+      "coolant_code": 41,
+      "coolant_candidate_celsius": -4.375,
+      "intake_code": 29,
+      "intake_candidate_celsius": -11.875
+    },
+    {
+      "adc10": 815,
+      "coolant_code": 40,
+      "coolant_candidate_celsius": -5.0,
+      "intake_code": 29,
+      "intake_candidate_celsius": -11.875
+    },
+    {
+      "adc10": 816,
+      "coolant_code": 40,
+      "coolant_candidate_celsius": -5.0,
+      "intake_code": 29,
+      "intake_candidate_celsius": -11.875
+    },
+    {
+      "adc10": 817,
+      "coolant_code": 40,
+      "coolant_candidate_celsius": -5.0,
+      "intake_code": 29,
+      "intake_candidate_celsius": -11.875
+    },
+    {
+      "adc10": 818,
+      "coolant_code": 40,
+      "coolant_candidate_celsius": -5.0,
+      "intake_code": 29,
+      "intake_candidate_celsius": -11.875
+    },
+    {
+      "adc10": 819,
+      "coolant_code": 39,
+      "coolant_candidate_celsius": -5.625,
+      "intake_code": 29,
+      "intake_candidate_celsius": -11.875
+    },
+    {
+      "adc10": 820,
+      "coolant_code": 39,
+      "coolant_candidate_celsius": -5.625,
+      "intake_code": 28,
+      "intake_candidate_celsius": -12.5
+    },
+    {
+      "adc10": 821,
+      "coolant_code": 39,
+      "coolant_candidate_celsius": -5.625,
+      "intake_code": 28,
+      "intake_candidate_celsius": -12.5
+    },
+    {
+      "adc10": 822,
+      "coolant_code": 39,
+      "coolant_candidate_celsius": -5.625,
+      "intake_code": 28,
+      "intake_candidate_celsius": -12.5
+    },
+    {
+      "adc10": 823,
+      "coolant_code": 39,
+      "coolant_candidate_celsius": -5.625,
+      "intake_code": 28,
+      "intake_candidate_celsius": -12.5
+    },
+    {
+      "adc10": 824,
+      "coolant_code": 38,
+      "coolant_candidate_celsius": -6.25,
+      "intake_code": 27,
+      "intake_candidate_celsius": -13.125
+    },
+    {
+      "adc10": 825,
+      "coolant_code": 38,
+      "coolant_candidate_celsius": -6.25,
+      "intake_code": 27,
+      "intake_candidate_celsius": -13.125
+    },
+    {
+      "adc10": 826,
+      "coolant_code": 38,
+      "coolant_candidate_celsius": -6.25,
+      "intake_code": 27,
+      "intake_candidate_celsius": -13.125
+    },
+    {
+      "adc10": 827,
+      "coolant_code": 38,
+      "coolant_candidate_celsius": -6.25,
+      "intake_code": 27,
+      "intake_candidate_celsius": -13.125
+    },
+    {
+      "adc10": 828,
+      "coolant_code": 38,
+      "coolant_candidate_celsius": -6.25,
+      "intake_code": 26,
+      "intake_candidate_celsius": -13.75
+    },
+    {
+      "adc10": 829,
+      "coolant_code": 37,
+      "coolant_candidate_celsius": -6.875,
+      "intake_code": 26,
+      "intake_candidate_celsius": -13.75
+    },
+    {
+      "adc10": 830,
+      "coolant_code": 37,
+      "coolant_candidate_celsius": -6.875,
+      "intake_code": 26,
+      "intake_candidate_celsius": -13.75
+    },
+    {
+      "adc10": 831,
+      "coolant_code": 37,
+      "coolant_candidate_celsius": -6.875,
+      "intake_code": 26,
+      "intake_candidate_celsius": -13.75
+    },
+    {
+      "adc10": 832,
+      "coolant_code": 37,
+      "coolant_candidate_celsius": -6.875,
+      "intake_code": 26,
+      "intake_candidate_celsius": -13.75
+    },
+    {
+      "adc10": 833,
+      "coolant_code": 36,
+      "coolant_candidate_celsius": -7.5,
+      "intake_code": 26,
+      "intake_candidate_celsius": -13.75
+    },
+    {
+      "adc10": 834,
+      "coolant_code": 36,
+      "coolant_candidate_celsius": -7.5,
+      "intake_code": 26,
+      "intake_candidate_celsius": -13.75
+    },
+    {
+      "adc10": 835,
+      "coolant_code": 36,
+      "coolant_candidate_celsius": -7.5,
+      "intake_code": 26,
+      "intake_candidate_celsius": -13.75
+    },
+    {
+      "adc10": 836,
+      "coolant_code": 36,
+      "coolant_candidate_celsius": -7.5,
+      "intake_code": 25,
+      "intake_candidate_celsius": -14.375
+    },
+    {
+      "adc10": 837,
+      "coolant_code": 36,
+      "coolant_candidate_celsius": -7.5,
+      "intake_code": 25,
+      "intake_candidate_celsius": -14.375
+    },
+    {
+      "adc10": 838,
+      "coolant_code": 35,
+      "coolant_candidate_celsius": -8.125,
+      "intake_code": 25,
+      "intake_candidate_celsius": -14.375
+    },
+    {
+      "adc10": 839,
+      "coolant_code": 35,
+      "coolant_candidate_celsius": -8.125,
+      "intake_code": 25,
+      "intake_candidate_celsius": -14.375
+    },
+    {
+      "adc10": 840,
+      "coolant_code": 35,
+      "coolant_candidate_celsius": -8.125,
+      "intake_code": 24,
+      "intake_candidate_celsius": -15.0
+    },
+    {
+      "adc10": 841,
+      "coolant_code": 35,
+      "coolant_candidate_celsius": -8.125,
+      "intake_code": 24,
+      "intake_candidate_celsius": -15.0
+    },
+    {
+      "adc10": 842,
+      "coolant_code": 34,
+      "coolant_candidate_celsius": -8.75,
+      "intake_code": 24,
+      "intake_candidate_celsius": -15.0
+    },
+    {
+      "adc10": 843,
+      "coolant_code": 34,
+      "coolant_candidate_celsius": -8.75,
+      "intake_code": 24,
+      "intake_candidate_celsius": -15.0
+    },
+    {
+      "adc10": 844,
+      "coolant_code": 34,
+      "coolant_candidate_celsius": -8.75,
+      "intake_code": 23,
+      "intake_candidate_celsius": -15.625
+    },
+    {
+      "adc10": 845,
+      "coolant_code": 34,
+      "coolant_candidate_celsius": -8.75,
+      "intake_code": 23,
+      "intake_candidate_celsius": -15.625
+    },
+    {
+      "adc10": 846,
+      "coolant_code": 34,
+      "coolant_candidate_celsius": -8.75,
+      "intake_code": 23,
+      "intake_candidate_celsius": -15.625
+    },
+    {
+      "adc10": 847,
+      "coolant_code": 33,
+      "coolant_candidate_celsius": -9.375,
+      "intake_code": 23,
+      "intake_candidate_celsius": -15.625
+    },
+    {
+      "adc10": 848,
+      "coolant_code": 33,
+      "coolant_candidate_celsius": -9.375,
+      "intake_code": 22,
+      "intake_candidate_celsius": -16.25
+    },
+    {
+      "adc10": 849,
+      "coolant_code": 33,
+      "coolant_candidate_celsius": -9.375,
+      "intake_code": 22,
+      "intake_candidate_celsius": -16.25
+    },
+    {
+      "adc10": 850,
+      "coolant_code": 33,
+      "coolant_candidate_celsius": -9.375,
+      "intake_code": 22,
+      "intake_candidate_celsius": -16.25
+    },
+    {
+      "adc10": 851,
+      "coolant_code": 32,
+      "coolant_candidate_celsius": -10.0,
+      "intake_code": 22,
+      "intake_candidate_celsius": -16.25
+    },
+    {
+      "adc10": 852,
+      "coolant_code": 32,
+      "coolant_candidate_celsius": -10.0,
+      "intake_code": 21,
+      "intake_candidate_celsius": -16.875
+    },
+    {
+      "adc10": 853,
+      "coolant_code": 32,
+      "coolant_candidate_celsius": -10.0,
+      "intake_code": 21,
+      "intake_candidate_celsius": -16.875
+    },
+    {
+      "adc10": 854,
+      "coolant_code": 32,
+      "coolant_candidate_celsius": -10.0,
+      "intake_code": 21,
+      "intake_candidate_celsius": -16.875
+    },
+    {
+      "adc10": 855,
+      "coolant_code": 32,
+      "coolant_candidate_celsius": -10.0,
+      "intake_code": 21,
+      "intake_candidate_celsius": -16.875
+    },
+    {
+      "adc10": 856,
+      "coolant_code": 31,
+      "coolant_candidate_celsius": -10.625,
+      "intake_code": 20,
+      "intake_candidate_celsius": -17.5
+    },
+    {
+      "adc10": 857,
+      "coolant_code": 31,
+      "coolant_candidate_celsius": -10.625,
+      "intake_code": 20,
+      "intake_candidate_celsius": -17.5
+    },
+    {
+      "adc10": 858,
+      "coolant_code": 31,
+      "coolant_candidate_celsius": -10.625,
+      "intake_code": 20,
+      "intake_candidate_celsius": -17.5
+    },
+    {
+      "adc10": 859,
+      "coolant_code": 31,
+      "coolant_candidate_celsius": -10.625,
+      "intake_code": 20,
+      "intake_candidate_celsius": -17.5
+    },
+    {
+      "adc10": 860,
+      "coolant_code": 31,
+      "coolant_candidate_celsius": -10.625,
+      "intake_code": 19,
+      "intake_candidate_celsius": -18.125
+    },
+    {
+      "adc10": 861,
+      "coolant_code": 30,
+      "coolant_candidate_celsius": -11.25,
+      "intake_code": 19,
+      "intake_candidate_celsius": -18.125
+    },
+    {
+      "adc10": 862,
+      "coolant_code": 30,
+      "coolant_candidate_celsius": -11.25,
+      "intake_code": 19,
+      "intake_candidate_celsius": -18.125
+    },
+    {
+      "adc10": 863,
+      "coolant_code": 30,
+      "coolant_candidate_celsius": -11.25,
+      "intake_code": 19,
+      "intake_candidate_celsius": -18.125
+    },
+    {
+      "adc10": 864,
+      "coolant_code": 30,
+      "coolant_candidate_celsius": -11.25,
+      "intake_code": 19,
+      "intake_candidate_celsius": -18.125
+    },
+    {
+      "adc10": 865,
+      "coolant_code": 29,
+      "coolant_candidate_celsius": -11.875,
+      "intake_code": 19,
+      "intake_candidate_celsius": -18.125
+    },
+    {
+      "adc10": 866,
+      "coolant_code": 29,
+      "coolant_candidate_celsius": -11.875,
+      "intake_code": 19,
+      "intake_candidate_celsius": -18.125
+    },
+    {
+      "adc10": 867,
+      "coolant_code": 29,
+      "coolant_candidate_celsius": -11.875,
+      "intake_code": 19,
+      "intake_candidate_celsius": -18.125
+    },
+    {
+      "adc10": 868,
+      "coolant_code": 29,
+      "coolant_candidate_celsius": -11.875,
+      "intake_code": 18,
+      "intake_candidate_celsius": -18.75
+    },
+    {
+      "adc10": 869,
+      "coolant_code": 28,
+      "coolant_candidate_celsius": -12.5,
+      "intake_code": 18,
+      "intake_candidate_celsius": -18.75
+    },
+    {
+      "adc10": 870,
+      "coolant_code": 28,
+      "coolant_candidate_celsius": -12.5,
+      "intake_code": 18,
+      "intake_candidate_celsius": -18.75
+    },
+    {
+      "adc10": 871,
+      "coolant_code": 28,
+      "coolant_candidate_celsius": -12.5,
+      "intake_code": 18,
+      "intake_candidate_celsius": -18.75
+    },
+    {
+      "adc10": 872,
+      "coolant_code": 28,
+      "coolant_candidate_celsius": -12.5,
+      "intake_code": 17,
+      "intake_candidate_celsius": -19.375
+    },
+    {
+      "adc10": 873,
+      "coolant_code": 27,
+      "coolant_candidate_celsius": -13.125,
+      "intake_code": 17,
+      "intake_candidate_celsius": -19.375
+    },
+    {
+      "adc10": 874,
+      "coolant_code": 27,
+      "coolant_candidate_celsius": -13.125,
+      "intake_code": 17,
+      "intake_candidate_celsius": -19.375
+    },
+    {
+      "adc10": 875,
+      "coolant_code": 27,
+      "coolant_candidate_celsius": -13.125,
+      "intake_code": 17,
+      "intake_candidate_celsius": -19.375
+    },
+    {
+      "adc10": 876,
+      "coolant_code": 27,
+      "coolant_candidate_celsius": -13.125,
+      "intake_code": 16,
+      "intake_candidate_celsius": -20.0
+    },
+    {
+      "adc10": 877,
+      "coolant_code": 26,
+      "coolant_candidate_celsius": -13.75,
+      "intake_code": 16,
+      "intake_candidate_celsius": -20.0
+    },
+    {
+      "adc10": 878,
+      "coolant_code": 26,
+      "coolant_candidate_celsius": -13.75,
+      "intake_code": 16,
+      "intake_candidate_celsius": -20.0
+    },
+    {
+      "adc10": 879,
+      "coolant_code": 26,
+      "coolant_candidate_celsius": -13.75,
+      "intake_code": 16,
+      "intake_candidate_celsius": -20.0
+    },
+    {
+      "adc10": 880,
+      "coolant_code": 26,
+      "coolant_candidate_celsius": -13.75,
+      "intake_code": 15,
+      "intake_candidate_celsius": -20.625
+    },
+    {
+      "adc10": 881,
+      "coolant_code": 25,
+      "coolant_candidate_celsius": -14.375,
+      "intake_code": 15,
+      "intake_candidate_celsius": -20.625
+    },
+    {
+      "adc10": 882,
+      "coolant_code": 25,
+      "coolant_candidate_celsius": -14.375,
+      "intake_code": 15,
+      "intake_candidate_celsius": -20.625
+    },
+    {
+      "adc10": 883,
+      "coolant_code": 25,
+      "coolant_candidate_celsius": -14.375,
+      "intake_code": 15,
+      "intake_candidate_celsius": -20.625
+    },
+    {
+      "adc10": 884,
+      "coolant_code": 25,
+      "coolant_candidate_celsius": -14.375,
+      "intake_code": 14,
+      "intake_candidate_celsius": -21.25
+    },
+    {
+      "adc10": 885,
+      "coolant_code": 24,
+      "coolant_candidate_celsius": -15.0,
+      "intake_code": 14,
+      "intake_candidate_celsius": -21.25
+    },
+    {
+      "adc10": 886,
+      "coolant_code": 24,
+      "coolant_candidate_celsius": -15.0,
+      "intake_code": 14,
+      "intake_candidate_celsius": -21.25
+    },
+    {
+      "adc10": 887,
+      "coolant_code": 24,
+      "coolant_candidate_celsius": -15.0,
+      "intake_code": 14,
+      "intake_candidate_celsius": -21.25
+    },
+    {
+      "adc10": 888,
+      "coolant_code": 24,
+      "coolant_candidate_celsius": -15.0,
+      "intake_code": 13,
+      "intake_candidate_celsius": -21.875
+    },
+    {
+      "adc10": 889,
+      "coolant_code": 23,
+      "coolant_candidate_celsius": -15.625,
+      "intake_code": 13,
+      "intake_candidate_celsius": -21.875
+    },
+    {
+      "adc10": 890,
+      "coolant_code": 23,
+      "coolant_candidate_celsius": -15.625,
+      "intake_code": 13,
+      "intake_candidate_celsius": -21.875
+    },
+    {
+      "adc10": 891,
+      "coolant_code": 23,
+      "coolant_candidate_celsius": -15.625,
+      "intake_code": 13,
+      "intake_candidate_celsius": -21.875
+    },
+    {
+      "adc10": 892,
+      "coolant_code": 23,
+      "coolant_candidate_celsius": -15.625,
+      "intake_code": 12,
+      "intake_candidate_celsius": -22.5
+    },
+    {
+      "adc10": 893,
+      "coolant_code": 22,
+      "coolant_candidate_celsius": -16.25,
+      "intake_code": 12,
+      "intake_candidate_celsius": -22.5
+    },
+    {
+      "adc10": 894,
+      "coolant_code": 22,
+      "coolant_candidate_celsius": -16.25,
+      "intake_code": 12,
+      "intake_candidate_celsius": -22.5
+    },
+    {
+      "adc10": 895,
+      "coolant_code": 22,
+      "coolant_candidate_celsius": -16.25,
+      "intake_code": 12,
+      "intake_candidate_celsius": -22.5
+    },
+    {
+      "adc10": 896,
+      "coolant_code": 21,
+      "coolant_candidate_celsius": -16.875,
+      "intake_code": 12,
+      "intake_candidate_celsius": -22.5
+    },
+    {
+      "adc10": 897,
+      "coolant_code": 21,
+      "coolant_candidate_celsius": -16.875,
+      "intake_code": 12,
+      "intake_candidate_celsius": -22.5
+    },
+    {
+      "adc10": 898,
+      "coolant_code": 21,
+      "coolant_candidate_celsius": -16.875,
+      "intake_code": 12,
+      "intake_candidate_celsius": -22.5
+    },
+    {
+      "adc10": 899,
+      "coolant_code": 20,
+      "coolant_candidate_celsius": -17.5,
+      "intake_code": 12,
+      "intake_candidate_celsius": -22.5
+    },
+    {
+      "adc10": 900,
+      "coolant_code": 20,
+      "coolant_candidate_celsius": -17.5,
+      "intake_code": 10,
+      "intake_candidate_celsius": -23.75
+    },
+    {
+      "adc10": 901,
+      "coolant_code": 20,
+      "coolant_candidate_celsius": -17.5,
+      "intake_code": 10,
+      "intake_candidate_celsius": -23.75
+    },
+    {
+      "adc10": 902,
+      "coolant_code": 19,
+      "coolant_candidate_celsius": -18.125,
+      "intake_code": 10,
+      "intake_candidate_celsius": -23.75
+    },
+    {
+      "adc10": 903,
+      "coolant_code": 19,
+      "coolant_candidate_celsius": -18.125,
+      "intake_code": 10,
+      "intake_candidate_celsius": -23.75
+    },
+    {
+      "adc10": 904,
+      "coolant_code": 19,
+      "coolant_candidate_celsius": -18.125,
+      "intake_code": 9,
+      "intake_candidate_celsius": -24.375
+    },
+    {
+      "adc10": 905,
+      "coolant_code": 18,
+      "coolant_candidate_celsius": -18.75,
+      "intake_code": 9,
+      "intake_candidate_celsius": -24.375
+    },
+    {
+      "adc10": 906,
+      "coolant_code": 18,
+      "coolant_candidate_celsius": -18.75,
+      "intake_code": 9,
+      "intake_candidate_celsius": -24.375
+    },
+    {
+      "adc10": 907,
+      "coolant_code": 18,
+      "coolant_candidate_celsius": -18.75,
+      "intake_code": 9,
+      "intake_candidate_celsius": -24.375
+    },
+    {
+      "adc10": 908,
+      "coolant_code": 18,
+      "coolant_candidate_celsius": -18.75,
+      "intake_code": 8,
+      "intake_candidate_celsius": -25.0
+    },
+    {
+      "adc10": 909,
+      "coolant_code": 17,
+      "coolant_candidate_celsius": -19.375,
+      "intake_code": 8,
+      "intake_candidate_celsius": -25.0
+    },
+    {
+      "adc10": 910,
+      "coolant_code": 17,
+      "coolant_candidate_celsius": -19.375,
+      "intake_code": 8,
+      "intake_candidate_celsius": -25.0
+    },
+    {
+      "adc10": 911,
+      "coolant_code": 17,
+      "coolant_candidate_celsius": -19.375,
+      "intake_code": 8,
+      "intake_candidate_celsius": -25.0
+    },
+    {
+      "adc10": 912,
+      "coolant_code": 16,
+      "coolant_candidate_celsius": -20.0,
+      "intake_code": 7,
+      "intake_candidate_celsius": -25.625
+    },
+    {
+      "adc10": 913,
+      "coolant_code": 16,
+      "coolant_candidate_celsius": -20.0,
+      "intake_code": 7,
+      "intake_candidate_celsius": -25.625
+    },
+    {
+      "adc10": 914,
+      "coolant_code": 16,
+      "coolant_candidate_celsius": -20.0,
+      "intake_code": 7,
+      "intake_candidate_celsius": -25.625
+    },
+    {
+      "adc10": 915,
+      "coolant_code": 15,
+      "coolant_candidate_celsius": -20.625,
+      "intake_code": 7,
+      "intake_candidate_celsius": -25.625
+    },
+    {
+      "adc10": 916,
+      "coolant_code": 15,
+      "coolant_candidate_celsius": -20.625,
+      "intake_code": 6,
+      "intake_candidate_celsius": -26.25
+    },
+    {
+      "adc10": 917,
+      "coolant_code": 15,
+      "coolant_candidate_celsius": -20.625,
+      "intake_code": 6,
+      "intake_candidate_celsius": -26.25
+    },
+    {
+      "adc10": 918,
+      "coolant_code": 14,
+      "coolant_candidate_celsius": -21.25,
+      "intake_code": 6,
+      "intake_candidate_celsius": -26.25
+    },
+    {
+      "adc10": 919,
+      "coolant_code": 14,
+      "coolant_candidate_celsius": -21.25,
+      "intake_code": 6,
+      "intake_candidate_celsius": -26.25
+    },
+    {
+      "adc10": 920,
+      "coolant_code": 14,
+      "coolant_candidate_celsius": -21.25,
+      "intake_code": 5,
+      "intake_candidate_celsius": -26.875
+    },
+    {
+      "adc10": 921,
+      "coolant_code": 13,
+      "coolant_candidate_celsius": -21.875,
+      "intake_code": 5,
+      "intake_candidate_celsius": -26.875
+    },
+    {
+      "adc10": 922,
+      "coolant_code": 13,
+      "coolant_candidate_celsius": -21.875,
+      "intake_code": 5,
+      "intake_candidate_celsius": -26.875
+    },
+    {
+      "adc10": 923,
+      "coolant_code": 13,
+      "coolant_candidate_celsius": -21.875,
+      "intake_code": 5,
+      "intake_candidate_celsius": -26.875
+    },
+    {
+      "adc10": 924,
+      "coolant_code": 13,
+      "coolant_candidate_celsius": -21.875,
+      "intake_code": 4,
+      "intake_candidate_celsius": -27.5
+    },
+    {
+      "adc10": 925,
+      "coolant_code": 12,
+      "coolant_candidate_celsius": -22.5,
+      "intake_code": 4,
+      "intake_candidate_celsius": -27.5
+    },
+    {
+      "adc10": 926,
+      "coolant_code": 12,
+      "coolant_candidate_celsius": -22.5,
+      "intake_code": 4,
+      "intake_candidate_celsius": -27.5
+    },
+    {
+      "adc10": 927,
+      "coolant_code": 11,
+      "coolant_candidate_celsius": -23.125,
+      "intake_code": 4,
+      "intake_candidate_celsius": -27.5
+    },
+    {
+      "adc10": 928,
+      "coolant_code": 11,
+      "coolant_candidate_celsius": -23.125,
+      "intake_code": 3,
+      "intake_candidate_celsius": -28.125
+    },
+    {
+      "adc10": 929,
+      "coolant_code": 10,
+      "coolant_candidate_celsius": -23.75,
+      "intake_code": 3,
+      "intake_candidate_celsius": -28.125
+    },
+    {
+      "adc10": 930,
+      "coolant_code": 10,
+      "coolant_candidate_celsius": -23.75,
+      "intake_code": 3,
+      "intake_candidate_celsius": -28.125
+    },
+    {
+      "adc10": 931,
+      "coolant_code": 10,
+      "coolant_candidate_celsius": -23.75,
+      "intake_code": 3,
+      "intake_candidate_celsius": -28.125
+    },
+    {
+      "adc10": 932,
+      "coolant_code": 9,
+      "coolant_candidate_celsius": -24.375,
+      "intake_code": 2,
+      "intake_candidate_celsius": -28.75
+    },
+    {
+      "adc10": 933,
+      "coolant_code": 9,
+      "coolant_candidate_celsius": -24.375,
+      "intake_code": 2,
+      "intake_candidate_celsius": -28.75
+    },
+    {
+      "adc10": 934,
+      "coolant_code": 8,
+      "coolant_candidate_celsius": -25.0,
+      "intake_code": 2,
+      "intake_candidate_celsius": -28.75
+    },
+    {
+      "adc10": 935,
+      "coolant_code": 8,
+      "coolant_candidate_celsius": -25.0,
+      "intake_code": 2,
+      "intake_candidate_celsius": -28.75
+    },
+    {
+      "adc10": 936,
+      "coolant_code": 8,
+      "coolant_candidate_celsius": -25.0,
+      "intake_code": 2,
+      "intake_candidate_celsius": -28.75
+    },
+    {
+      "adc10": 937,
+      "coolant_code": 7,
+      "coolant_candidate_celsius": -25.625,
+      "intake_code": 2,
+      "intake_candidate_celsius": -28.75
+    },
+    {
+      "adc10": 938,
+      "coolant_code": 7,
+      "coolant_candidate_celsius": -25.625,
+      "intake_code": 2,
+      "intake_candidate_celsius": -28.75
+    },
+    {
+      "adc10": 939,
+      "coolant_code": 6,
+      "coolant_candidate_celsius": -26.25,
+      "intake_code": 2,
+      "intake_candidate_celsius": -28.75
+    },
+    {
+      "adc10": 940,
+      "coolant_code": 6,
+      "coolant_candidate_celsius": -26.25,
+      "intake_code": 1,
+      "intake_candidate_celsius": -29.375
+    },
+    {
+      "adc10": 941,
+      "coolant_code": 6,
+      "coolant_candidate_celsius": -26.25,
+      "intake_code": 1,
+      "intake_candidate_celsius": -29.375
+    },
+    {
+      "adc10": 942,
+      "coolant_code": 5,
+      "coolant_candidate_celsius": -26.875,
+      "intake_code": 1,
+      "intake_candidate_celsius": -29.375
+    },
+    {
+      "adc10": 943,
+      "coolant_code": 5,
+      "coolant_candidate_celsius": -26.875,
+      "intake_code": 1,
+      "intake_candidate_celsius": -29.375
+    },
+    {
+      "adc10": 944,
+      "coolant_code": 4,
+      "coolant_candidate_celsius": -27.5,
+      "intake_code": 1,
+      "intake_candidate_celsius": -29.375
+    },
+    {
+      "adc10": 945,
+      "coolant_code": 4,
+      "coolant_candidate_celsius": -27.5,
+      "intake_code": 1,
+      "intake_candidate_celsius": -29.375
+    },
+    {
+      "adc10": 946,
+      "coolant_code": 4,
+      "coolant_candidate_celsius": -27.5,
+      "intake_code": 1,
+      "intake_candidate_celsius": -29.375
+    },
+    {
+      "adc10": 947,
+      "coolant_code": 3,
+      "coolant_candidate_celsius": -28.125,
+      "intake_code": 1,
+      "intake_candidate_celsius": -29.375
+    },
+    {
+      "adc10": 948,
+      "coolant_code": 3,
+      "coolant_candidate_celsius": -28.125,
+      "intake_code": 1,
+      "intake_candidate_celsius": -29.375
+    },
+    {
+      "adc10": 949,
+      "coolant_code": 2,
+      "coolant_candidate_celsius": -28.75,
+      "intake_code": 1,
+      "intake_candidate_celsius": -29.375
+    },
+    {
+      "adc10": 950,
+      "coolant_code": 2,
+      "coolant_candidate_celsius": -28.75,
+      "intake_code": 1,
+      "intake_candidate_celsius": -29.375
+    },
+    {
+      "adc10": 951,
+      "coolant_code": 2,
+      "coolant_candidate_celsius": -28.75,
+      "intake_code": 1,
+      "intake_candidate_celsius": -29.375
+    },
+    {
+      "adc10": 952,
+      "coolant_code": 1,
+      "coolant_candidate_celsius": -29.375,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 953,
+      "coolant_code": 1,
+      "coolant_candidate_celsius": -29.375,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 954,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 955,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 956,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 957,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 958,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 959,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 960,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 961,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 962,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 963,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 964,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 965,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 966,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 967,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 968,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 969,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 970,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 971,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 972,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 973,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 974,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 975,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 976,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 977,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 978,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 979,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 980,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 981,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 982,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 983,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 984,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 985,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 986,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 987,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 988,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 989,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 990,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 991,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 992,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 993,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 994,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 995,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 996,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 997,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 998,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 999,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1000,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1001,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1002,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1003,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1004,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1005,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1006,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1007,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1008,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1009,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1010,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1011,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1012,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1013,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1014,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1015,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1016,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1017,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1018,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1019,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1020,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1021,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1022,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    },
+    {
+      "adc10": 1023,
+      "coolant_code": 0,
+      "coolant_candidate_celsius": -30.0,
+      "intake_code": 0,
+      "intake_candidate_celsius": -30.0
+    }
+  ]
+}

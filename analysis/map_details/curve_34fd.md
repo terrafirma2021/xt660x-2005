@@ -61,4 +61,7 @@ Selected response R (34D0/34DA/34E4 or 355D/3567/3571) and coolant C (34FD) part
 
 Consumer instruction addresses: `0x9220`, `0x9232`, `0x9274`, `0x9495`, `0x94BA`.
 
+uniform_input conversion: `temperature_celsius_candidate`; requires `yamaha_temperature_candidate`.
+Converted values: -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

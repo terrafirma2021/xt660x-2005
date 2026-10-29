@@ -8,13 +8,15 @@ All **15,942 decoded instructions / 42,849 instruction bytes** are translated, a
 
 The included CPU12 processor model corrects defects in Ghidra 12.1.4's bundled HC12 semantics: indexed word memory dereferencing, ADC overflow, SBC borrow handling, an inverted BRSET condition, and immediate ADCB reading the wrong accumulator. The corrections are documented in a reviewable patch and checked with independent instruction fixtures.
 
-The [calibration map atlas](analysis/MAP_ATLAS.md) now documents **71 maps and curves**, with a [separate breakdown for every map](analysis/MAP_DETAILS.md): 19 grids, 36 uniform-axis curves, 14 precomputed-axis curves and two sensor-conversion curves. It includes 32 stored axes/threshold lists and computed axes. The [unit derivation](analysis/semantics/UNIT_DECODING.md) and [read-only conversion catalogue](analysis/semantics/physical_units.json) now provide 60 numeric, logical or conditional physical cell interpretations, joint arithmetic for seven more maps, and nominal speed axes for 40 maps. These are different levels of resolution; they do not mean 60 fully decoded physical tuning maps. Absolute spark reference and several sensor scales remain unresolved.
+The [calibration map atlas](analysis/MAP_ATLAS.md) now documents **71 maps and curves**, with a [separate breakdown for every map](analysis/MAP_DETAILS.md): 19 grids, 36 uniform-axis curves, 14 precomputed-axis curves and two sensor-conversion curves. It includes 32 stored axes/threshold lists and computed axes. The [unit derivation](analysis/semantics/UNIT_DECODING.md) and [read-only conversion catalogue](analysis/semantics/physical_units.json) now provide 62 numeric, logical or conditional physical cell interpretations, joint arithmetic for seven more maps, and nominal speed axes for 40 maps. These are different levels of resolution; they do not mean 62 fully decoded physical tuning maps. Absolute spark reference and several sensor scales remain unresolved.
 
 The [extended recovery pass](analysis/semantics/EXTENDED_MAPS.md) adds 22 previously missing layouts: transient fuel gains, air-induction and feedback eligibility grids, spark-path tables, sensor conversions, and a curve copied into RAM. [Remaining calibration work](analysis/REMAINING_CALIBRATIONS.md) accounts for every outstanding span and links 502 static address/width/access records. Three more 2×2 fuel-normalization maps are now recovered and their common multiplier is decoded. Catalogue coverage is not a claim that every physical map meaning is resolved.
 
 The [variant analysis](analysis/semantics/VARIANTS.md) confirms that this image selects variant 9, which skips the second normal injector entry. A second diagnostic injector handler remains present; this does not establish complete twin-cylinder hardware or firmware support. The latest tests also exposed and corrected an ADCB accumulator defect in the decompiler model, and the generated analysis has been rebuilt.
 
 The [map-consumer breakdown](analysis/semantics/MAP_CONSUMERS.md) now reconstructs normal and startup fuel arithmetic, post-start decay, transient pulses, adaptive steps and injection event timing. [Per-map status](analysis/semantics/MAP_RESOLUTION.md) distinguishes gains, thresholds, logical gates, conditional physical values and unresolved scales, including stock-disabled families.
+
+The [temperature profile](analysis/semantics/TEMPERATURE_PROFILE.md) supplies conditional Celsius values for both sensor tables and 14 map axes. All 256 variant values were tested against the temperature routines; the fixed conversions and fallbacks stay unchanged, while spark correction selection changes. The XT660X target is retained; TDM manual data is comparison evidence. The [spark scheduler](analysis/semantics/SPARK_SCHEDULER.md) now has independently tested charge/fire planning and minimum-dwell handling. These passes add 141,432 instruction-execution cases.
 
 ## Checksum-corrected image
 
@@ -73,6 +75,7 @@ To regenerate only the catalogue and validate its bytes:
 ```powershell
 python scripts/catalog_maps.py
 python scripts/catalog_calibration_accesses.py
+python scripts/sensor_profiles.py
 python scripts/decode_units.py
 python scripts/fix_startup_checksum.py
 python scripts/verify_analysis.py

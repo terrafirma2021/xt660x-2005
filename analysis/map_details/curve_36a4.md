@@ -62,4 +62,7 @@ Conversion: `raw*100/256`; unit: **normalized fuel percentage points per transit
 
 Magnitude of a transition-triggered adjustment to centered RAM 0x097E. Not a bound or percentage applied on every scheduler tick.
 
+uniform_input conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
+Converted values: 1200, 2000, 2800, 3600, 4400, 5200, 6000.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

@@ -97,4 +97,7 @@ Zero inhibits this gate; any nonzero byte passes this gate. Other conditions can
 
 Eligibility: zero inhibits the documented path; nonzero permits its next tests. Not a continuous physical quantity.
 
+row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
+Converted values: 900, 1100, 1300, 2000, 4000, 6000, 9000, 9100, 9200, 9300, 9400, 9500, 9600, 9700, 9800, 9900, 10000, 10100, 10200.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

@@ -107,4 +107,7 @@ relative scheduler angle, NOT absolute degrees BTDC; fixed and variable timer co
 
 Required profiles: `nominal_xt_crank`. These are assumptions, not measured hardware parameters.
 
+row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
+Converted values: 600, 800, 900, 1000, 1100, 1200, 1300, 1400, 1600, 1800, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000, 11500, 12000, 12500.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

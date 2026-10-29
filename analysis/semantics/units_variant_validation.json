@@ -19,7 +19,7 @@
   },
   "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
   "test_script_sha256": "b3ab0981d3be47807bc87f56de777e0a43e74a28170b5993e73d4c847f0494a8",
-  "conversion_script_sha256": "58cae8d00f12f6edc72f093121c091983fcc935db4123f26d0300a0963000658",
+  "conversion_script_sha256": "b38167c3a7add7f9efafcaf5a55bd336f693be38389da1a208a88774df86f50e",
   "compiled_library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
   "limitations": "Isolated instruction execution with RAM-backed peripherals. Physical units, oscillator rate, sensor circuitry, crank/TDC geometry and hardware outputs are not validated by these tests."
 }

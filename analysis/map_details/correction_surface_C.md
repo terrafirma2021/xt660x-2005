@@ -84,4 +84,7 @@ Conversion: `raw*100/128`; unit: **percent of reference multiplier**.
 
 Consumer instruction addresses: `0xB3CC`, `0x82D6`.
 
+row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
+Converted values: 800, 1000, 1200, 2000, 4000, 6000, 8000, 10000.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

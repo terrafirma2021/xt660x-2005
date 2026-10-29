@@ -89,4 +89,7 @@ Eligibility: zero inhibits the documented path; nonzero permits its next tests. 
 
 Stock activation: Every stock cell is zero, rejecting this normal feedback-eligibility gate.
 
+row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
+Converted values: 800, 1200, 1600, 2050, 2400, 2800, 3200, 3600, 4500.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

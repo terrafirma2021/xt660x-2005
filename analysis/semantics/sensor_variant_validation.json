@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "cases": 66600,
+  "checks": {
+    "all_variant_bytes_temperature_conversion_and_fault_fallback": 30504,
+    "variant_selects_correct_spark_time_curve_and_fractional_values": 36096
+  },
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "test_script_sha256": "6638abaff9de126a3d1df4a2a90830f2780623ca3498993b57aa3a4a1dbc8d3b",
+  "model_script_sha256": "19904f0439f4f0e7960bb9d3b346e8c9c5cc4da9f23108d8d2014baaf06592f5",
+  "compiled_library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
+  "conclusion": "Variant 9 selects the XT image spark correction curve; changing D87 alone does not change either tested temperature transfer or fallback. Coolant diagnostic reports measured conversion even during fault replacement; IAT diagnostic reports the effective replacement.",
+  "limitations": "Isolated routines with injected ADC results and fault states. No proof about every possible upstream state writer, external analog circuit, donor ECU identity or physical units."
+}

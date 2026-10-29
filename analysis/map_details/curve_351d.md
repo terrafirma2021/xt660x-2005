@@ -81,4 +81,7 @@ Conversion: `(raw+384)*100/256`; unit: **%**.
 
 factor in transient contribution; not the same scaling as normal IAT correction
 
+uniform_input conversion: `temperature_celsius_candidate`; requires `yamaha_temperature_candidate`.
+Converted values: -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

@@ -7,6 +7,7 @@ import hashlib
 import json
 import csv
 from pathlib import Path
+from sensor_profiles import PROFILE, DEFINITION, celsius
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -60,6 +61,7 @@ def build():
     image = (ROOT/'firmware/XT660X 2005.bin').read_bytes()
     maps = json.loads((ROOT/'analysis/maps.json').read_text())
     profiles = {
+        PROFILE: DEFINITION,
         'nominal_xt_timer': dict(timer_hz=500000, bus_hz=16000000, tick_microseconds=2,
             status='service-correlated nominal; not measured on this ECU',
             basis='TSCR2=5 gives bus/32. Fan diagnostic repeats every 250 tasks; each task is 4*2500 timer ticks. Yamaha specifies a 5-second fan cycle with 2 seconds on, 3 off.',
@@ -71,6 +73,8 @@ def build():
             evidence=['0xD871','0xDBAA','0x53F4','0x73F7']),
     }
     conversions = {
+        'temperature_celsius_candidate': dict(unit='candidate degC', formula='raw*0.625-30',
+            requires=[PROFILE], meaning='Inferred temperature profile; consistent with sensor resistances and TDM fallback values, but XT660 manual coolant fallback differs. See TEMPERATURE_PROFILE.md.'),
         'timer_ms': dict(unit='ms', formula='raw*1000/timer_hz', nominal_formula='raw*0.002',
             requires=['nominal_xt_timer'], meaning='timer duration before downstream corrections'),
         'dwell_ms': dict(unit='ms', formula='raw*32*1000/timer_hz', nominal_formula='raw*0.064',
@@ -91,6 +95,8 @@ def build():
             meaning='multiplicative factor in the denominator, not a direct fuel multiplier'),
     }
     cell_ids = {
+        'coolant_sensor_conversion':'temperature_celsius_candidate',
+        'intake_temperature_conversion':'temperature_celsius_candidate',
         **{f'main_quantity_{x}':'timer_ms' for x in 'ABC'},
         **{f'main_u8_{x}':'spark_relative_degrees' for x in 'ABC'},
         'dwell_supply_speed':'dwell_ms', 'curve_4234':'injector_compensation_ms',
@@ -100,6 +106,7 @@ def build():
         'fuel_normalization_gain':'normalization_gain_percent',
     }
     nominal = {
+        'temperature_celsius_candidate':celsius,
         'timer_ms': lambda x:x*.002, 'dwell_ms':lambda x:x*.064,
         'injector_compensation_ms':lambda x:x*.016,
         'spark_relative_degrees':lambda x:x*90/256,
@@ -199,6 +206,9 @@ def build():
                 rec['axis_conversions'].append(dict(axis=axis_name,conversion='speed_rpm',
                     raw_pre_scale=factor, values=[speed_rpm(v*factor,500000,180) for v in axis['raw_values']],
                     requires=['nominal_xt_timer','nominal_xt_crank']))
+            if any(s in sources.lower() for s in ['0x8f4','0x08f4','0x8f5','0x08f5']):
+                rec['axis_conversions'].append(dict(axis=axis_name,conversion='temperature_celsius_candidate',
+                    raw_pre_scale=1,values=[celsius(v) for v in axis['raw_values']],requires=[PROFILE]))
         if m['kind']=='1D_uniform_axis' and '0x0900' in ' '.join(m['inputs']):
             knots=[m['input_min_raw']+k*m['index_divisor']/m['index_factor_raw'] for k in range(m['columns'])]
             rec['axis_conversions'].append(dict(axis='uniform_input',conversion='speed_rpm',raw_pre_scale=1,
@@ -206,6 +216,12 @@ def build():
                 raw_clamped_range=[m['input_min_raw'],m['input_min_raw']+m['input_span_raw']],
                 caveat='Ideal knot positions derived from the uniform header; final endpoint may lie beyond the clamped input span.',
                 requires=['nominal_xt_timer','nominal_xt_crank']))
+        if m['kind']=='1D_uniform_axis' and any(s in ' '.join(m['inputs']).lower() for s in ['0x08f4','0x08f5']):
+            knots=[m['input_min_raw']+k*m['index_divisor']/m['index_factor_raw'] for k in range(m['columns'])]
+            rec['axis_conversions'].append(dict(axis='uniform_input',conversion='temperature_celsius_candidate',
+                raw_pre_scale=1,raw_ideal_knots=knots,values=[celsius(v) for v in knots],
+                raw_clamped_range=[m['input_min_raw'],m['input_min_raw']+m['input_span_raw']],
+                caveat='Conditional candidate profile. Ideal final knot can exceed clamped input span.',requires=[PROFILE]))
         if m['id'] in ['fuel_normalization_load','fuel_normalization_throttle']:
             rec['decoded_context']='Combined code is clamp(selected_cell+CD4-128,0,255); used through (code+128), not a proven AFR encoding.'
         if m['id']=='curve_3220':
@@ -233,9 +249,9 @@ def build():
         policy='Read-only research conversions. Assumptions travel with values; no XDF export is enabled.',
         profiles=profiles,conversions=conversions,maps=records,
         unresolved_sensor_hypotheses={
-            'temperature':dict(candidate_celsius='raw*0.625-30', status='conflicted; not assigned to map axes',
-                support='Fits IAT fault replacement 80 to 20 C; stock thermistor curves and manual resistance points admit approximately 2.7 kohm IAT and 1.8 kohm coolant pullups.',
-                conflict='Coolant fallback 144 would be 60 C; XT660 service manual specifies 80 C. Diagnostic payload is floor(raw*160/256), capped at 149, and does not establish the display offset.'),
+            'temperature':dict(candidate_celsius='raw*0.625-30', status='explicit conditional profile; not verified hardware units',
+                support='Quantization-aware resistance consistency test admits common pullups for both curves. TDM900 manual fallback 60/20 C matches raw144/80. Variant-selector tests leave both temperature conversions unchanged.',
+                conflict='XT660 service manual specifies coolant fallback80 C. TDM evidence does not relabel this XT660X image. Dashboard offset and circuit values remain unverified.'),
             'supply':dict(candidate_volts='raw*5/64',status='hypothesis; not assigned to map axes',
                 support='Would make fault replacement 154 approximately 12 V and dwell-axis knots approximately 6.5 to 16.5 V.',
                 conflict='Analog divider and dashboard decode are absent; diagnostic payload floor(raw*256/240) is not proven to be decivolts.'),
@@ -258,6 +274,7 @@ def build():
                (0x9495,0x94e5),(0x9609,0x9661),(0x96ba,0x96e3),(0xa6b3,0xa73d),
                (0xa8a1,0xa8e0),(0xb284,0xb2a4),(0xb3cc,0xb3db),(0xbc5f,0xbc74),(0xc10c,0xc122)]
     ranges += [(0x7b92,0x7ba3),(0xc4dc,0xc55b),(0xec98,0xed29),(0xf4e0,0xf519),(0x8df9,0x8e29)]
+    ranges += [(0x54f0,0x5664),(0xee78,0xf043),(0x6fc2,0x7190),(0x88d1,0x88f4),(0x6ba8,0x6c53)]
     rows=list(csv.DictReader((ROOT/'analysis/disassembly.tsv').open(encoding='utf-8'),delimiter='\t'))
     lines=['# Byte-backed variant/unit evidence; addresses equal original file offsets.']
     for lo,hi in ranges:
@@ -267,7 +284,8 @@ def build():
                 lines.append(f"{row['address']}  {row['bytes']}  {row['instruction']}")
     (out.parent/'variant_units_evidence.txt').write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\n')
     summary=dict(maps=len(records),cell_conversions=sum(r['cell_conversion'] is not None for r in records),
-                 maps_with_speed_axes=sum(bool(r['axis_conversions']) for r in records),
+                 maps_with_speed_axes=sum(any(a['conversion']=='speed_rpm' for a in r['axis_conversions']) for r in records),
+                 maps_with_candidate_temperature_axes=sum(any(a['conversion']=='temperature_celsius_candidate' for a in r['axis_conversions']) for r in records),
                  joint_arithmetic_maps=len(joint_transient),
                  unresolved_cell_maps=[r['id'] for r in records if r['status']=='unresolved cell conversion'])
     report['summary']=summary
@@ -294,6 +312,9 @@ def build():
         if record.get('decoded_context'):extra += [record['decoded_context'],'']
         if record.get('stock_activation'):extra += ['Stock activation: '+record['stock_activation'],'']
         if record.get('consumer_evidence'):extra += ['Consumer instruction addresses: '+', '.join('`'+x+'`' for x in record['consumer_evidence'])+'.','']
+        for axis in record['axis_conversions']:
+            extra += [f"{axis['axis']} conversion: `{axis['conversion']}`; requires "+', '.join('`'+x+'`' for x in axis['requires'])+'.',
+                      'Converted values: '+', '.join(f'{v:g}' for v in axis['values'])+'.','']
         extra += ['See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.','']
         dossier.write_text(body+'\n\n'+'\n'.join(extra),encoding='utf-8',newline='\n')
     print(json.dumps(summary))

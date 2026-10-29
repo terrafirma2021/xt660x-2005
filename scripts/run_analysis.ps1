@@ -32,6 +32,8 @@ if($LASTEXITCODE -ne 0){throw 'Semantic catalogue failed'}
 if($LASTEXITCODE -ne 0){throw 'Calibration access inventory failed'}
 & $Python (Join-Path $PSScriptRoot 'fix_startup_checksum.py')
 if($LASTEXITCODE -ne 0){throw 'Checksum correction failed'}
+& $Python (Join-Path $PSScriptRoot 'sensor_profiles.py')
+if($LASTEXITCODE -ne 0){throw 'Temperature profile inference failed'}
 & $Python (Join-Path $PSScriptRoot 'decode_units.py')
 if($LASTEXITCODE -ne 0){throw 'Unit catalogue failed'}
 & $Python (Join-Path $PSScriptRoot 'verify_analysis.py')

@@ -83,4 +83,7 @@ Startup base with neutral reference multipliers. Interpolation retains Q8; speed
 
 Required profiles: `nominal_xt_timer`. These are assumptions, not measured hardware parameters.
 
+uniform_input conversion: `temperature_celsius_candidate`; requires `yamaha_temperature_candidate`.
+Converted values: -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

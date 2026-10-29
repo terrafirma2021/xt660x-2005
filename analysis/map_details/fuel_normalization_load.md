@@ -72,4 +72,7 @@ unresolved cell conversion.
 
 Combined code is clamp(selected_cell+CD4-128,0,255); used through (code+128), not a proven AFR encoding.
 
+row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
+Converted values: 600, 12750.
+
 See [consumer derivations](../semantics/MAP_CONSUMERS.md), [per-map status](../semantics/MAP_RESOLUTION.md) and [machine-readable values](../semantics/physical_units.json). Complete axis interpretation, mode coverage and hardware validation are separate from this cell interpretation.

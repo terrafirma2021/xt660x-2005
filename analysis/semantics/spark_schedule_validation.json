@@ -1,0 +1,53 @@
+{
+  "result": "passed",
+  "cases": 74832,
+  "checks": {
+    "fire_planner_saturations_borrows_event_branches": 24000,
+    "charge_planner_wrap_gap_and_loop_exhaustion": 24000,
+    "normal_fire_compare_minimum_charge_N_flag_and_timer_wrap": 24000,
+    "normal_charge_and_fire_timeline_end_to_end_boundaries": 2832
+  },
+  "examples": [
+    {
+      "pitch_ticks": 800,
+      "code": 128,
+      "charge_event": 4,
+      "fire_event": 5,
+      "charge_relative_capture6_ticks": -1000,
+      "fire_relative_capture6_ticks": -600,
+      "dwell_ticks": 400
+    },
+    {
+      "pitch_ticks": 1600,
+      "code": 128,
+      "charge_event": 4,
+      "fire_event": 5,
+      "charge_relative_capture6_ticks": -2000,
+      "fire_relative_capture6_ticks": -1200,
+      "dwell_ticks": 800
+    },
+    {
+      "pitch_ticks": 3200,
+      "code": 128,
+      "charge_event": 4,
+      "fire_event": 5,
+      "charge_relative_capture6_ticks": -4000,
+      "fire_relative_capture6_ticks": -2400,
+      "dwell_ticks": 1600
+    },
+    {
+      "pitch_ticks": 6400,
+      "code": 128,
+      "charge_event": 4,
+      "fire_event": 5,
+      "charge_relative_capture6_ticks": -8000,
+      "fire_relative_capture6_ticks": -4800,
+      "dwell_ticks": 3200
+    }
+  ],
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "test_script_sha256": "8ed2b14997aa12e31654f79675ebdee8b62cdb7ce3852f9abd672104469a84da",
+  "model_script_sha256": "6e7be348cf7da4051ac3873f3f3ba30846caddb72e5576a6ee71f8337dbb4c90",
+  "compiled_library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
+  "limitations": "Planner arithmetic includes synthetic edge cases. Timeline is a uniform wheel segment with normal gates clear and manually simulated ECT pin state. Special-mode dispatch, physical coil polarity, timer frequency and TDC phase are not established by this test."
+}

@@ -1,10 +1,12 @@
 # Spark maps and timer scheduling
 
+The [complete planner and normal compare-dispatch derivation](SPARK_SCHEDULER.md) now establishes `fire_time_relative_to_capture6 = A32 - advance` in ordinary unsaturated cases, charge-start timing, MCU set/clear actions and the minimum-charge override. Its 74,832 tests close the earlier planner gap; absolute TDC phase and special-mode dispatch remain separate.
+
 The latest [map-consumer pass](MAP_CONSUMERS.md) adds exact arithmetic and corrects earlier generic roles, including the alternate spark base, relative-throttle thresholds, adaptive steps and injection event map. See [per-map status](MAP_RESOLUTION.md) for current interpretation.
 
 The [unit-decoding pass](UNIT_DECODING.md) now gives the exact code-to-timer equation, conditional relative crank-angle scale and nominal dwell-duration scale. Absolute BTDC phase remains unresolved.
 
-**Physical output is identified through diagnostic 30. Main map lookup and parts of the scheduling arithmetic are traced. Absolute degrees and all correction meanings are not yet resolved.** See [instruction excerpts](spark_evidence.txt).
+**Physical output is identified through diagnostic 30. Main map lookup, planner arithmetic and normal charge/fire dispatch are traced. Absolute BTDC and all correction meanings are not yet resolved.** See [instruction excerpts](spark_evidence.txt) and [expanded scheduler evidence](variant_units_evidence.txt).
 
 ## Output identity
 
@@ -55,7 +57,7 @@ This provides a concrete chain from a ROM map to a coil-related timer. To finish
 
 - Exact stored knots and ordinary selection paths now pass all 1,920 cells across the three grids. Extend this to fractional interpolation, substituted inputs and distinctly modified fixture cells where identical stock cells could hide bank-selection errors.
 - Trace every writer of `0x0A82`, `0x0A83`, `0x0A86`, `0x0D05` and the override state.
-- Model one complete crank-event sequence and show which edge ends coil charging.
+- Extend the tested ordinary charge/fire timeline to the complete crank interrupt sequence, gap crossing and special modes. The MCU clear-low compare ends the modeled dwell interval.
 - Correlate a known measured advance with the recovered internal value.
 - Describe each correction and limiter separately in the future definition.
 

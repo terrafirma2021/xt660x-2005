@@ -1,8 +1,8 @@
 # Coolant conversion and fan control
 
-The [unit-decoding pass](UNIT_DECODING.md) records the candidate Celsius scale and its conflict with the manufacturer coolant fallback specification; it is not silently assigned to the fan thresholds.
+The [temperature-profile pass](TEMPERATURE_PROFILE.md) now provides conditional Celsius axes and fan thresholds, with resistance-curve cross-checks and an explicit XT/TDM fallback discrepancy. Varying the variant selector does not change the tested temperature conversions or fallbacks.
 
-**Physical role: strongly corroborated by diagnostics 06 and 51. Raw algorithm: traced and behavior-tested. Celsius conversion and connector pins: unresolved.** See [byte-backed evidence](sensor_fan_evidence.txt).
+**Physical role: strongly corroborated by diagnostics 06 and 51. Raw algorithm: traced and behavior-tested. Celsius: inferred conditional profile. Connector pins and hardware confirmation: unresolved.** See [byte-backed evidence](sensor_fan_evidence.txt).
 
 ```mermaid
 flowchart LR

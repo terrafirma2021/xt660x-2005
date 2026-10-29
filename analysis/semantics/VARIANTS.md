@@ -26,6 +26,12 @@ The supplied filename is the source of the XT660X/2005 attribution; the exact EC
 
 ## Why this helps unit decoding
 
+The user's target is the XT660X; the TDM twin-cylinder configuration is a family-comparison lead. The stock selector is an enumeration (`9`), not a decoded cylinder-count byte. Other values must not all be labeled TDM without matching firmware evidence.
+
+The [temperature/variant pass](TEMPERATURE_PROFILE.md) directly tests that setting. All 256 values leave the two temperature routines' fixed tables and fault replacements unchanged in the tested states. In contrast, `0x88D1` selects spark correction cells `0x4F81` for value 9 and `0x4F64` otherwise. `0x6BB3` also bypasses the pressure-related diagnostic branch for value 9; that branch uses coolant, speed and throttle eligibility thresholds, but does not change the temperature transfer curve. A model-specific diagnostic gate and a different sensor conversion are distinct effects.
+
+The TDM manual's 60°C coolant fallback matches the inferred scale, whereas the XT manual states 80°C. There is presently no observed `D87` branch selecting a temperature offset or replacement that explains this discrepancy. See [66,600 execution cases](sensor_variant_validation.json), including 30,504 temperature/fallback cases and 36,096 spark-curve selection/interpolation cases.
+
 Cylinder count must not be inserted as an unexplained factor of two in the RPM formula. The program's selected capture history, normalized crank intervals and timer clock determine that conversion. Variant 9 selects some timing and transient curves as well as skipping this injector entry. The [unit derivation](UNIT_DECODING.md) therefore carries its crank-pattern assumptions explicitly and keeps absolute TDC phase unresolved.
 
 See [byte-backed instruction evidence](variant_units_evidence.txt), [execution results](units_variant_validation.json), [fuel scheduling](FUEL.md) and [hardware cross-references](IO_AND_DIAGNOSTICS.md).
