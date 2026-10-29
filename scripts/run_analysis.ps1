@@ -38,3 +38,7 @@ if($LASTEXITCODE -ne 0){throw 'Temperature profile inference failed'}
 if($LASTEXITCODE -ne 0){throw 'Unit catalogue failed'}
 & $Python (Join-Path $PSScriptRoot 'verify_analysis.py')
 if($LASTEXITCODE -ne 0){throw 'Verification failed'}
+& $Python (Join-Path $PSScriptRoot 'build_pin_overview.py')
+if($LASTEXITCODE -ne 0){throw 'MCU pin overview generation failed'}
+& $Python (Join-Path $PSScriptRoot 'verify_pin_overview.py')
+if($LASTEXITCODE -ne 0){throw 'MCU pin overview verification failed'}

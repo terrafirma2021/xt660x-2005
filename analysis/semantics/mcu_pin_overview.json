@@ -1,0 +1,2096 @@
+{
+  "schema_version": 1,
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "generator_sha256": "26c51c9f300c8ffe933b81948a0c8d16136555c2a754319698bf366dbb44e0d5",
+  "template_sha256": "644780446b5632dcd7944ede97b27b8b851df77328579e98fec268629a71cf2d",
+  "target": "Supplied XT660X 2005 image; variant 9",
+  "package_assumption": "MC9S12T64 80-pin LQFP, top view, conditional on physical chip identification. CPU/register evidence fits this family; chip marking has not been supplied.",
+  "connector_policy": "MCU package numbers are NOT ECU connector cavity numbers. All cavity numbers remain null; the inspected Yamaha drawings show wire colors but do not number those cavities.",
+  "tdm_policy": "TDM comparison is by manufacturer-described functions. No TDM binary or board trace is available to prove an MCU pin-for-pin mapping.",
+  "pins": [
+    {
+      "pin": 1,
+      "signal": "PT2/IOC2",
+      "category": "sensor",
+      "status": "Corroborated",
+      "role": "Vehicle-speed pulses",
+      "function": "Counts transmission/road-speed pulses for diagnostic display, speed-dependent gates and fault handling. Separate from crank RPM.",
+      "register": "PTIT 0x00E1 bit2; TC2 0x0054",
+      "evidence": [
+        "0xF3F3",
+        "0xF3FB"
+      ],
+      "ram": [
+        "0x0AB0",
+        "0x0ABE",
+        "0x0AE3"
+      ],
+      "diagnostic": 7,
+      "xt_wire": "W (white) in ECU-side XT harness; sensor-side colors differ",
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "f3f3",
+          "bytes": "1c08be10",
+          "instruction": "BSET 0x8be,0x10",
+          "function": "FUN_f3f3"
+        },
+        {
+          "address": "f3fb",
+          "bytes": "4fe1040a",
+          "instruction": "BRCLR 0x00e1,0x4,0xf409",
+          "function": "FUN_f3f3"
+        }
+      ]
+    },
+    {
+      "pin": 2,
+      "signal": "PT3/IOC3",
+      "category": "actuator",
+      "status": "Corroborated",
+      "role": "Ignition-coil driver command",
+      "function": "Timer output commands coil dwell and release through the ECU power driver. The MCU output is high during modeled dwell and clears for release; coil-terminal voltage is a different signal.",
+      "register": "PT3 / TC3 0x0056",
+      "evidence": [
+        "0xB900",
+        "0xEF50",
+        "0xEFDE"
+      ],
+      "ram": [
+        "0x0A82",
+        "0x0A96",
+        "0x0AA4"
+      ],
+      "diagnostic": 30,
+      "xt_wire": "O (orange), coil control at ECU; R/B coil supply",
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "b900",
+          "bytes": "b60be4",
+          "instruction": "LDAA 0xbe4",
+          "function": "FUN_b900"
+        },
+        {
+          "address": "ef50",
+          "bytes": "9649",
+          "instruction": "LDAA 0x0049",
+          "function": "FUN_ee78"
+        },
+        {
+          "address": "efde",
+          "bytes": "5c56",
+          "instruction": "STD 0x0056",
+          "function": "FUN_ef6d"
+        }
+      ]
+    },
+    {
+      "pin": 3,
+      "signal": "PT4/IOC4",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 4,
+      "signal": "PT5/IOC5",
+      "category": "internal",
+      "status": "Candidate",
+      "role": "Ignition monitoring capture",
+      "function": "Timer-5 capture flag is tested in the ignition fault path. Likely feedback from a driver/monitor circuit; not evidence of a second spark-coil output.",
+      "register": "PT5 / TFLG1 0x004E bit5",
+      "evidence": [
+        "0x5364",
+        "0xDDAB",
+        "0xDE09"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "5364",
+          "bytes": "964a",
+          "instruction": "LDAA 0x004a",
+          "function": "application_init"
+        },
+        {
+          "address": "ddab",
+          "bytes": "964e",
+          "instruction": "LDAA 0x004e",
+          "function": "candidate_unreferenced_dc39"
+        },
+        {
+          "address": "de09",
+          "bytes": "5a4e",
+          "instruction": "STAA 0x004e",
+          "function": "candidate_unreferenced_dc39"
+        }
+      ]
+    },
+    {
+      "pin": 5,
+      "signal": "PT6/IOC6",
+      "category": "actuator",
+      "status": "Corroborated",
+      "role": "Primary fuel-injector command",
+      "function": "Timer channel 6 schedules the injector pulse after fuel-map calculations and corrections. External power-driver stage lies between MCU and injector.",
+      "register": "PT6 / TC6 0x005C",
+      "evidence": [
+        "0xB97F",
+        "0xF519",
+        "0xC55B"
+      ],
+      "ram": [
+        "0x092A",
+        "0x0B72"
+      ],
+      "diagnostic": 36,
+      "xt_wire": "R/B (red/black), injector control at ECU; R/L injector supply",
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "b97f",
+          "bytes": "b60be4",
+          "instruction": "LDAA 0xbe4",
+          "function": "FUN_b97f"
+        },
+        {
+          "address": "f519",
+          "bytes": "1e088c0812",
+          "instruction": "BRSET 0x88c,0x8,0xf530",
+          "function": "FUN_f519"
+        },
+        {
+          "address": "c55b",
+          "bytes": "1c08c110",
+          "instruction": "BSET 0x8c1,0x10",
+          "function": "FUN_c55b"
+        }
+      ]
+    },
+    {
+      "pin": 6,
+      "signal": "PT7/IOC7",
+      "category": "actuator",
+      "status": "Decoded",
+      "role": "Secondary injector code path",
+      "function": "Diagnostic 37 can operate TC7. Stock variant 9 skips normal second-injector scheduling. TDM diagnostic 37 identifies injector #2, but XT board population and TDM MCU routing are unknown.",
+      "register": "PT7 / TC7 0x005E",
+      "evidence": [
+        "0xBA06",
+        "0xF592",
+        "0xC712"
+      ],
+      "ram": [
+        "0x092C"
+      ],
+      "diagnostic": 37,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "ba06",
+          "bytes": "b60be4",
+          "instruction": "LDAA 0xbe4",
+          "function": "FUN_ba06"
+        },
+        {
+          "address": "f592",
+          "bytes": "b60d87",
+          "instruction": "LDAA 0xd87",
+          "function": "FUN_f592"
+        },
+        {
+          "address": "c712",
+          "bytes": "1c08c140",
+          "instruction": "BSET 0x8c1,0x40",
+          "function": "FUN_c712"
+        }
+      ]
+    },
+    {
+      "pin": 7,
+      "signal": "BKGD/MODC/TAGHI/SI",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "BKGD/MODC/TAGHI/SI",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 8,
+      "signal": "SCKBDM/SPIMODE",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "SCKBDM/SPIMODE",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 9,
+      "signal": "SO",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "SO",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 10,
+      "signal": "VDD1",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VDD1",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 11,
+      "signal": "VSS1",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VSS1",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 12,
+      "signal": "PP0/PWM0",
+      "category": "actuator",
+      "status": "Decoded",
+      "role": "Variant-gated auxiliary output",
+      "function": "PP0 is forced low in normal variant-9 operation. Other variants use speed thresholds; diagnostic selector 57 can toggle it. TDM intake-solenoid diagnostic is 49, so do not label this output as that solenoid.",
+      "register": "PTP 0x00F0 bit0",
+      "evidence": [
+        "0xAD00",
+        "0xAD14",
+        "0xAD19",
+        "0xBC0E",
+        "0xBC17"
+      ],
+      "ram": [],
+      "diagnostic": 57,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "ad00",
+          "bytes": "f60d87",
+          "instruction": "LDAB 0xd87",
+          "function": "FUN_ac7f"
+        },
+        {
+          "address": "ad14",
+          "bytes": "4cf001",
+          "instruction": "BSET 0x00f0,0x1",
+          "function": "FUN_ac7f"
+        },
+        {
+          "address": "ad19",
+          "bytes": "4df001",
+          "instruction": "BCLR 0x00f0,0x1",
+          "function": "FUN_ac7f"
+        },
+        {
+          "address": "bc0e",
+          "bytes": "4df001",
+          "instruction": "BCLR 0x00f0,0x1",
+          "function": "FUN_bbfd"
+        },
+        {
+          "address": "bc17",
+          "bytes": "4cf001",
+          "instruction": "BSET 0x00f0,0x1",
+          "function": "FUN_bbfd"
+        }
+      ]
+    },
+    {
+      "pin": 13,
+      "signal": "PP1/PWM1",
+      "category": "actuator",
+      "status": "Corroborated",
+      "role": "Air-induction solenoid command",
+      "function": "Controls the secondary-air system used in the exhaust/emissions path. This is distinct from the throttle body and from a TDM intake solenoid.",
+      "register": "PTP 0x00F0 bit1",
+      "evidence": [
+        "0xBAC3",
+        "0xBAE5",
+        "0x9D51"
+      ],
+      "ram": [],
+      "diagnostic": 48,
+      "xt_wire": "Br/R (brown/red), control at ECU; R/W supply",
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "bac3",
+          "bytes": "4cf002",
+          "instruction": "BSET 0x00f0,0x2",
+          "function": "FUN_ba8d"
+        },
+        {
+          "address": "bae5",
+          "bytes": "4df002",
+          "instruction": "BCLR 0x00f0,0x2",
+          "function": "FUN_ba8d"
+        },
+        {
+          "address": "9d51",
+          "bytes": "4df002",
+          "instruction": "BCLR 0x00f0,0x2",
+          "function": "FUN_99fd"
+        }
+      ]
+    },
+    {
+      "pin": 14,
+      "signal": "PP2/PWM2",
+      "category": "actuator",
+      "status": "Corroborated",
+      "role": "Radiator-fan relay command",
+      "function": "Normal coolant hysteresis and fault/diagnostic overrides command the fan relay. It does not directly supply motor current.",
+      "register": "PTP 0x00F0 bit2",
+      "evidence": [
+        "0x71C5",
+        "0x71CA",
+        "0xBB7B"
+      ],
+      "ram": [],
+      "diagnostic": 51,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "71c5",
+          "bytes": "4cf004",
+          "instruction": "BSET 0x00f0,0x4",
+          "function": "FUN_70a3"
+        },
+        {
+          "address": "71ca",
+          "bytes": "4df004",
+          "instruction": "BCLR 0x00f0,0x4",
+          "function": "FUN_70a3"
+        },
+        {
+          "address": "bb7b",
+          "bytes": "4cf004",
+          "instruction": "BSET 0x00f0,0x4",
+          "function": "FUN_bb45"
+        }
+      ]
+    },
+    {
+      "pin": 15,
+      "signal": "PP3/PWM3",
+      "category": "internal",
+      "status": "Decoded",
+      "role": "Storage transaction select/strobe",
+      "function": "PP3 is asserted around SPI/storage transactions and cleared on completion/error paths. Active electrical behavior and memory chip identity require board confirmation.",
+      "register": "PTP 0x00F0 bit3",
+      "evidence": [
+        "0x57B4",
+        "0x57E3",
+        "0x5866"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "57b4",
+          "bytes": "4cf008",
+          "instruction": "BSET 0x00f0,0x8",
+          "function": "FUN_57b4"
+        },
+        {
+          "address": "57e3",
+          "bytes": "4df008",
+          "instruction": "BCLR 0x00f0,0x8",
+          "function": "FUN_57b4"
+        },
+        {
+          "address": "5866",
+          "bytes": "4df008",
+          "instruction": "BCLR 0x00f0,0x8",
+          "function": "FUN_5857"
+        }
+      ]
+    },
+    {
+      "pin": 16,
+      "signal": "PP4/PWM4",
+      "category": "actuator",
+      "status": "Corroborated",
+      "role": "Headlight-relay command",
+      "function": "Commands the headlight relay in normal logic and diagnostic 52.",
+      "register": "PTP 0x00F0 bit4",
+      "evidence": [
+        "0x9DC5",
+        "0x9DCA",
+        "0xBBD7"
+      ],
+      "ram": [],
+      "diagnostic": 52,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "9dc5",
+          "bytes": "4cf010",
+          "instruction": "BSET 0x00f0,0x10",
+          "function": "FUN_99fd"
+        },
+        {
+          "address": "9dca",
+          "bytes": "4df010",
+          "instruction": "BCLR 0x00f0,0x10",
+          "function": "FUN_99fd"
+        },
+        {
+          "address": "bbd7",
+          "bytes": "4cf010",
+          "instruction": "BSET 0x00f0,0x10",
+          "function": "FUN_bba1"
+        }
+      ]
+    },
+    {
+      "pin": 17,
+      "signal": "PP5/PWM5",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 18,
+      "signal": "PP6/PWM6",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 19,
+      "signal": "PP7/PWM7",
+      "category": "internal",
+      "status": "Decoded",
+      "role": "Memory-test status/enable output",
+      "function": "PP7 is cleared around ROM/RAM checks and set on successful paths. The destination circuit and any output-enable effect are unknown.",
+      "register": "PTP 0x00F0 bit7",
+      "evidence": [
+        "0xA489",
+        "0xA4DB",
+        "0xA507",
+        "0xA53F"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "a489",
+          "bytes": "4df080",
+          "instruction": "BCLR 0x00f0,0x80",
+          "function": "FUN_a489"
+        },
+        {
+          "address": "a4db",
+          "bytes": "4cf080",
+          "instruction": "BSET 0x00f0,0x80",
+          "function": "FUN_a489"
+        },
+        {
+          "address": "a507",
+          "bytes": "4df080",
+          "instruction": "BCLR 0x00f0,0x80",
+          "function": "FUN_a505"
+        },
+        {
+          "address": "a53f",
+          "bytes": "4cf080",
+          "instruction": "BSET 0x00f0,0x80",
+          "function": "FUN_a505"
+        }
+      ]
+    },
+    {
+      "pin": 20,
+      "signal": "PB0",
+      "category": "digital",
+      "status": "Corroborated",
+      "role": "Sidestand / start-interlock input",
+      "function": "PB0 is filtered into 0x0896 bit0, then diagnostic 20 reports it. The external relay/interlock network matters; it need not be a direct wire from the switch.",
+      "register": "PORTB 0x0001 bit0",
+      "evidence": [
+        "0x8B45",
+        "0x8B57",
+        "0x6583"
+      ],
+      "ram": [
+        "0x0896"
+      ],
+      "diagnostic": 20,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "8b45",
+          "bytes": "9601",
+          "instruction": "LDAA 0x0001",
+          "function": "FUN_8b34"
+        },
+        {
+          "address": "8b57",
+          "bytes": "7c0896",
+          "instruction": "STD 0x896",
+          "function": "FUN_8b34"
+        },
+        {
+          "address": "6583",
+          "bytes": "1e08960106",
+          "instruction": "BRSET 0x896,0x1,0x658e",
+          "function": "FUN_650b"
+        }
+      ]
+    },
+    {
+      "pin": 21,
+      "signal": "PB1",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 22,
+      "signal": "PB2",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 23,
+      "signal": "PB3",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 24,
+      "signal": "PB4",
+      "category": "digital",
+      "status": "Corroborated",
+      "role": "Neutral input",
+      "function": "PB4 is filtered into 0x0896 bit4. For stock variant 9 diagnostic 21 reports that bit; other variants substitute a fixed diagnostic response.",
+      "register": "PORTB 0x0001 bit4",
+      "evidence": [
+        "0x8B45",
+        "0x6599",
+        "0x65A0"
+      ],
+      "ram": [
+        "0x0896"
+      ],
+      "diagnostic": 21,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "8b45",
+          "bytes": "9601",
+          "instruction": "LDAA 0x0001",
+          "function": "FUN_8b34"
+        },
+        {
+          "address": "6599",
+          "bytes": "b60d87",
+          "instruction": "LDAA 0xd87",
+          "function": "FUN_650b"
+        },
+        {
+          "address": "65a0",
+          "bytes": "1e08961006",
+          "instruction": "BRSET 0x896,0x10,0x65ab",
+          "function": "FUN_650b"
+        }
+      ]
+    },
+    {
+      "pin": 25,
+      "signal": "PB5",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 26,
+      "signal": "PB6",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 27,
+      "signal": "PB7",
+      "category": "internal",
+      "status": "Unassigned",
+      "role": "Timed digital output",
+      "function": "PB7 is toggled using counters. External purpose has not been established; do not label it tachometer solely from waveform-like code.",
+      "register": "PORTB 0x0001 bit7",
+      "evidence": [
+        "0xCB8B",
+        "0xCB8F",
+        "0xCBAD"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "cb8b",
+          "bytes": "4e018016",
+          "instruction": "BRSET 0x0001,0x80,0xcba5",
+          "function": "candidate_unreferenced_cb8b"
+        },
+        {
+          "address": "cb8f",
+          "bytes": "4c0180",
+          "instruction": "BSET 0x0001,0x80",
+          "function": "candidate_unreferenced_cb8b"
+        },
+        {
+          "address": "cbad",
+          "bytes": "4d0180",
+          "instruction": "BCLR 0x0001,0x80",
+          "function": "candidate_unreferenced_cb8b"
+        }
+      ]
+    },
+    {
+      "pin": 28,
+      "signal": "RESET",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "RESET",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 29,
+      "signal": "EXTAL",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "EXTAL",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 30,
+      "signal": "XTAL",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "XTAL",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 31,
+      "signal": "VSSPLL",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VSSPLL",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 32,
+      "signal": "XFC",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "XFC",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 33,
+      "signal": "VDDPLL",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VDDPLL",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 34,
+      "signal": "VDDR",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VDDR",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 35,
+      "signal": "VSSR",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VSSR",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 36,
+      "signal": "PK7/ROMONE/ECS",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "PK7/ROMONE/ECS",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 37,
+      "signal": "PE0/XIRQ",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "PE0/XIRQ",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 38,
+      "signal": "PE1/IRQ",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "PE1/IRQ",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 39,
+      "signal": "PE2/RW",
+      "category": "internal",
+      "status": "Decoded",
+      "role": "Analog-bank selection bit 0",
+      "function": "Firmware cycles PE2/PE3 through four states during ADC acquisition. ADC6/7 startup samples are retained separately for each state. External multiplexing/conditioning topology is unresolved.",
+      "register": "PORTE 0x0008 bit2",
+      "evidence": [
+        "0x56D0",
+        "0x56E7",
+        "0x56FB",
+        "0x5755",
+        "0x5784"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "56d0",
+          "bytes": "ce56cb",
+          "instruction": "LDX #0x56cb",
+          "function": "FUN_56d0"
+        },
+        {
+          "address": "56e7",
+          "bytes": "4d0804",
+          "instruction": "BCLR 0x0008,0x4",
+          "function": "FUN_56d0"
+        },
+        {
+          "address": "56fb",
+          "bytes": "4d0808",
+          "instruction": "BCLR 0x0008,0x8",
+          "function": "FUN_56d0"
+        },
+        {
+          "address": "5755",
+          "bytes": "b60e3b",
+          "instruction": "LDAA 0xe3b",
+          "function": "FUN_5728"
+        },
+        {
+          "address": "5784",
+          "bytes": "b60e3b",
+          "instruction": "LDAA 0xe3b",
+          "function": "FUN_5728"
+        }
+      ]
+    },
+    {
+      "pin": 40,
+      "signal": "PE3/LSTRB/TAGLO",
+      "category": "internal",
+      "status": "Decoded",
+      "role": "Analog-bank selection bit 1",
+      "function": "Firmware cycles PE2/PE3 through four states during ADC acquisition. ADC6/7 startup samples are retained separately for each state. External multiplexing/conditioning topology is unresolved.",
+      "register": "PORTE 0x0008 bit3",
+      "evidence": [
+        "0x56D0",
+        "0x56E7",
+        "0x56FB",
+        "0x5755",
+        "0x5784"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "56d0",
+          "bytes": "ce56cb",
+          "instruction": "LDX #0x56cb",
+          "function": "FUN_56d0"
+        },
+        {
+          "address": "56e7",
+          "bytes": "4d0804",
+          "instruction": "BCLR 0x0008,0x4",
+          "function": "FUN_56d0"
+        },
+        {
+          "address": "56fb",
+          "bytes": "4d0808",
+          "instruction": "BCLR 0x0008,0x8",
+          "function": "FUN_56d0"
+        },
+        {
+          "address": "5755",
+          "bytes": "b60e3b",
+          "instruction": "LDAA 0xe3b",
+          "function": "FUN_5728"
+        },
+        {
+          "address": "5784",
+          "bytes": "b60e3b",
+          "instruction": "LDAA 0xe3b",
+          "function": "FUN_5728"
+        }
+      ]
+    },
+    {
+      "pin": 41,
+      "signal": "PE4/ECLK",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "PE4/ECLK",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 42,
+      "signal": "PE5/MODA/IPIPE0",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "PE5/MODA/IPIPE0",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 43,
+      "signal": "PE6/MODB/IPIPE1",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "PE6/MODB/IPIPE1",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 44,
+      "signal": "PE7/NOACC/XCLKS",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "PE7/NOACC/XCLKS",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 45,
+      "signal": "PA0",
+      "category": "internal",
+      "status": "Unassigned",
+      "role": "Injector-path readback / control bit",
+      "function": "Read in an injector scheduling/monitoring path, but configured as a GPIO output at startup. It is not yet a proven external feedback-sensor input.",
+      "register": "PORTA 0x0000 bit0",
+      "evidence": [
+        "0x501E",
+        "0xC57A"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "501e",
+          "bytes": "5a02",
+          "instruction": "STAA 0x0002",
+          "function": "application_init"
+        },
+        {
+          "address": "c57a",
+          "bytes": "d600",
+          "instruction": "LDAB 0x0000",
+          "function": "FUN_c55b"
+        }
+      ]
+    },
+    {
+      "pin": 46,
+      "signal": "PA1",
+      "category": "internal",
+      "status": "Unassigned",
+      "role": "Injector-path readback / control bit",
+      "function": "Read in an injector scheduling/monitoring path, but configured as a GPIO output at startup. It is not yet a proven external feedback-sensor input.",
+      "register": "PORTA 0x0000 bit1",
+      "evidence": [
+        "0x501E",
+        "0xC731"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "501e",
+          "bytes": "5a02",
+          "instruction": "STAA 0x0002",
+          "function": "application_init"
+        },
+        {
+          "address": "c731",
+          "bytes": "d600",
+          "instruction": "LDAB 0x0000",
+          "function": "FUN_c712"
+        }
+      ]
+    },
+    {
+      "pin": 47,
+      "signal": "PA2",
+      "category": "actuator",
+      "status": "Corroborated",
+      "role": "Fuel-injection system relay command",
+      "function": "Diagnostic 50 and normal priming/run logic operate PA2. Controls fuel-system power through a relay driver, not the fuel pump motor directly. Diagnostic activation clears the MCU bit.",
+      "register": "PORTA 0x0000 bit2",
+      "evidence": [
+        "0xBB23",
+        "0xBB41",
+        "0xACD9",
+        "0xACE6"
+      ],
+      "ram": [],
+      "diagnostic": 50,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "bb23",
+          "bytes": "4d0004",
+          "instruction": "BCLR 0x0000,0x4",
+          "function": "FUN_baed"
+        },
+        {
+          "address": "bb41",
+          "bytes": "4c0004",
+          "instruction": "BSET 0x0000,0x4",
+          "function": "FUN_baed"
+        },
+        {
+          "address": "acd9",
+          "bytes": "4c0004",
+          "instruction": "BSET 0x0000,0x4",
+          "function": "FUN_ac7f"
+        },
+        {
+          "address": "ace6",
+          "bytes": "4d0004",
+          "instruction": "BCLR 0x0000,0x4",
+          "function": "FUN_ac7f"
+        }
+      ]
+    },
+    {
+      "pin": 48,
+      "signal": "PA3",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 49,
+      "signal": "PA4",
+      "category": "internal",
+      "status": "Candidate",
+      "role": "Periodic service/watchdog candidate",
+      "function": "PA4 is toggled by a recurring service helper. An external watchdog-service role is plausible, not board-proven.",
+      "register": "PORTA 0x0000 bit4",
+      "evidence": [
+        "0x5FAC",
+        "0x5FB0",
+        "0x5FB5"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "5fac",
+          "bytes": "4e001005",
+          "instruction": "BRSET 0x0000,0x10,0x5fb5",
+          "function": "FUN_5fa4"
+        },
+        {
+          "address": "5fb0",
+          "bytes": "4c0010",
+          "instruction": "BSET 0x0000,0x10",
+          "function": "FUN_5fa4"
+        },
+        {
+          "address": "5fb5",
+          "bytes": "4d0010",
+          "instruction": "BCLR 0x0000,0x10",
+          "function": "FUN_5fa4"
+        }
+      ]
+    },
+    {
+      "pin": 50,
+      "signal": "VDD2",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VDD2",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 51,
+      "signal": "VSS2",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VSS2",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 52,
+      "signal": "PA5",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 53,
+      "signal": "PA6",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 54,
+      "signal": "PA7",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 55,
+      "signal": "VDDA",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VDDA",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 56,
+      "signal": "VRH",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VRH",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 57,
+      "signal": "VRL",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VRL",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 58,
+      "signal": "VSSA",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VSSA",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 59,
+      "signal": "PAD0/AN0",
+      "category": "sensor",
+      "status": "Corroborated",
+      "role": "Throttle position (TPS)",
+      "function": "Measures throttle opening. Learned closed position and filtered relative opening select fuel/spark maps and transient corrections.",
+      "register": "ATD channel 0; ATDCTL5 0x0085",
+      "evidence": [
+        "0x6996",
+        "0x651F"
+      ],
+      "ram": [
+        "0x08D0",
+        "0x08CE",
+        "0x08E8",
+        "0x0AE9"
+      ],
+      "diagnostic": 1,
+      "xt_wire": "Y (yellow), signal at ECU; L supply and B/L return shown in XT diagram",
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "6996",
+          "bytes": "81ff",
+          "instruction": "CMPA #0xff",
+          "function": "FUN_6996"
+        },
+        {
+          "address": "651f",
+          "bytes": "b60ae9",
+          "instruction": "LDAA 0xae9",
+          "function": "FUN_650b"
+        }
+      ]
+    },
+    {
+      "pin": 60,
+      "signal": "PAD1/AN1",
+      "category": "sensor",
+      "status": "Corroborated",
+      "role": "Intake manifold pressure (MAP)",
+      "function": "Measures intake pressure for load, fueling and pressure-based engine-cycle recognition. Processed load is not identical to raw manifold pressure.",
+      "register": "ATD channel 1",
+      "evidence": [
+        "0x6AA5",
+        "0x652B",
+        "0xEA7F"
+      ],
+      "ram": [
+        "0x0CA2",
+        "0x0C90",
+        "0x0AEA"
+      ],
+      "diagnostic": 3,
+      "xt_wire": "P/W (pink/white), signal at ECU",
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "6aa5",
+          "bytes": "7c0ca2",
+          "instruction": "STD 0xca2",
+          "function": "FUN_6aa5"
+        },
+        {
+          "address": "652b",
+          "bytes": "b60aea",
+          "instruction": "LDAA 0xaea",
+          "function": "FUN_650b"
+        },
+        {
+          "address": "ea7f",
+          "bytes": "1e0ca80155",
+          "instruction": "BRSET 0xca8,0x1,0xead9",
+          "function": "candidate_unreferenced_e294"
+        }
+      ]
+    },
+    {
+      "pin": 61,
+      "signal": "PAD2/AN2",
+      "category": "sensor",
+      "status": "Candidate",
+      "role": "Oxygen-feedback candidate",
+      "function": "ADC handler updates feedback eligibility state. An oxygen-sensor role is plausible, but the 2004 XT reference diagram has no O2 sensor. TDM has one; the pin correspondence is unproved.",
+      "register": "ATD channel 2",
+      "evidence": [
+        "0x6AF6",
+        "0x6BB3"
+      ],
+      "ram": [
+        "0x08DC",
+        "0x09A1"
+      ],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "6af6",
+          "bytes": "7a08dc",
+          "instruction": "STAA 0x8dc",
+          "function": "FUN_6af6"
+        },
+        {
+          "address": "6bb3",
+          "bytes": "f60d87",
+          "instruction": "LDAB 0xd87",
+          "function": "FUN_6af6"
+        }
+      ]
+    },
+    {
+      "pin": 62,
+      "signal": "PAD3/AN3",
+      "category": "sensor",
+      "status": "Corroborated",
+      "role": "Intake air temperature (IAT)",
+      "function": "Thermistor conversion supplies air-temperature fuel corrections and diagnostic temperature. A fault substitutes ROM byte 0x4E65.",
+      "register": "ATD channel 3",
+      "evidence": [
+        "0x6FC2",
+        "0x7040",
+        "0x7060"
+      ],
+      "ram": [
+        "0x08F5",
+        "0x0AEB"
+      ],
+      "diagnostic": 5,
+      "xt_wire": "Br/W (brown/white), signal at ECU; B/L return",
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "6fc2",
+          "bytes": "f60d59",
+          "instruction": "LDAB 0xd59",
+          "function": "FUN_6fc2"
+        },
+        {
+          "address": "7040",
+          "bytes": "ce4f23",
+          "instruction": "LDX #0x4f23",
+          "function": "FUN_6fc2"
+        },
+        {
+          "address": "7060",
+          "bytes": "b64e65",
+          "instruction": "LDAA 0x4e65",
+          "function": "FUN_6fc2"
+        }
+      ]
+    },
+    {
+      "pin": 63,
+      "signal": "PAD4/AN4",
+      "category": "sensor",
+      "status": "Corroborated",
+      "role": "Fuel-system supply monitor",
+      "function": "Monitors conditioned fuel-system voltage for fault detection, injector compensation and dwell calculations. This MCU input is behind a divider/protection circuit, not a battery terminal.",
+      "register": "ATD channel 4",
+      "evidence": [
+        "0x6C5E",
+        "0x6577"
+      ],
+      "ram": [
+        "0x0BCE",
+        "0x08D9",
+        "0x0AEC"
+      ],
+      "diagnostic": 9,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "6c5e",
+          "bytes": "7a0bce",
+          "instruction": "STAA 0xbce",
+          "function": "FUN_6c5e"
+        },
+        {
+          "address": "6577",
+          "bytes": "b60aec",
+          "instruction": "LDAA 0xaec",
+          "function": "FUN_650b"
+        }
+      ]
+    },
+    {
+      "pin": 64,
+      "signal": "PAD5/AN5",
+      "category": "sensor",
+      "status": "Corroborated",
+      "role": "Lean-angle / tip-over sensor",
+      "function": "Detects an overturned motorcycle and participates in the fuel/ignition shutdown logic. This is not a continuous lean-angle tuning measurement.",
+      "register": "ATD channel 5",
+      "evidence": [
+        "0x71EB",
+        "0x6563"
+      ],
+      "ram": [
+        "0x08DD"
+      ],
+      "diagnostic": 8,
+      "xt_wire": "Y/G (yellow/green), signal at ECU",
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "71eb",
+          "bytes": "7a08dd",
+          "instruction": "STAA 0x8dd",
+          "function": "FUN_71eb"
+        },
+        {
+          "address": "6563",
+          "bytes": "b608dd",
+          "instruction": "LDAA 0x8dd",
+          "function": "FUN_650b"
+        }
+      ]
+    },
+    {
+      "pin": 65,
+      "signal": "PAD6/AN6",
+      "category": "sensor",
+      "status": "Corroborated",
+      "role": "Coolant temperature (ECT)",
+      "function": "Thermistor conversion drives warm-up fueling, temperature-dependent limits and fan decisions. Measured and effective/fault-substituted temperature are separate.",
+      "register": "ATD channel 6",
+      "evidence": [
+        "0x70A3",
+        "0x711B",
+        "0x714F"
+      ],
+      "ram": [
+        "0x08F6",
+        "0x08F4",
+        "0x0AE8"
+      ],
+      "diagnostic": 6,
+      "xt_wire": "G/R (green/red), signal at ECU; B/L return",
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "70a3",
+          "bytes": "f60d58",
+          "instruction": "LDAB 0xd58",
+          "function": "FUN_70a3"
+        },
+        {
+          "address": "711b",
+          "bytes": "ce4f44",
+          "instruction": "LDX #0x4f44",
+          "function": "FUN_70a3"
+        },
+        {
+          "address": "714f",
+          "bytes": "b64e64",
+          "instruction": "LDAA 0x4e64",
+          "function": "FUN_70a3"
+        }
+      ]
+    },
+    {
+      "pin": 66,
+      "signal": "PAD7/AN7/ETRIG",
+      "category": "sensor",
+      "status": "Unassigned",
+      "role": "Additional analog channel",
+      "function": "A handler stores raw/initial analog words, but channel 7 is absent from the normal repeating scan. TDM atmospheric pressure is a comparison lead, not an identification of this pin.",
+      "register": "ATD channel 7",
+      "evidence": [
+        "0x707C",
+        "0x68E9"
+      ],
+      "ram": [
+        "0x08D2",
+        "0x08D4",
+        "0x0BFC"
+      ],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "707c",
+          "bytes": "1e0880100a",
+          "instruction": "BRSET 0x880,0x10,0x708b",
+          "function": "FUN_707c"
+        },
+        {
+          "address": "68e9",
+          "bytes": "7208c5",
+          "instruction": "INC 0x8c5",
+          "function": "FUN_6772"
+        }
+      ]
+    },
+    {
+      "pin": 67,
+      "signal": "PS0/RxD0",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 68,
+      "signal": "PS1/TxD0",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 69,
+      "signal": "PS2/RxD1",
+      "category": "communication",
+      "status": "Decoded",
+      "role": "Dashboard/immobilizer serial RX",
+      "function": "SCI1 receives request bytes for dashboard diagnostics and immobilizer exchange. A possible external K-line connection needs transceiver tracing.",
+      "register": "SCI1 data 0x00D7",
+      "evidence": [
+        "0x5073",
+        "0xCDC0"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "5073",
+          "bytes": "8624",
+          "instruction": "LDAA #0x24",
+          "function": "application_init"
+        },
+        {
+          "address": "cdc0",
+          "bytes": "4f20011a",
+          "instruction": "BRCLR 0x0020,0x1,0xcdde",
+          "function": "FUN_cdc0"
+        }
+      ]
+    },
+    {
+      "pin": 70,
+      "signal": "PS3/TxD1",
+      "category": "communication",
+      "status": "Decoded",
+      "role": "Dashboard/immobilizer serial TX",
+      "function": "SCI1 sends five-byte ECU replies. MCU logic-level TX is not the external harness voltage.",
+      "register": "SCI1 data 0x00D7",
+      "evidence": [
+        "0xCCA9",
+        "0xCDBB"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "cca9",
+          "bytes": "4c3780",
+          "instruction": "BSET 0x0037,0x80",
+          "function": "FUN_cca9"
+        },
+        {
+          "address": "cdbb",
+          "bytes": "8626",
+          "instruction": "LDAA #0x26",
+          "function": "FUN_ccb0"
+        }
+      ]
+    },
+    {
+      "pin": 71,
+      "signal": "PS4/MISO",
+      "category": "communication",
+      "status": "Decoded",
+      "role": "SPI data input",
+      "function": "SPI participates in persistent-storage transactions; external device type and board routing are not established.",
+      "register": "SPI 0x00D8-0x00DD",
+      "evidence": [
+        "0x5077",
+        "0x57B4"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "5077",
+          "bytes": "8650",
+          "instruction": "LDAA #0x50",
+          "function": "application_init"
+        },
+        {
+          "address": "57b4",
+          "bytes": "4cf008",
+          "instruction": "BSET 0x00f0,0x8",
+          "function": "FUN_57b4"
+        }
+      ]
+    },
+    {
+      "pin": 72,
+      "signal": "PS5/MOSI",
+      "category": "communication",
+      "status": "Decoded",
+      "role": "SPI data output",
+      "function": "SPI participates in persistent-storage transactions; external device type and board routing are not established.",
+      "register": "SPI 0x00D8-0x00DD",
+      "evidence": [
+        "0x5077",
+        "0x57B4"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "5077",
+          "bytes": "8650",
+          "instruction": "LDAA #0x50",
+          "function": "application_init"
+        },
+        {
+          "address": "57b4",
+          "bytes": "4cf008",
+          "instruction": "BSET 0x00f0,0x8",
+          "function": "FUN_57b4"
+        }
+      ]
+    },
+    {
+      "pin": 73,
+      "signal": "PS6/SCK",
+      "category": "communication",
+      "status": "Decoded",
+      "role": "SPI clock",
+      "function": "SPI participates in persistent-storage transactions; external device type and board routing are not established.",
+      "register": "SPI 0x00D8-0x00DD",
+      "evidence": [
+        "0x5077",
+        "0x57B4"
+      ],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "5077",
+          "bytes": "8650",
+          "instruction": "LDAA #0x50",
+          "function": "application_init"
+        },
+        {
+          "address": "57b4",
+          "bytes": "4cf008",
+          "instruction": "BSET 0x00f0,0x8",
+          "function": "FUN_57b4"
+        }
+      ]
+    },
+    {
+      "pin": 74,
+      "signal": "PS7/SS",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 75,
+      "signal": "VREGEN",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VREGEN",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 76,
+      "signal": "VSSX",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VSSX",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 77,
+      "signal": "VDDX",
+      "category": "power",
+      "status": "Datasheet",
+      "role": "VDDX",
+      "function": "MCU supply, return, reference or regulator-control function from the package specification. Actual board rails and connections require inspection. Core supply pins are not accessory-power outputs.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 78,
+      "signal": "TEST",
+      "category": "internal",
+      "status": "Datasheet",
+      "role": "TEST",
+      "function": "Package clock, reset, debug, test, mode or alternate-function signal. Application-specific board use is not established; missing boot code may configure it.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 79,
+      "signal": "PT0/IOC0",
+      "category": "unresolved",
+      "status": "Unassigned",
+      "role": "Application role not established",
+      "function": "Do not interpret an unassigned pin as unused or unconnected.",
+      "register": null,
+      "evidence": [],
+      "ram": [],
+      "diagnostic": null,
+      "xt_wire": null,
+      "ecu_connector_cavity": null,
+      "evidence_instructions": []
+    },
+    {
+      "pin": 80,
+      "signal": "PT1/IOC1",
+      "category": "sensor",
+      "status": "Corroborated",
+      "role": "Crank-position sensor (CPS)",
+      "function": "Conditioned crank pulses feed gap synchronization, engine speed and spark/injection timing. Normal firmware cadence supports wasted spark; mechanical TDC offset remains unconfirmed.",
+      "register": "PTIT 0x00E1 bit1; TC1 0x0052",
+      "evidence": [
+        "0x536C",
+        "0xD871",
+        "0xD8D3"
+      ],
+      "ram": [
+        "0x0AF0",
+        "0x0C04",
+        "0x0A2E",
+        "0x0A44"
+      ],
+      "diagnostic": null,
+      "xt_wire": "Gy (gray) at ECU; G/W sensor return joins B/L in harness. Raw sensor wire colors differ across the harness.",
+      "ecu_connector_cavity": null,
+      "evidence_instructions": [
+        {
+          "address": "536c",
+          "bytes": "964b",
+          "instruction": "LDAA 0x004b",
+          "function": "application_init"
+        },
+        {
+          "address": "d871",
+          "bytes": "1c08be80",
+          "instruction": "BSET 0x8be,0x80",
+          "function": "FUN_d871"
+        },
+        {
+          "address": "d8d3",
+          "bytes": "dc52",
+          "instruction": "LDD 0x0052",
+          "function": "FUN_d871"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "mcu",
+      "title": "NXP MC9S12T64 revision 1.1.1",
+      "url": "https://www.nxp.com/docs/en/data-sheet/9S12T64AF16V1.pdf",
+      "pdf_pages": [
+        60,
+        86,
+        251,
+        253,
+        385
+      ]
+    },
+    {
+      "id": "xt",
+      "title": "Yamaha XT660R/X 2004 service manual",
+      "url": "https://scootertuub.nl/motoren/Yamaha/Yamaha%20XT%20660%20R%20X%202004%20Service%20Manual%20%20.pdf",
+      "pdf_pages": [
+        345,
+        353,
+        354,
+        355,
+        361,
+        397
+      ]
+    },
+    {
+      "id": "tdm",
+      "title": "Yamaha TDM900 service manual",
+      "url": "https://biker.ee/manuals/yamaha/Yamaha-TDM900-2002-2007_Workshop_Service_Repair_Manual.pdf",
+      "pdf_pages": [
+        365,
+        373
+      ]
+    }
+  ],
+  "model_comparison": [
+    [
+      "TPS, MAP, IAT, coolant, lean angle, vehicle speed, CPS",
+      "Listed in XT reference",
+      "Also listed in TDM reference",
+      "Same function does not establish the same MCU or connector pin."
+    ],
+    [
+      "Oxygen sensor",
+      "Not shown in the 2004 XT diagram used here",
+      "Explicitly fitted in TDM reference",
+      "AN2 remains an oxygen-feedback candidate; XT model/year variants must be distinguished."
+    ],
+    [
+      "Atmospheric-pressure sensor",
+      "No separate sensor shown",
+      "Separate sensor listed",
+      "Do not equate unresolved AN7 with this sensor without a trace."
+    ],
+    [
+      "Cylinder-identification sensor",
+      "No separate sensor shown; code has pressure-based cycle alignment",
+      "Separate sensor listed",
+      "No TDM cam-sensor MCU pin has been recovered from this XT image."
+    ],
+    [
+      "Injectors",
+      "One normal output; variant 9 suppresses secondary entry",
+      "Two injectors; diagnostics 36/37",
+      "PT7 code is compatible with a second-injector family feature, not proof of a populated XT driver."
+    ],
+    [
+      "Ignition coils",
+      "One coil; diagnostic 30",
+      "Two coils; diagnostics 30/31",
+      "This image has no selector 31 in its copied diagnostic list; no second-coil MCU output is established."
+    ],
+    [
+      "Intake solenoid",
+      "No equivalent established",
+      "Separate from AI; diagnostic 49",
+      "Unidentified PP0 uses selector 57; the diagnostic mismatch prevents assigning it as the TDM intake solenoid."
+    ],
+    [
+      "Start, stop and clutch switches",
+      "Present in vehicle wiring/interlock network",
+      "Present in vehicle wiring/interlock network",
+      "Do not assume each has a dedicated MCU input; individual mappings remain unconfirmed."
+    ]
+  ]
+}

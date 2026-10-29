@@ -24,6 +24,8 @@ The [temperature profile](analysis/semantics/TEMPERATURE_PROFILE.md) supplies co
 
 ## Focused control analysis
 
+The [MCU pin overview](analysis/semantics/MCU_PIN_OVERVIEW.md) covers all 80 positions in the conditional MC9S12T64 package reference, with 34 entries linked to firmware instructions. It explains sensor purposes, actuator commands, communications, internal signals and XT/TDM differences. The [interactive reference](analysis/semantics/MCU_PIN_OVERVIEW.html) provides a selectable diagram and searchable inventory; download/open it locally to use the controls. Package identification still requires the chip marking, and ECU connector cavity numbers remain unresolved.
+
 The [CPS/reference trace](analysis/semantics/CRANK_REFERENCE.md) now follows capture synchronization through normal spark dispatch. Synthetic crank patterns produce one firing transition per pattern on both halves of the longer cycle counter, supporting wasted-spark operation. The code also aligns cycle phase from pressure changes. [561 new checks](analysis/semantics/crank_reference_validation.json) cover these paths; the physical gap-edge-to-TDC angle is still unconfirmed.
 
 The [area guides](analysis/semantics/README.md) document coolant conversion, fan hysteresis and sensor-fault handling; separate spark/injector period limits and road-speed gates; six major map selections; and remaining work for a tuning definition. The [machine-readable catalogue](analysis/semantics/catalog.json) records 28 raw calibrations, eight ADC channels and six logical outputs. [212,090 focused control cases](analysis/semantics/control_validation.json) exercise the recovered behavior, in addition to instruction-level checks.
@@ -80,5 +82,7 @@ python scripts/catalog_calibration_accesses.py
 python scripts/sensor_profiles.py
 python scripts/decode_units.py
 python scripts/fix_startup_checksum.py
+python scripts/build_pin_overview.py
+python scripts/verify_pin_overview.py
 python scripts/verify_analysis.py
 ```

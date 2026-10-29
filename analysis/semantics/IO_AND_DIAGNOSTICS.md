@@ -2,6 +2,8 @@
 
 For serial commands, menu navigation, reply packing and fault numbers, see [Dashboard diagnostic protocol](DIAGNOSTICS.md). This guide covers the corresponding hardware identities.
 
+The [MCU pin overview](MCU_PIN_OVERVIEW.md) adds the conditional 80-pin package map, individual sensor purposes, instruction anchors, harness references and XT/TDM comparison. Its [interactive version](MCU_PIN_OVERVIEW.html) supports searching and selecting pins. Package pin numbers remain conditional on chip identification and are not ECU connector cavity numbers.
+
 ## Why the diagnostic table matters
 
 At `0x5FC8`, a byte count from `0x4EF5` controls a copy from `0x4EF6` into RAM `0x0D3D`. The count is 21. Those bytes are diagnostic selectors. The display routine at `0x650B` compares the selected number at `0x0BDD` with the copied entries and returns the corresponding measurement. The actuator dispatcher around `0xAF92` selects output-test routines using the same table.
@@ -24,7 +26,9 @@ The [Yamaha manual](README.md#sources) identifies diagnostic 01 as throttle, 03 
 | 51 | `0x4F04` | `0x0D4B` | `0xAFE2 → 0xBB45`, `0x00F0` mask `0x04` |
 | 52 | `0x4F05` | `0x0D4C` | `0xAFE7 → 0xBBA1`, `0x00F0` mask `0x10` |
 
-Code 37 is retained as an unidentified/secondary channel, not silently equated with a second installed injector. The stock variant byte is 9; the normal timer-7 injector entry immediately returns for this variant.
+The TDM manual identifies code 37 as injector #2, supporting the secondary-injector interpretation of this code path. That does not establish a second installed XT injector or identical TDM board routing. The stock variant byte is 9; the normal timer-7 injector entry immediately returns for this variant.
+
+Diagnostic 20 reads filtered PORTB bit 0 (`0x0896` bit 0), identifying the sidestand/start-interlock path. For variant 9, diagnostic 21 reads filtered PORTB bit 4, identifying neutral; other variants return a fixed diagnostic response. The external interlock network must be considered before assigning either MCU input directly to a switch wire.
 
 ## ADC dispatch
 
@@ -50,6 +54,7 @@ The normal scheduler does not give all channels equal priority. Over a 16-step c
 | PT3 / timer channel 3, compare `0x0056` | Ignition coil | `0x5664`, `0xED29`, `0xEE78`, `0xEF6D` |
 | PT6 / timer channel 6, compare `0x005C` | Primary injector | `0xF519 → 0xC55B` |
 | PT7 / timer channel 7, compare `0x005E` | Secondary injector-like code path | `0xF592 → 0xC712`, disabled here by variant 9 |
+| PA2, `0x0000` mask 4 | Fuel-injection system relay; diagnostic 50 | `0xACD9`, `0xACE6`; diagnostic activation clears the bit at `0xBB23` |
 | PP2, `0x00F0` mask 4 | Fan relay | `0x7190–0x71CC` |
 | PP1, `0x00F0` mask 2 | Air-induction solenoid | Output identity established; full control strategy pending |
 | PP4, `0x00F0` mask 16 | Headlight relay | Output identity established; full control strategy pending |
