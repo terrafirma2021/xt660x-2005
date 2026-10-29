@@ -1,12 +1,17 @@
 /* Entry c227 */
 
-/* WARNING: Removing unreachable block (RAM,0xc23d) */
-
-undefined2 scale_u16_by_u8_rounded(short param_1,byte *param_2)
+ushort scale_u16_by_u8_rounded(ushort value,byte *scale_address)
 
 {
-  return CONCAT11(0xff7f < (ushort)*param_2 * param_1,(char)((ushort)*param_2 * param_1 + 0x80 >> 8)
-                 );
+  ushort uVar1;
+  
+  if (false) {
+    uVar1 = 0xffff;
+  }
+  else {
+    uVar1 = CONCAT11(0xff7f < *scale_address * value,(char)(*scale_address * value + 0x80 >> 8));
+  }
+  return uVar1;
 }
 
 

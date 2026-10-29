@@ -1,27 +1,33 @@
 /* Entry c32d */
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-short bilinear_u8_grid(byte param_1,short param_2)
+ushort bilinear_u8_grid(byte *table_bias,uchar columns)
 
 {
-  short sVar1;
-  short sVar2;
+  byte bVar1;
+  char cVar2;
+  byte fraction;
   short sVar3;
+  ushort uVar4;
+  byte *table_bias_00;
   
-  sVar3 = (ushort)DAT_0de0._0_1_ + (ushort)DAT_0dde._0_1_ * (ushort)param_1 + param_2;
-  _DAT_0de2 = param_2;
-  sVar1 = interp_u8_q8_fraction(sVar3);
-  sVar2 = sVar1;
-  if ((char)DAT_0dde != '\0') {
-    DAT_0de2 = (char)((ushort)(sVar1 + 0x80) >> 8);
-    sVar2 = interp_u8_q8_fraction((ushort)param_1 + sVar3);
-    _DAT_0de2 = CONCAT11(DAT_0de2,(char)((ushort)(sVar2 + 0x80) >> 8));
-    sVar1 = interp_u8_q8_fraction(0xddf);
-    sVar2 = RAM0x0de8;
+  RAM0de2 = table_bias;
+  bVar1 = DAT_0dde._0_1_;
+  sVar3 = RAM0de2;
+  fraction = DAT_0de0._0_1_;
+  table_bias_00 = (byte *)((ushort)fraction + (ushort)bVar1 * (ushort)columns + sVar3);
+  uVar4 = interp_u8_q8_fraction(fraction,table_bias_00);
+  cVar2 = DAT_0dde._1_1_;
+  if (cVar2 == '\0') {
+    RAM0de8 = uVar4;
+    uVar4 = RAM0de8;
   }
-  RAM0x0de8 = sVar2;
-  return sVar1;
+  else {
+    DAT_0de2 = (char)(uVar4 + 0x80 >> 8);
+    uVar4 = interp_u8_q8_fraction(columns,table_bias_00 + columns);
+    DAT_0de3 = (char)(uVar4 + 0x80 >> 8);
+    uVar4 = interp_u8_q8_fraction((uchar)(uVar4 + 0x80),(byte *)((short)&DAT_0dde + 1));
+  }
+  return uVar4;
 }
 
 

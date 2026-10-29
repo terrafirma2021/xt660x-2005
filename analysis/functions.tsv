@@ -1,5 +1,5 @@
 entry	name	body_bytes	status	message
-5000	application_init	720	ok	
+5000	application_init	1264	ok	
 54f0	FUN_54f0	198	ok	
 55b6	FUN_55b6	174	ok	
 5664	FUN_5664	80	ok	
@@ -224,4 +224,4 @@ f7de	dispatch_stub_f7de	4	ok
 f7e2	dispatch_stub_f7e2	4	ok	
 f7e6	dispatch_stub_f7e6	4	ok	
 f7ea	dispatch_stub_f7ea	4	ok	
-f8a0	FUN_f8a0	0	unavailable	No supplied executable bytes at target
+f8a0	FUN_f8a0	0	unavailable	No supplied executable bytes

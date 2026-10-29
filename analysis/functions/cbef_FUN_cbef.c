@@ -3,27 +3,39 @@
 void FUN_cbef(void)
 
 {
-  if (DAT_0d87 == '\t') {
-    if ((~DAT_0896._0_1_ & 2) != 0) {
+  byte bVar1;
+  char cVar2;
+  
+  cVar2 = DAT_0d87;
+  if (cVar2 == '\t') {
+    bVar1 = DAT_0896._0_1_;
+    if ((~bVar1 & 2) != 0) {
 LAB_cc19:
-      DAT_0b06 = (DAT_0b06 + 1) - (0xfe < DAT_0b06);
-      if (DAT_0b06 < DAT_18d5) {
-        DAT_0b05 = 0;
+      DAT_0b05 = 0;
+      bVar1 = DAT_0b06;
+      bVar1 = (bVar1 + 1) - (0xfe < bVar1);
+      DAT_0b06 = bVar1;
+      if (bVar1 < DAT_18d5) {
         return;
       }
-      DAT_0880 = DAT_0880 & 0xfe;
-      DAT_0b05 = 0;
+      bVar1 = DAT_0880;
+      DAT_0880 = bVar1 & 0xfe;
       return;
     }
   }
-  else if ((DAT_0896._0_1_ & 2) == 0) goto LAB_cc19;
+  else {
+    bVar1 = DAT_0896._0_1_;
+    if ((bVar1 & 2) == 0) goto LAB_cc19;
+  }
   DAT_0b06 = 0;
-  DAT_0b05 = (DAT_0b05 + 1) - (0xfe < DAT_0b05);
-  if (DAT_0b05 < DAT_18d4) {
-    DAT_0b06 = 0;
+  bVar1 = DAT_0b05;
+  bVar1 = (bVar1 + 1) - (0xfe < bVar1);
+  DAT_0b05 = bVar1;
+  if (bVar1 < DAT_18d4) {
     return;
   }
-  DAT_0880 = DAT_0880 | 1;
+  bVar1 = DAT_0880;
+  DAT_0880 = bVar1 | 1;
   return;
 }
 

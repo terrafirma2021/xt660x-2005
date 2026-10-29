@@ -289,189 +289,189 @@ address	bytes	instruction	function
 52cd	a7	NOP	application_init
 52ce	a7	NOP	application_init
 52cf	a7	NOP	application_init
-52d0	a7	NOP	
-52d1	a7	NOP	
-52d2	a7	NOP	
-52d3	165fa4	JSR 0x5fa4	
-52d6	b608d6	LDAA 0x8d6	
-52d9	ce4f23	LDX #0x4f23	
-52dc	c620	LDAB #0x20	
-52de	12	MUL	
-52df	16c1db	JSR 0xc1db	
-52e2	7a08f4	STAA 0x8f4	
-52e5	7a08f6	STAA 0x8f6	
-52e8	c6a0	LDAB #0xa0	
-52ea	12	MUL	
-52eb	8196	CMPA #0x96	
-52ed	2502	BCS 0x52f1	
-52ef	8695	LDAA #0x95	
-52f1	7a0ae8	STAA 0xae8	
-52f4	b608d8	LDAA 0x8d8	
-52f7	ce4f23	LDX #0x4f23	
-52fa	c620	LDAB #0x20	
-52fc	12	MUL	
-52fd	16c1db	JSR 0xc1db	
-5300	7a08f5	STAA 0x8f5	
-5303	c6a0	LDAB #0xa0	
-5305	12	MUL	
-5306	8196	CMPA #0x96	
-5308	2502	BCS 0x530c	
-530a	8695	LDAA #0x95	
-530c	7a0aeb	STAA 0xaeb	
-530f	1d088810	BCLR 0x888,0x10	
-5313	9608	LDAA 0x0008	
-5315	84f3	ANDA #0xf3	
-5317	5a08	STAA 0x0008	
-5319	fc4fa0	LDD 0x4fa0	
-531c	7c0e26	STD 0xe26	
-531f	fc4e86	LDD 0x4e86	
-5322	8c55aa	CPD #0x55aa	
-5325	2603	BNE 0x532a	
-5327	165857	JSR 0x5857	
-532a	fc4e88	LDD 0x4e88	
-532d	8caa55	CPD #0xaa55	
-5330	2606	BNE 0x5338	
-5332	165c05	JSR 0x5c05	
-5335	165d4d	JSR 0x5d4d	
-5338	165d67	JSR 0x5d67	
-533b	165cc7	JSR 0x5cc7	
-533e	16592e	JSR 0x592e	
-5341	1f0bd50804	BRCLR 0xbd5,0x8,0x534a	
-5346	1c0bd240	BSET 0xbd2,0x40	
-534a	b60dd5	LDAA 0xdd5	
-534d	8180	CMPA #0x80	
-534f	2707	BEQ 0x5358	
-5351	1c0d0801	BSET 0xd08,0x1	
-5355	165ef1	JSR 0x5ef1	
-5358	ccf7ff	LDD #0xf7ff	
-535b	16a489	JSR 0xa489	
-535e	165fbf	JSR 0x5fbf	
-5361	165fba	JSR 0x5fba	
-5364	964a	LDAA 0x004a	
-5366	8a08	ORAA #0x8	
-5368	84fb	ANDA #0xfb	
-536a	5a4a	STAA 0x004a	
-536c	964b	LDAA 0x004b	
-536e	8a28	ORAA #0x28	
-5370	84eb	ANDA #0xeb	
-5372	5a4b	STAA 0x004b	
-5374	4c4c06	BSET 0x004c,0x6	
-5377	dc44	LDD 0x0044	
-5379	7c0af4	STD 0xaf4	
-537c	7c0af2	STD 0xaf2	
-537f	7c0c00	STD 0xc00	
-5382	9601	LDAA 0x0001	
-5384	180e	TAB	
-5386	7c0896	STD 0x896	
-5389	10ef	CLI	
-538b	b608bc	LDAA 0x8bc	
-538e	8880	EORA #0x80	
-5390	7a08bc	STAA 0x8bc	
-5393	ce0ffe	LDX #0xffe	
-5396	b757	TXS	
-5398	165fa3	JSR 0x5fa3	
-539b	1410	SEI	
-539d	4f200118	BRCLR 0x0020,0x1,0x53b9	
-53a1	dc24	LDD 0x0024	
-53a3	8ca55a	CPD #0xa55a	
-53a6	2611	BNE 0x53b9	
-53a8	dcd4	LDD 0x00d4	
-53aa	d6d7	LDAB 0x00d7	
-53ac	87	CLRA	
-53ad	5ad3	STAA 0x00d3	
-53af	180b8008a0	MOVB #0x80,0x8a0	
-53b4	180b4008ae	MOVB #0x40,0x8ae	
-53b9	10ef	CLI	
-53bb	4f200403	BRCLR 0x0020,0x4,0x53c2	
-53bf	87	CLRA	
-53c0	5acb	STAA 0x00cb	
-53c2	166259	JSR 0x6259	
-53c5	166772	JSR 0x6772	
-53c8	16f8a0	JSR 0xf8a0	
-53cb	166299	JSR 0x6299	
-53ce	1f08810403	BRCLR 0x881,0x4,0x53d6	
-53d3	168691	JSR 0x8691	
-53d6	1f08810203	BRCLR 0x881,0x2,0x53de	
-53db	16869e	JSR 0x869e	
-53de	1f08870203	BRCLR 0x887,0x2,0x53e6	
-53e3	1687e7	JSR 0x87e7	
-53e6	1e08828004	BRSET 0x882,0x80,0x53ef	
-53eb	1820008c	LBRA 0x547b	
-53ef	1673a5	JSR 0x73a5	
-53f2	1410	SEI	
-53f4	fc0a2e	LDD 0xa2e	
-53f7	7c0a30	STD 0xa30	
-53fa	fc0a34	LDD 0xa34	
-53fd	7c0a36	STD 0xa36	
-5400	49	LSRD	
-5401	49	LSRD	
-5402	7c0a32	STD 0xa32	
-5405	10ef	CLI	
-5407	b60c03	LDAA 0xc03	
-540a	841f	ANDA #0x1f	
-540c	8102	CMPA #0x2	
-540e	2506	BCS 0x5416	
-5410	8106	CMPA #0x6	
-5412	2402	BCC 0x5416	
-5414	201f	BRA 0x5435	
-5416	b60a82	LDAA 0xa82	
-5419	1654f0	JSR 0x54f0	
-541c	1410	SEI	
-541e	b60de3	LDAA 0xde3	
-5421	7a0924	STAA 0x924	
-5424	fc0de5	LDD 0xde5	
-5427	7c0a94	STD 0xa94	
-542a	fc0de7	LDD 0xde7	
-542d	7c0aa4	STD 0xaa4	
-5430	10ef	CLI	
-5432	1655b6	JSR 0x55b6	
-5435	1e08a0043d	BRSET 0x8a0,0x4,0x5477	
-543a	1e08b28038	BRSET 0x8b2,0x80,0x5477	
-543f	fc08f8	LDD 0x8f8	
-5442	8c2800	CPD #0x2800	
-5445	2430	BCC 0x5477	
-5447	1e0884042b	BRSET 0x884,0x4,0x5477	
-544c	1e0d080126	BRSET 0xd08,0x1,0x5477	
-5451	1e08840221	BRSET 0x884,0x2,0x5477	
-5456	1e088c801c	BRSET 0x88c,0x80,0x5477	
-545b	1e08854017	BRSET 0x885,0x40,0x5477	
-5460	1e0bf88012	BRSET 0xbf8,0x80,0x5477	
-5465	1e089b800d	BRSET 0x89b,0x80,0x5477	
-546a	1e089b0808	BRSET 0x89b,0x8,0x5477	
-546f	1e08804003	BRSET 0x880,0x40,0x5477	
-5474	165664	JSR 0x5664	
-5477	1d088280	BCLR 0x882,0x80	
-547b	16857d	JSR 0x857d	
-547e	1f08818007	BRCLR 0x881,0x80,0x548a	
-5483	1f08814008	BRCLR 0x881,0x40,0x5490	
-5488	200d	BRA 0x5497	
-548a	1c0a1601	BSET 0xa16,0x1	
-548e	2004	BRA 0x5494	
-5490	1c0a1602	BSET 0xa16,0x2	
-5494	1674b8	JSR 0x74b8	
-5497	166772	JSR 0x6772	
-549a	166299	JSR 0x6299	
-549d	1f08824003	BRCLR 0x882,0x40,0x54a5	
-54a2	168b34	JSR 0x8b34	
-54a5	1f08872003	BRCLR 0x887,0x20,0x54ad	
-54aa	16a557	JSR 0xa557	
-54ad	1f08820403	BRCLR 0x882,0x4,0x54b5	
-54b2	16a564	JSR 0xa564	
-54b5	1f088e8003	BRCLR 0x88e,0x80,0x54bd	
-54ba	16ac7f	JSR 0xac7f	
-54bd	1f08822003	BRCLR 0x882,0x20,0x54c5	
-54c2	16aff9	JSR 0xaff9	
-54c5	1f08821003	BRCLR 0x882,0x10,0x54cd	
-54ca	16b166	JSR 0xb166	
-54cd	1f08820803	BRCLR 0x882,0x8,0x54d5	
-54d2	16b817	JSR 0xb817	
-54d5	1f08820203	BRCLR 0x882,0x2,0x54dd	
-54da	16bc2e	JSR 0xbc2e	
-54dd	1f08878003	BRCLR 0x887,0x80,0x54e5	
-54e2	16c063	JSR 0xc063	
-54e5	1f08874003	BRCLR 0x887,0x40,0x54ed	
-54ea	16c199	JSR 0xc199	
-54ed	065389	JMP 0x5389	
+52d0	a7	NOP	application_init
+52d1	a7	NOP	application_init
+52d2	a7	NOP	application_init
+52d3	165fa4	JSR 0x5fa4	application_init
+52d6	b608d6	LDAA 0x8d6	application_init
+52d9	ce4f23	LDX #0x4f23	application_init
+52dc	c620	LDAB #0x20	application_init
+52de	12	MUL	application_init
+52df	16c1db	JSR 0xc1db	application_init
+52e2	7a08f4	STAA 0x8f4	application_init
+52e5	7a08f6	STAA 0x8f6	application_init
+52e8	c6a0	LDAB #0xa0	application_init
+52ea	12	MUL	application_init
+52eb	8196	CMPA #0x96	application_init
+52ed	2502	BCS 0x52f1	application_init
+52ef	8695	LDAA #0x95	application_init
+52f1	7a0ae8	STAA 0xae8	application_init
+52f4	b608d8	LDAA 0x8d8	application_init
+52f7	ce4f23	LDX #0x4f23	application_init
+52fa	c620	LDAB #0x20	application_init
+52fc	12	MUL	application_init
+52fd	16c1db	JSR 0xc1db	application_init
+5300	7a08f5	STAA 0x8f5	application_init
+5303	c6a0	LDAB #0xa0	application_init
+5305	12	MUL	application_init
+5306	8196	CMPA #0x96	application_init
+5308	2502	BCS 0x530c	application_init
+530a	8695	LDAA #0x95	application_init
+530c	7a0aeb	STAA 0xaeb	application_init
+530f	1d088810	BCLR 0x888,0x10	application_init
+5313	9608	LDAA 0x0008	application_init
+5315	84f3	ANDA #0xf3	application_init
+5317	5a08	STAA 0x0008	application_init
+5319	fc4fa0	LDD 0x4fa0	application_init
+531c	7c0e26	STD 0xe26	application_init
+531f	fc4e86	LDD 0x4e86	application_init
+5322	8c55aa	CPD #0x55aa	application_init
+5325	2603	BNE 0x532a	application_init
+5327	165857	JSR 0x5857	application_init
+532a	fc4e88	LDD 0x4e88	application_init
+532d	8caa55	CPD #0xaa55	application_init
+5330	2606	BNE 0x5338	application_init
+5332	165c05	JSR 0x5c05	application_init
+5335	165d4d	JSR 0x5d4d	application_init
+5338	165d67	JSR 0x5d67	application_init
+533b	165cc7	JSR 0x5cc7	application_init
+533e	16592e	JSR 0x592e	application_init
+5341	1f0bd50804	BRCLR 0xbd5,0x8,0x534a	application_init
+5346	1c0bd240	BSET 0xbd2,0x40	application_init
+534a	b60dd5	LDAA 0xdd5	application_init
+534d	8180	CMPA #0x80	application_init
+534f	2707	BEQ 0x5358	application_init
+5351	1c0d0801	BSET 0xd08,0x1	application_init
+5355	165ef1	JSR 0x5ef1	application_init
+5358	ccf7ff	LDD #0xf7ff	application_init
+535b	16a489	JSR 0xa489	application_init
+535e	165fbf	JSR 0x5fbf	application_init
+5361	165fba	JSR 0x5fba	application_init
+5364	964a	LDAA 0x004a	application_init
+5366	8a08	ORAA #0x8	application_init
+5368	84fb	ANDA #0xfb	application_init
+536a	5a4a	STAA 0x004a	application_init
+536c	964b	LDAA 0x004b	application_init
+536e	8a28	ORAA #0x28	application_init
+5370	84eb	ANDA #0xeb	application_init
+5372	5a4b	STAA 0x004b	application_init
+5374	4c4c06	BSET 0x004c,0x6	application_init
+5377	dc44	LDD 0x0044	application_init
+5379	7c0af4	STD 0xaf4	application_init
+537c	7c0af2	STD 0xaf2	application_init
+537f	7c0c00	STD 0xc00	application_init
+5382	9601	LDAA 0x0001	application_init
+5384	180e	TAB	application_init
+5386	7c0896	STD 0x896	application_init
+5389	10ef	CLI	application_init
+538b	b608bc	LDAA 0x8bc	application_init
+538e	8880	EORA #0x80	application_init
+5390	7a08bc	STAA 0x8bc	application_init
+5393	ce0ffe	LDX #0xffe	application_init
+5396	b757	TXS	application_init
+5398	165fa3	JSR 0x5fa3	application_init
+539b	1410	SEI	application_init
+539d	4f200118	BRCLR 0x0020,0x1,0x53b9	application_init
+53a1	dc24	LDD 0x0024	application_init
+53a3	8ca55a	CPD #0xa55a	application_init
+53a6	2611	BNE 0x53b9	application_init
+53a8	dcd4	LDD 0x00d4	application_init
+53aa	d6d7	LDAB 0x00d7	application_init
+53ac	87	CLRA	application_init
+53ad	5ad3	STAA 0x00d3	application_init
+53af	180b8008a0	MOVB #0x80,0x8a0	application_init
+53b4	180b4008ae	MOVB #0x40,0x8ae	application_init
+53b9	10ef	CLI	application_init
+53bb	4f200403	BRCLR 0x0020,0x4,0x53c2	application_init
+53bf	87	CLRA	application_init
+53c0	5acb	STAA 0x00cb	application_init
+53c2	166259	JSR 0x6259	application_init
+53c5	166772	JSR 0x6772	application_init
+53c8	16f8a0	JSR 0xf8a0	application_init
+53cb	166299	JSR 0x6299	application_init
+53ce	1f08810403	BRCLR 0x881,0x4,0x53d6	application_init
+53d3	168691	JSR 0x8691	application_init
+53d6	1f08810203	BRCLR 0x881,0x2,0x53de	application_init
+53db	16869e	JSR 0x869e	application_init
+53de	1f08870203	BRCLR 0x887,0x2,0x53e6	application_init
+53e3	1687e7	JSR 0x87e7	application_init
+53e6	1e08828004	BRSET 0x882,0x80,0x53ef	application_init
+53eb	1820008c	LBRA 0x547b	application_init
+53ef	1673a5	JSR 0x73a5	application_init
+53f2	1410	SEI	application_init
+53f4	fc0a2e	LDD 0xa2e	application_init
+53f7	7c0a30	STD 0xa30	application_init
+53fa	fc0a34	LDD 0xa34	application_init
+53fd	7c0a36	STD 0xa36	application_init
+5400	49	LSRD	application_init
+5401	49	LSRD	application_init
+5402	7c0a32	STD 0xa32	application_init
+5405	10ef	CLI	application_init
+5407	b60c03	LDAA 0xc03	application_init
+540a	841f	ANDA #0x1f	application_init
+540c	8102	CMPA #0x2	application_init
+540e	2506	BCS 0x5416	application_init
+5410	8106	CMPA #0x6	application_init
+5412	2402	BCC 0x5416	application_init
+5414	201f	BRA 0x5435	application_init
+5416	b60a82	LDAA 0xa82	application_init
+5419	1654f0	JSR 0x54f0	application_init
+541c	1410	SEI	application_init
+541e	b60de3	LDAA 0xde3	application_init
+5421	7a0924	STAA 0x924	application_init
+5424	fc0de5	LDD 0xde5	application_init
+5427	7c0a94	STD 0xa94	application_init
+542a	fc0de7	LDD 0xde7	application_init
+542d	7c0aa4	STD 0xaa4	application_init
+5430	10ef	CLI	application_init
+5432	1655b6	JSR 0x55b6	application_init
+5435	1e08a0043d	BRSET 0x8a0,0x4,0x5477	application_init
+543a	1e08b28038	BRSET 0x8b2,0x80,0x5477	application_init
+543f	fc08f8	LDD 0x8f8	application_init
+5442	8c2800	CPD #0x2800	application_init
+5445	2430	BCC 0x5477	application_init
+5447	1e0884042b	BRSET 0x884,0x4,0x5477	application_init
+544c	1e0d080126	BRSET 0xd08,0x1,0x5477	application_init
+5451	1e08840221	BRSET 0x884,0x2,0x5477	application_init
+5456	1e088c801c	BRSET 0x88c,0x80,0x5477	application_init
+545b	1e08854017	BRSET 0x885,0x40,0x5477	application_init
+5460	1e0bf88012	BRSET 0xbf8,0x80,0x5477	application_init
+5465	1e089b800d	BRSET 0x89b,0x80,0x5477	application_init
+546a	1e089b0808	BRSET 0x89b,0x8,0x5477	application_init
+546f	1e08804003	BRSET 0x880,0x40,0x5477	application_init
+5474	165664	JSR 0x5664	application_init
+5477	1d088280	BCLR 0x882,0x80	application_init
+547b	16857d	JSR 0x857d	application_init
+547e	1f08818007	BRCLR 0x881,0x80,0x548a	application_init
+5483	1f08814008	BRCLR 0x881,0x40,0x5490	application_init
+5488	200d	BRA 0x5497	application_init
+548a	1c0a1601	BSET 0xa16,0x1	application_init
+548e	2004	BRA 0x5494	application_init
+5490	1c0a1602	BSET 0xa16,0x2	application_init
+5494	1674b8	JSR 0x74b8	application_init
+5497	166772	JSR 0x6772	application_init
+549a	166299	JSR 0x6299	application_init
+549d	1f08824003	BRCLR 0x882,0x40,0x54a5	application_init
+54a2	168b34	JSR 0x8b34	application_init
+54a5	1f08872003	BRCLR 0x887,0x20,0x54ad	application_init
+54aa	16a557	JSR 0xa557	application_init
+54ad	1f08820403	BRCLR 0x882,0x4,0x54b5	application_init
+54b2	16a564	JSR 0xa564	application_init
+54b5	1f088e8003	BRCLR 0x88e,0x80,0x54bd	application_init
+54ba	16ac7f	JSR 0xac7f	application_init
+54bd	1f08822003	BRCLR 0x882,0x20,0x54c5	application_init
+54c2	16aff9	JSR 0xaff9	application_init
+54c5	1f08821003	BRCLR 0x882,0x10,0x54cd	application_init
+54ca	16b166	JSR 0xb166	application_init
+54cd	1f08820803	BRCLR 0x882,0x8,0x54d5	application_init
+54d2	16b817	JSR 0xb817	application_init
+54d5	1f08820203	BRCLR 0x882,0x2,0x54dd	application_init
+54da	16bc2e	JSR 0xbc2e	application_init
+54dd	1f08878003	BRCLR 0x887,0x80,0x54e5	application_init
+54e2	16c063	JSR 0xc063	application_init
+54e5	1f08874003	BRCLR 0x887,0x40,0x54ed	application_init
+54ea	16c199	JSR 0xc199	application_init
+54ed	065389	JMP 0x5389	application_init
 54f0	7a0dde	STAA 0xdde	FUN_54f0
 54f3	7a0ddf	STAA 0xddf	FUN_54f0
 54f6	ce0ddf	LDX #0xddf	FUN_54f0

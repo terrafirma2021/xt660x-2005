@@ -2,5 +2,8 @@
 *.bin binary
 *.gz binary
 *.gzf binary
+*.sla binary
+*.patch -whitespace
 # Generated Ghidra text includes intentional empty TSV fields and C blank lines.
 analysis/** -whitespace
+ghidra/XT660CPU12/** -whitespace

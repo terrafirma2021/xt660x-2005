@@ -3,30 +3,43 @@
 void FUN_5e63(void)
 
 {
-  DAT_0bec = FUN_57b4(0xc50);
-  DAT_0d1a = DAT_0bec;
-  DAT_0bed = FUN_57b4(0xc51);
-  DAT_0d1b = DAT_0bed;
-  DAT_0bee = FUN_57b4(0xc52);
-  DAT_0d1c = DAT_0bee;
-  DAT_0bef = FUN_57b4(0xc53);
-  DAT_0d1d = DAT_0bef;
+  undefined1 uVar1;
+  
+  uVar1 = FUN_57b4(&UNK_0c50);
+  DAT_0bec = uVar1;
+  DAT_0d1a = uVar1;
+  uVar1 = FUN_57b4(&UNK_0c51);
+  DAT_0bed = uVar1;
+  DAT_0d1b = uVar1;
+  uVar1 = FUN_57b4(&UNK_0c52);
+  DAT_0bee = uVar1;
+  DAT_0d1c = uVar1;
+  uVar1 = FUN_57b4(&UNK_0c53);
+  DAT_0bef = uVar1;
+  DAT_0d1d = uVar1;
   FUN_5fa4();
-  DAT_0bf0 = FUN_57b4(0xc54);
-  DAT_0d1e = DAT_0bf0;
-  DAT_0bf1 = FUN_57b4(0xc55);
-  DAT_0d1f = DAT_0bf1;
-  DAT_0bf2 = FUN_57b4(0xc56);
-  DAT_0d20 = DAT_0bf2;
-  DAT_0bf3 = FUN_57b4(0xc57);
-  DAT_0d21 = DAT_0bf3;
+  uVar1 = FUN_57b4(&UNK_0c54);
+  DAT_0bf0 = uVar1;
+  DAT_0d1e = uVar1;
+  uVar1 = FUN_57b4(&UNK_0c55);
+  DAT_0bf1 = uVar1;
+  DAT_0d1f = uVar1;
+  uVar1 = FUN_57b4(&UNK_0c56);
+  DAT_0bf2 = uVar1;
+  DAT_0d20 = uVar1;
+  uVar1 = FUN_57b4(&UNK_0c57);
+  DAT_0bf3 = uVar1;
+  DAT_0d21 = uVar1;
   FUN_5fa4();
-  DAT_0bf4 = FUN_57b4(0xc58);
-  DAT_0d22 = DAT_0bf4;
-  DAT_0bf5 = FUN_57b4(0xc59);
-  DAT_0d23 = DAT_0bf5;
-  DAT_0bf6 = FUN_57b4(0xc5a);
-  DAT_0d24 = DAT_0bf6;
+  uVar1 = FUN_57b4(&DAT_0c58);
+  DAT_0bf4 = uVar1;
+  DAT_0d22 = uVar1;
+  uVar1 = FUN_57b4(0xc59);
+  DAT_0bf5 = uVar1;
+  DAT_0d23 = uVar1;
+  uVar1 = FUN_57b4(&DAT_0c5a);
+  DAT_0bf6 = uVar1;
+  DAT_0d24 = uVar1;
   FUN_5fa4();
   return;
 }

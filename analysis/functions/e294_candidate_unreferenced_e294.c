@@ -1,413 +1,893 @@
 /* Entry e294 */
 
-/* WARNING: Removing unreachable block (RAM,0xe2dc) */
-/* WARNING: Removing unreachable block (RAM,0xe2e1) */
-/* WARNING: Removing unreachable block (RAM,0xe2e9) */
-/* WARNING: Removing unreachable block (RAM,0xe2ee) */
-/* WARNING: Removing unreachable block (RAM,0xe2fb) */
-/* WARNING: Removing unreachable block (RAM,0xe303) */
-/* WARNING: Removing unreachable block (RAM,0xe30c) */
-/* WARNING: Removing unreachable block (RAM,0xe611) */
-/* WARNING: Removing unreachable block (RAM,0xe87d) */
-/* WARNING: Removing unreachable block (RAM,0xe729) */
-/* WARNING: Removing unreachable block (RAM,0xe535) */
-/* WARNING: Removing unreachable block (RAM,0xea0d) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void candidate_unreferenced_e294(void)
 
 {
-  bool bVar1;
-  char cVar2;
-  ushort uVar3;
+  ushort *puVar1;
+  int iVar2;
+  short sVar3;
   ushort uVar4;
-  ushort uVar5;
-  ushort uVar6;
-  short sVar7;
-  int iVar8;
-  undefined *puVar9;
-  uint3 uVar10;
-  uint uVar11;
-  undefined3 uVar12;
-  byte bVar13;
-  byte extraout_A;
-  byte bVar14;
+  byte bVar5;
+  undefined *puVar6;
+  char cVar7;
+  ushort uVar8;
+  byte bVar9;
+  undefined1 uVar10;
+  byte bVar11;
+  undefined1 extraout_A;
+  char cVar12;
+  undefined1 uVar17;
+  undefined2 uVar13;
+  undefined *puVar14;
   ushort uVar15;
+  short sVar16;
+  undefined2 *puVar18;
+  undefined2 *puVar19;
   
   DAT_0bcb = 0x40;
   DAT_0bca = 6;
-  if ((((DAT_0d61 != -0x80) && (DAT_0d87 == '\t')) && ((~DAT_08a0 & 4) == 0)) &&
-     ((~DAT_08b2 & 0x80) == 0)) {
-    if (((DAT_0896._0_1_ & 0x10) == 0) || ((~DAT_0881 & 0x10) != 0)) {
+  cVar12 = DAT_0d61;
+  if ((((cVar12 != -0x80) && (cVar12 = DAT_0d87, cVar12 == '\t')) &&
+      (bVar11 = DAT_08a0, (~bVar11 & 4) == 0)) && (bVar11 = DAT_08b2, (~bVar11 & 0x80) == 0)) {
+    cVar12 = DAT_0d87;
+    if (((cVar12 == '\t') && (bVar11 = DAT_0896._0_1_, (bVar11 & 0x10) == 0)) ||
+       (bVar11 = DAT_0881, (~bVar11 & 0x10) != 0)) {
       DAT_0bcc = 0;
       DAT_0bcd = 0;
     }
-    else if ((DAT_08b6 & 2) == 0) {
-      if ((DAT_0d8a < DAT_0bcd) && ((DAT_08b1 & 8) != 0)) {
-        DAT_08b1 = DAT_08b1 & 0xf7;
-        DAT_0bd2 = DAT_0bd2 | 0x20;
-        if (((~DAT_08af & 8) == 0) && ((~DAT_08af & 4) == 0)) {
-          DAT_0889 = DAT_0889 | 2;
-          DAT_0b94 = 0;
-          DAT_0b92 = DAT_0a83;
-          DAT_0b95 = DAT_0a83;
+    else {
+      cVar12 = DAT_0bca;
+      if (cVar12 == '\0') {
+        bVar11 = DAT_08b6;
+        if ((bVar11 & 2) != 0) {
+          bVar11 = DAT_0bcc;
+          bVar5 = DAT_0d88;
+          if (bVar11 <= bVar5) goto LAB_e34d;
+          bVar11 = DAT_08b1;
+          if ((~bVar11 & 8) == 0) {
+            bVar11 = DAT_08b1;
+            DAT_08b1 = bVar11 | 8;
+            bVar11 = DAT_0bd2;
+            DAT_0bd2 = bVar11 | 0x20;
+            bVar11 = DAT_08ba;
+            if ((~bVar11 & 8) == 0) {
+              bVar11 = DAT_08ba;
+              DAT_08ba = bVar11 | 8;
+              bVar11 = DAT_0bd2;
+              DAT_0bd2 = bVar11 | 2;
+            }
+          }
+          bVar11 = DAT_0889;
+          DAT_0889 = bVar11 & 0xfd;
+          DAT_0b92 = 0;
+        }
+        bVar11 = DAT_08b6;
+        DAT_08b6 = bVar11 | 2;
+      }
+      else {
+        bVar11 = DAT_08b6;
+        if ((bVar11 & 2) == 0) {
+          bVar11 = DAT_0bcd;
+          bVar5 = DAT_0d8a;
+          if ((bVar5 < bVar11) && (bVar11 = DAT_08b1, (bVar11 & 8) != 0)) {
+            bVar11 = DAT_08b1;
+            DAT_08b1 = bVar11 & 0xf7;
+            bVar11 = DAT_0bd2;
+            DAT_0bd2 = bVar11 | 0x20;
+            bVar11 = DAT_08af;
+            if (((~bVar11 & 8) == 0) && (bVar11 = DAT_08af, (~bVar11 & 4) == 0)) {
+              bVar11 = DAT_0889;
+              DAT_0889 = bVar11 | 2;
+              DAT_0b94 = 0;
+              uVar17 = DAT_0a83;
+              DAT_0b92 = uVar17;
+              DAT_0b95 = uVar17;
+            }
+          }
+        }
+        else {
+          bVar11 = DAT_08b6;
+          DAT_08b6 = bVar11 & 0xfd;
         }
       }
     }
-    else {
-      DAT_08b6 = DAT_08b6 & 0xfd;
-    }
   }
-  if ((DAT_08b1 & 8) == 0) {
-    DAT_0899 = 0x40;
-    DAT_0898 = 6;
+LAB_e34d:
+  bVar11 = DAT_08b1;
+  if ((bVar11 & 8) == 0) {
+    uVar10 = DAT_0bcb;
+    uVar17 = DAT_0bca;
   }
   else {
-    DAT_0899 = 0x20;
-    DAT_0898 = 5;
+    uVar10 = 0x20;
+    uVar17 = 5;
   }
+  DAT_0899 = uVar10;
+  DAT_0898 = uVar17;
   do {
-    bVar14 = DAT_008b;
-    if ((~bVar14 & 2) != 0) {
-      DAT_08cc = (undefined *)DAT_0092;
-      DAT_088d = DAT_088d & 0xfd;
+    bVar11 = DAT_008b;
+    if ((~bVar11 & 2) != 0) {
+      uVar13 = DAT_0092;
+      DAT_08cc = uVar13;
+      bVar11 = DAT_088d;
+      DAT_088d = bVar11 & 0xfd;
       goto LAB_e37e;
     }
-    sVar7 = DAT_0044;
-  } while (sVar7 - DAT_08c8 < 0);
-  DAT_088d = DAT_088d | 2;
+    sVar16 = DAT_0044;
+    sVar3 = DAT_08c8;
+  } while (sVar16 - sVar3 < 0);
+  bVar11 = DAT_088d;
+  DAT_088d = bVar11 | 2;
 LAB_e37e:
-  DAT_088d = DAT_088d & 0xfe;
+  bVar11 = DAT_088d;
+  DAT_088d = bVar11 & 0xfe;
   FUN_f39d();
-  uVar15 = DAT_0c9a;
-  if ((~DAT_088d & 2) == 0) {
-    DAT_0c40 = DAT_08cc;
+  bVar11 = DAT_088d;
+  if ((~bVar11 & 2) == 0) {
+    puVar19 = &DAT_0c42;
+    puVar18 = &DAT_0c58;
+    bVar11 = DAT_0bfe;
+    if ((bVar11 & 0x80) != 0) {
+      bVar11 = DAT_0c04;
+      puVar19 = &DAT_0c42 + bVar11;
+      bVar11 = DAT_0922;
+      puVar18 = &DAT_0c58 + (bVar11 & 0xff1f);
+    }
+    uVar13 = DAT_08cc;
+    *puVar19 = uVar13;
+    *puVar18 = uVar13;
+    DAT_0c40 = uVar13;
     DAT_08c2 = 0x40;
     DAT_08c3 = 0;
   }
-  bVar14 = DAT_0bd2;
-  if (((DAT_0d53 != -0x80) && ((~DAT_08a0 & 4) == 0)) && ((~DAT_08b2 & 0x80) == 0)) {
-    bVar13 = (byte)((ushort)DAT_0c40 >> 8);
-    if ((bVar13 < 0x1a) || (0xf5 < bVar13)) {
-      if ((DAT_08b5 & 0x40) == 0) {
-        DAT_08b5 = DAT_08b5 | 0x40;
-        DAT_0bab = DAT_0bab | 0x20;
+  cVar12 = DAT_0d53;
+  if (((cVar12 != -0x80) && (bVar11 = DAT_08a0, (~bVar11 & 4) == 0)) &&
+     (bVar11 = DAT_08b2, (~bVar11 & 0x80) == 0)) {
+    uVar13 = DAT_0c40;
+    bVar11 = (byte)((ushort)uVar13 >> 8);
+    if ((bVar11 < 0x1a) || (0xf5 < bVar11)) {
+      bVar11 = DAT_08b5;
+      if ((bVar11 & 0x40) == 0) {
+        bVar11 = DAT_08b5;
+        DAT_08b5 = bVar11 | 0x40;
+        bVar11 = DAT_0bab;
+        DAT_0bab = bVar11 | 0x20;
       }
-      else if ((DAT_0d89 < DAT_0b3e) && ((~DAT_08af & 0x20) == 0)) {
-        DAT_08af = DAT_08af | 0x20;
-        bVar14 = DAT_0bd2 | 0x80;
-        if ((~DAT_08b8 & 0x20) == 0) {
-          DAT_08b8 = DAT_08b8 | 0x20;
-          bVar14 = DAT_0bd2 | 0x88;
+      else {
+        bVar11 = DAT_0b3e;
+        bVar5 = DAT_0d89;
+        if ((bVar5 < bVar11) && (bVar11 = DAT_08af, (~bVar11 & 0x20) == 0)) {
+          bVar11 = DAT_08af;
+          DAT_08af = bVar11 | 0x20;
+          bVar11 = DAT_0bd2;
+          DAT_0bd2 = bVar11 | 0x80;
+          bVar11 = DAT_08b8;
+          if ((~bVar11 & 0x20) == 0) {
+            bVar11 = DAT_08b8;
+            DAT_08b8 = bVar11 | 0x20;
+            bVar11 = DAT_0bd2;
+            DAT_0bd2 = bVar11 | 8;
+          }
         }
-      }
-    }
-    else if ((DAT_08b5 & 0x40) == 0) {
-      if (DAT_0d8a < DAT_0b4b) {
-        if ((DAT_08af & 0x20) != 0) {
-          DAT_08af = DAT_08af & 0xdf;
-          DAT_0bd2 = DAT_0bd2 | 0x80;
-        }
-        DAT_0bab = DAT_0bab & 0xdf;
-        bVar14 = DAT_0bd2;
       }
     }
     else {
-      DAT_08b5 = DAT_08b5 & 0xbf;
+      bVar11 = DAT_08b5;
+      if ((bVar11 & 0x40) == 0) {
+        bVar11 = DAT_0b4b;
+        bVar5 = DAT_0d8a;
+        if (bVar5 < bVar11) {
+          bVar11 = DAT_08af;
+          if ((bVar11 & 0x20) != 0) {
+            bVar11 = DAT_08af;
+            DAT_08af = bVar11 & 0xdf;
+            bVar11 = DAT_0bd2;
+            DAT_0bd2 = bVar11 | 0x80;
+          }
+          bVar11 = DAT_0bab;
+          DAT_0bab = bVar11 & 0xdf;
+        }
+      }
+      else {
+        bVar11 = DAT_08b5;
+        DAT_08b5 = bVar11 & 0xbf;
+      }
     }
   }
-  DAT_0bd2 = bVar14;
-  if (DAT_0d8b == -0x80) {
-    if (DAT_0c04 == '\x01') {
-      DAT_0c9a = DAT_0c44;
+  cVar12 = DAT_0c04;
+  cVar7 = DAT_0d8b;
+  if (cVar7 == -0x80) {
+    if (cVar12 == '\x01') {
+      uVar13 = DAT_0c9a;
+      DAT_0c9c = uVar13;
+      uVar13 = DAT_0c44;
+      DAT_0c9a = uVar13;
       goto LAB_e461;
     }
   }
-  else if (DAT_0c04 == '\0') {
-    DAT_0c9a = DAT_0c42;
+  else if (cVar12 == '\0') {
+    uVar13 = DAT_0c9a;
+    DAT_0c9c = uVar13;
+    uVar13 = DAT_0c42;
+    DAT_0c9a = uVar13;
 LAB_e461:
-    DAT_0c9c = uVar15;
-    if (((~DAT_08af & 0x20) == 0) && ((DAT_08af & 0x10) == 0)) {
-      if ((~DAT_0ca8 & 1) == 0) {
-        DAT_0c8a = DAT_0c88;
-        DAT_0c94 = DAT_0c88;
-      }
-      else if (DAT_0d8d == '\x01') {
-LAB_e491:
-        DAT_0c8a = (undefined *)((ushort)DAT_0d94 * 2 + 0xc58);
-        DAT_0c94 = DAT_0c8a;
-      }
-      else if (DAT_0d8d == '\x02') {
-        uVar15 = (ushort)DAT_0d95 * 2 + 0xc58;
-        uVar6 = uVar15 + (short)((uint)DAT_0d8e * (uint)((ushort)DAT_0d94 * 2 + 0xc58) >> 8);
-        iVar8 = (uint)DAT_0d8f * (uint)uVar15;
-        DAT_0df7 = (ushort)((uint)iVar8 >> 8);
-        sVar7 = DAT_0df7 + uVar6;
-        uVar10 = CONCAT12(CARRY2(DAT_0df7,uVar6),sVar7);
-        _DAT_0c9e = (uint)uVar10;
-        uVar11 = _DAT_0c9e;
-        RAM0x0c9f = (ushort)(uVar10 >> 8);
-        DAT_0ca0._1_1_ = (undefined1)sVar7;
-        _DAT_0dfa = CONCAT21(RAM0x0c9f / 2,
-                             (char)(CONCAT11((char)(RAM0x0c9f % 2),(undefined1)DAT_0ca0) / 2));
-        DAT_0c8a = RAM0x0dfb;
-        DAT_0c94 = DAT_0c8a;
-        _DAT_0c9e = uVar11;
-        _DAT_0df6 = iVar8;
-      }
-      else if (DAT_0d8d == '\x03') {
-        uVar15 = (ushort)DAT_0d95 * 2 + 0xc58;
-        uVar6 = (ushort)DAT_0d96 * 2 + 0xc58;
-        uVar15 = uVar6 + (short)((uint)DAT_0d8f * (uint)uVar15 >> 8) +
-                         uVar15 + (short)((uint)DAT_0d8e * (uint)((ushort)DAT_0d94 * 2 + 0xc58) >> 8
-                                         );
-        iVar8 = (uint)DAT_0d90 * (uint)uVar6;
-        DAT_0df7 = (ushort)((uint)iVar8 >> 8);
-        sVar7 = DAT_0df7 + uVar15;
-        uVar10 = CONCAT12(CARRY2(DAT_0df7,uVar15),sVar7);
-        _DAT_0c9e = (uint)uVar10;
-        uVar11 = _DAT_0c9e;
-        RAM0x0c9f = (ushort)(uVar10 >> 8);
-        DAT_0ca0._1_1_ = (undefined1)sVar7;
-        _DAT_0dfa = CONCAT21(RAM0x0c9f / 3,
-                             (char)(CONCAT11((char)(RAM0x0c9f % 3),(undefined1)DAT_0ca0) / 3));
-        DAT_0c8a = RAM0x0dfb;
-        DAT_0c94 = DAT_0c8a;
-        _DAT_0c9e = uVar11;
-        _DAT_0df6 = iVar8;
-      }
-      else if (DAT_0d8d == '\x04') {
-        uVar15 = (ushort)DAT_0d95 * 2 + 0xc58;
-        uVar6 = (ushort)DAT_0d96 * 2 + 0xc58;
-        uVar3 = (ushort)DAT_0d97 * 2 + 0xc58;
-        uVar15 = uVar3 + (short)((uint)DAT_0d90 * (uint)uVar6 >> 8) +
-                         uVar6 + (short)((uint)DAT_0d8f * (uint)uVar15 >> 8) +
-                                 uVar15 + (short)((uint)DAT_0d8e *
-                                                  (uint)((ushort)DAT_0d94 * 2 + 0xc58) >> 8);
-        iVar8 = (uint)DAT_0d91 * (uint)uVar3;
-        DAT_0df7 = (ushort)((uint)iVar8 >> 8);
-        sVar7 = DAT_0df7 + uVar15;
-        uVar10 = CONCAT12(CARRY2(DAT_0df7,uVar15),sVar7);
-        _DAT_0c9e = (uint)uVar10;
-        uVar11 = _DAT_0c9e;
-        RAM0x0c9f = (ushort)(uVar10 >> 8);
-        DAT_0ca0._1_1_ = (undefined1)sVar7;
-        _DAT_0dfa = CONCAT21(RAM0x0c9f / 4,
-                             (char)(CONCAT11((char)(RAM0x0c9f % 4),(undefined1)DAT_0ca0) / 4));
-        DAT_0c8a = RAM0x0dfb;
-        DAT_0c94 = DAT_0c8a;
-        _DAT_0c9e = uVar11;
-        _DAT_0df6 = iVar8;
-      }
-      else if (DAT_0d8d == '\x05') {
-        uVar15 = (ushort)DAT_0d95 * 2 + 0xc58;
-        uVar6 = (ushort)DAT_0d96 * 2 + 0xc58;
-        uVar3 = (ushort)DAT_0d97 * 2 + 0xc58;
-        uVar4 = (ushort)DAT_0d98 * 2 + 0xc58;
-        uVar15 = uVar4 + (short)((uint)DAT_0d91 * (uint)uVar3 >> 8) +
-                         uVar3 + (short)((uint)DAT_0d90 * (uint)uVar6 >> 8) +
-                                 uVar6 + (short)((uint)DAT_0d8f * (uint)uVar15 >> 8) +
-                                         uVar15 + (short)((uint)DAT_0d8e *
-                                                          (uint)((ushort)DAT_0d94 * 2 + 0xc58) >> 8)
-        ;
-        iVar8 = (uint)DAT_0d92 * (uint)uVar4;
-        DAT_0df7 = (ushort)((uint)iVar8 >> 8);
-        sVar7 = DAT_0df7 + uVar15;
-        uVar10 = CONCAT12(CARRY2(DAT_0df7,uVar15),sVar7);
-        _DAT_0c9e = (uint)uVar10;
-        uVar11 = _DAT_0c9e;
-        RAM0x0c9f = (ushort)(uVar10 >> 8);
-        DAT_0ca0._1_1_ = (undefined1)sVar7;
-        _DAT_0dfa = CONCAT21(RAM0x0c9f / 5,
-                             (char)(CONCAT11((char)(RAM0x0c9f % 5),(undefined1)DAT_0ca0) / 5));
-        DAT_0c8a = RAM0x0dfb;
-        DAT_0c94 = DAT_0c8a;
-        _DAT_0c9e = uVar11;
-        _DAT_0df6 = iVar8;
+    bVar11 = DAT_08af;
+    if (((~bVar11 & 0x20) == 0) && (bVar11 = DAT_08af, (bVar11 & 0x10) == 0)) {
+      bVar11 = DAT_0ca8;
+      if ((~bVar11 & 1) == 0) {
+        uVar13 = DAT_0c88;
+        DAT_0c8a = uVar13;
+        DAT_0c94 = uVar13;
       }
       else {
-        if (DAT_0d8d != '\x06') goto LAB_e491;
-        uVar15 = (ushort)DAT_0d95 * 2 + 0xc58;
-        uVar6 = (ushort)DAT_0d96 * 2 + 0xc58;
-        uVar3 = (ushort)DAT_0d97 * 2 + 0xc58;
-        uVar4 = (ushort)DAT_0d98 * 2 + 0xc58;
-        uVar5 = (ushort)DAT_0d99 * 2 + 0xc58;
-        uVar15 = uVar5 + (short)((uint)DAT_0d92 * (uint)uVar4 >> 8) +
-                         uVar4 + (short)((uint)DAT_0d91 * (uint)uVar3 >> 8) +
-                                 uVar3 + (short)((uint)DAT_0d90 * (uint)uVar6 >> 8) +
-                                         uVar6 + (short)((uint)DAT_0d8f * (uint)uVar15 >> 8) +
-                                                 uVar15 + (short)((uint)DAT_0d8e *
-                                                                  (uint)((ushort)DAT_0d94 * 2 +
-                                                                        0xc58) >> 8);
-        iVar8 = (uint)DAT_0d93 * (uint)uVar5;
-        DAT_0df7 = (ushort)((uint)iVar8 >> 8);
-        sVar7 = DAT_0df7 + uVar15;
-        uVar10 = CONCAT12(CARRY2(DAT_0df7,uVar15),sVar7);
-        _DAT_0c9e = (uint)uVar10;
-        uVar11 = _DAT_0c9e;
-        RAM0x0c9f = (ushort)(uVar10 >> 8);
-        DAT_0ca0._1_1_ = (undefined1)sVar7;
-        _DAT_0dfa = CONCAT21(RAM0x0c9f / 6,
-                             (char)(CONCAT11((char)(RAM0x0c9f % 6),(undefined1)DAT_0ca0) / 6));
-        DAT_0c8a = RAM0x0dfb;
-        DAT_0c94 = DAT_0c8a;
-        _DAT_0c9e = uVar11;
-        _DAT_0df6 = iVar8;
+        cVar12 = DAT_0d8d;
+        if (cVar12 == '\x01') {
+LAB_e491:
+          bVar11 = DAT_0d94;
+          DAT_0c8a = (&DAT_0c58)[bVar11];
+          DAT_0c94 = (&DAT_0c58)[bVar11];
+        }
+        else if (cVar12 == '\x02') {
+          DAT_0c9e = 0;
+          DAT_0ca0 = 0;
+          bVar5 = DAT_0d94;
+          DAT_0ca0 = (&DAT_0c58)[bVar5];
+          bVar11 = DAT_0d8e;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar13 = DAT_0df7;
+          DAT_0ca0 = uVar13;
+          bVar5 = DAT_0d95;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d8f;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          uVar15 = RAM0c9f;
+          DAT_0dfa = uVar15 / 2;
+          uVar17 = DAT_0ca0._1_1_;
+          DAT_0dfc = (char)(CONCAT11((char)(uVar15 % 2),uVar17) / 2);
+          cVar12 = DAT_0dfa._0_1_;
+          if (cVar12 == '\0') {
+            uVar13 = RAM0dfb;
+          }
+          else {
+            uVar13 = 0xffff;
+          }
+          DAT_0c8a = uVar13;
+          DAT_0c94 = uVar13;
+        }
+        else if (cVar12 == '\x03') {
+          DAT_0c9e = 0;
+          DAT_0ca0 = 0;
+          bVar5 = DAT_0d94;
+          DAT_0ca0 = (&DAT_0c58)[bVar5];
+          bVar11 = DAT_0d8e;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar13 = DAT_0df7;
+          DAT_0ca0 = uVar13;
+          bVar5 = DAT_0d95;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d8f;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          bVar5 = DAT_0d96;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d90;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          uVar15 = RAM0c9f;
+          DAT_0dfa = uVar15 / 3;
+          uVar17 = DAT_0ca0._1_1_;
+          DAT_0dfc = (char)(CONCAT11((char)(uVar15 % 3),uVar17) / 3);
+          cVar12 = DAT_0dfa._0_1_;
+          if (cVar12 == '\0') {
+            uVar13 = RAM0dfb;
+          }
+          else {
+            uVar13 = 0xffff;
+          }
+          DAT_0c8a = uVar13;
+          DAT_0c94 = uVar13;
+        }
+        else if (cVar12 == '\x04') {
+          DAT_0c9e = 0;
+          DAT_0ca0 = 0;
+          bVar5 = DAT_0d94;
+          DAT_0ca0 = (&DAT_0c58)[bVar5];
+          bVar11 = DAT_0d8e;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar13 = DAT_0df7;
+          DAT_0ca0 = uVar13;
+          bVar5 = DAT_0d95;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d8f;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          bVar5 = DAT_0d96;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d90;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          bVar5 = DAT_0d97;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d91;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          uVar15 = RAM0c9f;
+          DAT_0dfa = uVar15 / 4;
+          uVar17 = DAT_0ca0._1_1_;
+          DAT_0dfc = (char)(CONCAT11((char)(uVar15 % 4),uVar17) / 4);
+          cVar12 = DAT_0dfa._0_1_;
+          if (cVar12 == '\0') {
+            uVar13 = RAM0dfb;
+          }
+          else {
+            uVar13 = 0xffff;
+          }
+          DAT_0c8a = uVar13;
+          DAT_0c94 = uVar13;
+        }
+        else if (cVar12 == '\x05') {
+          DAT_0c9e = 0;
+          DAT_0ca0 = 0;
+          bVar5 = DAT_0d94;
+          DAT_0ca0 = (&DAT_0c58)[bVar5];
+          bVar11 = DAT_0d8e;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar13 = DAT_0df7;
+          DAT_0ca0 = uVar13;
+          bVar5 = DAT_0d95;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d8f;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          bVar5 = DAT_0d96;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d90;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          bVar5 = DAT_0d97;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d91;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          bVar5 = DAT_0d98;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d92;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          uVar15 = RAM0c9f;
+          DAT_0dfa = uVar15 / 5;
+          uVar17 = DAT_0ca0._1_1_;
+          DAT_0dfc = (char)(CONCAT11((char)(uVar15 % 5),uVar17) / 5);
+          cVar12 = DAT_0dfa._0_1_;
+          if (cVar12 == '\0') {
+            uVar13 = RAM0dfb;
+          }
+          else {
+            uVar13 = 0xffff;
+          }
+          DAT_0c8a = uVar13;
+          DAT_0c94 = uVar13;
+        }
+        else {
+          if (cVar12 != '\x06') goto LAB_e491;
+          DAT_0c9e = 0;
+          DAT_0ca0 = 0;
+          bVar5 = DAT_0d94;
+          DAT_0ca0 = (&DAT_0c58)[bVar5];
+          bVar11 = DAT_0d8e;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar13 = DAT_0df7;
+          DAT_0ca0 = uVar13;
+          bVar5 = DAT_0d95;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d8f;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          bVar5 = DAT_0d96;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d90;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          bVar5 = DAT_0d97;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d91;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          bVar5 = DAT_0d98;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d92;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          bVar5 = DAT_0d99;
+          uVar15 = (&DAT_0c58)[bVar5];
+          uVar4 = DAT_0ca0;
+          DAT_0ca0 = uVar15 + uVar4;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar15,uVar4)),
+                              bVar11 + CARRY2(uVar15,uVar4));
+          bVar11 = DAT_0d93;
+          iVar2 = (uint)bVar11 * (uint)(ushort)(&DAT_0c58)[bVar5];
+          RAM0df6 = (short)((uint)iVar2 >> 0x10);
+          RAM0df8 = (short)iVar2;
+          uVar4 = DAT_0df7;
+          uVar15 = DAT_0ca0;
+          DAT_0ca0 = uVar4 + uVar15;
+          uVar13 = DAT_0c9e;
+          bVar11 = (byte)((ushort)uVar13 >> 8);
+          DAT_0c9e = CONCAT11(bVar11 + CARRY1(bVar11,CARRY2(uVar4,uVar15)),
+                              bVar11 + CARRY2(uVar4,uVar15));
+          uVar15 = RAM0c9f;
+          DAT_0dfa = uVar15 / 6;
+          uVar17 = DAT_0ca0._1_1_;
+          DAT_0dfc = (char)(CONCAT11((char)(uVar15 % 6),uVar17) / 6);
+          cVar12 = DAT_0dfa._0_1_;
+          if (cVar12 == '\0') {
+            uVar13 = RAM0dfb;
+          }
+          else {
+            uVar13 = 0xffff;
+          }
+          DAT_0c8a = uVar13;
+          DAT_0c94 = uVar13;
+        }
       }
     }
     else {
-      DAT_0c8a = DAT_0da8;
+      uVar13 = DAT_0da8;
+      DAT_0c8a = uVar13;
     }
+    uVar13 = DAT_08f2;
     FUN_f3b7();
-    puVar9 = DAT_0c8a + -0x1eb7;
-    if (DAT_0c8a < &UNK_1eb7) {
-      iVar8 = (uint)CONCAT11((~(byte)((ushort)puVar9 >> 8) + 1) - ((char)-(char)puVar9 != '\0'),
-                             -(char)puVar9) * (uint)extraout_A * 2;
-      uVar15 = (ushort)iVar8;
-      bVar14 = (byte)((uint)iVar8 >> 0x18);
-      cVar2 = bVar14 + (0xff7f < uVar15);
-      if (CONCAT11(bVar14 + CARRY1(bVar14,0xff7f < uVar15),cVar2) < 0x100) {
-        _DAT_0e04 = CONCAT12(cVar2,uVar15 + 0x80);
-        DAT_0c8c = &UNK_1eb7 + -(short)DAT_0e04;
-        if (DAT_0e04 < &UNK_1eb8) goto LAB_ea7c;
+    DAT_0c93 = extraout_A;
+    bVar11 = DAT_0c93;
+    puVar6 = (undefined *)DAT_0c8a;
+    puVar14 = puVar6 + -0x1eb7;
+    if (puVar6 < &UNK_1eb7) {
+      iVar2 = (uint)CONCAT11((~(byte)((ushort)puVar14 >> 8) + 1) - ((char)-(char)puVar14 != '\0'),
+                             -(char)puVar14) * (uint)bVar11 * 2;
+      uVar15 = (ushort)iVar2;
+      bVar11 = (byte)((uint)iVar2 >> 0x18);
+      cVar12 = bVar11 + (0xff7f < uVar15);
+      if (CONCAT11(bVar11 + CARRY1(bVar11,0xff7f < uVar15),cVar12) < 0x100) {
+        DAT_0e04._0_1_ = cVar12;
+        RAM0e05 = uVar15 + 0x80;
+        puVar6 = (undefined *)DAT_0e04;
+        puVar14 = &UNK_1eb7 + -(short)puVar6;
+        if (puVar6 < &UNK_1eb8) goto LAB_ea7c;
       }
-      DAT_0c8c = (undefined *)0x0;
+      puVar14 = (undefined *)0x0;
     }
     else {
-      iVar8 = ZEXT24(puVar9) * (uint)extraout_A * 2;
-      uVar15 = (ushort)iVar8;
-      bVar14 = (byte)((uint)iVar8 >> 0x18);
-      cVar2 = bVar14 + (0xff7f < uVar15);
-      if (CONCAT11(bVar14 + CARRY1(bVar14,0xff7f < uVar15),cVar2) < 0x100) {
-        _DAT_0e04 = CONCAT12(cVar2,uVar15 + 0x80);
-        DAT_0c8c = &UNK_1eb7 + (short)DAT_0e04;
-        if (DAT_0e04 < 0xe149) goto LAB_ea7c;
+      iVar2 = ZEXT24(puVar14) * (uint)bVar11 * 2;
+      uVar15 = (ushort)iVar2;
+      bVar11 = (byte)((uint)iVar2 >> 0x18);
+      cVar12 = bVar11 + (0xff7f < uVar15);
+      if (CONCAT11(bVar11 + CARRY1(bVar11,0xff7f < uVar15),cVar12) < 0x100) {
+        DAT_0e04._0_1_ = cVar12;
+        RAM0e05 = uVar15 + 0x80;
+        uVar15 = DAT_0e04;
+        puVar14 = &UNK_1eb7 + uVar15;
+        if (uVar15 < 0xe149) goto LAB_ea7c;
       }
-      DAT_0c8c = (undefined *)0xffff;
+      puVar14 = (undefined *)0xffff;
     }
 LAB_ea7c:
-    DAT_0c93 = extraout_A;
-    if ((~DAT_0ca8 & 1) == 0) {
-      if ((((DAT_0ca8 & 2) == 0) || (DAT_0c9c <= DAT_0c9a)) || (DAT_0c9c - DAT_0c9a < DAT_0dac)) {
-        if ((((~DAT_0ca8 & 2) != 0) || (DAT_0c9a <= DAT_0c9c)) || (DAT_0c9a - DAT_0c9c < DAT_0dac))
-        {
-          DAT_0ca9 = 0;
-          goto LAB_ead9;
+    DAT_0c8c = puVar14;
+    bVar11 = DAT_0ca8;
+    if ((~bVar11 & 1) == 0) {
+      bVar11 = DAT_0ca8;
+      if ((bVar11 & 2) == 0) {
+LAB_eaa2:
+        bVar11 = DAT_0ca8;
+        if ((~bVar11 & 2) == 0) {
+          uVar15 = DAT_0c9a;
+          uVar4 = DAT_0c9c;
+          if ((uVar4 < uVar15) && (uVar8 = DAT_0dac, uVar8 <= uVar15 - uVar4)) {
+            bVar11 = DAT_0ca8;
+            DAT_0ca8 = bVar11 | 2;
+            cVar12 = DAT_0c03;
+            DAT_0922 = cVar12 + '\f';
+            goto LAB_eac0;
+          }
         }
-        DAT_0ca8 = DAT_0ca8 | 2;
-        DAT_0922 = DAT_0c03 + '\f';
+        DAT_0ca9 = 0;
       }
       else {
-        DAT_0ca8 = DAT_0ca8 & 0xfd;
-        DAT_0922 = DAT_0c03;
-      }
-      DAT_0ca9 = (DAT_0ca9 + 1) - (0xfe < DAT_0ca9);
-      if (DAT_0d9a <= DAT_0ca9) {
-        DAT_0ca8 = DAT_0ca8 | 1;
+        uVar4 = DAT_0c9c;
+        uVar15 = DAT_0c9a;
+        if ((uVar4 <= uVar15) || (uVar8 = DAT_0dac, uVar4 - uVar15 < uVar8)) goto LAB_eaa2;
+        bVar11 = DAT_0ca8;
+        DAT_0ca8 = bVar11 & 0xfd;
+        uVar17 = DAT_0c03;
+        DAT_0922 = uVar17;
+LAB_eac0:
+        bVar11 = DAT_0ca9;
+        bVar11 = (bVar11 + 1) - (0xfe < bVar11);
+        DAT_0ca9 = bVar11;
+        bVar5 = DAT_0d9a;
+        if (bVar5 <= bVar11) {
+          bVar11 = DAT_0ca8;
+          DAT_0ca8 = bVar11 | 1;
+        }
       }
     }
   }
-LAB_ead9:
-  if ((((DAT_0bfe & 0x80) != 0) && (DAT_0c9a < DAT_0c9c)) && (DAT_0c04 == DAT_0d8c)) {
-    DAT_0c88 = DAT_0c40;
+  bVar11 = DAT_0bfe;
+  if ((bVar11 & 0x80) != 0) {
+    uVar15 = DAT_0c9a;
+    uVar4 = DAT_0c9c;
+    if (uVar15 < uVar4) {
+      cVar12 = DAT_0c04;
+      cVar7 = DAT_0d8c;
+      if (cVar12 == cVar7) {
+        uVar13 = DAT_0c40;
+        DAT_0c88 = uVar13;
+      }
+    }
   }
-  if ((((~DAT_0889 & 4) == 0) && ((~DAT_0885 & 0x80) == 0)) && ((DAT_0889 & 0x10) != 0)) {
-    DAT_0889 = DAT_0889 | 0xc;
+  bVar11 = DAT_0889;
+  if ((((~bVar11 & 4) == 0) && (bVar11 = DAT_0885, (~bVar11 & 0x80) == 0)) &&
+     (bVar11 = DAT_0889, (bVar11 & 0x10) != 0)) {
+    bVar11 = DAT_0889;
+    DAT_0889 = bVar11 | 8;
+    bVar11 = DAT_0889;
+    DAT_0889 = bVar11 | 4;
   }
-  uVar15 = (ushort)DAT_0a53 * 2 + 0xa54;
-  DAT_0a52 = (DAT_0a52 + 1) - (0xfe < DAT_0a52);
-  if (DAT_0a52 < 0x18) {
-    uVar12 = _DAT_0a4f;
-    if (1 < DAT_0a52) {
-      _DAT_0df7 = CONCAT21(RAM0x0a50,DAT_0df9);
-      _DAT_0df6 = CONCAT13(DAT_0a4f._0_1_,_DAT_0df7);
+  bVar11 = DAT_0a53;
+  puVar1 = (ushort *)(&DAT_0a54 + (ushort)bVar11 * 2);
+  bVar11 = DAT_0a52;
+  bVar11 = (bVar11 + 1) - (0xfe < bVar11);
+  DAT_0a52 = bVar11;
+  if (bVar11 < 0x18) {
+    if (1 < bVar11) {
+      uVar17 = DAT_0a4f._0_1_;
+      DAT_0df6 = uVar17;
+      uVar13 = RAM0a50;
+      DAT_0df7 = uVar13;
       goto LAB_eb49;
     }
   }
   else {
-    _DAT_0df7 = CONCAT21(RAM0x0a50 - uVar15,DAT_0df9);
-    _DAT_0df6 = CONCAT13(DAT_0a4f._0_1_ - (RAM0x0a50 < uVar15),_DAT_0df7);
+    uVar15 = RAM0a50;
+    DAT_0df7 = uVar15 - *puVar1;
+    cVar12 = DAT_0a4f._0_1_;
+    DAT_0df6 = cVar12 - (uVar15 < *puVar1);
 LAB_eb49:
-    uVar15 = DAT_0c08;
-    if (DAT_0c07 != '\0') {
+    cVar12 = DAT_0c07;
+    if (cVar12 == '\0') {
+      uVar15 = DAT_0c08;
+    }
+    else {
       uVar15 = 0xffff;
     }
-    sVar7 = DAT_0df7 + uVar15;
-    bVar1 = CARRY2(DAT_0df7,uVar15);
-    _DAT_0df7 = CONCAT21(sVar7,DAT_0df9);
-    cVar2 = DAT_0df6 + bVar1;
-    _DAT_0a4f = CONCAT12(cVar2,sVar7);
-    uVar12 = _DAT_0a4f;
-    _DAT_0df6 = CONCAT13(cVar2,_DAT_0df7);
-    if (DAT_0a52 < 0x17) {
-      bVar14 = DAT_0a52 - 1;
-      RAM0x0df8 = (ushort)bVar14;
-      DAT_0a51 = (undefined1)sVar7;
-      RAM0x0df8 = CONCAT11((char)(CONCAT11((char)(DAT_0a4f % (ushort)bVar14),DAT_0a51) / RAM0x0df8),
-                           bVar14);
-      _DAT_0df6 = CONCAT22(DAT_0a4f / bVar14,RAM0x0df8);
-      iVar8 = (_DAT_0df6 >> 8 & 0xffff) * 0x16;
-      _DAT_0df7 = CONCAT21((short)iVar8,bVar14);
-      _DAT_0df6 = CONCAT13((char)((uint)iVar8 >> 0x10),_DAT_0df7);
+    *puVar1 = uVar15;
+    uVar15 = DAT_0df7;
+    sVar16 = uVar15 + *puVar1;
+    RAM0a50 = sVar16;
+    DAT_0df7 = sVar16;
+    cVar12 = DAT_0df6;
+    cVar12 = cVar12 + CARRY2(uVar15,*puVar1);
+    DAT_0a4f._0_1_ = cVar12;
+    DAT_0df6 = cVar12;
+    bVar11 = DAT_0a52;
+    if (bVar11 < 0x17) {
+      cVar12 = DAT_0a52;
+      bVar11 = cVar12 - 1;
+      DAT_0df9 = bVar11;
+      uVar15 = DAT_0a4f;
+      RAM0df6 = uVar15 / bVar11;
+      uVar17 = DAT_0a51;
+      bVar5 = DAT_0df9;
+      DAT_0df7._1_1_ = (char)(CONCAT11((char)(uVar15 % (ushort)bVar11),uVar17) / (ushort)bVar5);
+      uVar15 = DAT_0df7;
+      DAT_0df7 = (short)((uint)uVar15 * 0x16);
+      DAT_0df6 = (char)((uint)uVar15 * 0x16 >> 0x10);
     }
-    DAT_0a4b._0_1_ = DAT_0df6;
-    RAM0x0a4c = DAT_0df7;
-    DAT_0a53 = DAT_0a53 + 1;
-    if (0x15 < DAT_0a53) {
-      DAT_0a53 = 0;
+    uVar17 = DAT_0df6;
+    DAT_0a4b._0_1_ = uVar17;
+    uVar13 = DAT_0df7;
+    RAM0a4c = uVar13;
+    cVar12 = DAT_0a53;
+    bVar11 = cVar12 + 1;
+    if (0x15 < bVar11) {
+      bVar11 = 0;
     }
+    DAT_0a53 = bVar11;
   }
-  _DAT_0a4f = uVar12;
-  if ((DAT_0dd5 != -0x80) && ((~DAT_0d06 & 0x80) == 0)) {
-    if (DAT_0a2e._0_1_ < DAT_0dd8) {
-      if (((DAT_0a2e._0_1_ < DAT_0dd7) && (DAT_0d0a < DAT_0dd6)) && ((~DAT_0d08 & 8) == 0)) {
-        DAT_0afc = 0;
-        DAT_0d08 = DAT_0d08 & 0xfe | 8;
+  cVar12 = DAT_0dd5;
+  if ((cVar12 != -0x80) && (bVar11 = DAT_0d06, (~bVar11 & 0x80) == 0)) {
+    bVar11 = DAT_0a2e._0_1_;
+    bVar5 = DAT_0dd8;
+    if (bVar11 < bVar5) {
+      bVar5 = DAT_0dd7;
+      if (bVar11 < bVar5) {
+        bVar11 = DAT_0d0a;
+        bVar5 = DAT_0dd6;
+        if ((bVar11 < bVar5) && (bVar11 = DAT_0d08, (~bVar11 & 8) == 0)) {
+          bVar11 = DAT_0d08;
+          DAT_0d08 = bVar11 & 0xfe;
+          DAT_0afc = 0;
+          bVar11 = DAT_0d08;
+          DAT_0d08 = bVar11 | 8;
+        }
       }
     }
     else {
-      DAT_0d08 = DAT_0d08 | 1;
+      bVar11 = DAT_0d08;
+      DAT_0d08 = bVar11 | 1;
     }
   }
-  if (DAT_0d87 != '\t') {
-    if (DAT_0c04 != '\0') goto LAB_ec8f;
-    if ((((~DAT_0ada & 0x10) != 0) || ((DAT_0ada & 4) != 0)) &&
-       (DAT_0ae1 = (DAT_0ae1 + 1) - (0xfe < DAT_0ae1), DAT_0ddb <= DAT_0ae1)) {
-      DAT_0ae1 = 0;
-      if ((DAT_0ada & 0x10) == 0) {
-        uVar15 = DAT_0ad6 - DAT_0db8;
-        if (DAT_0ad6 < DAT_0db8) {
-          uVar15 = 0;
+  cVar12 = DAT_0d87;
+  if (cVar12 != '\t') {
+    cVar12 = DAT_0c04;
+    if (cVar12 != '\0') goto LAB_ec8f;
+    bVar11 = DAT_0ada;
+    if (((~bVar11 & 0x10) != 0) || (bVar11 = DAT_0ada, (bVar11 & 4) != 0)) {
+      bVar11 = DAT_0ae1;
+      bVar11 = (bVar11 + 1) - (0xfe < bVar11);
+      DAT_0ae1 = bVar11;
+      bVar5 = DAT_0ddb;
+      if (bVar5 <= bVar11) {
+        DAT_0ae1 = 0;
+        bVar11 = DAT_0ada;
+        if ((bVar11 & 0x10) == 0) {
+          uVar15 = DAT_0ad6;
+          uVar4 = DAT_0db8;
+          sVar16 = uVar15 - uVar4;
+          if (uVar15 < uVar4) {
+            sVar16 = 0;
+          }
+          DAT_0ad6 = sVar16;
+          bVar11 = DAT_0ad9;
+          bVar5 = DAT_0dda;
+          cVar12 = bVar11 - bVar5;
+          if (bVar11 < bVar5) {
+            cVar12 = '\0';
+          }
+          DAT_0ad9 = cVar12;
         }
-        bVar1 = DAT_0ad9 < DAT_0dda;
-        DAT_0ad6 = uVar15;
-        DAT_0ad9 = DAT_0ad9 - DAT_0dda;
-        if (bVar1) {
-          DAT_0ad9 = 0;
-        }
-      }
-      else {
-        uVar15 = DAT_0ad6 + DAT_0db8;
-        if ((CARRY2(DAT_0ad6,DAT_0db8)) || (0x200 < uVar15)) {
-          uVar15 = 0x200;
-        }
-        bVar14 = DAT_0ad9 + DAT_0dda;
-        DAT_0ad6 = uVar15;
-        if ((CARRY1(DAT_0ad9,DAT_0dda)) || (DAT_0ad9 = bVar14, DAT_0ddc < bVar14)) {
-          DAT_0ad9 = DAT_0ddc;
+        else {
+          uVar4 = DAT_0ad6;
+          uVar8 = DAT_0db8;
+          uVar15 = uVar4 + uVar8;
+          if ((CARRY2(uVar4,uVar8)) || (0x200 < uVar15)) {
+            uVar15 = 0x200;
+          }
+          DAT_0ad6 = uVar15;
+          bVar5 = DAT_0ad9;
+          bVar9 = DAT_0dda;
+          bVar11 = bVar5 + bVar9;
+          if ((CARRY1(bVar5,bVar9)) || (bVar5 = DAT_0ddc, bVar5 < bVar11)) {
+            bVar11 = DAT_0ddc;
+          }
+          DAT_0ad9 = bVar11;
         }
       }
     }
-    if ((DAT_0ada & 0x20) != 0) {
-      DAT_0ad4 = DAT_0ad6;
-      DAT_0ad8 = DAT_0ad9;
+    bVar11 = DAT_0ada;
+    if ((bVar11 & 0x20) != 0) {
+      uVar13 = DAT_0ad6;
+      DAT_0ad4 = uVar13;
+      uVar17 = DAT_0ad9;
+      DAT_0ad8 = uVar17;
       goto LAB_ec8f;
     }
   }
   DAT_0ad4 = 0;
   DAT_0ad8 = 0;
 LAB_ec8f:
-  DAT_08be = DAT_08be & 0x5f;
+  bVar11 = DAT_08be;
+  DAT_08be = bVar11 & 0xdf;
+  bVar11 = DAT_08be;
+  DAT_08be = bVar11 & 0x7f;
   return;
 }
 

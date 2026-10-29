@@ -1,4 +1,4 @@
-Language: HC-12:BE:16:default
+Language: XT660-CPU12:BE:16:default
 Instruction bytes: 42849
 Functions decompiled: 225
 Functions failed: 0

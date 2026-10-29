@@ -3,19 +3,27 @@
 void FUN_a462(void)
 
 {
-  if ((DAT_09cf & 0x10) != 0) {
-    if (DAT_09da <= DAT_09d2) {
-      if (DAT_09d2 != DAT_09da) {
-        DAT_09de = 0;
-        return;
-      }
-      DAT_09de = (DAT_09de + 1) - (0xfe < DAT_09de);
-      if (DAT_09de < DAT_3214) {
+  byte bVar1;
+  ushort uVar2;
+  ushort uVar3;
+  
+  bVar1 = DAT_09cf;
+  if ((bVar1 & 0x10) != 0) {
+    uVar2 = DAT_09d2;
+    uVar3 = DAT_09da;
+    if (uVar3 <= uVar2) {
+      if (uVar2 != uVar3) goto LAB_a484;
+      bVar1 = DAT_09de;
+      bVar1 = (bVar1 + 1) - (0xfe < bVar1);
+      DAT_09de = bVar1;
+      if (bVar1 < DAT_3214) {
         return;
       }
     }
-    DAT_09cf = DAT_09cf & 0xef;
+    bVar1 = DAT_09cf;
+    DAT_09cf = bVar1 & 0xef;
   }
+LAB_a484:
   DAT_09de = 0;
   return;
 }

@@ -9,7 +9,8 @@ void FUN_d81d(void)
   DAT_0000 = bVar1 & 0xfb;
   bVar1 = DAT_00f0;
   DAT_00f0 = bVar1 & 0xfd;
-  DAT_0889 = DAT_0889 & 0x7f;
+  bVar1 = DAT_0889;
+  DAT_0889 = bVar1 & 0x7f;
   return;
 }
 

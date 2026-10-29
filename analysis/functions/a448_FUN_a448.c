@@ -3,17 +3,20 @@
 void FUN_a448(void)
 
 {
-  undefined1 extraout_A;
-  undefined *puVar1;
+  byte bVar1;
+  ushort uVar2;
+  byte *table;
   
-  if (DAT_31ea < DAT_0898) {
-    puVar1 = &UNK_3200;
+  bVar1 = DAT_0898;
+  if (DAT_31ea < bVar1) {
+    table = &UNK_3200;
   }
   else {
-    puVar1 = &UNK_31ec;
+    table = &UNK_31ec;
   }
-  lookup_u8_uniform_u16_axis(DAT_0900,puVar1);
-  DAT_09d9 = extraout_A;
+  uVar2 = DAT_0900;
+  uVar2 = lookup_u8_uniform_u16_axis(uVar2,table);
+  DAT_09d9 = (char)(uVar2 >> 8);
   return;
 }
 

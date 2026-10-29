@@ -1,80 +1,118 @@
 /* Entry f043 */
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_f043(void)
 
 {
-  uint3 uVar1;
-  uint3 uVar2;
-  undefined3 uVar3;
-  undefined3 uVar4;
+  char cVar1;
+  undefined1 uVar2;
+  ushort uVar3;
+  undefined2 uVar4;
+  ushort uVar5;
+  char cVar6;
+  byte bVar7;
+  byte bVar8;
+  char cVar9;
   
-  uVar4 = _DAT_0c1b;
-  uVar3 = _DAT_0c17;
-  if (DAT_0c05 != 0) {
-    if (DAT_0c30 <= _DAT_0c07) {
+  cVar1 = DAT_0c05;
+  if (cVar1 != '\0') {
+    uVar3 = RAM0c07;
+    uVar5 = DAT_0c30;
+    if (uVar5 <= uVar3) {
 LAB_f071:
       FUN_721f();
       return;
     }
-    if (DAT_0c2e <= _DAT_0c07) {
-      if (DAT_0c33 == '\0') {
-        DAT_0c33 = '\x01';
+    uVar5 = DAT_0c2e;
+    if (uVar5 <= uVar3) {
+      cVar9 = DAT_0c33;
+      if (cVar9 == '\0') {
+        cVar9 = '\x01';
       }
-      else if ((DAT_0c05 != DAT_0c32) && ((byte)(DAT_0c05 - DAT_0c32) != '\v')) goto LAB_f071;
-      DAT_0c32 = DAT_0c05;
+      else {
+        cVar6 = DAT_0c32;
+        if ((cVar1 != cVar6) && ((char)(cVar1 - cVar6) != '\v')) goto LAB_f071;
+      }
+      DAT_0c33 = cVar9;
+      uVar2 = DAT_0c05;
+      DAT_0c32 = uVar2;
     }
-    uVar1 = (uint3)_DAT_0c1b >> 0x10;
-    _DAT_0c1f = _DAT_0c1b;
-    uVar2 = (uint3)_DAT_0c17 >> 0x10;
-    _DAT_0c1b = _DAT_0c17;
-    _DAT_0c17 = _DAT_0c07;
-    if (3 < DAT_0c05) {
-      DAT_0c36 = (ushort)DAT_0d9f << 2;
-      if (((char)((uint3)_DAT_0c07 >> 0x10) == '\0' && (char)uVar2 == '\0') && (char)uVar1 == '\0')
-      {
+    uVar2 = DAT_0c1b;
+    DAT_0c1f = uVar2;
+    uVar4 = DAT_0c1c;
+    DAT_0c20 = uVar4;
+    uVar2 = DAT_0c17;
+    DAT_0c1b = uVar2;
+    uVar4 = DAT_0c18;
+    DAT_0c1c = uVar4;
+    uVar2 = DAT_0c07;
+    DAT_0c17 = uVar2;
+    uVar4 = DAT_0c08;
+    DAT_0c18 = uVar4;
+    bVar8 = DAT_0c05;
+    if (3 < bVar8) {
+      bVar8 = DAT_0d9f;
+      DAT_0c36 = (ushort)bVar8 << 2;
+      cVar1 = DAT_0c17;
+      cVar9 = DAT_0c1b;
+      cVar6 = DAT_0c1f;
+      if ((cVar1 == '\0' && cVar9 == '\0') && cVar6 == '\0') {
         FUN_f1ce();
       }
       else {
-        DAT_0df7._1_1_ = (undefined1)(ushort)((uint3)uVar3 >> 10);
-        DAT_0df6 = (undefined1)(ushort)((uint3)uVar4 >> 10);
+        uVar3 = RAM0c1b;
+        DAT_0df7._1_1_ = (char)(uVar3 >> 2);
+        uVar3 = RAM0c1f;
+        DAT_0df6 = (char)(uVar3 >> 2);
+        uVar4 = RAM0c17;
+        uVar2 = DAT_0df6;
         FUN_f26e();
       }
-      if ((DAT_0bfe & 0x40) != 0) {
-        DAT_0c14 = DAT_0c08 + DAT_0c0c;
-        DAT_0c13 = DAT_0c07 + DAT_0c0b + CARRY2(DAT_0c08,DAT_0c0c);
-        if ((DAT_0c07 == '\0') && (DAT_0c08 < DAT_0db6)) {
-          _DAT_0c1f = CONCAT12(0xff,DAT_0c20);
-          DAT_0880 = DAT_0880 & 0x7f;
-          DAT_0881 = DAT_0881 & 0x7f;
-          DAT_088c = DAT_088c & 0xdf;
-          DAT_0922 = 0;
-          DAT_0923 = 0;
-          DAT_0bfe = DAT_0bfe | 0x80;
-          DAT_0c03 = 0;
-          DAT_0c04 = 0;
-          return;
-        }
-        _DAT_0c1f = CONCAT12(DAT_0c1f | DAT_0c1b,DAT_0c20);
-        DAT_0880 = DAT_0880 & 0x7f;
-        DAT_0881 = DAT_0881 & 0x7f;
-        DAT_088c = DAT_088c & 0xdf;
-        DAT_0922 = 0;
-        DAT_0923 = 0;
-        DAT_0bfe = DAT_0bfe | 0x80;
+      bVar8 = DAT_0bfe;
+      if ((bVar8 & 0x40) != 0) {
         DAT_0c03 = 0;
         DAT_0c04 = 0;
+        DAT_0922 = 0;
+        DAT_0923 = 0;
+        bVar8 = DAT_0bfe;
+        DAT_0bfe = bVar8 | 0x80;
+        bVar8 = DAT_0880;
+        DAT_0880 = bVar8 & 0x7f;
+        bVar8 = DAT_0881;
+        DAT_0881 = bVar8 & 0x7f;
+        bVar8 = DAT_088c;
+        DAT_088c = bVar8 & 0xdf;
+        uVar3 = DAT_0c08;
+        uVar5 = DAT_0c0c;
+        DAT_0c14 = uVar3 + uVar5;
+        cVar1 = DAT_0c07;
+        cVar9 = DAT_0c0b;
+        DAT_0c13 = cVar1 + cVar9 + CARRY2(uVar3,uVar5);
+        cVar1 = DAT_0c07;
+        if (cVar1 == '\0') {
+          uVar3 = DAT_0c08;
+          uVar5 = DAT_0db6;
+          if (uVar3 < uVar5) {
+            DAT_0c1f = 0xff;
+            return;
+          }
+        }
+        bVar7 = DAT_0c1f;
+        bVar8 = DAT_0c1b;
+        DAT_0c1f = bVar7 | bVar8;
         return;
       }
     }
-    DAT_0c0b = DAT_0c07;
-    DAT_0c0c = DAT_0c08;
+    uVar2 = DAT_0c07;
+    DAT_0c0b = uVar2;
+    uVar4 = DAT_0c08;
+    DAT_0c0c = uVar4;
   }
-  DAT_0c05 = DAT_0c05 + 1;
-  if (0xe < DAT_0c05) {
-    DAT_0c05 = 1;
+  cVar1 = DAT_0c05;
+  bVar8 = cVar1 + 1;
+  if (0xe < bVar8) {
+    bVar8 = 1;
   }
+  DAT_0c05 = bVar8;
   return;
 }
 

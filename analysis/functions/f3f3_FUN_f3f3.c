@@ -3,19 +3,28 @@
 void FUN_f3f3(void)
 
 {
-  byte bVar1;
+  short sVar1;
+  ushort uVar2;
+  byte bVar3;
   
+  bVar3 = DAT_08be;
+  DAT_08be = bVar3 | 0x10;
   DAT_004e = 4;
-  bVar1 = DAT_00e1;
-  if ((bVar1 & 4) == 0) {
-    DAT_0ab0 = DAT_0ab0 + 1;
-    DAT_0b98 = CONCAT11((char)(DAT_0b98 + 1 >> 8),(char)(DAT_0b98 + 1) - (0xfffe < DAT_0b98));
+  bVar3 = DAT_00e1;
+  if ((bVar3 & 4) == 0) {
+    sVar1 = DAT_0ab0;
+    DAT_0ab0 = sVar1 + 1;
+    uVar2 = DAT_0b98;
+    bVar3 = (byte)(uVar2 + 1);
+    DAT_0b98 = CONCAT11((char)(uVar2 + 1 >> 8) - (bVar3 < (0xfffe < uVar2)),bVar3 - (0xfffe < uVar2)
+                       );
   }
   else {
-    bVar1 = DAT_004b;
-    DAT_004b = bVar1 & 0xef | 0x20;
+    bVar3 = DAT_004b;
+    DAT_004b = bVar3 & 0xef | 0x20;
   }
-  DAT_08be = DAT_08be & 0xef;
+  bVar3 = DAT_08be;
+  DAT_08be = bVar3 & 0xef;
   return;
 }
 

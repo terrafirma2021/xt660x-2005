@@ -1,36 +1,35 @@
 /* Entry c1cd */
 
-undefined2 lookup_u8_uniform_axis(undefined2 param_1,byte *param_2)
+ushort lookup_u8_uniform_axis(uchar input_raw,byte *table)
 
 {
   char cVar1;
   char cVar2;
   byte bVar3;
-  byte bVar4;
-  ushort uVar5;
-  short sVar6;
+  ushort uVar4;
+  short sVar5;
+  byte *pbVar6;
   
-  bVar3 = (byte)((ushort)param_1 >> 8);
-  bVar4 = bVar3 - *param_2;
-  if (bVar3 < *param_2) {
-    bVar4 = 0;
+  bVar3 = input_raw - *table;
+  if (input_raw < *table) {
+    bVar3 = 0;
   }
-  if (param_2[1] < bVar4) {
-    bVar4 = param_2[1];
+  if (table[1] < bVar3) {
+    bVar3 = table[1];
   }
-  cVar2 = (char)((ushort)bVar4 * (ushort)param_2[2]);
-  param_2 = param_2 + ((ushort)bVar4 * (ushort)param_2[2] >> 8);
-  sVar6 = CONCAT11(cVar2,cVar2);
+  cVar2 = (char)((ushort)bVar3 * (ushort)table[2]);
+  pbVar6 = table + ((ushort)bVar3 * (ushort)table[2] >> 8);
+  sVar5 = CONCAT11(cVar2,cVar2);
   if (cVar2 != '\0') {
-    cVar1 = param_2[4] - param_2[3];
-    uVar5 = CONCAT11(cVar2,cVar1);
-    if (param_2[4] < param_2[3]) {
-      uVar5 = CONCAT11(-cVar2,-cVar1);
-      param_2 = param_2 + 1;
+    cVar1 = pbVar6[4] - pbVar6[3];
+    uVar4 = CONCAT11(cVar2,cVar1);
+    if (pbVar6[4] < pbVar6[3]) {
+      uVar4 = CONCAT11(-cVar2,-cVar1);
+      pbVar6 = pbVar6 + 1;
     }
-    sVar6 = (uVar5 >> 8) * (uVar5 & 0xff);
+    sVar5 = (uVar4 >> 8) * (uVar4 & 0xff);
   }
-  return CONCAT11((char)((ushort)sVar6 >> 8) + param_2[3],(char)sVar6);
+  return CONCAT11((char)((ushort)sVar5 >> 8) + pbVar6[3],(char)sVar5);
 }
 
 

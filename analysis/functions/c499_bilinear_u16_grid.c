@@ -1,25 +1,32 @@
 /* Entry c499 */
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void bilinear_u16_grid(ushort param_1,short param_2)
+ushort bilinear_u16_grid(byte *table_bias,uchar columns,uchar row_index)
 
 {
   byte bVar1;
-  undefined2 uVar2;
+  short sVar2;
   short sVar3;
+  ushort uVar4;
+  byte *table_bias_00;
   
-  bVar1 = (byte)(param_1 >> 8);
-  DAT_0e0e = (ushort)bVar1 * (param_1 & 0xff);
-  sVar3 = (ushort)DAT_0e06 + (ushort)DAT_0e06 + param_2 + DAT_0e0e * 2 + 0xf;
-  uVar2 = interp_u16_q16_fraction(sVar3);
-  if (DAT_0e0a == 0) {
-    return;
+  DAT_0e0e = (ushort)columns * (ushort)row_index;
+  sVar2 = DAT_0e0e;
+  sVar3 = DAT_0e0e;
+  bVar1 = DAT_0e06;
+  table_bias_00 = table_bias + (ushort)bVar1 + (ushort)bVar1 + sVar3 + sVar2 + 0xf;
+  uVar4 = DAT_0e08;
+  uVar4 = interp_u16_q16_fraction(uVar4,table_bias_00);
+  sVar2 = DAT_0e0a;
+  if (sVar2 == 0) {
+    return uVar4;
   }
-  _DAT_0e06 = uVar2;
-  DAT_0e08 = interp_u16_q16_fraction(DAT_0e08,(ushort)bVar1 + (ushort)bVar1 + sVar3);
-  interp_u16_q16_fraction(DAT_0e0a,0xe00);
-  return;
+  RAM0e06 = uVar4;
+  uVar4 = DAT_0e08;
+  uVar4 = interp_u16_q16_fraction(uVar4,table_bias_00 + (ushort)columns + (ushort)columns);
+  DAT_0e08 = uVar4;
+  uVar4 = DAT_0e0a;
+  uVar4 = interp_u16_q16_fraction(uVar4,&UNK_0e00);
+  return uVar4;
 }
 
 

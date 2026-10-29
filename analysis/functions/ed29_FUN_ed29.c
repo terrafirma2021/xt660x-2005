@@ -3,18 +3,25 @@
 void FUN_ed29(void)
 
 {
-  if ((DAT_0880 & 0x44) == 0) {
+  byte bVar1;
+  byte bVar2;
+  
+  bVar1 = DAT_0880;
+  if ((bVar1 & 0x44) == 0) {
     FUN_ee78();
-    if ((DAT_0c04 == 6) &&
-       (((~DAT_088d & 0x20) != 0 || ((0x40 < DAT_0a82 && ((DAT_0a92 & 8) != 0)))))) {
+    bVar1 = DAT_0c04;
+    if ((bVar1 == 6) &&
+       ((bVar2 = DAT_088d, (~bVar2 & 0x20) != 0 ||
+        ((bVar2 = DAT_0a82, 0x40 < bVar2 && (bVar2 = DAT_0a92, (bVar2 & 8) != 0)))))) {
       FUN_edc3();
     }
-    else if ((2 < DAT_0c04) && (DAT_0c04 < 7)) {
+    else if ((2 < bVar1) && (bVar1 < 7)) {
       FUN_ef6d();
     }
     return;
   }
-  if ((~DAT_0880 & 0x40) == 0) {
+  bVar1 = DAT_0880;
+  if ((~bVar1 & 0x40) == 0) {
     FUN_ee78();
     FUN_edc3();
     return;

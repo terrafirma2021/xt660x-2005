@@ -194,199 +194,199 @@ from	to	type	function
 52b4	0bfc	WRITE	application_init
 52b7	0880	READ_WRITE	application_init
 52bd	0085	WRITE	application_init
-52d3	5fa4	COMPUTED_CALL	
-52d6	08d6	READ	
-52df	c1db	COMPUTED_CALL	
-52e2	08f4	WRITE	
-52e5	08f6	WRITE	
-52ed	52f1	CONDITIONAL_JUMP	
-52f1	0ae8	WRITE	
-52f4	08d8	READ	
-52fd	c1db	COMPUTED_CALL	
-5300	08f5	WRITE	
-5308	530c	CONDITIONAL_JUMP	
-530c	0aeb	WRITE	
-530f	0888	READ_WRITE	
-5313	0008	READ	
-5317	0008	WRITE	
-5319	4fa0	READ	
-531c	0e26	WRITE	
-531f	4e86	READ	
-5325	532a	CONDITIONAL_JUMP	
-5327	5857	COMPUTED_CALL	
-532a	4e88	READ	
-5330	5338	CONDITIONAL_JUMP	
-5332	5c05	COMPUTED_CALL	
-5335	5d4d	COMPUTED_CALL	
-5338	5d67	COMPUTED_CALL	
-533b	5cc7	COMPUTED_CALL	
-533e	592e	COMPUTED_CALL	
-5341	534a	CONDITIONAL_JUMP	
-5341	0bd5	READ	
-5346	0bd2	READ_WRITE	
-534a	0dd5	READ	
-534f	5358	CONDITIONAL_JUMP	
-5351	0d08	READ_WRITE	
-5355	5ef1	COMPUTED_CALL	
-535b	a489	COMPUTED_CALL	
-535e	5fbf	COMPUTED_CALL	
-5361	5fba	COMPUTED_CALL	
-5364	004a	READ	
-536a	004a	WRITE	
-536c	004b	READ	
-5372	004b	WRITE	
-5374	004c	READ_WRITE	
-5377	0044	READ	
-5379	0af4	WRITE	
-537c	0af2	WRITE	
-537f	0c00	WRITE	
-5382	0001	READ	
-5386	0896	WRITE	
-538b	08bc	READ	
-5390	08bc	WRITE	
-5398	0ffc	WRITE	
-5398	5fa3	COMPUTED_CALL	
-539d	0020	READ	
-539d	53b9	CONDITIONAL_JUMP	
-53a1	0024	READ	
-53a6	53b9	CONDITIONAL_JUMP	
-53a8	00d4	READ	
-53aa	00d7	READ	
-53ad	00d3	WRITE	
-53af	08a0	WRITE	
-53b4	08ae	WRITE	
-53bb	0020	READ	
-53bb	53c2	CONDITIONAL_JUMP	
-53c0	00cb	WRITE	
-53c2	0ffc	WRITE	
-53c2	6259	COMPUTED_CALL	
-53c5	0ffc	WRITE	
-53c5	6772	COMPUTED_CALL	
-53c8	0ffc	WRITE	
-53c8	f8a0	COMPUTED_CALL	
-53cb	0ffc	WRITE	
-53cb	6299	COMPUTED_CALL	
-53ce	53d6	CONDITIONAL_JUMP	
-53ce	0881	READ	
-53d3	0ffc	WRITE	
-53d3	8691	COMPUTED_CALL	
-53d6	53de	CONDITIONAL_JUMP	
-53d6	0881	READ	
-53db	0ffc	WRITE	
-53db	869e	COMPUTED_CALL	
-53de	53e6	CONDITIONAL_JUMP	
-53de	0887	READ	
-53e3	0ffc	WRITE	
-53e3	87e7	COMPUTED_CALL	
-53e6	53ef	CONDITIONAL_JUMP	
-53e6	0882	READ	
-53eb	547b	UNCONDITIONAL_JUMP	
-53ef	0ffc	WRITE	
-53ef	73a5	COMPUTED_CALL	
-53f4	0a2e	READ	
-53f7	0a30	WRITE	
-53fa	0a34	READ	
-53fd	0a36	WRITE	
-5402	0a32	WRITE	
-5407	0c03	READ	
-540e	5416	CONDITIONAL_JUMP	
-5412	5416	CONDITIONAL_JUMP	
-5414	5435	UNCONDITIONAL_JUMP	
-5416	0a82	READ	
-5419	0ffc	WRITE	
-5419	54f0	COMPUTED_CALL	
-541e	0de3	READ	
-5421	0924	WRITE	
-5424	0de5	READ	
-5427	0a94	WRITE	
-542a	0de7	READ	
-542d	0aa4	WRITE	
-5432	0ffc	WRITE	
-5432	55b6	COMPUTED_CALL	
-5435	5477	CONDITIONAL_JUMP	
-5435	08a0	READ	
-543a	5477	CONDITIONAL_JUMP	
-543a	08b2	READ	
-543f	08f8	READ	
-5445	5477	CONDITIONAL_JUMP	
-5447	5477	CONDITIONAL_JUMP	
-5447	0884	READ	
-544c	5477	CONDITIONAL_JUMP	
-544c	0d08	READ	
-5451	5477	CONDITIONAL_JUMP	
-5451	0884	READ	
-5456	5477	CONDITIONAL_JUMP	
-5456	088c	READ	
-545b	5477	CONDITIONAL_JUMP	
-545b	0885	READ	
-5460	5477	CONDITIONAL_JUMP	
-5460	0bf8	READ	
-5465	5477	CONDITIONAL_JUMP	
-5465	089b	READ	
-546a	5477	CONDITIONAL_JUMP	
-546a	089b	READ	
-546f	5477	CONDITIONAL_JUMP	
-546f	0880	READ	
-5474	0ffc	WRITE	
-5474	5664	COMPUTED_CALL	
-5477	0882	READ_WRITE	
-547b	0ffc	WRITE	
-547b	857d	COMPUTED_CALL	
-547e	548a	CONDITIONAL_JUMP	
-547e	0881	READ	
-5483	5490	CONDITIONAL_JUMP	
-5483	0881	READ	
-5488	5497	UNCONDITIONAL_JUMP	
-548a	0a16	READ_WRITE	
-548e	5494	UNCONDITIONAL_JUMP	
-5490	0a16	READ_WRITE	
-5494	0ffc	WRITE	
-5494	74b8	COMPUTED_CALL	
-5497	0ffc	WRITE	
-5497	6772	COMPUTED_CALL	
-549a	0ffc	WRITE	
-549a	6299	COMPUTED_CALL	
-549d	54a5	CONDITIONAL_JUMP	
-549d	0882	READ	
-54a2	0ffc	WRITE	
-54a2	8b34	COMPUTED_CALL	
-54a5	54ad	CONDITIONAL_JUMP	
-54a5	0887	READ	
-54aa	0ffc	WRITE	
-54aa	a557	COMPUTED_CALL	
-54ad	54b5	CONDITIONAL_JUMP	
-54ad	0882	READ	
-54b2	0ffc	WRITE	
-54b2	a564	COMPUTED_CALL	
-54b5	54bd	CONDITIONAL_JUMP	
-54b5	088e	READ	
-54ba	0ffc	WRITE	
-54ba	ac7f	COMPUTED_CALL	
-54bd	54c5	CONDITIONAL_JUMP	
-54bd	0882	READ	
-54c2	0ffc	WRITE	
-54c2	aff9	COMPUTED_CALL	
-54c5	54cd	CONDITIONAL_JUMP	
-54c5	0882	READ	
-54ca	0ffc	WRITE	
-54ca	b166	COMPUTED_CALL	
-54cd	54d5	CONDITIONAL_JUMP	
-54cd	0882	READ	
-54d2	0ffc	WRITE	
-54d2	b817	COMPUTED_CALL	
-54d5	54dd	CONDITIONAL_JUMP	
-54d5	0882	READ	
-54da	0ffc	WRITE	
-54da	bc2e	COMPUTED_CALL	
-54dd	54e5	CONDITIONAL_JUMP	
-54dd	0887	READ	
-54e2	0ffc	WRITE	
-54e2	c063	COMPUTED_CALL	
-54e5	54ed	CONDITIONAL_JUMP	
-54e5	0887	READ	
-54ea	0ffc	WRITE	
-54ea	c199	COMPUTED_CALL	
-54ed	5389	COMPUTED_JUMP	
+52d3	5fa4	COMPUTED_CALL	application_init
+52d6	08d6	READ	application_init
+52df	c1db	COMPUTED_CALL	application_init
+52e2	08f4	WRITE	application_init
+52e5	08f6	WRITE	application_init
+52ed	52f1	CONDITIONAL_JUMP	application_init
+52f1	0ae8	WRITE	application_init
+52f4	08d8	READ	application_init
+52fd	c1db	COMPUTED_CALL	application_init
+5300	08f5	WRITE	application_init
+5308	530c	CONDITIONAL_JUMP	application_init
+530c	0aeb	WRITE	application_init
+530f	0888	READ_WRITE	application_init
+5313	0008	READ	application_init
+5317	0008	WRITE	application_init
+5319	4fa0	READ	application_init
+531c	0e26	WRITE	application_init
+531f	4e86	READ	application_init
+5325	532a	CONDITIONAL_JUMP	application_init
+5327	5857	COMPUTED_CALL	application_init
+532a	4e88	READ	application_init
+5330	5338	CONDITIONAL_JUMP	application_init
+5332	5c05	COMPUTED_CALL	application_init
+5335	5d4d	COMPUTED_CALL	application_init
+5338	5d67	COMPUTED_CALL	application_init
+533b	5cc7	COMPUTED_CALL	application_init
+533e	592e	COMPUTED_CALL	application_init
+5341	534a	CONDITIONAL_JUMP	application_init
+5341	0bd5	READ	application_init
+5346	0bd2	READ_WRITE	application_init
+534a	0dd5	READ	application_init
+534f	5358	CONDITIONAL_JUMP	application_init
+5351	0d08	READ_WRITE	application_init
+5355	5ef1	COMPUTED_CALL	application_init
+535b	a489	COMPUTED_CALL	application_init
+535e	5fbf	COMPUTED_CALL	application_init
+5361	5fba	COMPUTED_CALL	application_init
+5364	004a	READ	application_init
+536a	004a	WRITE	application_init
+536c	004b	READ	application_init
+5372	004b	WRITE	application_init
+5374	004c	READ_WRITE	application_init
+5377	0044	READ	application_init
+5379	0af4	WRITE	application_init
+537c	0af2	WRITE	application_init
+537f	0c00	WRITE	application_init
+5382	0001	READ	application_init
+5386	0896	WRITE	application_init
+538b	08bc	READ	application_init
+5390	08bc	WRITE	application_init
+5398	0ffc	WRITE	application_init
+5398	5fa3	COMPUTED_CALL	application_init
+539d	0020	READ	application_init
+539d	53b9	CONDITIONAL_JUMP	application_init
+53a1	0024	READ	application_init
+53a6	53b9	CONDITIONAL_JUMP	application_init
+53a8	00d4	READ	application_init
+53aa	00d7	READ	application_init
+53ad	00d3	WRITE	application_init
+53af	08a0	WRITE	application_init
+53b4	08ae	WRITE	application_init
+53bb	0020	READ	application_init
+53bb	53c2	CONDITIONAL_JUMP	application_init
+53c0	00cb	WRITE	application_init
+53c2	0ffc	WRITE	application_init
+53c2	6259	COMPUTED_CALL	application_init
+53c5	0ffc	WRITE	application_init
+53c5	6772	COMPUTED_CALL	application_init
+53c8	0ffc	WRITE	application_init
+53c8	f8a0	COMPUTED_CALL	application_init
+53cb	0ffc	WRITE	application_init
+53cb	6299	COMPUTED_CALL	application_init
+53ce	53d6	CONDITIONAL_JUMP	application_init
+53ce	0881	READ	application_init
+53d3	0ffc	WRITE	application_init
+53d3	8691	COMPUTED_CALL	application_init
+53d6	53de	CONDITIONAL_JUMP	application_init
+53d6	0881	READ	application_init
+53db	0ffc	WRITE	application_init
+53db	869e	COMPUTED_CALL	application_init
+53de	53e6	CONDITIONAL_JUMP	application_init
+53de	0887	READ	application_init
+53e3	0ffc	WRITE	application_init
+53e3	87e7	COMPUTED_CALL	application_init
+53e6	53ef	CONDITIONAL_JUMP	application_init
+53e6	0882	READ	application_init
+53eb	547b	UNCONDITIONAL_JUMP	application_init
+53ef	0ffc	WRITE	application_init
+53ef	73a5	COMPUTED_CALL	application_init
+53f4	0a2e	READ	application_init
+53f7	0a30	WRITE	application_init
+53fa	0a34	READ	application_init
+53fd	0a36	WRITE	application_init
+5402	0a32	WRITE	application_init
+5407	0c03	READ	application_init
+540e	5416	CONDITIONAL_JUMP	application_init
+5412	5416	CONDITIONAL_JUMP	application_init
+5414	5435	UNCONDITIONAL_JUMP	application_init
+5416	0a82	READ	application_init
+5419	0ffc	WRITE	application_init
+5419	54f0	COMPUTED_CALL	application_init
+541e	0de3	READ	application_init
+5421	0924	WRITE	application_init
+5424	0de5	READ	application_init
+5427	0a94	WRITE	application_init
+542a	0de7	READ	application_init
+542d	0aa4	WRITE	application_init
+5432	0ffc	WRITE	application_init
+5432	55b6	COMPUTED_CALL	application_init
+5435	5477	CONDITIONAL_JUMP	application_init
+5435	08a0	READ	application_init
+543a	5477	CONDITIONAL_JUMP	application_init
+543a	08b2	READ	application_init
+543f	08f8	READ	application_init
+5445	5477	CONDITIONAL_JUMP	application_init
+5447	5477	CONDITIONAL_JUMP	application_init
+5447	0884	READ	application_init
+544c	5477	CONDITIONAL_JUMP	application_init
+544c	0d08	READ	application_init
+5451	5477	CONDITIONAL_JUMP	application_init
+5451	0884	READ	application_init
+5456	5477	CONDITIONAL_JUMP	application_init
+5456	088c	READ	application_init
+545b	5477	CONDITIONAL_JUMP	application_init
+545b	0885	READ	application_init
+5460	5477	CONDITIONAL_JUMP	application_init
+5460	0bf8	READ	application_init
+5465	5477	CONDITIONAL_JUMP	application_init
+5465	089b	READ	application_init
+546a	5477	CONDITIONAL_JUMP	application_init
+546a	089b	READ	application_init
+546f	5477	CONDITIONAL_JUMP	application_init
+546f	0880	READ	application_init
+5474	0ffc	WRITE	application_init
+5474	5664	COMPUTED_CALL	application_init
+5477	0882	READ_WRITE	application_init
+547b	0ffc	WRITE	application_init
+547b	857d	COMPUTED_CALL	application_init
+547e	548a	CONDITIONAL_JUMP	application_init
+547e	0881	READ	application_init
+5483	5490	CONDITIONAL_JUMP	application_init
+5483	0881	READ	application_init
+5488	5497	UNCONDITIONAL_JUMP	application_init
+548a	0a16	READ_WRITE	application_init
+548e	5494	UNCONDITIONAL_JUMP	application_init
+5490	0a16	READ_WRITE	application_init
+5494	0ffc	WRITE	application_init
+5494	74b8	COMPUTED_CALL	application_init
+5497	0ffc	WRITE	application_init
+5497	6772	COMPUTED_CALL	application_init
+549a	0ffc	WRITE	application_init
+549a	6299	COMPUTED_CALL	application_init
+549d	54a5	CONDITIONAL_JUMP	application_init
+549d	0882	READ	application_init
+54a2	0ffc	WRITE	application_init
+54a2	8b34	COMPUTED_CALL	application_init
+54a5	54ad	CONDITIONAL_JUMP	application_init
+54a5	0887	READ	application_init
+54aa	0ffc	WRITE	application_init
+54aa	a557	COMPUTED_CALL	application_init
+54ad	54b5	CONDITIONAL_JUMP	application_init
+54ad	0882	READ	application_init
+54b2	0ffc	WRITE	application_init
+54b2	a564	COMPUTED_CALL	application_init
+54b5	54bd	CONDITIONAL_JUMP	application_init
+54b5	088e	READ	application_init
+54ba	0ffc	WRITE	application_init
+54ba	ac7f	COMPUTED_CALL	application_init
+54bd	54c5	CONDITIONAL_JUMP	application_init
+54bd	0882	READ	application_init
+54c2	0ffc	WRITE	application_init
+54c2	aff9	COMPUTED_CALL	application_init
+54c5	54cd	CONDITIONAL_JUMP	application_init
+54c5	0882	READ	application_init
+54ca	0ffc	WRITE	application_init
+54ca	b166	COMPUTED_CALL	application_init
+54cd	54d5	CONDITIONAL_JUMP	application_init
+54cd	0882	READ	application_init
+54d2	0ffc	WRITE	application_init
+54d2	b817	COMPUTED_CALL	application_init
+54d5	54dd	CONDITIONAL_JUMP	application_init
+54d5	0882	READ	application_init
+54da	0ffc	WRITE	application_init
+54da	bc2e	COMPUTED_CALL	application_init
+54dd	54e5	CONDITIONAL_JUMP	application_init
+54dd	0887	READ	application_init
+54e2	0ffc	WRITE	application_init
+54e2	c063	COMPUTED_CALL	application_init
+54e5	54ed	CONDITIONAL_JUMP	application_init
+54e5	0887	READ	application_init
+54ea	0ffc	WRITE	application_init
+54ea	c199	COMPUTED_CALL	application_init
+54ed	5389	COMPUTED_JUMP	application_init
 54f0	0dde	WRITE	FUN_54f0
 54f3	0ddf	WRITE	FUN_54f0
 54f9	0a36	READ	FUN_54f0
@@ -1892,6 +1892,7 @@ from	to	type	function
 68d1	08ca	WRITE	FUN_6772
 68d4	008b	READ	FUN_6772
 68d9	0085	READ	FUN_6772
+68e2	6968	DATA	FUN_6772
 68e4	08ca	READ	FUN_6772
 68e9	08c5	READ_WRITE	FUN_6772
 68ec	08c5	READ	FUN_6772
@@ -1908,7 +1909,9 @@ from	to	type	function
 692a	6929	CONDITIONAL_JUMP	candidate_unreferenced_6927
 692e	0085	WRITE	candidate_unreferenced_6927
 697b	0008	READ	FUN_6978
+6982	6958	DATA	FUN_6978
 698a	0008	READ	FUN_6987
+6991	6960	DATA	FUN_6987
 6998	699c	CONDITIONAL_JUMP	FUN_6996
 699c	0ae9	WRITE	FUN_6996
 699f	08ca	READ	FUN_6996
@@ -4027,14 +4030,20 @@ from	to	type	function
 86a2	08c0	READ_WRITE	FUN_869e
 86a7	189a	READ	FUN_869e
 86b4	0b3c	WRITE	FUN_869e
+86b7	0c74	READ	FUN_869e
+86b7	0c76	READ	FUN_869e
+86b9	0cb8	WRITE	FUN_869e
+86b9	0cba	WRITE	FUN_869e
 86bb	0b3c	READ	FUN_869e
 86c2	0b3c	WRITE	FUN_869e
 86c7	86cf	CONDITIONAL_JUMP	FUN_869e
 86cd	86b7	UNCONDITIONAL_JUMP	FUN_869e
+86d2	0cb8	READ	FUN_869e
 86d4	0ccc	WRITE	FUN_869e
 86d7	0cce	WRITE	FUN_869e
 86db	0b3c	WRITE	FUN_869e
 86de	86f4	UNCONDITIONAL_JUMP	FUN_869e
+86e0	0cba	READ	FUN_869e
 86e2	0ccc	READ	FUN_869e
 86e5	86ec	CONDITIONAL_JUMP	FUN_869e
 86e7	0ccc	WRITE	FUN_869e
@@ -4085,6 +4094,8 @@ from	to	type	function
 8769	0b3c	WRITE	FUN_869e
 876c	0dde	WRITE	FUN_869e
 876f	0ddf	WRITE	FUN_869e
+8772	0cb8	READ	FUN_869e
+8772	0cba	READ	FUN_869e
 8774	0ddf	READ	FUN_869e
 8777	0ddf	WRITE	FUN_869e
 877a	0dde	READ	FUN_869e
@@ -4485,6 +4496,7 @@ from	to	type	function
 8d24	09df	WRITE	FUN_8b34
 8d28	09df	READ	FUN_8b34
 8d31	09d0	READ	FUN_8b34
+8d34	09e2	DATA	FUN_8b34
 8d36	8d3e	CONDITIONAL_JUMP	FUN_8b34
 8d36	09e0	READ	FUN_8b34
 8d3b	8da2	COMPUTED_JUMP	FUN_8b34
@@ -4492,6 +4504,8 @@ from	to	type	function
 8d41	09da	WRITE	FUN_8b34
 8d46	0dde	WRITE	FUN_8b34
 8d49	0de0	WRITE	FUN_8b34
+8d4f	09e2	READ	FUN_8b34
+8d4f	09e4	READ	FUN_8b34
 8d51	0ddf	READ	FUN_8b34
 8d54	0ddf	WRITE	FUN_8b34
 8d57	0dde	READ	FUN_8b34
@@ -4600,6 +4614,7 @@ from	to	type	function
 8e9f	0cd4	WRITE	FUN_8b34
 8ea5	0b0d	READ	FUN_8b34
 8eab	08e6	READ	FUN_8b34
+8eae	0b0e	DATA	FUN_8b34
 8eb0	8ec9	CONDITIONAL_JUMP	FUN_8b34
 8eb6	8ec5	CONDITIONAL_JUMP	FUN_8b34
 8ebd	8ec5	CONDITIONAL_JUMP	FUN_8b34
@@ -4624,6 +4639,7 @@ from	to	type	function
 8f05	8f0a	UNCONDITIONAL_JUMP	FUN_8b34
 8f07	0b17	WRITE	FUN_8b34
 8f0b	08e6	READ	FUN_8b34
+8f0e	0b0e	DATA	FUN_8b34
 8f10	0b0d	READ	FUN_8b34
 8f15	1842	READ	FUN_8b34
 8f18	0b0d	WRITE	FUN_8b34
@@ -4637,6 +4653,7 @@ from	to	type	function
 8f30	0888	READ_WRITE	FUN_8b34
 8f37	0bbc	READ	FUN_8b34
 8f3d	0bb8	READ	FUN_8b34
+8f40	0bbe	DATA	FUN_8b34
 8f42	8f5b	CONDITIONAL_JUMP	FUN_8b34
 8f48	8f57	CONDITIONAL_JUMP	FUN_8b34
 8f4f	8f57	CONDITIONAL_JUMP	FUN_8b34
@@ -4647,6 +4664,7 @@ from	to	type	function
 8f6a	8f6e	UNCONDITIONAL_JUMP	FUN_8b34
 8f6e	0bbb	WRITE	FUN_8b34
 8f72	0bb8	READ	FUN_8b34
+8f75	0bbe	DATA	FUN_8b34
 8f77	0bbc	READ	FUN_8b34
 8f7c	1842	READ	FUN_8b34
 8f7f	0bbc	WRITE	FUN_8b34
@@ -6145,10 +6163,14 @@ a359	0a06	WRITE	FUN_a314
 a35c	08ec	READ	FUN_a314
 a35f	0a07	WRITE	FUN_a314
 a368	08e8	READ	FUN_a363
+a370	4c18	READ	FUN_a363
+a370	4c16	READ	FUN_a363
 a372	a37b	CONDITIONAL_JUMP	FUN_a363
 a376	a36b	CONDITIONAL_JUMP	FUN_a363
 a379	a37e	UNCONDITIONAL_JUMP	FUN_a363
 a385	0900	READ	FUN_a363
+a38d	4c40	READ	FUN_a363
+a38d	4c3e	READ	FUN_a363
 a38f	a398	CONDITIONAL_JUMP	FUN_a363
 a393	a388	CONDITIONAL_JUMP	FUN_a363
 a396	a39b	UNCONDITIONAL_JUMP	FUN_a363
@@ -6158,10 +6180,14 @@ a3a4	0ad0	READ	FUN_a363
 a3ae	4c44	DATA	FUN_a363
 a3b0	0acd	WRITE	FUN_a363
 a3b9	0c90	READ	FUN_a3b4
+a3c1	4d1c	READ	FUN_a3b4
+a3c1	4d1a	READ	FUN_a3b4
 a3c3	a3cc	CONDITIONAL_JUMP	FUN_a3b4
 a3c7	a3bc	CONDITIONAL_JUMP	FUN_a3b4
 a3ca	a3cf	UNCONDITIONAL_JUMP	FUN_a3b4
 a3d6	0900	READ	FUN_a3b4
+a3de	4d44	READ	FUN_a3b4
+a3de	4d42	READ	FUN_a3b4
 a3e0	a3e9	CONDITIONAL_JUMP	FUN_a3b4
 a3e4	a3d9	CONDITIONAL_JUMP	FUN_a3b4
 a3e7	a3ec	UNCONDITIONAL_JUMP	FUN_a3b4
@@ -6208,6 +6234,8 @@ a485	09de	WRITE	FUN_a462
 a489	00f0	READ_WRITE	FUN_a489
 a48c	5fa4	COMPUTED_CALL	FUN_a489
 a48f	0dde	WRITE	FUN_a489
+a497	1800	READ	FUN_a489
+a497	1802	READ	FUN_a489
 a4a4	a4a9	CONDITIONAL_JUMP	FUN_a489
 a4a6	5fa4	COMPUTED_CALL	FUN_a489
 a4ab	a4b2	CONDITIONAL_JUMP	FUN_a489
@@ -6237,8 +6265,12 @@ a4f9	08bb	READ_WRITE	FUN_a489
 a4fd	0bd2	READ_WRITE	FUN_a489
 a501	5fa4	COMPUTED_CALL	FUN_a489
 a507	00f0	READ_WRITE	FUN_a505
+a510	0800	WRITE	FUN_a505
+a510	0802	WRITE	FUN_a505
 a514	a51b	CONDITIONAL_JUMP	FUN_a505
 a519	a510	CONDITIONAL_JUMP	FUN_a505
+a51e	0800	READ	FUN_a505
+a51e	0802	READ	FUN_a505
 a520	a536	CONDITIONAL_JUMP	FUN_a505
 a524	a52b	CONDITIONAL_JUMP	FUN_a505
 a529	a51e	CONDITIONAL_JUMP	FUN_a505
@@ -6772,10 +6804,14 @@ abd5	abda	CONDITIONAL_JUMP	FUN_ab90
 abd7	36ec	READ	FUN_ab90
 abda	09b7	DATA	FUN_ab90
 abe2	08e8	READ	FUN_abdd
+abea	3598	READ	FUN_abdd
+abea	3596	READ	FUN_abdd
 abec	abf5	CONDITIONAL_JUMP	FUN_abdd
 abf0	abe5	CONDITIONAL_JUMP	FUN_abdd
 abf3	abf8	UNCONDITIONAL_JUMP	FUN_abdd
 abff	0900	READ	FUN_abdd
+ac07	35ac	READ	FUN_abdd
+ac07	35aa	READ	FUN_abdd
 ac09	ac12	CONDITIONAL_JUMP	FUN_abdd
 ac0d	ac02	CONDITIONAL_JUMP	FUN_abdd
 ac10	ac15	UNCONDITIONAL_JUMP	FUN_abdd
@@ -6785,10 +6821,14 @@ ac1e	09b0	READ	FUN_abdd
 ac28	35b0	DATA	FUN_abdd
 ac2a	09ae	WRITE	FUN_abdd
 ac33	0c90	READ	FUN_ac2e
+ac3b	3624	READ	FUN_ac2e
+ac3b	3622	READ	FUN_ac2e
 ac3d	ac46	CONDITIONAL_JUMP	FUN_ac2e
 ac41	ac36	CONDITIONAL_JUMP	FUN_ac2e
 ac44	ac49	UNCONDITIONAL_JUMP	FUN_ac2e
 ac50	0900	READ	FUN_ac2e
+ac58	3638	READ	FUN_ac2e
+ac58	3636	READ	FUN_ac2e
 ac5a	ac63	CONDITIONAL_JUMP	FUN_ac2e
 ac5e	ac53	CONDITIONAL_JUMP	FUN_ac2e
 ac61	ac66	UNCONDITIONAL_JUMP	FUN_ac2e
@@ -7225,6 +7265,7 @@ b206	0ca4	WRITE	FUN_b166
 b209	b21d	CONDITIONAL_JUMP	FUN_b166
 b209	0bfe	READ	FUN_b166
 b20f	1870	READ	FUN_b166
+b218	0c5a	READ	FUN_b166
 b21a	0cb2	WRITE	FUN_b166
 b21d	b262	CONDITIONAL_JUMP	FUN_b166
 b21d	08af	READ	FUN_b166
@@ -10795,6 +10836,8 @@ e390	0bfe	READ	candidate_unreferenced_e294
 e396	0c04	READ	candidate_unreferenced_e294
 e3a0	0922	READ	candidate_unreferenced_e294
 e3ab	08cc	READ	candidate_unreferenced_e294
+e3ae	0c42	WRITE	candidate_unreferenced_e294
+e3b0	0c58	WRITE	candidate_unreferenced_e294
 e3b2	0c40	WRITE	candidate_unreferenced_e294
 e3b8	08c2	WRITE	candidate_unreferenced_e294
 e3bb	08c3	WRITE	candidate_unreferenced_e294
@@ -10866,6 +10909,7 @@ e483	ea1b	UNCONDITIONAL_JUMP	candidate_unreferenced_e294
 e48a	0d8d	READ	candidate_unreferenced_e294
 e48f	e4a7	CONDITIONAL_JUMP	candidate_unreferenced_e294
 e492	0d94	READ	candidate_unreferenced_e294
+e49b	0c58	DATA	candidate_unreferenced_e294
 e49d	0c8a	WRITE	candidate_unreferenced_e294
 e4a0	0c94	WRITE	candidate_unreferenced_e294
 e4a3	ea1b	UNCONDITIONAL_JUMP	candidate_unreferenced_e294
@@ -10873,6 +10917,7 @@ e4a9	e547	CONDITIONAL_JUMP	candidate_unreferenced_e294
 e4af	0c9e	WRITE	candidate_unreferenced_e294
 e4b2	0ca0	WRITE	candidate_unreferenced_e294
 e4b5	0d94	READ	candidate_unreferenced_e294
+e4be	0c58	DATA	candidate_unreferenced_e294
 e4c0	0ca0	WRITE	candidate_unreferenced_e294
 e4c4	0d8e	READ	candidate_unreferenced_e294
 e4c8	0df6	WRITE	candidate_unreferenced_e294
@@ -10880,6 +10925,8 @@ e4cb	0df8	WRITE	candidate_unreferenced_e294
 e4ce	0df7	READ	candidate_unreferenced_e294
 e4d1	0ca0	WRITE	candidate_unreferenced_e294
 e4d5	0d95	READ	candidate_unreferenced_e294
+e4de	0c58	DATA	candidate_unreferenced_e294
+e4e0	0c58	DATA	candidate_unreferenced_e294
 e4e2	0ca0	READ	candidate_unreferenced_e294
 e4e5	0ca0	WRITE	candidate_unreferenced_e294
 e4e8	0c9e	READ	candidate_unreferenced_e294
@@ -10907,6 +10954,7 @@ e549	e623	CONDITIONAL_JUMP	candidate_unreferenced_e294
 e54f	0c9e	WRITE	candidate_unreferenced_e294
 e552	0ca0	WRITE	candidate_unreferenced_e294
 e555	0d94	READ	candidate_unreferenced_e294
+e55e	0c58	DATA	candidate_unreferenced_e294
 e560	0ca0	WRITE	candidate_unreferenced_e294
 e564	0d8e	READ	candidate_unreferenced_e294
 e568	0df6	WRITE	candidate_unreferenced_e294
@@ -10914,6 +10962,8 @@ e56b	0df8	WRITE	candidate_unreferenced_e294
 e56e	0df7	READ	candidate_unreferenced_e294
 e571	0ca0	WRITE	candidate_unreferenced_e294
 e575	0d95	READ	candidate_unreferenced_e294
+e57e	0c58	DATA	candidate_unreferenced_e294
+e580	0c58	DATA	candidate_unreferenced_e294
 e582	0ca0	READ	candidate_unreferenced_e294
 e585	0ca0	WRITE	candidate_unreferenced_e294
 e588	0c9e	READ	candidate_unreferenced_e294
@@ -10927,6 +10977,8 @@ e5a3	0ca0	WRITE	candidate_unreferenced_e294
 e5a6	0c9e	READ	candidate_unreferenced_e294
 e5ad	0c9e	WRITE	candidate_unreferenced_e294
 e5b1	0d96	READ	candidate_unreferenced_e294
+e5ba	0c58	DATA	candidate_unreferenced_e294
+e5bc	0c58	DATA	candidate_unreferenced_e294
 e5be	0ca0	READ	candidate_unreferenced_e294
 e5c1	0ca0	WRITE	candidate_unreferenced_e294
 e5c4	0c9e	READ	candidate_unreferenced_e294
@@ -10954,6 +11006,7 @@ e625	e73b	CONDITIONAL_JUMP	candidate_unreferenced_e294
 e62b	0c9e	WRITE	candidate_unreferenced_e294
 e62e	0ca0	WRITE	candidate_unreferenced_e294
 e631	0d94	READ	candidate_unreferenced_e294
+e63a	0c58	DATA	candidate_unreferenced_e294
 e63c	0ca0	WRITE	candidate_unreferenced_e294
 e640	0d8e	READ	candidate_unreferenced_e294
 e644	0df6	WRITE	candidate_unreferenced_e294
@@ -10961,6 +11014,8 @@ e647	0df8	WRITE	candidate_unreferenced_e294
 e64a	0df7	READ	candidate_unreferenced_e294
 e64d	0ca0	WRITE	candidate_unreferenced_e294
 e651	0d95	READ	candidate_unreferenced_e294
+e65a	0c58	DATA	candidate_unreferenced_e294
+e65c	0c58	DATA	candidate_unreferenced_e294
 e65e	0ca0	READ	candidate_unreferenced_e294
 e661	0ca0	WRITE	candidate_unreferenced_e294
 e664	0c9e	READ	candidate_unreferenced_e294
@@ -10974,6 +11029,8 @@ e67f	0ca0	WRITE	candidate_unreferenced_e294
 e682	0c9e	READ	candidate_unreferenced_e294
 e689	0c9e	WRITE	candidate_unreferenced_e294
 e68d	0d96	READ	candidate_unreferenced_e294
+e696	0c58	DATA	candidate_unreferenced_e294
+e698	0c58	DATA	candidate_unreferenced_e294
 e69a	0ca0	READ	candidate_unreferenced_e294
 e69d	0ca0	WRITE	candidate_unreferenced_e294
 e6a0	0c9e	READ	candidate_unreferenced_e294
@@ -10987,6 +11044,8 @@ e6bb	0ca0	WRITE	candidate_unreferenced_e294
 e6be	0c9e	READ	candidate_unreferenced_e294
 e6c5	0c9e	WRITE	candidate_unreferenced_e294
 e6c9	0d97	READ	candidate_unreferenced_e294
+e6d2	0c58	DATA	candidate_unreferenced_e294
+e6d4	0c58	DATA	candidate_unreferenced_e294
 e6d6	0ca0	READ	candidate_unreferenced_e294
 e6d9	0ca0	WRITE	candidate_unreferenced_e294
 e6dc	0c9e	READ	candidate_unreferenced_e294
@@ -11014,6 +11073,7 @@ e73d	e88f	CONDITIONAL_JUMP	candidate_unreferenced_e294
 e743	0c9e	WRITE	candidate_unreferenced_e294
 e746	0ca0	WRITE	candidate_unreferenced_e294
 e749	0d94	READ	candidate_unreferenced_e294
+e752	0c58	DATA	candidate_unreferenced_e294
 e754	0ca0	WRITE	candidate_unreferenced_e294
 e758	0d8e	READ	candidate_unreferenced_e294
 e75c	0df6	WRITE	candidate_unreferenced_e294
@@ -11021,6 +11081,8 @@ e75f	0df8	WRITE	candidate_unreferenced_e294
 e762	0df7	READ	candidate_unreferenced_e294
 e765	0ca0	WRITE	candidate_unreferenced_e294
 e769	0d95	READ	candidate_unreferenced_e294
+e772	0c58	DATA	candidate_unreferenced_e294
+e774	0c58	DATA	candidate_unreferenced_e294
 e776	0ca0	READ	candidate_unreferenced_e294
 e779	0ca0	WRITE	candidate_unreferenced_e294
 e77c	0c9e	READ	candidate_unreferenced_e294
@@ -11034,6 +11096,8 @@ e797	0ca0	WRITE	candidate_unreferenced_e294
 e79a	0c9e	READ	candidate_unreferenced_e294
 e7a1	0c9e	WRITE	candidate_unreferenced_e294
 e7a5	0d96	READ	candidate_unreferenced_e294
+e7ae	0c58	DATA	candidate_unreferenced_e294
+e7b0	0c58	DATA	candidate_unreferenced_e294
 e7b2	0ca0	READ	candidate_unreferenced_e294
 e7b5	0ca0	WRITE	candidate_unreferenced_e294
 e7b8	0c9e	READ	candidate_unreferenced_e294
@@ -11047,6 +11111,8 @@ e7d3	0ca0	WRITE	candidate_unreferenced_e294
 e7d6	0c9e	READ	candidate_unreferenced_e294
 e7dd	0c9e	WRITE	candidate_unreferenced_e294
 e7e1	0d97	READ	candidate_unreferenced_e294
+e7ea	0c58	DATA	candidate_unreferenced_e294
+e7ec	0c58	DATA	candidate_unreferenced_e294
 e7ee	0ca0	READ	candidate_unreferenced_e294
 e7f1	0ca0	WRITE	candidate_unreferenced_e294
 e7f4	0c9e	READ	candidate_unreferenced_e294
@@ -11060,6 +11126,8 @@ e80f	0ca0	WRITE	candidate_unreferenced_e294
 e812	0c9e	READ	candidate_unreferenced_e294
 e819	0c9e	WRITE	candidate_unreferenced_e294
 e81d	0d98	READ	candidate_unreferenced_e294
+e826	0c58	DATA	candidate_unreferenced_e294
+e828	0c58	DATA	candidate_unreferenced_e294
 e82a	0ca0	READ	candidate_unreferenced_e294
 e82d	0ca0	WRITE	candidate_unreferenced_e294
 e830	0c9e	READ	candidate_unreferenced_e294
@@ -11087,6 +11155,7 @@ e891	e491	CONDITIONAL_JUMP	candidate_unreferenced_e294
 e897	0c9e	WRITE	candidate_unreferenced_e294
 e89a	0ca0	WRITE	candidate_unreferenced_e294
 e89d	0d94	READ	candidate_unreferenced_e294
+e8a6	0c58	DATA	candidate_unreferenced_e294
 e8a8	0ca0	WRITE	candidate_unreferenced_e294
 e8ac	0d8e	READ	candidate_unreferenced_e294
 e8b0	0df6	WRITE	candidate_unreferenced_e294
@@ -11094,6 +11163,8 @@ e8b3	0df8	WRITE	candidate_unreferenced_e294
 e8b6	0df7	READ	candidate_unreferenced_e294
 e8b9	0ca0	WRITE	candidate_unreferenced_e294
 e8bd	0d95	READ	candidate_unreferenced_e294
+e8c6	0c58	DATA	candidate_unreferenced_e294
+e8c8	0c58	DATA	candidate_unreferenced_e294
 e8ca	0ca0	READ	candidate_unreferenced_e294
 e8cd	0ca0	WRITE	candidate_unreferenced_e294
 e8d0	0c9e	READ	candidate_unreferenced_e294
@@ -11107,6 +11178,8 @@ e8eb	0ca0	WRITE	candidate_unreferenced_e294
 e8ee	0c9e	READ	candidate_unreferenced_e294
 e8f5	0c9e	WRITE	candidate_unreferenced_e294
 e8f9	0d96	READ	candidate_unreferenced_e294
+e902	0c58	DATA	candidate_unreferenced_e294
+e904	0c58	DATA	candidate_unreferenced_e294
 e906	0ca0	READ	candidate_unreferenced_e294
 e909	0ca0	WRITE	candidate_unreferenced_e294
 e90c	0c9e	READ	candidate_unreferenced_e294
@@ -11120,6 +11193,8 @@ e927	0ca0	WRITE	candidate_unreferenced_e294
 e92a	0c9e	READ	candidate_unreferenced_e294
 e931	0c9e	WRITE	candidate_unreferenced_e294
 e935	0d97	READ	candidate_unreferenced_e294
+e93e	0c58	DATA	candidate_unreferenced_e294
+e940	0c58	DATA	candidate_unreferenced_e294
 e942	0ca0	READ	candidate_unreferenced_e294
 e945	0ca0	WRITE	candidate_unreferenced_e294
 e948	0c9e	READ	candidate_unreferenced_e294
@@ -11133,6 +11208,8 @@ e963	0ca0	WRITE	candidate_unreferenced_e294
 e966	0c9e	READ	candidate_unreferenced_e294
 e96d	0c9e	WRITE	candidate_unreferenced_e294
 e971	0d98	READ	candidate_unreferenced_e294
+e97a	0c58	DATA	candidate_unreferenced_e294
+e97c	0c58	DATA	candidate_unreferenced_e294
 e97e	0ca0	READ	candidate_unreferenced_e294
 e981	0ca0	WRITE	candidate_unreferenced_e294
 e984	0c9e	READ	candidate_unreferenced_e294
@@ -11146,6 +11223,8 @@ e99f	0ca0	WRITE	candidate_unreferenced_e294
 e9a2	0c9e	READ	candidate_unreferenced_e294
 e9a9	0c9e	WRITE	candidate_unreferenced_e294
 e9ad	0d99	READ	candidate_unreferenced_e294
+e9b6	0c58	DATA	candidate_unreferenced_e294
+e9b8	0c58	DATA	candidate_unreferenced_e294
 e9ba	0ca0	READ	candidate_unreferenced_e294
 e9bd	0ca0	WRITE	candidate_unreferenced_e294
 e9c0	0c9e	READ	candidate_unreferenced_e294
@@ -11241,6 +11320,7 @@ eb21	eb2b	CONDITIONAL_JUMP	candidate_unreferenced_e294
 eb25	ebc6	CONDITIONAL_JUMP	candidate_unreferenced_e294
 eb29	eb3d	UNCONDITIONAL_JUMP	candidate_unreferenced_e294
 eb2b	0a50	READ	candidate_unreferenced_e294
+eb2e	0a54	DATA	candidate_unreferenced_e294
 eb30	0df7	WRITE	candidate_unreferenced_e294
 eb33	0a4f	READ	candidate_unreferenced_e294
 eb38	0df6	WRITE	candidate_unreferenced_e294
@@ -11253,7 +11333,9 @@ eb49	0c07	READ	candidate_unreferenced_e294
 eb4c	eb53	CONDITIONAL_JUMP	candidate_unreferenced_e294
 eb51	eb56	UNCONDITIONAL_JUMP	candidate_unreferenced_e294
 eb53	0c08	READ	candidate_unreferenced_e294
+eb56	0a54	DATA	candidate_unreferenced_e294
 eb58	0df7	READ	candidate_unreferenced_e294
+eb5b	0a54	DATA	candidate_unreferenced_e294
 eb5d	0a50	WRITE	candidate_unreferenced_e294
 eb60	0df7	WRITE	candidate_unreferenced_e294
 eb63	0df6	READ	candidate_unreferenced_e294

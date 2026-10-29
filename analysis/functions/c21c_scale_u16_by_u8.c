@@ -1,9 +1,9 @@
 /* Entry c21c */
 
-undefined2 scale_u16_by_u8(ushort param_1,byte *param_2)
+ushort scale_u16_by_u8(ushort value,byte *scale_address)
 
 {
-  return (short)((uint)*param_2 * (uint)param_1 >> 8);
+  return (ushort)((uint)*scale_address * (uint)value >> 8);
 }
 
 

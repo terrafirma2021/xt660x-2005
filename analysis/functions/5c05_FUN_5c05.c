@@ -68,7 +68,8 @@ void FUN_5c05(void)
   bVar1 = DAT_00f0;
   DAT_00f0 = bVar1 & 0xf7;
   FUN_5fa4();
-  DAT_0891 = DAT_0891 & 0xfd;
+  bVar1 = DAT_0891;
+  DAT_0891 = bVar1 & 0xfd;
   return;
 }
 

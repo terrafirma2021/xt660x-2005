@@ -1,5 +1,27 @@
 [
   {
+    "address": "0x1800",
+    "references": [
+      {
+        "from": "a497",
+        "to": "1800",
+        "type": "READ",
+        "function": "FUN_a489"
+      }
+    ]
+  },
+  {
+    "address": "0x1802",
+    "references": [
+      {
+        "from": "a497",
+        "to": "1802",
+        "type": "READ",
+        "function": "FUN_a489"
+      }
+    ]
+  },
+  {
     "address": "0x1842",
     "references": [
       {
@@ -2237,6 +2259,50 @@
     ]
   },
   {
+    "address": "0x3596",
+    "references": [
+      {
+        "from": "abea",
+        "to": "3596",
+        "type": "READ",
+        "function": "FUN_abdd"
+      }
+    ]
+  },
+  {
+    "address": "0x3598",
+    "references": [
+      {
+        "from": "abea",
+        "to": "3598",
+        "type": "READ",
+        "function": "FUN_abdd"
+      }
+    ]
+  },
+  {
+    "address": "0x35AA",
+    "references": [
+      {
+        "from": "ac07",
+        "to": "35aa",
+        "type": "READ",
+        "function": "FUN_abdd"
+      }
+    ]
+  },
+  {
+    "address": "0x35AC",
+    "references": [
+      {
+        "from": "ac07",
+        "to": "35ac",
+        "type": "READ",
+        "function": "FUN_abdd"
+      }
+    ]
+  },
+  {
     "address": "0x35B0",
     "references": [
       {
@@ -2255,6 +2321,50 @@
         "to": "3600",
         "type": "DATA",
         "function": "FUN_cc7b"
+      }
+    ]
+  },
+  {
+    "address": "0x3622",
+    "references": [
+      {
+        "from": "ac3b",
+        "to": "3622",
+        "type": "READ",
+        "function": "FUN_ac2e"
+      }
+    ]
+  },
+  {
+    "address": "0x3624",
+    "references": [
+      {
+        "from": "ac3b",
+        "to": "3624",
+        "type": "READ",
+        "function": "FUN_ac2e"
+      }
+    ]
+  },
+  {
+    "address": "0x3636",
+    "references": [
+      {
+        "from": "ac58",
+        "to": "3636",
+        "type": "READ",
+        "function": "FUN_ac2e"
+      }
+    ]
+  },
+  {
+    "address": "0x3638",
+    "references": [
+      {
+        "from": "ac58",
+        "to": "3638",
+        "type": "READ",
+        "function": "FUN_ac2e"
       }
     ]
   },
@@ -4253,6 +4363,50 @@
     ]
   },
   {
+    "address": "0x4C16",
+    "references": [
+      {
+        "from": "a370",
+        "to": "4c16",
+        "type": "READ",
+        "function": "FUN_a363"
+      }
+    ]
+  },
+  {
+    "address": "0x4C18",
+    "references": [
+      {
+        "from": "a370",
+        "to": "4c18",
+        "type": "READ",
+        "function": "FUN_a363"
+      }
+    ]
+  },
+  {
+    "address": "0x4C3E",
+    "references": [
+      {
+        "from": "a38d",
+        "to": "4c3e",
+        "type": "READ",
+        "function": "FUN_a363"
+      }
+    ]
+  },
+  {
+    "address": "0x4C40",
+    "references": [
+      {
+        "from": "a38d",
+        "to": "4c40",
+        "type": "READ",
+        "function": "FUN_a363"
+      }
+    ]
+  },
+  {
     "address": "0x4C44",
     "references": [
       {
@@ -4260,6 +4414,50 @@
         "to": "4c44",
         "type": "DATA",
         "function": "FUN_a363"
+      }
+    ]
+  },
+  {
+    "address": "0x4D1A",
+    "references": [
+      {
+        "from": "a3c1",
+        "to": "4d1a",
+        "type": "READ",
+        "function": "FUN_a3b4"
+      }
+    ]
+  },
+  {
+    "address": "0x4D1C",
+    "references": [
+      {
+        "from": "a3c1",
+        "to": "4d1c",
+        "type": "READ",
+        "function": "FUN_a3b4"
+      }
+    ]
+  },
+  {
+    "address": "0x4D42",
+    "references": [
+      {
+        "from": "a3de",
+        "to": "4d42",
+        "type": "READ",
+        "function": "FUN_a3b4"
+      }
+    ]
+  },
+  {
+    "address": "0x4D44",
+    "references": [
+      {
+        "from": "a3de",
+        "to": "4d44",
+        "type": "READ",
+        "function": "FUN_a3b4"
       }
     ]
   },
@@ -5438,7 +5636,7 @@
         "from": "531f",
         "to": "4e86",
         "type": "READ",
-        "function": ""
+        "function": "application_init"
       }
     ]
   },
@@ -5449,7 +5647,7 @@
         "from": "532a",
         "to": "4e88",
         "type": "READ",
-        "function": ""
+        "function": "application_init"
       }
     ]
   },
@@ -6569,7 +6767,7 @@
         "from": "5319",
         "to": "4fa0",
         "type": "READ",
-        "function": ""
+        "function": "application_init"
       }
     ]
   }

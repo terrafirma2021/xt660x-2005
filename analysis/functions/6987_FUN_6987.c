@@ -7,8 +7,8 @@ void FUN_6987(void)
   char in_CCR;
   
   bVar1 = DAT_0008;
-  (*(code *)(&UNK_6960 + (byte)((bVar1 & 0xc) >> 1 | in_CCR << 7)))
-            (&UNK_6960 + (byte)((bVar1 & 0xc) >> 1 | in_CCR << 7));
+  (**(code **)(BYTE_ARRAY_6948 + (byte)((bVar1 & 0xc) >> 1 | in_CCR << 7) + 0x18))
+            (*(code **)(BYTE_ARRAY_6948 + (byte)((bVar1 & 0xc) >> 1 | in_CCR << 7) + 0x18));
   return;
 }
 

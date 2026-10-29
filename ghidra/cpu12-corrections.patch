@@ -1,0 +1,126 @@
+--- Ghidra-12.1.4/HCS_HC12.sinc
++++ XT660CPU12/HCS_HC12.sinc
+@@ -732,7 +732,8 @@
+ }
+ @else
+ indexed2_5: indexed5 is UseGPAGE=0 & indexed5 {
+-	export indexed5;
++	# XT660: indexed word operands dereference the computed address.
++	export *:2 indexed5;
+ }
+ @endif
+ 
+@@ -781,7 +782,7 @@
+ 	$(C) = carry(operand1, operand2);
+ 	local tempResult = operand1 + operand2;
+ 	$(C) = $(C) || carry(tempResult, Ccopy);
+-	$(V) = $(V) ^^ scarry(tempResult, Ccopy);
++	$(V) = scarry(operand1, operand2) ^^ scarry(tempResult, Ccopy);
+ 	result = tempResult + Ccopy;
+ 	$(N) = (result s< 0);
+ 	$(Z) = (result == 0);
+@@ -804,6 +805,16 @@
+ 	$(Z) = (result == 0);
+ 	$(V) = scarry(operand1,operand2);
+ 	$(C) = carry(operand1,operand2);
++}
++
++macro subtractionWithBorrow(operand1, operand2, result) {
++    local Ccopy = zext($(C));
++    local intermediate = operand1 - operand2;
++    result = intermediate - Ccopy;
++    $(V) = sborrow(operand1, operand2) ^^ sborrow(intermediate, Ccopy);
++    $(C) = (operand1 < operand2) || (intermediate < Ccopy);
++    $(N) = (result s< 0);
++    $(Z) = (result == 0);
+ }
+ 
+ macro subtraction_flags1(register, operand, result) {	
+@@ -4955,8 +4966,8 @@
+ { 
+ 	op1:1 = iopr8i;
+ 	
+-	result:1 = A - op1 - $(C);
+-	subtraction_flags1(A, op1, result);
++	local result:1;
++	subtractionWithBorrow(A, op1, result);
+ 	A = result;
+ }
+ 
+@@ -4964,8 +4975,8 @@
+ { 
+ 	op1:1 = opr8a_8;
+ 	
+-	result:1 = A - op1 - $(C);
+-	subtraction_flags1(A, op1, result);
++	local result:1;
++	subtractionWithBorrow(A, op1, result);
+ 	A = result;
+ }
+ 
+@@ -4973,8 +4984,8 @@
+ { 
+ 	op1:1 = opr16a_8;
+ 	
+-	result:1 = A - op1 - $(C);
+-	subtraction_flags1(A, op1, result);
++	local result:1;
++	subtractionWithBorrow(A, op1, result);
+ 	A = result;
+ }
+ 
+@@ -4982,8 +4993,8 @@
+ { 
+ 	op1:1 = indexed1_5;
+ 	
+-	result:1 = A - op1 - $(C);
+-	subtraction_flags1(A, op1, result);
++	local result:1;
++	subtractionWithBorrow(A, op1, result);
+ 	A = result;
+ }
+ 
+@@ -4991,8 +5002,8 @@
+ { 
+ 	op1:1 = iopr8i;
+ 	
+-	result:1 = B - op1 - $(C);
+-	subtraction_flags1(B, op1, result);
++	local result:1;
++	subtractionWithBorrow(B, op1, result);
+ 	B = result;
+ }
+ 
+@@ -5000,8 +5011,8 @@
+ { 
+ 	op1:1 = opr8a_8;
+ 	
+-	result:1 = B - op1 - $(C);
+-	subtraction_flags1(B, op1, result);
++	local result:1;
++	subtractionWithBorrow(B, op1, result);
+ 	B = result;
+ }
+ 
+@@ -5009,8 +5020,8 @@
+ { 
+ 	op1:1 = opr16a_8;
+ 	
+-	result:1 = B - op1 - $(C);
+-	subtraction_flags1(B, op1, result);
++	local result:1;
++	subtractionWithBorrow(B, op1, result);
+ 	B = result;
+ }
+ 
+@@ -5018,8 +5029,8 @@
+ { 
+ 	op1:1 = indexed1_5;
+ 	
+-	result:1 = B - op1 - $(C);
+-	subtraction_flags1(B, op1, result);
++	local result:1;
++	subtractionWithBorrow(B, op1, result);
+ 	B = result;
+ }
+ 

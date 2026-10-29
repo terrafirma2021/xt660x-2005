@@ -1,54 +1,71 @@
 /* Entry 5728 */
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_5728(void)
 
 {
-  byte bVar1;
+  undefined2 uVar1;
+  short sVar2;
+  byte bVar3;
   
-  while (bVar1 = DAT_0086, (~bVar1 & 0x80) == 0) {
-    DAT_0e3c = DAT_0e3c + 1;
+  while (bVar3 = DAT_0086, (~bVar3 & 0x80) == 0) {
+    sVar2 = DAT_0e3c;
+    DAT_0e3c = sVar2 + 1;
   }
-  DAT_0e3e = DAT_0090;
-  DAT_0e40 = DAT_0092;
-  DAT_0e42 = DAT_0094;
-  _DAT_0e44 = DAT_0096;
-  _DAT_0e46 = DAT_0098;
-  _DAT_0e48 = DAT_009a;
-  bVar1 = DAT_0e3b & 3;
-  if (bVar1 != 0) {
-    if (bVar1 == 1) {
-      DAT_0e4c = DAT_009c;
+  uVar1 = DAT_0090;
+  DAT_0e3e = uVar1;
+  uVar1 = DAT_0092;
+  DAT_0e40 = uVar1;
+  uVar1 = DAT_0094;
+  DAT_0e42 = uVar1;
+  uVar1 = DAT_0096;
+  RAM0e44 = uVar1;
+  uVar1 = DAT_0098;
+  RAM0e46 = uVar1;
+  uVar1 = DAT_009a;
+  RAM0e48 = uVar1;
+  bVar3 = DAT_0e3b;
+  bVar3 = bVar3 & 3;
+  if (bVar3 != 0) {
+    if (bVar3 == 1) {
+      uVar1 = DAT_009c;
+      DAT_0e4c = uVar1;
       goto LAB_5784;
     }
-    if (bVar1 == 2) {
-      DAT_0e4e = DAT_009c;
+    if (bVar3 == 2) {
+      uVar1 = DAT_009c;
+      DAT_0e4e = uVar1;
       goto LAB_5784;
     }
-    if (bVar1 == 3) {
-      DAT_0e50 = DAT_009c;
+    if (bVar3 == 3) {
+      uVar1 = DAT_009c;
+      DAT_0e50 = uVar1;
       goto LAB_5784;
     }
   }
-  _DAT_0e4a = DAT_009c;
+  uVar1 = DAT_009c;
+  RAM0e4a = uVar1;
 LAB_5784:
-  bVar1 = DAT_0e3b & 3;
-  if (bVar1 != 0) {
-    if (bVar1 == 1) {
-      DAT_0e54 = DAT_009e;
+  bVar3 = DAT_0e3b;
+  bVar3 = bVar3 & 3;
+  if (bVar3 != 0) {
+    if (bVar3 == 1) {
+      uVar1 = DAT_009e;
+      DAT_0e54 = uVar1;
       return;
     }
-    if (bVar1 == 2) {
-      DAT_0e56 = DAT_009e;
+    if (bVar3 == 2) {
+      uVar1 = DAT_009e;
+      DAT_0e56 = uVar1;
       return;
     }
-    if (bVar1 == 3) {
-      DAT_0e58 = DAT_009e;
+    if (bVar3 == 3) {
+      uVar1 = DAT_009e;
+      DAT_0e58 = uVar1;
       return;
     }
   }
-  DAT_0e52 = DAT_009e;
+  uVar1 = DAT_009e;
+  DAT_0e52 = uVar1;
   return;
 }
 

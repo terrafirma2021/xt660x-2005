@@ -1,73 +1,114 @@
 /* Entry 869e */
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_869e(void)
 
 {
-  short sVar1;
-  undefined3 uVar2;
-  undefined2 uVar3;
+  byte bVar1;
+  undefined2 uVar2;
+  short sVar3;
   short sVar4;
   ushort uVar5;
   ushort uVar6;
+  char cVar7;
+  undefined1 uVar8;
+  ushort uVar9;
+  undefined2 *puVar10;
+  ushort *puVar11;
+  undefined2 *puVar12;
   
-  DAT_0881 = DAT_0881 & 0xfd;
-  DAT_08c0 = DAT_08c0 | 0x20;
-  sVar4 = (ushort)DAT_189a * 2 + 0xc58;
+  bVar1 = DAT_0881;
+  DAT_0881 = bVar1 & 0xfd;
+  bVar1 = DAT_08c0;
+  DAT_08c0 = bVar1 | 0x20;
+  puVar10 = &DAT_0c58 + DAT_189a;
+  puVar12 = &DAT_0cb8;
   DAT_0b3c = 0;
-  while (DAT_0b3c = (DAT_0b3c + 1) - (0xfe < DAT_0b3c), DAT_0b3c < 5) {
-    sVar4 = sVar4 + 2;
+  while( true ) {
+    *puVar12 = *puVar10;
+    bVar1 = DAT_0b3c;
+    bVar1 = (bVar1 + 1) - (0xfe < bVar1);
+    DAT_0b3c = bVar1;
+    if (4 < bVar1) break;
+    puVar10 = puVar10 + 1;
+    puVar12 = puVar12 + 1;
   }
-  uVar5 = 0xcb8;
-  DAT_0ccc = 0xcb8;
-  DAT_0cce = 0xcb8;
+  puVar11 = &DAT_0cb8;
+  uVar2 = DAT_0cb8;
+  DAT_0ccc = uVar2;
+  DAT_0cce = uVar2;
   DAT_0b3c = 0;
-  uVar6 = DAT_0ccc;
-  while (DAT_0ccc = uVar6, DAT_0b3c = (DAT_0b3c + 1) - (0xfe < DAT_0b3c), DAT_0b3c < 5) {
-    uVar5 = uVar5 + 2;
-    uVar6 = uVar5;
-    if ((uVar5 < DAT_0ccc) && (uVar6 = DAT_0ccc, uVar5 < DAT_0cce)) {
-      DAT_0cce = uVar5;
-    }
-  }
-  DAT_0cc2 = DAT_0ccc;
-  DAT_0cc4 = DAT_0cce;
-  if ((((((~DAT_08af & 0x20) == 0) && ((~DAT_08af & 0x10) == 0)) && ((~DAT_08af & 8) == 0)) &&
-      ((((~DAT_08af & 4) == 0 && ((~DAT_089f & 0x80) == 0)) &&
-       ((DAT_0ccc - DAT_0cce <= DAT_189c && (((~DAT_0881 & 0x10) == 0 && (DAT_18a0 <= DAT_08e8))))))
-      )) && ((DAT_08e8 <= DAT_18a2 &&
-             ((((DAT_18a4 <= DAT_0900 && (DAT_0900 <= DAT_18a6)) && (DAT_18a8 <= DAT_0c90)) &&
-              (DAT_0c90 <= DAT_18aa)))))) {
-    uVar6 = 0xcb8;
-    DAT_0b3c = 0;
-    _DAT_0dde = 0;
-    while( true ) {
-      sVar1 = uVar6 + RAM0x0ddf;
-      _DAT_0dde = CONCAT12(DAT_0dde._0_1_ + CARRY2(uVar6,RAM0x0ddf),sVar1);
-      uVar2 = _DAT_0dde;
-      DAT_0b3c = (DAT_0b3c + 1) - (0xfe < DAT_0b3c);
-      if (4 < DAT_0b3c) break;
-      uVar6 = uVar6 + 2;
-    }
-    DAT_0de0._0_1_ = (undefined1)sVar1;
-    RAM0x0de1 = CONCAT21(DAT_0dde / 5,(char)(CONCAT11((char)(DAT_0dde % 5),DAT_0de0._0_1_) / 5));
-    DAT_0cc6 = _DAT_0de2;
-    sVar1 = _DAT_0de2 - DAT_0cca;
-    _DAT_0dde = uVar2;
-    if (_DAT_0de2 < DAT_0cca) {
-      uVar3 = scale_u16_by_u8(sVar4,CONCAT11((~(byte)((ushort)sVar1 >> 8) + 1) -
-                                             ((char)-(char)sVar1 != '\0'),-(char)sVar1));
-      sVar4 = CONCAT11((~(byte)((ushort)uVar3 >> 8) + 1) - ((char)-(char)uVar3 != '\0'),-(char)uVar3
-                      );
+  while( true ) {
+    bVar1 = DAT_0b3c;
+    bVar1 = (bVar1 + 1) - (0xfe < bVar1);
+    DAT_0b3c = bVar1;
+    if (4 < bVar1) break;
+    puVar11 = puVar11 + 1;
+    uVar9 = *puVar11;
+    uVar5 = DAT_0ccc;
+    if (uVar9 < uVar5) {
+      uVar5 = DAT_0cce;
+      if (uVar9 < uVar5) {
+        DAT_0cce = uVar9;
+      }
     }
     else {
-      sVar4 = scale_u16_by_u8(sVar4,sVar1);
+      DAT_0ccc = uVar9;
     }
-    DAT_0cc8 = sVar4 + DAT_0cca;
-    DAT_0cca = DAT_0cc8;
   }
-  DAT_08c0 = DAT_08c0 & 0xdf;
+  uVar2 = DAT_0ccc;
+  DAT_0cc2 = uVar2;
+  uVar2 = DAT_0cce;
+  DAT_0cc4 = uVar2;
+  bVar1 = DAT_08af;
+  if (((((~bVar1 & 0x20) == 0) && (bVar1 = DAT_08af, (~bVar1 & 0x10) == 0)) &&
+      (bVar1 = DAT_08af, (~bVar1 & 8) == 0)) &&
+     ((bVar1 = DAT_08af, (~bVar1 & 4) == 0 && (bVar1 = DAT_089f, (~bVar1 & 0x80) == 0)))) {
+    sVar3 = DAT_0cc2;
+    sVar4 = DAT_0cc4;
+    if (((((ushort)(sVar3 - sVar4) <= DAT_189c) &&
+         ((bVar1 = DAT_0881, (~bVar1 & 0x10) == 0 && (uVar9 = DAT_08e8, DAT_18a0 <= uVar9)))) &&
+        ((uVar9 <= DAT_18a2 &&
+         (((uVar9 = DAT_0900, DAT_18a4 <= uVar9 && (uVar9 <= DAT_18a6)) &&
+          (uVar9 = DAT_0c90, DAT_18a8 <= uVar9)))))) && (uVar9 <= DAT_18aa)) {
+      puVar11 = &DAT_0cb8;
+      DAT_0b3c = 0;
+      DAT_0dde._0_1_ = 0;
+      RAM0ddf = 0;
+      while( true ) {
+        uVar9 = RAM0ddf;
+        RAM0ddf = *puVar11 + uVar9;
+        cVar7 = DAT_0dde._0_1_;
+        DAT_0dde._0_1_ = cVar7 + CARRY2(*puVar11,uVar9);
+        bVar1 = DAT_0b3c;
+        bVar1 = (bVar1 + 1) - (0xfe < bVar1);
+        DAT_0b3c = bVar1;
+        if (4 < bVar1) break;
+        puVar11 = puVar11 + 1;
+      }
+      uVar9 = DAT_0dde;
+      RAM0de1 = uVar9 / 5;
+      uVar8 = DAT_0de0._0_1_;
+      DAT_0de3 = (char)(CONCAT11((char)(uVar9 % 5),uVar8) / 5);
+      uVar2 = RAM0de2;
+      DAT_0cc6 = uVar2;
+      uVar5 = DAT_0cc6;
+      uVar6 = DAT_0cca;
+      uVar9 = uVar5 - uVar6;
+      if (uVar5 < uVar6) {
+        uVar9 = scale_u16_by_u8(CONCAT11((~(byte)(uVar9 >> 8) + 1) - ((char)-(char)uVar9 != '\0'),
+                                         -(char)uVar9),&UNK_189e);
+        uVar9 = CONCAT11((~(byte)(uVar9 >> 8) + 1) - ((char)-(char)uVar9 != '\0'),-(char)uVar9);
+      }
+      else {
+        uVar9 = scale_u16_by_u8(uVar9,&UNK_189e);
+      }
+      sVar3 = DAT_0cca;
+      DAT_0cca = uVar9 + sVar3;
+      DAT_0cc8 = uVar9 + sVar3;
+    }
+  }
+  bVar1 = DAT_08c0;
+  DAT_08c0 = bVar1 & 0xdf;
   return;
 }
 

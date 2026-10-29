@@ -3,8 +3,13 @@
 void FUN_721f(void)
 
 {
-  DAT_0bfe = DAT_0bfe & 0x3f;
-  DAT_0ca8 = DAT_0ca8 & 0xf8;
+  byte bVar1;
+  ushort uVar2;
+  
+  bVar1 = DAT_0bfe;
+  DAT_0bfe = bVar1 & 0x3f;
+  bVar1 = DAT_0ca8;
+  DAT_0ca8 = bVar1 & 0xf8;
   DAT_091b = 0xe;
   DAT_091c = 0xe;
   DAT_091d = 0xe;
@@ -12,13 +17,37 @@ void FUN_721f(void)
   DAT_091f = 0xe;
   DAT_0920 = 0xe;
   DAT_0b09 = 0xe;
-  DAT_0880 = DAT_0880 & 0xf5 | 0x44;
-  DAT_0881 = DAT_0881 & 0xf7 | 0xd0;
-  DAT_0883 = DAT_0883 & 0xcf;
+  bVar1 = DAT_0880;
+  DAT_0880 = bVar1 | 0x44;
+  bVar1 = DAT_0880;
+  DAT_0880 = bVar1 & 0xfd;
+  bVar1 = DAT_0880;
+  DAT_0880 = bVar1 & 0xf7;
+  bVar1 = DAT_0881;
+  DAT_0881 = bVar1 | 0xd0;
+  bVar1 = DAT_0881;
+  DAT_0881 = bVar1 & 0xf7;
+  bVar1 = DAT_0883;
+  DAT_0883 = bVar1 & 0xef;
+  bVar1 = DAT_0883;
+  DAT_0883 = bVar1 & 0xdf;
   DAT_088b = 0;
-  DAT_0a16 = DAT_0a16 & 0xf7;
-  DAT_0a92 = DAT_0a92 & 0x55;
-  DAT_0cf2 = DAT_0cf2 & 0xf8;
+  bVar1 = DAT_0a16;
+  DAT_0a16 = bVar1 & 0xf7;
+  bVar1 = DAT_0a92;
+  DAT_0a92 = bVar1 & 0x7f;
+  bVar1 = DAT_0a92;
+  DAT_0a92 = bVar1 & 0xdf;
+  bVar1 = DAT_0a92;
+  DAT_0a92 = bVar1 & 0xf7;
+  bVar1 = DAT_0a92;
+  DAT_0a92 = bVar1 & 0xfd;
+  bVar1 = DAT_0cf2;
+  DAT_0cf2 = bVar1 & 0xfb;
+  bVar1 = DAT_0cf2;
+  DAT_0cf2 = bVar1 & 0xfd;
+  bVar1 = DAT_0cf2;
+  DAT_0cf2 = bVar1 & 0xfe;
   DAT_08f8 = 0;
   DAT_08fa = 0;
   DAT_08fe = 0;
@@ -70,28 +99,38 @@ void FUN_721f(void)
   DAT_0922 = 0xc0;
   DAT_0c03 = 0xc0;
   DAT_0924 = 6;
-  DAT_0a1c = DAT_18e0;
+  bVar1 = DAT_18e0;
   if (0x16 < DAT_18e0) {
-    DAT_0a1c = 0x16;
+    bVar1 = 0x16;
   }
-  if (DAT_0a1c < 0xc) {
-    if (DAT_0a1c == 0xb) {
-      DAT_0a1c = 10;
+  if (bVar1 < 0xc) {
+    if (bVar1 == 0xb) {
+      bVar1 = 10;
     }
   }
   else {
-    DAT_0a1c = DAT_0a1c - 0xc;
+    bVar1 = bVar1 - 0xc;
   }
-  if (DAT_0d7b < 0x17) {
-    DAT_0a1a = DAT_0d7b;
-    if (DAT_0d7b == 0xb) {
-      DAT_0a1a = 10;
+  DAT_0a1c = bVar1;
+  DAT_0a1e = bVar1;
+  DAT_0a1d = bVar1;
+  DAT_0a1f = bVar1;
+  bVar1 = DAT_0d7b;
+  if (bVar1 < 0x17) {
+    if (bVar1 == 0xb) {
+      bVar1 = 10;
     }
   }
   else {
-    DAT_0a1a = 0x16;
+    bVar1 = 0x16;
   }
-  DAT_0abf = DAT_0abf & 0xf8;
+  DAT_0a1a = bVar1;
+  bVar1 = DAT_0abf;
+  DAT_0abf = bVar1 & 0xfb;
+  bVar1 = DAT_0abf;
+  DAT_0abf = bVar1 & 0xfe;
+  bVar1 = DAT_0abf;
+  DAT_0abf = bVar1 & 0xfd;
   DAT_0ac2 = 0;
   DAT_0ac4 = 0;
   DAT_0ac6 = 0;
@@ -99,15 +138,16 @@ void FUN_721f(void)
   DAT_0ac0 = 0;
   DAT_0ac8 = 0;
   DAT_0acc = 0;
-  DAT_0d08 = DAT_0d08 & 0xfd;
-  DAT_0a1d = DAT_0a1c;
-  DAT_0a1e = DAT_0a1c;
-  DAT_0a1f = DAT_0a1c;
+  bVar1 = DAT_0d08;
+  DAT_0d08 = bVar1 & 0xfd;
   if (DAT_32ee != -0x80) {
-    DAT_0994 = lookup_u8_uniform_axis(&UNK_32ef);
-    DAT_0996 = lookup_u8_uniform_axis(&UNK_3301);
+    uVar2 = lookup_u8_uniform_axis('\0',&UNK_32ef);
+    DAT_0994 = uVar2;
+    uVar2 = lookup_u8_uniform_axis((uchar)uVar2,&UNK_3301);
+    DAT_0996 = uVar2;
   }
-  DAT_0e21 = DAT_0e21 & 0x7f;
+  bVar1 = DAT_0e21;
+  DAT_0e21 = bVar1 & 0x7f;
   return;
 }
 

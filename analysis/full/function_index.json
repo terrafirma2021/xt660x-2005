@@ -1,0 +1,6319 @@
+[
+  {
+    "entry": "0x5000",
+    "name": "application_init",
+    "status": "ok",
+    "instruction_count": 473,
+    "instruction_bytes": 1264,
+    "structured_c": "../functions/5000_application_init.c",
+    "calls": [
+      {
+        "site": "0x5083",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x50AD",
+        "targets": [
+          "0x5FC8"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x521C",
+        "targets": [
+          "0x56B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x52D3",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x52DF",
+        "targets": [
+          "0xC1DB"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x52FD",
+        "targets": [
+          "0xC1DB"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5327",
+        "targets": [
+          "0x5857"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5332",
+        "targets": [
+          "0x5C05"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5335",
+        "targets": [
+          "0x5D4D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5338",
+        "targets": [
+          "0x5D67"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x533B",
+        "targets": [
+          "0x5CC7"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x533E",
+        "targets": [
+          "0x592E"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5355",
+        "targets": [
+          "0x5EF1"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x535B",
+        "targets": [
+          "0xA489"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x535E",
+        "targets": [
+          "0x5FBF"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5361",
+        "targets": [
+          "0x5FBA"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5398",
+        "targets": [
+          "0x5FA3"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x53C2",
+        "targets": [
+          "0x6259"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x53C5",
+        "targets": [
+          "0x6772"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x53C8",
+        "targets": [
+          "0xF8A0"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x53CB",
+        "targets": [
+          "0x6299"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x53D3",
+        "targets": [
+          "0x8691"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x53DB",
+        "targets": [
+          "0x869E"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x53E3",
+        "targets": [
+          "0x87E7"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x53EF",
+        "targets": [
+          "0x73A5"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5419",
+        "targets": [
+          "0x54F0"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5432",
+        "targets": [
+          "0x55B6"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5474",
+        "targets": [
+          "0x5664"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x547B",
+        "targets": [
+          "0x857D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5494",
+        "targets": [
+          "0x74B8"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5497",
+        "targets": [
+          "0x6772"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x549A",
+        "targets": [
+          "0x6299"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x54A2",
+        "targets": [
+          "0x8B34"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x54AA",
+        "targets": [
+          "0xA557"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x54B2",
+        "targets": [
+          "0xA564"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x54BA",
+        "targets": [
+          "0xAC7F"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x54C2",
+        "targets": [
+          "0xAFF9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x54CA",
+        "targets": [
+          "0xB166"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x54D2",
+        "targets": [
+          "0xB817"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x54DA",
+        "targets": [
+          "0xBC2E"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x54E2",
+        "targets": [
+          "0xC063"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x54EA",
+        "targets": [
+          "0xC199"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x54F0",
+    "name": "FUN_54f0",
+    "status": "ok",
+    "instruction_count": 77,
+    "instruction_bytes": 198,
+    "structured_c": "../functions/54f0_FUN_54f0.c",
+    "calls": [
+      {
+        "site": "0x54FC",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x55B6",
+    "name": "FUN_55b6",
+    "status": "ok",
+    "instruction_count": 69,
+    "instruction_bytes": 174,
+    "structured_c": "../functions/55b6_FUN_55b6.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5664",
+    "name": "FUN_5664",
+    "status": "ok",
+    "instruction_count": 31,
+    "instruction_bytes": 80,
+    "structured_c": "../functions/5664_FUN_5664.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x56B4",
+    "name": "FUN_56b4",
+    "status": "ok",
+    "instruction_count": 10,
+    "instruction_bytes": 23,
+    "structured_c": "../functions/56b4_FUN_56b4.c",
+    "calls": [
+      {
+        "site": "0x56B4",
+        "targets": [
+          "0x56D0"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x56B6",
+        "targets": [
+          "0x5728"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x56B9",
+        "targets": [
+          "0x56D0"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x56BB",
+        "targets": [
+          "0x5728"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x56BE",
+        "targets": [
+          "0x56D0"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x56C0",
+        "targets": [
+          "0x5728"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x56C3",
+        "targets": [
+          "0x56D0"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x56C5",
+        "targets": [
+          "0x5728"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x56C8",
+        "targets": [
+          "0x56D0"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x56D0",
+    "name": "FUN_56d0",
+    "status": "ok",
+    "instruction_count": 47,
+    "instruction_bytes": 88,
+    "structured_c": "../functions/56d0_FUN_56d0.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5728",
+    "name": "FUN_5728",
+    "status": "ok",
+    "instruction_count": 60,
+    "instruction_bytes": 140,
+    "structured_c": "../functions/5728_FUN_5728.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x57B4",
+    "name": "FUN_57b4",
+    "status": "ok",
+    "instruction_count": 24,
+    "instruction_bytes": 53,
+    "structured_c": "../functions/57b4_FUN_57b4.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x57E9",
+    "name": "FUN_57e9",
+    "status": "ok",
+    "instruction_count": 38,
+    "instruction_bytes": 90,
+    "structured_c": "../functions/57e9_FUN_57e9.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5843",
+    "name": "FUN_5843",
+    "status": "ok",
+    "instruction_count": 7,
+    "instruction_bytes": 20,
+    "structured_c": "../functions/5843_FUN_5843.c",
+    "calls": [
+      {
+        "site": "0x5843",
+        "targets": [
+          "0x5857"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5846",
+        "targets": [
+          "0x5A13"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5849",
+        "targets": [
+          "0x5C05"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x584C",
+        "targets": [
+          "0x5D4D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x584F",
+        "targets": [
+          "0x5D77"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5857",
+    "name": "FUN_5857",
+    "status": "ok",
+    "instruction_count": 82,
+    "instruction_bytes": 215,
+    "structured_c": "../functions/5857_FUN_5857.c",
+    "calls": [
+      {
+        "site": "0x585D",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5869",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5872",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x587E",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5887",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5893",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x589C",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x58A8",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x58B1",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x58BD",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x58C6",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x58D2",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x58DB",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x58E7",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x58F0",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x58FC",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5905",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5911",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x591A",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5926",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x592E",
+    "name": "FUN_592e",
+    "status": "ok",
+    "instruction_count": 74,
+    "instruction_bytes": 229,
+    "structured_c": "../functions/592e_FUN_592e.c",
+    "calls": [
+      {
+        "site": "0x5931",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x593A",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5943",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x596A",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5970",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5979",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5982",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x59A9",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x59EE",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x59F7",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A00",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A09",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A0F",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5A13",
+    "name": "FUN_5a13",
+    "status": "ok",
+    "instruction_count": 130,
+    "instruction_bytes": 341,
+    "structured_c": "../functions/5a13_FUN_5a13.c",
+    "calls": [
+      {
+        "site": "0x5A19",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A25",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A2E",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A3A",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A43",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A4F",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A58",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A64",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A6D",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A79",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A82",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A8E",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5A97",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5AA3",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5AAC",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5AB8",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5AC1",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5ACD",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5AD6",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5AE2",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5AEB",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5AF7",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B00",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B0C",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B15",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B21",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B2A",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B36",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B3F",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B4B",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B54",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B60",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5B68",
+    "name": "candidate_unreferenced_5b68",
+    "status": "ok",
+    "instruction_count": 53,
+    "instruction_bytes": 157,
+    "structured_c": "../functions/5b68_candidate_unreferenced_5b68.c",
+    "calls": [
+      {
+        "site": "0x5B6B",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B74",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B7D",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B86",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B8C",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B92",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5B9B",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5BA4",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5BAD",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5BB3",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5BB9",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5BC2",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5BCB",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5BD4",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5BDA",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5BE0",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5BE9",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5BF2",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5BFB",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C01",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0x5C05",
+    "name": "FUN_5c05",
+    "status": "ok",
+    "instruction_count": 74,
+    "instruction_bytes": 194,
+    "structured_c": "../functions/5c05_FUN_5c05.c",
+    "calls": [
+      {
+        "site": "0x5C0B",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C17",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C20",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C2C",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C35",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C41",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C4A",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C56",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C5F",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C6B",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C74",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C80",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C89",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C95",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5C9E",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5CAA",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5CB3",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5CBF",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5CC7",
+    "name": "FUN_5cc7",
+    "status": "ok",
+    "instruction_count": 46,
+    "instruction_bytes": 134,
+    "structured_c": "../functions/5cc7_FUN_5cc7.c",
+    "calls": [
+      {
+        "site": "0x5CCA",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5CD6",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5CE2",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5CFC",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5D05",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5D0B",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5D16",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5D1C",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5D28",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5D34",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5D40",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5D49",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5D4D",
+    "name": "FUN_5d4d",
+    "status": "ok",
+    "instruction_count": 10,
+    "instruction_bytes": 26,
+    "structured_c": "../functions/5d4d_FUN_5d4d.c",
+    "calls": [
+      {
+        "site": "0x5D53",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5D5F",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5D67",
+    "name": "FUN_5d67",
+    "status": "ok",
+    "instruction_count": 6,
+    "instruction_bytes": 16,
+    "structured_c": "../functions/5d67_FUN_5d67.c",
+    "calls": [
+      {
+        "site": "0x5D6A",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5D73",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5D77",
+    "name": "FUN_5d77",
+    "status": "ok",
+    "instruction_count": 90,
+    "instruction_bytes": 236,
+    "structured_c": "../functions/5d77_FUN_5d77.c",
+    "calls": [
+      {
+        "site": "0x5D7D",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5D89",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5D92",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5D9E",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5DA7",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5DB3",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5DBC",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5DC8",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5DD1",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5DDD",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5DE6",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5DF2",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5DFB",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E07",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E10",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E1C",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E25",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E31",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E3A",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E46",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E4F",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E5B",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5E63",
+    "name": "FUN_5e63",
+    "status": "ok",
+    "instruction_count": 48,
+    "instruction_bytes": 142,
+    "structured_c": "../functions/5e63_FUN_5e63.c",
+    "calls": [
+      {
+        "site": "0x5E66",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E72",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E7E",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E8A",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E93",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5E99",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5EA5",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5EB1",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5EBD",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5EC6",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5ECC",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5ED8",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5EE4",
+        "targets": [
+          "0x57B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5EED",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5EF1",
+    "name": "FUN_5ef1",
+    "status": "ok",
+    "instruction_count": 25,
+    "instruction_bytes": 68,
+    "structured_c": "../functions/5ef1_FUN_5ef1.c",
+    "calls": [
+      {
+        "site": "0x5EF8",
+        "targets": [
+          "0x5E63"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5F20",
+        "targets": [
+          "0x5D77"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5F23",
+        "targets": [
+          "0x5E63"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x5F31",
+        "targets": [
+          "0x5F35"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5F35",
+    "name": "FUN_5f35",
+    "status": "ok",
+    "instruction_count": 41,
+    "instruction_bytes": 110,
+    "structured_c": "../functions/5f35_FUN_5f35.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5FA3",
+    "name": "FUN_5fa3",
+    "status": "ok",
+    "instruction_count": 1,
+    "instruction_bytes": 1,
+    "structured_c": "../functions/5fa3_FUN_5fa3.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5FA4",
+    "name": "FUN_5fa4",
+    "status": "ok",
+    "instruction_count": 10,
+    "instruction_bytes": 22,
+    "structured_c": "../functions/5fa4_FUN_5fa4.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5FBA",
+    "name": "FUN_5fba",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 5,
+    "structured_c": "../functions/5fba_FUN_5fba.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5FBF",
+    "name": "FUN_5fbf",
+    "status": "ok",
+    "instruction_count": 5,
+    "instruction_bytes": 9,
+    "structured_c": "../functions/5fbf_FUN_5fbf.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x5FC8",
+    "name": "FUN_5fc8",
+    "status": "ok",
+    "instruction_count": 124,
+    "instruction_bytes": 657,
+    "structured_c": "../functions/5fc8_FUN_5fc8.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6259",
+    "name": "FUN_6259",
+    "status": "ok",
+    "instruction_count": 23,
+    "instruction_bytes": 64,
+    "structured_c": "../functions/6259_FUN_6259.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6299",
+    "name": "FUN_6299",
+    "status": "ok",
+    "instruction_count": 5,
+    "instruction_bytes": 17,
+    "structured_c": "../functions/6299_FUN_6299.c",
+    "calls": [
+      {
+        "site": "0x629E",
+        "targets": [
+          "0x62AA"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x62AA",
+    "name": "FUN_62aa",
+    "status": "ok",
+    "instruction_count": 195,
+    "instruction_bytes": 492,
+    "structured_c": "../functions/62aa_FUN_62aa.c",
+    "calls": [
+      {
+        "site": "0x6352",
+        "targets": [
+          "0x6496"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x647F",
+        "targets": [
+          "0x650B"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6496",
+    "name": "FUN_6496",
+    "status": "ok",
+    "instruction_count": 43,
+    "instruction_bytes": 117,
+    "structured_c": "../functions/6496_FUN_6496.c",
+    "calls": [
+      {
+        "site": "0x64F0",
+        "targets": [
+          "0x66D6"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x650B",
+    "name": "FUN_650b",
+    "status": "ok",
+    "instruction_count": 109,
+    "instruction_bytes": 293,
+    "structured_c": "../functions/650b_FUN_650b.c",
+    "calls": [
+      {
+        "site": "0x65FE",
+        "targets": [
+          "0x6630"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x660B",
+        "targets": [
+          "0x6672"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x6618",
+        "targets": [
+          "0x6726"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6630",
+    "name": "FUN_6630",
+    "status": "ok",
+    "instruction_count": 24,
+    "instruction_bytes": 66,
+    "structured_c": "../functions/6630_FUN_6630.c",
+    "calls": [
+      {
+        "site": "0x6657",
+        "targets": [
+          "0x66D6"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6672",
+    "name": "FUN_6672",
+    "status": "ok",
+    "instruction_count": 38,
+    "instruction_bytes": 100,
+    "structured_c": "../functions/6672_FUN_6672.c",
+    "calls": [
+      {
+        "site": "0x66BB",
+        "targets": [
+          "0x66D6"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x66D6",
+    "name": "FUN_66d6",
+    "status": "ok",
+    "instruction_count": 39,
+    "instruction_bytes": 80,
+    "structured_c": "../functions/66d6_FUN_66d6.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6726",
+    "name": "FUN_6726",
+    "status": "ok",
+    "instruction_count": 32,
+    "instruction_bytes": 76,
+    "structured_c": "../functions/6726_FUN_6726.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6772",
+    "name": "FUN_6772",
+    "status": "ok",
+    "instruction_count": 186,
+    "instruction_bytes": 437,
+    "structured_c": "../functions/6772_FUN_6772.c",
+    "calls": [
+      {
+        "site": "0x6871",
+        "targets": [
+          "0x721F"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x68E7",
+        "targets": [],
+        "computed": true
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6927",
+    "name": "candidate_unreferenced_6927",
+    "status": "ok",
+    "instruction_count": 27,
+    "instruction_bytes": 32,
+    "structured_c": "../functions/6927_candidate_unreferenced_6927.c",
+    "calls": [],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0x6978",
+    "name": "FUN_6978",
+    "status": "ok",
+    "instruction_count": 8,
+    "instruction_bytes": 15,
+    "structured_c": "../functions/6978_FUN_6978.c",
+    "calls": [
+      {
+        "site": "0x6984",
+        "targets": [],
+        "computed": true
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6987",
+    "name": "FUN_6987",
+    "status": "ok",
+    "instruction_count": 8,
+    "instruction_bytes": 15,
+    "structured_c": "../functions/6987_FUN_6987.c",
+    "calls": [
+      {
+        "site": "0x6993",
+        "targets": [],
+        "computed": true
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6996",
+    "name": "FUN_6996",
+    "status": "ok",
+    "instruction_count": 98,
+    "instruction_bytes": 271,
+    "structured_c": "../functions/6996_FUN_6996.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6AA5",
+    "name": "FUN_6aa5",
+    "status": "ok",
+    "instruction_count": 31,
+    "instruction_bytes": 79,
+    "structured_c": "../functions/6aa5_FUN_6aa5.c",
+    "calls": [
+      {
+        "site": "0x6AB2",
+        "targets": [
+          "0xC407"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6AF4",
+    "name": "FUN_6af4",
+    "status": "ok",
+    "instruction_count": 1,
+    "instruction_bytes": 1,
+    "structured_c": "../functions/6af4_FUN_6af4.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6AF5",
+    "name": "FUN_6af5",
+    "status": "ok",
+    "instruction_count": 1,
+    "instruction_bytes": 1,
+    "structured_c": "../functions/6af5_FUN_6af5.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6AF6",
+    "name": "FUN_6af6",
+    "status": "ok",
+    "instruction_count": 107,
+    "instruction_bytes": 359,
+    "structured_c": "../functions/6af6_FUN_6af6.c",
+    "calls": [
+      {
+        "site": "0x6B60",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6C5D",
+    "name": "FUN_6c5d",
+    "status": "ok",
+    "instruction_count": 1,
+    "instruction_bytes": 1,
+    "structured_c": "../functions/6c5d_FUN_6c5d.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6C5E",
+    "name": "FUN_6c5e",
+    "status": "ok",
+    "instruction_count": 248,
+    "instruction_bytes": 868,
+    "structured_c": "../functions/6c5e_FUN_6c5e.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x6FC2",
+    "name": "FUN_6fc2",
+    "status": "ok",
+    "instruction_count": 64,
+    "instruction_bytes": 186,
+    "structured_c": "../functions/6fc2_FUN_6fc2.c",
+    "calls": [
+      {
+        "site": "0x7046",
+        "targets": [
+          "0xC1DB"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x707C",
+    "name": "FUN_707c",
+    "status": "ok",
+    "instruction_count": 12,
+    "instruction_bytes": 39,
+    "structured_c": "../functions/707c_FUN_707c.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x70A3",
+    "name": "FUN_70a3",
+    "status": "ok",
+    "instruction_count": 103,
+    "instruction_bytes": 308,
+    "structured_c": "../functions/70a3_FUN_70a3.c",
+    "calls": [
+      {
+        "site": "0x7133",
+        "targets": [
+          "0xC276"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7169",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x717E",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x718A",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x71D7",
+    "name": "FUN_71d7",
+    "status": "ok",
+    "instruction_count": 4,
+    "instruction_bytes": 10,
+    "structured_c": "../functions/71d7_FUN_71d7.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x71E1",
+    "name": "FUN_71e1",
+    "status": "ok",
+    "instruction_count": 4,
+    "instruction_bytes": 10,
+    "structured_c": "../functions/71e1_FUN_71e1.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x71EB",
+    "name": "FUN_71eb",
+    "status": "ok",
+    "instruction_count": 5,
+    "instruction_bytes": 13,
+    "structured_c": "../functions/71eb_FUN_71eb.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x71F8",
+    "name": "FUN_71f8",
+    "status": "ok",
+    "instruction_count": 6,
+    "instruction_bytes": 16,
+    "structured_c": "../functions/71f8_FUN_71f8.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x7208",
+    "name": "candidate_unreferenced_7208",
+    "status": "ok",
+    "instruction_count": 11,
+    "instruction_bytes": 23,
+    "structured_c": "../functions/7208_candidate_unreferenced_7208.c",
+    "calls": [],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0x721F",
+    "name": "FUN_721f",
+    "status": "ok",
+    "instruction_count": 132,
+    "instruction_bytes": 390,
+    "structured_c": "../functions/721f_FUN_721f.c",
+    "calls": [
+      {
+        "site": "0x738E",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x739A",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x73A5",
+    "name": "FUN_73a5",
+    "status": "ok",
+    "instruction_count": 111,
+    "instruction_bytes": 275,
+    "structured_c": "../functions/73a5_FUN_73a5.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x74B8",
+    "name": "FUN_74b8",
+    "status": "ok",
+    "instruction_count": 1648,
+    "instruction_bytes": 4293,
+    "structured_c": "../functions/74b8_FUN_74b8.c",
+    "calls": [
+      {
+        "site": "0x74C2",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7811",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x781C",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7864",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x786F",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x78BF",
+        "targets": [
+          "0xCC7B"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x790E",
+        "targets": [
+          "0xC1DB"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7965",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7970",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7A32",
+        "targets": [
+          "0xCC7B"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7A81",
+        "targets": [
+          "0xC1DB"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7B15",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7B30",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7B64",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7B78",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7B8F",
+        "targets": [
+          "0xC4DC"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7BB1",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7BBD",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7BD8",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7BE4",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7BF7",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7C00",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7C3F",
+        "targets": [
+          "0x864E"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7CD1",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7CE5",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7D03",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7D25",
+        "targets": [
+          "0xC499"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7D38",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7D5A",
+        "targets": [
+          "0xC499"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7D75",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7D97",
+        "targets": [
+          "0xC499"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7DAA",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7DCC",
+        "targets": [
+          "0xC499"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7DE0",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7E0F",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7E36",
+        "targets": [
+          "0xC499"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7E5A",
+        "targets": [
+          "0xC499"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7E6E",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7E82",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7E99",
+        "targets": [
+          "0xC32D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7EB0",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7EC4",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7EDB",
+        "targets": [
+          "0xC32D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7F1C",
+        "targets": [
+          "0xC9A9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7F30",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7F47",
+        "targets": [
+          "0xC32D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7F87",
+        "targets": [
+          "0xC407"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7FAE",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7FBA",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7FC6",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x7FD2",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8012",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8020",
+        "targets": [
+          "0x8623"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x802B",
+        "targets": [
+          "0x8623"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x80CA",
+        "targets": [
+          "0x864E"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8293",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x829D",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x82AD",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x82B7",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x82C3",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x82D0",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x82DD",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x82EA",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8316",
+        "targets": [
+          "0x864E"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x835D",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x839D",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x83A9",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x83BC",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8479",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x84B9",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x84C5",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x84D8",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x857D",
+    "name": "FUN_857d",
+    "status": "ok",
+    "instruction_count": 63,
+    "instruction_bytes": 166,
+    "structured_c": "../functions/857d_FUN_857d.c",
+    "calls": [
+      {
+        "site": "0x85A2",
+        "targets": [
+          "0xEC98"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x85B1",
+        "targets": [
+          "0xED11"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x8623",
+    "name": "FUN_8623",
+    "status": "ok",
+    "instruction_count": 21,
+    "instruction_bytes": 43,
+    "structured_c": "../functions/8623_FUN_8623.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x864E",
+    "name": "FUN_864e",
+    "status": "ok",
+    "instruction_count": 24,
+    "instruction_bytes": 67,
+    "structured_c": "../functions/864e_FUN_864e.c",
+    "calls": [
+      {
+        "site": "0x865C",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8670",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8687",
+        "targets": [
+          "0xC32D"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x8691",
+    "name": "FUN_8691",
+    "status": "ok",
+    "instruction_count": 4,
+    "instruction_bytes": 13,
+    "structured_c": "../functions/8691_FUN_8691.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x869E",
+    "name": "FUN_869e",
+    "status": "ok",
+    "instruction_count": 135,
+    "instruction_bytes": 329,
+    "structured_c": "../functions/869e_FUN_869e.c",
+    "calls": [
+      {
+        "site": "0x87CB",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x87D6",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x87E7",
+    "name": "FUN_87e7",
+    "status": "ok",
+    "instruction_count": 337,
+    "instruction_bytes": 845,
+    "structured_c": "../functions/87e7_FUN_87e7.c",
+    "calls": [
+      {
+        "site": "0x8813",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x881E",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8835",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x883E",
+        "targets": [
+          "0xCC63"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8873",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x88A8",
+        "targets": [
+          "0xC32D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x88EE",
+        "targets": [
+          "0xC28D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8ADB",
+        "targets": [
+          "0xC28D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8B28",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x8B34",
+    "name": "FUN_8b34",
+    "status": "ok",
+    "instruction_count": 1129,
+    "instruction_bytes": 3011,
+    "structured_c": "../functions/8b34_FUN_8b34.c",
+    "calls": [
+      {
+        "site": "0x8B3C",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8CAA",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8CB5",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8CCF",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8CDA",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8CF4",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8CFF",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8DA2",
+        "targets": [
+          "0xA405"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8DA5",
+        "targets": [
+          "0xA448"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8DA8",
+        "targets": [
+          "0xA462"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8F97",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8F9D",
+        "targets": [
+          "0xA314"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x8FF2",
+        "targets": [
+          "0xCBEF"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x90B0",
+        "targets": [
+          "0x864E"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x90E9",
+        "targets": [
+          "0xC8C9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9103",
+        "targets": [
+          "0xC939"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x921D",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x922F",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x923B",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9265",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9271",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9377",
+        "targets": [
+          "0x864E"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x93AF",
+        "targets": [
+          "0xC8C9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x93CA",
+        "targets": [
+          "0xC939"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x943E",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9450",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x945C",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9486",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9492",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x94E5",
+        "targets": [
+          "0x864E"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x95B7",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x95C2",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x95E1",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x95EC",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9603",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9661",
+        "targets": [
+          "0xCC30"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x96F7",
+    "name": "candidate_unreferenced_96f7",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 6,
+    "structured_c": "../functions/96f7_candidate_unreferenced_96f7.c",
+    "calls": [],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0x96FD",
+    "name": "candidate_unreferenced_96fd",
+    "status": "ok",
+    "instruction_count": 242,
+    "instruction_bytes": 630,
+    "structured_c": "../functions/96fd_candidate_unreferenced_96fd.c",
+    "calls": [
+      {
+        "site": "0x9883",
+        "targets": [
+          "0xC227"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9891",
+        "targets": [
+          "0xC227"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9936",
+        "targets": [
+          "0x997A"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9971",
+        "targets": [
+          "0x997A"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0x9973",
+    "name": "candidate_unreferenced_9973",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 7,
+    "structured_c": "../functions/9973_candidate_unreferenced_9973.c",
+    "calls": [],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0x997A",
+    "name": "FUN_997a",
+    "status": "ok",
+    "instruction_count": 39,
+    "instruction_bytes": 126,
+    "structured_c": "../functions/997a_FUN_997a.c",
+    "calls": [
+      {
+        "site": "0x99B9",
+        "targets": [
+          "0x99FD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x99F6",
+        "targets": [
+          "0x99FD"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0x99F8",
+    "name": "candidate_unreferenced_99f8",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 5,
+    "structured_c": "../functions/99f8_candidate_unreferenced_99f8.c",
+    "calls": [],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0x99FD",
+    "name": "FUN_99fd",
+    "status": "ok",
+    "instruction_count": 801,
+    "instruction_bytes": 2327,
+    "structured_c": "../functions/99fd_FUN_99fd.c",
+    "calls": [
+      {
+        "site": "0x9D03",
+        "targets": [
+          "0xA363"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9D0B",
+        "targets": [
+          "0xA3B4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9F05",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0x9F10",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA1AE",
+        "targets": [
+          "0x5FC8"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA1CB",
+        "targets": [
+          "0xB3EC"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA1D2",
+        "targets": [
+          "0xB4C6"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA23C",
+        "targets": [
+          "0xB3EC"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA243",
+        "targets": [
+          "0xB4C6"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA282",
+        "targets": [
+          "0xB5A0"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA287",
+        "targets": [
+          "0xB5D7"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA28C",
+        "targets": [
+          "0xB60E"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA291",
+        "targets": [
+          "0xB645"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA296",
+        "targets": [
+          "0xB758"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA29B",
+        "targets": [
+          "0xB67C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA2A0",
+        "targets": [
+          "0xB6B3"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA2A5",
+        "targets": [
+          "0xB6EA"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA2AA",
+        "targets": [
+          "0xB721"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA2AF",
+        "targets": [
+          "0xB78F"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA2B4",
+        "targets": [
+          "0xB7B9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA2E1",
+        "targets": [
+          "0xA489"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA30C",
+        "targets": [
+          "0xA505"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xA314",
+    "name": "FUN_a314",
+    "status": "ok",
+    "instruction_count": 31,
+    "instruction_bytes": 79,
+    "structured_c": "../functions/a314_FUN_a314.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xA363",
+    "name": "FUN_a363",
+    "status": "ok",
+    "instruction_count": 42,
+    "instruction_bytes": 81,
+    "structured_c": "../functions/a363_FUN_a363.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xA3B4",
+    "name": "FUN_a3b4",
+    "status": "ok",
+    "instruction_count": 42,
+    "instruction_bytes": 81,
+    "structured_c": "../functions/a3b4_FUN_a3b4.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xA405",
+    "name": "FUN_a405",
+    "status": "ok",
+    "instruction_count": 24,
+    "instruction_bytes": 67,
+    "structured_c": "../functions/a405_FUN_a405.c",
+    "calls": [
+      {
+        "site": "0xA413",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA427",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA43E",
+        "targets": [
+          "0xC32D"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xA448",
+    "name": "FUN_a448",
+    "status": "ok",
+    "instruction_count": 10,
+    "instruction_bytes": 26,
+    "structured_c": "../functions/a448_FUN_a448.c",
+    "calls": [
+      {
+        "site": "0xA45B",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xA462",
+    "name": "FUN_a462",
+    "status": "ok",
+    "instruction_count": 15,
+    "instruction_bytes": 39,
+    "structured_c": "../functions/a462_FUN_a462.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xA489",
+    "name": "FUN_a489",
+    "status": "ok",
+    "instruction_count": 48,
+    "instruction_bytes": 124,
+    "structured_c": "../functions/a489_FUN_a489.c",
+    "calls": [
+      {
+        "site": "0xA48C",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA4A6",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA4C4",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA501",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xA505",
+    "name": "FUN_a505",
+    "status": "ok",
+    "instruction_count": 40,
+    "instruction_bytes": 82,
+    "structured_c": "../functions/a505_FUN_a505.c",
+    "calls": [
+      {
+        "site": "0xA53C",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA547",
+        "targets": [
+          "0x5FA4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xA557",
+    "name": "FUN_a557",
+    "status": "ok",
+    "instruction_count": 4,
+    "instruction_bytes": 13,
+    "structured_c": "../functions/a557_FUN_a557.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xA564",
+    "name": "FUN_a564",
+    "status": "ok",
+    "instruction_count": 452,
+    "instruction_bytes": 1362,
+    "structured_c": "../functions/a564_FUN_a564.c",
+    "calls": [
+      {
+        "site": "0xA592",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA5A9",
+        "targets": [
+          "0xABDD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA5B3",
+        "targets": [
+          "0xAC2E"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA63A",
+        "targets": [
+          "0xAAB6"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA6CD",
+        "targets": [
+          "0xAB66"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA6D0",
+        "targets": [
+          "0xAB90"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA6D9",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA6FE",
+        "targets": [
+          "0xAB66"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA701",
+        "targets": [
+          "0xAB90"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA70A",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA846",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xA852",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xAAB6",
+    "name": "FUN_aab6",
+    "status": "ok",
+    "instruction_count": 64,
+    "instruction_bytes": 176,
+    "structured_c": "../functions/aab6_FUN_aab6.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xAB66",
+    "name": "FUN_ab66",
+    "status": "ok",
+    "instruction_count": 20,
+    "instruction_bytes": 42,
+    "structured_c": "../functions/ab66_FUN_ab66.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xAB90",
+    "name": "FUN_ab90",
+    "status": "ok",
+    "instruction_count": 32,
+    "instruction_bytes": 77,
+    "structured_c": "../functions/ab90_FUN_ab90.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xABDD",
+    "name": "FUN_abdd",
+    "status": "ok",
+    "instruction_count": 42,
+    "instruction_bytes": 81,
+    "structured_c": "../functions/abdd_FUN_abdd.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xAC2E",
+    "name": "FUN_ac2e",
+    "status": "ok",
+    "instruction_count": 42,
+    "instruction_bytes": 81,
+    "structured_c": "../functions/ac2e_FUN_ac2e.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xAC7F",
+    "name": "FUN_ac7f",
+    "status": "ok",
+    "instruction_count": 310,
+    "instruction_bytes": 890,
+    "structured_c": "../functions/ac7f_FUN_ac7f.c",
+    "calls": [
+      {
+        "site": "0xAFC9",
+        "targets": [
+          "0xB900"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xAFCE",
+        "targets": [
+          "0xB97F"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xAFD3",
+        "targets": [
+          "0xBA06"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xAFD8",
+        "targets": [
+          "0xBA8D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xAFDD",
+        "targets": [
+          "0xBAED"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xAFE2",
+        "targets": [
+          "0xBB45"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xAFE7",
+        "targets": [
+          "0xBBA1"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xAFEC",
+        "targets": [
+          "0xBBFD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xAFF1",
+        "targets": [
+          "0xBC1B"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xAFF9",
+    "name": "FUN_aff9",
+    "status": "ok",
+    "instruction_count": 136,
+    "instruction_bytes": 365,
+    "structured_c": "../functions/aff9_FUN_aff9.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB166",
+    "name": "FUN_b166",
+    "status": "ok",
+    "instruction_count": 233,
+    "instruction_bytes": 646,
+    "structured_c": "../functions/b166_FUN_b166.c",
+    "calls": [
+      {
+        "site": "0xB174",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB186",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB192",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB19E",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB1F5",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB200",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB281",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB2B5",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB2C0",
+        "targets": [
+          "0xC21C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB387",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB39B",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB3AF",
+        "targets": [
+          "0xCA49"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB3C6",
+        "targets": [
+          "0xC32D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB3E1",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB3EC",
+    "name": "FUN_b3ec",
+    "status": "ok",
+    "instruction_count": 69,
+    "instruction_bytes": 218,
+    "structured_c": "../functions/b3ec_FUN_b3ec.c",
+    "calls": [
+      {
+        "site": "0xB411",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB43B",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB463",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB489",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB4AF",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB4C6",
+    "name": "FUN_b4c6",
+    "status": "ok",
+    "instruction_count": 69,
+    "instruction_bytes": 218,
+    "structured_c": "../functions/b4c6_FUN_b4c6.c",
+    "calls": [
+      {
+        "site": "0xB4EB",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB515",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB53D",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB563",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB589",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB5A0",
+    "name": "FUN_b5a0",
+    "status": "ok",
+    "instruction_count": 19,
+    "instruction_bytes": 55,
+    "structured_c": "../functions/b5a0_FUN_b5a0.c",
+    "calls": [
+      {
+        "site": "0xB5C0",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB5D7",
+    "name": "FUN_b5d7",
+    "status": "ok",
+    "instruction_count": 19,
+    "instruction_bytes": 55,
+    "structured_c": "../functions/b5d7_FUN_b5d7.c",
+    "calls": [
+      {
+        "site": "0xB5F7",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB60E",
+    "name": "FUN_b60e",
+    "status": "ok",
+    "instruction_count": 19,
+    "instruction_bytes": 55,
+    "structured_c": "../functions/b60e_FUN_b60e.c",
+    "calls": [
+      {
+        "site": "0xB62E",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB645",
+    "name": "FUN_b645",
+    "status": "ok",
+    "instruction_count": 19,
+    "instruction_bytes": 55,
+    "structured_c": "../functions/b645_FUN_b645.c",
+    "calls": [
+      {
+        "site": "0xB665",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB67C",
+    "name": "FUN_b67c",
+    "status": "ok",
+    "instruction_count": 19,
+    "instruction_bytes": 55,
+    "structured_c": "../functions/b67c_FUN_b67c.c",
+    "calls": [
+      {
+        "site": "0xB69C",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB6B3",
+    "name": "FUN_b6b3",
+    "status": "ok",
+    "instruction_count": 19,
+    "instruction_bytes": 55,
+    "structured_c": "../functions/b6b3_FUN_b6b3.c",
+    "calls": [
+      {
+        "site": "0xB6D3",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB6EA",
+    "name": "FUN_b6ea",
+    "status": "ok",
+    "instruction_count": 19,
+    "instruction_bytes": 55,
+    "structured_c": "../functions/b6ea_FUN_b6ea.c",
+    "calls": [
+      {
+        "site": "0xB70A",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB721",
+    "name": "FUN_b721",
+    "status": "ok",
+    "instruction_count": 19,
+    "instruction_bytes": 55,
+    "structured_c": "../functions/b721_FUN_b721.c",
+    "calls": [
+      {
+        "site": "0xB741",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB758",
+    "name": "FUN_b758",
+    "status": "ok",
+    "instruction_count": 19,
+    "instruction_bytes": 55,
+    "structured_c": "../functions/b758_FUN_b758.c",
+    "calls": [
+      {
+        "site": "0xB778",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB78F",
+    "name": "FUN_b78f",
+    "status": "ok",
+    "instruction_count": 14,
+    "instruction_bytes": 42,
+    "structured_c": "../functions/b78f_FUN_b78f.c",
+    "calls": [
+      {
+        "site": "0xB7A2",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB7B9",
+    "name": "FUN_b7b9",
+    "status": "ok",
+    "instruction_count": 36,
+    "instruction_bytes": 94,
+    "structured_c": "../functions/b7b9_FUN_b7b9.c",
+    "calls": [
+      {
+        "site": "0xB7CD",
+        "targets": [
+          "0x5E63"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB7D0",
+        "targets": [
+          "0x5F35"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB7FC",
+        "targets": [
+          "0x57E9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB817",
+    "name": "FUN_b817",
+    "status": "ok",
+    "instruction_count": 70,
+    "instruction_bytes": 205,
+    "structured_c": "../functions/b817_FUN_b817.c",
+    "calls": [
+      {
+        "site": "0xB85E",
+        "targets": [
+          "0xC9A9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB872",
+        "targets": [
+          "0xC9A9"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB889",
+        "targets": [
+          "0xC32D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB898",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB8A4",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB8B0",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB8BC",
+        "targets": [
+          "0xC1CD"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xB8D9",
+        "targets": [
+          "0xC1F2"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB900",
+    "name": "FUN_b900",
+    "status": "ok",
+    "instruction_count": 55,
+    "instruction_bytes": 127,
+    "structured_c": "../functions/b900_FUN_b900.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xB97F",
+    "name": "FUN_b97f",
+    "status": "ok",
+    "instruction_count": 59,
+    "instruction_bytes": 135,
+    "structured_c": "../functions/b97f_FUN_b97f.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xBA06",
+    "name": "FUN_ba06",
+    "status": "ok",
+    "instruction_count": 59,
+    "instruction_bytes": 135,
+    "structured_c": "../functions/ba06_FUN_ba06.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xBA8D",
+    "name": "FUN_ba8d",
+    "status": "ok",
+    "instruction_count": 33,
+    "instruction_bytes": 96,
+    "structured_c": "../functions/ba8d_FUN_ba8d.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xBAED",
+    "name": "FUN_baed",
+    "status": "ok",
+    "instruction_count": 31,
+    "instruction_bytes": 88,
+    "structured_c": "../functions/baed_FUN_baed.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xBB45",
+    "name": "FUN_bb45",
+    "status": "ok",
+    "instruction_count": 32,
+    "instruction_bytes": 92,
+    "structured_c": "../functions/bb45_FUN_bb45.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xBBA1",
+    "name": "FUN_bba1",
+    "status": "ok",
+    "instruction_count": 32,
+    "instruction_bytes": 92,
+    "structured_c": "../functions/bba1_FUN_bba1.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xBBFD",
+    "name": "FUN_bbfd",
+    "status": "ok",
+    "instruction_count": 9,
+    "instruction_bytes": 30,
+    "structured_c": "../functions/bbfd_FUN_bbfd.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xBC1B",
+    "name": "FUN_bc1b",
+    "status": "ok",
+    "instruction_count": 6,
+    "instruction_bytes": 19,
+    "structured_c": "../functions/bc1b_FUN_bc1b.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xBC2E",
+    "name": "FUN_bc2e",
+    "status": "ok",
+    "instruction_count": 368,
+    "instruction_bytes": 1077,
+    "structured_c": "../functions/bc2e_FUN_bc2e.c",
+    "calls": [
+      {
+        "site": "0xBFCD",
+        "targets": [
+          "0x5843"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC063",
+    "name": "FUN_c063",
+    "status": "ok",
+    "instruction_count": 115,
+    "instruction_bytes": 310,
+    "structured_c": "../functions/c063_FUN_c063.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC199",
+    "name": "FUN_c199",
+    "status": "ok",
+    "instruction_count": 18,
+    "instruction_bytes": 52,
+    "structured_c": "../functions/c199_FUN_c199.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC1CD",
+    "name": "lookup_u8_uniform_axis",
+    "status": "ok",
+    "instruction_count": 8,
+    "instruction_bytes": 14,
+    "structured_c": "../functions/c1cd_lookup_u8_uniform_axis.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC1DB",
+    "name": "interp_u8_q8_index",
+    "status": "ok",
+    "instruction_count": 4,
+    "instruction_bytes": 6,
+    "structured_c": "../functions/c1db_interp_u8_q8_index.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC1E1",
+    "name": "FUN_c1e1",
+    "status": "ok",
+    "instruction_count": 11,
+    "instruction_bytes": 17,
+    "structured_c": "../functions/c1e1_FUN_c1e1.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC1F2",
+    "name": "lookup_u8_uniform_u16_axis",
+    "status": "ok",
+    "instruction_count": 26,
+    "instruction_bytes": 42,
+    "structured_c": "../functions/c1f2_lookup_u8_uniform_u16_axis.c",
+    "calls": [
+      {
+        "site": "0xC201",
+        "targets": [
+          "0xC243"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC21C",
+    "name": "scale_u16_by_u8",
+    "status": "ok",
+    "instruction_count": 8,
+    "instruction_bytes": 11,
+    "structured_c": "../functions/c21c_scale_u16_by_u8.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC227",
+    "name": "scale_u16_by_u8_rounded",
+    "status": "ok",
+    "instruction_count": 16,
+    "instruction_bytes": 28,
+    "structured_c": "../functions/c227_scale_u16_by_u8_rounded.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC243",
+    "name": "multiply_u16_shift8_saturate",
+    "status": "ok",
+    "instruction_count": 10,
+    "instruction_bytes": 18,
+    "structured_c": "../functions/c243_multiply_u16_shift8_saturate.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC268",
+    "name": "candidate_unreferenced_c268",
+    "status": "ok",
+    "instruction_count": 8,
+    "instruction_bytes": 14,
+    "structured_c": "../functions/c268_candidate_unreferenced_c268.c",
+    "calls": [],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0xC276",
+    "name": "FUN_c276",
+    "status": "ok",
+    "instruction_count": 15,
+    "instruction_bytes": 23,
+    "structured_c": "../functions/c276_FUN_c276.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC28D",
+    "name": "lookup_u8_grid_special",
+    "status": "ok",
+    "instruction_count": 37,
+    "instruction_bytes": 91,
+    "structured_c": "../functions/c28d_lookup_u8_grid_special.c",
+    "calls": [
+      {
+        "site": "0xC2BA",
+        "targets": [
+          "0xC1DB"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xC2D1",
+        "targets": [
+          "0xC1DB"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xC2E0",
+        "targets": [
+          "0xC1E1"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC2E8",
+    "name": "candidate_unreferenced_c2e8",
+    "status": "ok",
+    "instruction_count": 28,
+    "instruction_bytes": 69,
+    "structured_c": "../functions/c2e8_candidate_unreferenced_c2e8.c",
+    "calls": [
+      {
+        "site": "0xC2FD",
+        "targets": [
+          "0xC372"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xC31A",
+        "targets": [
+          "0xC372"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xC329",
+        "targets": [
+          "0xC372"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0xC32D",
+    "name": "bilinear_u8_grid",
+    "status": "ok",
+    "instruction_count": 28,
+    "instruction_bytes": 69,
+    "structured_c": "../functions/c32d_bilinear_u8_grid.c",
+    "calls": [
+      {
+        "site": "0xC342",
+        "targets": [
+          "0xC372"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xC35F",
+        "targets": [
+          "0xC372"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xC36E",
+        "targets": [
+          "0xC372"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC372",
+    "name": "interp_u8_q8_fraction",
+    "status": "ok",
+    "instruction_count": 13,
+    "instruction_bytes": 20,
+    "structured_c": "../functions/c372_interp_u8_q8_fraction.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC386",
+    "name": "candidate_unreferenced_c386",
+    "status": "ok",
+    "instruction_count": 35,
+    "instruction_bytes": 58,
+    "structured_c": "../functions/c386_candidate_unreferenced_c386.c",
+    "calls": [],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0xC3C0",
+    "name": "candidate_unreferenced_c3c0",
+    "status": "ok",
+    "instruction_count": 18,
+    "instruction_bytes": 34,
+    "structured_c": "../functions/c3c0_candidate_unreferenced_c3c0.c",
+    "calls": [],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0xC3E2",
+    "name": "interp_u16_q16_fraction",
+    "status": "ok",
+    "instruction_count": 22,
+    "instruction_bytes": 37,
+    "structured_c": "../functions/c3e2_interp_u16_q16_fraction.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC407",
+    "name": "FUN_c407",
+    "status": "ok",
+    "instruction_count": 13,
+    "instruction_bytes": 27,
+    "structured_c": "../functions/c407_FUN_c407.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC422",
+    "name": "candidate_unreferenced_c422",
+    "status": "ok",
+    "instruction_count": 60,
+    "instruction_bytes": 119,
+    "structured_c": "../functions/c422_candidate_unreferenced_c422.c",
+    "calls": [],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0xC499",
+    "name": "bilinear_u16_grid",
+    "status": "ok",
+    "instruction_count": 29,
+    "instruction_bytes": 67,
+    "structured_c": "../functions/c499_bilinear_u16_grid.c",
+    "calls": [
+      {
+        "site": "0xC4B6",
+        "targets": [
+          "0xC3E2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xC4CC",
+        "targets": [
+          "0xC3E2"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xC4D8",
+        "targets": [
+          "0xC3E2"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC4DC",
+    "name": "bilinear_modulo24_grid",
+    "status": "ok",
+    "instruction_count": 28,
+    "instruction_bytes": 69,
+    "structured_c": "../functions/c4dc_bilinear_modulo24_grid.c",
+    "calls": [
+      {
+        "site": "0xC4F1",
+        "targets": [
+          "0xC521"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xC50E",
+        "targets": [
+          "0xC521"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xC51D",
+        "targets": [
+          "0xC521"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC521",
+    "name": "interp_modulo24",
+    "status": "ok",
+    "instruction_count": 27,
+    "instruction_bytes": 58,
+    "structured_c": "../functions/c521_interp_modulo24.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC55B",
+    "name": "FUN_c55b",
+    "status": "ok",
+    "instruction_count": 163,
+    "instruction_bytes": 439,
+    "structured_c": "../functions/c55b_FUN_c55b.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC712",
+    "name": "FUN_c712",
+    "status": "ok",
+    "instruction_count": 163,
+    "instruction_bytes": 439,
+    "structured_c": "../functions/c712_FUN_c712.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC8C9",
+    "name": "FUN_c8c9",
+    "status": "ok",
+    "instruction_count": 46,
+    "instruction_bytes": 112,
+    "structured_c": "../functions/c8c9_FUN_c8c9.c",
+    "calls": [
+      {
+        "site": "0xC8F3",
+        "targets": [
+          "0xC55B"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xC930",
+        "targets": [
+          "0xC55B"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC939",
+    "name": "FUN_c939",
+    "status": "ok",
+    "instruction_count": 46,
+    "instruction_bytes": 112,
+    "structured_c": "../functions/c939_FUN_c939.c",
+    "calls": [
+      {
+        "site": "0xC963",
+        "targets": [
+          "0xC712"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xC9A0",
+        "targets": [
+          "0xC712"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xC9A9",
+    "name": "axis_index_u8_ascending",
+    "status": "ok",
+    "instruction_count": 66,
+    "instruction_bytes": 160,
+    "structured_c": "../functions/c9a9_axis_index_u8_ascending.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xCA49",
+    "name": "axis_index_u16_ascending",
+    "status": "ok",
+    "instruction_count": 67,
+    "instruction_bytes": 161,
+    "structured_c": "../functions/ca49_axis_index_u16_ascending.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xCAEA",
+    "name": "candidate_unreferenced_caea",
+    "status": "ok",
+    "instruction_count": 67,
+    "instruction_bytes": 161,
+    "structured_c": "../functions/caea_candidate_unreferenced_caea.c",
+    "calls": [],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0xCB8B",
+    "name": "candidate_unreferenced_cb8b",
+    "status": "ok",
+    "instruction_count": 40,
+    "instruction_bytes": 100,
+    "structured_c": "../functions/cb8b_candidate_unreferenced_cb8b.c",
+    "calls": [],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0xCBEF",
+    "name": "FUN_cbef",
+    "status": "ok",
+    "instruction_count": 24,
+    "instruction_bytes": 65,
+    "structured_c": "../functions/cbef_FUN_cbef.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xCC30",
+    "name": "FUN_cc30",
+    "status": "ok",
+    "instruction_count": 19,
+    "instruction_bytes": 51,
+    "structured_c": "../functions/cc30_FUN_cc30.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xCC63",
+    "name": "FUN_cc63",
+    "status": "ok",
+    "instruction_count": 12,
+    "instruction_bytes": 24,
+    "structured_c": "../functions/cc63_FUN_cc63.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xCC7B",
+    "name": "FUN_cc7b",
+    "status": "ok",
+    "instruction_count": 25,
+    "instruction_bytes": 46,
+    "structured_c": "../functions/cc7b_FUN_cc7b.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xCCA9",
+    "name": "FUN_cca9",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 7,
+    "structured_c": "../functions/cca9_FUN_cca9.c",
+    "calls": [
+      {
+        "site": "0xCCAC",
+        "targets": [
+          "0xCCB0"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xCCB0",
+    "name": "FUN_ccb0",
+    "status": "ok",
+    "instruction_count": 104,
+    "instruction_bytes": 272,
+    "structured_c": "../functions/ccb0_FUN_ccb0.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xCDC0",
+    "name": "FUN_cdc0",
+    "status": "ok",
+    "instruction_count": 56,
+    "instruction_bytes": 145,
+    "structured_c": "../functions/cdc0_FUN_cdc0.c",
+    "calls": [
+      {
+        "site": "0xCE36",
+        "targets": [
+          "0xD36C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xCE3B",
+        "targets": [
+          "0xCE51"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xCE51",
+    "name": "FUN_ce51",
+    "status": "ok",
+    "instruction_count": 472,
+    "instruction_bytes": 1307,
+    "structured_c": "../functions/ce51_FUN_ce51.c",
+    "calls": [
+      {
+        "site": "0xD34E",
+        "targets": [
+          "0xD6A3"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD36C",
+    "name": "FUN_d36c",
+    "status": "ok",
+    "instruction_count": 296,
+    "instruction_bytes": 823,
+    "structured_c": "../functions/d36c_FUN_d36c.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD6A3",
+    "name": "FUN_d6a3",
+    "status": "ok",
+    "instruction_count": 111,
+    "instruction_bytes": 285,
+    "structured_c": "../functions/d6a3_FUN_d6a3.c",
+    "calls": [
+      {
+        "site": "0xD6D5",
+        "targets": [
+          "0xD7C4"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD6DF",
+        "targets": [
+          "0xD7D0"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD6E9",
+        "targets": [
+          "0xD7EB"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD6F3",
+        "targets": [
+          "0xD804"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD6FD",
+        "targets": [
+          "0xD81D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD707",
+        "targets": [
+          "0xD830"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD711",
+        "targets": [
+          "0xD83C"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD71B",
+        "targets": [
+          "0xD84B"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD725",
+        "targets": [
+          "0xD85A"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD72F",
+        "targets": [
+          "0xD862"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD739",
+        "targets": [
+          "0xD864"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD743",
+        "targets": [
+          "0xD86D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD74E",
+        "targets": [
+          "0xD7C0"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD758",
+        "targets": [
+          "0xD7C8"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD762",
+        "targets": [
+          "0xD7E3"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD76C",
+        "targets": [
+          "0xD7FC"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD776",
+        "targets": [
+          "0xD815"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD780",
+        "targets": [
+          "0xD828"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD78A",
+        "targets": [
+          "0xD834"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD794",
+        "targets": [
+          "0xD843"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD79E",
+        "targets": [
+          "0xD852"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD7A8",
+        "targets": [
+          "0xD861"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD7B2",
+        "targets": [
+          "0xD863"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD7BC",
+        "targets": [
+          "0xD865"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD7C0",
+    "name": "FUN_d7c0",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/d7c0_FUN_d7c0.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD7C4",
+    "name": "FUN_d7c4",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/d7c4_FUN_d7c4.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD7C8",
+    "name": "FUN_d7c8",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 8,
+    "structured_c": "../functions/d7c8_FUN_d7c8.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD7D0",
+    "name": "FUN_d7d0",
+    "status": "ok",
+    "instruction_count": 9,
+    "instruction_bytes": 19,
+    "structured_c": "../functions/d7d0_FUN_d7d0.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD7E3",
+    "name": "FUN_d7e3",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 8,
+    "structured_c": "../functions/d7e3_FUN_d7e3.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD7EB",
+    "name": "FUN_d7eb",
+    "status": "ok",
+    "instruction_count": 8,
+    "instruction_bytes": 17,
+    "structured_c": "../functions/d7eb_FUN_d7eb.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD7FC",
+    "name": "FUN_d7fc",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 8,
+    "structured_c": "../functions/d7fc_FUN_d7fc.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD804",
+    "name": "FUN_d804",
+    "status": "ok",
+    "instruction_count": 8,
+    "instruction_bytes": 17,
+    "structured_c": "../functions/d804_FUN_d804.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD815",
+    "name": "FUN_d815",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 8,
+    "structured_c": "../functions/d815_FUN_d815.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD81D",
+    "name": "FUN_d81d",
+    "status": "ok",
+    "instruction_count": 4,
+    "instruction_bytes": 11,
+    "structured_c": "../functions/d81d_FUN_d81d.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD828",
+    "name": "FUN_d828",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 8,
+    "structured_c": "../functions/d828_FUN_d828.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD830",
+    "name": "FUN_d830",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/d830_FUN_d830.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD834",
+    "name": "FUN_d834",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 8,
+    "structured_c": "../functions/d834_FUN_d834.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD83C",
+    "name": "FUN_d83c",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 7,
+    "structured_c": "../functions/d83c_FUN_d83c.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD843",
+    "name": "FUN_d843",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 8,
+    "structured_c": "../functions/d843_FUN_d843.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD84B",
+    "name": "FUN_d84b",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 7,
+    "structured_c": "../functions/d84b_FUN_d84b.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD852",
+    "name": "FUN_d852",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 8,
+    "structured_c": "../functions/d852_FUN_d852.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD85A",
+    "name": "FUN_d85a",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 7,
+    "structured_c": "../functions/d85a_FUN_d85a.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD861",
+    "name": "FUN_d861",
+    "status": "ok",
+    "instruction_count": 1,
+    "instruction_bytes": 1,
+    "structured_c": "../functions/d861_FUN_d861.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD862",
+    "name": "FUN_d862",
+    "status": "ok",
+    "instruction_count": 1,
+    "instruction_bytes": 1,
+    "structured_c": "../functions/d862_FUN_d862.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD863",
+    "name": "FUN_d863",
+    "status": "ok",
+    "instruction_count": 1,
+    "instruction_bytes": 1,
+    "structured_c": "../functions/d863_FUN_d863.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD864",
+    "name": "FUN_d864",
+    "status": "ok",
+    "instruction_count": 1,
+    "instruction_bytes": 1,
+    "structured_c": "../functions/d864_FUN_d864.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD865",
+    "name": "FUN_d865",
+    "status": "ok",
+    "instruction_count": 3,
+    "instruction_bytes": 8,
+    "structured_c": "../functions/d865_FUN_d865.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD86D",
+    "name": "FUN_d86d",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/d86d_FUN_d86d.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xD871",
+    "name": "FUN_d871",
+    "status": "ok",
+    "instruction_count": 347,
+    "instruction_bytes": 968,
+    "structured_c": "../functions/d871_FUN_d871.c",
+    "calls": [
+      {
+        "site": "0xD957",
+        "targets": [
+          "0xF043"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xD95C",
+        "targets": [
+          "0xF147"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xDC39",
+    "name": "candidate_unreferenced_dc39",
+    "status": "ok",
+    "instruction_count": 603,
+    "instruction_bytes": 1627,
+    "structured_c": "../functions/dc39_candidate_unreferenced_dc39.c",
+    "calls": [
+      {
+        "site": "0xDCBF",
+        "targets": [
+          "0x721F"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xDCCB",
+        "targets": [
+          "0xF39D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xDD17",
+        "targets": [
+          "0x721F"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xDD23",
+        "targets": [
+          "0xF39D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xDE95",
+        "targets": [
+          "0xED29"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xDE98",
+        "targets": [
+          "0xED6D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xDF96",
+        "targets": [
+          "0xF49F"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xDFF6",
+        "targets": [
+          "0xEC98"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xE00A",
+        "targets": [
+          "0xED11"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xE09D",
+        "targets": [
+          "0xEC98"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xE0BD",
+        "targets": [
+          "0xED11"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0xE294",
+    "name": "candidate_unreferenced_e294",
+    "status": "ok",
+    "instruction_count": 981,
+    "instruction_bytes": 2564,
+    "structured_c": "../functions/e294_candidate_unreferenced_e294.c",
+    "calls": [
+      {
+        "site": "0xE382",
+        "targets": [
+          "0xF39D"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xEA21",
+        "targets": [
+          "0xF3B7"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0xEC98",
+    "name": "FUN_ec98",
+    "status": "ok",
+    "instruction_count": 52,
+    "instruction_bytes": 121,
+    "structured_c": "../functions/ec98_FUN_ec98.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xED11",
+    "name": "FUN_ed11",
+    "status": "ok",
+    "instruction_count": 10,
+    "instruction_bytes": 24,
+    "structured_c": "../functions/ed11_FUN_ed11.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xED29",
+    "name": "FUN_ed29",
+    "status": "ok",
+    "instruction_count": 25,
+    "instruction_bytes": 68,
+    "structured_c": "../functions/ed29_FUN_ed29.c",
+    "calls": [
+      {
+        "site": "0xED33",
+        "targets": [
+          "0xEE78"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xED36",
+        "targets": [
+          "0xEDC3"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xED3A",
+        "targets": [
+          "0xEE19"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xED3D",
+        "targets": [
+          "0xEDC3"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xED41",
+        "targets": [
+          "0xEE78"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xED5C",
+        "targets": [
+          "0xEDC3"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xED69",
+        "targets": [
+          "0xEF6D"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xED6D",
+    "name": "FUN_ed6d",
+    "status": "ok",
+    "instruction_count": 32,
+    "instruction_bytes": 85,
+    "structured_c": "../functions/ed6d_FUN_ed6d.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xEDC2",
+    "name": "candidate_unreferenced_edc2",
+    "status": "ok",
+    "instruction_count": 1,
+    "instruction_bytes": 1,
+    "structured_c": "../functions/edc2_candidate_unreferenced_edc2.c",
+    "calls": [],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0xEDC3",
+    "name": "FUN_edc3",
+    "status": "ok",
+    "instruction_count": 32,
+    "instruction_bytes": 85,
+    "structured_c": "../functions/edc3_FUN_edc3.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xEE18",
+    "name": "candidate_unreferenced_ee18",
+    "status": "ok",
+    "instruction_count": 1,
+    "instruction_bytes": 1,
+    "structured_c": "../functions/ee18_candidate_unreferenced_ee18.c",
+    "calls": [],
+    "candidate_entry": true
+  },
+  {
+    "entry": "0xEE19",
+    "name": "FUN_ee19",
+    "status": "ok",
+    "instruction_count": 29,
+    "instruction_bytes": 95,
+    "structured_c": "../functions/ee19_FUN_ee19.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xEE78",
+    "name": "FUN_ee78",
+    "status": "ok",
+    "instruction_count": 86,
+    "instruction_bytes": 245,
+    "structured_c": "../functions/ee78_FUN_ee78.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xEF6D",
+    "name": "FUN_ef6d",
+    "status": "ok",
+    "instruction_count": 67,
+    "instruction_bytes": 214,
+    "structured_c": "../functions/ef6d_FUN_ef6d.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF043",
+    "name": "FUN_f043",
+    "status": "ok",
+    "instruction_count": 99,
+    "instruction_bytes": 260,
+    "structured_c": "../functions/f043_FUN_f043.c",
+    "calls": [
+      {
+        "site": "0xF071",
+        "targets": [
+          "0x721F"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xF0EC",
+        "targets": [
+          "0xF26E"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xF0F1",
+        "targets": [
+          "0xF1CE"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF147",
+    "name": "FUN_f147",
+    "status": "ok",
+    "instruction_count": 56,
+    "instruction_bytes": 135,
+    "structured_c": "../functions/f147_FUN_f147.c",
+    "calls": [
+      {
+        "site": "0xF19E",
+        "targets": [
+          "0xF1CE"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xF1CA",
+        "targets": [
+          "0x721F"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF1CE",
+    "name": "FUN_f1ce",
+    "status": "ok",
+    "instruction_count": 69,
+    "instruction_bytes": 160,
+    "structured_c": "../functions/f1ce_FUN_f1ce.c",
+    "calls": [
+      {
+        "site": "0xF211",
+        "targets": [
+          "0xF26E"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF26E",
+    "name": "FUN_f26e",
+    "status": "ok",
+    "instruction_count": 117,
+    "instruction_bytes": 303,
+    "structured_c": "../functions/f26e_FUN_f26e.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF39D",
+    "name": "FUN_f39d",
+    "status": "ok",
+    "instruction_count": 23,
+    "instruction_bytes": 26,
+    "structured_c": "../functions/f39d_FUN_f39d.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF3B7",
+    "name": "FUN_f3b7",
+    "status": "ok",
+    "instruction_count": 26,
+    "instruction_bytes": 42,
+    "structured_c": "../functions/f3b7_FUN_f3b7.c",
+    "calls": [
+      {
+        "site": "0xF3C6",
+        "targets": [
+          "0xF3E1"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF3E1",
+    "name": "FUN_f3e1",
+    "status": "ok",
+    "instruction_count": 10,
+    "instruction_bytes": 18,
+    "structured_c": "../functions/f3e1_FUN_f3e1.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF3F3",
+    "name": "FUN_f3f3",
+    "status": "ok",
+    "instruction_count": 19,
+    "instruction_bytes": 49,
+    "structured_c": "../functions/f3f3_FUN_f3f3.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF424",
+    "name": "FUN_f424",
+    "status": "ok",
+    "instruction_count": 47,
+    "instruction_bytes": 123,
+    "structured_c": "../functions/f424_FUN_f424.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF49F",
+    "name": "FUN_f49f",
+    "status": "ok",
+    "instruction_count": 35,
+    "instruction_bytes": 122,
+    "structured_c": "../functions/f49f_FUN_f49f.c",
+    "calls": [
+      {
+        "site": "0xF4F9",
+        "targets": [
+          "0xF519"
+        ],
+        "computed": false
+      },
+      {
+        "site": "0xF515",
+        "targets": [
+          "0xF592"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF519",
+    "name": "FUN_f519",
+    "status": "ok",
+    "instruction_count": 40,
+    "instruction_bytes": 121,
+    "structured_c": "../functions/f519_FUN_f519.c",
+    "calls": [
+      {
+        "site": "0xF58A",
+        "targets": [
+          "0xC55B"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF592",
+    "name": "FUN_f592",
+    "status": "ok",
+    "instruction_count": 40,
+    "instruction_bytes": 117,
+    "structured_c": "../functions/f592_FUN_f592.c",
+    "calls": [
+      {
+        "site": "0xF5FF",
+        "targets": [
+          "0xC712"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF607",
+    "name": "FUN_f607",
+    "status": "ok",
+    "instruction_count": 70,
+    "instruction_bytes": 185,
+    "structured_c": "../functions/f607_FUN_f607.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF6C0",
+    "name": "FUN_f6c0",
+    "status": "ok",
+    "instruction_count": 70,
+    "instruction_bytes": 185,
+    "structured_c": "../functions/f6c0_FUN_f6c0.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7A0",
+    "name": "application_init",
+    "status": "ok",
+    "instruction_count": 1,
+    "instruction_bytes": 3,
+    "structured_c": "../functions/f7a0_application_init.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7A4",
+    "name": "default_interrupt_loop",
+    "status": "ok",
+    "instruction_count": 1,
+    "instruction_bytes": 2,
+    "structured_c": "../functions/f7a4_default_interrupt_loop.c",
+    "calls": [],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7A6",
+    "name": "dispatch_stub_f7a6",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7a6_dispatch_stub_f7a6.c",
+    "calls": [
+      {
+        "site": "0xF7A6",
+        "targets": [
+          "0xF7A4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7AA",
+    "name": "dispatch_stub_f7aa",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7aa_dispatch_stub_f7aa.c",
+    "calls": [
+      {
+        "site": "0xF7AA",
+        "targets": [
+          "0xF7A4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7AE",
+    "name": "dispatch_stub_f7ae",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7ae_dispatch_stub_f7ae.c",
+    "calls": [
+      {
+        "site": "0xF7AE",
+        "targets": [
+          "0xF7A4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7B2",
+    "name": "dispatch_stub_f7b2",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7b2_dispatch_stub_f7b2.c",
+    "calls": [
+      {
+        "site": "0xF7B2",
+        "targets": [
+          "0xF7A4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7B6",
+    "name": "dispatch_stub_f7b6",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7b6_dispatch_stub_f7b6.c",
+    "calls": [
+      {
+        "site": "0xF7B6",
+        "targets": [
+          "0xCDC0"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7BA",
+    "name": "dispatch_stub_f7ba",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7ba_dispatch_stub_f7ba.c",
+    "calls": [
+      {
+        "site": "0xF7BA",
+        "targets": [
+          "0xF7A4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7BE",
+    "name": "dispatch_stub_f7be",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7be_dispatch_stub_f7be.c",
+    "calls": [
+      {
+        "site": "0xF7BE",
+        "targets": [
+          "0xF7A4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7C2",
+    "name": "dispatch_stub_f7c2",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7c2_dispatch_stub_f7c2.c",
+    "calls": [
+      {
+        "site": "0xF7C2",
+        "targets": [
+          "0xF7A4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7C6",
+    "name": "dispatch_stub_f7c6",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7c6_dispatch_stub_f7c6.c",
+    "calls": [
+      {
+        "site": "0xF7C6",
+        "targets": [
+          "0xF7A4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7CA",
+    "name": "dispatch_stub_f7ca",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7ca_dispatch_stub_f7ca.c",
+    "calls": [
+      {
+        "site": "0xF7CA",
+        "targets": [
+          "0xF6C0"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7CE",
+    "name": "dispatch_stub_f7ce",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7ce_dispatch_stub_f7ce.c",
+    "calls": [
+      {
+        "site": "0xF7CE",
+        "targets": [
+          "0xF607"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7D2",
+    "name": "dispatch_stub_f7d2",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7d2_dispatch_stub_f7d2.c",
+    "calls": [
+      {
+        "site": "0xF7D2",
+        "targets": [
+          "0xF7A4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7D6",
+    "name": "dispatch_stub_f7d6",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7d6_dispatch_stub_f7d6.c",
+    "calls": [
+      {
+        "site": "0xF7D6",
+        "targets": [
+          "0xF7A4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7DA",
+    "name": "dispatch_stub_f7da",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7da_dispatch_stub_f7da.c",
+    "calls": [
+      {
+        "site": "0xF7DA",
+        "targets": [
+          "0xF424"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7DE",
+    "name": "dispatch_stub_f7de",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7de_dispatch_stub_f7de.c",
+    "calls": [
+      {
+        "site": "0xF7DE",
+        "targets": [
+          "0xF3F3"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7E2",
+    "name": "dispatch_stub_f7e2",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7e2_dispatch_stub_f7e2.c",
+    "calls": [
+      {
+        "site": "0xF7E2",
+        "targets": [
+          "0xD871"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7E6",
+    "name": "dispatch_stub_f7e6",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7e6_dispatch_stub_f7e6.c",
+    "calls": [
+      {
+        "site": "0xF7E6",
+        "targets": [
+          "0xF7A4"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF7EA",
+    "name": "dispatch_stub_f7ea",
+    "status": "ok",
+    "instruction_count": 2,
+    "instruction_bytes": 4,
+    "structured_c": "../functions/f7ea_dispatch_stub_f7ea.c",
+    "calls": [
+      {
+        "site": "0xF7EA",
+        "targets": [
+          "0xCCA9"
+        ],
+        "computed": false
+      }
+    ],
+    "candidate_entry": false
+  },
+  {
+    "entry": "0xF8A0",
+    "name": "FUN_f8a0",
+    "status": "unavailable",
+    "instruction_count": 0,
+    "instruction_bytes": 0,
+    "structured_c": null,
+    "calls": [],
+    "candidate_entry": false
+  }
+]

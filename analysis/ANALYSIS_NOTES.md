@@ -1,5 +1,7 @@
 # Static-analysis notes
 
+The full-image pass supersedes the initial stock-HC12 decompilation. See [the complete decompilation guide](full/README.md) for the address-preserving C, whole-file coverage, and corrected processor semantics. Every decoded instruction is now assigned to a recovered function; the initial main-loop ownership gap has been repaired.
+
 Analysis date: 29 October 2026. Original input: `XT660X 2005.bin`, 65,536 bytes.
 
 ## Architecture and memory
@@ -24,7 +26,7 @@ The original file remains unchanged. Uninitialized memory is a Ghidra model only
 
 The analysis seeds `0x5000`, `0xF7A0`, and the dispatch stubs; resumes after long NOP delays; follows direct calls; and resolves the computed ADC dispatch table at `0x6968`, evidenced by the indexed call at `0x68E7`. The adjacent function-pointer table at `0x6948` is also decoded.
 
-Structurally coherent unreferenced routines/alternate blocks use `candidate_unreferenced_` names. These are inferred entries, not proof of execution. Shared-entry assembly and fall-through code make function boundaries and calling conventions approximate. Decompiled C contains overlapping-global, removed-block, and stack-pointer warnings. Register arguments/returns may be incompletely represented by the default compiler model. Use byte-backed assembly to resolve ambiguity.
+Structurally coherent unreferenced routines/alternate blocks use `candidate_unreferenced_` names. These are inferred entries, not proof of execution. Shared-entry assembly and fall-through code make function boundaries approximate. The refined structured pass retains unreachable blocks and uses explicit register interfaces for lookup helpers. Remaining stack-pointer and infinite-loop warnings are recorded. Use the address-preserving C and byte-backed assembly to resolve ambiguity.
 
 Successful decompilation means C was generated, not semantic equivalence proven. `functions.tsv` separately records unavailable targets. Function filenames include their entry address because Ghidra may share a name between a routine and a thunk.
 

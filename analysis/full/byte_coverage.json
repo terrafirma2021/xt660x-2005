@@ -1,0 +1,129 @@
+{
+  "input_bytes": 65536,
+  "classified_bytes": 65536,
+  "unclassified_bytes": 0,
+  "instruction_count": 15942,
+  "instructions_without_function": 0,
+  "byte_totals": {
+    "file_fill_over_io_ram": 6144,
+    "calibration_data": 14336,
+    "instruction": 42849,
+    "embedded_data": 24,
+    "padding": 29,
+    "dispatch_pointer_data": 48,
+    "metadata": 39,
+    "unreachable_nop_padding": 1,
+    "trailer": 18,
+    "unavailable_boot_ff": 2048
+  },
+  "spans": [
+    {
+      "start": "0x0000",
+      "end_exclusive": "0x1800",
+      "bytes": 6144,
+      "classification": "file_fill_over_io_ram"
+    },
+    {
+      "start": "0x1800",
+      "end_exclusive": "0x5000",
+      "bytes": 14336,
+      "classification": "calibration_data"
+    },
+    {
+      "start": "0x5000",
+      "end_exclusive": "0x56CB",
+      "bytes": 1739,
+      "classification": "instruction"
+    },
+    {
+      "start": "0x56CB",
+      "end_exclusive": "0x56D0",
+      "bytes": 5,
+      "classification": "embedded_data"
+    },
+    {
+      "start": "0x56D0",
+      "end_exclusive": "0x6947",
+      "bytes": 4727,
+      "classification": "instruction"
+    },
+    {
+      "start": "0x6947",
+      "end_exclusive": "0x6948",
+      "bytes": 1,
+      "classification": "padding"
+    },
+    {
+      "start": "0x6948",
+      "end_exclusive": "0x6978",
+      "bytes": 48,
+      "classification": "dispatch_pointer_data"
+    },
+    {
+      "start": "0x6978",
+      "end_exclusive": "0xB8E4",
+      "bytes": 20332,
+      "classification": "instruction"
+    },
+    {
+      "start": "0xB8E4",
+      "end_exclusive": "0xB900",
+      "bytes": 28,
+      "classification": "padding"
+    },
+    {
+      "start": "0xB900",
+      "end_exclusive": "0xC255",
+      "bytes": 2389,
+      "classification": "instruction"
+    },
+    {
+      "start": "0xC255",
+      "end_exclusive": "0xC268",
+      "bytes": 19,
+      "classification": "embedded_data"
+    },
+    {
+      "start": "0xC268",
+      "end_exclusive": "0xF779",
+      "bytes": 13585,
+      "classification": "instruction"
+    },
+    {
+      "start": "0xF779",
+      "end_exclusive": "0xF7A0",
+      "bytes": 39,
+      "classification": "metadata"
+    },
+    {
+      "start": "0xF7A0",
+      "end_exclusive": "0xF7A3",
+      "bytes": 3,
+      "classification": "instruction"
+    },
+    {
+      "start": "0xF7A3",
+      "end_exclusive": "0xF7A4",
+      "bytes": 1,
+      "classification": "unreachable_nop_padding"
+    },
+    {
+      "start": "0xF7A4",
+      "end_exclusive": "0xF7EE",
+      "bytes": 74,
+      "classification": "instruction"
+    },
+    {
+      "start": "0xF7EE",
+      "end_exclusive": "0xF800",
+      "bytes": 18,
+      "classification": "trailer"
+    },
+    {
+      "start": "0xF800",
+      "end_exclusive": "0x10000",
+      "bytes": 2048,
+      "classification": "unavailable_boot_ff"
+    }
+  ]
+}

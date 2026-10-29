@@ -1,0 +1,13 @@
+entry	function	warning
+5000	application_init	/* WARNING: This function may have set the stack pointer */
+5843	FUN_5843	/* WARNING: Do nothing block with infinite loop */
+8b34	FUN_8b34	/* WARNING: Do nothing block with infinite loop */
+96f7	candidate_unreferenced_96f7	/* WARNING: Do nothing block with infinite loop */
+96fd	candidate_unreferenced_96fd	/* WARNING: Do nothing block with infinite loop */
+9973	candidate_unreferenced_9973	/* WARNING: Do nothing block with infinite loop */
+997a	FUN_997a	/* WARNING: Do nothing block with infinite loop */
+99f8	candidate_unreferenced_99f8	/* WARNING: Do nothing block with infinite loop */
+99fd	FUN_99fd	/* WARNING: Do nothing block with infinite loop */
+a505	FUN_a505	/* WARNING: Do nothing block with infinite loop */
+f7a0	application_init	/* WARNING: This function may have set the stack pointer */
+f7a4	default_interrupt_loop	/* WARNING: Do nothing block with infinite loop */

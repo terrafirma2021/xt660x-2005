@@ -3,32 +3,38 @@
 void FUN_ab90(void)
 
 {
-  byte bVar1;
-  byte bVar2;
-  byte *pbVar3;
+  char cVar1;
+  char cVar2;
+  byte bVar3;
+  byte bVar4;
+  byte *pbVar5;
   
-  if ((DAT_09b6 & 0x10) != 0) {
-    pbVar3 = (byte *)((short)&DAT_09b7 + (ushort)(byte)(DAT_09cb * '\x04' + DAT_09cc));
-    if (DAT_36e8 < DAT_09c7) {
-      bVar1 = *pbVar3 + DAT_36ea;
-      if (CARRY1(*pbVar3,DAT_36ea)) {
-        bVar1 = 0xff;
+  bVar3 = DAT_09b6;
+  if ((bVar3 & 0x10) != 0) {
+    cVar1 = DAT_09cb;
+    cVar2 = DAT_09cc;
+    pbVar5 = (byte *)((short)&DAT_09b7 + (ushort)(byte)(cVar1 * '\x04' + cVar2));
+    bVar3 = DAT_09c7;
+    if (DAT_36e8 < bVar3) {
+      bVar3 = *pbVar5 + DAT_36ea;
+      if (CARRY1(*pbVar5,DAT_36ea)) {
+        bVar3 = 0xff;
       }
     }
-    else if (DAT_09c7 < DAT_36e9) {
-      bVar1 = *pbVar3 - DAT_36ea;
-      if (*pbVar3 < DAT_36ea) {
-        bVar1 = 0;
+    else if (bVar3 < DAT_36e9) {
+      bVar3 = *pbVar5 - DAT_36ea;
+      if (*pbVar5 < DAT_36ea) {
+        bVar3 = 0;
       }
     }
     else {
-      bVar1 = *pbVar3;
+      bVar3 = *pbVar5;
     }
-    bVar2 = DAT_36eb;
-    if ((DAT_36eb <= bVar1) && (bVar2 = bVar1, DAT_36ec < bVar1)) {
-      bVar2 = DAT_36ec;
+    bVar4 = DAT_36eb;
+    if ((DAT_36eb <= bVar3) && (bVar4 = bVar3, DAT_36ec < bVar3)) {
+      bVar4 = DAT_36ec;
     }
-    *pbVar3 = bVar2;
+    *pbVar5 = bVar4;
   }
   return;
 }

@@ -3,29 +3,39 @@
 void FUN_6259(void)
 
 {
-  if (DAT_0abe < DAT_4be0) {
-    if (DAT_0abe < DAT_4bdf) {
-      DAT_089a = DAT_089a & 0xf7;
+  byte bVar1;
+  byte bVar2;
+  
+  bVar2 = DAT_0abe;
+  if (bVar2 < DAT_4be0) {
+    if (bVar2 < DAT_4bdf) {
+      bVar1 = DAT_089a;
+      DAT_089a = bVar1 & 0xf7;
     }
   }
   else {
-    DAT_089a = DAT_089a | 8;
+    bVar1 = DAT_089a;
+    DAT_089a = bVar1 | 8;
   }
-  if (DAT_0abe < DAT_4be4) {
-    if (DAT_0abe < DAT_4be3) {
-      DAT_089a = DAT_089a & 0xfb;
+  if (bVar2 < DAT_4be4) {
+    if (bVar2 < DAT_4be3) {
+      bVar1 = DAT_089a;
+      DAT_089a = bVar1 & 0xfb;
     }
   }
   else {
-    DAT_089a = DAT_089a | 4;
+    bVar1 = DAT_089a;
+    DAT_089a = bVar1 | 4;
   }
-  if (DAT_0abe < DAT_4be2) {
-    if (DAT_0abe < DAT_4be1) {
-      DAT_089a = DAT_089a & 0xfd;
+  if (bVar2 < DAT_4be2) {
+    if (bVar2 < DAT_4be1) {
+      bVar2 = DAT_089a;
+      DAT_089a = bVar2 & 0xfd;
     }
   }
   else {
-    DAT_089a = DAT_089a | 2;
+    bVar2 = DAT_089a;
+    DAT_089a = bVar2 | 2;
   }
   return;
 }

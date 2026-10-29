@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language_definitions>
+  <language processor="HC-12" endian="big" size="16" variant="XT660" version="1.0" slafile="HC12.sla" processorspec="HC12.pspec" id="XT660-CPU12:BE:16:default">
+    <description>XT660 CPU12 fixed-address model with corrected indexed word memory operands</description>
+    <compiler name="default" spec="HC12.cspec" id="default"/>
+  </language>
+</language_definitions>

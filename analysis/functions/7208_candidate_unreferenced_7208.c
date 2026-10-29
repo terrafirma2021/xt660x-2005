@@ -1,12 +1,18 @@
 /* Entry 7208 */
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void candidate_unreferenced_7208(void)
 
 {
-  RAM0x0de1 = CONCAT11(((DAT_0885 ^ DAT_0de0._0_1_) & (byte)DAT_0de0) +
-                       (~(DAT_0885 ^ DAT_0de0._0_1_) & DAT_0de0._0_1_),DAT_0885);
+  byte bVar1;
+  byte bVar2;
+  byte bVar3;
+  byte bVar4;
+  
+  bVar1 = DAT_0885;
+  bVar2 = DAT_0de0._0_1_;
+  bVar4 = DAT_0de0._1_1_;
+  bVar3 = DAT_0de0._0_1_;
+  RAM0de1 = CONCAT11(((bVar1 ^ bVar2) & bVar4) + (~(bVar1 ^ bVar2) & bVar3),bVar1);
   return;
 }
 

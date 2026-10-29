@@ -1,6 +1,7 @@
 {
   "archive": "XT660X-2005.gzf",
-  "sha256": "a759ac0d3218f7e027ddcfb3d327bcd64d2f08fec95f420ae86a0ddcadd5beb7",
+  "sha256": "9b01f9523caf094ed54fa26a8c3702c81ce47722d624b9480e0da7bc40cba25b",
+  "language": "XT660-CPU12:BE:16:default",
   "reimport_succeeded": true,
   "rom_bytes_preserved": true,
   "processor_model_retained": true,

@@ -1,72 +1,80 @@
 /* Entry c422 */
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void candidate_unreferenced_c422(ushort param_1)
+void candidate_unreferenced_c422(ushort *param_1)
 
 {
   byte bVar1;
-  int iVar2;
-  ushort uVar3;
-  ushort uVar4;
-  byte bVar6;
-  undefined2 uVar5;
-  short sVar7;
+  byte bVar2;
+  short sVar3;
+  short sVar4;
+  ushort uVar5;
+  ushort uVar6;
+  ushort uVar7;
+  byte *table_bias;
   
-  uVar4 = DAT_0e16;
-  if (param_1 + 0x10 <= DAT_0e16) {
-    uVar4 = param_1 + 0x10;
+  uVar6 = DAT_0e16;
+  if (param_1[8] <= uVar6) {
+    uVar6 = param_1[8];
   }
-  if (param_1 + 0xc < uVar4) {
-    uVar3 = uVar4 + param_1 + 0xc >> 1;
-    uVar3 = CONCAT11((byte)(uVar3 >> 8) | CARRY2(uVar4,param_1 + 0xc) << 7,(char)uVar3);
-    uVar4 = param_1 + 0xe + param_1 + 0xc >> 1;
-    DAT_0e0c = CONCAT11((byte)(uVar4 >> 8) | CARRY2(param_1 + 0xe,param_1 + 0xc) << 7,(char)uVar4);
-    uVar4 = uVar3 - DAT_0e0c;
-    if (DAT_0e0c <= uVar3) {
-      uVar4 = uVar4 >> 1;
+  if (param_1[6] < uVar6) {
+    uVar7 = uVar6 + param_1[6] >> 1;
+    uVar5 = CONCAT11((byte)(uVar7 >> 8) | CARRY2(uVar6,param_1[6]) << 7,(char)uVar7);
+    uVar6 = param_1[7] + param_1[6] >> 1;
+    DAT_0e0c = CONCAT11((byte)(uVar6 >> 8) | CARRY2(param_1[7],param_1[6]) << 7,(char)uVar6);
+    uVar7 = DAT_0e0c;
+    uVar6 = uVar5 - uVar7;
+    if (uVar7 <= uVar5) {
+      uVar6 = uVar6 >> 1;
     }
-    uVar4 = uVar4 + DAT_0e0c;
+    sVar3 = DAT_0e0c;
+    uVar6 = uVar6 + sVar3;
   }
-  uVar3 = uVar4 - (param_1 + 10);
-  if (uVar4 < param_1 + 10) {
-    uVar3 = 0;
+  uVar7 = uVar6 - param_1[5];
+  if (uVar6 < param_1[5]) {
+    uVar7 = 0;
   }
-  iVar2 = (uint)(param_1 + 0x12) * (uint)uVar3;
-  DAT_0e08 = (undefined2)iVar2;
-  bVar6 = (byte)((uint)iVar2 >> 0x10);
-  _DAT_0e06 = CONCAT11(bVar6,DAT_0e06_1);
-  uVar4 = DAT_0e18;
-  if (param_1 + 6 <= DAT_0e18) {
-    uVar4 = param_1 + 6;
+  DAT_0e08 = (short)((uint)param_1[9] * (uint)uVar7);
+  DAT_0e06 = (char)((uint)param_1[9] * (uint)uVar7 >> 0x10);
+  uVar6 = DAT_0e18;
+  if (param_1[3] <= uVar6) {
+    uVar6 = param_1[3];
   }
-  if (param_1 + 2 < uVar4) {
-    uVar3 = uVar4 + param_1 + 2 >> 1;
-    uVar3 = CONCAT11((byte)(uVar3 >> 8) | CARRY2(uVar4,param_1 + 2) << 7,(char)uVar3);
-    uVar4 = param_1 + 4 + param_1 + 2 >> 1;
-    DAT_0e0c = CONCAT11((byte)(uVar4 >> 8) | CARRY2(param_1 + 4,param_1 + 2) << 7,(char)uVar4);
-    uVar4 = uVar3 - DAT_0e0c;
-    if (DAT_0e0c <= uVar3) {
-      uVar4 = uVar4 >> 1;
+  if (param_1[1] < uVar6) {
+    uVar7 = uVar6 + param_1[1] >> 1;
+    uVar5 = CONCAT11((byte)(uVar7 >> 8) | CARRY2(uVar6,param_1[1]) << 7,(char)uVar7);
+    uVar6 = param_1[2] + param_1[1] >> 1;
+    DAT_0e0c = CONCAT11((byte)(uVar6 >> 8) | CARRY2(param_1[2],param_1[1]) << 7,(char)uVar6);
+    uVar7 = DAT_0e0c;
+    uVar6 = uVar5 - uVar7;
+    if (uVar7 <= uVar5) {
+      uVar6 = uVar6 >> 1;
     }
-    uVar4 = uVar4 + DAT_0e0c;
+    sVar3 = DAT_0e0c;
+    uVar6 = uVar6 + sVar3;
   }
-  uVar3 = uVar4 - param_1;
-  if (uVar4 < param_1) {
-    uVar3 = 0;
+  uVar7 = uVar6 - *param_1;
+  if (uVar6 < *param_1) {
+    uVar7 = 0;
   }
-  iVar2 = (uint)(param_1 + 8) * (uint)uVar3;
-  DAT_0e0a = (short)iVar2;
-  bVar1 = *(byte *)(param_1 + 0x14);
-  DAT_0e0e = (ushort)bVar1 * ((ushort)((uint)iVar2 >> 0x10) & 0xff);
-  sVar7 = (ushort)bVar6 + (ushort)bVar6 + param_1 + DAT_0e0e * 2 + 0xf;
-  uVar5 = interp_u16_q16_fraction(DAT_0e0a,sVar7);
-  if (DAT_0e0a == 0) {
+  DAT_0e0a = (short)((uint)param_1[4] * (uint)uVar7);
+  bVar1 = *(byte *)(param_1 + 10);
+  DAT_0e0e = (ushort)bVar1 * ((ushort)((uint)param_1[4] * (uint)uVar7 >> 0x10) & 0xff);
+  sVar3 = DAT_0e0e;
+  sVar4 = DAT_0e0e;
+  bVar2 = DAT_0e06;
+  table_bias = (byte *)((short)param_1 + (ushort)bVar2 + (ushort)bVar2 + sVar4 + sVar3 + 0xf);
+  uVar6 = DAT_0e08;
+  uVar6 = interp_u16_q16_fraction(uVar6,table_bias);
+  sVar3 = DAT_0e0a;
+  if (sVar3 == 0) {
     return;
   }
-  _DAT_0e06 = uVar5;
-  DAT_0e08 = interp_u16_q16_fraction(DAT_0e08,(ushort)bVar1 + (ushort)bVar1 + sVar7);
-  interp_u16_q16_fraction(DAT_0e0a,0xe00);
+  RAM0e06 = uVar6;
+  uVar6 = DAT_0e08;
+  uVar6 = interp_u16_q16_fraction(uVar6,table_bias + (ushort)bVar1 + (ushort)bVar1);
+  DAT_0e08 = uVar6;
+  uVar6 = DAT_0e0a;
+  interp_u16_q16_fraction(uVar6,&UNK_0e00);
   return;
 }
 

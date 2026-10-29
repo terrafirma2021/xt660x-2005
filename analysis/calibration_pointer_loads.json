@@ -2,7 +2,7 @@
   {
     "base": "0x4F23",
     "load": "0x52D9",
-    "function": "",
+    "function": "application_init",
     "calls": [
       {
         "address": "0x52DF",
@@ -14,7 +14,7 @@
   {
     "base": "0x4F23",
     "load": "0x52F7",
-    "function": "",
+    "function": "application_init",
     "calls": [
       {
         "address": "0x52FD",

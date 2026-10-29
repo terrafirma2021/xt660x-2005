@@ -1,0 +1,39 @@
+[
+  {
+    "call": "0x68E7",
+    "table": "0x6968",
+    "targets": [
+      "0x6996",
+      "0x6AA5",
+      "0x6AF6",
+      "0x6FC2",
+      "0x6C5E",
+      "0x71EB",
+      "0x70A3",
+      "0x707C"
+    ],
+    "condition": "0x68E7 masks index to 3 bits. Secondary tables assume incoming carry=0, as supplied by the primary dispatch ASLB; their raw C translation also preserves other carry states."
+  },
+  {
+    "call": "0x6984",
+    "table": "0x6958",
+    "targets": [
+      "0x71E1",
+      "0x6AF4",
+      "0x6AF5",
+      "0x6C5D"
+    ],
+    "condition": "0x68E7 masks index to 3 bits. Secondary tables assume incoming carry=0, as supplied by the primary dispatch ASLB; their raw C translation also preserves other carry states."
+  },
+  {
+    "call": "0x6993",
+    "table": "0x6960",
+    "targets": [
+      "0x70A3",
+      "0x71D7",
+      "0x707C",
+      "0x71EB"
+    ],
+    "condition": "0x68E7 masks index to 3 bits. Secondary tables assume incoming carry=0, as supplied by the primary dispatch ASLB; their raw C translation also preserves other carry states."
+  }
+]

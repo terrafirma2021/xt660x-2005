@@ -1,50 +1,49 @@
 /* Entry 6726 */
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_6726(void)
 
 {
-  ushort uVar1;
-  short sVar2;
-  short sVar3;
-  short sVar4;
-  short sVar5;
+  undefined2 uVar1;
+  char cVar2;
+  char cVar3;
+  ushort uVar4;
+  undefined1 uVar5;
   short sVar6;
+  short sVar7;
+  short sVar8;
   
-  _DAT_0b67 = _DAT_08b8;
-  sVar2 = _DAT_0b67;
-  _DAT_0b69 = _DAT_08ba;
-  sVar3 = _DAT_0b69;
-  DAT_0b67 = (char)((ushort)_DAT_08b8 >> 8);
-  DAT_0b68 = (char)_DAT_08b8;
-  if (DAT_0b67 == '\0' && DAT_0b68 == '\0') {
-    DAT_0b69 = (char)((ushort)_DAT_08ba >> 8);
-    DAT_0b6a = (char)_DAT_08ba;
-    if (DAT_0b69 == '\0' && DAT_0b6a == '\0') {
-      _DAT_0b67 = _DAT_08b8;
-      _DAT_0b69 = _DAT_08ba;
-      DAT_0bdf = 0;
-      return;
+  uVar1 = RAM08b8;
+  RAM0b67 = uVar1;
+  uVar1 = RAM08ba;
+  RAM0b69 = uVar1;
+  cVar2 = DAT_0b67;
+  cVar3 = DAT_0b68;
+  if (cVar2 == '\0' && cVar3 == '\0') {
+    cVar2 = DAT_0b69;
+    cVar3 = DAT_0b6a;
+    if (cVar2 == '\0' && cVar3 == '\0') {
+      uVar5 = 0;
+      goto LAB_676e;
     }
   }
-  sVar5 = 0x20;
-  DAT_0b71 = '\0';
-  sVar4 = _DAT_08b8;
-  sVar6 = _DAT_08ba;
+  sVar7 = 0x20;
+  DAT_0b71 = 0;
+  sVar6 = RAM0b67;
+  sVar8 = RAM0b69;
   do {
-    uVar1 = (ushort)sVar4 >> 0xf;
-    sVar4 = sVar4 << 1;
-    if (sVar6 < 0) {
-      DAT_0b71 = DAT_0b71 + '\x01';
+    uVar4 = (ushort)sVar6 >> 0xf;
+    sVar6 = sVar6 << 1;
+    if (sVar8 < 0) {
+      cVar2 = DAT_0b71;
+      DAT_0b71 = cVar2 + '\x01';
     }
-    sVar5 = sVar5 + -1;
-    sVar6 = CONCAT11((char)((ushort)sVar6 >> 8) << 1 | (byte)sVar6 >> 7,
-                     (byte)sVar6 << 1 | (byte)uVar1);
-  } while (sVar5 != 0);
-  DAT_0bdf = DAT_0b71;
-  _DAT_0b67 = sVar2;
-  _DAT_0b69 = sVar3;
+    sVar7 = sVar7 + -1;
+    sVar8 = CONCAT11((char)((ushort)sVar8 >> 8) << 1 | (byte)sVar8 >> 7,
+                     (byte)sVar8 << 1 | (byte)uVar4);
+  } while (sVar7 != 0);
+  uVar5 = DAT_0b71;
+LAB_676e:
+  DAT_0bdf = uVar5;
   return;
 }
 

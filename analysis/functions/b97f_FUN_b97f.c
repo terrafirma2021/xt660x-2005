@@ -3,50 +3,58 @@
 void FUN_b97f(void)
 
 {
-  short sVar1;
-  undefined2 uVar2;
-  byte bVar3;
+  byte bVar1;
+  short sVar2;
+  undefined2 uVar3;
   
-  DAT_0be4 = (DAT_0be4 + 1) - (0xfe < DAT_0be4);
-  if (DAT_4f0d <= DAT_0be4) {
-    DAT_0be3 = (DAT_0be3 + 1) - (0xfe < DAT_0be3);
-    if (DAT_4f0b < DAT_0be3) {
-      DAT_0893 = DAT_0893 & 0xaf;
+  bVar1 = DAT_0be4;
+  bVar1 = (bVar1 + 1) - (0xfe < bVar1);
+  DAT_0be4 = bVar1;
+  if (DAT_4f0d <= bVar1) {
+    bVar1 = DAT_0be3;
+    bVar1 = (bVar1 + 1) - (0xfe < bVar1);
+    DAT_0be3 = bVar1;
+    if (DAT_4f0b < bVar1) {
+      bVar1 = DAT_0893;
+      DAT_0893 = bVar1 & 0xef;
+      bVar1 = DAT_0893;
+      DAT_0893 = bVar1 & 0xbf;
       DAT_0be3 = 0;
     }
     else {
-      DAT_0893 = DAT_0893 | 4;
+      bVar1 = DAT_0893;
+      DAT_0893 = bVar1 | 4;
       if (DAT_4e7b != 0) {
-        sVar1 = DAT_0044;
-        DAT_005c = sVar1 + 2;
-        bVar3 = DAT_004c;
-        DAT_004c = bVar3 & 0xbf;
-        bVar3 = DAT_0048;
-        DAT_0048 = bVar3 & 0xef | 0x20;
+        sVar2 = DAT_0044;
+        DAT_005c = sVar2 + 2;
+        bVar1 = DAT_004c;
+        DAT_004c = bVar1 & 0xbf;
+        bVar1 = DAT_0048;
+        DAT_0048 = bVar1 & 0xef | 0x20;
         DAT_004e = 0x40;
-        uVar2 = DAT_0044;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        uVar2 = DAT_005c;
-        sVar1 = DAT_005c;
-        DAT_005c = (ushort)DAT_4e7b * 0xfa + sVar1;
-        bVar3 = DAT_004c;
-        DAT_004c = bVar3 & 0xbf;
-        bVar3 = DAT_0048;
-        DAT_0048 = bVar3 | 0x30;
+        uVar3 = DAT_0044;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        uVar3 = DAT_005c;
+        sVar2 = DAT_005c;
+        DAT_005c = (ushort)DAT_4e7b * 0xfa + sVar2;
+        bVar1 = DAT_004c;
+        DAT_004c = bVar1 & 0xbf;
+        bVar1 = DAT_0048;
+        DAT_0048 = bVar1 | 0x30;
         DAT_004e = 0x40;
       }
     }
