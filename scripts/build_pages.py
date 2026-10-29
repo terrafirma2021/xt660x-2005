@@ -8,6 +8,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import quote, unquote, urlsplit
 import markdown
+from site_home import build_home
 
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / '_site'
@@ -34,14 +35,14 @@ def rel(target, current):
 
 def nav(current, active):
     links = [('Overview', 'index.html'), ('Maps', 'maps/index.html'), ('MCU pins', 'pins/index.html'), ('Research', 'research/index.html')]
-    return '<header id="sitebar"><a class="brand" href="'+rel('index.html', current)+'"><span class="brand-mark">XT</span>660X <small>RESEARCH</small></a><nav aria-label="Main navigation">'+''.join(
+    return '<header id="sitebar"><a class="brand" href="'+rel('index.html', current)+'"><span class="brand-mark">YAMAHA</span><span class="brand-model">XT660X<small>THE INSIDE LINE</small></span></a><nav aria-label="Main navigation">'+''.join(
         f'<a href="{rel(url,current)}"'+(' aria-current="page"' if label==active else '')+f'>{label}</a>' for label,url in links)+f'<a href="{REPO}">GitHub ↗</a><button id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">Dark theme</button></nav></header>'
 
 def theme_head(current):
-    return f'<script src="{rel("assets/theme.js",current)}"></script><link rel="stylesheet" href="{rel("assets/theme.css",current)}">'
+    return f'<link rel="icon" href="{rel("assets/favicon.svg",current)}" type="image/svg+xml"><script src="{rel("assets/theme.js",current)}"></script><link rel="stylesheet" href="{rel("assets/theme.css",current)}">'
 
 def shell(title, body, current, active, script=''):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Yamaha XT660X 2005 ECU research: firmware, calibration maps, sensors and MCU pins."><title>{esc(title)} · XT660X Research</title><link rel="stylesheet" href="{rel('assets/site.css',current)}">{theme_head(current)}</head><body>{nav(current,active)}<main class="site-main">{body}</main><footer class="site-footer"><span>XT660X / 2005 / ECU research · <a href="{rel('coverage/index.html',current)}">Content coverage</a></span><span>Revision <a href="{REPO}/commit/{revision}">{revision}</a> · Updates after deployment</span></footer>{script}</body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Yamaha XT660X 2005 ECU research: firmware, calibration maps, sensors and MCU pins."><title>{esc(title)} · XT660X Research</title><link rel="stylesheet" href="{rel('assets/site.css',current)}">{theme_head(current)}</head><body>{nav(current,active)}<main class="site-main">{body}</main><footer class="site-footer"><span>YAMAHA XT660X / 2005 · <a href="{rel('coverage/index.html',current)}">Content coverage</a></span><span>Revision <a href="{REPO}/commit/{revision}">{revision}</a> · <a href="{rel("docs/repository/site/ASSET_CREDITS.html",current)}">Credits &amp; independence</a><br>Independent project. Not affiliated with Yamaha Motor.</span></footer>{script}</body></html>'''
 
 def doc_link(name, label, current='index.html'):
     return f'<a href="{rel(doc_targets[(SOURCE/name).resolve()],current)}">{esc(label)} ↗</a>'
@@ -53,13 +54,8 @@ if DEST.exists():
 DEST.mkdir()
 shutil.copytree(ROOT / 'site/assets', DEST / 'assets')
 
-home = f'''
-<section class="hero"><div><div class="kicker">Yamaha XT660X · 2005</div><h1>Inside the ECU.</h1><p class="hero-copy">A growing reference for understanding the firmware, maps and signals that run the XT660X.</p><p class="hero-sub">Follow the recovered code, explore the calibration catalogue, and trace sensors to their MCU functions.</p><div class="actions"><a class="button primary" href="maps/">Explore the maps <span>↗</span></a><a class="button secondary" href="research/">Read the research</a></div></div><div class="hero-diagram" aria-label="Control system research areas"><span class="signal-label">SENSE</span><div class="signal-row"><span>Crank position</span><span>Pressure</span><span>Temperature</span></div><div class="signal-line"></div><div class="ecu-block"><small>FIRMWARE / CALIBRATION</small><strong>XT660X</strong><span>65,536-byte supplied image</span></div><div class="signal-line"></div><div class="signal-row"><span>Ignition</span><span>Injection</span><span>Fan &amp; relays</span></div><span class="signal-label">CONTROL</span></div></section>
-<section class="stats" aria-label="Project coverage"><div><strong>{len(maps)}</strong><span>Maps &amp; curves catalogued</span></div><div><strong>{len(pins['pins'])}</strong><span>MCU package positions listed</span></div><div><strong>225</strong><span>Recovered routines</span></div><div><strong>15,942</strong><span>Decoded instructions translated</span></div></section>
-<section><div class="section-heading"><div><div class="kicker">Explore the project</div><h2>From signals to software</h2></div><p>Each section connects findings to the underlying evidence.</p></div><div class="feature-grid"><a class="feature" href="maps/"><span class="section-number">01 / CALIBRATION</span><h3>Maps &amp; curves <span>↗</span></h3><p>Search addresses, dimensions and functions. See what is decoded, conditional or still unresolved.</p><span class="feature-foot">{len(maps)} entries · searchable catalogue</span></a><a class="feature" href="pins/"><span class="section-number">02 / HARDWARE</span><h3>MCU pin overview <span>↗</span></h3><p>Select a pin to inspect its role, diagnostic identity and instruction evidence. Includes XT/TDM comparisons.</p><span class="feature-foot">Interactive diagram · all 80 positions</span></a><a class="feature" href="research/"><span class="section-number">03 / RESEARCH</span><h3>Control-system breakdown <span>↗</span></h3><p>Read the investigations into spark, fuel, coolant, cut logic, diagnostics and firmware structure.</p><span class="feature-foot">Source-linked technical documentation</span></a></div></section>
-<section class="progress-panel"><div><div class="kicker">Where the work stands</div><h2>Coverage is not the same as certainty.</h2><p>The supplied application's decoded instructions have a complete C translation. Physical interpretation is still progressing: absolute spark BTDC needs its mechanical crank reference, sensor scales retain stated assumptions, and ECU connector cavities remain unassigned.</p></div><div class="progress-links">{doc_link('MAP_RESOLUTION.md','Per-map decoding status')}{doc_link('CRANK_REFERENCE.md','CPS and spark reference')}{doc_link('DEFINITION_READINESS.md','XDF / tool readiness')}</div></section>
-<p class="research-note">This site is a read-only research reference. Conditional values are labelled, and the catalogue is not yet a validated tuning definition. The XT660X is the target; TDM material is comparison evidence. <a href="docs/semantics/VERIFICATION_LEDGER.html">Check verification status for every map and pin ↗</a></p>'''
-write('index.html', shell('Overview', home, 'index.html', 'Overview'))
+home = build_home(maps, pins, write)
+write('index.html', shell('Yamaha XT660X / The inside line', home, 'index.html', 'Overview', '<script src="assets/home.js" defer></script>'))
 
 # Keep the accepted pin UI intact, adding only the shared website navigation.
 pin_page = (SOURCE / 'MCU_PIN_OVERVIEW.html').read_text(encoding='utf-8')
@@ -67,6 +63,7 @@ pin_page = pin_page.replace('href="MCU_PIN_OVERVIEW.md"', 'href="../docs/semanti
 pin_page = pin_page.replace('href="ECU_CONNECTOR.md"', 'href="../docs/semantics/ECU_CONNECTOR.html"')
 pin_page = pin_page.replace('</head>', '<link rel="stylesheet" href="../assets/nav.css">'+theme_head('pins/index.html')+'</head>')
 pin_page = pin_page.replace('<body>', '<body>'+nav('pins/index.html', 'MCU pins'), 1)
+pin_page = pin_page.replace('</body>', '<footer class="independent-note">Independent XT660X project. Not affiliated with Yamaha Motor. <a href="../docs/repository/site/ASSET_CREDITS.html">Credits &amp; independence</a></footer></body>')
 write('pins/index.html', pin_page)
 for name in ('mcu_pin_overview.json','mcu_pin_overview.svg','ecu_connector.svg'):
     shutil.copyfile(SOURCE/name, DEST/'pins'/name)
