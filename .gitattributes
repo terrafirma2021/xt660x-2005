@@ -1,3 +1,6 @@
+* text=auto eol=lf
 *.bin binary
 *.gz binary
 *.gzf binary
+# Generated Ghidra text includes intentional empty TSV fields and C blank lines.
+analysis/** -whitespace

@@ -1,0 +1,16 @@
+{
+  "filename": "XT660X 2005.bin",
+  "bytes": 65536,
+  "sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "grid_count": 11,
+  "uniform_curve_count": 35,
+  "axis_count": 24,
+  "referenced_calibration_addresses": 518,
+  "limits": [
+    "No complete original-source recovery",
+    "No verified fuel/ignition units",
+    "All-FF boot region cannot supply boot code",
+    "Unreferenced code entries are candidates",
+    "All maps and constants are not claimed to be identified"
+  ]
+}

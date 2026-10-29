@@ -1,0 +1,3 @@
+curve_34da | 0x34DD | 1 rows x 7 columns | raw values
+code-confirmed lookup/header; raw scaling only
+1 2 3 5 8 13 23

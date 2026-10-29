@@ -1,0 +1,3 @@
+curve_3315 | 0x3318 | 1 rows x 15 columns | raw values
+code-confirmed lookup/header; raw scaling only
+61 53 46 38 32 27 21 15 10 7 6 5 4 3 2

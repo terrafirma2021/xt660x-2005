@@ -2,3 +2,4 @@
 *.lock
 *.lock~
 __pycache__/
+.analysis-work/

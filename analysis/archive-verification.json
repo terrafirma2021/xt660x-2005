@@ -1,0 +1,9 @@
+{
+  "archive": "XT660X-2005.gzf",
+  "sha256": "a759ac0d3218f7e027ddcfb3d327bcd64d2f08fec95f420ae86a0ddcadd5beb7",
+  "reimport_succeeded": true,
+  "rom_bytes_preserved": true,
+  "processor_model_retained": true,
+  "application_code_retained": true,
+  "calibration_labels_retained": true
+}

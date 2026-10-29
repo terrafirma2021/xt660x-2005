@@ -1,0 +1,141 @@
+/* Entry 5fc8 */
+
+void FUN_5fc8(void)
+
+{
+  bool bVar1;
+  char cVar2;
+  undefined1 *puVar3;
+  undefined1 *puVar4;
+  
+  DAT_0d3c = DAT_4ef5;
+  puVar3 = &DAT_4ef6;
+  puVar4 = &DAT_0d3d;
+  cVar2 = DAT_4ef5;
+  do {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + 1;
+    puVar4 = puVar4 + 1;
+    bVar1 = cVar2 != '\0';
+    if ((char)(cVar2 + -1) == '\0') break;
+    cVar2 = cVar2 + -1;
+  } while (bVar1);
+  DAT_0d52 = DAT_4e67;
+  DAT_0d53 = DAT_4e68;
+  DAT_0d54 = DAT_4e69;
+  DAT_0d55 = DAT_4e6a;
+  DAT_0d56 = DAT_4e6b;
+  DAT_0d57 = DAT_4e6c;
+  DAT_0d58 = DAT_4e6d;
+  DAT_0d59 = DAT_4e6e;
+  DAT_0d5a = DAT_4e6f;
+  DAT_0d5b = DAT_4e70;
+  DAT_0d5c = DAT_4e71;
+  DAT_0d5d = DAT_4e72;
+  DAT_0d5e = DAT_4e73;
+  DAT_0d5f = DAT_4e74;
+  DAT_0d60 = DAT_4e75;
+  DAT_0d61 = DAT_4e76;
+  DAT_0d62 = DAT_4e77;
+  DAT_0d63 = DAT_4e78;
+  DAT_0d64 = DAT_4e79;
+  DAT_0d65 = DAT_4e7a;
+  DAT_0d66 = DAT_4e90;
+  DAT_0d67 = DAT_18de;
+  DAT_0d68 = DAT_4bee;
+  DAT_0d69 = DAT_4bef;
+  DAT_0d6a = DAT_4bf0;
+  DAT_0d6b = DAT_4bf1;
+  DAT_0d6c = DAT_4bf2;
+  DAT_0d6d = DAT_4bf3;
+  DAT_0d6e = DAT_4bf4;
+  DAT_0d6f = DAT_4bf5;
+  DAT_0d70 = DAT_4bf6;
+  DAT_0d71 = DAT_4bf7;
+  DAT_0d72 = DAT_4bf8;
+  DAT_0d73 = DAT_4bfa;
+  DAT_0d74 = DAT_4bfb;
+  DAT_0d75 = DAT_4e55;
+  DAT_0d76 = DAT_4e54;
+  DAT_0d77 = DAT_4e56;
+  DAT_0d78 = DAT_4e53;
+  DAT_0d79 = DAT_18dc;
+  DAT_0d7a = DAT_18dd;
+  DAT_0d7b = DAT_18e4;
+  DAT_0d7c = DAT_423e;
+  DAT_0d7d = DAT_423f;
+  DAT_0d7e = DAT_18e2;
+  DAT_0d7f = DAT_4bd7;
+  DAT_0d80 = DAT_4bd8;
+  DAT_0d81 = DAT_4bd9;
+  DAT_0d82 = DAT_4bda;
+  DAT_0d83 = DAT_4bdb;
+  DAT_0d84 = DAT_4bdc;
+  DAT_0d85 = DAT_4bdd;
+  DAT_0d86 = DAT_4bde;
+  DAT_0d87 = DAT_18d3;
+  DAT_0d88 = DAT_4e58;
+  DAT_0d8a = DAT_4e3f;
+  DAT_0d89 = DAT_4e3d;
+  DAT_0d8b = DAT_18ce;
+  DAT_0d8c = DAT_1844;
+  DAT_0d8d = DAT_1845;
+  DAT_0d8e = DAT_1846;
+  DAT_0d8f = DAT_1847;
+  DAT_0d90 = DAT_1848;
+  DAT_0d91 = DAT_1849;
+  DAT_0d92 = DAT_184a;
+  DAT_0d93 = DAT_184b;
+  DAT_0d94 = DAT_184c;
+  DAT_0d95 = DAT_184d;
+  DAT_0d96 = DAT_184e;
+  DAT_0d97 = DAT_184f;
+  DAT_0d98 = DAT_1850;
+  DAT_0d99 = DAT_1851;
+  DAT_0d9a = DAT_18d2;
+  DAT_0d9b = DAT_18e3;
+  DAT_0d9c = DAT_18e5;
+  DAT_0d9e = DAT_4ba0;
+  DAT_0d9f = DAT_18c9;
+  DAT_0da0 = DAT_18ca;
+  DAT_0da1 = DAT_18cb;
+  DAT_0da2 = DAT_18cc;
+  DAT_0da3 = DAT_18cd;
+  DAT_0d9d = DAT_18e1;
+  DAT_0da4 = DAT_357b;
+  DAT_0da5 = DAT_357c;
+  DAT_0da6 = DAT_189a;
+  DAT_0dd5 = DAT_4e7d;
+  DAT_0dd6 = DAT_4e7e;
+  DAT_0dd7 = DAT_4e7f;
+  DAT_0dd8 = DAT_4e85;
+  DAT_0dd9 = DAT_4be5;
+  DAT_0dda = DAT_4e2c;
+  DAT_0ddb = DAT_4e2d;
+  DAT_0ddc = DAT_4e2e;
+  DAT_0daa = DAT_18da;
+  DAT_0da8 = DAT_4e5e;
+  DAT_0dac = DAT_18d0;
+  DAT_0dae = DAT_4f1c;
+  DAT_0db0 = DAT_4f1e;
+  DAT_0db2 = DAT_4f1a;
+  DAT_0db4 = DAT_4f22;
+  DAT_0db6 = DAT_4e8a;
+  DAT_0db8 = DAT_4e26;
+  puVar3 = &DAT_1854;
+  puVar4 = &DAT_0dba;
+  cVar2 = '\x1b';
+  do {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + 1;
+    puVar4 = puVar4 + 1;
+    bVar1 = cVar2 != '\0';
+    if ((char)(cVar2 + -1) == '\0') {
+      return;
+    }
+    cVar2 = cVar2 + -1;
+  } while (bVar1);
+  return;
+}
+
+

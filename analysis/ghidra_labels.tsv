@@ -1,0 +1,70 @@
+1b66	cal_main_quantity_A	45x30 raw 16-bit cells; physical units/role unverified.
+2688	cal_main_quantity_B	45x30 raw 16-bit cells; physical units/role unverified.
+37a8	cal_main_quantity_C	45x30 raw 16-bit cells; physical units/role unverified.
+42ae	cal_main_u8_A	32x20 raw 8-bit cells; physical units/role unverified.
+452e	cal_main_u8_B	32x20 raw 8-bit cells; physical units/role unverified.
+47ae	cal_main_u8_C	32x20 raw 8-bit cells; physical units/role unverified.
+1914	cal_modulo24_surface	10x13 raw 8-bit cells; physical units/role unverified.
+1a1a	cal_correction_surface_A	12x15 raw 8-bit cells; physical units/role unverified.
+3168	cal_correction_surface_B	13x10 raw 8-bit cells; physical units/role unverified.
+3280	cal_correction_surface_C	8x12 raw 8-bit cells; physical units/role unverified.
+4a60	cal_correction_surface_D	10x15 raw 8-bit cells; physical units/role unverified.
+18b9	cal_curve_18b6	1x15 raw 8-bit cells; physical units/role unverified.
+1999	cal_curve_1996	1x15 raw 8-bit cells; physical units/role unverified.
+32f2	cal_curve_32ef	1x15 raw 8-bit cells; physical units/role unverified.
+3304	cal_curve_3301	1x15 raw 8-bit cells; physical units/role unverified.
+4237	cal_curve_4234	1x7 raw 8-bit cells; physical units/role unverified.
+19cc	cal_curve_19c6	1x8 raw 8-bit cells; physical units/role unverified.
+19c0	cal_curve_19ba	1x6 raw 8-bit cells; physical units/role unverified.
+19ae	cal_curve_19a8	1x11 raw 8-bit cells; physical units/role unverified.
+34b6	cal_curve_34b0	1x15 raw 8-bit cells; physical units/role unverified.
+349a	cal_curve_3494	1x10 raw 8-bit cells; physical units/role unverified.
+3540	cal_curve_353a	1x8 raw 8-bit cells; physical units/role unverified.
+3520	cal_curve_351d	1x25 raw 8-bit cells; physical units/role unverified.
+34d3	cal_curve_34d0	1x7 raw 8-bit cells; physical units/role unverified.
+34dd	cal_curve_34da	1x7 raw 8-bit cells; physical units/role unverified.
+34e7	cal_curve_34e4	1x7 raw 8-bit cells; physical units/role unverified.
+34f4	cal_curve_34ee	1x9 raw 8-bit cells; physical units/role unverified.
+3560	cal_curve_355d	1x7 raw 8-bit cells; physical units/role unverified.
+356a	cal_curve_3567	1x7 raw 8-bit cells; physical units/role unverified.
+3574	cal_curve_3571	1x7 raw 8-bit cells; physical units/role unverified.
+31f2	cal_curve_31ec	1x13 raw 8-bit cells; physical units/role unverified.
+3206	cal_curve_3200	1x13 raw 8-bit cells; physical units/role unverified.
+36c7	cal_curve_36c4	1x15 raw 8-bit cells; physical units/role unverified.
+36aa	cal_curve_36a4	1x7 raw 8-bit cells; physical units/role unverified.
+36b8	cal_curve_36b2	1x7 raw 8-bit cells; physical units/role unverified.
+3223	cal_curve_3220	1x25 raw 8-bit cells; physical units/role unverified.
+3348	cal_curve_3345	1x15 raw 8-bit cells; physical units/role unverified.
+335a	cal_curve_3357	1x15 raw 8-bit cells; physical units/role unverified.
+1886	cal_curve_1880	1x20 raw 8-bit cells; physical units/role unverified.
+3242	cal_curve_323c	1x21 raw 8-bit cells; physical units/role unverified.
+32e6	cal_curve_32e0	1x8 raw 8-bit cells; physical units/role unverified.
+4a36	cal_curve_4a33	1x15 raw 8-bit cells; physical units/role unverified.
+3318	cal_curve_3315	1x15 raw 8-bit cells; physical units/role unverified.
+332a	cal_curve_3327	1x15 raw 8-bit cells; physical units/role unverified.
+3500	cal_curve_34fd	1x29 raw 8-bit cells; physical units/role unverified.
+4bb2	cal_curve_4bac	1x21 raw 8-bit cells; physical units/role unverified.
+18fa	axis_raw_18fa	13 raw 16-bit axis breakpoints; engineering units unverified.
+18e6	axis_raw_18e6	10 raw 16-bit axis breakpoints; engineering units unverified.
+1b0c	axis_raw_1b0c	45 raw 16-bit axis breakpoints; engineering units unverified.
+374e	axis_raw_374e	45 raw 16-bit axis breakpoints; engineering units unverified.
+1ad0	axis_raw_1ad0	30 raw 16-bit axis breakpoints; engineering units unverified.
+3712	axis_raw_3712	30 raw 16-bit axis breakpoints; engineering units unverified.
+262e	axis_raw_262e	45 raw 16-bit axis breakpoints; engineering units unverified.
+25f2	axis_raw_25f2	30 raw 16-bit axis breakpoints; engineering units unverified.
+311a	axis_raw_311a	2 raw 16-bit axis breakpoints; engineering units unverified.
+3116	axis_raw_3116	2 raw 16-bit axis breakpoints; engineering units unverified.
+3126	axis_raw_3126	2 raw 16-bit axis breakpoints; engineering units unverified.
+3122	axis_raw_3122	2 raw 16-bit axis breakpoints; engineering units unverified.
+321a	axis_raw_321a	2 raw 8-bit axis breakpoints; engineering units unverified.
+3216	axis_raw_3216	2 raw 16-bit axis breakpoints; engineering units unverified.
+1a02	axis_raw_1a02	12 raw 16-bit axis breakpoints; engineering units unverified.
+19e4	axis_raw_19e4	15 raw 16-bit axis breakpoints; engineering units unverified.
+426e	axis_raw_426e	32 raw 16-bit axis breakpoints; engineering units unverified.
+4246	axis_raw_4246	20 raw 16-bit axis breakpoints; engineering units unverified.
+313a	axis_raw_313a	10 raw 16-bit axis breakpoints; engineering units unverified.
+314e	axis_raw_314e	13 raw 16-bit axis breakpoints; engineering units unverified.
+3258	axis_raw_3258	12 raw 16-bit axis breakpoints; engineering units unverified.
+3270	axis_raw_3270	8 raw 16-bit axis breakpoints; engineering units unverified.
+4a46	axis_raw_4a46	15 raw 8-bit axis breakpoints; engineering units unverified.
+4a56	axis_raw_4a56	10 raw 8-bit axis breakpoints; engineering units unverified.

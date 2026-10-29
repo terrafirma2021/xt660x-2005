@@ -1,0 +1,1303 @@
+[
+  {
+    "base": "0x4F23",
+    "load": "0x52D9",
+    "function": "",
+    "calls": [
+      {
+        "address": "0x52DF",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x4F23",
+    "load": "0x52F7",
+    "function": "",
+    "calls": [
+      {
+        "address": "0x52FD",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x4EF6",
+    "load": "0x5FCE",
+    "function": "FUN_5fc8",
+    "calls": []
+  },
+  {
+    "base": "0x1854",
+    "load": "0x6246",
+    "function": "FUN_5fc8",
+    "calls": []
+  },
+  {
+    "base": "0x4EC9",
+    "load": "0x64F3",
+    "function": "FUN_6496",
+    "calls": []
+  },
+  {
+    "base": "0x4EEB",
+    "load": "0x665A",
+    "function": "FUN_6630",
+    "calls": []
+  },
+  {
+    "base": "0x4EC9",
+    "load": "0x66BE",
+    "function": "FUN_6672",
+    "calls": []
+  },
+  {
+    "base": "0x18B6",
+    "load": "0x6B5D",
+    "function": "FUN_6af6",
+    "calls": [
+      {
+        "address": "0x6B60",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x4F23",
+    "load": "0x7040",
+    "function": "FUN_6fc2",
+    "calls": [
+      {
+        "address": "0x7046",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x4F44",
+    "load": "0x711B",
+    "function": "FUN_70a3",
+    "calls": []
+  },
+  {
+    "base": "0x1996",
+    "load": "0x7166",
+    "function": "FUN_70a3",
+    "calls": [
+      {
+        "address": "0x7169",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x32EF",
+    "load": "0x717B",
+    "function": "FUN_70a3",
+    "calls": [
+      {
+        "address": "0x717E",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x3301",
+    "load": "0x7187",
+    "function": "FUN_70a3",
+    "calls": [
+      {
+        "address": "0x718A",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x32EF",
+    "load": "0x738B",
+    "function": "FUN_721f",
+    "calls": [
+      {
+        "address": "0x738E",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x3301",
+    "load": "0x7397",
+    "function": "FUN_721f",
+    "calls": [
+      {
+        "address": "0x739A",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x4234",
+    "load": "0x74BF",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x74C2",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x1841",
+    "load": "0x7800",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7811",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      },
+      {
+        "address": "0x781C",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x3342",
+    "load": "0x784E",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7864",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      },
+      {
+        "address": "0x786F",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x3343",
+    "load": "0x7853",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7864",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      },
+      {
+        "address": "0x786F",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x33F4",
+    "load": "0x78D6",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x790E",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x340B",
+    "load": "0x78E3",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x790E",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x3422",
+    "load": "0x78E8",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x790E",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x3439",
+    "load": "0x78F6",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x790E",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x3450",
+    "load": "0x7903",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x790E",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x3467",
+    "load": "0x7908",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x790E",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x3368",
+    "load": "0x7A49",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7A81",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x337F",
+    "load": "0x7A56",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7A81",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x3396",
+    "load": "0x7A5B",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7A81",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x33AD",
+    "load": "0x7A69",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7A81",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x33C4",
+    "load": "0x7A76",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7A81",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x33DB",
+    "load": "0x7A7B",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7A81",
+        "helper": "0xC1DB",
+        "kind": "u8_precomputed_index"
+      }
+    ]
+  },
+  {
+    "base": "0x1911",
+    "load": "0x7B8C",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7B8F",
+        "helper": "0xC4DC",
+        "kind": "modulo24_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x19C6",
+    "load": "0x7BAB",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7BB1",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x1996",
+    "load": "0x7BBA",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7BBD",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x19BA",
+    "load": "0x7BC3",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7BD8",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x19A8",
+    "load": "0x7BDE",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7BE4",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x1B51",
+    "load": "0x7D22",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7D25",
+        "helper": "0xC499",
+        "kind": "u16_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x3793",
+    "load": "0x7D57",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7D5A",
+        "helper": "0xC499",
+        "kind": "u16_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x1B51",
+    "load": "0x7D94",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7D97",
+        "helper": "0xC499",
+        "kind": "u16_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x3793",
+    "load": "0x7DC9",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7DCC",
+        "helper": "0xC499",
+        "kind": "u16_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x2673",
+    "load": "0x7E33",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7E36",
+        "helper": "0xC499",
+        "kind": "u16_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x2673",
+    "load": "0x7E57",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7E5A",
+        "helper": "0xC499",
+        "kind": "u16_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x311B",
+    "load": "0x7E96",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7E99",
+        "helper": "0xC32D",
+        "kind": "u8_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x3127",
+    "load": "0x7ED8",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7EDB",
+        "helper": "0xC32D",
+        "kind": "u8_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x3219",
+    "load": "0x7F44",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x7F47",
+        "helper": "0xC32D",
+        "kind": "u8_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x34B0",
+    "load": "0x800C",
+    "function": "FUN_74b8",
+    "calls": [
+      {
+        "address": "0x8012",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x1A17",
+    "load": "0x8684",
+    "function": "FUN_864e",
+    "calls": [
+      {
+        "address": "0x8687",
+        "helper": "0xC32D",
+        "kind": "u8_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x189E",
+    "load": "0x87BA",
+    "function": "FUN_869e",
+    "calls": [
+      {
+        "address": "0x87CB",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      },
+      {
+        "address": "0x87D6",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x18D6",
+    "load": "0x8802",
+    "function": "FUN_87e7",
+    "calls": [
+      {
+        "address": "0x8813",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      },
+      {
+        "address": "0x881E",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x42AB",
+    "load": "0x8891",
+    "function": "FUN_87e7",
+    "calls": [
+      {
+        "address": "0x88A8",
+        "helper": "0xC32D",
+        "kind": "u8_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x452B",
+    "load": "0x889E",
+    "function": "FUN_87e7",
+    "calls": [
+      {
+        "address": "0x88A8",
+        "helper": "0xC32D",
+        "kind": "u8_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x47AB",
+    "load": "0x88A3",
+    "function": "FUN_87e7",
+    "calls": [
+      {
+        "address": "0x88A8",
+        "helper": "0xC32D",
+        "kind": "u8_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x4F61",
+    "load": "0x88D8",
+    "function": "FUN_87e7",
+    "calls": [
+      {
+        "address": "0x88EE",
+        "helper": "0xC28D",
+        "kind": "u8_special_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x4F7E",
+    "load": "0x88DD",
+    "function": "FUN_87e7",
+    "calls": [
+      {
+        "address": "0x88EE",
+        "helper": "0xC28D",
+        "kind": "u8_special_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x4B0F",
+    "load": "0x8AD4",
+    "function": "FUN_87e7",
+    "calls": [
+      {
+        "address": "0x8ADB",
+        "helper": "0xC28D",
+        "kind": "u8_special_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x4BA1",
+    "load": "0x8B25",
+    "function": "FUN_87e7",
+    "calls": [
+      {
+        "address": "0x8B28",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x1840",
+    "load": "0x8C99",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x8CAA",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      },
+      {
+        "address": "0x8CB5",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x1840",
+    "load": "0x8CBE",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x8CCF",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      },
+      {
+        "address": "0x8CDA",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x312E",
+    "load": "0x8CE3",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x8CF4",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      },
+      {
+        "address": "0x8CFF",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x3494",
+    "load": "0x8F91",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x8F97",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x353A",
+    "load": "0x9217",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x921D",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x351D",
+    "load": "0x922C",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x922F",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x34D0",
+    "load": "0x9250",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x9265",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x34DA",
+    "load": "0x925D",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x9265",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x34E4",
+    "load": "0x9262",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x9265",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x34EE",
+    "load": "0x926B",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x9271",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x353A",
+    "load": "0x9438",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x943E",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x351D",
+    "load": "0x944D",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x9450",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x355D",
+    "load": "0x9471",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x9486",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x3567",
+    "load": "0x947E",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x9486",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x3571",
+    "load": "0x9483",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x9486",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x34EE",
+    "load": "0x948C",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x9492",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x1852",
+    "load": "0x95A6",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x95B7",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      },
+      {
+        "address": "0x95C2",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x1852",
+    "load": "0x95D0",
+    "function": "FUN_8b34",
+    "calls": [
+      {
+        "address": "0x95E1",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      },
+      {
+        "address": "0x95EC",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x4AF6",
+    "load": "0x9880",
+    "function": "candidate_unreferenced_96fd",
+    "calls": [
+      {
+        "address": "0x9883",
+        "helper": "0xC227",
+        "kind": "scalar_scale_rounded"
+      }
+    ]
+  },
+  {
+    "base": "0x4AF6",
+    "load": "0x988E",
+    "function": "candidate_unreferenced_96fd",
+    "calls": [
+      {
+        "address": "0x9891",
+        "helper": "0xC227",
+        "kind": "scalar_scale_rounded"
+      }
+    ]
+  },
+  {
+    "base": "0x4E11",
+    "load": "0x9CF7",
+    "function": "FUN_99fd",
+    "calls": []
+  },
+  {
+    "base": "0x18B2",
+    "load": "0x9EEE",
+    "function": "FUN_99fd",
+    "calls": [
+      {
+        "address": "0x9F05",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      },
+      {
+        "address": "0x9F10",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x4C08",
+    "load": "0xA36B",
+    "function": "FUN_a363",
+    "calls": []
+  },
+  {
+    "base": "0x4C1C",
+    "load": "0xA388",
+    "function": "FUN_a363",
+    "calls": []
+  },
+  {
+    "base": "0x4D0C",
+    "load": "0xA3BC",
+    "function": "FUN_a3b4",
+    "calls": []
+  },
+  {
+    "base": "0x4D20",
+    "load": "0xA3D9",
+    "function": "FUN_a3b4",
+    "calls": []
+  },
+  {
+    "base": "0x3165",
+    "load": "0xA43B",
+    "function": "FUN_a405",
+    "calls": [
+      {
+        "address": "0xA43E",
+        "helper": "0xC32D",
+        "kind": "u8_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x31EC",
+    "load": "0xA450",
+    "function": "FUN_a448",
+    "calls": [
+      {
+        "address": "0xA45B",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x3200",
+    "load": "0xA455",
+    "function": "FUN_a448",
+    "calls": [
+      {
+        "address": "0xA45B",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x1800",
+    "load": "0xA492",
+    "function": "FUN_a489",
+    "calls": []
+  },
+  {
+    "base": "0x36C4",
+    "load": "0xA58F",
+    "function": "FUN_a564",
+    "calls": [
+      {
+        "address": "0xA592",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x36A4",
+    "load": "0xA6D3",
+    "function": "FUN_a564",
+    "calls": [
+      {
+        "address": "0xA6D9",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x36B2",
+    "load": "0xA704",
+    "function": "FUN_a564",
+    "calls": [
+      {
+        "address": "0xA70A",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x36ED",
+    "load": "0xA843",
+    "function": "FUN_a564",
+    "calls": [
+      {
+        "address": "0xA846",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x36ED",
+    "load": "0xA84F",
+    "function": "FUN_a564",
+    "calls": [
+      {
+        "address": "0xA852",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x3588",
+    "load": "0xABE5",
+    "function": "FUN_abdd",
+    "calls": []
+  },
+  {
+    "base": "0x359C",
+    "load": "0xAC02",
+    "function": "FUN_abdd",
+    "calls": []
+  },
+  {
+    "base": "0x3614",
+    "load": "0xAC36",
+    "function": "FUN_ac2e",
+    "calls": []
+  },
+  {
+    "base": "0x3628",
+    "load": "0xAC53",
+    "function": "FUN_ac2e",
+    "calls": []
+  },
+  {
+    "base": "0x4234",
+    "load": "0xB171",
+    "function": "FUN_b166",
+    "calls": [
+      {
+        "address": "0xB174",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x3220",
+    "load": "0xB183",
+    "function": "FUN_b166",
+    "calls": [
+      {
+        "address": "0xB186",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x3345",
+    "load": "0xB18F",
+    "function": "FUN_b166",
+    "calls": [
+      {
+        "address": "0xB192",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x3357",
+    "load": "0xB19B",
+    "function": "FUN_b166",
+    "calls": [
+      {
+        "address": "0xB19E",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x18B1",
+    "load": "0xB1E4",
+    "function": "FUN_b166",
+    "calls": [
+      {
+        "address": "0xB1F5",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      },
+      {
+        "address": "0xB200",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x1880",
+    "load": "0xB27B",
+    "function": "FUN_b166",
+    "calls": [
+      {
+        "address": "0xB281",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x1872",
+    "load": "0xB2A4",
+    "function": "FUN_b166",
+    "calls": [
+      {
+        "address": "0xB2B5",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      },
+      {
+        "address": "0xB2C0",
+        "helper": "0xC21C",
+        "kind": "scalar_scale"
+      }
+    ]
+  },
+  {
+    "base": "0x323C",
+    "load": "0xB381",
+    "function": "FUN_b166",
+    "calls": [
+      {
+        "address": "0xB387",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x327D",
+    "load": "0xB3C3",
+    "function": "FUN_b166",
+    "calls": [
+      {
+        "address": "0xB3C6",
+        "helper": "0xC32D",
+        "kind": "u8_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x32E0",
+    "load": "0xB3DB",
+    "function": "FUN_b166",
+    "calls": [
+      {
+        "address": "0xB3E1",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x4A5D",
+    "load": "0xB886",
+    "function": "FUN_b817",
+    "calls": [
+      {
+        "address": "0xB889",
+        "helper": "0xC32D",
+        "kind": "u8_grid"
+      }
+    ]
+  },
+  {
+    "base": "0x4A33",
+    "load": "0xB895",
+    "function": "FUN_b817",
+    "calls": [
+      {
+        "address": "0xB898",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x3315",
+    "load": "0xB89E",
+    "function": "FUN_b817",
+    "calls": [
+      {
+        "address": "0xB8A4",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x3327",
+    "load": "0xB8AA",
+    "function": "FUN_b817",
+    "calls": [
+      {
+        "address": "0xB8B0",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x34FD",
+    "load": "0xB8B9",
+    "function": "FUN_b817",
+    "calls": [
+      {
+        "address": "0xB8BC",
+        "helper": "0xC1CD",
+        "kind": "uniform_u8_axis_u8_values"
+      }
+    ]
+  },
+  {
+    "base": "0x4BAC",
+    "load": "0xB8D3",
+    "function": "FUN_b817",
+    "calls": [
+      {
+        "address": "0xB8D9",
+        "helper": "0xC1F2",
+        "kind": "uniform_u16_axis_u8_values"
+      }
+    ]
+  }
+]

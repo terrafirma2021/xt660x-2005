@@ -1,0 +1,803 @@
+[
+  {
+    "address": "0x18FA",
+    "count": 13,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      4096,
+      7168,
+      10240,
+      15360,
+      20480,
+      25600,
+      30720,
+      35840,
+      40960,
+      46080,
+      51200,
+      56320,
+      61440
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7B64",
+        "input": "LDD 0x900",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x18E6",
+    "count": 10,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      0,
+      512,
+      2816,
+      5568,
+      11136,
+      22272,
+      27840,
+      33408,
+      38976,
+      44544
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7B78",
+        "input": "LDD 0x8e8",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x1B0C",
+    "count": 45,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      3072,
+      4096,
+      5120,
+      5632,
+      6144,
+      6656,
+      7168,
+      7680,
+      8192,
+      9216,
+      10240,
+      11264,
+      12288,
+      13312,
+      14336,
+      15360,
+      16640,
+      17920,
+      19200,
+      20480,
+      21760,
+      23040,
+      24320,
+      25600,
+      26880,
+      28160,
+      29440,
+      30720,
+      32000,
+      33280,
+      34560,
+      35840,
+      38400,
+      40960,
+      43520,
+      46080,
+      48640,
+      51200,
+      53760,
+      56320,
+      58880,
+      61440,
+      64768,
+      65024,
+      65280
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7CD1",
+        "input": "LDD 0x900",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x374E",
+    "count": 45,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      3072,
+      4096,
+      5120,
+      5888,
+      6656,
+      7424,
+      8192,
+      8960,
+      9728,
+      10496,
+      11264,
+      12032,
+      12800,
+      14080,
+      15360,
+      16640,
+      17920,
+      19200,
+      20480,
+      21760,
+      23040,
+      24320,
+      25600,
+      26880,
+      28160,
+      29440,
+      30720,
+      32000,
+      33280,
+      34560,
+      35840,
+      38400,
+      40960,
+      43520,
+      46080,
+      48640,
+      51200,
+      53760,
+      56320,
+      58880,
+      64256,
+      64512,
+      64768,
+      65024,
+      65280
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7CE5",
+        "input": "LDD 0x900",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x1AD0",
+    "count": 30,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      18112,
+      19264,
+      20416,
+      21632,
+      22784,
+      24000,
+      25152,
+      26368,
+      27520,
+      28096,
+      28672,
+      29888,
+      31040,
+      32256,
+      33408,
+      34560,
+      35776,
+      36928,
+      38144,
+      39296,
+      40512,
+      41664,
+      42816,
+      44032,
+      45184,
+      46400,
+      47552,
+      48768,
+      49920,
+      51136
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7D03",
+        "input": "LDD 0xc90",
+        "function": "FUN_74b8"
+      },
+      {
+        "call": "0x7D75",
+        "input": "LDD 0xc90",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x3712",
+    "count": 30,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      9920,
+      10752,
+      11520,
+      12288,
+      13056,
+      13888,
+      14656,
+      15424,
+      16256,
+      19392,
+      22528,
+      24064,
+      25664,
+      27264,
+      28032,
+      28800,
+      29568,
+      30400,
+      31168,
+      31936,
+      32768,
+      33536,
+      34304,
+      35072,
+      36672,
+      38272,
+      39808,
+      41408,
+      44544,
+      47680
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7D38",
+        "input": "LDD 0xc90",
+        "function": "FUN_74b8"
+      },
+      {
+        "call": "0x7DAA",
+        "input": "LDD 0xc90",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x262E",
+    "count": 45,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      3072,
+      4096,
+      5120,
+      5632,
+      6144,
+      6656,
+      7168,
+      7680,
+      8192,
+      9216,
+      10240,
+      11264,
+      12288,
+      13312,
+      14336,
+      15360,
+      16640,
+      17920,
+      19200,
+      20480,
+      21760,
+      23040,
+      24320,
+      25600,
+      26880,
+      28160,
+      29440,
+      30720,
+      32000,
+      33280,
+      34560,
+      35840,
+      38400,
+      40960,
+      43520,
+      46080,
+      48640,
+      51200,
+      53760,
+      56320,
+      58880,
+      61440,
+      64768,
+      65024,
+      65280
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7DE0",
+        "input": "LDD 0x900",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x25F2",
+    "count": 30,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      0,
+      256,
+      512,
+      768,
+      1024,
+      2048,
+      3072,
+      4096,
+      6144,
+      8192,
+      10240,
+      12288,
+      16384,
+      20480,
+      24576,
+      28672,
+      32768,
+      36864,
+      41920,
+      45056,
+      47168,
+      49664,
+      49728,
+      49920,
+      50176,
+      50432,
+      50688,
+      50944,
+      51200,
+      51456
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7E0F",
+        "input": "LDD 0x4e62",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x311A",
+    "count": 2,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      3072,
+      65280
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7E6E",
+        "input": "LDD 0x900",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x3116",
+    "count": 2,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      9984,
+      47744
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7E82",
+        "input": "LDD 0xc90",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x3126",
+    "count": 2,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      3072,
+      65280
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7EB0",
+        "input": "LDD 0x900",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x3122",
+    "count": 2,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      5248,
+      26240
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7EC4",
+        "input": "LDD 0x8e8",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x321A",
+    "count": 2,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "raw_values": [
+      70,
+      246
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7F1C",
+        "input": "LDAA 0xcd0",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x3216",
+    "count": 2,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      9984,
+      47744
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x7F30",
+        "input": "LDD 0xc90",
+        "function": "FUN_74b8"
+      }
+    ]
+  },
+  {
+    "address": "0x1A02",
+    "count": 12,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      0,
+      6656,
+      7680,
+      10240,
+      12800,
+      15360,
+      20480,
+      25600,
+      28160,
+      30720,
+      35840,
+      46080
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x865C",
+        "input": "LDD 0x900",
+        "function": "FUN_864e"
+      }
+    ]
+  },
+  {
+    "address": "0x19E4",
+    "count": 15,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      0,
+      512,
+      5248,
+      7872,
+      10496,
+      13120,
+      15744,
+      18368,
+      20992,
+      23616,
+      28800,
+      34048,
+      39296,
+      45184,
+      47168
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x8670",
+        "input": "LDD 0x8e8",
+        "function": "FUN_864e"
+      }
+    ]
+  },
+  {
+    "address": "0x426E",
+    "count": 32,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      3072,
+      4096,
+      4608,
+      5120,
+      5632,
+      6144,
+      6656,
+      7168,
+      8192,
+      9216,
+      10240,
+      12800,
+      15360,
+      17920,
+      20480,
+      23040,
+      25600,
+      28160,
+      30720,
+      33280,
+      35840,
+      38400,
+      40960,
+      43520,
+      46080,
+      48640,
+      51200,
+      53760,
+      56320,
+      58880,
+      61440,
+      64000
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x8835",
+        "input": "LDD 0x902",
+        "function": "FUN_87e7"
+      }
+    ]
+  },
+  {
+    "address": "0x4246",
+    "count": 20,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      0,
+      256,
+      1280,
+      2688,
+      5248,
+      10752,
+      15936,
+      21248,
+      31872,
+      41408,
+      44032,
+      45568,
+      46656,
+      47168,
+      47680,
+      48256,
+      48768,
+      49280,
+      49792,
+      50304
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0x8873",
+        "input": "LDD #0xd000",
+        "function": "FUN_87e7"
+      }
+    ]
+  },
+  {
+    "address": "0x313A",
+    "count": 10,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      0,
+      512,
+      1024,
+      3072,
+      6144,
+      12288,
+      20480,
+      28672,
+      36864,
+      45056
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0xA413",
+        "input": "LDD 0x8e8",
+        "function": "FUN_a405"
+      }
+    ]
+  },
+  {
+    "address": "0x314E",
+    "count": 13,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      8192,
+      12288,
+      16384,
+      20480,
+      24576,
+      28672,
+      32768,
+      36864,
+      40960,
+      45056,
+      49152,
+      53248,
+      57344
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0xA427",
+        "input": "LDD 0x900",
+        "function": "FUN_a405"
+      }
+    ]
+  },
+  {
+    "address": "0x3258",
+    "count": 12,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      16960,
+      19008,
+      21056,
+      23104,
+      25152,
+      27200,
+      29248,
+      31296,
+      33344,
+      35392,
+      37440,
+      47680
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0xB39B",
+        "input": "LDD 0xc90",
+        "function": "FUN_b166"
+      }
+    ]
+  },
+  {
+    "address": "0x3270",
+    "count": 8,
+    "element_bytes": 2,
+    "byte_order": "big",
+    "raw_values": [
+      4096,
+      5120,
+      6144,
+      10240,
+      20480,
+      30720,
+      40960,
+      51200
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0xB3AF",
+        "input": "LDD 0x900",
+        "function": "FUN_b166"
+      }
+    ]
+  },
+  {
+    "address": "0x4A46",
+    "count": 15,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "raw_values": [
+      16,
+      32,
+      48,
+      64,
+      80,
+      96,
+      112,
+      128,
+      144,
+      160,
+      176,
+      192,
+      208,
+      224,
+      240
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0xB85E",
+        "input": "LDAA 0x8f4",
+        "function": "FUN_b817"
+      }
+    ]
+  },
+  {
+    "address": "0x4A56",
+    "count": 10,
+    "element_bytes": 1,
+    "byte_order": "big",
+    "raw_values": [
+      20,
+      22,
+      24,
+      26,
+      28,
+      30,
+      32,
+      34,
+      36,
+      38
+    ],
+    "ascending": true,
+    "calls": [
+      {
+        "call": "0xB872",
+        "input": "LDAA 0x900",
+        "function": "FUN_b817"
+      }
+    ]
+  }
+]

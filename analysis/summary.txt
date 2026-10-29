@@ -1,0 +1,6 @@
+Language: HC-12:BE:16:default
+Instruction bytes: 42849
+Functions decompiled: 225
+Functions failed: 0
+Unavailable external/boot targets: 1
+No original source names or calibration engineering units are claimed.
