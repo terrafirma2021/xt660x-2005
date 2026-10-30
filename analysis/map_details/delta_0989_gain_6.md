@@ -1,4 +1,4 @@
-# Load-delta fuel gain — negative, extended ratio-code
+# Load-delta fuel gain — negative, alternate
 
 <!-- map-name -->
 Stable ID: `delta_0989_gain_6`. Category: Transient fuel.

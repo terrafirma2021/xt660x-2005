@@ -45,7 +45,11 @@ The earlier version chose **20 detected speed pulses per output-shaft revolution
 
 The actual detected pulse count, sensing target and shaft relationship still need independent evidence. The manual's fault-42 checks (printed page 7-18 / PDF page 361) describe the speed-detection gear and sensor voltage checks; those checks do not specify 20 pulses per revolution. Neither the MCU model nor the software multiplier supplies that missing hardware fact.
 
-The test script and report retain the former 20-pulse experiment for reproducibility, explicitly as a **synthetic hypothesis test**. Its 3,000 simulated revolutions are not motorcycle measurements or independent gear validation. The map names continue to use the directly tested ratio-code branches. No numbered-gear assignment for codes 1–4 is claimed from that experiment.
+The test script and report retain the former 20-pulse experiment for reproducibility, explicitly as a **synthetic hypothesis test**. Its 3,000 simulated revolutions are not motorcycle measurements or independent gear validation. Map titles use plain-language selection labels; their explanations retain the directly tested ratio-code conditions. No numbered-gear assignment for codes 1–4 is claimed from that experiment.
+
+## Human-readable map titles
+
+Map titles use **neutral**, **standard** and **alternate** for the recurring three-way selection. Neutral refers to the corroborated neutral-input condition below; standard covers the normal classifier codes 0–5; alternate requires a code above 5 and is not selected by the recovered normal classifier with stock thresholds. These are descriptive labels, not named riding modes. The first transient family uses **lower/higher speed-ratio range**, because it splits at code 1 instead. Its titles do not assign numbered gears. Exact thresholds and firmware conditions remain in each map explanation.
 
 ## Neutral input and map branches
 
@@ -63,7 +67,7 @@ The XT manual identifies diagnostic 21 as neutral status (PDF page 354), and sho
 | Transient response 1 | `curve_34d0` | `curve_34da` | `curve_34e4` | **1** at `0x34CF` |
 | Transient response 2 | `curve_355d` | `curve_3567` | `curve_3571` | 5 at `0x355C` |
 
-The normalization recovery-hold pair has no neutral override at its lookup: `0xA448–0xA455` selects `curve_31ec` for ratio code <= ROM `0x31EA` (stock 5), otherwise `curve_3200`. The result at `0x09D9` is latched into `0x09D7` and compared with the 10-ms-task counter `0x09DD` before recovery starts (`0x8E2F`, `0xA8C9`). Its consuming state is disabled by stock ROM `0x3130 = 0xFF` (`0x8DF9`). Thus the former “selection 1/2” pair also has concrete normal/extended ratio-code names.
+The normalization recovery-hold pair has no neutral override at its lookup: `0xA448–0xA455` selects `curve_31ec` for ratio code <= ROM `0x31EA` (stock 5), otherwise `curve_3200`. The result at `0x09D9` is latched into `0x09D7` and compared with the 10-ms-task counter `0x09DD` before recovery starts (`0x8E2F`, `0xA8C9`). Its consuming state is disabled by stock ROM `0x3130 = 0xFF` (`0x8DF9`). The titles call these standard and alternate; their explanations retain the exact ratio-code split and disabled stock state.
 
 Selector instructions are at `0x8885–0x88A3`, `0x7A38–0x7A7B`, `0x78C5–0x7908`, `0x9244–0x9262`, and `0x9465–0x9483`. Delta direction is the existing centered internal encoding: bit 7 set is the nonnegative side, including zero/deadband; bit 7 clear is negative. It is not a physical rate unit.
 

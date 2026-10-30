@@ -52,10 +52,10 @@ These gaps do not prevent further static tracing. They prevent final sign-off of
 |---|---|---|---|---|
 | [Normal load-based fuel quantity](../map_details/main_quantity_A.md) `0x1B66` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
 | [Throttle-based fuel quantity](../map_details/main_quantity_B.md) `0x2688` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
-| [Sequence-selected alternate load fuel quantity](../map_details/main_quantity_C.md) `0x37A8` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
-| [Base ignition timing — neutral-input branch](../map_details/main_u8_A.md) `0x42AE` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
-| [Base ignition timing — normal ratio-code branch](../map_details/main_u8_B.md) `0x452E` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
-| [Base ignition timing — extended ratio-code branch](../map_details/main_u8_C.md) `0x47AE` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
+| [Alternate load-based fuel quantity](../map_details/main_quantity_C.md) `0x37A8` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
+| [Base ignition timing — neutral](../map_details/main_u8_A.md) `0x42AE` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
+| [Base ignition timing — standard](../map_details/main_u8_B.md) `0x452E` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
+| [Base ignition timing — alternate](../map_details/main_u8_C.md) `0x47AE` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
 | [Injection event-phase target](../map_details/modulo24_surface.md) `0x1914` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Secondary injector quantity multiplier](../map_details/correction_surface_A.md) `0x1A1A` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Fuel normalization offset](../map_details/correction_surface_B.md) `0x3168` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
@@ -76,15 +76,15 @@ These gaps do not prevent further static tracing. They prevent final sign-off of
 | [Relative-throttle qualification threshold vs speed](../map_details/curve_3494.md) `0x349A` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Transient fuel multiplier vs pressure estimate](../map_details/curve_353a.md) `0x3540` | Verified | numeric contribution decoded | None listed; see dossier | Open |
 | [Transient fuel multiplier vs intake temperature](../map_details/curve_351d.md) `0x3520` | Verified | numeric contribution decoded | yamaha_temperature_candidate | Open |
-| [Transient fuel response 1 — neutral-input branch](../map_details/curve_34d0.md) `0x34D3` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | None listed; see dossier | Open |
-| [Transient fuel response 1 — low ratio codes](../map_details/curve_34da.md) `0x34DD` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | None listed; see dossier | Open |
-| [Transient fuel response 1 — higher ratio codes](../map_details/curve_34e4.md) `0x34E7` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | None listed; see dossier | Open |
+| [Transient fuel response 1 — neutral](../map_details/curve_34d0.md) `0x34D3` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | None listed; see dossier | Open |
+| [Transient fuel response 1 — lower speed-ratio range](../map_details/curve_34da.md) `0x34DD` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | None listed; see dossier | Open |
+| [Transient fuel response 1 — higher speed-ratio range](../map_details/curve_34e4.md) `0x34E7` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | None listed; see dossier | Open |
 | [Transient fuel multiplier vs throttle](../map_details/curve_34ee.md) `0x34F4` | Verified | numeric contribution decoded | None listed; see dossier | Open |
-| [Transient fuel response 2 — neutral-input branch](../map_details/curve_355d.md) `0x3560` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | None listed; see dossier | Open |
-| [Transient fuel response 2 — normal ratio-code branch](../map_details/curve_3567.md) `0x356A` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | None listed; see dossier | Open |
-| [Transient fuel response 2 — extended ratio-code branch](../map_details/curve_3571.md) `0x3574` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | None listed; see dossier | Open |
-| [Fuel normalization recovery hold — normal ratio-code branch](../map_details/curve_31ec.md) `0x31F2` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
-| [Fuel normalization recovery hold — extended ratio-code branch](../map_details/curve_3200.md) `0x3206` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
+| [Transient fuel response 2 — neutral](../map_details/curve_355d.md) `0x3560` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | None listed; see dossier | Open |
+| [Transient fuel response 2 — standard](../map_details/curve_3567.md) `0x356A` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | None listed; see dossier | Open |
+| [Transient fuel response 2 — alternate](../map_details/curve_3571.md) `0x3574` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | None listed; see dossier | Open |
+| [Fuel normalization recovery hold — standard](../map_details/curve_31ec.md) `0x31F2` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
+| [Fuel normalization recovery hold — alternate](../map_details/curve_3200.md) `0x3206` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
 | [Feedback eligibility delay vs coolant](../map_details/curve_36c4.md) `0x36C7` | Verified | conditional physical conversion | nominal_xt_timer, yamaha_temperature_candidate | Open |
 | [Adaptive fuel correction — decrement step](../map_details/curve_36a4.md) `0x36AA` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Adaptive fuel correction — increment step](../map_details/curve_36b2.md) `0x36B8` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
@@ -99,18 +99,18 @@ These gaps do not prevent further static tracing. They prevent final sign-off of
 | [Coolant enrichment — throttle-based fuel path](../map_details/curve_3327.md) `0x332A` | Verified | numeric contribution decoded | yamaha_temperature_candidate | Open |
 | [Transient fuel pulse contribution vs coolant](../map_details/curve_34fd.md) `0x3500` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | yamaha_temperature_candidate | Open |
 | [Spark timing bound vs pressure estimate](../map_details/curve_4bac.md) `0x4BB2` | Verified | conditional physical conversion | nominal_xt_crank | Open |
-| [Throttle-delta fuel gain — nonnegative, neutral-input](../map_details/delta_0985_gain_1.md) `0x336B` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
-| [Throttle-delta fuel gain — nonnegative, normal ratio-code](../map_details/delta_0985_gain_2.md) `0x3382` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
-| [Throttle-delta fuel gain — nonnegative, extended ratio-code](../map_details/delta_0985_gain_3.md) `0x3399` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
-| [Throttle-delta fuel gain — negative, neutral-input](../map_details/delta_0985_gain_4.md) `0x33B0` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
-| [Throttle-delta fuel gain — negative, normal ratio-code](../map_details/delta_0985_gain_5.md) `0x33C7` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
-| [Throttle-delta fuel gain — negative, extended ratio-code](../map_details/delta_0985_gain_6.md) `0x33DE` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
-| [Load-delta fuel gain — nonnegative, neutral-input](../map_details/delta_0989_gain_1.md) `0x33F7` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
-| [Load-delta fuel gain — nonnegative, normal ratio-code](../map_details/delta_0989_gain_2.md) `0x340E` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
-| [Load-delta fuel gain — nonnegative, extended ratio-code](../map_details/delta_0989_gain_3.md) `0x3425` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
-| [Load-delta fuel gain — negative, neutral-input](../map_details/delta_0989_gain_4.md) `0x343C` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
-| [Load-delta fuel gain — negative, normal ratio-code](../map_details/delta_0989_gain_5.md) `0x3453` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
-| [Load-delta fuel gain — negative, extended ratio-code](../map_details/delta_0989_gain_6.md) `0x346A` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
+| [Throttle-delta fuel gain — nonnegative, neutral](../map_details/delta_0985_gain_1.md) `0x336B` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
+| [Throttle-delta fuel gain — nonnegative, standard](../map_details/delta_0985_gain_2.md) `0x3382` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
+| [Throttle-delta fuel gain — nonnegative, alternate](../map_details/delta_0985_gain_3.md) `0x3399` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
+| [Throttle-delta fuel gain — negative, neutral](../map_details/delta_0985_gain_4.md) `0x33B0` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
+| [Throttle-delta fuel gain — negative, standard](../map_details/delta_0985_gain_5.md) `0x33C7` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
+| [Throttle-delta fuel gain — negative, alternate](../map_details/delta_0985_gain_6.md) `0x33DE` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
+| [Load-delta fuel gain — nonnegative, neutral](../map_details/delta_0989_gain_1.md) `0x33F7` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
+| [Load-delta fuel gain — nonnegative, standard](../map_details/delta_0989_gain_2.md) `0x340E` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
+| [Load-delta fuel gain — nonnegative, alternate](../map_details/delta_0989_gain_3.md) `0x3425` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
+| [Load-delta fuel gain — negative, neutral](../map_details/delta_0989_gain_4.md) `0x343C` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
+| [Load-delta fuel gain — negative, standard](../map_details/delta_0989_gain_5.md) `0x3453` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
+| [Load-delta fuel gain — negative, alternate](../map_details/delta_0989_gain_6.md) `0x346A` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Air-induction enable vs speed and throttle](../map_details/step_grid_4c44.md) `0x4C44` | Verified | logical behavior decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Air-induction enable vs speed and load](../map_details/step_grid_4d48.md) `0x4D48` | Verified | logical behavior decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Adaptive feedback enable vs speed and throttle](../map_details/step_grid_35b0.md) `0x35B0` | Verified | logical behavior decoded | nominal_xt_crank, nominal_xt_timer | Open |

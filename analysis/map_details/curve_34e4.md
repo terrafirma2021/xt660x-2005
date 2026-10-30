@@ -1,4 +1,4 @@
-# Transient fuel response 1 — higher ratio codes
+# Transient fuel response 1 — higher speed-ratio range
 
 <!-- map-name -->
 Stable ID: `curve_34e4`. Category: Transient fuel.

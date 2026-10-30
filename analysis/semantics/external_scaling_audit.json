@@ -4,7 +4,7 @@
   "generator_sha256": "4fded8bd053c07947966cecdbdaf9e03589a3283e240a5eceee778f76e0ff48e",
   "sensor_model_sha256": "528590c2b84127a90eb512f9ff0eeb2a28be405f12e37771767674f5fb141d31",
   "source_manifest_sha256": "93a86a83749b557d174878a938684c3c139c45ce0d72d495822108cbbbf02b51",
-  "physical_units_sha256": "5a484c946212ee499d9d3f9c02e7de486eebd9e5c4b2e612321ea7537adf5210",
+  "physical_units_sha256": "c4600cb194cbffcbe7a3790d8ab779c9e2a2ad7bfde6a5ed0a3de8395121ada1",
   "temperature_trials": [
     {
       "hypothesis": "suzuki_liana_iat",
@@ -357,7 +357,7 @@
     },
     {
       "id": "main_quantity_C",
-      "name": "Sequence-selected alternate load fuel quantity",
+      "name": "Alternate load-based fuel quantity",
       "dossier": "../map_details/main_quantity_C.md",
       "cell_conversion": "timer_ms",
       "status": "conditional physical conversion",
@@ -369,7 +369,7 @@
     },
     {
       "id": "main_u8_A",
-      "name": "Base ignition timing \u2014 neutral-input branch",
+      "name": "Base ignition timing \u2014 neutral",
       "dossier": "../map_details/main_u8_A.md",
       "cell_conversion": "spark_relative_degrees",
       "status": "conditional physical conversion",
@@ -381,7 +381,7 @@
     },
     {
       "id": "main_u8_B",
-      "name": "Base ignition timing \u2014 normal ratio-code branch",
+      "name": "Base ignition timing \u2014 standard",
       "dossier": "../map_details/main_u8_B.md",
       "cell_conversion": "spark_relative_degrees",
       "status": "conditional physical conversion",
@@ -393,7 +393,7 @@
     },
     {
       "id": "main_u8_C",
-      "name": "Base ignition timing \u2014 extended ratio-code branch",
+      "name": "Base ignition timing \u2014 alternate",
       "dossier": "../map_details/main_u8_C.md",
       "cell_conversion": "spark_relative_degrees",
       "status": "conditional physical conversion",
@@ -633,7 +633,7 @@
     },
     {
       "id": "curve_34d0",
-      "name": "Transient fuel response 1 \u2014 neutral-input branch",
+      "name": "Transient fuel response 1 \u2014 neutral",
       "dossier": "../map_details/curve_34d0.md",
       "cell_conversion": null,
       "status": "joint arithmetic decoded; standalone physical cell unit not assigned",
@@ -644,7 +644,7 @@
     },
     {
       "id": "curve_34da",
-      "name": "Transient fuel response 1 \u2014 low ratio codes",
+      "name": "Transient fuel response 1 \u2014 lower speed-ratio range",
       "dossier": "../map_details/curve_34da.md",
       "cell_conversion": null,
       "status": "joint arithmetic decoded; standalone physical cell unit not assigned",
@@ -655,7 +655,7 @@
     },
     {
       "id": "curve_34e4",
-      "name": "Transient fuel response 1 \u2014 higher ratio codes",
+      "name": "Transient fuel response 1 \u2014 higher speed-ratio range",
       "dossier": "../map_details/curve_34e4.md",
       "cell_conversion": null,
       "status": "joint arithmetic decoded; standalone physical cell unit not assigned",
@@ -677,7 +677,7 @@
     },
     {
       "id": "curve_355d",
-      "name": "Transient fuel response 2 \u2014 neutral-input branch",
+      "name": "Transient fuel response 2 \u2014 neutral",
       "dossier": "../map_details/curve_355d.md",
       "cell_conversion": null,
       "status": "joint arithmetic decoded; standalone physical cell unit not assigned",
@@ -688,7 +688,7 @@
     },
     {
       "id": "curve_3567",
-      "name": "Transient fuel response 2 \u2014 normal ratio-code branch",
+      "name": "Transient fuel response 2 \u2014 standard",
       "dossier": "../map_details/curve_3567.md",
       "cell_conversion": null,
       "status": "joint arithmetic decoded; standalone physical cell unit not assigned",
@@ -699,7 +699,7 @@
     },
     {
       "id": "curve_3571",
-      "name": "Transient fuel response 2 \u2014 extended ratio-code branch",
+      "name": "Transient fuel response 2 \u2014 alternate",
       "dossier": "../map_details/curve_3571.md",
       "cell_conversion": null,
       "status": "joint arithmetic decoded; standalone physical cell unit not assigned",
@@ -710,7 +710,7 @@
     },
     {
       "id": "curve_31ec",
-      "name": "Fuel normalization recovery hold \u2014 normal ratio-code branch",
+      "name": "Fuel normalization recovery hold \u2014 standard",
       "dossier": "../map_details/curve_31ec.md",
       "cell_conversion": "normalization_hold_s",
       "status": "conditional physical conversion",
@@ -721,7 +721,7 @@
     },
     {
       "id": "curve_3200",
-      "name": "Fuel normalization recovery hold \u2014 extended ratio-code branch",
+      "name": "Fuel normalization recovery hold \u2014 alternate",
       "dossier": "../map_details/curve_3200.md",
       "cell_conversion": "normalization_hold_s",
       "status": "conditional physical conversion",
@@ -886,7 +886,7 @@
     },
     {
       "id": "delta_0985_gain_1",
-      "name": "Throttle-delta fuel gain \u2014 nonnegative, neutral-input",
+      "name": "Throttle-delta fuel gain \u2014 nonnegative, neutral",
       "dossier": "../map_details/delta_0985_gain_1.md",
       "cell_conversion": "transient_delta_slope_pp",
       "status": "numeric contribution decoded",
@@ -897,7 +897,7 @@
     },
     {
       "id": "delta_0985_gain_2",
-      "name": "Throttle-delta fuel gain \u2014 nonnegative, normal ratio-code",
+      "name": "Throttle-delta fuel gain \u2014 nonnegative, standard",
       "dossier": "../map_details/delta_0985_gain_2.md",
       "cell_conversion": "transient_delta_slope_pp",
       "status": "numeric contribution decoded",
@@ -908,7 +908,7 @@
     },
     {
       "id": "delta_0985_gain_3",
-      "name": "Throttle-delta fuel gain \u2014 nonnegative, extended ratio-code",
+      "name": "Throttle-delta fuel gain \u2014 nonnegative, alternate",
       "dossier": "../map_details/delta_0985_gain_3.md",
       "cell_conversion": "transient_delta_slope_pp",
       "status": "numeric contribution decoded",
@@ -919,7 +919,7 @@
     },
     {
       "id": "delta_0985_gain_4",
-      "name": "Throttle-delta fuel gain \u2014 negative, neutral-input",
+      "name": "Throttle-delta fuel gain \u2014 negative, neutral",
       "dossier": "../map_details/delta_0985_gain_4.md",
       "cell_conversion": "transient_delta_slope_pp",
       "status": "numeric contribution decoded",
@@ -930,7 +930,7 @@
     },
     {
       "id": "delta_0985_gain_5",
-      "name": "Throttle-delta fuel gain \u2014 negative, normal ratio-code",
+      "name": "Throttle-delta fuel gain \u2014 negative, standard",
       "dossier": "../map_details/delta_0985_gain_5.md",
       "cell_conversion": "transient_delta_slope_pp",
       "status": "numeric contribution decoded",
@@ -941,7 +941,7 @@
     },
     {
       "id": "delta_0985_gain_6",
-      "name": "Throttle-delta fuel gain \u2014 negative, extended ratio-code",
+      "name": "Throttle-delta fuel gain \u2014 negative, alternate",
       "dossier": "../map_details/delta_0985_gain_6.md",
       "cell_conversion": "transient_delta_slope_pp",
       "status": "numeric contribution decoded",
@@ -952,7 +952,7 @@
     },
     {
       "id": "delta_0989_gain_1",
-      "name": "Load-delta fuel gain \u2014 nonnegative, neutral-input",
+      "name": "Load-delta fuel gain \u2014 nonnegative, neutral",
       "dossier": "../map_details/delta_0989_gain_1.md",
       "cell_conversion": "transient_delta_slope_pp",
       "status": "numeric contribution decoded",
@@ -963,7 +963,7 @@
     },
     {
       "id": "delta_0989_gain_2",
-      "name": "Load-delta fuel gain \u2014 nonnegative, normal ratio-code",
+      "name": "Load-delta fuel gain \u2014 nonnegative, standard",
       "dossier": "../map_details/delta_0989_gain_2.md",
       "cell_conversion": "transient_delta_slope_pp",
       "status": "numeric contribution decoded",
@@ -974,7 +974,7 @@
     },
     {
       "id": "delta_0989_gain_3",
-      "name": "Load-delta fuel gain \u2014 nonnegative, extended ratio-code",
+      "name": "Load-delta fuel gain \u2014 nonnegative, alternate",
       "dossier": "../map_details/delta_0989_gain_3.md",
       "cell_conversion": "transient_delta_slope_pp",
       "status": "numeric contribution decoded",
@@ -985,7 +985,7 @@
     },
     {
       "id": "delta_0989_gain_4",
-      "name": "Load-delta fuel gain \u2014 negative, neutral-input",
+      "name": "Load-delta fuel gain \u2014 negative, neutral",
       "dossier": "../map_details/delta_0989_gain_4.md",
       "cell_conversion": "transient_delta_slope_pp",
       "status": "numeric contribution decoded",
@@ -996,7 +996,7 @@
     },
     {
       "id": "delta_0989_gain_5",
-      "name": "Load-delta fuel gain \u2014 negative, normal ratio-code",
+      "name": "Load-delta fuel gain \u2014 negative, standard",
       "dossier": "../map_details/delta_0989_gain_5.md",
       "cell_conversion": "transient_delta_slope_pp",
       "status": "numeric contribution decoded",
@@ -1007,7 +1007,7 @@
     },
     {
       "id": "delta_0989_gain_6",
-      "name": "Load-delta fuel gain \u2014 negative, extended ratio-code",
+      "name": "Load-delta fuel gain \u2014 negative, alternate",
       "dossier": "../map_details/delta_0989_gain_6.md",
       "cell_conversion": "transient_delta_slope_pp",
       "status": "numeric contribution decoded",

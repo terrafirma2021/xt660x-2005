@@ -9,10 +9,10 @@ ROOT = Path(__file__).resolve().parents[1]
 ROWS = [
  ('main_quantity_A', 'Normal load-based fuel quantity', 'Fuel'),
  ('main_quantity_B', 'Throttle-based fuel quantity', 'Fuel'),
- ('main_quantity_C', 'Sequence-selected alternate load fuel quantity', 'Fuel'),
- ('main_u8_A', 'Base ignition timing — neutral-input branch', 'Ignition'),
- ('main_u8_B', 'Base ignition timing — normal ratio-code branch', 'Ignition'),
- ('main_u8_C', 'Base ignition timing — extended ratio-code branch', 'Ignition'),
+ ('main_quantity_C', 'Alternate load-based fuel quantity', 'Fuel'),
+ ('main_u8_A', 'Base ignition timing — neutral', 'Ignition'),
+ ('main_u8_B', 'Base ignition timing — standard', 'Ignition'),
+ ('main_u8_C', 'Base ignition timing — alternate', 'Ignition'),
  ('modulo24_surface', 'Injection event-phase target', 'Fuel'),
  ('correction_surface_A', 'Secondary injector quantity multiplier', 'Fuel'),
  ('correction_surface_B', 'Fuel normalization offset', 'Fuel'),
@@ -33,15 +33,15 @@ ROWS = [
  ('curve_3494', 'Relative-throttle qualification threshold vs speed', 'Fuel'),
  ('curve_353a', 'Transient fuel multiplier vs pressure estimate', 'Transient fuel'),
  ('curve_351d', 'Transient fuel multiplier vs intake temperature', 'Transient fuel'),
- ('curve_34d0', 'Transient fuel response 1 — neutral-input branch', 'Transient fuel'),
- ('curve_34da', 'Transient fuel response 1 — low ratio codes', 'Transient fuel'),
- ('curve_34e4', 'Transient fuel response 1 — higher ratio codes', 'Transient fuel'),
+ ('curve_34d0', 'Transient fuel response 1 — neutral', 'Transient fuel'),
+ ('curve_34da', 'Transient fuel response 1 — lower speed-ratio range', 'Transient fuel'),
+ ('curve_34e4', 'Transient fuel response 1 — higher speed-ratio range', 'Transient fuel'),
  ('curve_34ee', 'Transient fuel multiplier vs throttle', 'Transient fuel'),
- ('curve_355d', 'Transient fuel response 2 — neutral-input branch', 'Transient fuel'),
- ('curve_3567', 'Transient fuel response 2 — normal ratio-code branch', 'Transient fuel'),
- ('curve_3571', 'Transient fuel response 2 — extended ratio-code branch', 'Transient fuel'),
- ('curve_31ec', 'Fuel normalization recovery hold — normal ratio-code branch', 'Fuel'),
- ('curve_3200', 'Fuel normalization recovery hold — extended ratio-code branch', 'Fuel'),
+ ('curve_355d', 'Transient fuel response 2 — neutral', 'Transient fuel'),
+ ('curve_3567', 'Transient fuel response 2 — standard', 'Transient fuel'),
+ ('curve_3571', 'Transient fuel response 2 — alternate', 'Transient fuel'),
+ ('curve_31ec', 'Fuel normalization recovery hold — standard', 'Fuel'),
+ ('curve_3200', 'Fuel normalization recovery hold — alternate', 'Fuel'),
  ('curve_36c4', 'Feedback eligibility delay vs coolant', 'Feedback'),
  ('curve_36a4', 'Adaptive fuel correction — decrement step', 'Feedback'),
  ('curve_36b2', 'Adaptive fuel correction — increment step', 'Feedback'),
@@ -70,7 +70,7 @@ ROWS = [
 for prefix,coordinate in [('delta_0985','Throttle'),('delta_0989','Load')]:
     for choice in range(1,7):
         direction='nonnegative' if choice<=3 else 'negative'
-        branch=['neutral-input','normal ratio-code','extended ratio-code'][(choice-1)%3]
+        branch=['neutral','standard','alternate'][(choice-1)%3]
         ROWS.append((f'{prefix}_gain_{choice}',f'{coordinate}-delta fuel gain — {direction}, {branch}','Transient fuel'))
 
 NAMES = {key: dict(display_name=name, category=category) for key,name,category in ROWS}
@@ -142,7 +142,7 @@ def refresh():
         path.write_text(body,encoding='utf-8',newline='\n')
     lines=['# Map names and stable references','',
            'Names describe the recovered function. They are research aliases, not original Yamaha symbols. Stable IDs, file names and URLs remain unchanged so instruction fixtures, external links and data joins stay reproducible. Physical units, mode identity and tuning readiness remain separate questions.','',
-           'All 71 entries have been reviewed against the input/output traces and current consumer research. Selection letters/numbers are retained only when the branches are known but their physical mode names are not.','',
+           'All 71 entries have been reviewed against the input/output traces and current consumer research. Titles use neutral, standard and alternate for the recurring three-way selection. Standard covers the recovered normal classifier range; alternate denotes the other selection, not a rider-selectable mode. Exact conditions remain in each map explanation. Lower/higher speed-ratio ranges do not assign numbered gears.','',
            '| Map name | Stable ID | First cell | Category | Naming evidence |','|---|---|---|---|---|']
     for m in maps:lines.append(f"| [{m['display_name']}](map_details/{m['id']}.md) | `{m['id']}` | `{m['data_address']}` | {m['category']} | [Derivation](../{m['naming_basis']}) |")
     (ROOT/'analysis/MAP_NAMES.md').write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\n')

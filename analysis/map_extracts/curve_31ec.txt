@@ -1,3 +1,3 @@
-Fuel normalization recovery hold — normal ratio-code branch | ID: curve_31ec | 0x31F2 | 1 rows x 13 columns | raw values
+Fuel normalization recovery hold — standard | ID: curve_31ec | 0x31F2 | 1 rows x 13 columns | raw values
 code-confirmed lookup/header; raw scaling only
 0 0 0 0 0 0 0 0 0 0 0 0 0

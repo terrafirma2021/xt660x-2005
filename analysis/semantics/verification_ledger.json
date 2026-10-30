@@ -1653,7 +1653,7 @@
     },
     {
       "id": "main_quantity_C",
-      "name": "Sequence-selected alternate load fuel quantity",
+      "name": "Alternate load-based fuel quantity",
       "address": "0x37A8",
       "byte_extraction": "Verified",
       "interpretation_status": "conditional physical conversion",
@@ -1695,7 +1695,7 @@
     },
     {
       "id": "main_u8_A",
-      "name": "Base ignition timing — neutral-input branch",
+      "name": "Base ignition timing — neutral",
       "address": "0x42AE",
       "byte_extraction": "Verified",
       "interpretation_status": "conditional physical conversion",
@@ -1738,7 +1738,7 @@
     },
     {
       "id": "main_u8_B",
-      "name": "Base ignition timing — normal ratio-code branch",
+      "name": "Base ignition timing — standard",
       "address": "0x452E",
       "byte_extraction": "Verified",
       "interpretation_status": "conditional physical conversion",
@@ -1781,7 +1781,7 @@
     },
     {
       "id": "main_u8_C",
-      "name": "Base ignition timing — extended ratio-code branch",
+      "name": "Base ignition timing — alternate",
       "address": "0x47AE",
       "byte_extraction": "Verified",
       "interpretation_status": "conditional physical conversion",
@@ -2524,7 +2524,7 @@
     },
     {
       "id": "curve_34d0",
-      "name": "Transient fuel response 1 — neutral-input branch",
+      "name": "Transient fuel response 1 — neutral",
       "address": "0x34D3",
       "byte_extraction": "Verified",
       "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
@@ -2553,7 +2553,7 @@
     },
     {
       "id": "curve_34da",
-      "name": "Transient fuel response 1 — low ratio codes",
+      "name": "Transient fuel response 1 — lower speed-ratio range",
       "address": "0x34DD",
       "byte_extraction": "Verified",
       "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
@@ -2582,7 +2582,7 @@
     },
     {
       "id": "curve_34e4",
-      "name": "Transient fuel response 1 — higher ratio codes",
+      "name": "Transient fuel response 1 — higher speed-ratio range",
       "address": "0x34E7",
       "byte_extraction": "Verified",
       "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
@@ -2639,7 +2639,7 @@
     },
     {
       "id": "curve_355d",
-      "name": "Transient fuel response 2 — neutral-input branch",
+      "name": "Transient fuel response 2 — neutral",
       "address": "0x3560",
       "byte_extraction": "Verified",
       "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
@@ -2668,7 +2668,7 @@
     },
     {
       "id": "curve_3567",
-      "name": "Transient fuel response 2 — normal ratio-code branch",
+      "name": "Transient fuel response 2 — standard",
       "address": "0x356A",
       "byte_extraction": "Verified",
       "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
@@ -2697,7 +2697,7 @@
     },
     {
       "id": "curve_3571",
-      "name": "Transient fuel response 2 — extended ratio-code branch",
+      "name": "Transient fuel response 2 — alternate",
       "address": "0x3574",
       "byte_extraction": "Verified",
       "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
@@ -2726,7 +2726,7 @@
     },
     {
       "id": "curve_31ec",
-      "name": "Fuel normalization recovery hold — normal ratio-code branch",
+      "name": "Fuel normalization recovery hold — standard",
       "address": "0x31F2",
       "byte_extraction": "Verified",
       "interpretation_status": "conditional physical conversion",
@@ -2758,7 +2758,7 @@
     },
     {
       "id": "curve_3200",
-      "name": "Fuel normalization recovery hold — extended ratio-code branch",
+      "name": "Fuel normalization recovery hold — alternate",
       "address": "0x3206",
       "byte_extraction": "Verified",
       "interpretation_status": "conditional physical conversion",
@@ -3218,7 +3218,7 @@
     },
     {
       "id": "delta_0985_gain_1",
-      "name": "Throttle-delta fuel gain — nonnegative, neutral-input",
+      "name": "Throttle-delta fuel gain — nonnegative, neutral",
       "address": "0x336B",
       "byte_extraction": "Verified",
       "interpretation_status": "numeric contribution decoded",
@@ -3251,7 +3251,7 @@
     },
     {
       "id": "delta_0985_gain_2",
-      "name": "Throttle-delta fuel gain — nonnegative, normal ratio-code",
+      "name": "Throttle-delta fuel gain — nonnegative, standard",
       "address": "0x3382",
       "byte_extraction": "Verified",
       "interpretation_status": "numeric contribution decoded",
@@ -3284,7 +3284,7 @@
     },
     {
       "id": "delta_0985_gain_3",
-      "name": "Throttle-delta fuel gain — nonnegative, extended ratio-code",
+      "name": "Throttle-delta fuel gain — nonnegative, alternate",
       "address": "0x3399",
       "byte_extraction": "Verified",
       "interpretation_status": "numeric contribution decoded",
@@ -3317,7 +3317,7 @@
     },
     {
       "id": "delta_0985_gain_4",
-      "name": "Throttle-delta fuel gain — negative, neutral-input",
+      "name": "Throttle-delta fuel gain — negative, neutral",
       "address": "0x33B0",
       "byte_extraction": "Verified",
       "interpretation_status": "numeric contribution decoded",
@@ -3350,7 +3350,7 @@
     },
     {
       "id": "delta_0985_gain_5",
-      "name": "Throttle-delta fuel gain — negative, normal ratio-code",
+      "name": "Throttle-delta fuel gain — negative, standard",
       "address": "0x33C7",
       "byte_extraction": "Verified",
       "interpretation_status": "numeric contribution decoded",
@@ -3383,7 +3383,7 @@
     },
     {
       "id": "delta_0985_gain_6",
-      "name": "Throttle-delta fuel gain — negative, extended ratio-code",
+      "name": "Throttle-delta fuel gain — negative, alternate",
       "address": "0x33DE",
       "byte_extraction": "Verified",
       "interpretation_status": "numeric contribution decoded",
@@ -3416,7 +3416,7 @@
     },
     {
       "id": "delta_0989_gain_1",
-      "name": "Load-delta fuel gain — nonnegative, neutral-input",
+      "name": "Load-delta fuel gain — nonnegative, neutral",
       "address": "0x33F7",
       "byte_extraction": "Verified",
       "interpretation_status": "numeric contribution decoded",
@@ -3449,7 +3449,7 @@
     },
     {
       "id": "delta_0989_gain_2",
-      "name": "Load-delta fuel gain — nonnegative, normal ratio-code",
+      "name": "Load-delta fuel gain — nonnegative, standard",
       "address": "0x340E",
       "byte_extraction": "Verified",
       "interpretation_status": "numeric contribution decoded",
@@ -3482,7 +3482,7 @@
     },
     {
       "id": "delta_0989_gain_3",
-      "name": "Load-delta fuel gain — nonnegative, extended ratio-code",
+      "name": "Load-delta fuel gain — nonnegative, alternate",
       "address": "0x3425",
       "byte_extraction": "Verified",
       "interpretation_status": "numeric contribution decoded",
@@ -3515,7 +3515,7 @@
     },
     {
       "id": "delta_0989_gain_4",
-      "name": "Load-delta fuel gain — negative, neutral-input",
+      "name": "Load-delta fuel gain — negative, neutral",
       "address": "0x343C",
       "byte_extraction": "Verified",
       "interpretation_status": "numeric contribution decoded",
@@ -3548,7 +3548,7 @@
     },
     {
       "id": "delta_0989_gain_5",
-      "name": "Load-delta fuel gain — negative, normal ratio-code",
+      "name": "Load-delta fuel gain — negative, standard",
       "address": "0x3453",
       "byte_extraction": "Verified",
       "interpretation_status": "numeric contribution decoded",
@@ -3581,7 +3581,7 @@
     },
     {
       "id": "delta_0989_gain_6",
-      "name": "Load-delta fuel gain — negative, extended ratio-code",
+      "name": "Load-delta fuel gain — negative, alternate",
       "address": "0x346A",
       "byte_extraction": "Verified",
       "interpretation_status": "numeric contribution decoded",
@@ -5360,8 +5360,8 @@
     "connector_routes_physically_verified": 0
   },
   "input_sha256": {
-    "analysis/maps.json": "232925b28640258492569a91d701a6d3b9e46d1f31024b4691cf86befdd952e0",
-    "analysis/semantics/physical_units.json": "5a484c946212ee499d9d3f9c02e7de486eebd9e5c4b2e612321ea7537adf5210",
+    "analysis/maps.json": "06a9f0d3c7dad1b0100762d37ccd0977af407e105320bda90dfdc71e2a80f107",
+    "analysis/semantics/physical_units.json": "c4600cb194cbffcbe7a3790d8ab779c9e2a2ad7bfde6a5ed0a3de8395121ada1",
     "analysis/semantics/mcu_pin_overview.json": "8b46f9e61d6c9f681ca07169ecb9493a1989c7bf0d2a4348acf9282febfdab8f",
     "analysis/semantics/package_datasheet_review.json": "1f5f1d8a7c7b2d2acaf66dc4da1385a65e1f1a3fc9c426c7c4e555353414ce4a",
     "analysis/semantics/code_pin_review.json": "e888703265b48fa9e3ca1cb1ee4506f9445278d5dbfd9979bcd11ee4e6b46072",

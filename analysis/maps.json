@@ -4795,7 +4795,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Sequence-selected alternate load fuel quantity",
+    "display_name": "Alternate load-based fuel quantity",
     "category": "Fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "A is the normal load path; C requires completion of the four-stage road-speed sequence at 0xAD1C\u20130xAF20. Stock timeout 0x3710 = 0 prevents completion from cleared detector state. B uses filtered throttle. Values precede final pulse corrections."
@@ -5628,7 +5628,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Base ignition timing \u2014 neutral-input branch",
+    "display_name": "Base ignition timing \u2014 neutral",
     "category": "Ignition",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Neutral-input branch means variant 9 with filtered PB4 low (0x0896 bit 4 clear). Otherwise stock threshold 5 chooses B for ratio codes 0\u20135, C for codes above 5. The recovered normal classifier produces only 0\u20135; fault 42 forces 5. Absolute BTDC remains unresolved."
@@ -6461,7 +6461,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Base ignition timing \u2014 normal ratio-code branch",
+    "display_name": "Base ignition timing \u2014 standard",
     "category": "Ignition",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Neutral-input branch means variant 9 with filtered PB4 low (0x0896 bit 4 clear). Otherwise stock threshold 5 chooses B for ratio codes 0\u20135, C for codes above 5. The recovered normal classifier produces only 0\u20135; fault 42 forces 5. Absolute BTDC remains unresolved."
@@ -7294,7 +7294,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Base ignition timing \u2014 extended ratio-code branch",
+    "display_name": "Base ignition timing \u2014 alternate",
     "category": "Ignition",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Neutral-input branch means variant 9 with filtered PB4 low (0x0896 bit 4 clear). Otherwise stock threshold 5 chooses B for ratio codes 0\u20135, C for codes above 5. The recovered normal classifier produces only 0\u20135; fault 42 forces 5. Absolute BTDC remains unresolved."
@@ -9660,7 +9660,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Transient fuel response 1 \u2014 neutral-input branch",
+    "display_name": "Transient fuel response 1 \u2014 neutral",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Family 1 feeds RAM 0x0A0C and splits at stock ratio code 1 (low 0\u20131; higher 2\u20135 in normal classification). Family 2 feeds 0x0D04 and splits at 5 (normal 0\u20135; extended above 5). Both give priority to variant 9 with filtered PB4 low. Codes are not established gear numbers; curve output is not final pulse duration."
@@ -9715,7 +9715,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Transient fuel response 1 \u2014 low ratio codes",
+    "display_name": "Transient fuel response 1 \u2014 lower speed-ratio range",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Family 1 feeds RAM 0x0A0C and splits at stock ratio code 1 (low 0\u20131; higher 2\u20135 in normal classification). Family 2 feeds 0x0D04 and splits at 5 (normal 0\u20135; extended above 5). Both give priority to variant 9 with filtered PB4 low. Codes are not established gear numbers; curve output is not final pulse duration."
@@ -9770,7 +9770,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Transient fuel response 1 \u2014 higher ratio codes",
+    "display_name": "Transient fuel response 1 \u2014 higher speed-ratio range",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Family 1 feeds RAM 0x0A0C and splits at stock ratio code 1 (low 0\u20131; higher 2\u20135 in normal classification). Family 2 feeds 0x0D04 and splits at 5 (normal 0\u20135; extended above 5). Both give priority to variant 9 with filtered PB4 low. Codes are not established gear numbers; curve output is not final pulse duration."
@@ -9887,7 +9887,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Transient fuel response 2 \u2014 neutral-input branch",
+    "display_name": "Transient fuel response 2 \u2014 neutral",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Family 1 feeds RAM 0x0A0C and splits at stock ratio code 1 (low 0\u20131; higher 2\u20135 in normal classification). Family 2 feeds 0x0D04 and splits at 5 (normal 0\u20135; extended above 5). Both give priority to variant 9 with filtered PB4 low. Codes are not established gear numbers; curve output is not final pulse duration."
@@ -9942,7 +9942,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Transient fuel response 2 \u2014 normal ratio-code branch",
+    "display_name": "Transient fuel response 2 \u2014 standard",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Family 1 feeds RAM 0x0A0C and splits at stock ratio code 1 (low 0\u20131; higher 2\u20135 in normal classification). Family 2 feeds 0x0D04 and splits at 5 (normal 0\u20135; extended above 5). Both give priority to variant 9 with filtered PB4 low. Codes are not established gear numbers; curve output is not final pulse duration."
@@ -9997,7 +9997,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Transient fuel response 2 \u2014 extended ratio-code branch",
+    "display_name": "Transient fuel response 2 \u2014 alternate",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Family 1 feeds RAM 0x0A0C and splits at stock ratio code 1 (low 0\u20131; higher 2\u20135 in normal classification). Family 2 feeds 0x0D04 and splits at 5 (normal 0\u20135; extended above 5). Both give priority to variant 9 with filtered PB4 low. Codes are not established gear numbers; curve output is not final pulse duration."
@@ -10058,7 +10058,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Fuel normalization recovery hold \u2014 normal ratio-code branch",
+    "display_name": "Fuel normalization recovery hold \u2014 standard",
     "category": "Fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "The selector at 0xA448 splits ratio code 0x0898 at ROM 0x31EA (stock 5): normal 0\u20135 selects 0x31EC; extended above 5 selects 0x3200. The consuming normalization state is disabled in this image by ROM 0x3130 = 0xFF."
@@ -10119,7 +10119,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Fuel normalization recovery hold \u2014 extended ratio-code branch",
+    "display_name": "Fuel normalization recovery hold \u2014 alternate",
     "category": "Fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "The selector at 0xA448 splits ratio code 0x0898 at ROM 0x31EA (stock 5): normal 0\u20135 selects 0x31EC; extended above 5 selects 0x3200. The consuming normalization state is disabled in this image by ROM 0x3130 = 0xFF."
@@ -11110,7 +11110,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Throttle-delta fuel gain \u2014 nonnegative, neutral-input",
+    "display_name": "Throttle-delta fuel gain \u2014 nonnegative, neutral",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
@@ -11207,7 +11207,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Throttle-delta fuel gain \u2014 nonnegative, normal ratio-code",
+    "display_name": "Throttle-delta fuel gain \u2014 nonnegative, standard",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
@@ -11304,7 +11304,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Throttle-delta fuel gain \u2014 nonnegative, extended ratio-code",
+    "display_name": "Throttle-delta fuel gain \u2014 nonnegative, alternate",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
@@ -11401,7 +11401,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Throttle-delta fuel gain \u2014 negative, neutral-input",
+    "display_name": "Throttle-delta fuel gain \u2014 negative, neutral",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
@@ -11498,7 +11498,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Throttle-delta fuel gain \u2014 negative, normal ratio-code",
+    "display_name": "Throttle-delta fuel gain \u2014 negative, standard",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
@@ -11595,7 +11595,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Throttle-delta fuel gain \u2014 negative, extended ratio-code",
+    "display_name": "Throttle-delta fuel gain \u2014 negative, alternate",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
@@ -11692,7 +11692,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Load-delta fuel gain \u2014 nonnegative, neutral-input",
+    "display_name": "Load-delta fuel gain \u2014 nonnegative, neutral",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
@@ -11789,7 +11789,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Load-delta fuel gain \u2014 nonnegative, normal ratio-code",
+    "display_name": "Load-delta fuel gain \u2014 nonnegative, standard",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
@@ -11886,7 +11886,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Load-delta fuel gain \u2014 nonnegative, extended ratio-code",
+    "display_name": "Load-delta fuel gain \u2014 nonnegative, alternate",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
@@ -11983,7 +11983,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Load-delta fuel gain \u2014 negative, neutral-input",
+    "display_name": "Load-delta fuel gain \u2014 negative, neutral",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
@@ -12080,7 +12080,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Load-delta fuel gain \u2014 negative, normal ratio-code",
+    "display_name": "Load-delta fuel gain \u2014 negative, standard",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."
@@ -12177,7 +12177,7 @@
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
-    "display_name": "Load-delta fuel gain \u2014 negative, extended ratio-code",
+    "display_name": "Load-delta fuel gain \u2014 negative, alternate",
     "category": "Transient fuel",
     "naming_basis": "analysis/semantics/MAP_SELECTORS.md",
     "naming_note": "Directions refer to internal coordinate deltas, including deadband encoding, not calibrated physical rates. Neutral-input branch requires variant 9 and filtered PB4 low; otherwise normal/extended split at stock ratio code 5. These codes are not established gear numbers."

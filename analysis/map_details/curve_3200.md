@@ -1,4 +1,4 @@
-# Fuel normalization recovery hold — extended ratio-code branch
+# Fuel normalization recovery hold — alternate
 
 <!-- map-name -->
 Stable ID: `curve_3200`. Category: Fuel.

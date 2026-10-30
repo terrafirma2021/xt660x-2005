@@ -1,4 +1,4 @@
-# Base ignition timing — neutral-input branch
+# Base ignition timing — neutral
 
 <!-- map-name -->
 Stable ID: `main_u8_A`. Category: Ignition.

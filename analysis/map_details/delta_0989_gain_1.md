@@ -1,4 +1,4 @@
-# Load-delta fuel gain — nonnegative, neutral-input
+# Load-delta fuel gain — nonnegative, neutral
 
 <!-- map-name -->
 Stable ID: `delta_0989_gain_1`. Category: Transient fuel.

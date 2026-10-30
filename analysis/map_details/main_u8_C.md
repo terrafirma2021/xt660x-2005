@@ -1,4 +1,4 @@
-# Base ignition timing — extended ratio-code branch
+# Base ignition timing — alternate
 
 <!-- map-name -->
 Stable ID: `main_u8_C`. Category: Ignition.

@@ -1,4 +1,4 @@
-Base ignition timing — extended ratio-code branch | ID: main_u8_C | 0x47AE | 32 rows x 20 columns | raw values
+Base ignition timing — alternate | ID: main_u8_C | 0x47AE | 32 rows x 20 columns | raw values
 code-confirmed layout; unverified physical meaning
 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64
 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64 64

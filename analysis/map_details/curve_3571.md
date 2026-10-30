@@ -1,4 +1,4 @@
-# Transient fuel response 2 — extended ratio-code branch
+# Transient fuel response 2 — alternate
 
 <!-- map-name -->
 Stable ID: `curve_3571`. Category: Transient fuel.

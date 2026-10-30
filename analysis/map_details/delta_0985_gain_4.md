@@ -1,4 +1,4 @@
-# Throttle-delta fuel gain — negative, neutral-input
+# Throttle-delta fuel gain — negative, neutral
 
 <!-- map-name -->
 Stable ID: `delta_0985_gain_4`. Category: Transient fuel.

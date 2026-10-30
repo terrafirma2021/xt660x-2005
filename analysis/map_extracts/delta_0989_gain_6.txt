@@ -1,3 +1,3 @@
-Load-delta fuel gain — negative, extended ratio-code | ID: delta_0989_gain_6 | 0x346A | 1 rows x 23 columns | raw values
+Load-delta fuel gain — negative, alternate | ID: delta_0989_gain_6 | 0x346A | 1 rows x 23 columns | raw values
 instruction-traced layout and raw dataflow; engineering units unresolved
 8 8 8 8 8 8 8 13 29 30 30 30 30 30 30 30 30 30 30 30 30 30 30

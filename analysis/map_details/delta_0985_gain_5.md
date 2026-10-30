@@ -1,4 +1,4 @@
-# Throttle-delta fuel gain — negative, normal ratio-code
+# Throttle-delta fuel gain — negative, standard
 
 <!-- map-name -->
 Stable ID: `delta_0985_gain_5`. Category: Transient fuel.

@@ -1,4 +1,4 @@
-# Sequence-selected alternate load fuel quantity
+# Alternate load-based fuel quantity
 
 <!-- map-name -->
 Stable ID: `main_quantity_C`. Category: Fuel.

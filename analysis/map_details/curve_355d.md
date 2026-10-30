@@ -1,4 +1,4 @@
-# Transient fuel response 2 — neutral-input branch
+# Transient fuel response 2 — neutral
 
 <!-- map-name -->
 Stable ID: `curve_355d`. Category: Transient fuel.
