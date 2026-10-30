@@ -341,7 +341,7 @@
         0
       ],
       "role": "ADC conversion knots; raw10 axis 60 + 32*k, with endpoint clamp.",
-      "role_confidence": "code-confirmed conversion; degrees-C encoding unresolved",
+      "role_confidence": "code-confirmed conversion; Celsius encoding owner-corroborated; sensor accuracy unmeasured",
       "units": "raw",
       "engineering_decode": null,
       "engineering_encode": null,

@@ -3,12 +3,12 @@
 <!-- map-name -->
 Stable ID: `intake_temperature_conversion`. Category: Sensor processing.
 
-Sensor identity is corroborated. The internal-code-to-Celsius profile remains conditional on the sensor circuit and ECU identification.
+Sensor identity is corroborated. IAT Celsius remains conditional; the owner’s coolant logger check does not independently verify IAT.
 
 Naming evidence: [recovered derivation](../../analysis/semantics/TEMPERATURE_PROFILE.md).
 <!-- /map-name -->
 
-Sensor conversion to internal temperature code; candidate Celsius scale remains conditional
+Sensor conversion to internal temperature code; candidate IAT Celsius scale remains conditional
 
 Cells: **0x4F26–4F46**, 1 rows × 33 columns, 8-bit unsigned big-endian values.
 
@@ -112,7 +112,7 @@ Conversion: `raw*0.625-30`; unit: **candidate degC**.
 
 Inferred temperature profile; consistent with sensor resistances and TDM fallback values, but XT660 manual coolant fallback differs. See TEMPERATURE_PROFILE.md.
 
-Required profiles: `yamaha_temperature_candidate`. These are assumptions, not measured hardware parameters.
+Evidence profiles: `yamaha_temperature_candidate`. Consult each profile for its corroboration, assumptions and limits.
 
 ### Every input axis
 

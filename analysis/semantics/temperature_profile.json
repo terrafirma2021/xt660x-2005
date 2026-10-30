@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "profile": {
     "celsius_per_code": 0.625,
     "offset_celsius": -30,
@@ -20,6 +20,632 @@
       "0x4F47"
     ]
   },
+  "coolant_profile": {
+    "celsius_per_code": 0.625,
+    "offset_celsius": -30,
+    "status": "owner-corroborated Celsius encoding; not a calibrated sensor accuracy certificate",
+    "basis": "ECU emits floor(code*5/8), capped at 149. Earlier Yamaha-DataLogger subtracts 30 from the received byte. On 2026-10-30 the owner confirmed checking that conversion on their XT660 and confirmed the logger output was Celsius.",
+    "source": "https://github.com/terrafirma2021/Yamaha-DataLogger/blob/main/yamaha/src/main.cpp",
+    "source_git_blob": "a72db6d3c21c6adf3c40dd8c3ed3eda1de7ccbeb",
+    "limits": "No paired measurement values, accuracy, temperature range or ECU part number were supplied. The 80 C manual fallback discrepancy remains separate; this image substitutes code144, which encodes 60 C.",
+    "evidence": [
+      "0x7139",
+      "0x7142",
+      "0x714F",
+      "0x4E64"
+    ],
+    "exact_wire_formula": "min(149,floor(raw*5/8))",
+    "logger_celsius_formula": "wire_byte-30",
+    "fahrenheit_presentation_formula": "(raw*0.625-30)*9/5+32 = raw*1.125-22"
+  },
+  "hypothesis_trials": [
+    {
+      "hypothesis": "offset_scaled_code",
+      "sensor": "coolant",
+      "reason": "common pullup exists",
+      "slope": 0.625,
+      "offset": -30,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2320,
+            2590
+          ],
+          "adc_bins": [
+            584,
+            591
+          ],
+          "compatible_pullup_ohms": [
+            1692.9729729729731,
+            1951.3698630136985
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            310,
+            326
+          ],
+          "adc_bins": [
+            151,
+            153
+          ],
+          "compatible_pullup_ohms": [
+            1751.2987012987014,
+            1884.7549668874171
+          ]
+        },
+        {
+          "celsius": 110,
+          "resistance_ohms": [
+            140,
+            145
+          ],
+          "adc_bins": [
+            75,
+            76
+          ],
+          "compatible_pullup_ohms": [
+            1721.818181818182,
+            1834.7333333333333
+          ]
+        }
+      ],
+      "consistent_constant_pullup": true,
+      "common_pullup_interval_ohms": [
+        1751.2987012987014,
+        1834.7333333333333
+      ]
+    },
+    {
+      "hypothesis": "offset_scaled_code",
+      "sensor": "intake",
+      "reason": "common pullup exists",
+      "slope": 0.625,
+      "offset": -30,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2210,
+            2690
+          ],
+          "adc_bins": [
+            480,
+            487
+          ],
+          "compatible_pullup_ohms": [
+            2427.377049180328,
+            3048.6666666666665
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            290,
+            354
+          ],
+          "adc_bins": [
+            108,
+            111
+          ],
+          "compatible_pullup_ohms": [
+            2361.428571428571,
+            3002.4444444444443
+          ]
+        }
+      ],
+      "consistent_constant_pullup": true,
+      "common_pullup_interval_ohms": [
+        2427.377049180328,
+        3002.4444444444443
+      ]
+    },
+    {
+      "hypothesis": "internal_code_is_celsius",
+      "sensor": "coolant",
+      "reason": "no common pullup across the published resistance intervals",
+      "slope": 1,
+      "offset": 0,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2320,
+            2590
+          ],
+          "adc_bins": [
+            898,
+            901
+          ],
+          "compatible_pullup_ohms": [
+            313.7915742793792,
+            363.4075723830734
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            310,
+            326
+          ],
+          "adc_bins": [
+            584,
+            591
+          ],
+          "compatible_pullup_ohms": [
+            226.21621621621625,
+            245.61643835616434
+          ]
+        },
+        {
+          "celsius": 110,
+          "resistance_ohms": [
+            140,
+            145
+          ],
+          "adc_bins": [
+            406,
+            412
+          ],
+          "compatible_pullup_ohms": [
+            207.11864406779662,
+            220.71428571428572
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "hypothesis": "internal_code_is_celsius",
+      "sensor": "intake",
+      "reason": "no common pullup across the published resistance intervals",
+      "slope": 1,
+      "offset": 0,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2210,
+            2690
+          ],
+          "adc_bins": [
+            852,
+            859
+          ],
+          "compatible_pullup_ohms": [
+            421.44186046511624,
+            543.0516431924883
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            290,
+            354
+          ],
+          "adc_bins": [
+            480,
+            487
+          ],
+          "compatible_pullup_ohms": [
+            318.5245901639345,
+            401.2
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "hypothesis": "internal_code_is_fahrenheit",
+      "sensor": "coolant",
+      "reason": "no common pullup across the published resistance intervals",
+      "slope": 0.5555555555555556,
+      "offset": -17.77777777777778,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2320,
+            2590
+          ],
+          "adc_bins": [
+            657,
+            662
+          ],
+          "compatible_pullup_ohms": [
+            1263.2277526395176,
+            1446.7732115677318
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            310,
+            326
+          ],
+          "adc_bins": [
+            151,
+            153
+          ],
+          "compatible_pullup_ohms": [
+            1751.2987012987014,
+            1884.7549668874171
+          ]
+        },
+        {
+          "celsius": 110,
+          "resistance_ohms": [
+            140,
+            145
+          ],
+          "adc_bins": [
+            68,
+            69
+          ],
+          "compatible_pullup_ohms": [
+            1908.0,
+            2038.5294117647059
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "hypothesis": "internal_code_is_fahrenheit",
+      "sensor": "intake",
+      "reason": "no common pullup across the published resistance intervals",
+      "slope": 0.5555555555555556,
+      "offset": -17.77777777777778,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2210,
+            2690
+          ],
+          "adc_bins": [
+            560,
+            571
+          ],
+          "compatible_pullup_ohms": [
+            1746.3636363636363,
+            2228.8571428571427
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            290,
+            354
+          ],
+          "adc_bins": [
+            108,
+            111
+          ],
+          "compatible_pullup_ohms": [
+            2361.428571428571,
+            3002.4444444444443
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "hypothesis": "wire_byte_is_celsius",
+      "sensor": "coolant",
+      "reason": "no common pullup across the published resistance intervals",
+      "slope": 0.625,
+      "offset": 0,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2320,
+            2590
+          ],
+          "adc_bins": [
+            850,
+            855
+          ],
+          "compatible_pullup_ohms": [
+            455.3271028037381,
+            530.1882352941174
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            310,
+            326
+          ],
+          "adc_bins": [
+            312,
+            316
+          ],
+          "compatible_pullup_ohms": [
+            691.3880126182964,
+            743.9487179487179
+          ]
+        },
+        {
+          "celsius": 110,
+          "resistance_ohms": [
+            140,
+            145
+          ],
+          "adc_bins": [
+            151,
+            153
+          ],
+          "compatible_pullup_ohms": [
+            790.909090909091,
+            838.3112582781457
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "hypothesis": "wire_byte_is_celsius",
+      "sensor": "intake",
+      "reason": "no common pullup across the published resistance intervals",
+      "slope": 0.625,
+      "offset": 0,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2210,
+            2690
+          ],
+          "adc_bins": [
+            792,
+            803
+          ],
+          "compatible_pullup_ohms": [
+            604.726368159204,
+            787.9797979797983
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            290,
+            354
+          ],
+          "adc_bins": [
+            232,
+            239
+          ],
+          "compatible_pullup_ohms": [
+            947.3333333333334,
+            1208.4827586206895
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "hypothesis": "wire_byte_is_fahrenheit",
+      "sensor": "coolant",
+      "reason": "required reference temperature is outside this decoded curve under the proposed scale",
+      "slope": 0.3472222222222222,
+      "offset": -17.77777777777778,
+      "consistent_constant_pullup": false,
+      "unrepresentable_temperature_celsius": 80
+    },
+    {
+      "hypothesis": "wire_byte_is_fahrenheit",
+      "sensor": "intake",
+      "reason": "required reference temperature is outside this decoded curve under the proposed scale",
+      "slope": 0.3472222222222222,
+      "offset": -17.77777777777778,
+      "consistent_constant_pullup": false,
+      "unrepresentable_temperature_celsius": 80
+    },
+    {
+      "hypothesis": "coolant_fallback_forced_to_80C",
+      "sensor": "coolant",
+      "reason": "no common pullup across the published resistance intervals",
+      "slope": 0.625,
+      "offset": -10,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2320,
+            2590
+          ],
+          "adc_bins": [
+            774,
+            780
+          ],
+          "compatible_pullup_ohms": [
+            721.843790012804,
+            836.5633074935402
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            310,
+            326
+          ],
+          "adc_bins": [
+            248,
+            252
+          ],
+          "compatible_pullup_ohms": [
+            944.7035573122529,
+            1020.0645161290322
+          ]
+        },
+        {
+          "celsius": 110,
+          "resistance_ohms": [
+            140,
+            145
+          ],
+          "adc_bins": [
+            119,
+            120
+          ],
+          "compatible_pullup_ohms": [
+            1044.7933884297522,
+            1102.7310924369747
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "hypothesis": "coolant_fallback_forced_to_80C",
+      "sensor": "intake",
+      "reason": "no common pullup across the published resistance intervals",
+      "slope": 0.625,
+      "offset": -10,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2210,
+            2690
+          ],
+          "adc_bins": [
+            696,
+            707
+          ],
+          "compatible_pullup_ohms": [
+            986.3841807909604,
+            1267.7011494252872
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            290,
+            354
+          ],
+          "adc_bins": [
+            180,
+            183
+          ],
+          "compatible_pullup_ohms": [
+            1323.9130434782608,
+            1659.8666666666668
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "hypothesis": "both_XT_fallbacks_forced",
+      "sensor": "coolant",
+      "reason": "no common pullup across the published resistance intervals",
+      "slope": 0.9375,
+      "offset": -55,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2320,
+            2590
+          ],
+          "adc_bins": [
+            584,
+            591
+          ],
+          "compatible_pullup_ohms": [
+            1692.9729729729731,
+            1951.3698630136985
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            310,
+            326
+          ],
+          "adc_bins": [
+            248,
+            252
+          ],
+          "compatible_pullup_ohms": [
+            944.7035573122529,
+            1020.0645161290322
+          ]
+        },
+        {
+          "celsius": 110,
+          "resistance_ohms": [
+            140,
+            145
+          ],
+          "adc_bins": [
+            151,
+            153
+          ],
+          "compatible_pullup_ohms": [
+            790.909090909091,
+            838.3112582781457
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "hypothesis": "both_XT_fallbacks_forced",
+      "sensor": "intake",
+      "reason": "no common pullup across the published resistance intervals",
+      "slope": 0.9375,
+      "offset": -55,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2210,
+            2690
+          ],
+          "adc_bins": [
+            480,
+            487
+          ],
+          "compatible_pullup_ohms": [
+            2427.377049180328,
+            3048.6666666666665
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            290,
+            354
+          ],
+          "adc_bins": [
+            180,
+            183
+          ],
+          "compatible_pullup_ohms": [
+            1323.9130434782608,
+            1659.8666666666668
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    }
+  ],
   "fits": {
     "coolant_candidate": {
       "slope": 0.625,
@@ -264,7 +890,7 @@
     }
   },
   "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
-  "generator_sha256": "19904f0439f4f0e7960bb9d3b346e8c9c5cc4da9f23108d8d2014baaf06592f5",
+  "generator_sha256": "adda9fe634d66c7f78661b2e90ef3ca7ae3f07fa01dc38d83bab964396f46bf6",
   "assumptions": "Ideal 10-bit ratiometric ADC; ADC bin width 1/1024; NTC to ground; constant pullup; published sensor resistance intervals. Output tolerance covers one code plus the next input group (one ADC count for coolant, four for IAT because two input bits are discarded). This is a consistency test, not uniqueness proof or a component measurement.",
   "sources": [
     {

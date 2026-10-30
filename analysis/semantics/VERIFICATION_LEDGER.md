@@ -35,7 +35,7 @@ The package review checks the **reference part**. It does not establish which pa
 |---|---|
 | Milliseconds, RPM and timed cuts | Confirm actual timer clock; confirm crank-event geometry for RPM. Datasheet prescaler semantics alone do not establish the oscillator. |
 | Absolute spark BTDC | Establish CPS reference edge relative to mechanical TDC, and actual coil firing edge/polarity; finish special-mode timelines. |
-| Coolant/IAT Celsius and fan temperatures | Confirm sensor/board transfer and resolve the XT coolant fallback conflict. TDM agreement is comparison evidence only. |
+| Coolant/IAT Celsius and fan temperatures | Coolant encoding is owner-corroborated; verify sensor accuracy/range and reconcile the manual fallback discrepancy. IAT remains conditional. See TEMPERATURE_PROFILE.md. |
 | Pressure, throttle, supply volts | Confirm analog conditioning and display/mechanical scales. Processed load cannot simply be relabelled kPa. |
 | Gear numbers / road speed | Independently establish sensor pulse count and drivetrain relationship; the earlier 20-pulse fit is not evidence. |
 | Connector wiring | Confirm ECU revision and connector view, trace drivers/conditioning; resolve B/Y and L/B alternatives and L/W starter candidate. |
@@ -60,14 +60,14 @@ These gaps do not prevent further static tracing. They prevent final sign-off of
 | [Secondary injector quantity multiplier](../map_details/correction_surface_A.md) `0x1A1A` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Fuel normalization offset](../map_details/correction_surface_B.md) `0x3168` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Fuel correction gain vs speed and load](../map_details/correction_surface_C.md) `0x3280` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
-| [Alternate base ignition timing vs speed and coolant](../map_details/correction_surface_D.md) `0x4A60` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer, yamaha_temperature_candidate | Open |
+| [Alternate base ignition timing vs speed and coolant](../map_details/correction_surface_D.md) `0x4A60` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer, xt660_coolant_owner_corroborated | Open |
 | [Load-based fuel normalization input](../map_details/fuel_normalization_load.md) `0x311E` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Throttle-based fuel normalization input](../map_details/fuel_normalization_throttle.md) `0x312A` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Fuel normalization denominator gain](../map_details/fuel_normalization_gain.md) `0x321C` | Verified | numeric contribution decoded | None listed; see dossier | Open |
-| [Feedback startup delay vs coolant](../map_details/curve_18b6.md) `0x18B9` | Verified | conditional physical conversion | nominal_xt_timer, yamaha_temperature_candidate | Open |
-| [Startup fuel base quantity vs coolant](../map_details/curve_1996.md) `0x1999` | Verified | conditional physical conversion | nominal_xt_timer, yamaha_temperature_candidate | Open |
-| [Post-start enrichment — fast-decay state](../map_details/curve_32ef.md) `0x32F2` | Verified | numeric contribution decoded | yamaha_temperature_candidate | Open |
-| [Post-start enrichment — slow-decay state](../map_details/curve_3301.md) `0x3304` | Verified | numeric contribution decoded | yamaha_temperature_candidate | Open |
+| [Feedback startup delay vs coolant](../map_details/curve_18b6.md) `0x18B9` | Verified | conditional physical conversion | nominal_xt_timer, xt660_coolant_owner_corroborated | Open |
+| [Startup fuel base quantity vs coolant](../map_details/curve_1996.md) `0x1999` | Verified | conditional physical conversion | nominal_xt_timer, xt660_coolant_owner_corroborated | Open |
+| [Post-start enrichment — fast-decay state](../map_details/curve_32ef.md) `0x32F2` | Verified | numeric contribution decoded | xt660_coolant_owner_corroborated | Open |
+| [Post-start enrichment — slow-decay state](../map_details/curve_3301.md) `0x3304` | Verified | numeric contribution decoded | xt660_coolant_owner_corroborated | Open |
 | [Injector pulse compensation vs supply](../map_details/curve_4234.md) `0x4237` | Verified | conditional physical conversion | nominal_xt_timer | Open |
 | [Startup fuel multiplier vs pressure estimate](../map_details/curve_19c6.md) `0x19CC` | Verified | numeric contribution decoded | None listed; see dossier | Open |
 | [Startup fuel multiplier vs throttle](../map_details/curve_19ba.md) `0x19C0` | Verified | numeric contribution decoded | None listed; see dossier | Open |
@@ -85,19 +85,19 @@ These gaps do not prevent further static tracing. They prevent final sign-off of
 | [Transient fuel response 2 — extended ratio-code branch](../map_details/curve_3571.md) `0x3574` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | None listed; see dossier | Open |
 | [Fuel normalization recovery hold — normal ratio-code branch](../map_details/curve_31ec.md) `0x31F2` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
 | [Fuel normalization recovery hold — extended ratio-code branch](../map_details/curve_3200.md) `0x3206` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
-| [Feedback eligibility delay vs coolant](../map_details/curve_36c4.md) `0x36C7` | Verified | conditional physical conversion | nominal_xt_timer, yamaha_temperature_candidate | Open |
+| [Feedback eligibility delay vs coolant](../map_details/curve_36c4.md) `0x36C7` | Verified | conditional physical conversion | nominal_xt_timer, xt660_coolant_owner_corroborated | Open |
 | [Adaptive fuel correction — decrement step](../map_details/curve_36a4.md) `0x36AA` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Adaptive fuel correction — increment step](../map_details/curve_36b2.md) `0x36B8` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Fuel multiplier vs intake temperature](../map_details/curve_3220.md) `0x3223` | Verified | numeric contribution decoded | yamaha_temperature_candidate | Open |
-| [Positive transient fuel gain vs coolant](../map_details/curve_3345.md) `0x3348` | Verified | numeric contribution decoded | yamaha_temperature_candidate | Open |
-| [Negative transient fuel gain vs coolant](../map_details/curve_3357.md) `0x335A` | Verified | numeric contribution decoded | yamaha_temperature_candidate | Open |
+| [Positive transient fuel gain vs coolant](../map_details/curve_3345.md) `0x3348` | Verified | numeric contribution decoded | xt660_coolant_owner_corroborated | Open |
+| [Negative transient fuel gain vs coolant](../map_details/curve_3357.md) `0x335A` | Verified | numeric contribution decoded | xt660_coolant_owner_corroborated | Open |
 | [Pressure-processing offset vs engine speed](../map_details/curve_1880.md) `0x1886` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Load-path fuel multiplier vs pressure estimate](../map_details/curve_323c.md) `0x3242` | Verified | numeric contribution decoded | None listed; see dossier | Open |
 | [Throttle-path fuel multiplier vs pressure estimate](../map_details/curve_32e0.md) `0x32E6` | Verified | numeric contribution decoded | None listed; see dossier | Open |
-| [Alternate ignition mode — throttle threshold vs coolant](../map_details/curve_4a33.md) `0x4A36` | Verified | numeric contribution decoded | yamaha_temperature_candidate | Open |
-| [Coolant enrichment — load-based fuel path](../map_details/curve_3315.md) `0x3318` | Verified | numeric contribution decoded | yamaha_temperature_candidate | Open |
-| [Coolant enrichment — throttle-based fuel path](../map_details/curve_3327.md) `0x332A` | Verified | numeric contribution decoded | yamaha_temperature_candidate | Open |
-| [Transient fuel pulse contribution vs coolant](../map_details/curve_34fd.md) `0x3500` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | yamaha_temperature_candidate | Open |
+| [Alternate ignition mode — throttle threshold vs coolant](../map_details/curve_4a33.md) `0x4A36` | Verified | numeric contribution decoded | xt660_coolant_owner_corroborated | Open |
+| [Coolant enrichment — load-based fuel path](../map_details/curve_3315.md) `0x3318` | Verified | numeric contribution decoded | xt660_coolant_owner_corroborated | Open |
+| [Coolant enrichment — throttle-based fuel path](../map_details/curve_3327.md) `0x332A` | Verified | numeric contribution decoded | xt660_coolant_owner_corroborated | Open |
+| [Transient fuel pulse contribution vs coolant](../map_details/curve_34fd.md) `0x3500` | Verified | joint arithmetic decoded; standalone physical cell unit not assigned | xt660_coolant_owner_corroborated | Open |
 | [Spark timing bound vs pressure estimate](../map_details/curve_4bac.md) `0x4BB2` | Verified | conditional physical conversion | nominal_xt_crank | Open |
 | [Throttle-delta fuel gain — nonnegative, neutral-input](../map_details/delta_0985_gain_1.md) `0x336B` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
 | [Throttle-delta fuel gain — nonnegative, normal ratio-code](../map_details/delta_0985_gain_2.md) `0x3382` | Verified | numeric contribution decoded | nominal_xt_crank, nominal_xt_timer | Open |
@@ -118,7 +118,7 @@ These gaps do not prevent further static tracing. They prevent final sign-off of
 | [Spark time correction — other variants](../map_details/timing_speed_4f64.md) `0x4F64` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
 | [Spark time correction — XT variant 9](../map_details/timing_speed_4f81.md) `0x4F81` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
 | [Ignition dwell contribution vs speed and supply](../map_details/dwell_supply_speed.md) `0x4B12` | Verified | conditional physical conversion | nominal_xt_crank, nominal_xt_timer | Open |
-| [Coolant sensor conversion](../map_details/coolant_sensor_conversion.md) `0x4F47` | Verified | conditional physical conversion | yamaha_temperature_candidate | Open |
+| [Coolant sensor conversion](../map_details/coolant_sensor_conversion.md) `0x4F47` | Verified | owner-corroborated physical encoding | xt660_coolant_owner_corroborated | Open |
 | [Intake air temperature sensor conversion](../map_details/intake_temperature_conversion.md) `0x4F26` | Verified | conditional physical conversion | yamaha_temperature_candidate | Open |
 | [Pressure-to-load processing gain](../map_details/curve_1854.md) `0x185A` | Verified | numeric contribution decoded | None listed; see dossier | Open |
 
@@ -299,7 +299,7 @@ These are previously recorded fixture results whose provenance is checked during
 | [map_selector_validation.json](map_selector_validation.json) | 12523 | Passed | Instruction-level fixtures, not a complete boot or hardware simulation. Tests establish code paths and boundaries, not gear-number calibration, neutral circuit polarity, wall-clock periods or mechanical TDC. The successful sequence uses changed calibration bytes only in emulated memory; it is not stock behavior. |
 | [sensor_variant_validation.json](sensor_variant_validation.json) | 74792 | Passed | Isolated routines with injected ADC results and fault states. No proof about every possible upstream state writer, external analog circuit, donor ECU identity or physical units. |
 | [spark_schedule_validation.json](spark_schedule_validation.json) | 74832 | Passed | Planner arithmetic includes synthetic edge cases. Timeline is a uniform wheel segment with normal gates clear and manually simulated ECT pin state. Special-mode dispatch, physical coil polarity, timer frequency and TDC phase are not established by this test. |
-| [units_variant_validation.json](units_variant_validation.json) | 219324 | Passed | Isolated instruction execution with RAM-backed peripherals. Physical units, oscillator rate, sensor circuitry, crank/TDC geometry and hardware outputs are not validated by these tests. |
+| [units_variant_validation.json](units_variant_validation.json) | 284905 | Passed | Isolated instruction execution with RAM-backed peripherals. Physical units, oscillator rate, sensor circuitry, crank/TDC geometry and hardware outputs are not validated by these tests. |
 
 ## Reproduce the audit
 

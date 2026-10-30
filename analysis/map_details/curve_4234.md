@@ -89,7 +89,7 @@ Conversion: `raw*8*1000/timer_hz`; unit: **ms**.
 
 additive injector-duration compensation after lookup rounding
 
-Required profiles: `nominal_xt_timer`. These are assumptions, not measured hardware parameters.
+Evidence profiles: `nominal_xt_timer`. Consult each profile for its corroboration, assumptions and limits.
 
 ### Every input axis
 

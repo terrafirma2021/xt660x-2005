@@ -115,7 +115,7 @@ Conversion: `raw*three_pitch_degrees/256`; unit: **relative crank degrees**.
 
 relative scheduler angle, NOT absolute degrees BTDC; fixed and variable timer corrections follow
 
-Required profiles: `nominal_xt_crank`. These are assumptions, not measured hardware parameters.
+Evidence profiles: `nominal_xt_crank`. Consult each profile for its corroboration, assumptions and limits.
 
 row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
 Converted values: 600, 800, 900, 1000, 1100, 1200, 1300, 1400, 1600, 1800, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000, 11500, 12000, 12500.
@@ -124,13 +124,14 @@ Converted values: 600, 800, 900, 1000, 1100, 1200, 1300, 1400, 1600, 1800, 2000,
 
 | Axis | Traced source | Interpretation | Physical scale |
 |---|---|---|---|
-| row_axis | u16 0x0902 selected speed | Speed coordinate | Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM. |
+| row_axis | u16 0x0902 selected speed | Speed coordinate | Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md. |
 | column_axis | u16 0x08E8 throttle code; conditional 0xD000 substitution | Relative throttle coordinate | Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle. |
 
 ### What remains for this map
 
 - Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.
 - Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.
+- Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.
 - Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.
 - Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.
 - Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.

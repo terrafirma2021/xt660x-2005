@@ -3,12 +3,12 @@
 <!-- map-name -->
 Stable ID: `coolant_sensor_conversion`. Category: Sensor processing.
 
-Sensor identity is corroborated. The internal-code-to-Celsius profile remains conditional on the sensor circuit and ECU identification.
+Sensor identity and coolant Celsius encoding are corroborated. The owner confirmed the earlier XT660 logger conversion; sensor accuracy and the manual fallback discrepancy remain open.
 
 Naming evidence: [recovered derivation](../../analysis/semantics/TEMPERATURE_PROFILE.md).
 <!-- /map-name -->
 
-Sensor conversion to internal temperature code; candidate Celsius scale remains conditional
+Sensor conversion to internal temperature code; coolant Celsius encoding owner-corroborated
 
 Cells: **0x4F47–4F63**, 1 rows × 29 columns, 8-bit unsigned big-endian values.
 
@@ -110,13 +110,13 @@ Addresses refer to the unchanged image. Windows around entry/call sites provide 
 <!-- generated-unit-decoding -->
 ## Recovered consumer and unit interpretation
 
-conditional physical conversion.
+owner-corroborated physical encoding.
 
-Conversion: `raw*0.625-30`; unit: **candidate degC**.
+Conversion: `raw*0.625-30`; unit: **degC**.
 
-Inferred temperature profile; consistent with sensor resistances and TDM fallback values, but XT660 manual coolant fallback differs. See TEMPERATURE_PROFILE.md.
+Owner-corroborated encoding: ECU wire payload floor(raw*5/8), then logger subtracts 30. Physical sensor accuracy is separate. Ordinary Fahrenheit hypotheses fail the published resistance checks. See TEMPERATURE_PROFILE.md.
 
-Required profiles: `yamaha_temperature_candidate`. These are assumptions, not measured hardware parameters.
+Evidence profiles: `xt660_coolant_owner_corroborated`. Consult each profile for its corroboration, assumptions and limits.
 
 ### Every input axis
 
@@ -126,7 +126,7 @@ Required profiles: `yamaha_temperature_candidate`. These are assumptions, not me
 
 ### What remains for this map
 
-- Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.
+- Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.
 - Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.
 - Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
 

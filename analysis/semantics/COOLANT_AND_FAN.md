@@ -1,8 +1,8 @@
 # Coolant conversion and fan control
 
-The [temperature-profile pass](TEMPERATURE_PROFILE.md) now provides conditional Celsius axes and fan thresholds, with resistance-curve cross-checks and an explicit XT/TDM fallback discrepancy. Varying the variant selector does not change the tested temperature conversions or fallbacks.
+The [temperature-profile pass](TEMPERATURE_PROFILE.md) now provides owner-corroborated coolant Celsius axes and code-equivalent fan thresholds, with resistance-curve cross-checks and an explicit XT/TDM fallback discrepancy. Varying the variant selector does not change the tested temperature conversions or fallbacks.
 
-**Physical role: strongly corroborated by diagnostics 06 and 51. Raw algorithm: traced and behavior-tested. Celsius: inferred conditional profile. Connector pins and hardware confirmation: unresolved.** See [byte-backed evidence](sensor_fan_evidence.txt).
+**Physical role: strongly corroborated by diagnostics 06 and 51. Raw algorithm: traced and behavior-tested. Celsius encoding: owner-corroborated; sensor accuracy not measured here. Connector pins and hardware confirmation: unresolved.** See [byte-backed evidence](sensor_fan_evidence.txt).
 
 ```mermaid
 flowchart LR
@@ -37,7 +37,7 @@ For Q8 index `q`, `k = floor(q/256)` and `f = q mod 256`. The byte result is `fl
 
 `payload = min(149, floor(measured_coolant × 160 / 256))`.
 
-It is stored at `0x0AE8` and selected by diagnostic 06. This proves a **payload scale**, not the final dashboard Celsius encoding. An offset or display-side interpretation has not been recovered. Do not label the internal bytes as degrees Celsius or assume the payload is Celsius. [All 1,024 conversion outputs](coolant_conversion_samples.json) are provided for correlation with measured temperatures.
+It is stored at `0x0AE8` and selected by diagnostic 06. The [earlier logger and owner confirmation](EXTERNAL_SCALE_CHECKS.md) corroborate `payload - 30` as Celsius on the XT660. Thus the internal coordinate is `code*0.625-30 °C`; the actual wire reading is truncated and capped. Neither the internal integer nor the wire byte is an ordinary Celsius or Fahrenheit value. [All 1,024 conversion outputs](coolant_conversion_samples.json) are provided for correlation with measured temperatures.
 
 ## Fault detection and substitution
 
@@ -81,7 +81,7 @@ Stock calibration:
 | `0x4C01` | unsigned byte | 60 | Fault-route clear-above boundary |
 | `0x4E64` | unsigned byte | 144 | Coolant substitute value |
 
-Thus the first set value is **218**, and the last clear value below the lower boundary is **204**. At 205 or 217 the existing output state persists. It is a hysteresis controller, not a PWM fan-speed curve. Fault-route input `0x0ABE` is derived from vehicle-speed pulses through a two-stage filter (`0x9B09–0x9C69`), so those 50/60 values must not be labelled temperature.
+Thus the first set value is **218 (106.25°C)**, and the last clear value below the lower boundary is **204 (97.5°C)** under the corroborated encoding. These are internal code equivalents, not measured physical switching temperatures. At 205 or 217 the existing output state persists. It is a hysteresis controller, not a PWM fan-speed curve. Fault-route input `0x0ABE` is derived from vehicle-speed pulses through a two-stage filter (`0x9B09–0x9C69`), so those 50/60 values must not be labelled temperature.
 
 ## Other consumers and tuning dependencies
 
@@ -93,4 +93,4 @@ Intake temperature has a separate conversion at `0x6FC2`, cells `0x4F26–0x4F46
 
 ## What would make this exportable
 
-Correlate raw counts/internal bytes/payload with known coolant temperatures, verify fan switching on matching hardware, identify the ECU connector route, and establish checksum coverage. Then encode exact comparison boundaries and conversion rounding in the definition. Until then, these are documented raw calibrations, not Celsius tuning controls.
+Correlate raw counts/internal bytes/payload with known coolant temperatures, verify fan switching on matching hardware, identify the ECU connector route, and establish checksum coverage. Then encode exact comparison boundaries and conversion rounding in the definition. The Celsius coordinate is now corroborated, but these checks are still required before enabling edited calibrations for hardware use.

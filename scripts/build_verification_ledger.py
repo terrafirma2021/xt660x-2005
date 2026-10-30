@@ -168,7 +168,7 @@ def render(r):
         '| Claim | Evidence still required |', '|---|---|',
         '| Milliseconds, RPM and timed cuts | Confirm actual timer clock; confirm crank-event geometry for RPM. Datasheet prescaler semantics alone do not establish the oscillator. |',
         '| Absolute spark BTDC | Establish CPS reference edge relative to mechanical TDC, and actual coil firing edge/polarity; finish special-mode timelines. |',
-        '| Coolant/IAT Celsius and fan temperatures | Confirm sensor/board transfer and resolve the XT coolant fallback conflict. TDM agreement is comparison evidence only. |',
+        '| Coolant/IAT Celsius and fan temperatures | Coolant encoding is owner-corroborated; verify sensor accuracy/range and reconcile the manual fallback discrepancy. IAT remains conditional. See TEMPERATURE_PROFILE.md. |',
         '| Pressure, throttle, supply volts | Confirm analog conditioning and display/mechanical scales. Processed load cannot simply be relabelled kPa. |',
         '| Gear numbers / road speed | Independently establish sensor pulse count and drivetrain relationship; the earlier 20-pulse fit is not evidence. |',
         '| Connector wiring | Confirm ECU revision and connector view, trace drivers/conditioning; resolve B/Y and L/B alternatives and L/W starter candidate. |',

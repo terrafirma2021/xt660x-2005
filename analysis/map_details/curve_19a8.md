@@ -77,12 +77,13 @@ Converted values: 240.039, 340.039, 440.039, 540.039, 640.039, 740.039, 840.039,
 
 | Axis | Traced source | Interpretation | Physical scale |
 |---|---|---|---|
-| uniform_input | u16 0x0900 selected speed | Speed coordinate | Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM. |
+| uniform_input | u16 0x0900 selected speed | Speed coordinate | Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md. |
 
 ### What remains for this map
 
 - Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.
 - Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.
+- Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.
 - Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.
 - Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
 

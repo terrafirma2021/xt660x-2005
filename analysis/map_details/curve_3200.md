@@ -70,7 +70,7 @@ Conversion: `raw*5000/timer_hz`; unit: **s**.
 
 Latched threshold for qualifying 2-base-tick task iterations before correction recovery. Conditional count, not an unconditional wall-clock timer.
 
-Required profiles: `nominal_xt_timer`. These are assumptions, not measured hardware parameters.
+Evidence profiles: `nominal_xt_timer`. Consult each profile for its corroboration, assumptions and limits.
 
 Stock activation: Normal state path is disabled: ROM 0x3130 is 0xFF; 0x8DF9 requires exactly 0x80. The disabled path resets CD4 to 128. Lookup presence alone does not establish an active effect.
 
@@ -81,12 +81,13 @@ Converted values: 1600, 2400, 3200, 4000, 4800, 5600, 6400, 7200, 8000, 8800, 96
 
 | Axis | Traced source | Interpretation | Physical scale |
 |---|---|---|---|
-| uniform_input | u16 0x0900 selected speed | Speed coordinate | Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM. |
+| uniform_input | u16 0x0900 selected speed | Speed coordinate | Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md. |
 
 ### What remains for this map
 
 - Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.
 - Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.
+- Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.
 - Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.
 - Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
 

@@ -73,18 +73,18 @@ A89 compared against min(255,08E6), a filtered relative TPS count; coolant selec
 
 Consumer instruction addresses: `0x8C99`, `0x8F82`, `0x96BA`.
 
-uniform_input conversion: `temperature_celsius_candidate`; requires `yamaha_temperature_candidate`.
+uniform_input conversion: `coolant_celsius`; requires `xt660_coolant_owner_corroborated`.
 Converted values: -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120.
 
 ### Every input axis
 
 | Axis | Traced source | Interpretation | Physical scale |
 |---|---|---|---|
-| uniform_input | u8 0x08F4 coolant | Effective coolant temperature code | Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius. |
+| uniform_input | u8 0x08F4 coolant | Coolant Celsius encoding: code*0.625-30 (owner-corroborated) | Owner-corroborated encoding; sensor accuracy not measured here |
 
 ### What remains for this map
 
-- Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.
+- Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.
 - Confirm the relative TPS count-to-mechanical-angle transfer for the cell threshold.
 - Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.
 - Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.

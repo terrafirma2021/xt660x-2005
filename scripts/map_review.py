@@ -7,8 +7,8 @@ import re
 
 
 DOMAINS = {
-    'speed': ('Speed coordinate', 'Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM.'),
-    'coolant': ('Effective coolant temperature code', 'Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.'),
+    'speed': ('Speed coordinate', 'Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md.'),
+    'coolant': ('Coolant Celsius encoding: code*0.625-30 (owner-corroborated)', None),
     'iat': ('Intake temperature code', 'Confirm the IAT circuit/temperature transfer before assigning Celsius.'),
     'load': ('Processed load coordinate', 'Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.'),
     'throttle': ('Relative throttle coordinate', 'Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.'),
@@ -46,7 +46,7 @@ def input_review(m):
         label, gap = DOMAINS[domain]
         result.append(dict(axis=name, source=source, domain=domain, meaning=label,
                            raw_coordinate_status='Traced in catalogue',
-                           physical_status='Not required: internal code/count' if gap is None else 'Open',
+                           physical_status='Owner-corroborated encoding; sensor accuracy not measured here' if domain=='coolant' else 'Not required: internal code/count' if gap is None else 'Open',
                            open_requirement=gap))
     assert result, m['id']
     return result
@@ -61,6 +61,8 @@ def remaining_questions(m, unit):
         items.append('Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.')
     if 'nominal_xt_crank' in profiles:
         items.append('Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.')
+    if any(a['domain']=='speed' for a in unit['axis_interpretations']):
+        items.append('Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.')
     for axis in unit['axis_interpretations']:
         gap = axis['open_requirement']
         if gap and axis['domain'] != 'speed' and gap not in items:
@@ -68,6 +70,8 @@ def remaining_questions(m, unit):
     conversion = unit['cell_conversion']
     if conversion == 'temperature_celsius_candidate':
         items.append(DOMAINS['coolant' if m['id'].startswith('coolant') else 'iat'][1])
+    if conversion == 'coolant_celsius' or any(a['domain']=='coolant' for a in unit['axis_interpretations']):
+        items.append('Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image\'s 60 C replacement and establish sensor accuracy/range for this ECU.')
     if conversion == 'spark_relative_degrees':
         items.append('Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.')
     if conversion == 'injection_event_code':

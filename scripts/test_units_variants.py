@@ -10,7 +10,7 @@ import json
 import random
 import sys
 from pathlib import Path
-from decode_units import normalization, pressure_payload, supply_payload, scale_q8, spark_ticks
+from decode_units import normalization, pressure_payload, supply_payload, scale_q8, spark_ticks, rpm_payload
 
 ROOT=Path(__file__).resolve().parents[1]
 image=(ROOT/'firmware/XT660X 2005.bin').read_bytes()
@@ -85,6 +85,19 @@ for raw in range(256):
     s=state(0x6c5e);s.reg[0]=raw;run(s,0x6c73)
     assert s.ram[0xaec]==supply_payload(raw),raw
 checks['supply_payload_all_u8_inputs']=256
+
+# The historical logger's byte*50 must not silently establish the map RPM scale.
+# Exhaust the actual stock division/saturation path, then zero-divisor fallback.
+assert int.from_bytes(image[0x4e34:0x4e36],'big')==190
+for speed in range(65536):
+    s=state(0x749e);put(s.reg,0,speed);run(s,0x74b3)
+    assert s.ram[0xae2]==rpm_payload(speed,190),speed
+checks['rpm_wire_divisor190_all_u16_inputs']=65536
+for divisor in [0,1,190,256,65535]:
+    for speed in [0,1,189,190,255,256,48639,48640,65535]:
+        s=state(0x749e);put(s.reg,0,speed);put(s.ram,0x4e34,divisor);run(s,0x74b3)
+        assert s.ram[0xae2]==rpm_payload(speed,divisor),(speed,divisor)
+checks['rpm_wire_zero_divisor_and_saturation_boundaries']=45
 
 # Every byte pair in the normalization denominator, with stock reference.
 for code in range(256):

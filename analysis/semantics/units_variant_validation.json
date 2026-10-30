@@ -1,6 +1,6 @@
 {
   "result": "passed",
-  "cases": 219324,
+  "cases": 284905,
   "checks": {
     "second_normal_injector_entry_all_256_variant_values": 256,
     "primary_normal_injector_entry_all_256_variant_values": 256,
@@ -9,6 +9,8 @@
     "diagnostic_five_repeats_and_fan_100_task_on_windows": 2,
     "pressure_payload_all_u16_inputs": 65536,
     "supply_payload_all_u8_inputs": 256,
+    "rpm_wire_divisor190_all_u16_inputs": 65536,
+    "rpm_wire_zero_divisor_and_saturation_boundaries": 45,
     "normalization_all_65536_code_gain_pairs": 65536,
     "normalization_varied_reference_synthetic_ram": 1000,
     "three_new_grids_asymmetric_knots": 12,
@@ -20,8 +22,8 @@
     "dwell_byte_to_timer_ticks_all_values": 256
   },
   "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
-  "test_script_sha256": "006915ccf07214a847b42df75da9514babb314c7c74b91e8530853f830cf0c1f",
-  "conversion_script_sha256": "15b5d2a41c1829e3f4d9a5232b4ccac4157f3c6fb445d38719371dc35e4f38fa",
+  "test_script_sha256": "b32e9d895ec48575d668ef7bf16cfd05408ccecce80ec44d3684e1320ac0c56f",
+  "conversion_script_sha256": "e2bd8adceb6958b2f2415f8a7036431845f0594b0e3c5fb68203c059d43b2dd7",
   "compiled_library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
   "limitations": "Isolated instruction execution with RAM-backed peripherals. Physical units, oscillator rate, sensor circuitry, crank/TDC geometry and hardware outputs are not validated by these tests."
 }

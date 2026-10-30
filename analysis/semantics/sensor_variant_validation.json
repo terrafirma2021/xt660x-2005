@@ -8,7 +8,7 @@
   },
   "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
   "test_script_sha256": "2be6894e9787e84d233ffac4e78eacdfdedfe084bdd4c561edb78a43251afc57",
-  "model_script_sha256": "19904f0439f4f0e7960bb9d3b346e8c9c5cc4da9f23108d8d2014baaf06592f5",
+  "model_script_sha256": "adda9fe634d66c7f78661b2e90ef3ca7ae3f07fa01dc38d83bab964396f46bf6",
   "compiled_library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
   "conclusion": "Variant 9 selects the XT image spark correction curve; changing D87 alone does not change either tested temperature transfer or fallback. Coolant diagnostic reports measured conversion even during fault replacement; IAT diagnostic reports the effective replacement.",
   "limitations": "Isolated routines with injected ADC results and fault states. No proof about every possible upstream state writer, external analog circuit, donor ECU identity or physical units."
