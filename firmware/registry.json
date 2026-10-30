@@ -4,7 +4,7 @@
   "images": [
     {
       "id": "xt660x-2005-owner",
-      "label": "XT660X 2005 \u00b7 owner dump",
+      "label": "XT660X 2005 \u00b7 original supplied BIN",
       "file": "firmware/XT660X 2005.bin",
       "sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
       "base_address": 0,

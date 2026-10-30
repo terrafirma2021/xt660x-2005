@@ -12,7 +12,7 @@ def context(current,rel):
     root=rel('index.html',current).removesuffix('index.html') or './'
     return f'''<section class="vehicle-context" id="vehicle-context" data-root="{root}" aria-label="Choose motorcycle and firmware">
 <div class="context-heading"><span class="kicker">YOUR RESEARCH WORKSPACE</span><a href="{root}dataset/">Dataset &amp; sources ↗</a></div>
-<div class="vehicle-selectors"><label>1 · Motorcycle<select id="bike-select" aria-label="Motorcycle"></select></label><label>2 · Year<select id="year-select" aria-label="Year"></select></label><label>3 · Market<select id="market-select" aria-label="Market"></select></label><label>4 · ECU<select id="ecu-select" aria-label="ECU"></select></label><label>5 · Firmware<select id="image-select" aria-label="Firmware"></select></label></div>
+<div class="vehicle-selectors"><label>1 · Motorcycle<select id="bike-select" aria-label="Motorcycle"></select></label><label>2 · Year<select id="year-select" aria-label="Year"></select></label><label>3 · Market / specification<select id="market-select" aria-label="Market / specification"></select></label><label>4 · ECU<select id="ecu-select" aria-label="ECU"></select></label><label>5 · Firmware<select id="image-select" aria-label="Firmware"></select></label></div>
 <p id="selection-status" aria-live="polite">The existing study concerns the owner-reported 2005 XT660X image. Enable JavaScript to select another profile.</p></section>'''
 
 def home():

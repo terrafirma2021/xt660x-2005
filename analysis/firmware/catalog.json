@@ -4,7 +4,7 @@
   "images": [
     {
       "id": "xt660x-2005-owner",
-      "label": "XT660X 2005 \u00b7 owner dump",
+      "label": "XT660X 2005 \u00b7 original supplied BIN",
       "file": "firmware/XT660X 2005.bin",
       "sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
       "base_address": 0,
@@ -227,6 +227,6 @@
       "shared_map_count": 0
     }
   ],
-  "registry_sha256": "abc11cb84b32560883e9953e0df03e52e768d5835cf9d8a7d37d2a66ae33b281",
+  "registry_sha256": "8f4bc8e9317362ef2a8ba4a6e9ab9683f6cdfb57d38a9cf2feb205faccdeacc8",
   "maps_sha256": "06a9f0d3c7dad1b0100762d37ccd0977af407e105320bda90dfdc71e2a80f107"
 }
