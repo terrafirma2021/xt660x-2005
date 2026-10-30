@@ -1,0 +1,646 @@
+{
+  "schema_version": 1,
+  "source_label": "Owner-supplied Desktop/XT660 folder",
+  "files": [
+    {
+      "source_path": "Bin/Yamaha XT660 2008 5VK-8591A-1X.motorcycle-tuning.com.bin",
+      "stored_path": "firmware/images/xt660-5vk-1x-2008.bin",
+      "bytes": 59392,
+      "sha256": "4e7166156f5e7a53c4c2f81a7e20f45503c032cc57b40d8f85d5c721d2550824",
+      "kind": "firmware"
+    },
+    {
+      "source_path": "Bin/Yamaha XT660 2008 5VK-8591A-1X.motorcycle-tuning.com.log",
+      "stored_path": "dataset/sources/Bin/Yamaha XT660 2008 5VK-8591A-1X.motorcycle-tuning.com.log",
+      "bytes": 483,
+      "sha256": "93e59cf387c315434798cf766893711035cbd4972a50423269857b298880ad3b",
+      "kind": "edit-log"
+    },
+    {
+      "source_path": "Bin/Yamaha XT660 2008 5VK-8591A-1X.motorcycle-tuning.com.zip",
+      "stored_path": "dataset/sources/Bin/Yamaha XT660 2008 5VK-8591A-1X.motorcycle-tuning.com.zip",
+      "bytes": 32790,
+      "sha256": "1c23b5ea2a30e0f7d8b6289ebe6bb20f90d80f9c9147f4d041da1017a1ea48b0",
+      "kind": "archive",
+      "members": [
+        {
+          "path": "Yamaha XT660 2008 5VK-8591A-1X.motorcycle-tuning.com.bin",
+          "bytes": 59392,
+          "sha256": "4e7166156f5e7a53c4c2f81a7e20f45503c032cc57b40d8f85d5c721d2550824",
+          "duplicates": [
+            "Bin/Yamaha XT660 2008 5VK-8591A-1X.motorcycle-tuning.com.bin"
+          ]
+        }
+      ]
+    },
+    {
+      "source_path": "Bin/Yamaha XT660 2012-2016 2C18591A-10.motorcycle-tuning.com.bin",
+      "stored_path": "firmware/images/xt660-2c1-10.bin",
+      "bytes": 59392,
+      "sha256": "9ce732dd5586fe65adcbf7a2619be1427573899eb7d0673d577f129a84f844d3",
+      "kind": "firmware"
+    },
+    {
+      "source_path": "Bin/Yamaha XT660 2012-2016 ImmobilizerOff 2C18591A-10.motorcycle-tuning.com.bin",
+      "stored_path": "firmware/images/xt660-2c1-10-immo-off.bin",
+      "bytes": 59392,
+      "sha256": "51736dd94f02d2066a1a90d4e6c346c0c85778e9c896a4d2f72b5270b50a36f7",
+      "kind": "firmware"
+    },
+    {
+      "source_path": "xt 660 r/2C1-8591A-00",
+      "stored_path": "firmware/images/xt660-2c1-00.bin",
+      "bytes": 65536,
+      "sha256": "305ac6084de00f1da1bf17767795c935095b2eb3574c898e683a6196d545d15e",
+      "kind": "firmware"
+    },
+    {
+      "source_path": "xt 660 r/2C1-8591A-00 immo off",
+      "stored_path": "firmware/images/xt660-2c1-00-immo-off.bin",
+      "bytes": 65536,
+      "sha256": "98d450f5bcb2052a5a5f3e88a36d5336cedffd4ff6eca5c02cc44f3893785316",
+      "kind": "firmware"
+    },
+    {
+      "source_path": "xt 660 r/5vk-00-V.10.4-Mauro 2.xdf",
+      "stored_path": "dataset/sources/xt 660 r/5vk-00-V.10.4-Mauro 2.xdf",
+      "bytes": 23260,
+      "sha256": "6d6b423e3e76762532495cbcc93dea9d6e60310dfb156aae514d9dbad59128d8",
+      "kind": "definition"
+    },
+    {
+      "source_path": "xt 660 r/5vk-00-V.10.4-Mauro.xdf",
+      "stored_path": "dataset/sources/xt 660 r/5vk-00-V.10.4-Mauro.xdf",
+      "bytes": 23270,
+      "sha256": "687e726a4d7a59f3f4e668c0e3ddd0cc295e59f656560d762bdbc320cc36f264",
+      "kind": "definition"
+    },
+    {
+      "source_path": "xt 660 r/5vk-00-V.10.4-Motojacs.xdf",
+      "stored_path": "dataset/sources/xt 660 r/5vk-00-V.10.4-Motojacs.xdf",
+      "bytes": 23313,
+      "sha256": "8855570ca7cc3bf5d6e6e88f25a0e5c5976a69a57ef3bd8a86201a0b1e482230",
+      "kind": "definition"
+    },
+    {
+      "source_path": "xt 660 r/5vk-00-V.10.4-Pepos-.xdf",
+      "stored_path": "dataset/sources/xt 660 r/5vk-00-V.10.4-Pepos-.xdf",
+      "bytes": 23300,
+      "sha256": "4348c754eb8a1a599899d9abf85aa12520729b588786c0b27935aa2282e8561a",
+      "kind": "definition"
+    },
+    {
+      "source_path": "xt 660 r/5VK-8591A-11.bin",
+      "stored_path": "firmware/images/xt660-5vk-11.bin",
+      "bytes": 59392,
+      "sha256": "b23ee5e64fcbb7cffc0a6d358c84163fc6608be9c8e222c32c85acef6d675067",
+      "kind": "firmware"
+    },
+    {
+      "source_path": "xt 660 r/prove xdf/xt660 04-06(5vk-8591a-01) final.xdf",
+      "stored_path": "dataset/sources/xt 660 r/prove xdf/xt660 04-06(5vk-8591a-01) final.xdf",
+      "bytes": 38944,
+      "sha256": "23164f4c62d5fb47cabfaa8ff2de6c090827b8f6a3a6697896e7cd1205efe515",
+      "kind": "definition"
+    },
+    {
+      "source_path": "xt 660 r/prove xdf/xt660 04-06(5vk-8591a-01).xdf",
+      "stored_path": "dataset/sources/xt 660 r/prove xdf/xt660 04-06(5vk-8591a-01).xdf",
+      "bytes": 26087,
+      "sha256": "251ab448cd52f2b40cd392707f42612d4508fb5f9de4e933fe26732356f7ac6d",
+      "kind": "definition"
+    },
+    {
+      "source_path": "xt 660 r/XDF 2 Immagine.jpg",
+      "stored_path": "dataset/sources/xt 660 r/XDF 2 Immagine.jpg",
+      "bytes": 324592,
+      "sha256": "a9a52c1e9ecca30742fc711ea4548a66bbc220ccc79fee8e174122b4470bdb16",
+      "kind": "image"
+    },
+    {
+      "source_path": "xt 660 r/xdf Immagine.jpg",
+      "stored_path": "dataset/sources/xt 660 r/xdf Immagine.jpg",
+      "bytes": 764085,
+      "sha256": "ff313e71fc7b5de4f60bce94c4afed2537499a1d6866068901e809c5d0ac822a",
+      "kind": "image"
+    },
+    {
+      "source_path": "xt 660 r/xt660 04-06(5vk-8591a-01).bin",
+      "stored_path": "firmware/images/xt660-2004-2006-companion.bin",
+      "bytes": 59392,
+      "sha256": "1abfbaa9018b5a26452df4c060265a791979b6016d57981fb95b50d7192cbe0b",
+      "kind": "firmware"
+    },
+    {
+      "source_path": "xt 660 r/xt660 04-06(5vk-8591a-01).zip",
+      "stored_path": "dataset/sources/xt 660 r/xt660 04-06(5vk-8591a-01).zip",
+      "bytes": 32373,
+      "sha256": "343a59bb85422f112c4b2093ea0aec763f55417490ad997d4a237ec06252f747",
+      "kind": "archive",
+      "members": [
+        {
+          "path": "xt660 04-06(5vk-8591a-01).bin",
+          "bytes": 59392,
+          "sha256": "1abfbaa9018b5a26452df4c060265a791979b6016d57981fb95b50d7192cbe0b",
+          "duplicates": [
+            "xt 660 r/xt660 04-06(5vk-8591a-01).bin"
+          ]
+        }
+      ]
+    },
+    {
+      "source_path": "xt 660 r/XT660_PinOut.JPG",
+      "stored_path": "dataset/sources/xt 660 r/XT660_PinOut.JPG",
+      "bytes": 20165,
+      "sha256": "0c26ccfa7aa1a7fb82a27ea33bbf06982d40d89bff3a363bb45786c124542968",
+      "kind": "image"
+    },
+    {
+      "source_path": "Yamaha XT660 2008 5VK-8591A-1X.motorcycle-tuning.com.xdf",
+      "stored_path": "dataset/sources/Yamaha XT660 2008 5VK-8591A-1X.motorcycle-tuning.com.xdf",
+      "bytes": 32407,
+      "sha256": "861ad7c17c6ed63169edd6abdfc6ff64012158e1275119567e07da6cc09ff5a4",
+      "kind": "definition"
+    },
+    {
+      "source_path": "Yamaha XT660 2012-2016 2C1-8591A-10.motorcycle-tuning.com.xdf",
+      "stored_path": "dataset/sources/Yamaha XT660 2012-2016 2C1-8591A-10.motorcycle-tuning.com.xdf",
+      "bytes": 32355,
+      "sha256": "a3cf74d945a5715bf0047118009217ee459c20308b60c675399d7e18e573852a",
+      "kind": "definition"
+    }
+  ],
+  "images": [
+    {
+      "id": "xt660x-2005-owner",
+      "sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+      "base_address": 0,
+      "embedded_ascii_ids": [],
+      "boot_sha256": "d0ff1b294b5288d1ae1421eadf5b2d38a8752b76d472ff30bed9028e25b1c5b8",
+      "boot_non_ff_bytes": 0
+    },
+    {
+      "id": "xt660-2004-2006-companion",
+      "sha256": "1abfbaa9018b5a26452df4c060265a791979b6016d57981fb95b50d7192cbe0b",
+      "base_address": 6144,
+      "embedded_ascii_ids": [],
+      "boot_sha256": "9f313f065e7f71309fb1c51f320d48f1d0a3ac72875464abded8e54fbc39df10",
+      "boot_non_ff_bytes": 1868
+    },
+    {
+      "id": "xt660x-2005-checksum-fixed",
+      "sha256": "972ac93e76cb632470092d88c2a57e910daae69c02d6cdef52f1cad72f6909e7",
+      "base_address": 0,
+      "embedded_ascii_ids": [],
+      "boot_sha256": "d0ff1b294b5288d1ae1421eadf5b2d38a8752b76d472ff30bed9028e25b1c5b8",
+      "boot_non_ff_bytes": 0
+    },
+    {
+      "id": "xt660-5vk-1x-2008",
+      "sha256": "4e7166156f5e7a53c4c2f81a7e20f45503c032cc57b40d8f85d5c721d2550824",
+      "base_address": 6144,
+      "embedded_ascii_ids": [
+        {
+          "address": "0xF770",
+          "text": "Y2051100"
+        }
+      ],
+      "boot_sha256": "9f313f065e7f71309fb1c51f320d48f1d0a3ac72875464abded8e54fbc39df10",
+      "boot_non_ff_bytes": 1868
+    },
+    {
+      "id": "xt660-2c1-10",
+      "sha256": "9ce732dd5586fe65adcbf7a2619be1427573899eb7d0673d577f129a84f844d3",
+      "base_address": 6144,
+      "embedded_ascii_ids": [
+        {
+          "address": "0xF770",
+          "text": "Y202L000"
+        }
+      ],
+      "boot_sha256": "9f313f065e7f71309fb1c51f320d48f1d0a3ac72875464abded8e54fbc39df10",
+      "boot_non_ff_bytes": 1868
+    },
+    {
+      "id": "xt660-2c1-10-immo-off",
+      "sha256": "51736dd94f02d2066a1a90d4e6c346c0c85778e9c896a4d2f72b5270b50a36f7",
+      "base_address": 6144,
+      "embedded_ascii_ids": [
+        {
+          "address": "0xF770",
+          "text": "Y202L000"
+        }
+      ],
+      "boot_sha256": "9f313f065e7f71309fb1c51f320d48f1d0a3ac72875464abded8e54fbc39df10",
+      "boot_non_ff_bytes": 1868
+    },
+    {
+      "id": "xt660-2c1-00",
+      "sha256": "305ac6084de00f1da1bf17767795c935095b2eb3574c898e683a6196d545d15e",
+      "base_address": 0,
+      "embedded_ascii_ids": [],
+      "boot_sha256": "d0ff1b294b5288d1ae1421eadf5b2d38a8752b76d472ff30bed9028e25b1c5b8",
+      "boot_non_ff_bytes": 0
+    },
+    {
+      "id": "xt660-2c1-00-immo-off",
+      "sha256": "98d450f5bcb2052a5a5f3e88a36d5336cedffd4ff6eca5c02cc44f3893785316",
+      "base_address": 0,
+      "embedded_ascii_ids": [],
+      "boot_sha256": "d0ff1b294b5288d1ae1421eadf5b2d38a8752b76d472ff30bed9028e25b1c5b8",
+      "boot_non_ff_bytes": 0
+    },
+    {
+      "id": "xt660-5vk-11",
+      "sha256": "b23ee5e64fcbb7cffc0a6d358c84163fc6608be9c8e222c32c85acef6d675067",
+      "base_address": 6144,
+      "embedded_ascii_ids": [
+        {
+          "address": "0xF770",
+          "text": "Y2051150"
+        }
+      ],
+      "boot_sha256": "9f313f065e7f71309fb1c51f320d48f1d0a3ac72875464abded8e54fbc39df10",
+      "boot_non_ff_bytes": 1868
+    }
+  ],
+  "pairwise": [
+    {
+      "a": "xt660x-2005-owner",
+      "b": "xt660-2004-2006-companion",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 1869,
+      "application_different_bytes": 1,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660x-2005-owner",
+      "b": "xt660x-2005-checksum-fixed",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 1,
+      "application_different_bytes": 1,
+      "boot_identical": true,
+      "changes": [
+        {
+          "address": "0xF7FD",
+          "a": 255,
+          "b": 127
+        }
+      ]
+    },
+    {
+      "a": "xt660x-2005-owner",
+      "b": "xt660-5vk-1x-2008",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57676,
+      "application_different_bytes": 55808,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660x-2005-owner",
+      "b": "xt660-2c1-10",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57688,
+      "application_different_bytes": 55820,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660x-2005-owner",
+      "b": "xt660-2c1-10-immo-off",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57688,
+      "application_different_bytes": 55820,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660x-2005-owner",
+      "b": "xt660-2c1-00",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 4348,
+      "application_different_bytes": 4348,
+      "boot_identical": true,
+      "changes": null
+    },
+    {
+      "a": "xt660x-2005-owner",
+      "b": "xt660-2c1-00-immo-off",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 4347,
+      "application_different_bytes": 4347,
+      "boot_identical": true,
+      "changes": null
+    },
+    {
+      "a": "xt660x-2005-owner",
+      "b": "xt660-5vk-11",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57676,
+      "application_different_bytes": 55808,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660-2004-2006-companion",
+      "b": "xt660x-2005-checksum-fixed",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 1870,
+      "application_different_bytes": 2,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660-2004-2006-companion",
+      "b": "xt660-5vk-1x-2008",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 55808,
+      "application_different_bytes": 55808,
+      "boot_identical": true,
+      "changes": null
+    },
+    {
+      "a": "xt660-2004-2006-companion",
+      "b": "xt660-2c1-10",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 55820,
+      "application_different_bytes": 55820,
+      "boot_identical": true,
+      "changes": null
+    },
+    {
+      "a": "xt660-2004-2006-companion",
+      "b": "xt660-2c1-10-immo-off",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 55820,
+      "application_different_bytes": 55820,
+      "boot_identical": true,
+      "changes": null
+    },
+    {
+      "a": "xt660-2004-2006-companion",
+      "b": "xt660-2c1-00",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 6215,
+      "application_different_bytes": 4347,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660-2004-2006-companion",
+      "b": "xt660-2c1-00-immo-off",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 6216,
+      "application_different_bytes": 4348,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660-2004-2006-companion",
+      "b": "xt660-5vk-11",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 55808,
+      "application_different_bytes": 55808,
+      "boot_identical": true,
+      "changes": null
+    },
+    {
+      "a": "xt660x-2005-checksum-fixed",
+      "b": "xt660-5vk-1x-2008",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57677,
+      "application_different_bytes": 55809,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660x-2005-checksum-fixed",
+      "b": "xt660-2c1-10",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57689,
+      "application_different_bytes": 55821,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660x-2005-checksum-fixed",
+      "b": "xt660-2c1-10-immo-off",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57689,
+      "application_different_bytes": 55821,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660x-2005-checksum-fixed",
+      "b": "xt660-2c1-00",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 4349,
+      "application_different_bytes": 4349,
+      "boot_identical": true,
+      "changes": null
+    },
+    {
+      "a": "xt660x-2005-checksum-fixed",
+      "b": "xt660-2c1-00-immo-off",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 4348,
+      "application_different_bytes": 4348,
+      "boot_identical": true,
+      "changes": null
+    },
+    {
+      "a": "xt660x-2005-checksum-fixed",
+      "b": "xt660-5vk-11",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57677,
+      "application_different_bytes": 55809,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660-5vk-1x-2008",
+      "b": "xt660-2c1-10",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 4418,
+      "application_different_bytes": 4418,
+      "boot_identical": true,
+      "changes": null
+    },
+    {
+      "a": "xt660-5vk-1x-2008",
+      "b": "xt660-2c1-10-immo-off",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 4420,
+      "application_different_bytes": 4420,
+      "boot_identical": true,
+      "changes": null
+    },
+    {
+      "a": "xt660-5vk-1x-2008",
+      "b": "xt660-2c1-00",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57689,
+      "application_different_bytes": 55821,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660-5vk-1x-2008",
+      "b": "xt660-2c1-00-immo-off",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57689,
+      "application_different_bytes": 55821,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660-5vk-1x-2008",
+      "b": "xt660-5vk-11",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 4,
+      "application_different_bytes": 4,
+      "boot_identical": true,
+      "changes": [
+        {
+          "address": "0x348D",
+          "a": 128,
+          "b": 139
+        },
+        {
+          "address": "0xF776",
+          "a": 48,
+          "b": 53
+        },
+        {
+          "address": "0xF77E",
+          "a": 132,
+          "b": 127
+        },
+        {
+          "address": "0xF77F",
+          "a": 83,
+          "b": 72
+        }
+      ]
+    },
+    {
+      "a": "xt660-2c1-10",
+      "b": "xt660-2c1-10-immo-off",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 2,
+      "application_different_bytes": 2,
+      "boot_identical": true,
+      "changes": [
+        {
+          "address": "0x4619",
+          "a": 0,
+          "b": 128
+        },
+        {
+          "address": "0x4751",
+          "a": 255,
+          "b": 127
+        }
+      ]
+    },
+    {
+      "a": "xt660-2c1-10",
+      "b": "xt660-2c1-00",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57686,
+      "application_different_bytes": 55818,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660-2c1-10",
+      "b": "xt660-2c1-00-immo-off",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57686,
+      "application_different_bytes": 55818,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660-2c1-10",
+      "b": "xt660-5vk-11",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 4420,
+      "application_different_bytes": 4420,
+      "boot_identical": true,
+      "changes": null
+    },
+    {
+      "a": "xt660-2c1-10-immo-off",
+      "b": "xt660-2c1-00",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57686,
+      "application_different_bytes": 55818,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660-2c1-10-immo-off",
+      "b": "xt660-2c1-00-immo-off",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57686,
+      "application_different_bytes": 55818,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660-2c1-10-immo-off",
+      "b": "xt660-5vk-11",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 4422,
+      "application_different_bytes": 4422,
+      "boot_identical": true,
+      "changes": null
+    },
+    {
+      "a": "xt660-2c1-00",
+      "b": "xt660-2c1-00-immo-off",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 1,
+      "application_different_bytes": 1,
+      "boot_identical": true,
+      "changes": [
+        {
+          "address": "0x4E7D",
+          "a": 0,
+          "b": 128
+        }
+      ]
+    },
+    {
+      "a": "xt660-2c1-00",
+      "b": "xt660-5vk-11",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57689,
+      "application_different_bytes": 55821,
+      "boot_identical": false,
+      "changes": null
+    },
+    {
+      "a": "xt660-2c1-00-immo-off",
+      "b": "xt660-5vk-11",
+      "compared_range": "0x1800\u20130xFFFF",
+      "different_bytes": 57689,
+      "application_different_bytes": 55821,
+      "boot_identical": false,
+      "changes": null
+    }
+  ],
+  "counts": {
+    "source_files": 21,
+    "firmware_files": 7,
+    "xdf_files": 8,
+    "zip_archives": 2,
+    "screenshots": 3,
+    "logs": 1,
+    "registered_images": 9
+  }
+}

@@ -1,6 +1,6 @@
 # Site imagery and typography
 
-This is an independent XT660X research project, not an official Yamaha Motor website. Yamaha names and marks identify the motorcycle and remain the property of their respective owners. No endorsement is implied.
+This is an independent Yamaha ECU research project, not an official Yamaha Motor website. Yamaha names and marks identify the motorcycles and remain the property of their respective owners. No endorsement is implied.
 
 ## Yamaha Motor logo
 
@@ -11,6 +11,18 @@ The header uses Yamaha Motor’s tuning-fork emblem and wordmark, sourced from i
 The blue 2005 XT660X reference photograph is sourced from the [2ri motorcycle image archive](https://www.2ri.de/Images/Big/0/Yamaha_XT660X_2005.jpg). The original image is retained. The hero uses a transparent cutout made with the built-in image-generation tool for light/dark backgrounds; it is presentation artwork, not technical evidence. Photo rights remain with the original rights holder; this project does not claim ownership or grant a new licence to that image.
 
 The user-supplied action photograph informed the visual direction; it is not used as a photograph of the XT660X.
+
+## Additional model photographs
+
+The model selector and selected-bike panel now include all four motorcycle families. These are reference photographs, not evidence of a selected ECU, market, ABS configuration, paint scheme or exact year. Captions retain the photograph's reference year.
+
+| Model reference | Source image | Local asset |
+|---|---|---|
+| XT660R, 2004 | [2ri archive](https://www.2ri.de/Images/Big/0/Yamaha_XT660R_2004.jpg) | `site/assets/xt660r-2004.jpg` |
+| XT660Z Ténéré, 2008 | [2ri archive](https://www.2ri.de/Images/Big/0/Yamaha_XT660Z_Tenere_2008_56338.jpg) | `site/assets/xt660z-2008.jpg` |
+| TDM900, 2002 | [2ri archive](https://www.2ri.de/Images/Big/0/Yamaha_TDM900_2002.jpg) | `site/assets/tdm900-2002.jpg` |
+
+These three photographs are served with their source pixels unchanged, in a studio-image frame. No watermark was removed. The rejected watermarked TDM image is not included. Rights remain with the original rights holders; this project does not grant a new image licence. Asset hashes are recorded with each model in `dataset/vehicles.json`.
 
 ## Fonts
 

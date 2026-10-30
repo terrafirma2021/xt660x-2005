@@ -4,6 +4,8 @@
 *.gzf binary
 *.sla binary
 *.patch -whitespace
+# Preserve owner-supplied evidence byte-for-byte, including XML and edit logs.
+dataset/sources/** -text -whitespace
 # Generated Ghidra text includes intentional empty TSV fields and C blank lines.
 analysis/** -whitespace
 ghidra/XT660CPU12/** -whitespace

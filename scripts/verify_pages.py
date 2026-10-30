@@ -41,6 +41,10 @@ count=0
 for page in SITE.rglob('*.html'):
     parser=Links();parser.feed(page.read_text(encoding='utf-8'))
     assert parser.theme_buttons==1,f'Missing or duplicate theme switch: {page}'
+    markup=page.read_text(encoding='utf-8')
+    assert markup.count('id="vehicle-context"')==1,page
+    assert all(f'id="{key}-select"' in markup for key in ('bike','year','market','ecu','image')),page
+    assert any(urlsplit(link).path.endswith('/vehicles.js') for link in parser.links),page
     assert any(urlsplit(link).path.endswith('/theme.js') for link in parser.links),page
     assert any(urlsplit(link).path.endswith('/theme.css') for link in parser.links),page
     for value in parser.links:
@@ -82,7 +86,7 @@ for m in json.loads((ROOT/'analysis/maps.json').read_text()):
         cell_count+=1
 assert len(cell_inks)==1,'Heatmap numbers must use consistent ink across values'
 assert not list(SITE.rglob('*.bin'))
-for route in ('index.html','maps/index.html','pins/index.html','research/index.html','coverage/index.html','firmware/index.html'):
+for route in ('index.html','maps/index.html','pins/index.html','wiring/index.html','dataset/index.html','research/index.html','coverage/index.html','firmware/index.html'):
     assert (SITE/route).is_file()
 tracked=subprocess.check_output(['git','ls-files','-z'],cwd=ROOT).decode('utf-8').strip('\0').split('\0')
 coverage=json.loads((SITE/'coverage/manifest.json').read_text())
@@ -92,5 +96,11 @@ assert len(list((SITE/'docs').rglob('*.html')))==coverage['rendered_documents']
 library=json.loads((SITE/'firmware/catalog.json').read_text(encoding='utf-8'))
 for item in library['images']:
     assert (SITE/'firmware'/item['id']/'index.html').is_file()
-assert 'firmware-select' in (SITE/'maps/index.html').read_text(encoding='utf-8')
+assert 'image-select' in (SITE/'maps/index.html').read_text(encoding='utf-8')
+for route,scope in [('maps/index.html','primary'),('pins/index.html','hardware'),('research/index.html','primary')]:
+    assert f'data-study="{scope}"' in (SITE/route).read_text(encoding='utf-8'),route
+for m in json.loads((ROOT/'analysis/maps.json').read_text()):
+    assert 'data-study="primary"' in (SITE/'docs/map_details'/f'{m["id"]}.html').read_text(encoding='utf-8'),m['id']
+assert json.loads((SITE/'vehicles/catalog.json').read_text(encoding='utf-8'))==json.loads((ROOT/'dataset/vehicles.json').read_text(encoding='utf-8'))
+assert json.loads((SITE/'vehicles/parts.json').read_text(encoding='utf-8'))==json.loads((ROOT/'dataset/parts_catalogue.json').read_text(encoding='utf-8'))
 print(f'Verified six site sections, 71 maps, {coverage["rendered_documents"]} documents, {cell_count} grid cells matched to firmware, 71 colour previews, {curve_count} curves, complete tracked-file index, theme assets and {count} local links; no firmware binary in site.')

@@ -1,6 +1,6 @@
 # Owner-supplied XT660 XDFs and companion binaries
 
-The supplied XT660 folder is useful, especially its **2004–06 companion BIN**, but its XDFs are not reliable enough to import as verified tuning definitions. This review examined eight XDF files and five BIN files. Four XML XDFs expose 64 table declarations; four other XDFs are non-XML and their formulas were not recovered by this audit. The [structured report](local_xt660_audit.json) records every file hash, all readable table declarations, axis links and comparisons. None of these external binaries has replaced the target firmware.
+The supplied XT660 folder is useful, especially its **2004–06 companion BIN**, but its XDFs are not reliable enough to import as verified tuning definitions. This first, extension-filtered review examined eight XDF files and five .bin files. The later [complete dataset inventory](../../dataset/README.md) also accounts for two extensionless firmware images, two ZIP duplicates, three images and an edit log; it supersedes the file count, not the table checks below. Four XML XDFs expose 64 table declarations; four other XDFs are non-XML and their formulas were not recovered by this audit. The [structured report](local_xt660_audit.json) records every file hash, all readable table declarations, axis links and comparisons. None of these external binaries has replaced the target firmware.
 
 ## A matching application with a populated boot region
 

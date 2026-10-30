@@ -1,0 +1,2956 @@
+{
+  "schema_version": 1,
+  "default_profile": "xt660x-2005-owner",
+  "models": [
+    {
+      "id": "xt660x",
+      "name": "XT660X",
+      "style": "Supermoto",
+      "tagline": "The street side of the big single.",
+      "source": "launch-rx",
+      "photo": {
+        "file": "assets/xt660x-2005-cutout.png",
+        "year": "2005",
+        "caption": "2005 XT660X reference artwork. Selected year, colour and equipment may differ.",
+        "source": "https://www.2ri.de/Images/Big/0/Yamaha_XT660X_2005.jpg",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "3a421f8cd3908aee298954cc9cf80f33d9c5b1a5e52f6a7551177063b29b2b70"
+      },
+      "default_profile": "xt660x-2005-owner"
+    },
+    {
+      "id": "xt660r",
+      "name": "XT660R",
+      "style": "Trail",
+      "tagline": "Same family. A different path.",
+      "source": "launch-rx",
+      "photo": {
+        "file": "assets/xt660r-2004.jpg",
+        "year": "2004",
+        "caption": "2004 XT660R model reference. Selected year, colour and equipment may differ.",
+        "source": "https://www.2ri.de/Bikes/Yamaha/2004/XT660R",
+        "width": 1024,
+        "height": 768,
+        "sha256": "4de75637b420e2ec8fbf637d82bbf1b49d667c3402f909d5bb2459d69e519079"
+      },
+      "default_profile": "fowlers-xt660r-2004-5vk3-010-united-kingdom"
+    },
+    {
+      "id": "xt660z",
+      "name": "XT660Z Ténéré",
+      "style": "Adventure",
+      "tagline": "A separate platform. Its own evidence.",
+      "source": "z-name",
+      "photo": {
+        "file": "assets/xt660z-2008.jpg",
+        "year": "2008",
+        "caption": "2008 XT660Z Ténéré model reference. Selected year, colour and ABS equipment may differ.",
+        "source": "https://www.2ri.de/Bikes/Yamaha/2008/XT660Z-Tenere",
+        "width": 1024,
+        "height": 768,
+        "sha256": "c78a6b0f142aa615e05b2d0a69b3999c5eda60b2cd2a34c211483fd73f3e8d87"
+      },
+      "default_profile": "fowlers-xt660z-2009-11d2-010-united-kingdom"
+    },
+    {
+      "id": "tdm900",
+      "name": "TDM900",
+      "style": "Twin / comparison",
+      "tagline": "Two cylinders. No assumed compatibility.",
+      "source": "tdm-manual",
+      "photo": {
+        "file": "assets/tdm900-2002.jpg",
+        "year": "2002",
+        "caption": "2002 TDM900 model reference. Selected year, colour and ABS equipment may differ.",
+        "source": "https://www.2ri.de/Bikes/Yamaha/2002/TDM900",
+        "width": 800,
+        "height": 600,
+        "sha256": "9adfac17fc99ab45f750d54099fcc26931994b8843164cd4e08882b7502f17f4"
+      },
+      "default_profile": "fowlers-tdm900-2002-5ps1-050-united-kingdom"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "xt660x-2005-owner",
+      "model": "xt660x",
+      "year": "2005",
+      "market": "Owner bike · market not recorded",
+      "ecu": "Label unknown · studied early application",
+      "firmware_ids": [
+        "xt660x-2005-owner",
+        "xt660x-2005-checksum-fixed",
+        "xt660-2004-2006-companion"
+      ],
+      "hardware": "early-owner",
+      "oxygen": "Not shown in the 2004 reference diagram; owner-bike equipment not independently inspected.",
+      "source_ids": [
+        "launch-rx",
+        "rx-2004"
+      ],
+      "notes": "2005 XT660X is owner-reported. The companion shares all 71 map bodies and stored axes; it differs at the known application patch. Physical ECU label and chip marking remain unconfirmed.",
+      "association": "owner-reported"
+    },
+    {
+      "id": "xt660x-2004-early",
+      "model": "xt660x",
+      "year": "2004",
+      "market": "Early R/X · market unconfirmed",
+      "ecu": "5VK-8591A-01 · filename claim",
+      "firmware_ids": [
+        "xt660-2004-2006-companion"
+      ],
+      "hardware": "early-reference",
+      "oxygen": "Not shown in the 2004 R/X diagram; applicability beyond that reference is conditional.",
+      "source_ids": [
+        "rx-2004",
+        "r-2004-parts"
+      ],
+      "notes": "2004–2006 comes from the companion filename; assigning it to this bike/year remains a candidate. Shared application research does not prove that year or connector hardware.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660x-2005-early",
+      "model": "xt660x",
+      "year": "2005",
+      "market": "Early R/X · market unconfirmed",
+      "ecu": "5VK-8591A-01 · filename claim",
+      "firmware_ids": [
+        "xt660-2004-2006-companion"
+      ],
+      "hardware": "early-reference",
+      "oxygen": "Not shown in the 2004 R/X diagram; applicability beyond that reference is conditional.",
+      "source_ids": [
+        "rx-2004",
+        "r-2004-parts"
+      ],
+      "notes": "2004–2006 comes from the companion filename; assigning it to this bike/year remains a candidate. Shared application research does not prove that year or connector hardware.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660x-2006-early",
+      "model": "xt660x",
+      "year": "2006",
+      "market": "Early R/X · market unconfirmed",
+      "ecu": "5VK-8591A-01 · filename claim",
+      "firmware_ids": [
+        "xt660-2004-2006-companion"
+      ],
+      "hardware": "early-reference",
+      "oxygen": "Not shown in the 2004 R/X diagram; applicability beyond that reference is conditional.",
+      "source_ids": [
+        "rx-2004",
+        "r-2004-parts"
+      ],
+      "notes": "2004–2006 comes from the companion filename; assigning it to this bike/year remains a candidate. Shared application research does not prove that year or connector hardware.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660x-2007",
+      "model": "xt660x",
+      "year": "2007",
+      "market": "R/X service supplement",
+      "ecu": "ECU label not established",
+      "firmware_ids": [],
+      "hardware": "rx-2007",
+      "oxygen": "O2 sensor present in the 2007 R/X supplement.",
+      "source_ids": [
+        "rx-2007"
+      ],
+      "notes": "Documentation only. The local 5VK-1X filename is not an exact 5VK-10 match. No firmware assigned.",
+      "association": "documentation-only"
+    },
+    {
+      "id": "xt660x-2008-candidate",
+      "model": "xt660x",
+      "year": "2008",
+      "market": "Market/model association unconfirmed",
+      "ecu": "5VK-8591A-1X · incomplete filename reference",
+      "firmware_ids": [
+        "xt660-5vk-1x-2008"
+      ],
+      "hardware": "unmatched",
+      "oxygen": "Not established for this supplied image. The 2007 supplement cannot prove its market/equipment.",
+      "source_ids": [
+        "rx-2007"
+      ],
+      "notes": "The filename says XT660, not R or X. Both model entries are candidates for the same image, not two independently identified ECUs. Its edit log prevents a stock claim.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660r-2004-early",
+      "model": "xt660r",
+      "year": "2004",
+      "market": "Early R/X · market unconfirmed",
+      "ecu": "5VK-8591A-01 · filename claim",
+      "firmware_ids": [
+        "xt660-2004-2006-companion"
+      ],
+      "hardware": "early-reference",
+      "oxygen": "Not shown in the 2004 R/X diagram; applicability beyond that reference is conditional.",
+      "source_ids": [
+        "rx-2004",
+        "r-2004-parts"
+      ],
+      "notes": "2004–2006 comes from the companion filename; assigning it to this bike/year remains a candidate. Shared application research does not prove that year or connector hardware.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660r-2005-early",
+      "model": "xt660r",
+      "year": "2005",
+      "market": "Early R/X · market unconfirmed",
+      "ecu": "5VK-8591A-01 · filename claim",
+      "firmware_ids": [
+        "xt660-2004-2006-companion"
+      ],
+      "hardware": "early-reference",
+      "oxygen": "Not shown in the 2004 R/X diagram; applicability beyond that reference is conditional.",
+      "source_ids": [
+        "rx-2004",
+        "r-2004-parts"
+      ],
+      "notes": "2004–2006 comes from the companion filename; assigning it to this bike/year remains a candidate. Shared application research does not prove that year or connector hardware.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660r-2006-early",
+      "model": "xt660r",
+      "year": "2006",
+      "market": "Early R/X · market unconfirmed",
+      "ecu": "5VK-8591A-01 · filename claim",
+      "firmware_ids": [
+        "xt660-2004-2006-companion"
+      ],
+      "hardware": "early-reference",
+      "oxygen": "Not shown in the 2004 R/X diagram; applicability beyond that reference is conditional.",
+      "source_ids": [
+        "rx-2004",
+        "r-2004-parts"
+      ],
+      "notes": "2004–2006 comes from the companion filename; assigning it to this bike/year remains a candidate. Shared application research does not prove that year or connector hardware.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660r-2007",
+      "model": "xt660r",
+      "year": "2007",
+      "market": "R/X service supplement",
+      "ecu": "5VK-8591A-10 · R 3S63 catalogue",
+      "firmware_ids": [],
+      "hardware": "rx-2007",
+      "oxygen": "O2 sensor present in the 2007 R/X supplement.",
+      "source_ids": [
+        "rx-2007",
+        "r-2007-parts"
+      ],
+      "notes": "Documentation only. The local 5VK-1X filename is not an exact 5VK-10 match. No firmware assigned.",
+      "association": "documentation-only"
+    },
+    {
+      "id": "xt660r-2008-candidate",
+      "model": "xt660r",
+      "year": "2008",
+      "market": "Market/model association unconfirmed",
+      "ecu": "5VK-8591A-1X · incomplete filename reference",
+      "firmware_ids": [
+        "xt660-5vk-1x-2008"
+      ],
+      "hardware": "unmatched",
+      "oxygen": "Not established for this supplied image. The 2007 supplement cannot prove its market/equipment.",
+      "source_ids": [
+        "rx-2007"
+      ],
+      "notes": "The filename says XT660, not R or X. Both model entries are candidates for the same image, not two independently identified ECUs. Its edit log prevents a stock claim.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660r-2008-brazil",
+      "model": "xt660r",
+      "year": "2008",
+      "market": "Brazil · 2C13",
+      "ecu": "2C1-8591A-00",
+      "firmware_ids": [
+        "xt660-2c1-00",
+        "xt660-2c1-00-immo-off"
+      ],
+      "hardware": "brazil-2c1-00",
+      "oxygen": "Not established from the reviewed evidence.",
+      "source_ids": [
+        "r-br-2008"
+      ],
+      "notes": "Part number is corroborated for this model/market. The extensionless files do not state a year; their link to this motorcycle is still by filename only.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660r-2012-brazil",
+      "model": "xt660r",
+      "year": "2012",
+      "market": "Brazil · 2C19 documented for 2014",
+      "ecu": "2C1-8591A-10",
+      "firmware_ids": [
+        "xt660-2c1-10",
+        "xt660-2c1-10-immo-off"
+      ],
+      "hardware": "brazil-2c1-10",
+      "oxygen": "Not yet established for this exact year/market.",
+      "source_ids": [
+        "r-br-2014"
+      ],
+      "notes": "2014 OEM catalogue confirms the ECU reference. Other years in this group remain the supplied 2012–2016 filename claim. The local bench-pin image is unverified and does not define the full harness.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660r-2013-brazil",
+      "model": "xt660r",
+      "year": "2013",
+      "market": "Brazil · 2C19 documented for 2014",
+      "ecu": "2C1-8591A-10",
+      "firmware_ids": [
+        "xt660-2c1-10",
+        "xt660-2c1-10-immo-off"
+      ],
+      "hardware": "brazil-2c1-10",
+      "oxygen": "Not yet established for this exact year/market.",
+      "source_ids": [
+        "r-br-2014"
+      ],
+      "notes": "2014 OEM catalogue confirms the ECU reference. Other years in this group remain the supplied 2012–2016 filename claim. The local bench-pin image is unverified and does not define the full harness.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660r-2014-brazil",
+      "model": "xt660r",
+      "year": "2014",
+      "market": "Brazil · 2C19 documented for 2014",
+      "ecu": "2C1-8591A-10",
+      "firmware_ids": [
+        "xt660-2c1-10",
+        "xt660-2c1-10-immo-off"
+      ],
+      "hardware": "brazil-2c1-10",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the 2014 Brazil 2C19 catalogue, figure 11 item 7.",
+      "source_ids": [
+        "r-br-2014"
+      ],
+      "notes": "2014 OEM catalogue confirms the ECU reference. Other years in this group remain the supplied 2012–2016 filename claim. The local bench-pin image is unverified and does not define the full harness.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660r-2015-brazil",
+      "model": "xt660r",
+      "year": "2015",
+      "market": "Brazil · 2C19 documented for 2014",
+      "ecu": "2C1-8591A-10",
+      "firmware_ids": [
+        "xt660-2c1-10",
+        "xt660-2c1-10-immo-off"
+      ],
+      "hardware": "brazil-2c1-10",
+      "oxygen": "Not yet established for this exact year/market.",
+      "source_ids": [
+        "r-br-2014"
+      ],
+      "notes": "2014 OEM catalogue confirms the ECU reference. Other years in this group remain the supplied 2012–2016 filename claim. The local bench-pin image is unverified and does not define the full harness.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660r-2016-brazil",
+      "model": "xt660r",
+      "year": "2016",
+      "market": "Brazil · 2C19 documented for 2014",
+      "ecu": "2C1-8591A-10",
+      "firmware_ids": [
+        "xt660-2c1-10",
+        "xt660-2c1-10-immo-off"
+      ],
+      "hardware": "brazil-2c1-10",
+      "oxygen": "Not yet established for this exact year/market.",
+      "source_ids": [
+        "r-br-2014"
+      ],
+      "notes": "2014 OEM catalogue confirms the ECU reference. Other years in this group remain the supplied 2012–2016 filename claim. The local bench-pin image is unverified and does not define the full harness.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660r-5vkl",
+      "model": "xt660r",
+      "year": "Year unconfirmed · 5VKL",
+      "market": "Europe / Chile / Venezuela / Israel / South Africa / Mexico",
+      "ecu": "5VK-8591A-11",
+      "firmware_ids": [
+        "xt660-5vk-11"
+      ],
+      "hardware": "r-5vkl",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the 5VKL parts catalogue.",
+      "source_ids": [
+        "r-5vkl"
+      ],
+      "notes": "The June 2013 publication identifies 5VKL and the part number. It does not identify the local dump model year. Firmware-to-ECU association is filename-based.",
+      "association": "candidate"
+    },
+    {
+      "id": "xt660z-2008",
+      "model": "xt660z",
+      "year": "2008",
+      "market": "Europe · 11D1",
+      "ecu": "11D-8591A-00",
+      "firmware_ids": [],
+      "hardware": "z-2008",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the 2008 parts catalogue.",
+      "source_ids": [
+        "z-name",
+        "z-parts"
+      ],
+      "notes": "No matching BIN or XDF in the supplied folder. This profile contains model/parts evidence only; XT660R/X pinouts and maps are not assigned.",
+      "association": "documentation-only"
+    },
+    {
+      "id": "tdm900-2002",
+      "model": "tdm900",
+      "year": "2002",
+      "market": "Europe 5PS1 / Oceania 5PS2",
+      "ecu": "ECU revision not matched",
+      "firmware_ids": [],
+      "hardware": "tdm-2002",
+      "oxygen": "Not established in this profile.",
+      "source_ids": [
+        "tdm-manual",
+        "tdm-parts"
+      ],
+      "notes": "Comparison only. The XT image’s second injector path does not establish TDM origin or interchangeability. No TDM dump or definition has been identified.",
+      "association": "comparison-only"
+    },
+    {
+      "id": "xt660r-2005-3s61",
+      "model": "xt660r",
+      "year": "2005",
+      "market": "3S61 parts-catalogue record",
+      "ecu": "5VK-8591A-00",
+      "firmware_ids": [],
+      "hardware": "r-3s61",
+      "oxygen": "Not shown in the early R/X reference; exact 3S61 equipment not independently inspected.",
+      "source_ids": [
+        "r-2005-parts",
+        "rx-2004"
+      ],
+      "notes": "The 3S61 catalogue identifies an ECU suffix different from the local companion filename. No exact -00 firmware is assigned; do not silently substitute the -01 file.",
+      "association": "documentation-only"
+    },
+    {
+      "id": "fowlers-xt660x-2004-1d23-010-united-kingdom",
+      "model": "xt660x",
+      "year": "2004",
+      "market": "United Kingdom · 1D23/010 · Standard catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-1d23",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660x-2004-1d23-010-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2004-1d23-010-united-kingdom",
+      "model_code": "1D23",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660x-2005-1d24-070-united-kingdom",
+      "model": "xt660x",
+      "year": "2005",
+      "market": "United Kingdom · 1D24/070 · Standard catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-1d24",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660x-2005-1d24-070-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2005-1d24-070-united-kingdom",
+      "model_code": "1D24",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660x-2005-1d24-010-europe",
+      "model": "xt660x",
+      "year": "2005",
+      "market": "Europe · 1D24/010 · Standard catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-1d24",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660x-2005-1d24-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2005-1d24-010-europe",
+      "model_code": "1D24",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660x-2006-1d26-010-europe",
+      "model": "xt660x",
+      "year": "2006",
+      "market": "Europe · 1D26/010 · Standard catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-1d26",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660x-2006-1d26-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2006-1d26-010-europe",
+      "model_code": "1D26",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660x-2006-1d26-070-united-kingdom",
+      "model": "xt660x",
+      "year": "2006",
+      "market": "United Kingdom · 1D26/070 · Standard catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-1d26",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660x-2006-1d26-070-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2006-1d26-070-united-kingdom",
+      "model_code": "1D26",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660x-2006-3s72-010-europe",
+      "model": "xt660x",
+      "year": "2006",
+      "market": "Europe · 3S72/010 · Standard catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s72",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660x-2006-3s72-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2006-3s72-010-europe",
+      "model_code": "3S72",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660x-2007-10s1-010-europe",
+      "model": "xt660x",
+      "year": "2007",
+      "market": "Europe · 10S1/010 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-10s1",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660x-2007-10s1-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2007-10s1-010-europe",
+      "model_code": "10S1",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660x-2007-10s1-070-united-kingdom",
+      "model": "xt660x",
+      "year": "2007",
+      "market": "United Kingdom · 10S1/070 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-10s1",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660x-2007-10s1-070-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2007-10s1-070-united-kingdom",
+      "model_code": "10S1",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660x-2007-11b1-010-europe",
+      "model": "xt660x",
+      "year": "2007",
+      "market": "Europe · 11B1/010 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-11b1",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660x-2007-11b1-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2007-11b1-010-europe",
+      "model_code": "11B1",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660x-2007-11b1-030-united-kingdom",
+      "model": "xt660x",
+      "year": "2007",
+      "market": "United Kingdom · 11B1/030 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-11b1",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660x-2007-11b1-030-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2007-11b1-030-united-kingdom",
+      "model_code": "11B1",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660x-2008-10s3-010-europe",
+      "model": "xt660x",
+      "year": "2008",
+      "market": "Europe · 10S3/010 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-10s3",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660x-2008-10s3-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2008-10s3-010-europe",
+      "model_code": "10S3",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660x-2008-10s3-070-united-kingdom",
+      "model": "xt660x",
+      "year": "2008",
+      "market": "United Kingdom · 10S3/070 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-10s3",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660x-2008-10s3-070-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2008-10s3-070-united-kingdom",
+      "model_code": "10S3",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660x-2008-11b2-010-europe",
+      "model": "xt660x",
+      "year": "2008",
+      "market": "Europe · 11B2/010 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-11b2",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660x-2008-11b2-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2008-11b2-010-europe",
+      "model_code": "11B2",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660x-2008-11b2-030-united-kingdom",
+      "model": "xt660x",
+      "year": "2008",
+      "market": "United Kingdom · 11B2/030 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-11b2",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660x-2008-11b2-030-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2008-11b2-030-united-kingdom",
+      "model_code": "11B2",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660x-2009-10s5-070-united-kingdom",
+      "model": "xt660x",
+      "year": "2009",
+      "market": "United Kingdom · 10S5/070 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-10s5",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660x-2009-10s5-070-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2009-10s5-070-united-kingdom",
+      "model_code": "10S5",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660x-2009-11b3-030-united-kingdom",
+      "model": "xt660x",
+      "year": "2009",
+      "market": "United Kingdom · 11B3/030 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-11b3",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660x-2009-11b3-030-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2009-11b3-030-united-kingdom",
+      "model_code": "11B3",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660x-2010-10s7-070-united-kingdom",
+      "model": "xt660x",
+      "year": "2010",
+      "market": "United Kingdom · 10S7/070 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-10s7",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660x-2010-10s7-070-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2010-10s7-070-united-kingdom",
+      "model_code": "10S7",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660x-2011-10s9-070-united-kingdom",
+      "model": "xt660x",
+      "year": "2011",
+      "market": "United Kingdom · 10S9/070 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-10s9",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660x-2011-10s9-070-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2011-10s9-070-united-kingdom",
+      "model_code": "10S9",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2004-5vk3-010-united-kingdom",
+      "model": "xt660r",
+      "year": "2004",
+      "market": "United Kingdom · 5VK3/010 · Standard catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5vk3",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660r-2004-5vk3-010-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2004-5vk3-010-united-kingdom",
+      "model_code": "5VK3",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2005-5vk4-010-europe",
+      "model": "xt660r",
+      "year": "2005",
+      "market": "Europe · 5VK4/010 · Standard catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5vk4",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660r-2005-5vk4-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2005-5vk4-010-europe",
+      "model_code": "5VK4",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660r-2005-5vk4-070-united-kingdom",
+      "model": "xt660r",
+      "year": "2005",
+      "market": "United Kingdom · 5VK4/070 · Standard catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5vk4",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660r-2005-5vk4-070-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2005-5vk4-070-united-kingdom",
+      "model_code": "5VK4",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2006-3s62-010-europe",
+      "model": "xt660r",
+      "year": "2006",
+      "market": "Europe · 3S62/010 · Standard catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s62",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660r-2006-3s62-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2006-3s62-010-europe",
+      "model_code": "3S62",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660r-2006-5vk6-010-europe",
+      "model": "xt660r",
+      "year": "2006",
+      "market": "Europe · 5VK6/010 · Standard catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5vk6",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660r-2006-5vk6-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2006-5vk6-010-europe",
+      "model_code": "5VK6",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660r-2006-5vk6-070-united-kingdom",
+      "model": "xt660r",
+      "year": "2006",
+      "market": "United Kingdom · 5VK6/070 · Standard catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5vk6",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660r-2006-5vk6-070-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2006-5vk6-070-united-kingdom",
+      "model_code": "5VK6",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2007-3s63-010-europe",
+      "model": "xt660r",
+      "year": "2007",
+      "market": "Europe · 3S63/010 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s63",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660r-2007-3s63-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2007-3s63-010-europe",
+      "model_code": "3S63",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660r-2007-3s63-030-united-kingdom",
+      "model": "xt660r",
+      "year": "2007",
+      "market": "United Kingdom · 3S63/030 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s63",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660r-2007-3s63-030-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2007-3s63-030-united-kingdom",
+      "model_code": "3S63",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2007-5vk8-010-europe",
+      "model": "xt660r",
+      "year": "2007",
+      "market": "Europe · 5VK8/010 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5vk8",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660r-2007-5vk8-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2007-5vk8-010-europe",
+      "model_code": "5VK8",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660r-2007-5vk8-060-united-kingdom",
+      "model": "xt660r",
+      "year": "2007",
+      "market": "United Kingdom · 5VK8/060 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5vk8",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660r-2007-5vk8-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2007-5vk8-060-united-kingdom",
+      "model_code": "5VK8",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2008-3s64-010-europe",
+      "model": "xt660r",
+      "year": "2008",
+      "market": "Europe · 3S64/010 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s64",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660r-2008-3s64-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2008-3s64-010-europe",
+      "model_code": "3S64",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660r-2008-3s64-030-united-kingdom",
+      "model": "xt660r",
+      "year": "2008",
+      "market": "United Kingdom · 3S64/030 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s64",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660r-2008-3s64-030-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2008-3s64-030-united-kingdom",
+      "model_code": "3S64",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2008-5vka-010-europe",
+      "model": "xt660r",
+      "year": "2008",
+      "market": "Europe · 5VKA/010 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5vka",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660r-2008-5vka-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2008-5vka-010-europe",
+      "model_code": "5VKA",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660r-2008-5vka-060-united-kingdom",
+      "model": "xt660r",
+      "year": "2008",
+      "market": "United Kingdom · 5VKA/060 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5vka",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660r-2008-5vka-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2008-5vka-060-united-kingdom",
+      "model_code": "5VKA",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2009-3s65-030-united-kingdom",
+      "model": "xt660r",
+      "year": "2009",
+      "market": "United Kingdom · 3S65/030 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s65",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660r-2009-3s65-030-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2009-3s65-030-united-kingdom",
+      "model_code": "3S65",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2009-5vkc-060-united-kingdom",
+      "model": "xt660r",
+      "year": "2009",
+      "market": "United Kingdom · 5VKC/060 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5vkc",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660r-2009-5vkc-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2009-5vkc-060-united-kingdom",
+      "model_code": "5VKC",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2010-3s66-030-united-kingdom",
+      "model": "xt660r",
+      "year": "2010",
+      "market": "United Kingdom · 3S66/030 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s66",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660r-2010-3s66-030-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2010-3s66-030-united-kingdom",
+      "model_code": "3S66",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2010-5vke-060-united-kingdom",
+      "model": "xt660r",
+      "year": "2010",
+      "market": "United Kingdom · 5VKE/060 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5vke",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660r-2010-5vke-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2010-5vke-060-united-kingdom",
+      "model_code": "5VKE",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2011-5vkg-060-united-kingdom",
+      "model": "xt660r",
+      "year": "2011",
+      "market": "United Kingdom · 5VKG/060 · Standard catalogue",
+      "ecu": "5VK-8591A-10 → 5VK-8591A-12 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5vkg",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660r-2011-5vkg-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2011-5vkg-060-united-kingdom",
+      "model_code": "5VKG",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660z-2008-11d1-010-europe",
+      "model": "xt660z",
+      "year": "2008",
+      "market": "Europe · 11D1/010 · Standard catalogue",
+      "ecu": "11D-8591A-00",
+      "firmware_ids": [],
+      "hardware": "catalogue-11d1",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660z-2008-11d1-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660z-2008-11d1-010-europe",
+      "model_code": "11D1",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660z-2009-11d2-010-united-kingdom",
+      "model": "xt660z",
+      "year": "2009",
+      "market": "United Kingdom · 11D2/010 · Standard catalogue",
+      "ecu": "11D-8591A-00",
+      "firmware_ids": [],
+      "hardware": "catalogue-11d2",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660z-2009-11d2-010-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660z-2009-11d2-010-united-kingdom",
+      "model_code": "11D2",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660z-2010-11d4-010-united-kingdom",
+      "model": "xt660z",
+      "year": "2010",
+      "market": "United Kingdom · 11D4/010 · Standard catalogue",
+      "ecu": "11D-8591A-00",
+      "firmware_ids": [],
+      "hardware": "catalogue-11d4",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660z-2010-11d4-010-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660z-2010-11d4-010-united-kingdom",
+      "model_code": "11D4",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660z-2010-11d6-010-united-kingdom",
+      "model": "xt660z",
+      "year": "2010",
+      "market": "United Kingdom · 11D6/010 · Standard catalogue",
+      "ecu": "11D-8591A-00",
+      "firmware_ids": [],
+      "hardware": "catalogue-11d6",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660z-2010-11d6-010-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660z-2010-11d6-010-united-kingdom",
+      "model_code": "11D6",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660z-2011-11d8-010-united-kingdom",
+      "model": "xt660z",
+      "year": "2011",
+      "market": "United Kingdom · 11D8/010 · Standard catalogue",
+      "ecu": "11D-8591A-00",
+      "firmware_ids": [],
+      "hardware": "catalogue-11d8",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660z-2011-11d8-010-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660z-2011-11d8-010-united-kingdom",
+      "model_code": "11D8",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660z-2012-11d9-010-united-kingdom",
+      "model": "xt660z",
+      "year": "2012",
+      "market": "United Kingdom · 11D9/010 · Standard catalogue",
+      "ecu": "11D-8591A-00",
+      "firmware_ids": [],
+      "hardware": "catalogue-11d9",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660z-2012-11d9-010-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660z-2012-11d9-010-united-kingdom",
+      "model_code": "11D9",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2002-5ps1-050-united-kingdom",
+      "model": "tdm900",
+      "year": "2002",
+      "market": "United Kingdom · 5PS1/050 · Standard catalogue",
+      "ecu": "5PS-8591A-00 → 5PS-8591A-02 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5ps1",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2002-5ps1-050-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2002-5ps1-050-united-kingdom",
+      "model_code": "5PS1",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2002-5ps1-051-united-kingdom",
+      "model": "tdm900",
+      "year": "2002",
+      "market": "United Kingdom · 5PS1/051 · Standard catalogue",
+      "ecu": "5PS-8591A-00 → 5PS-8591A-02 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5ps1",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2002-5ps1-051-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2002-5ps1-051-united-kingdom",
+      "model_code": "5PS1",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2002-5ps1-100-united-kingdom",
+      "model": "tdm900",
+      "year": "2002",
+      "market": "United Kingdom · 5PS1/100 · Standard catalogue",
+      "ecu": "5PS-8591A-00 → 5PS-8591A-02 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5ps1",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2002-5ps1-100-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2002-5ps1-100-united-kingdom",
+      "model_code": "5PS1",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2003-5ps4-060-united-kingdom",
+      "model": "tdm900",
+      "year": "2003",
+      "market": "United Kingdom · 5PS4/060 · Standard catalogue",
+      "ecu": "5PS-8591A-02",
+      "firmware_ids": [],
+      "hardware": "catalogue-5ps4",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2003-5ps4-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2003-5ps4-060-united-kingdom",
+      "model_code": "5PS4",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2003-5ps4-110-united-kingdom",
+      "model": "tdm900",
+      "year": "2003",
+      "market": "United Kingdom · 5PS4/110 · Standard catalogue",
+      "ecu": "5PS-8591A-02",
+      "firmware_ids": [],
+      "hardware": "catalogue-5ps4",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2003-5ps4-110-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2003-5ps4-110-united-kingdom",
+      "model_code": "5PS4",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2004-5ps6-050-united-kingdom",
+      "model": "tdm900",
+      "year": "2004",
+      "market": "United Kingdom · 5PS6/050 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5ps6",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2004-5ps6-050-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2004-5ps6-050-united-kingdom",
+      "model_code": "5PS6",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2004-5ps6-110-united-kingdom",
+      "model": "tdm900",
+      "year": "2004",
+      "market": "United Kingdom · 5PS6/110 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5ps6",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2004-5ps6-110-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2004-5ps6-110-united-kingdom",
+      "model_code": "5PS6",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2005-5ps8-010-europe",
+      "model": "tdm900",
+      "year": "2005",
+      "market": "Europe · 5PS8/010 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5ps8",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2005-5ps8-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2005-5ps8-010-europe",
+      "model_code": "5PS8",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-tdm900-2005-5ps8-040-united-kingdom",
+      "model": "tdm900",
+      "year": "2005",
+      "market": "United Kingdom · 5PS8/040 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5ps8",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2005-5ps8-040-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2005-5ps8-040-united-kingdom",
+      "model_code": "5PS8",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2005-5ps8-060-united-kingdom",
+      "model": "tdm900",
+      "year": "2005",
+      "market": "United Kingdom · 5PS8/060 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5ps8",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2005-5ps8-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2005-5ps8-060-united-kingdom",
+      "model_code": "5PS8",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2006-5psa-010-europe",
+      "model": "tdm900",
+      "year": "2006",
+      "market": "Europe · 5PSA/010 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5psa",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2006-5psa-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2006-5psa-010-europe",
+      "model_code": "5PSA",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-tdm900-2006-5psa-050-united-kingdom",
+      "model": "tdm900",
+      "year": "2006",
+      "market": "United Kingdom · 5PSA/050 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5psa",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2006-5psa-050-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2006-5psa-050-united-kingdom",
+      "model_code": "5PSA",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2006-5psa-060-united-kingdom",
+      "model": "tdm900",
+      "year": "2006",
+      "market": "United Kingdom · 5PSA/060 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5psa",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2006-5psa-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2006-5psa-060-united-kingdom",
+      "model_code": "5PSA",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2007-5psc-010-europe",
+      "model": "tdm900",
+      "year": "2007",
+      "market": "Europe · 5PSC/010 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5psc",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2007-5psc-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2007-5psc-010-europe",
+      "model_code": "5PSC",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-tdm900-2007-5psc-050-united-kingdom",
+      "model": "tdm900",
+      "year": "2007",
+      "market": "United Kingdom · 5PSC/050 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5psc",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2007-5psc-050-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2007-5psc-050-united-kingdom",
+      "model_code": "5PSC",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2007-5psc-060-united-kingdom",
+      "model": "tdm900",
+      "year": "2007",
+      "market": "United Kingdom · 5PSC/060 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5psc",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2007-5psc-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2007-5psc-060-united-kingdom",
+      "model_code": "5PSC",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2008-5pse-010-europe",
+      "model": "tdm900",
+      "year": "2008",
+      "market": "Europe · 5PSE/010 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5pse",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2008-5pse-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2008-5pse-010-europe",
+      "model_code": "5PSE",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-tdm900-2008-5pse-050-united-kingdom",
+      "model": "tdm900",
+      "year": "2008",
+      "market": "United Kingdom · 5PSE/050 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5pse",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2008-5pse-050-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2008-5pse-050-united-kingdom",
+      "model_code": "5PSE",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2008-5pse-060-united-kingdom",
+      "model": "tdm900",
+      "year": "2008",
+      "market": "United Kingdom · 5PSE/060 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5pse",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2008-5pse-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2008-5pse-060-united-kingdom",
+      "model_code": "5PSE",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2008-5psg-010-europe",
+      "model": "tdm900",
+      "year": "2008",
+      "market": "Europe · 5PSG/010 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5psg",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2008-5psg-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2008-5psg-010-europe",
+      "model_code": "5PSG",
+      "variant": "Standard catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-tdm900-2008-5psg-050-united-kingdom",
+      "model": "tdm900",
+      "year": "2008",
+      "market": "United Kingdom · 5PSG/050 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5psg",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2008-5psg-050-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2008-5psg-050-united-kingdom",
+      "model_code": "5PSG",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2008-5psg-060-united-kingdom",
+      "model": "tdm900",
+      "year": "2008",
+      "market": "United Kingdom · 5PSG/060 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5psg",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2008-5psg-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2008-5psg-060-united-kingdom",
+      "model_code": "5PSG",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2009-5psh-040-united-kingdom",
+      "model": "tdm900",
+      "year": "2009",
+      "market": "United Kingdom · 5PSH/040 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5psh",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2009-5psh-040-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2009-5psh-040-united-kingdom",
+      "model_code": "5PSH",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2010-5psk-040-united-kingdom",
+      "model": "tdm900",
+      "year": "2010",
+      "market": "United Kingdom · 5PSK/040 · Standard catalogue",
+      "ecu": "5PS-8591A-10 → 5PS-8591A-20 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-5psk",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2010-5psk-040-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2010-5psk-040-united-kingdom",
+      "model_code": "5PSK",
+      "variant": "Standard catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660x-2005-3s71-010-europe",
+      "model": "xt660x",
+      "year": "2005",
+      "market": "Europe · 3S71/010 · 25 kW restricted catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s71",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660x-2005-3s71-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2005-3s71-010-europe",
+      "model_code": "3S71",
+      "variant": "25 kW restricted catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660x-2005-3s71-030-united-kingdom",
+      "model": "xt660x",
+      "year": "2005",
+      "market": "United Kingdom · 3S71/030 · 25 kW restricted catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s71",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660x-2005-3s71-030-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2005-3s71-030-united-kingdom",
+      "model_code": "3S71",
+      "variant": "25 kW restricted catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660x-2006-3s72-030-united-kingdom",
+      "model": "xt660x",
+      "year": "2006",
+      "market": "United Kingdom · 3S72/030 · 25 kW restricted catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s72",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660x-2006-3s72-030-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660x-2006-3s72-030-united-kingdom",
+      "model_code": "3S72",
+      "variant": "25 kW restricted catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2005-3s61-010-europe",
+      "model": "xt660r",
+      "year": "2005",
+      "market": "Europe · 3S61/010 · 25 kW restricted catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s61",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660r-2005-3s61-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2005-3s61-010-europe",
+      "model_code": "3S61",
+      "variant": "25 kW restricted catalogue",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-xt660r-2005-3s61-030-united-kingdom",
+      "model": "xt660r",
+      "year": "2005",
+      "market": "United Kingdom · 3S61/030 · 25 kW restricted catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s61",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660r-2005-3s61-030-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2005-3s61-030-united-kingdom",
+      "model_code": "3S61",
+      "variant": "25 kW restricted catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660r-2006-3s62-030-united-kingdom",
+      "model": "xt660r",
+      "year": "2006",
+      "market": "United Kingdom · 3S62/030 · 25 kW restricted catalogue",
+      "ecu": "5VK-8591A-00 → 5VK-8591A-03 replacement",
+      "firmware_ids": [],
+      "hardware": "catalogue-3s62",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-xt660r-2006-3s62-030-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660r-2006-3s62-030-united-kingdom",
+      "model_code": "3S62",
+      "variant": "25 kW restricted catalogue",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-xt660z-2011-56p1-010-united-kingdom",
+      "model": "xt660z",
+      "year": "2011",
+      "market": "United Kingdom · 56P1/010 · ABS",
+      "ecu": "11D-8591A-00",
+      "firmware_ids": [],
+      "hardware": "catalogue-56p1",
+      "oxygen": "O2 sensor 1B9-8592A-00 listed in the inspected exhaust diagram.",
+      "source_ids": [
+        "fowlers-xt660z-2011-56p1-010-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-xt660z-2011-56p1-010-united-kingdom",
+      "model_code": "56P1",
+      "variant": "ABS",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2005-2b01-010-europe",
+      "model": "tdm900",
+      "year": "2005",
+      "market": "Europe · 2B01/010 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b01",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2005-2b01-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2005-2b01-010-europe",
+      "model_code": "2B01",
+      "variant": "ABS",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-tdm900-2005-2b01-040-united-kingdom",
+      "model": "tdm900",
+      "year": "2005",
+      "market": "United Kingdom · 2B01/040 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b01",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2005-2b01-040-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2005-2b01-040-united-kingdom",
+      "model_code": "2B01",
+      "variant": "ABS",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2005-2b01-060-united-kingdom",
+      "model": "tdm900",
+      "year": "2005",
+      "market": "United Kingdom · 2B01/060 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b01",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2005-2b01-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2005-2b01-060-united-kingdom",
+      "model_code": "2B01",
+      "variant": "ABS",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2006-2b02-010-europe",
+      "model": "tdm900",
+      "year": "2006",
+      "market": "Europe · 2B02/010 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b02",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2006-2b02-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2006-2b02-010-europe",
+      "model_code": "2B02",
+      "variant": "ABS",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-tdm900-2006-2b02-050-united-kingdom",
+      "model": "tdm900",
+      "year": "2006",
+      "market": "United Kingdom · 2B02/050 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b02",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2006-2b02-050-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2006-2b02-050-united-kingdom",
+      "model_code": "2B02",
+      "variant": "ABS",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2007-2b03-010-europe",
+      "model": "tdm900",
+      "year": "2007",
+      "market": "Europe · 2B03/010 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b03",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2007-2b03-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2007-2b03-010-europe",
+      "model_code": "2B03",
+      "variant": "ABS",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-tdm900-2007-2b03-050-united-kingdom",
+      "model": "tdm900",
+      "year": "2007",
+      "market": "United Kingdom · 2B03/050 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b03",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2007-2b03-050-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2007-2b03-050-united-kingdom",
+      "model_code": "2B03",
+      "variant": "ABS",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2008-2b04-010-europe",
+      "model": "tdm900",
+      "year": "2008",
+      "market": "Europe · 2B04/010 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b04",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2008-2b04-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2008-2b04-010-europe",
+      "model_code": "2B04",
+      "variant": "ABS",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-tdm900-2008-2b04-050-united-kingdom",
+      "model": "tdm900",
+      "year": "2008",
+      "market": "United Kingdom · 2B04/050 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b04",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2008-2b04-050-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2008-2b04-050-united-kingdom",
+      "model_code": "2B04",
+      "variant": "ABS",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2008-2b04-060-united-kingdom",
+      "model": "tdm900",
+      "year": "2008",
+      "market": "United Kingdom · 2B04/060 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b04",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2008-2b04-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2008-2b04-060-united-kingdom",
+      "model_code": "2B04",
+      "variant": "ABS",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2008-2b05-010-europe",
+      "model": "tdm900",
+      "year": "2008",
+      "market": "Europe · 2B05/010 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b05",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2008-2b05-010-europe"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2008-2b05-010-europe",
+      "model_code": "2B05",
+      "variant": "ABS",
+      "country": "Europe"
+    },
+    {
+      "id": "fowlers-tdm900-2008-2b05-050-united-kingdom",
+      "model": "tdm900",
+      "year": "2008",
+      "market": "United Kingdom · 2B05/050 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b05",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2008-2b05-050-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2008-2b05-050-united-kingdom",
+      "model_code": "2B05",
+      "variant": "ABS",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2008-2b05-060-united-kingdom",
+      "model": "tdm900",
+      "year": "2008",
+      "market": "United Kingdom · 2B05/060 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b05",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2008-2b05-060-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2008-2b05-060-united-kingdom",
+      "model_code": "2B05",
+      "variant": "ABS",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2009-2b07-040-united-kingdom",
+      "model": "tdm900",
+      "year": "2009",
+      "market": "United Kingdom · 2B07/040 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b07",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2009-2b07-040-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2009-2b07-040-united-kingdom",
+      "model_code": "2B07",
+      "variant": "ABS",
+      "country": "United Kingdom"
+    },
+    {
+      "id": "fowlers-tdm900-2010-2b08-040-united-kingdom",
+      "model": "tdm900",
+      "year": "2010",
+      "market": "United Kingdom · 2B08/040 · ABS",
+      "ecu": "5PS-8591A-20",
+      "firmware_ids": [],
+      "hardware": "catalogue-2b08",
+      "oxygen": "No oxygen-sensor entry was recovered from the three inspected assemblies. This alone does not prove absence from the motorcycle.",
+      "source_ids": [
+        "fowlers-tdm900-2010-2b08-040-united-kingdom"
+      ],
+      "notes": "Catalogue model/year/market is identified. No supplied BIN is assigned to this exact catalogue record. ECU replacements and shared sensor part numbers do not establish firmware interchangeability or scaling.",
+      "association": "catalogue-documented",
+      "parts_record": "fowlers-tdm900-2010-2b08-040-united-kingdom",
+      "model_code": "2B08",
+      "variant": "ABS",
+      "country": "United Kingdom"
+    }
+  ],
+  "sources": [
+    {
+      "id": "launch-rx",
+      "title": "Yamaha 2003 announcement: XT660R and XT660X for the 2004 European market",
+      "url": "https://global.yamaha-motor.com/news/2003/1022/tms-04.html",
+      "locator": "XT660R [XT660X] section",
+      "claim": "R is the trail model; X is the supermoto variation. Both are 660 cc fuel-injected singles. XT600E is their predecessor, not this firmware family.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "rx-2004",
+      "title": "Yamaha XT660R(S)/XT660X(S) 2004 service manual",
+      "url": "https://scootertuub.nl/motoren/Yamaha/Yamaha%20XT%20660%20R%20X%202004%20Service%20Manual%20%20.pdf",
+      "locator": "Wiring diagram; PDF pages 345 and 462",
+      "claim": "Early R/X wiring reference used in the existing connector study. No O2 sensor is shown in this diagram. This does not establish every later market specification.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "r-2004-parts",
+      "title": "Yamaha XT660R 5VK1 parts catalogue",
+      "url": "https://www.xt660.cz/katalogy/XT66R-04_DM011_5VK1.pdf",
+      "locator": "Electrical 1, PDF page 43",
+      "claim": "Lists 5VK-8591A-00 and 5VK-8591A-01 ECU references. Model-year association comes from the host catalogue index/filename; the 2008 copyright is a catalogue reprint date.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "rx-2007",
+      "title": "Yamaha XT660R(W)/XT660X(W) 2007 supplementary service manual",
+      "url": "https://www.motomatrix.co.uk/yamaha-pdf/XT660X-R2007_Suppl_manual.pdf",
+      "locator": "PDF pages 55, 56 and 79–81; wiring legend item 68",
+      "claim": "The 2007 R/X supplement adds an O2 sensor and its feedback/fault handling. Use with the 2004 base manual; do not reuse the early connector as a verified 2007 pinout.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "r-2007-parts",
+      "title": "Yamaha XT660R 3S63 parts catalogue",
+      "url": "https://www.xt660.cz/katalogy/XT66R-07_DM01A_3S63.pdf",
+      "locator": "Electrical 1, PDF page 43",
+      "claim": "Lists 5VK-8591A-10 and harness 5VK-H2590-20. This is a specific model-code record, not every R/X market.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "r-br-2008",
+      "title": "Yamaha XT660R 2C13 Brazil parts catalogue, January 2008",
+      "url": "https://www.pecasoriginaisyamaha.com.br/pdfs/on-off-road/XT%20660R/XT660R%2708%20%282C13%29%20BRASIL.pdf",
+      "locator": "Cover; Electrical 1, figure 43 item 13",
+      "claim": "Brazil 2C13 catalogue identifies ECU 2C1-8591A-00. Matching a local filename to this part number is not a dump-year or hardware identity check. Harness reference is 5VK-H2590-10, distinct from the later -20 reference.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "r-br-2014",
+      "title": "Yamaha XT660R 2C19 Brazil parts catalogue, July 2013 edition",
+      "url": "https://www.pecasoriginaisyamaha.com.br/pdfs/on-off-road/XT%20660R/XT660R%2714%20%282C19%29%20BRASIL.pdf",
+      "locator": "Cover/chassis 9C6KM0030E…; figure 43 item 13, printed page 58; figure 11 item 7, printed page 13",
+      "claim": "2014 2C19 catalogue lists ECU 2C1-8591A-10 and harness 5VK-H2590-20. It corroborates 2014, not the entire 2012–2016 filename range. Exhaust figure 11 lists oxygen sensor 1B9-8592A-00.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "r-5vkl",
+      "title": "Yamaha XT660R 5VKL catalogue 1N5VK-300S1, June 2013 edition",
+      "url": "https://www.yamotos.com.co/pdf/todo/xt660r.pdf",
+      "locator": "Cover; PDF page 19 exhaust; page 65 electrical 1",
+      "claim": "5VKL for Europe, Chile/Venezuela, Israel/South Africa and Mexico uses 5VK-8591A-11; exhaust lists 1B9-8592A-00 oxygen sensor. Publication date alone is not the supplied dump model year.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "z-name",
+      "title": "Yamaha product library: XT660Z-Tenere, Europe, 2008",
+      "url": "https://global.yamaha-motor.com/showroom/library/detail.php?id=AP000218782",
+      "locator": "Model name / area / model year",
+      "claim": "The Ténéré is XT660Z. No XT660T firmware is identified in this dataset.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "z-parts",
+      "title": "Yamaha XT660Z 2008 parts catalogue 1G11D300E1",
+      "url": "https://www.xt660.cz/katalogy/XT66Z-08_DM021_11D1.pdf",
+      "locator": "Electrical 1, PDF page 43 item 27; exhaust figure 12 item 2",
+      "claim": "Lists ECU 11D-8591A-00, harness 11D-H2590-00 and oxygen sensor 1B9-8592A-00. No matching local firmware was identified.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "tdm-manual",
+      "title": "Yamaha TDM900 2002 service manual",
+      "url": "https://biker.ee/manuals/yamaha/Yamaha-TDM900-2002-2007_Workshop_Service_Repair_Manual.pdf",
+      "locator": "Model identification/specifications and fuel-injection wiring",
+      "claim": "TDM900 is a separate twin-cylinder comparison platform. Similar fallback values and dormant second-channel code do not identify an XT dump as TDM firmware.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "tdm-parts",
+      "title": "Yamaha TDM900 5PS1 Europe / TDM900P 5PS2 Oceania parts catalogue",
+      "url": "https://www.pecasoriginaisyamaha.com.br/pdfs/on-off-road/TDM%20900/38_2002.pdf",
+      "locator": "Cover/model identification",
+      "claim": "Documents distinct 5PS model codes. No TDM-labelled or proven TDM firmware exists in the supplied folder.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "r-2005-parts",
+      "title": "Yamaha XT660R 3S61 parts catalogue",
+      "url": "https://www.xt660.cz/katalogy/XT66R-05_DM016_3S61.pdf",
+      "locator": "Electrical 1, PDF page 43 items 13 and 20",
+      "claim": "The 2005-indexed 3S61 record lists 5VK-8591A-00 and harness 5VK-H2590-00. It does not match the local companion filename 5VK-8591A-01 exactly.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2004-1d23-010-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660X (1D23, 2004) 010 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2004/model/xt660x-1d23-2004-010-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2005-1d24-070-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660X (1D24, 2005) 070 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2005/model/xt660x-1d24-2005-070-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2005-1d24-010-europe",
+      "title": "Fowlers Yamaha parts: XT660X XT600X (1D24, 2005) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2005/model/xt660x-xt600x-1d24-2005-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2006-1d26-010-europe",
+      "title": "Fowlers Yamaha parts: XT660X (1D26, 2006) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2006/model/xt660x-1d26-2006-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2006-1d26-070-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660X (1D26, 2006) 070 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2006/model/xt660x-1d26-2006-070-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2006-3s72-010-europe",
+      "title": "Fowlers Yamaha parts: XT660X (3S72, 2006) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2006/model/xt660x-3s72-2006-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2007-10s1-010-europe",
+      "title": "Fowlers Yamaha parts: XT660X (10S1, 2007) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2007/model/xt660x-10s1-2007-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2007-10s1-070-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660X (10S1, 2007) 070 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2007/model/xt660x-10s1-2007-070-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2007-11b1-010-europe",
+      "title": "Fowlers Yamaha parts: XT660X (11B1, 2007) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2007/model/xt660x-11b1-2007-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2007-11b1-030-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660X (11B1, 2007) 030 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2007/model/xt660x-11b1-2007-030-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2008-10s3-010-europe",
+      "title": "Fowlers Yamaha parts: XT660X (10S3, 2008) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2008/model/xt660x-10s3-2008-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2008-10s3-070-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660X (10S3, 2008) 070 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2008/model/xt660x-10s3-2008-070-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2008-11b2-010-europe",
+      "title": "Fowlers Yamaha parts: XT660X (11B2, 2008) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2008/model/xt660x-11b2-2008-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2008-11b2-030-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660X (11B2, 2008) 030 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2008/model/xt660x-11b2-2008-030-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2009-10s5-070-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660X (10S5, 2009) 070 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2009/model/xt660x-10s5-2009-070-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2009-11b3-030-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660X (11B3, 2009) 030 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2009/model/xt660x-11b3-2009-030-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2010-10s7-070-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660X (10S7, 2010) 070 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2010/model/xt660x-10s7-2010-070-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2011-10s9-070-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660X (10S9, 2011) 070 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x/year/2011/model/xt660x-10s9-2011-070-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2004-5vk3-010-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R (5VK3, 2004) 010 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2004/model/xt660r-5vk3-2004-010-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2005-5vk4-010-europe",
+      "title": "Fowlers Yamaha parts: XT660R (5VK4, 2005) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2005/model/xt660r-5vk4-2005-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2005-5vk4-070-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R (5VK4, 2005) 070 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2005/model/xt660r-5vk4-2005-070-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2006-3s62-010-europe",
+      "title": "Fowlers Yamaha parts: XT660R (3S62, 2006) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2006/model/xt660r-3s62-2006-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2006-5vk6-010-europe",
+      "title": "Fowlers Yamaha parts: XT660R (5VK6, 2006) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2006/model/xt660r-5vk6-2006-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2006-5vk6-070-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R (5VK6, 2006) 070 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2006/model/xt660r-5vk6-2006-070-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2007-3s63-010-europe",
+      "title": "Fowlers Yamaha parts: XT660R (3S63, 2007) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2007/model/xt660r-3s63-2007-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2007-3s63-030-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R (3S63, 2007) 030 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2007/model/xt660r-3s63-2007-030-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2007-5vk8-010-europe",
+      "title": "Fowlers Yamaha parts: XT660R (5VK8, 2007) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2007/model/xt660r-5vk8-2007-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2007-5vk8-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R (5VK8, 2007) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2007/model/xt660r-5vk8-2007-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2008-3s64-010-europe",
+      "title": "Fowlers Yamaha parts: XT660R (3S64, 2008) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2008/model/xt660r-3s64-2008-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2008-3s64-030-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R (3S64, 2008) 030 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2008/model/xt660r-3s64-2008-030-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2008-5vka-010-europe",
+      "title": "Fowlers Yamaha parts: XT660R (5VKA, 2008) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2008/model/xt660r-5vka-2008-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2008-5vka-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R (5VKA, 2008) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2008/model/xt660r-5vka-2008-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2009-3s65-030-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R (3S65, 2009) 030 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2009/model/xt660r-3s65-2009-030-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2009-5vkc-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R (5VKC, 2009) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2009/model/xt660r-5vkc-2009-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2010-3s66-030-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R (3S66, 2010) 030 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2010/model/xt660r-3s66-2010-030-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2010-5vke-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R (5VKE, 2010) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2010/model/xt660r-5vke-2010-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2011-5vkg-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R (5VKG, 2011) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r/year/2011/model/xt660r-5vkg-2011-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660z-2008-11d1-010-europe",
+      "title": "Fowlers Yamaha parts: XT660Z TENERE (11D1, 2008) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660z-tenere/year/2008/model/xt660z-tenere-11d1-2008-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660z-2009-11d2-010-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660Z TENERE (11D2, 2009) 010 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660z-tenere/year/2009/model/xt660z-tenere-11d2-2009-010-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660z-2010-11d4-010-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660Z S.TENERE (11D4, 2010) 010 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660z-tenere/year/2010/model/xt660z-s.tenere-11d4-2010-010-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660z-2010-11d6-010-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660Z S.TENERE (11D6, 2010) 010 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660z-tenere/year/2010/model/xt660z-s.tenere-11d6-2010-010-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660z-2011-11d8-010-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660Z (11D8, 2011) 010 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660z-tenere/year/2011/model/xt660z-11d8-2011-010-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660z-2012-11d9-010-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660Z (11D9, 2012) 010 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660z-tenere/year/2012/model/xt660z-11d9-2012-010-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2002-5ps1-050-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PS1, 2002) 050 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2002/model/tdm900-5ps1-2002-050-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2002-5ps1-051-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PS1, 2002) 051 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2002/model/tdm900-5ps1-2002-051-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2002-5ps1-100-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PS1, 2002) 100 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2002/model/tdm900-5ps1-2002-100-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2003-5ps4-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PS4, 2003) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2003/model/tdm900-5ps4-2003-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2003-5ps4-110-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PS4, 2003) 110 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2003/model/tdm900-5ps4-2003-110-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2004-5ps6-050-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PS6, 2004) 050 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2004/model/tdm900-5ps6-2004-050-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2004-5ps6-110-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PS6, 2004) 110 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2004/model/tdm900-5ps6-2004-110-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2005-5ps8-010-europe",
+      "title": "Fowlers Yamaha parts: TDM900 (5PS8, 2005) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2005/model/tdm900-5ps8-2005-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2005-5ps8-040-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PS8, 2005) 040 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2005/model/tdm900-5ps8-2005-040-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2005-5ps8-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PS8, 2005) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2005/model/tdm900-5ps8-2005-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2006-5psa-010-europe",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSA, 2006) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2006/model/tdm900-5psa-2006-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2006-5psa-050-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSA, 2006) 050 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2006/model/tdm900-5psa-2006-050-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2006-5psa-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSA, 2006) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2006/model/tdm900-5psa-2006-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2007-5psc-010-europe",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSC, 2007) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2007/model/tdm900-5psc-2007-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2007-5psc-050-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSC, 2007) 050 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2007/model/tdm900-5psc-2007-050-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2007-5psc-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSC, 2007) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2007/model/tdm900-5psc-2007-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2008-5pse-010-europe",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSE, 2008) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2008/model/tdm900-5pse-2008-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2008-5pse-050-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSE, 2008) 050 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2008/model/tdm900-5pse-2008-050-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2008-5pse-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSE, 2008) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2008/model/tdm900-5pse-2008-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2008-5psg-010-europe",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSG, 2008) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2008/model/tdm900-5psg-2008-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2008-5psg-050-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSG, 2008) 050 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2008/model/tdm900-5psg-2008-050-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2008-5psg-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSG, 2008) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2008/model/tdm900-5psg-2008-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2009-5psh-040-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSH, 2009) 040 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2009/model/tdm900-5psh-2009-040-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2010-5psk-040-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900 (5PSK, 2010) 040 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900/year/2010/model/tdm900-5psk-2010-040-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2005-3s71-010-europe",
+      "title": "Fowlers Yamaha parts: XT660X XT660X 25KW (3S71, 2005) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x-25kw-restricted/year/2005/model/xt660x-xt660x-25kw-3s71-2005-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2005-3s71-030-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660X XT660X 25KW (3S71, 2005) 030 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x-25kw-restricted/year/2005/model/xt660x-xt660x-25kw-3s71-2005-030-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660x-2006-3s72-030-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660X XT660X 25KW (3S72, 2006) 030 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660x-25kw-restricted/year/2006/model/xt660x-xt660x-25kw-3s72-2006-030-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2005-3s61-010-europe",
+      "title": "Fowlers Yamaha parts: XT660R XT660R 25KW (3S61, 2005) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r-25kw-restricted/year/2005/model/xt660r-xt660r-25kw-3s61-2005-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2005-3s61-030-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R XT660R 25KW (3S61, 2005) 030 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r-25kw-restricted/year/2005/model/xt660r-xt660r-25kw-3s61-2005-030-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660r-2006-3s62-030-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660R XT660R 25KW (3S62, 2006) 030 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660r-25kw-restricted/year/2006/model/xt660r-xt660r-25kw-3s62-2006-030-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-xt660z-2011-56p1-010-united-kingdom",
+      "title": "Fowlers Yamaha parts: XT660ZA S.TENERE (56P1, 2011) 010 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/xt660z-abs-tenere/year/2011/model/xt660za-s.tenere-56p1-2011-010-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2005-2b01-010-europe",
+      "title": "Fowlers Yamaha parts: TDM900A (2B01, 2005) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2005/model/tdm900a-2b01-2005-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2005-2b01-040-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900A (2B01, 2005) 040 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2005/model/tdm900a-2b01-2005-040-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2005-2b01-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900A (2B01, 2005) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2005/model/tdm900a-2b01-2005-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2006-2b02-010-europe",
+      "title": "Fowlers Yamaha parts: TDM900A (2B02, 2006) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2006/model/tdm900a-2b02-2006-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2006-2b02-050-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900A (2B02, 2006) 050 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2006/model/tdm900a-2b02-2006-050-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2007-2b03-010-europe",
+      "title": "Fowlers Yamaha parts: TDM900A (2B03, 2007) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2007/model/tdm900a-2b03-2007-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2007-2b03-050-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900A (2B03, 2007) 050 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2007/model/tdm900a-2b03-2007-050-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2008-2b04-010-europe",
+      "title": "Fowlers Yamaha parts: TDM900A (2B04, 2008) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2008/model/tdm900a-2b04-2008-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2008-2b04-050-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900A (2B04, 2008) 050 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2008/model/tdm900a-2b04-2008-050-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2008-2b04-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900A (2B04, 2008) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2008/model/tdm900a-2b04-2008-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2008-2b05-010-europe",
+      "title": "Fowlers Yamaha parts: TDM900A (2B05, 2008) 010 A / Europe",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2008/model/tdm900a-2b05-2008-010-a/country/europe",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2008-2b05-050-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900A (2B05, 2008) 050 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2008/model/tdm900a-2b05-2008-050-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2008-2b05-060-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900A (2B05, 2008) 060 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2008/model/tdm900a-2b05-2008-060-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2009-2b07-040-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900A (2B07, 2009) 040 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2009/model/tdm900a-2b07-2009-040-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    },
+    {
+      "id": "fowlers-tdm900-2010-2b08-040-united-kingdom",
+      "title": "Fowlers Yamaha parts: TDM900A (2B08, 2010) 040 A / United Kingdom",
+      "url": "https://www.fowlersparts.co.uk/browser/manufacturer/yamaha/bike/tdm900-abs/year/2010/model/tdm900a-2b08-2010-040-a/country/united-kingdom",
+      "locator": "Electrical 1, Electrical 2 and Exhaust assemblies; individual part rows link their exact diagram.",
+      "claim": "Model/year/country and ECU/harness/sensor references transcribed from the Yamaha parts listings. Listed replacement part numbers are recorded separately from the parts they replace. This establishes catalogue applicability, not the fitted ECU label, connector wiring or BIN identity.",
+      "checked_on": "2026-10-30"
+    }
+  ],
+  "scope_rules": {
+    "primary": "Only images explicitly assigned map_catalog=primary share the 71-map study. No other firmware inherits the units, control-flow tests or MCU pin claims.",
+    "hardware": "Interactive MCU/connector study is scoped to the owner image and early R/X reference, with its existing conditional package identity. Other profiles show their own source records.",
+    "years": "Only listed evidence is represented. A year in the selector is not a claim that the supplied dump was read from that year. See association and source notes."
+  }
+}

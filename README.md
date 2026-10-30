@@ -1,22 +1,28 @@
-# Yamaha XT660 firmware research
+# Yamaha ECU Research
 
-## Firmware library
+## Model, year, market, ECU and firmware
 
-The repository supports multiple BINs through a [firmware registry](firmware/registry.json) and [website library](https://terrafirma2021.github.io/xt660x-2005/firmware/). It contains the original 2005-labelled owner dump, the matching 2004–06-labelled companion with boot code, and the separately labelled checksum-corrected derivative. These source-year claims do not establish two distinct factory revisions. Existing map URLs stay stable.
+The repository supports multiple BINs through a [firmware registry](firmware/registry.json) and [website library](https://terrafirma2021.github.io/xt660x-2005/firmware/). It now contains nine image records: seven distinct files from the complete Desktop/XT660 inventory, the original owner dump and its corrected derivative. The static website carries the selected motorcycle, year, market, ECU and firmware through maps, wiring, pins and research. Existing URLs stay stable.
 
-All 71 stored map bodies and stored axes match across the three registered files; application differences are explicitly checked. The companion has a separate [boot breakdown](analysis/firmware/xt660-2004-2006-companion/BOOT.md), disassembly, pseudocode and byte-accounting report. Its boot has not inherited the application execution-test status.
+All 71 stored map bodies and stored axes match across the owner image, corrected derivative and 2004–06 companion only; application differences are explicitly checked. The companion has a separate [boot breakdown](analysis/firmware/xt660-2004-2006-companion/BOOT.md), disassembly, pseudocode and byte-accounting report. Its boot has not inherited the application execution-test status.
 
 [Adding another image](firmware/ADDING_IMAGES.md) documents the importer and review workflow. New images start unreviewed and do not inherit map or pin claims.
 
+The [dataset guide](dataset/README.md) explains the 21 preserved sources, 110 applicability profiles, including 89 Fowlers model/market records and manufacturer references. XT660X, XT660R and XT660Z Ténéré have separate entries; TDM900 is comparison-only with no matched dump. Later revisions do not inherit the original maps or connector claims.
+
+## Original application study
+
+The following analysis statistics concern the original owner image and explicitly byte-matched companions. They do not describe all nine images.
+
 A reverse-engineering project for the Yamaha XT660X 2005 firmware image. The repository contains the unchanged binary, structured C, an address-preserving compilable C translation of every decoded instruction, a complete byte listing, calibration analysis, and an annotated Ghidra program.
 
-**[Open the XT660X research website](https://terrafirma2021.github.io/xt660x-2005/)** for the project overview, searchable map catalogue, [MCU pin explorer](https://terrafirma2021.github.io/xt660x-2005/pins/) and research library. GitHub Pages rebuilds and deploys it after pushes to `main`; refresh the page after deployment to see the latest version.
+**[Open Yamaha ECU Research](https://terrafirma2021.github.io/xt660x-2005/)** for the project overview, searchable map catalogue, [MCU pin explorer](https://terrafirma2021.github.io/xt660x-2005/pins/) and research library. GitHub Pages rebuilds and deploys it after pushes to `main`; refresh the page after deployment to see the latest version.
 
 The [content coverage index](https://terrafirma2021.github.io/xt660x-2005/coverage/) lists every tracked repository file. All Markdown documents are rendered on the website; supporting code, datasets, validation reports and firmware link to GitHub. This is repository coverage, not a claim that all physical meanings are resolved. The dark/light switch appears on every page and remembers your choice; otherwise it follows your system theme.
 
-All 71 map pages put their visual map directly below the title. The 52 one-dimensional maps include curve graphs; both temperature sensors include all 1,024 decoded ADC outputs and an optional, clearly conditional Celsius display. All map pages include colour-coded cell grids with raw axis headers, a per-map colour scale, exact values and selectable ROM addresses. The catalogue includes a colour preview for every map. Large grids scroll with fixed headers; arrow keys move between cells, and copyable text matrices remain available. Site validation checks all 8,275 displayed cells against the original image.
+All 71 map pages put their visual map directly below the title. The 52 one-dimensional maps include curve graphs; both temperature sensors include all 1,024 decoded ADC outputs and an optional, clearly conditional Celsius display. All map pages include colour-coded cell grids with raw axis headers, a per-map colour scale, exact values and selectable ROM addresses. The catalogue includes a colour preview for every map. Large grids default to fitting the whole map, with an optional scroll view; arrow keys move between cells, and copyable text matrices remain available. Site validation checks all 8,275 displayed cells against the original image.
 
-The website uses an XT660X motorsport design, with a 2005 motorcycle photograph, locally served typography and a keyboard-accessible preview of actual fuel, ignition and coolant map values. The same visual system carries through the map catalogue, pin explorer and research library. [Imagery, font credits and project independence](site/ASSET_CREDITS.md) are recorded separately from the technical evidence.
+The website uses a Yamaha motorsport design, locally served typography and a model-first research workspace. The 2005 XT660X photograph is only used as an X model reference; it is not presented as an R, Z or TDM. The same visual system carries through the map catalogue, pin explorer and research library. [Imagery, font credits and project independence](site/ASSET_CREDITS.md) are recorded separately from the technical evidence.
 
 The [verification ledger](analysis/semantics/VERIFICATION_LEDGER.md) tracks every map, MCU package position and drawn connector position. **Verified is final for a stated claim and evidence scope.** It distinguishes byte-exact extraction, code/register/pin cross-checks, datasheet/manual corroboration, software fixtures and physical sign-off. All 80 reference package assignments and all 35 firmware-linked register-to-pin chains have been reviewed; fitted MCU identity, external continuity and physical-unit gaps remain open. Pages deployment rejects stale ledger data or failed provenance checks.
 

@@ -1,4 +1,4 @@
-"""Build the XT660X research website from the repository's analysis files."""
+"""Build the Yamaha ECU research site with explicit vehicle/image applicability."""
 import html
 import json
 import os
@@ -9,7 +9,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import quote, unquote, urlsplit
 import markdown
-from site_home import build_home
+from site_vehicles import home as build_vehicle_home, context as vehicle_context, build_pages as build_vehicle_pages
 from site_firmware import build_library
 from firmware_catalog import build as build_firmware_catalog
 from site_map_grids import grid as map_grid, preview as map_preview, palette_css
@@ -41,15 +41,15 @@ def rel(target, current):
     return Path(os.path.relpath(target, Path(current).parent)).as_posix()
 
 def nav(current, active):
-    links = [('Overview', 'index.html'), ('Firmware', 'firmware/index.html'), ('Maps', 'maps/index.html'), ('MCU pins', 'pins/index.html'), ('Research', 'research/index.html')]
-    return '<header id="sitebar"><a class="brand" href="'+rel('index.html', current)+'"><span class="brand-mark"><img class="yamaha-logo" src="'+rel('assets/yamaha-motor-logo.png',current)+'" width="1042" height="360" alt="Yamaha Motor — Revs Your Heart"></span><span class="brand-model">XT660X<small>THE INSIDE LINE</small></span></a><nav aria-label="Main navigation">'+''.join(
+    links = [('Overview', 'index.html'), ('Firmware', 'firmware/index.html'), ('Maps', 'maps/index.html'), ('Wiring', 'wiring/index.html'), ('MCU pins', 'pins/index.html'), ('Research', 'research/index.html')]
+    return '<header id="sitebar"><a class="brand" href="'+rel('index.html', current)+'"><span class="brand-mark"><img class="yamaha-logo" src="'+rel('assets/yamaha-motor-logo.png',current)+'" width="1042" height="360" alt="Yamaha Motor — Revs Your Heart"></span><span class="brand-model">ECU RESEARCH<small>XT660 / TDM900 COMPARISON</small></span></a><nav aria-label="Main navigation">'+''.join(
         f'<a href="{rel(url,current)}"'+(' aria-current="page"' if label==active else '')+f'>{label}</a>' for label,url in links)+f'<a href="{REPO}">GitHub ↗</a><button id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">Dark theme</button></nav></header>'
 
 def theme_head(current):
-    return f'<link rel="stylesheet" href="{rel("assets/firmware.css",current)}?v={revision}"><link rel="stylesheet" href="{rel("assets/map-grid.css",current)}?v={revision}"><link rel="icon" href="{rel("assets/favicon.svg",current)}" type="image/svg+xml"><script src="{rel("assets/theme.js",current)}?v={revision}"></script><link rel="stylesheet" href="{rel("assets/theme.css",current)}?v={revision}">'
+    return f'<script>document.documentElement.classList.add("scope-pending")</script><link rel="stylesheet" href="{rel("assets/vehicles.css",current)}?v={revision}"><script src="{rel("assets/vehicles.js",current)}?v={revision}" defer></script><link rel="stylesheet" href="{rel("assets/firmware.css",current)}?v={revision}"><link rel="stylesheet" href="{rel("assets/map-grid.css",current)}?v={revision}"><link rel="icon" href="{rel("assets/favicon.svg",current)}" type="image/svg+xml"><script src="{rel("assets/theme.js",current)}?v={revision}"></script><link rel="stylesheet" href="{rel("assets/theme.css",current)}?v={revision}">'
 
 def shell(title, body, current, active, script=''):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Yamaha XT660 ECU research: firmware library, calibration maps, boot code, sensors and MCU pins."><title>{esc(title)} · XT660X Research</title><link rel="stylesheet" href="{rel('assets/site.css',current)}?v={revision}">{theme_head(current)}</head><body>{nav(current,active)}<main class="site-main">{body}</main><footer class="site-footer"><span>YAMAHA XT660 / FIRMWARE RESEARCH · <a href="{rel('coverage/index.html',current)}">Content coverage</a></span><span>Revision <a href="{REPO}/commit/{revision}">{revision}</a> · <a href="{rel("docs/repository/site/ASSET_CREDITS.html",current)}">Credits &amp; independence</a><br>Independent project. Not affiliated with Yamaha Motor.</span></footer>{script}</body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Yamaha XT660 ECU research: firmware library, calibration maps, boot code, sensors and MCU pins."><title>{esc(title)} · Yamaha ECU Research</title><link rel="stylesheet" href="{rel('assets/site.css',current)}?v={revision}">{theme_head(current)}</head><body>{nav(current,active)}{vehicle_context(current,rel)}<main class="site-main">{body}</main><footer class="site-footer"><span>YAMAHA / ECU RESEARCH · <a href="{rel('coverage/index.html',current)}">Content coverage</a></span><span>Revision <a href="{REPO}/commit/{revision}">{revision}</a> · <a href="{rel("docs/repository/site/ASSET_CREDITS.html",current)}">Credits &amp; independence</a><br>Independent project. Not affiliated with Yamaha Motor.</span></footer>{script}</body></html>'''
 
 def doc_link(name, label, current='index.html'):
     return f'<a href="{rel(doc_targets[(SOURCE/name).resolve()],current)}">{esc(label)} ↗</a>'
@@ -64,15 +64,17 @@ write('assets/map-grid.css', (ROOT/'site/assets/map-grid.css').read_text(encodin
 
 build_library(firmware_catalog,shell,write,REPO)
 write('firmware/catalog.json',json.dumps(firmware_catalog,indent=2)+'\n')
-home = build_home(maps, pins, write)
-write('index.html', shell('Yamaha XT660X / The inside line', home, 'index.html', 'Overview', f'<script src="assets/home.js?v={revision}" defer></script>'))
+build_vehicle_pages(shell,write,REPO)
+home = build_vehicle_home()
+write('index.html', shell('Yamaha ECU Research / Choose your motorcycle', home, 'index.html', 'Overview'))
 
 # Keep the accepted pin UI intact, adding only the shared website navigation.
 pin_page = (SOURCE / 'MCU_PIN_OVERVIEW.html').read_text(encoding='utf-8')
 pin_page = pin_page.replace('href="MCU_PIN_OVERVIEW.md"', 'href="../docs/semantics/MCU_PIN_OVERVIEW.html"')
 pin_page = pin_page.replace('href="ECU_CONNECTOR.md"', 'href="../docs/semantics/ECU_CONNECTOR.html"')
 pin_page = pin_page.replace('</head>', '<link rel="stylesheet" href="../assets/nav.css">'+theme_head('pins/index.html')+'</head>')
-pin_page = pin_page.replace('<body>', '<body>'+nav('pins/index.html', 'MCU pins'), 1)
+pin_page = pin_page.replace('<body>', '<body>'+nav('pins/index.html', 'MCU pins')+vehicle_context('pins/index.html',rel), 1)
+pin_page = pin_page.replace('<main>', '<main data-study="hardware">', 1)
 pin_page = pin_page.replace('</body>', '<footer class="independent-note">Independent XT660X project. Not affiliated with Yamaha Motor. <a href="../docs/repository/site/ASSET_CREDITS.html">Credits &amp; independence</a></footer></body>')
 write('pins/index.html', pin_page)
 for name in ('mcu_pin_overview.json','mcu_pin_overview.svg','ecu_connector.svg'):
@@ -94,10 +96,8 @@ for m in maps:
 statuses=sorted({u['status'] for u in units['maps']})
 kinds=sorted({m['kind'] for m in maps})
 map_body=f'''<div class="page-heading"><div class="kicker">Calibration catalogue</div><h1>Maps &amp; curves</h1><p>{len(maps)} recovered layouts, connected to the current physical-unit research. Open an entry for raw values, axes, consumers and unresolved questions.</p></div><div class="notice">All 71 entries now separate cell interpretation, input axes and remaining work. 64 have numeric, code, logical or conditional conversions; seven have joint arithmetic. These are not 71 fully verified tuning maps. Absolute spark BTDC and several physical scales remain open.</div><div class="filters"><label>Search<input id="map-search" type="search" placeholder="Fuel, spark, coolant, 0x1B66…"></label><label>Decoding status<select id="map-status"><option value="">All statuses</option>{''.join(f'<option>{esc(s)}</option>' for s in statuses)}</select></label><label>Layout<select id="map-kind"><option value="">All layouts</option>{''.join(f'<option>{esc(k)}</option>' for k in kinds)}</select></label></div><p id="map-count" class="result-count" aria-live="polite">{len(maps)} maps</p><div class="map-grid">{''.join(cards)}</div><p id="map-empty" hidden>No matching maps. Try a different search or filter.</p>'''
-firmware_choice = '<div class="firmware-choice"><label for="firmware-select">Firmware image</label><select id="firmware-select">'+''.join(f'<option value="{esc(i["id"])}">{esc(i["label"])}</option>' for i in firmware_catalog['images'])+'</select><p id="firmware-scope" aria-live="polite">Primary owner image. Select an image to see applicability.</p></div>'
-map_body=firmware_choice+map_body
-firmware_json=json.dumps(firmware_catalog).replace('<','\u003c')
-write('maps/index.html',shell('Maps & curves',map_body,'maps/index.html','Maps',f'<script id="firmware-data" type="application/json">{firmware_json}</script><script src="../assets/maps.js"></script><script src="../assets/firmware-maps.js"></script>'))
+map_body='<section data-study="primary"><p class="scope-primary-label">Primary application catalogue: the owner image and explicitly byte-matched companions only. Selection does not verify physical scales or motorcycle fitment.</p>'+map_body+'</section>'
+write('maps/index.html',shell('Maps & curves',map_body,'maps/index.html','Maps','<script src="../assets/maps.js"></script>'))
 
 groups=[('Verification', [('VERIFICATION_LEDGER.md','Every map and pin: verified claims and open requirements')]),
         ('Sensors & hardware', [('MCU_PIN_OVERVIEW.md','MCU pins and XT/TDM comparison'),('ECU_CONNECTOR.md','ECU connector positions and MCU links'),('IO_AND_DIAGNOSTICS.md','Sensor and output identities'),('COOLANT_AND_FAN.md','Coolant and fan control'),('TEMPERATURE_PROFILE.md','Temperature conversion research'),('PRESSURE_ESTIMATE.md','Pressure-estimate sources and tracking')]),
@@ -109,6 +109,7 @@ for title,items in groups:
     research+=f'<section class="research-group"><h2>{title}</h2><ul>'+''.join('<li>'+doc_link(file,label,'research/index.html')+'</li>' for file,label in items)+'</ul></section>'
 research+='</div><section class="progress-panel"><div><h2>Underlying code</h2><p>Address-preserving C, function coverage and the original analysis remain available for cross-checking.</p></div><div class="progress-links"><a href="../docs/full/README.html">Full decompilation guide ↗</a><a href="../docs/full/FUNCTION_INDEX.html">Function index ↗</a><a href="'+REPO+'">Repository and files ↗</a></div></section>'
 research+=f'<section class="progress-panel"><div><h2>Complete content index</h2><p>All {len(documents)} tracked Markdown documents are readable on this website. Code, data, validation reports and binaries are indexed with links to GitHub. The topic list above is a starting point, not the full inventory.</p></div><div class="progress-links"><a href="../coverage/">Search every repository file ↗</a><a href="../docs/repository/README.html">Project README ↗</a><a href="../docs/repository/ghidra/README.html">Ghidra setup and processor corrections ↗</a></div></section>'
+research='<section id="vehicle-research" class="vehicle-overview"></section><section data-study="primary">'+research+'</section>'
 write('research/index.html',shell('Research library',research,'research/index.html','Research'))
 
 inventory=[]
@@ -176,6 +177,10 @@ for source in documents:
         script=f'<script src="{rel("assets/map-grid.js",target)}?v={revision}" defer></script>'
     parser=LinkRewriter(source,target);parser.feed(rendered)
     body=f'<div class="doc-toolbar"><a href="{rel("research/index.html",target)}">← Research library</a><a href="{REPO}/blob/main/{quote(source.relative_to(ROOT).as_posix())}">View source on GitHub ↗</a></div><article class="document">'+''.join(parser.parts)+'</article>'
+    comparison_docs={'LOCAL_XDF_REVIEW.md','EXTERNAL_SCALE_CHECKS.md','WIDER_SCALING_RESEARCH.md','YAMAHA_SERVICE_TOOL.md'}
+    if source.is_relative_to(ROOT/'analysis') and not source.is_relative_to(ROOT/'analysis/firmware') and source.name not in comparison_docs:
+        scope='hardware' if source.name in ('MCU_PIN_OVERVIEW.md','ECU_CONNECTOR.md') else 'primary'
+        body=f'<section data-study="{scope}"><p class="scope-primary-label">Scope: original owner application / explicitly byte-matched companion. Existing code, scaling and hardware qualifications remain in force.</p>'+body+'</section>'
     write(target,shell(title,body,target,'Research',script))
 write('.nojekyll','')
 print(f'Built project website: home, {len(maps)} maps, pin explorer and {len(documents)} research documents.')

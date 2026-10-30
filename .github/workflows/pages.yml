@@ -1,4 +1,4 @@
-name: Publish XT660X research website
+name: Publish Yamaha ECU research website
 
 on:
   push:
@@ -29,6 +29,8 @@ jobs:
           python3 scripts/verify_map_names.py
           python3 scripts/build_verification_ledger.py --check
           python3 scripts/firmware_catalog.py --check
+          python3 scripts/dataset_inventory.py --check
+          python3 scripts/verify_vehicle_catalog.py
           python3 scripts/test_firmware_library.py
           python3 scripts/build_pages.py
           python3 scripts/verify_pages.py
