@@ -10,6 +10,8 @@ from pathlib import Path
 from urllib.parse import quote, unquote, urlsplit
 import markdown
 from site_home import build_home
+from site_firmware import build_library
+from firmware_catalog import build as build_firmware_catalog
 from site_map_grids import grid as map_grid, preview as map_preview, palette_css
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,6 +20,7 @@ SOURCE = ROOT / 'analysis/semantics'
 REPO = 'https://github.com/terrafirma2021/xt660x-2005'
 revision = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD'], cwd=ROOT, text=True).strip()
 esc = html.escape
+firmware_catalog = build_firmware_catalog()
 maps = json.loads((ROOT / 'analysis/maps.json').read_text())
 map_by_id = {m['id']: m for m in maps}
 units = json.loads((SOURCE / 'physical_units.json').read_text())
@@ -38,15 +41,15 @@ def rel(target, current):
     return Path(os.path.relpath(target, Path(current).parent)).as_posix()
 
 def nav(current, active):
-    links = [('Overview', 'index.html'), ('Maps', 'maps/index.html'), ('MCU pins', 'pins/index.html'), ('Research', 'research/index.html')]
+    links = [('Overview', 'index.html'), ('Firmware', 'firmware/index.html'), ('Maps', 'maps/index.html'), ('MCU pins', 'pins/index.html'), ('Research', 'research/index.html')]
     return '<header id="sitebar"><a class="brand" href="'+rel('index.html', current)+'"><span class="brand-mark"><img class="yamaha-logo" src="'+rel('assets/yamaha-motor-logo.png',current)+'" width="1042" height="360" alt="Yamaha Motor — Revs Your Heart"></span><span class="brand-model">XT660X<small>THE INSIDE LINE</small></span></a><nav aria-label="Main navigation">'+''.join(
         f'<a href="{rel(url,current)}"'+(' aria-current="page"' if label==active else '')+f'>{label}</a>' for label,url in links)+f'<a href="{REPO}">GitHub ↗</a><button id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">Dark theme</button></nav></header>'
 
 def theme_head(current):
-    return f'<link rel="stylesheet" href="{rel("assets/map-grid.css",current)}?v={revision}"><link rel="icon" href="{rel("assets/favicon.svg",current)}" type="image/svg+xml"><script src="{rel("assets/theme.js",current)}?v={revision}"></script><link rel="stylesheet" href="{rel("assets/theme.css",current)}?v={revision}">'
+    return f'<link rel="stylesheet" href="{rel("assets/firmware.css",current)}?v={revision}"><link rel="stylesheet" href="{rel("assets/map-grid.css",current)}?v={revision}"><link rel="icon" href="{rel("assets/favicon.svg",current)}" type="image/svg+xml"><script src="{rel("assets/theme.js",current)}?v={revision}"></script><link rel="stylesheet" href="{rel("assets/theme.css",current)}?v={revision}">'
 
 def shell(title, body, current, active, script=''):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Yamaha XT660X 2005 ECU research: firmware, calibration maps, sensors and MCU pins."><title>{esc(title)} · XT660X Research</title><link rel="stylesheet" href="{rel('assets/site.css',current)}?v={revision}">{theme_head(current)}</head><body>{nav(current,active)}<main class="site-main">{body}</main><footer class="site-footer"><span>YAMAHA XT660X / 2005 · <a href="{rel('coverage/index.html',current)}">Content coverage</a></span><span>Revision <a href="{REPO}/commit/{revision}">{revision}</a> · <a href="{rel("docs/repository/site/ASSET_CREDITS.html",current)}">Credits &amp; independence</a><br>Independent project. Not affiliated with Yamaha Motor.</span></footer>{script}</body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Yamaha XT660 ECU research: firmware library, calibration maps, boot code, sensors and MCU pins."><title>{esc(title)} · XT660X Research</title><link rel="stylesheet" href="{rel('assets/site.css',current)}?v={revision}">{theme_head(current)}</head><body>{nav(current,active)}<main class="site-main">{body}</main><footer class="site-footer"><span>YAMAHA XT660 / FIRMWARE RESEARCH · <a href="{rel('coverage/index.html',current)}">Content coverage</a></span><span>Revision <a href="{REPO}/commit/{revision}">{revision}</a> · <a href="{rel("docs/repository/site/ASSET_CREDITS.html",current)}">Credits &amp; independence</a><br>Independent project. Not affiliated with Yamaha Motor.</span></footer>{script}</body></html>'''
 
 def doc_link(name, label, current='index.html'):
     return f'<a href="{rel(doc_targets[(SOURCE/name).resolve()],current)}">{esc(label)} ↗</a>'
@@ -59,6 +62,8 @@ DEST.mkdir()
 shutil.copytree(ROOT / 'site/assets', DEST / 'assets')
 write('assets/map-grid.css', (ROOT/'site/assets/map-grid.css').read_text(encoding='utf-8')+'\n'+palette_css())
 
+build_library(firmware_catalog,shell,write,REPO)
+write('firmware/catalog.json',json.dumps(firmware_catalog,indent=2)+'\n')
 home = build_home(maps, pins, write)
 write('index.html', shell('Yamaha XT660X / The inside line', home, 'index.html', 'Overview', f'<script src="assets/home.js?v={revision}" defer></script>'))
 
@@ -89,7 +94,10 @@ for m in maps:
 statuses=sorted({u['status'] for u in units['maps']})
 kinds=sorted({m['kind'] for m in maps})
 map_body=f'''<div class="page-heading"><div class="kicker">Calibration catalogue</div><h1>Maps &amp; curves</h1><p>{len(maps)} recovered layouts, connected to the current physical-unit research. Open an entry for raw values, axes, consumers and unresolved questions.</p></div><div class="notice">All 71 entries now separate cell interpretation, input axes and remaining work. 64 have numeric, code, logical or conditional conversions; seven have joint arithmetic. These are not 71 fully verified tuning maps. Absolute spark BTDC and several physical scales remain open.</div><div class="filters"><label>Search<input id="map-search" type="search" placeholder="Fuel, spark, coolant, 0x1B66…"></label><label>Decoding status<select id="map-status"><option value="">All statuses</option>{''.join(f'<option>{esc(s)}</option>' for s in statuses)}</select></label><label>Layout<select id="map-kind"><option value="">All layouts</option>{''.join(f'<option>{esc(k)}</option>' for k in kinds)}</select></label></div><p id="map-count" class="result-count" aria-live="polite">{len(maps)} maps</p><div class="map-grid">{''.join(cards)}</div><p id="map-empty" hidden>No matching maps. Try a different search or filter.</p>'''
-write('maps/index.html',shell('Maps & curves',map_body,'maps/index.html','Maps','<script src="../assets/maps.js"></script>'))
+firmware_choice = '<div class="firmware-choice"><label for="firmware-select">Firmware image</label><select id="firmware-select">'+''.join(f'<option value="{esc(i["id"])}">{esc(i["label"])}</option>' for i in firmware_catalog['images'])+'</select><p id="firmware-scope" aria-live="polite">Primary owner image. Select an image to see applicability.</p></div>'
+map_body=firmware_choice+map_body
+firmware_json=json.dumps(firmware_catalog).replace('<','\u003c')
+write('maps/index.html',shell('Maps & curves',map_body,'maps/index.html','Maps',f'<script id="firmware-data" type="application/json">{firmware_json}</script><script src="../assets/maps.js"></script><script src="../assets/firmware-maps.js"></script>'))
 
 groups=[('Verification', [('VERIFICATION_LEDGER.md','Every map and pin: verified claims and open requirements')]),
         ('Sensors & hardware', [('MCU_PIN_OVERVIEW.md','MCU pins and XT/TDM comparison'),('ECU_CONNECTOR.md','ECU connector positions and MCU links'),('IO_AND_DIAGNOSTICS.md','Sensor and output identities'),('COOLANT_AND_FAN.md','Coolant and fan control'),('TEMPERATURE_PROFILE.md','Temperature conversion research'),('PRESSURE_ESTIMATE.md','Pressure-estimate sources and tracking')]),

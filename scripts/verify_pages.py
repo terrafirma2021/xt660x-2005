@@ -82,11 +82,15 @@ for m in json.loads((ROOT/'analysis/maps.json').read_text()):
         cell_count+=1
 assert len(cell_inks)==1,'Heatmap numbers must use consistent ink across values'
 assert not list(SITE.rglob('*.bin'))
-for route in ('index.html','maps/index.html','pins/index.html','research/index.html','coverage/index.html'):
+for route in ('index.html','maps/index.html','pins/index.html','research/index.html','coverage/index.html','firmware/index.html'):
     assert (SITE/route).is_file()
 tracked=subprocess.check_output(['git','ls-files','-z'],cwd=ROOT).decode('utf-8').strip('\0').split('\0')
 coverage=json.loads((SITE/'coverage/manifest.json').read_text())
 assert {f['path'] for f in coverage['files']}==set(tracked)
 assert coverage['rendered_documents']==sum(p.endswith('.md') for p in tracked)
 assert len(list((SITE/'docs').rglob('*.html')))==coverage['rendered_documents']
-print(f'Verified five site sections, 71 maps, {coverage["rendered_documents"]} documents, {cell_count} grid cells matched to firmware, 71 colour previews, {curve_count} curves, complete tracked-file index, theme assets and {count} local links; no firmware binary in site.')
+library=json.loads((SITE/'firmware/catalog.json').read_text(encoding='utf-8'))
+for item in library['images']:
+    assert (SITE/'firmware'/item['id']/'index.html').is_file()
+assert 'firmware-select' in (SITE/'maps/index.html').read_text(encoding='utf-8')
+print(f'Verified six site sections, 71 maps, {coverage["rendered_documents"]} documents, {cell_count} grid cells matched to firmware, 71 colour previews, {curve_count} curves, complete tracked-file index, theme assets and {count} local links; no firmware binary in site.')

@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "primary_id": "xt660x-2005-owner",
+  "images": [
+    {
+      "id": "xt660x-2005-owner",
+      "label": "XT660X 2005 \u00b7 owner dump",
+      "file": "firmware/XT660X 2005.bin",
+      "sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+      "base_address": 0,
+      "claimed_years": "2005",
+      "year_evidence": "Owner description / source filename; model year not independently verified",
+      "provenance": "Original owner-supplied XT660X 2005.bin",
+      "kind": "owner-supplied dump",
+      "analysis_status": "Application analysed; boot absent",
+      "map_catalog": "primary",
+      "reviewed_application_changes": [],
+      "notes": "Owner-confirmed immobilizer patch at 4E7D. Original bytes preserved.",
+      "size": 65536,
+      "end_address": 65535,
+      "startup_checksum": "AAD5",
+      "boot_status": "FF placeholder",
+      "boot_sha256": "d0ff1b294b5288d1ae1421eadf5b2d38a8752b76d472ff30bed9028e25b1c5b8",
+      "reset_vector": "FFFF",
+      "application_differences_from_primary": 0,
+      "changed_application_addresses": [],
+      "shared_map_count": 71
+    },
+    {
+      "id": "xt660-2004-2006-companion",
+      "label": "XT660 2004\u201306 \u00b7 companion",
+      "file": "firmware/images/xt660-2004-2006-companion.bin",
+      "sha256": "1abfbaa9018b5a26452df4c060265a791979b6016d57981fb95b50d7192cbe0b",
+      "base_address": 6144,
+      "claimed_years": "2004\u20132006",
+      "year_evidence": "Owner description / source filename; model year not independently verified",
+      "provenance": "Owner-supplied XT660 folder, original filename xt660 04-06(5vk-8591a-01).bin",
+      "kind": "companion dump",
+      "analysis_status": "Shared application; boot statically analysed",
+      "map_catalog": "primary",
+      "reviewed_application_changes": [
+        "4E7D"
+      ],
+      "notes": "Application differs from owner dump only at the known patch. Stored calibration cells and axes are identical. Authentication behavior differs; no claim of live ECU interchangeability.",
+      "size": 59392,
+      "end_address": 65535,
+      "startup_checksum": "AA55",
+      "boot_status": "populated",
+      "boot_sha256": "9f313f065e7f71309fb1c51f320d48f1d0a3ac72875464abded8e54fbc39df10",
+      "reset_vector": "F800",
+      "application_differences_from_primary": 1,
+      "changed_application_addresses": [
+        "4E7D"
+      ],
+      "shared_map_count": 71
+    },
+    {
+      "id": "xt660x-2005-checksum-fixed",
+      "label": "XT660X 2005 \u00b7 checksum-corrected copy",
+      "file": "firmware/XT660X 2005 startup-checksum-fixed.bin",
+      "sha256": "972ac93e76cb632470092d88c2a57e910daae69c02d6cdef52f1cad72f6909e7",
+      "base_address": 0,
+      "claimed_years": "2005",
+      "year_evidence": "Owner description / source filename; model year not independently verified",
+      "provenance": "Existing repository checksum correction",
+      "kind": "derived image",
+      "analysis_status": "Application analysed; boot absent",
+      "map_catalog": "primary",
+      "reviewed_application_changes": [
+        "F7FD"
+      ],
+      "notes": "Derived from owner dump by changing trailer byte F7FD. Software checksum passes; not hardware or flash validated.",
+      "size": 65536,
+      "end_address": 65535,
+      "startup_checksum": "AA55",
+      "boot_status": "FF placeholder",
+      "boot_sha256": "d0ff1b294b5288d1ae1421eadf5b2d38a8752b76d472ff30bed9028e25b1c5b8",
+      "reset_vector": "FFFF",
+      "application_differences_from_primary": 1,
+      "changed_application_addresses": [
+        "F7FD"
+      ],
+      "shared_map_count": 71
+    }
+  ],
+  "registry_sha256": "55882afcbfadf67755d5f30f3b0ed71f23b1830d23c7f34d93e224f897f3738b",
+  "maps_sha256": "06a9f0d3c7dad1b0100762d37ccd0977af407e105320bda90dfdc71e2a80f107"
+}

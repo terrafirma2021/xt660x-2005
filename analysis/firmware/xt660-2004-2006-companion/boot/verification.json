@@ -1,0 +1,17 @@
+{
+  "source_sha256": "1abfbaa9018b5a26452df4c060265a791979b6016d57981fb95b50d7192cbe0b",
+  "instruction_count": 675,
+  "instruction_bytes": 1676,
+  "bytes_accounted_for": 2048,
+  "functions": 19,
+  "functions_decompiled": 19,
+  "verification": "Extracted bytes and complete region accounting; not execution or hardware validation",
+  "artifacts": {
+    "boot_bytes.asm": "7fad255a45bb56a970d5e05f57d8c575ecf0d12bec93a4a518c73966bd0124a6",
+    "decompiled.c": "b820e7d19514905804476e4709c80c14ec79ea3ad572792076695ae60e9c495e",
+    "disassembly.tsv": "0fc0bfc6c19f5367fb95fa7dac1d9b1bcd06cb7bb255d34c68e8dfb9db88e6c1",
+    "functions.tsv": "d72e76906690b395b56ca7d03f26e7ca403ae49ee7ba8c4bac3adbfd221733b4"
+  },
+  "exporter_sha256": "e5a68aafff2c926e8be63576c6225e2a82567da2a05b6791747d564bc430349b",
+  "processor_sha256": "aef17eddf77ab687c76f0f32526b0c7535538ba0464e1eb57b1c23012ed84285"
+}

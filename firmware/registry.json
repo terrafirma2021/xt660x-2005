@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "primary_id": "xt660x-2005-owner",
+  "images": [
+    {
+      "id": "xt660x-2005-owner",
+      "label": "XT660X 2005 \u00b7 owner dump",
+      "file": "firmware/XT660X 2005.bin",
+      "sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+      "base_address": 0,
+      "claimed_years": "2005",
+      "year_evidence": "Owner description / source filename; model year not independently verified",
+      "provenance": "Original owner-supplied XT660X 2005.bin",
+      "kind": "owner-supplied dump",
+      "analysis_status": "Application analysed; boot absent",
+      "map_catalog": "primary",
+      "reviewed_application_changes": [],
+      "notes": "Owner-confirmed immobilizer patch at 4E7D. Original bytes preserved."
+    },
+    {
+      "id": "xt660-2004-2006-companion",
+      "label": "XT660 2004\u201306 \u00b7 companion",
+      "file": "firmware/images/xt660-2004-2006-companion.bin",
+      "sha256": "1abfbaa9018b5a26452df4c060265a791979b6016d57981fb95b50d7192cbe0b",
+      "base_address": 6144,
+      "claimed_years": "2004\u20132006",
+      "year_evidence": "Owner description / source filename; model year not independently verified",
+      "provenance": "Owner-supplied XT660 folder, original filename xt660 04-06(5vk-8591a-01).bin",
+      "kind": "companion dump",
+      "analysis_status": "Shared application; boot statically analysed",
+      "map_catalog": "primary",
+      "reviewed_application_changes": [
+        "4E7D"
+      ],
+      "notes": "Application differs from owner dump only at the known patch. Stored calibration cells and axes are identical. Authentication behavior differs; no claim of live ECU interchangeability."
+    },
+    {
+      "id": "xt660x-2005-checksum-fixed",
+      "label": "XT660X 2005 \u00b7 checksum-corrected copy",
+      "file": "firmware/XT660X 2005 startup-checksum-fixed.bin",
+      "sha256": "972ac93e76cb632470092d88c2a57e910daae69c02d6cdef52f1cad72f6909e7",
+      "base_address": 0,
+      "claimed_years": "2005",
+      "year_evidence": "Owner description / source filename; model year not independently verified",
+      "provenance": "Existing repository checksum correction",
+      "kind": "derived image",
+      "analysis_status": "Application analysed; boot absent",
+      "map_catalog": "primary",
+      "reviewed_application_changes": [
+        "F7FD"
+      ],
+      "notes": "Derived from owner dump by changing trailer byte F7FD. Software checksum passes; not hardware or flash validated."
+    }
+  ]
+}

@@ -14,11 +14,11 @@ def build_home(maps, pins, write):
   <div class="hero-slash" aria-hidden="true"></div>
   <div class="bike-stage"><img src="assets/xt660x-2005-cutout.png" alt="Blue 2005 Yamaha XT660X, showing its spoked supermoto wheels, single-cylinder engine and high exhaust" width="1448" height="1086" fetchpriority="high"><span class="photo-caption">XT660X / 2005 / YAMAHA</span></div>
   <div class="hero-content">
-    <div class="hero-eyebrow"><span class="race-bars" aria-hidden="true"></span>YAMAHA · 2005 · SUPERMOTO</div>
+    <div class="hero-eyebrow"><span class="race-bars" aria-hidden="true"></span>YAMAHA · XT660 · SUPERMOTO</div>
     <h1 id="hero-title">XT660<span>X</span></h1>
     <p class="hero-headline">ONE CYLINDER.<br>A WORLD INSIDE.</p>
     <p class="hero-description">For the love of the big single. Get under the plastics and into the maps, signals and code that make it tick.</p>
-    <div class="actions"><a class="button primary" href="maps/">EXPLORE THE MAPS <span>↗</span></a><a class="hero-secondary" href="#inside">GET UNDER THE SKIN <span>↓</span></a></div>
+    <div class="actions"><a class="button primary" href="maps/">EXPLORE THE MAPS <span>↗</span></a><a class="hero-secondary" href="firmware/">BROWSE FIRMWARE <span>↗</span></a></div>
   </div>
   <div class="hero-bottom"><span>THE XT660X PROJECT</span><a href="#inside">SCROLL TO EXPLORE <span>↓</span></a></div>
 </section>

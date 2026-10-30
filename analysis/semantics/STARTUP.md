@@ -14,7 +14,7 @@ The owner confirms that the image was patched to skip immobilizer checking. Conf
 
 ## Integrity and unavailable boot code
 
-Initialization still calls the [ROM checksum routine](CHECKSUMS.md) after the skipped immobilizer initialization. Its mismatch in the supplied file is exactly consistent with the recalled `00 → 80` change. The main loop also calls `F8A0`, inside the absent boot region. The companion boot now provides a source for further reset and boot-service analysis. Its PLL establishes bus = 4 × oscillator frequency; absolute clock frequency, physical correspondence to the owner ECU and a complete boot-service review remain open.
+Initialization still calls the [ROM checksum routine](CHECKSUMS.md) after the skipped immobilizer initialization. Its mismatch in the supplied file is exactly consistent with the recalled `00 → 80` change. The main loop also calls `F8A0`, inside the absent boot region. The companion now has a separate [reset and boot-service analysis](../firmware/xt660-2004-2006-companion/BOOT.md), with disassembly, pseudocode and all-byte coverage. Its PLL establishes bus = 4 × oscillator frequency; absolute clock frequency, physical correspondence to the owner ECU and a complete boot-service review remain open.
 
 ## Evidence
 

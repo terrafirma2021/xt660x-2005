@@ -28,6 +28,8 @@ jobs:
           python3 scripts/map_names.py
           python3 scripts/verify_map_names.py
           python3 scripts/build_verification_ledger.py --check
+          python3 scripts/firmware_catalog.py --check
+          python3 scripts/test_firmware_library.py
           python3 scripts/build_pages.py
           python3 scripts/verify_pages.py
       - name: Upload site

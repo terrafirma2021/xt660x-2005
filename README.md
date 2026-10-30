@@ -1,4 +1,12 @@
-# Yamaha XT660X 2005 firmware analysis
+# Yamaha XT660 firmware research
+
+## Firmware library
+
+The repository supports multiple BINs through a [firmware registry](firmware/registry.json) and [website library](https://terrafirma2021.github.io/xt660x-2005/firmware/). It contains the original 2005-labelled owner dump, the matching 2004–06-labelled companion with boot code, and the separately labelled checksum-corrected derivative. These source-year claims do not establish two distinct factory revisions. Existing map URLs stay stable.
+
+All 71 stored map bodies and stored axes match across the three registered files; application differences are explicitly checked. The companion has a separate [boot breakdown](analysis/firmware/xt660-2004-2006-companion/BOOT.md), disassembly, pseudocode and byte-accounting report. Its boot has not inherited the application execution-test status.
+
+[Adding another image](firmware/ADDING_IMAGES.md) documents the importer and review workflow. New images start unreviewed and do not inherit map or pin claims.
 
 A reverse-engineering project for the Yamaha XT660X 2005 firmware image. The repository contains the unchanged binary, structured C, an address-preserving compilable C translation of every decoded instruction, a complete byte listing, calibration analysis, and an annotated Ghidra program.
 
@@ -26,7 +34,7 @@ The [variant analysis](analysis/semantics/VARIANTS.md) confirms that this image 
 
 The [map-consumer breakdown](analysis/semantics/MAP_CONSUMERS.md) now reconstructs normal and startup fuel arithmetic, post-start decay, transient pulses, adaptive steps and injection event timing. [Per-map status](analysis/semantics/MAP_RESOLUTION.md) distinguishes gains, thresholds, logical gates, conditional physical values and unresolved scales, including stock-disabled families.
 
-All 71 maps now have [reviewed descriptive names](analysis/MAP_NAMES.md) derived from the recovered roles. The website, map dossiers, atlas, unit catalogue and text extracts use these names. Original IDs such as `main_quantity_C` remain as stable reference keys and URL/file names; its display name is **Sequence-selected alternate load fuel quantity**. Unidentified selection modes are not labelled as cylinders, riding modes or octane grades.
+All 71 maps now have [reviewed descriptive names](analysis/MAP_NAMES.md) derived from the recovered roles. The website, map dossiers, atlas, unit catalogue and text extracts use these names. Original IDs such as `main_quantity_C` remain as stable reference keys and URL/file names; its display name is **Alternate load-based fuel quantity**. Unidentified selection modes are not labelled as cylinders, riding modes or octane grades.
 
 The [map-selector trace](analysis/semantics/MAP_SELECTORS.md) resolves the branches behind 25 names: filtered neutral input, road-pulse/crank ratio codes, and a four-stage speed sequence selecting the alternate load-fuel table. Stock timeout zero prevents that sequence completing from cleared state. Ignition splits at ratio code 5, while the first transient family splits at 1. [9,523 instruction-behavior cases](analysis/semantics/map_selector_validation.json) check classification, branches and detector boundaries. Yamaha describes the fault-42 substitute as top gear; the firmware forces code 5, corroborating that interpretation. The previously proposed 20 sensor pulses per revolution has no independent evidence. Its 3,000 synthetic filter iterations remain labelled as a hypothesis experiment, not gear validation.
 
@@ -72,7 +80,7 @@ The owner confirms that the supplied image was patched to skip immobilizer check
 
 SHA-256: `5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280`
 
-## Scope
+## Primary-image scope
 
 The complete decoded application is represented, including structurally recovered unreferenced code. **Complete original-source recovery and identification of every map are not claimed.** The top 2 KiB is all FF, including normal hardware vectors; a call to `0xF8A0` targets that unavailable region. Its bytes cannot be decompiled into absent code.
 
