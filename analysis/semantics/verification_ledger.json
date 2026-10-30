@@ -11,7 +11,7 @@
     },
     {
       "script": "scripts/verify_semantics.py",
-      "sha256": "aa856f10094699f89d047748c953fa76a41df96df94ce002f1d93aa4d0e73a54",
+      "sha256": "065e878b099be1d879b414063f45c83ce9df264dea33a7efa300a1d60fefd57e",
       "result": "passed"
     },
     {
@@ -1535,30 +1535,12 @@
         "0x4F47"
       ]
     },
-    "xt660_coolant_owner_corroborated": {
-      "celsius_per_code": 0.625,
-      "offset_celsius": -30,
-      "status": "owner-corroborated Celsius encoding; not a calibrated sensor accuracy certificate",
-      "basis": "ECU emits floor(code*5/8), capped at 149. Earlier Yamaha-DataLogger subtracts 30 from the received byte. On 2026-10-30 the owner confirmed checking that conversion on their XT660 and confirmed the logger output was Celsius.",
-      "source": "https://github.com/terrafirma2021/Yamaha-DataLogger/blob/main/yamaha/src/main.cpp",
-      "source_git_blob": "a72db6d3c21c6adf3c40dd8c3ed3eda1de7ccbeb",
-      "limits": "No paired measurement values, accuracy, temperature range or ECU part number were supplied. The 80 C manual fallback discrepancy remains separate; this image substitutes code144, which encodes 60 C.",
-      "evidence": [
-        "0x7139",
-        "0x7142",
-        "0x714F",
-        "0x4E64"
-      ],
-      "exact_wire_formula": "min(149,floor(raw*5/8))",
-      "logger_celsius_formula": "wire_byte-30",
-      "fahrenheit_presentation_formula": "(raw*0.625-30)*9/5+32 = raw*1.125-22"
-    },
     "nominal_xt_timer": {
       "timer_hz": 500000,
       "bus_hz": 16000000,
       "tick_microseconds": 2,
       "status": "service-correlated nominal; not measured on this ECU",
-      "basis": "TSCR2=5 gives bus/32. Fan diagnostic repeats every 250 tasks; each task is 4*2500 timer ticks. Yamaha specifies a 5-second fan cycle with 2 seconds on, 3 off. The external logger RPM formula does not independently validate this profile: this image divides speed code by 190, not 256; see EXTERNAL_SCALE_CHECKS.md.",
+      "basis": "TSCR2=5 gives bus/32. Fan diagnostic repeats every 250 tasks; each task is 4*2500 timer ticks. Yamaha specifies a 5-second fan cycle with 2 seconds on, 3 off.",
       "evidence": [
         "0x5057",
         "0x5059",
@@ -1605,7 +1587,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -1620,7 +1602,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -1648,7 +1629,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -1663,7 +1644,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -1691,7 +1671,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -1706,7 +1686,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -1734,7 +1713,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -1749,7 +1728,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
         "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
@@ -1778,7 +1756,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -1793,7 +1771,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
         "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
@@ -1822,7 +1799,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -1837,7 +1814,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
         "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
@@ -1875,13 +1851,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
         "Establish event-code phase relative to the physical crank cycle, including special scheduling modes.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
@@ -1910,7 +1885,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -1925,7 +1900,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -1953,7 +1927,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -1968,7 +1942,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -1996,7 +1969,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -2011,7 +1984,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -2029,7 +2001,7 @@
       "conditional_profiles": [
         "nominal_xt_crank",
         "nominal_xt_timer",
-        "xt660_coolant_owner_corroborated"
+        "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
       "axis_interpretations": [
@@ -2040,23 +2012,22 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
           "source": "u8 0x08F4 coolant",
           "domain": "coolant",
-          "meaning": "Coolant Celsius encoding: code*0.625-30 (owner-corroborated)",
+          "meaning": "Effective coolant temperature code",
           "raw_coordinate_status": "Traced in catalogue",
-          "physical_status": "Owner-corroborated encoding; sensor accuracy not measured here",
-          "open_requirement": null
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
-        "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
         "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -2084,7 +2055,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -2099,7 +2070,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -2127,7 +2097,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -2142,7 +2112,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -2196,7 +2165,7 @@
       "cell_conversion": "feedback_delay_s",
       "conditional_profiles": [
         "nominal_xt_timer",
-        "xt660_coolant_owner_corroborated"
+        "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
       "axis_interpretations": [
@@ -2204,15 +2173,15 @@
           "axis": "uniform_input",
           "source": "u8 0x08F4 coolant",
           "domain": "coolant",
-          "meaning": "Coolant Celsius encoding: code*0.625-30 (owner-corroborated)",
+          "meaning": "Effective coolant temperature code",
           "raw_coordinate_status": "Traced in catalogue",
-          "physical_status": "Owner-corroborated encoding; sensor accuracy not measured here",
-          "open_requirement": null
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
-        "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -2228,7 +2197,7 @@
       "cell_conversion": "startup_base_ms",
       "conditional_profiles": [
         "nominal_xt_timer",
-        "xt660_coolant_owner_corroborated"
+        "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
       "axis_interpretations": [
@@ -2236,15 +2205,15 @@
           "axis": "uniform_input",
           "source": "u8 0x08F4 coolant",
           "domain": "coolant",
-          "meaning": "Coolant Celsius encoding: code*0.625-30 (owner-corroborated)",
+          "meaning": "Effective coolant temperature code",
           "raw_coordinate_status": "Traced in catalogue",
-          "physical_status": "Owner-corroborated encoding; sensor accuracy not measured here",
-          "open_requirement": null
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
-        "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -2259,7 +2228,7 @@
       "interpretation_status": "numeric contribution decoded",
       "cell_conversion": "post_start_enrichment_pp",
       "conditional_profiles": [
-        "xt660_coolant_owner_corroborated"
+        "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
       "axis_interpretations": [
@@ -2267,14 +2236,14 @@
           "axis": "uniform_input",
           "source": "u8 0x08F4 coolant",
           "domain": "coolant",
-          "meaning": "Coolant Celsius encoding: code*0.625-30 (owner-corroborated)",
+          "meaning": "Effective coolant temperature code",
           "raw_coordinate_status": "Traced in catalogue",
-          "physical_status": "Owner-corroborated encoding; sensor accuracy not measured here",
-          "open_requirement": null
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
         }
       ],
       "open_items": [
-        "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -2289,7 +2258,7 @@
       "interpretation_status": "numeric contribution decoded",
       "cell_conversion": "post_start_enrichment_pp",
       "conditional_profiles": [
-        "xt660_coolant_owner_corroborated"
+        "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
       "axis_interpretations": [
@@ -2297,14 +2266,14 @@
           "axis": "uniform_input",
           "source": "u8 0x08F4 coolant",
           "domain": "coolant",
-          "meaning": "Coolant Celsius encoding: code*0.625-30 (owner-corroborated)",
+          "meaning": "Effective coolant temperature code",
           "raw_coordinate_status": "Traced in catalogue",
-          "physical_status": "Owner-corroborated encoding; sensor accuracy not measured here",
-          "open_requirement": null
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
         }
       ],
       "open_items": [
-        "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -2418,13 +2387,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -2451,13 +2419,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -2484,13 +2451,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Confirm the relative TPS count-to-mechanical-angle transfer for the cell threshold.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -2778,13 +2744,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -2811,13 +2776,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -2833,7 +2797,7 @@
       "cell_conversion": "feedback_delay_100ms_s",
       "conditional_profiles": [
         "nominal_xt_timer",
-        "xt660_coolant_owner_corroborated"
+        "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
       "axis_interpretations": [
@@ -2841,15 +2805,15 @@
           "axis": "uniform_input",
           "source": "u8 0x08F4 coolant",
           "domain": "coolant",
-          "meaning": "Coolant Celsius encoding: code*0.625-30 (owner-corroborated)",
+          "meaning": "Effective coolant temperature code",
           "raw_coordinate_status": "Traced in catalogue",
-          "physical_status": "Owner-corroborated encoding; sensor accuracy not measured here",
-          "open_requirement": null
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
-        "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -2876,13 +2840,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -2909,13 +2872,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -2960,7 +2922,7 @@
       "interpretation_status": "numeric contribution decoded",
       "cell_conversion": "q8_gain_percent",
       "conditional_profiles": [
-        "xt660_coolant_owner_corroborated"
+        "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
       "axis_interpretations": [
@@ -2968,14 +2930,14 @@
           "axis": "uniform_input",
           "source": "u8 0x08F4 coolant",
           "domain": "coolant",
-          "meaning": "Coolant Celsius encoding: code*0.625-30 (owner-corroborated)",
+          "meaning": "Effective coolant temperature code",
           "raw_coordinate_status": "Traced in catalogue",
-          "physical_status": "Owner-corroborated encoding; sensor accuracy not measured here",
-          "open_requirement": null
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
         }
       ],
       "open_items": [
-        "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -2990,7 +2952,7 @@
       "interpretation_status": "numeric contribution decoded",
       "cell_conversion": "q8_gain_percent",
       "conditional_profiles": [
-        "xt660_coolant_owner_corroborated"
+        "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
       "axis_interpretations": [
@@ -2998,14 +2960,14 @@
           "axis": "uniform_input",
           "source": "u8 0x08F4 coolant",
           "domain": "coolant",
-          "meaning": "Coolant Celsius encoding: code*0.625-30 (owner-corroborated)",
+          "meaning": "Effective coolant temperature code",
           "raw_coordinate_status": "Traced in catalogue",
-          "physical_status": "Owner-corroborated encoding; sensor accuracy not measured here",
-          "open_requirement": null
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
         }
       ],
       "open_items": [
-        "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -3032,13 +2994,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -3109,7 +3070,7 @@
       "interpretation_status": "numeric contribution decoded",
       "cell_conversion": "relative_tps_counts",
       "conditional_profiles": [
-        "xt660_coolant_owner_corroborated"
+        "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
       "axis_interpretations": [
@@ -3117,14 +3078,14 @@
           "axis": "uniform_input",
           "source": "u8 0x08F4 coolant",
           "domain": "coolant",
-          "meaning": "Coolant Celsius encoding: code*0.625-30 (owner-corroborated)",
+          "meaning": "Effective coolant temperature code",
           "raw_coordinate_status": "Traced in catalogue",
-          "physical_status": "Owner-corroborated encoding; sensor accuracy not measured here",
-          "open_requirement": null
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
         }
       ],
       "open_items": [
-        "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
         "Confirm the relative TPS count-to-mechanical-angle transfer for the cell threshold.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3140,7 +3101,7 @@
       "interpretation_status": "numeric contribution decoded",
       "cell_conversion": "coolant_enrichment_pp",
       "conditional_profiles": [
-        "xt660_coolant_owner_corroborated"
+        "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
       "axis_interpretations": [
@@ -3148,14 +3109,14 @@
           "axis": "uniform_input",
           "source": "u8 0x08F4 coolant",
           "domain": "coolant",
-          "meaning": "Coolant Celsius encoding: code*0.625-30 (owner-corroborated)",
+          "meaning": "Effective coolant temperature code",
           "raw_coordinate_status": "Traced in catalogue",
-          "physical_status": "Owner-corroborated encoding; sensor accuracy not measured here",
-          "open_requirement": null
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
         }
       ],
       "open_items": [
-        "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -3170,7 +3131,7 @@
       "interpretation_status": "numeric contribution decoded",
       "cell_conversion": "coolant_enrichment_pp",
       "conditional_profiles": [
-        "xt660_coolant_owner_corroborated"
+        "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
       "axis_interpretations": [
@@ -3178,14 +3139,14 @@
           "axis": "uniform_input",
           "source": "u8 0x08F4 coolant",
           "domain": "coolant",
-          "meaning": "Coolant Celsius encoding: code*0.625-30 (owner-corroborated)",
+          "meaning": "Effective coolant temperature code",
           "raw_coordinate_status": "Traced in catalogue",
-          "physical_status": "Owner-corroborated encoding; sensor accuracy not measured here",
-          "open_requirement": null
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
         }
       ],
       "open_items": [
-        "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -3200,7 +3161,7 @@
       "interpretation_status": "joint arithmetic decoded; standalone physical cell unit not assigned",
       "cell_conversion": null,
       "conditional_profiles": [
-        "xt660_coolant_owner_corroborated"
+        "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
       "axis_interpretations": [
@@ -3208,14 +3169,14 @@
           "axis": "uniform_input",
           "source": "u8 0x08F4 coolant",
           "domain": "coolant",
-          "meaning": "Coolant Celsius encoding: code*0.625-30 (owner-corroborated)",
+          "meaning": "Effective coolant temperature code",
           "raw_coordinate_status": "Traced in catalogue",
-          "physical_status": "Owner-corroborated encoding; sensor accuracy not measured here",
-          "open_requirement": null
+          "physical_status": "Open",
+          "open_requirement": "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius."
         }
       ],
       "open_items": [
-        "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
         "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3275,13 +3236,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3309,13 +3269,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3343,13 +3302,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3377,13 +3335,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3411,13 +3368,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3445,13 +3401,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3479,13 +3434,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3513,13 +3467,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3547,13 +3500,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3581,13 +3533,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3615,13 +3566,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3649,13 +3599,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3683,7 +3632,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -3698,7 +3647,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3726,7 +3674,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -3741,7 +3689,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3769,7 +3716,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -3784,7 +3731,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3812,7 +3758,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -3827,7 +3773,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
         "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3855,13 +3800,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -3888,13 +3832,12 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         }
       ],
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -3921,7 +3864,7 @@
           "meaning": "Speed coordinate",
           "raw_coordinate_status": "Traced in catalogue",
           "physical_status": "Open",
-          "open_requirement": "Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md."
+          "open_requirement": "Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM."
         },
         {
           "axis": "column_axis",
@@ -3936,7 +3879,6 @@
       "open_items": [
         "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
         "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-        "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
         "Confirm the voltage divider/reference and filtering before assigning volts.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3949,10 +3891,10 @@
       "name": "Coolant sensor conversion",
       "address": "0x4F47",
       "byte_extraction": "Verified",
-      "interpretation_status": "owner-corroborated physical encoding",
-      "cell_conversion": "coolant_celsius",
+      "interpretation_status": "conditional physical conversion",
+      "cell_conversion": "temperature_celsius_candidate",
       "conditional_profiles": [
-        "xt660_coolant_owner_corroborated"
+        "yamaha_temperature_candidate"
       ],
       "consumer_test_coverage": "See scoped software reports; no exhaustive per-map path coverage certificate",
       "axis_interpretations": [
@@ -3967,7 +3909,7 @@
         }
       ],
       "open_items": [
-        "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+        "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
         "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
         "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
       ],
@@ -5366,7 +5308,7 @@
     },
     {
       "path": "analysis/semantics/sensor_variant_validation.json",
-      "sha256": "dc525291704a383044383557d4c0e8b40274dadc47366f50917c3266b25cdd12",
+      "sha256": "82bf14d250732b1fd3aaa2c303f94eb9838b46ce92a2b9f7eaa49e99fb880871",
       "recorded_result": "passed",
       "recorded_cases": 74792,
       "scope": "Isolated routines with injected ADC results and fault states. No proof about every possible upstream state writer, external analog circuit, donor ECU identity or physical units.",
@@ -5384,7 +5326,7 @@
     },
     {
       "path": "analysis/semantics/units_variant_validation.json",
-      "sha256": "6d4d450c106ca2c25d3890535b252f04e3db3cc59a8b249f813296b6cc923ce2",
+      "sha256": "a543de43f6fa1430113cfb5b5ac02e3b52971bbc8f58508f4ae1465af2ff63bc",
       "recorded_result": "passed",
       "recorded_cases": 284905,
       "scope": "Isolated instruction execution with RAM-backed peripherals. Physical units, oscillator rate, sensor circuitry, crank/TDC geometry and hardware outputs are not validated by these tests.",
@@ -5409,12 +5351,12 @@
     "connector_routes_physically_verified": 0
   },
   "input_sha256": {
-    "analysis/maps.json": "6c52e4a9b0262e460eea874afb600e06797f43e8101af90d3a2402167c49653e",
-    "analysis/semantics/physical_units.json": "98721595b70ac816091abcb06506cab559d9dbd240b4249a8a9b5487dd009c39",
+    "analysis/maps.json": "232925b28640258492569a91d701a6d3b9e46d1f31024b4691cf86befdd952e0",
+    "analysis/semantics/physical_units.json": "5a484c946212ee499d9d3f9c02e7de486eebd9e5c4b2e612321ea7537adf5210",
     "analysis/semantics/mcu_pin_overview.json": "8b46f9e61d6c9f681ca07169ecb9493a1989c7bf0d2a4348acf9282febfdab8f",
     "analysis/semantics/package_datasheet_review.json": "1f5f1d8a7c7b2d2acaf66dc4da1385a65e1f1a3fc9c426c7c4e555353414ce4a",
     "analysis/semantics/code_pin_review.json": "e888703265b48fa9e3ca1cb1ee4506f9445278d5dbfd9979bcd11ee4e6b46072",
-    "scripts/map_review.py": "db4ca2434570f4ee2ac3d4c568c2c4ebef617e2633a9aedf93128892b8e268a9",
-    "scripts/build_verification_ledger.py": "d9fd4e7d4c75c1b87dc188dbb3bef9bd0c845fb1a4bba0dec2090f64dd5c938e"
+    "scripts/map_review.py": "7b7fe02f539d388cfd44056063ad2d5aaf4da8a19cc1b8cc6e4ac7c34a4c5140",
+    "scripts/build_verification_ledger.py": "ccc2950d6f911505201c5f0033666366eaf0b8b14b1493139f3d74042b9f1bde"
   }
 }

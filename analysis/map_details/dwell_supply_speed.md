@@ -119,7 +119,7 @@ Conversion: `raw*32*1000/timer_hz`; unit: **ms**.
 
 base dwell contribution; additional dwell and speed clamps still apply
 
-Evidence profiles: `nominal_xt_timer`. Consult each profile for its corroboration, assumptions and limits.
+Required profiles: `nominal_xt_timer`. These are assumptions, not measured hardware parameters.
 
 row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
 Converted values: 800, 1600, 2400, 3200, 4000, 4800, 5600, 6400, 7200, 8000, 8800, 9600, 10400, 11200, 12000.
@@ -128,14 +128,13 @@ Converted values: 800, 1600, 2400, 3200, 4000, 4800, 5600, 6400, 7200, 8000, 880
 
 | Axis | Traced source | Interpretation | Physical scale |
 |---|---|---|---|
-| row_axis | u16 RAM 0x0900: selected speed code | Speed coordinate | Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md. |
+| row_axis | u16 RAM 0x0900: selected speed code | Speed coordinate | Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM. |
 | column_axis | u8 RAM 0x08D9: supply code | Supply-derived code | Confirm the voltage divider/reference and filtering before assigning volts. |
 
 ### What remains for this map
 
 - Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.
 - Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.
-- Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.
 - Confirm the voltage divider/reference and filtering before assigning volts.
 - Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.
 - Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.

@@ -1592,7 +1592,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -3190,7 +3189,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -4793,7 +4791,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -5626,7 +5623,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
       "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
@@ -6460,7 +6456,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
       "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
@@ -7294,7 +7289,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
       "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
@@ -7545,7 +7539,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
       "Establish event-code phase relative to the physical crank cycle, including special scheduling modes.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
@@ -7854,7 +7847,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -8110,7 +8102,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -8319,7 +8310,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -8591,8 +8581,7 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
-      "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
       "Establish CPS edge relative to mechanical TDC and the coil firing edge; relative scheduler degrees are not absolute BTDC.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -8681,7 +8670,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -8770,7 +8758,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -8920,7 +8907,7 @@
     "evidence_addresses": [],
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
-      "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -8989,7 +8976,7 @@
     "evidence_addresses": [],
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
-      "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -9057,7 +9044,7 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -9125,7 +9112,7 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -9354,7 +9341,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -9418,7 +9404,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -9477,7 +9462,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Confirm the relative TPS count-to-mechanical-angle transfer for the cell threshold.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -10071,7 +10055,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -10133,7 +10116,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -10196,7 +10178,7 @@
     "evidence_addresses": [],
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
-      "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -10252,7 +10234,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -10308,7 +10289,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -10442,7 +10422,7 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -10504,7 +10484,7 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -10573,7 +10553,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -10758,7 +10737,7 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
       "Confirm the relative TPS count-to-mechanical-angle transfer for the cell threshold.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -10821,7 +10800,7 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -10883,7 +10862,7 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -10959,7 +10938,7 @@
     "selection": "See caller evidence; full mode/override conditions not yet exhaustively documented",
     "evidence_addresses": [],
     "unresolved": [
-      "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
       "The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -11127,7 +11106,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -11225,7 +11203,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -11323,7 +11300,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -11421,7 +11397,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -11519,7 +11494,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -11617,7 +11591,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -11715,7 +11688,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -11813,7 +11785,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -11911,7 +11882,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -12009,7 +11979,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -12107,7 +12076,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -12205,7 +12173,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Convert the internal signed delta and its sampling/deadband to a physical rate before naming a rate-based gain.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -12549,7 +12516,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -12893,7 +12859,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -13107,7 +13072,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -13321,7 +13285,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Finish the pressure-to-load transfer across modes; C90 is not a direct kPa axis.",
       "Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -13430,7 +13393,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -13538,7 +13500,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
@@ -13786,7 +13747,6 @@
     "unresolved": [
       "Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.",
       "Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.",
-      "Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.",
       "Confirm the voltage divider/reference and filtering before assigning volts.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
@@ -13845,7 +13805,7 @@
       "10-bit ADC channel 6"
     ],
     "output": "RAM 0x08F6 measured / 0x08F4 effective",
-    "physical_role": "Sensor conversion to internal temperature code; coolant Celsius encoding owner-corroborated",
+    "physical_role": "Sensor conversion to internal temperature code; candidate Celsius scale remains conditional",
     "evidence_addresses": [
       "0x70A3",
       "0x711B",
@@ -13897,14 +13857,14 @@
       "index_formula": "q8=clamp((adc10*64-3840)//8,0,7168)"
     },
     "unresolved": [
-      "Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.",
+      "Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.",
       "Selection is traced for the documented branches; complete all downstream override/fault paths before tuning sign-off.",
       "Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off."
     ],
     "display_name": "Coolant sensor conversion",
     "category": "Sensor processing",
     "naming_basis": "analysis/semantics/TEMPERATURE_PROFILE.md",
-    "naming_note": "Sensor identity and coolant Celsius encoding are corroborated. The owner confirmed the earlier XT660 logger conversion; sensor accuracy and the manual fallback discrepancy remain open."
+    "naming_note": "Sensor identity is corroborated. The internal-code-to-Celsius profile remains conditional on the sensor circuit and ECU identification."
   },
   {
     "id": "intake_temperature_conversion",
@@ -13959,7 +13919,7 @@
       "10-bit ADC channel 3"
     ],
     "output": "RAM 0x08F5",
-    "physical_role": "Sensor conversion to internal temperature code; candidate IAT Celsius scale remains conditional",
+    "physical_role": "Sensor conversion to internal temperature code; candidate Celsius scale remains conditional",
     "evidence_addresses": [
       "0x6FC2",
       "0x702A",
@@ -14021,7 +13981,7 @@
     "display_name": "Intake air temperature sensor conversion",
     "category": "Sensor processing",
     "naming_basis": "analysis/semantics/TEMPERATURE_PROFILE.md",
-    "naming_note": "Sensor identity is corroborated. IAT Celsius remains conditional; the owner\u2019s coolant logger check does not independently verify IAT."
+    "naming_note": "Sensor identity is corroborated. The internal-code-to-Celsius profile remains conditional on the sensor circuit and ECU identification."
   },
   {
     "id": "curve_1854",

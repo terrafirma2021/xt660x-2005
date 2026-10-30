@@ -57,10 +57,9 @@ def curve(m, temperature=None):
         prefix='coolant' if m['id']=='coolant_sensor_conversion' else 'intake'
         samples=[[r['adc10'],r[prefix+'_code']] for r in temperature['all_adc_values']]
         note='The line shows the decoded lookup output for every ADC input (0–1023), including integer rounding and clamping. Dots mark stored table knots. Fault replacement is a separate path.'
-        physical_label='Coolant °C — owner-corroborated' if prefix=='coolant' else 'Candidate °C — conditional'
-        controls='<label>Display scale <select class="curve-scale"><option value="raw">Internal temperature code</option><option value="candidate">'+physical_label+'</option></select></label>'
+        controls='<label>Display scale <select class="curve-scale"><option value="raw">Internal temperature code</option><option value="candidate">Candidate °C — conditional</option></select></label>'
         controls+='<label class="adc-control">ADC input <input class="curve-adc" type="range" min="0" max="1023" value="512" step="1"></label>'
-        warning='<p class="curve-assumption">'+('Coolant °C = code × 0.625 − 30. Corroborated by the owner’s XT660 logger check and firmware arithmetic. Sensor accuracy and the manual’s fault-temperature discrepancy remain open.' if prefix=='coolant' else 'Candidate IAT °C = code × 0.625 − 30. Resistance-fit evidence supports this scale; the owner’s coolant check does not independently verify IAT.')+'</p>'
+        warning='<p class="curve-assumption">Candidate °C = code × 0.625 − 30. This scale is not hardware-verified; the XT coolant fault-temperature discrepancy remains open.</p>'
     else:
         samples=list(zip(knots,values))
         note='Dots show stored cells at their raw input knots. The connecting line is a visual guide; caller rounding, clamping and conditional paths still apply.'
@@ -79,7 +78,6 @@ def curve(m, temperature=None):
         marks+=f'<line class="curve-guide" x1="70" x2="860" y1="{py(y)}" y2="{py(y)}"/><text class="curve-y-tick" x="59" y="{py(y)+4}" text-anchor="end">{y:g}</text><text class="curve-x-tick" x="{px(x)}" y="282" text-anchor="middle">{x:g}</text>'
     dots=''.join(f'<circle class="curve-knot" data-cell="{i}" cx="{px(x):.3f}" cy="{py(v):.3f}" r="4"><title>Input {x:g}; raw {v}; cell {i+1}</title></circle>' for i,(x,v) in enumerate(zip(knots,values)) if xmin<=x<=xmax)
     data=dict(samples=samples,knots=list(zip(knots,values)),sensor=sensor,xmin=xmin,xmax=xmax,ymin=ymin,ymax=ymax)
-    if sensor:data['physical_label']=physical_label;data['coolant_corroborated']=prefix=='coolant'
     label='ADC input (10-bit count)' if sensor else 'Raw input coordinate'
     return (f'<div class="curve-view"><div class="curve-controls">{controls}</div>{warning}'
         f'<svg class="curve-plot" viewBox="0 0 900 320" role="img" aria-label="{esc(m["display_name"])} curve, raw input against internal output code"><text class="curve-y-label" x="70" y="25">{"Internal temperature code" if sensor else "Raw cell value"}</text>{marks}<path class="curve-line" d="{path}"/>{dots}<circle class="curve-probe" cx="70" cy="50" r="6" visibility="hidden"/><text class="curve-x-label" x="465" y="311" text-anchor="middle">{label}</text></svg>'

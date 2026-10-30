@@ -2,23 +2,21 @@
 
 The owner's earlier repositories provide comparison evidence beyond the supplied image. They are separate sources, with separate revision and measurement limits. No bytes from another ECU have been merged into the target firmware.
 
-## Coolant: a corroborated physical encoding
+## Coolant: earlier logger is an unvalidated hypothesis
 
-The [Yamaha-DataLogger implementation](https://github.com/terrafirma2021/Yamaha-DataLogger/blob/d06a80aef95bf97d6e15eef1c1d851fde6cc4975/yamaha/src/main.cpp#L443) subtracts 30 from the received coolant byte. On 2026-10-30, the owner confirmed checking this on their XT660 and confirmed that the logger output was Celsius. No paired raw readings, accuracy bounds, ECU part number or tested temperature range were supplied. This is recorded as **owner corroboration**, not a new instrumented test by this project.
+**Correction, 2026-10-30:** the owner clarified that the earlier logger conversions were guesses and that they had no supporting measurement data. The previous owner-corroborated status is withdrawn from the coolant table, twelve coolant-dependent map axes, generated catalogue and website. Neither logger output labels nor guessed conversion constants establish physical units.
 
-The supplied firmware's `7139–7142` produces `wire=min(149,floor(code*5/8))`. Combining these independent stages gives:
+The [earlier implementation](https://github.com/terrafirma2021/Yamaha-DataLogger/blob/d06a80aef95bf97d6e15eef1c1d851fde6cc4975/yamaha/src/main.cpp#L443) subtracts 30 from the received coolant byte. That describes what the logger did, not what temperature the ECU measured. Its unsigned result also wraps below zero.
+
+The supplied firmware at `7139–7142` independently proves only:
 
 ```text
-internal coolant coordinate: Celsius = code*0.625 - 30
-actual logger reading:       Celsius_integer = min(149,floor(code*5/8)) - 30
-Fahrenheit presentation:     Fahrenheit = code*1.125 - 22
+wire = min(149, floor(internal_code * 5/8))
 ```
 
-The first is the continuous coordinate for map cells/axes. The second includes wire quantization and its upper cap. They must not be substituted for one another. Code 128 represents 50°C; its wire byte is 80. Code 144 represents 60°C; its wire byte is 90. The raw code is neither ordinary Celsius nor ordinary Fahrenheit. Fahrenheit display support could be implemented downstream, but dashboard firmware and mode switching have not been examined here.
+It does not subtract 30 or identify the physical temperature unit. `Celsius = code*0.625-30` remains a candidate supported by the service-manual resistance fit under a constant ratiometric NTC pullup model. The contradictory XT manual coolant fallback remains open. Its Fahrenheit equivalent would be `code*1.125-22`, but that is conditional on the same candidate, not proof of a Fahrenheit implementation.
 
-The logger stores the result in an unsigned byte; its original implementation wraps negative results. The research conversion uses signed values and does not copy that low-temperature limitation. The owner confirmation therefore does not establish correct negative-temperature display or the complete sensor range.
-
-The coolant conversion and twelve coolant-dependent map axes now use this corroborated encoding. IAT keeps the same numerical candidate but is **not** independently validated by a coolant logger check. See the reproducible [temperature hypothesis trials](temperature_profile.json) and [interpretation](TEMPERATURE_PROFILE.md).
+The [fourteen hypothesis/sensor trials](temperature_profile.json) compare seven named interpretations for both sensors. Ordinary Celsius and Fahrenheit proposals fail the stated circuit-model checks. Rejecting those proposals does not prove that the surviving candidate is the unique physical transfer, and the earlier logger supplies no independent confirmation. A further 162 sensor/offset trials admit thirteen shared integer offsets (-36 through -24) with slope fixed at 0.625 and unknown pullups. Thus the resistance evidence does not uniquely establish -30. All fourteen temperature-dependent map axes remain conditional.
 
 ## Earlier dump: real boot code, different application
 
@@ -50,21 +48,21 @@ F816 4f3708fc    BRCLR 0037,08,F816 ; wait LOCK
 F81A 4c3980      BSET 0039,80    ; select PLL
 ```
 
-The [NXP MC9S12T64 CRG description](https://www.nxp.com/docs/en/data-sheet/9S12T64AF16V1.pdf) gives `PLLCLK=2*OSCCLK*(SYNR+1)/(REFDV+1)` and PLL-selected bus clock `PLLCLK/2`. Thus this earlier boot establishes **bus=4*oscillator**, not an absolute frequency. A 4 MHz oscillator would give16 MHz bus and500 kHz timer. Neither the oscillator nor the target revision's missing boot is established by this comparison. The original and checksum-corrected target binaries remain unchanged.
+The [NXP MC9S12T64 CRG description](https://www.nxp.com/docs/en/data-sheet/9S12T64AF16V1.pdf) gives `PLLCLK=2*OSCCLK*(SYNR+1)/(REFDV+1)` and PLL-selected bus clock `PLLCLK/2`. Thus this earlier boot establishes **bus=4*oscillator**, not an absolute frequency. A 4 MHz oscillator would give 16 MHz bus and 500 kHz timer. Neither the oscillator nor the target revision's missing boot is established by this comparison. The original and checksum-corrected target binaries remain unchanged.
 
-## RPM: a conflict found, not an automatic scale promotion
+## RPM: an unvalidated logger hypothesis disagrees with the nominal profile
 
-The earlier logger multiplies RPM payload by 50, and the owner reports checking that on the XT660. However the supplied firmware at `749E–74B0` divides the selected internal speed code by **190**, with byte saturation. The earlier dump also uses190. The exact operation is:
+The earlier logger multiplies RPM payload by 50; this is an unvalidated guess, not a measured scale. Independently, the supplied firmware at `749E–74B0` divides the selected internal speed code by **190**, with byte saturation. The earlier dump also uses 190. The exact operation is:
 
 ```text
 wire_rpm_byte = min(255, floor(selected_speed_code / max(1, ROM_word_4E34)))
 ```
 
-The logger interpretation would imply an ideal internal scale `code*50/190`. Existing nominal clock/crank derivation gives `code*50/256`. The former is **34.7368% higher**. For code 5120, the firmware sends 26 and the logger would display1300 rpm; the nominal map coordinate is1000 rpm. Quantization cannot explain that difference.
+The logger interpretation would imply an ideal internal scale `code*50/190`. Existing nominal clock/crank derivation gives `code*50/256`. The former is **34.7368% higher**. For code 5120, the firmware sends 26 and the logger would display 1300 rpm; the nominal map coordinate is 1000 rpm. Quantization cannot explain that difference.
 
-Do not use the earlier logger claim to promote the forty nominal RPM axes. Paired engine-speed, payload and source-period observations, or equivalent revision-specific evidence, are needed to reconcile this. The new execution test exhausts all 65,536 speed inputs through the division/saturation instructions, plus 45 divisor and boundary cases. It verifies the discrepancy in arithmetic, not which physical interpretation applies.
+This comparison does not disprove the nominal physical scale: one side is only a guessed logger formula. Do not use the earlier logger to promote or replace the forty nominal RPM axes. Paired engine-speed, payload and source-period observations, or equivalent revision-specific evidence, are needed to reconcile this. The new execution test exhausts all 65,536 speed inputs through the division/saturation instructions, plus 45 divisor and boundary cases. It verifies the discrepancy in arithmetic, not which physical interpretation applies.
 
-The logger's configured16040 baud and the older sniffer's16064 baud are receive settings, not measured ECU clock frequencies. Substituting either into the SCI divisor equation would create an unsupported physical calibration.
+The logger's configured 16040 baud and the older sniffer's 16064 baud are receive settings, not measured ECU clock frequencies. Substituting either into the SCI divisor equation would create an unsupported physical calibration.
 
 ## Reproduce the comparison
 

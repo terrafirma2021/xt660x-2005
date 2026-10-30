@@ -81,11 +81,11 @@ for record in physical['maps']:
     assert record['axis_interpretations']==input_review(m)
     assert record['open_items']==m['unresolved']==remaining_questions(m,record)
     assert len(record['axis_interpretations'])==(1 if m['kind'].startswith('1D_') else 2)
-    if record['cell_conversion'] in ('temperature_celsius_candidate','coolant_celsius'):
+    if record['cell_conversion']=='temperature_celsius_candidate':
         assert record['converted_cell_values']==[[v*.625-30 for v in row] for row in by_id[record['id']]['raw_values']]
     for axis in record['axis_conversions']:
         assert all(p in physical['profiles'] for p in axis['requires'])
-        if axis['conversion'] in ('temperature_celsius_candidate','coolant_celsius'):
+        if axis['conversion']=='temperature_celsius_candidate':
             knots=axis.get('raw_ideal_knots')
             if knots is None:knots=by_id[record['id']][axis['axis']]['raw_values']
             assert axis['values']==[v*.625-30 for v in knots]

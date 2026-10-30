@@ -15,7 +15,7 @@ The [verification ledger](VERIFICATION_LEDGER.md) records each map and pin separ
 | Scalar width, endianness, unsigned/signed encoding | Recorded for the focused catalogue |
 | Cell address, dimensions and axis storage | Existing map atlas, plus new sensor curves |
 | Runtime selector / variant / alternate calibration | Documented where traced; incomplete globally |
-| Conversion to Celsius, RPM, degrees, milliseconds, pressure | Clock/crank-conditional values and exact code/gain contributions are in the unit companion; coolant encoding is owner-corroborated; IAT, pressure and absolute BTDC remain conditional/unresolved |
+| Conversion to Celsius, RPM, degrees, milliseconds, pressure | Clock/crank-conditional values and exact code/gain contributions are in the unit companion; Celsius, pressure and absolute BTDC remain unresolved |
 | Reverse conversion and rounding policy | Not defined for engineering units |
 | Valid physical adjustment ranges | Not inferred from the limits of a byte or word |
 | Checksum algorithm and covered ranges | [ROM and serial algorithms](CHECKSUMS.md) recovered; [startup-corrected copy](CHECKSUM.md) tested. Factory correction field, absent boot content and flash workflow remain unvalidated. |
@@ -40,7 +40,7 @@ An eventual editing tool should bind definitions to a verified image identity, p
 
 ## Remaining research by priority
 
-1. **Physical units:** corroborated coolant encoding is available; establish sensor accuracy, reconcile the RPM telemetry conflict, and establish timer frequency, crank-event geometry and road-speed scale. These unlock fan and limit definitions.
+1. **Physical units:** establish coolant payload-to-Celsius mapping, timer frequency, crank-event geometry and road-speed scale. These unlock fan and limit definitions.
 2. **Spark:** complete the chain from final timing byte to the coil firing edge and establish the absolute angle reference; classify corrections.
 3. **Fuel:** complete every map-to-request transformation and prove duration units, voltage compensation, temperature corrections and transient paths.
 4. **All cut reasons:** build a writer/consumer record for every dispatcher gate; distinguish rev/road-speed limits, deceleration, faults and interlocks.

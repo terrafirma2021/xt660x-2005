@@ -9,17 +9,6 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 PROFILE='yamaha_temperature_candidate'
-COOLANT_PROFILE='xt660_coolant_owner_corroborated'
-COOLANT_DEFINITION=dict(celsius_per_code=0.625,offset_celsius=-30,
-    status='owner-corroborated Celsius encoding; not a calibrated sensor accuracy certificate',
-    basis='ECU emits floor(code*5/8), capped at 149. Earlier Yamaha-DataLogger subtracts 30 from the received byte. On 2026-10-30 the owner confirmed checking that conversion on their XT660 and confirmed the logger output was Celsius.',
-    source='https://github.com/terrafirma2021/Yamaha-DataLogger/blob/main/yamaha/src/main.cpp',
-    source_git_blob='a72db6d3c21c6adf3c40dd8c3ed3eda1de7ccbeb',
-    limits='No paired measurement values, accuracy, temperature range or ECU part number were supplied. The 80 C manual fallback discrepancy remains separate; this image substitutes code144, which encodes 60 C.',
-    evidence=['0x7139','0x7142','0x714F','0x4E64'],
-    exact_wire_formula='min(149,floor(raw*5/8))',
-    logger_celsius_formula='wire_byte-30',
-    fahrenheit_presentation_formula='(raw*0.625-30)*9/5+32 = raw*1.125-22')
 DEFINITION=dict(celsius_per_code=0.625,offset_celsius=-30,
     status='inferred conditional profile; ECU identity and analog circuit unconfirmed',
     basis='Both digital curves admit a constant ratiometric NTC pullup across XT660 resistance specifications. TDM900 fail-safe values match both fallback codes under this formula.',
@@ -87,6 +76,30 @@ def temperature_trials(image,clt,iat):
             trials.append(dict(hypothesis=name,sensor='coolant' if coolant else 'intake',reason=reason,**result))
     return trials
 
+def offset_sweep(image,clt,iat):
+    """Check identifiability, rather than testing only hand-picked offsets.
+
+    Each sensor may have its own unknown pullup; the code-to-Celsius scale is
+    held at 0.625 for this bounded integer-offset search. This neither proves
+    that slope nor bounds every possible continuous/non-affine solution.
+    """
+    results={}
+    for name,coolant,points in [('coolant',True,clt),('intake',False,iat)]:
+        accepted=[]
+        for offset in range(-60,21):
+            try:trial=fit(image,coolant,.625,offset,points)
+            except ValueError:continue
+            if trial['consistent_constant_pullup']:
+                accepted.append(dict(offset_celsius=offset,
+                    common_pullup_interval_ohms=trial['common_pullup_interval_ohms']))
+        results[name]=accepted
+    shared=sorted(set(r['offset_celsius'] for r in results['coolant']) &
+                  set(r['offset_celsius'] for r in results['intake']))
+    assert shared==list(range(-36,-23))
+    return dict(fixed_slope=.625,offset_search=dict(min=-60,max=20,step=1),
+        sensor_hypotheses_tested=162,compatible=results,shared_offsets_celsius=shared,
+        conclusion='Thirteen shared integer offsets fit with independent unknown sensor pullups. Resistance consistency does not uniquely establish -30. The historical logger is a guess, not calibration evidence.')
+
 def build():
     image=(ROOT/'firmware/XT660X 2005.bin').read_bytes()
     clt=[(20,2320,2590),(80,310,326),(110,140,145)]
@@ -104,8 +117,8 @@ def build():
     assert not fits['coolant_common_affine_forced_through_XT_fallbacks']['consistent_constant_pullup']
     trials=temperature_trials(image,clt,iat)
     assert all(not t['consistent_constant_pullup'] for t in trials if 'fahrenheit' in t['hypothesis'])
-    report=dict(schema_version=2,profile=DEFINITION,coolant_profile=COOLANT_DEFINITION,
-        hypothesis_trials=trials,fits=fits,
+    report=dict(schema_version=2,profile=DEFINITION,
+        hypothesis_trials=trials,offset_identifiability=offset_sweep(image,clt,iat),fits=fits,
         firmware_sha256=hashlib.sha256(image).hexdigest(),
         generator_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         assumptions='Ideal 10-bit ratiometric ADC; ADC bin width 1/1024; NTC to ground; constant pullup; published sensor resistance intervals. Output tolerance covers one code plus the next input group (one ADC count for coolant, four for IAT because two input bits are discarded). This is a consistency test, not uniqueness proof or a component measurement.',

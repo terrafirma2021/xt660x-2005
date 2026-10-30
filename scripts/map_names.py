@@ -109,7 +109,7 @@ def metadata(key):
         record['naming_note']='Role follows the recovered time/charge scheduler. Timer units depend on the nominal clock profile. A dwell contribution is not the final complete dwell duration, and a time correction is not absolute BTDC.'
     elif key in {'coolant_sensor_conversion','intake_temperature_conversion'}:
         record['naming_basis']='analysis/semantics/TEMPERATURE_PROFILE.md'
-        record['naming_note']=('Sensor identity and coolant Celsius encoding are corroborated. The owner confirmed the earlier XT660 logger conversion; sensor accuracy and the manual fallback discrepancy remain open.' if key=='coolant_sensor_conversion' else 'Sensor identity is corroborated. IAT Celsius remains conditional; the owner’s coolant logger check does not independently verify IAT.')
+        record['naming_note']='Sensor identity is corroborated. The internal-code-to-Celsius profile remains conditional on the sensor circuit and ECU identification.'
     return record
 
 def apply_names(maps):

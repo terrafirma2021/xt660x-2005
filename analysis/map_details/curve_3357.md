@@ -69,18 +69,18 @@ Conversion: `raw*100/256`; unit: **%**.
 
 dimensionless multiplier of the stated contribution, not necessarily total fuel
 
-uniform_input conversion: `coolant_celsius`; requires `xt660_coolant_owner_corroborated`.
+uniform_input conversion: `temperature_celsius_candidate`; requires `yamaha_temperature_candidate`.
 Converted values: -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120.
 
 ### Every input axis
 
 | Axis | Traced source | Interpretation | Physical scale |
 |---|---|---|---|
-| uniform_input | u8 0x08F4 coolant | Coolant Celsius encoding: code*0.625-30 (owner-corroborated) | Owner-corroborated encoding; sensor accuracy not measured here |
+| uniform_input | u8 0x08F4 coolant | Effective coolant temperature code | Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius. |
 
 ### What remains for this map
 
-- Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.
+- Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.
 - Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.
 - Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.
 

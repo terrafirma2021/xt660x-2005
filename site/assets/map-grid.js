@@ -33,7 +33,7 @@ document.querySelectorAll('.calibration-grid').forEach(grid=>{
       const convert=value=>candidate?value*.625-30:value;
       const low=convert(data.ymin),high=convert(data.ymax);
       const y=value=>260-(convert(value)-low)/(high-low)*210;
-      const label=candidate?data.physical_label:data.sensor?'Internal temperature code':'Raw cell value';
+      const label=candidate?'Candidate °C — conditional':data.sensor?'Internal temperature code':'Raw cell value';
       plot.querySelector('.curve-y-label').textContent=label;
       plot.setAttribute('aria-label',label+' versus raw input coordinate');
       plot.querySelectorAll('.curve-y-tick').forEach((tick,i)=>tick.textContent=Number((low+(high-low)*i/4).toFixed(3)));
@@ -41,7 +41,7 @@ document.querySelectorAll('.calibration-grid').forEach(grid=>{
       if(adc){
         const a=Number(adc.value),raw=data.samples[a][1];
         const probe=plot.querySelector('.curve-probe');probe.setAttribute('cx',x(a));probe.setAttribute('cy',y(raw));probe.setAttribute('visibility','visible');
-        grid.querySelector('.curve-reading').textContent='ADC '+a+' → internal code '+raw+(candidate?' → '+Number(convert(raw).toFixed(3))+' °C '+(data.coolant_corroborated?'(owner-corroborated)':'(conditional)'):'');
+        grid.querySelector('.curve-reading').textContent='ADC '+a+' → internal code '+raw+(candidate?' → candidate '+Number(convert(raw).toFixed(3))+' °C (conditional)':'');
       }
     };
     plot.addEventListener('click',event=>{const knot=event.target.closest('.curve-knot');if(knot)cells[Number(knot.dataset.cell)].focus({preventScroll:true})});

@@ -38,7 +38,7 @@ add('fan_fault_set_below_road_speed',0x4c00,1,1,'Fault-route PP2 set below filte
 add('fan_fault_clear_above_road_speed',0x4c01,1,1,'Fault-route PP2 clear above filtered road-speed byte.',[0x71af,0x71b2,0x71b4],'code-confirmed routing; road-speed units unresolved')
 add('coolant_fault_substitute',0x4e64,1,1,'Effective coolant byte used with fault bit set outside diagnostic mode.',[0x7145,0x714a,0x714f,0x7157],'code-confirmed; coolant role corroborated by diagnostic 06')
 add('intake_temperature_fault_substitute',0x4e65,1,1,'Intake-temperature substitute under sensor fault outside diagnostic mode.',[0x702a,0x702f,0x7060,0x7063],'code-confirmed; intake-temperature role corroborated by diagnostic 05')
-add('coolant_conversion_values',0x4f47,1,29,'ADC conversion knots; raw10 axis 60 + 32*k, with endpoint clamp.',[0x711b,0x7121,0x7128,0x712b,0x7133],'code-confirmed conversion; Celsius encoding owner-corroborated; sensor accuracy unmeasured')
+add('coolant_conversion_values',0x4f47,1,29,'ADC conversion knots; raw10 axis 60 + 32*k, with endpoint clamp.',[0x711b,0x7121,0x7128,0x712b,0x7133],'code-confirmed conversion; degrees-C encoding unresolved')
 add('intake_temperature_conversion_values',0x4f26,1,33,'ADC-high-byte conversion knots; axis 8*k. Last knot is interpolation endpoint.',[0x7034,0x7040,0x7043,0x7046],'code-confirmed conversion; degrees-C encoding unresolved')
 for prefix,off,on,mask,gate,pc in [
     ('injector_primary_period_cut',0x4bc8,0x4bca,8,0xf519,0x758b),

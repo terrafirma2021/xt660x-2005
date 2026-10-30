@@ -70,7 +70,7 @@ Conversion: `raw*three_pitch_degrees/256`; unit: **relative crank degrees**.
 
 relative scheduler angle, NOT absolute degrees BTDC; fixed and variable timer corrections follow
 
-Evidence profiles: `nominal_xt_crank`. Consult each profile for its corroboration, assumptions and limits.
+Required profiles: `nominal_xt_crank`. These are assumptions, not measured hardware parameters.
 
 Minimum base code in the normal spark path; conditional minimum in the alternate path; scaled by A86/128 and later corrected
 

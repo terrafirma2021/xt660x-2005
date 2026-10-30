@@ -102,13 +102,12 @@ Converted values: 800, 1400, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 100
 | Axis | Traced source | Interpretation | Physical scale |
 |---|---|---|---|
 | row_axis | u16 0x08E8 throttle code (row) | Relative throttle coordinate | Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle. |
-| column_axis | u16 0x0900 selected speed (column) | Speed coordinate | Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md. |
+| column_axis | u16 0x0900 selected speed (column) | Speed coordinate | Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM. |
 
 ### What remains for this map
 
 - Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.
 - Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.
-- Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.
 - Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.
 - Establish event-code phase relative to the physical crank cycle, including special scheduling modes.
 - Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.

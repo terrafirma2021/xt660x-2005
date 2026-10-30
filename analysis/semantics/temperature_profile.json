@@ -20,24 +20,6 @@
       "0x4F47"
     ]
   },
-  "coolant_profile": {
-    "celsius_per_code": 0.625,
-    "offset_celsius": -30,
-    "status": "owner-corroborated Celsius encoding; not a calibrated sensor accuracy certificate",
-    "basis": "ECU emits floor(code*5/8), capped at 149. Earlier Yamaha-DataLogger subtracts 30 from the received byte. On 2026-10-30 the owner confirmed checking that conversion on their XT660 and confirmed the logger output was Celsius.",
-    "source": "https://github.com/terrafirma2021/Yamaha-DataLogger/blob/main/yamaha/src/main.cpp",
-    "source_git_blob": "a72db6d3c21c6adf3c40dd8c3ed3eda1de7ccbeb",
-    "limits": "No paired measurement values, accuracy, temperature range or ECU part number were supplied. The 80 C manual fallback discrepancy remains separate; this image substitutes code144, which encodes 60 C.",
-    "evidence": [
-      "0x7139",
-      "0x7142",
-      "0x714F",
-      "0x4E64"
-    ],
-    "exact_wire_formula": "min(149,floor(raw*5/8))",
-    "logger_celsius_formula": "wire_byte-30",
-    "fahrenheit_presentation_formula": "(raw*0.625-30)*9/5+32 = raw*1.125-22"
-  },
   "hypothesis_trials": [
     {
       "hypothesis": "offset_scaled_code",
@@ -646,6 +628,429 @@
       "common_pullup_interval_ohms": null
     }
   ],
+  "offset_identifiability": {
+    "fixed_slope": 0.625,
+    "offset_search": {
+      "min": -60,
+      "max": 20,
+      "step": 1
+    },
+    "sensor_hypotheses_tested": 162,
+    "compatible": {
+      "coolant": [
+        {
+          "offset_celsius": -36,
+          "common_pullup_interval_ohms": [
+            2128.8389513108614,
+            2139.3076923076924
+          ]
+        },
+        {
+          "offset_celsius": -35,
+          "common_pullup_interval_ohms": [
+            2071.275415896488,
+            2104.69696969697
+          ]
+        },
+        {
+          "offset_celsius": -34,
+          "common_pullup_interval_ohms": [
+            1975.9855334538877,
+            2038.5294117647059
+          ]
+        },
+        {
+          "offset_celsius": -33,
+          "common_pullup_interval_ohms": [
+            1877.3144876325089,
+            1946.2676056338028
+          ]
+        },
+        {
+          "offset_celsius": -32,
+          "common_pullup_interval_ohms": [
+            1834.864864864865,
+            1917.2222222222222
+          ]
+        },
+        {
+          "offset_celsius": -31,
+          "common_pullup_interval_ohms": [
+            1778.4210526315787,
+            1861.4864864864867
+          ]
+        },
+        {
+          "offset_celsius": -30,
+          "common_pullup_interval_ohms": [
+            1751.2987012987014,
+            1834.7333333333333
+          ]
+        },
+        {
+          "offset_celsius": -29,
+          "common_pullup_interval_ohms": [
+            1686.4779874213837,
+            1783.3116883116884
+          ]
+        },
+        {
+          "offset_celsius": -28,
+          "common_pullup_interval_ohms": [
+            1629.8765432098764,
+            1734.493670886076
+          ]
+        },
+        {
+          "offset_celsius": -27,
+          "common_pullup_interval_ohms": [
+            1590.8383233532936,
+            1709.5121951219512
+          ]
+        },
+        {
+          "offset_celsius": -26,
+          "common_pullup_interval_ohms": [
+            1546.5882352941176,
+            1626.4705882352944
+          ]
+        },
+        {
+          "offset_celsius": -25,
+          "common_pullup_interval_ohms": [
+            1526.9767441860465,
+            1580.0628930817613
+          ]
+        },
+        {
+          "offset_celsius": -24,
+          "common_pullup_interval_ohms": [
+            1489.0909090909092,
+            1515.510835913313
+          ]
+        }
+      ],
+      "intake": [
+        {
+          "offset_celsius": -55,
+          "common_pullup_interval_ohms": [
+            6110.0,
+            6119.142857142857
+          ]
+        },
+        {
+          "offset_celsius": -53,
+          "common_pullup_interval_ohms": [
+            5540.13698630137,
+            5687.6
+          ]
+        },
+        {
+          "offset_celsius": -52,
+          "common_pullup_interval_ohms": [
+            5435.405405405406,
+            5687.6
+          ]
+        },
+        {
+          "offset_celsius": -51,
+          "common_pullup_interval_ohms": [
+            5234.210526315789,
+            5310.0
+          ]
+        },
+        {
+          "offset_celsius": -50,
+          "common_pullup_interval_ohms": [
+            5137.532467532468,
+            5310.0
+          ]
+        },
+        {
+          "offset_celsius": -49,
+          "common_pullup_interval_ohms": [
+            4951.518987341772,
+            4976.823529411765
+          ]
+        },
+        {
+          "offset_celsius": -48,
+          "common_pullup_interval_ohms": [
+            4689.512195121952,
+            4976.823529411765
+          ]
+        },
+        {
+          "offset_celsius": -47,
+          "common_pullup_interval_ohms": [
+            4606.385542168675,
+            4680.666666666666
+          ]
+        },
+        {
+          "offset_celsius": -46,
+          "common_pullup_interval_ohms": [
+            4368.604651162791,
+            4680.666666666666
+          ]
+        },
+        {
+          "offset_celsius": -45,
+          "common_pullup_interval_ohms": [
+            4292.9885057471265,
+            4680.666666666666
+          ]
+        },
+        {
+          "offset_celsius": -44,
+          "common_pullup_interval_ohms": [
+            4076.2222222222226,
+            4415.684210526316
+          ]
+        },
+        {
+          "offset_celsius": -43,
+          "common_pullup_interval_ohms": [
+            3873.4408602150543,
+            4177.2
+          ]
+        },
+        {
+          "offset_celsius": -42,
+          "common_pullup_interval_ohms": [
+            3808.723404255319,
+            4177.2
+          ]
+        },
+        {
+          "offset_celsius": -41,
+          "common_pullup_interval_ohms": [
+            3622.5773195876286,
+            3961.428571428571
+          ]
+        },
+        {
+          "offset_celsius": -40,
+          "common_pullup_interval_ohms": [
+            3563.0612244897957,
+            3961.428571428571
+          ]
+        },
+        {
+          "offset_celsius": -39,
+          "common_pullup_interval_ohms": [
+            3391.5841584158416,
+            3961.428571428571
+          ]
+        },
+        {
+          "offset_celsius": -38,
+          "common_pullup_interval_ohms": [
+            3282.815533980582,
+            3765.2727272727275
+          ]
+        },
+        {
+          "offset_celsius": -37,
+          "common_pullup_interval_ohms": [
+            3178.1904761904766,
+            3765.2727272727275
+          ]
+        },
+        {
+          "offset_celsius": -36,
+          "common_pullup_interval_ohms": [
+            3028.5185185185182,
+            3586.173913043478
+          ]
+        },
+        {
+          "offset_celsius": -35,
+          "common_pullup_interval_ohms": [
+            2980.4587155963304,
+            3586.173913043478
+          ]
+        },
+        {
+          "offset_celsius": -34,
+          "common_pullup_interval_ohms": [
+            2796.725663716814,
+            3422.0
+          ]
+        },
+        {
+          "offset_celsius": -33,
+          "common_pullup_interval_ohms": [
+            2667.2413793103447,
+            3270.96
+          ]
+        },
+        {
+          "offset_celsius": -32,
+          "common_pullup_interval_ohms": [
+            2625.555555555556,
+            3270.96
+          ]
+        },
+        {
+          "offset_celsius": -31,
+          "common_pullup_interval_ohms": [
+            2465.702479338843,
+            3131.538461538462
+          ]
+        },
+        {
+          "offset_celsius": -30,
+          "common_pullup_interval_ohms": [
+            2427.377049180328,
+            3002.4444444444443
+          ]
+        },
+        {
+          "offset_celsius": -29,
+          "common_pullup_interval_ohms": [
+            2316.08,
+            2882.5714285714284
+          ]
+        },
+        {
+          "offset_celsius": -28,
+          "common_pullup_interval_ohms": [
+            2184.6666666666665,
+            2775.396825396825
+          ]
+        },
+        {
+          "offset_celsius": -27,
+          "common_pullup_interval_ohms": [
+            2184.6666666666665,
+            2690.0
+          ]
+        },
+        {
+          "offset_celsius": -26,
+          "common_pullup_interval_ohms": [
+            2104.8387096774195,
+            2566.793893129771
+          ]
+        },
+        {
+          "offset_celsius": -25,
+          "common_pullup_interval_ohms": [
+            2030.0,
+            2526.969696969697
+          ]
+        },
+        {
+          "offset_celsius": -24,
+          "common_pullup_interval_ohms": [
+            1959.6969696969697,
+            2373.529411764706
+          ]
+        },
+        {
+          "offset_celsius": -23,
+          "common_pullup_interval_ohms": [
+            1893.5294117647059,
+            2228.8571428571427
+          ]
+        },
+        {
+          "offset_celsius": -22,
+          "common_pullup_interval_ohms": [
+            1893.5294117647059,
+            2159.5774647887324
+          ]
+        },
+        {
+          "offset_celsius": -21,
+          "common_pullup_interval_ohms": [
+            1831.142857142857,
+            2059.2413793103447
+          ]
+        },
+        {
+          "offset_celsius": -20,
+          "common_pullup_interval_ohms": [
+            1772.2222222222222,
+            1994.625850340136
+          ]
+        },
+        {
+          "offset_celsius": -19,
+          "common_pullup_interval_ohms": [
+            1716.4864864864867,
+            1900.9333333333336
+          ]
+        },
+        {
+          "offset_celsius": -18,
+          "common_pullup_interval_ohms": [
+            1663.6842105263156,
+            1810.9150326797387
+          ]
+        },
+        {
+          "offset_celsius": -17,
+          "common_pullup_interval_ohms": [
+            1613.5897435897434,
+            1752.8387096774193
+          ]
+        },
+        {
+          "offset_celsius": -16,
+          "common_pullup_interval_ohms": [
+            1566.0,
+            1668.4810126582279
+          ]
+        },
+        {
+          "offset_celsius": -15,
+          "common_pullup_interval_ohms": [
+            1520.7317073170732,
+            1614.0000000000002
+          ]
+        },
+        {
+          "offset_celsius": -14,
+          "common_pullup_interval_ohms": [
+            1477.6190476190475,
+            1534.7852760736198
+          ]
+        },
+        {
+          "offset_celsius": -13,
+          "common_pullup_interval_ohms": [
+            1436.5116279069766,
+            1458.4337349397592
+          ]
+        },
+        {
+          "offset_celsius": -12,
+          "common_pullup_interval_ohms": [
+            1397.2727272727273,
+            1409.0476190476188
+          ]
+        }
+      ]
+    },
+    "shared_offsets_celsius": [
+      -36,
+      -35,
+      -34,
+      -33,
+      -32,
+      -31,
+      -30,
+      -29,
+      -28,
+      -27,
+      -26,
+      -25,
+      -24
+    ],
+    "conclusion": "Thirteen shared integer offsets fit with independent unknown sensor pullups. Resistance consistency does not uniquely establish -30. The historical logger is a guess, not calibration evidence."
+  },
   "fits": {
     "coolant_candidate": {
       "slope": 0.625,
@@ -890,7 +1295,7 @@
     }
   },
   "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
-  "generator_sha256": "adda9fe634d66c7f78661b2e90ef3ca7ae3f07fa01dc38d83bab964396f46bf6",
+  "generator_sha256": "528590c2b84127a90eb512f9ff0eeb2a28be405f12e37771767674f5fb141d31",
   "assumptions": "Ideal 10-bit ratiometric ADC; ADC bin width 1/1024; NTC to ground; constant pullup; published sensor resistance intervals. Output tolerance covers one code plus the next input group (one ADC count for coolant, four for IAT because two input bits are discarded). This is a consistency test, not uniqueness proof or a component measurement.",
   "sources": [
     {

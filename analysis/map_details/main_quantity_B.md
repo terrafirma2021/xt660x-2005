@@ -141,7 +141,7 @@ Conversion: `raw*1000/timer_hz`; unit: **ms**.
 
 timer duration before downstream corrections
 
-Evidence profiles: `nominal_xt_timer`. Consult each profile for its corroboration, assumptions and limits.
+Required profiles: `nominal_xt_timer`. These are assumptions, not measured hardware parameters.
 
 row_axis conversion: `speed_rpm`; requires `nominal_xt_timer`, `nominal_xt_crank`.
 Converted values: 600, 800, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3250, 3500, 3750, 4000, 4250, 4500, 4750, 5000, 5250, 5500, 5750, 6000, 6250, 6500, 6750, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000, 11500, 12000, 12650, 12700, 12750.
@@ -150,14 +150,13 @@ Converted values: 600, 800, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1800, 2000
 
 | Axis | Traced source | Interpretation | Physical scale |
 |---|---|---|---|
-| row_axis | u16 0x0900 selected speed | Speed coordinate | Resolve the RPM telemetry divisor190 versus nominal divisor256 scale conflict; confirm timer clock and CPS pattern per crank revolution. See EXTERNAL_SCALE_CHECKS.md. |
+| row_axis | u16 0x0900 selected speed | Speed coordinate | Confirm the timer clock and CPS pattern per crank revolution before treating the axis as RPM. |
 | column_axis | u16 0x08E8 throttle code; fault substitution ROM 0x4E62 | Relative throttle coordinate | Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle. |
 
 ### What remains for this map
 
 - Confirm actual timer clock; the 500 kHz profile remains service-correlated, not measured.
 - Confirm CPS pattern per mechanical revolution; the 12-pitch / 180-degree speed-period interpretation remains conditional.
-- Resolve the RPM telemetry conflict: firmware divides speed code by 190, while the nominal map scale and the historical byte*50 logger would require 256. See EXTERNAL_SCALE_CHECKS.md.
 - Confirm the learned-closed reference and sensor/mechanical transfer before assigning degrees or percent throttle.
 - Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.
 - Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.

@@ -72,6 +72,6 @@ Every catalogued map has a byte layout, input/output trace, raw values and nearb
 | [Spark time correction — other variants](map_details/timing_speed_4f64.md) | 0x4F64 | Speed-indexed additive time correction in the spark planner; timer ticks, not absolute spark degrees |
 | [Spark time correction — XT variant 9](map_details/timing_speed_4f81.md) | 0x4F81 | Speed-indexed additive time correction in the spark planner; timer ticks, not absolute spark degrees |
 | [Ignition dwell contribution vs speed and supply](map_details/dwell_supply_speed.md) | 0x4B12 | Coil charge-duration contribution combined with other dwell terms; physical timer scale remains conditional |
-| [Coolant sensor conversion](map_details/coolant_sensor_conversion.md) | 0x4F47 | Sensor conversion to internal temperature code; coolant Celsius encoding owner-corroborated |
-| [Intake air temperature sensor conversion](map_details/intake_temperature_conversion.md) | 0x4F26 | Sensor conversion to internal temperature code; candidate IAT Celsius scale remains conditional |
+| [Coolant sensor conversion](map_details/coolant_sensor_conversion.md) | 0x4F47 | Sensor conversion to internal temperature code; candidate Celsius scale remains conditional |
+| [Intake air temperature sensor conversion](map_details/intake_temperature_conversion.md) | 0x4F26 | Sensor conversion to internal temperature code; candidate Celsius scale remains conditional |
 | [Pressure-to-load processing gain](map_details/curve_1854.md) | 0x185A | Pressure/load-processing gain copied to RAM 0x0DBA |

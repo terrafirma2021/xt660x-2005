@@ -2,7 +2,7 @@
 
 The target remains the supplied **XT660X 2005** image. The TDM900 manual is a comparison for shared Yamaha behavior, not a replacement identification of this firmware.
 
-The coolant encoding is now **owner-corroborated: `temperature = raw * 0.625 - 30 °C`**. Firmware emits `min(149,floor(raw*5/8))`; the owner’s earlier logger subtracts 30, and the owner confirmed on 2026-10-30 that its Celsius reading was checked on their XT660. [Evidence and limits](EXTERNAL_SCALE_CHECKS.md) distinguish this report from a new calibrated measurement. The coolant table and twelve coolant-dependent map axes use that corroborated profile. IAT and two IAT-dependent map axes retain an explicitly conditional profile. [temperature_profile.json](temperature_profile.json) contains all 1,024 ADC inputs for both sensors, the resistance comparisons and the assumptions needed to reproduce them.
+The best-supported candidate remains **`temperature = raw * 0.625 - 30 °C`**, conditional on the stated circuit and interpretation assumptions. The previous owner-corroborated status has been withdrawn: on 2026-10-30 the owner clarified that the earlier logger conversions were guesses without supporting measurement data. They cannot establish a Celsius offset. Both sensor tables and all fourteen temperature-dependent map axes therefore retain the conditional profile. See [corrected external-source assessment](EXTERNAL_SCALE_CHECKS.md). [temperature_profile.json](temperature_profile.json) contains all 1,024 ADC inputs for both sensors, the resistance comparisons and the assumptions needed to reproduce them.
 
 ## Does the variant setting change temperature?
 
@@ -15,11 +15,11 @@ ROM `0x18D3 = 9` initializes RAM `0x0D87`. That selector demonstrably changes ma
 
 [74,792 instruction-execution cases](sensor_variant_validation.json) test the claim: 30,504 temperature cases vary all 256 selector values, ADC inputs and established fault states; 8,192 further cases exhaust both sensors across every ADC input and all established fault/override bit combinations at variant 9; 36,096 cases check selection and fractional interpolation of the two spark correction curves. Every ADC input is covered for selector values 0, 9 and 255; the remaining selector values use 18 boundary/interior ADC samples. Temperature results and replacements remain identical when only `D87` changes. The spark curve changes exactly at value 9. These are isolated-routine tests, not proof about all upstream state or other firmware images.
 
-The coolant diagnostic payload uses the **measured** temperature code even when the effective code is replaced due to a fault. The IAT diagnostic payload uses the **effective** code. The coolant payload offset now has external logger/owner corroboration. IAT display remains independently unverified.
+The coolant diagnostic payload uses the **measured** temperature code even when the effective code is replaced due to a fault. The IAT diagnostic payload uses the **effective** code. Neither coolant nor IAT payload offset has independent measured confirmation.
 
 ## Exact coolant lookup and replacement path
 
-The coolant map is present at **0x4F47-0x4F63**, with **29 stored cells**. It maps ADC input to an internal temperature code; it is not a two-dimensional fuel surface. The website shows its full digital curve and the cell grid directly below the page title. Its ADC slider covers all 1,024 possible inputs. Coolant Celsius is an optional display labelled owner-corroborated; raw codes remain available.
+The coolant map is present at **0x4F47-0x4F63**, with **29 stored cells**. It maps ADC input to an internal temperature code; it is not a two-dimensional fuel surface. The website shows its full digital curve and the cell grid directly below the page title. Its ADC slider covers all 1,024 possible inputs. Candidate Celsius is an optional display explicitly labelled conditional; raw codes remain available.
 
 ```text
 q = min(7168, max(0, adc10 * 64 - 3840) // 8)
@@ -52,7 +52,15 @@ The generator tests seven proposed affine encodings against each sensor: fourtee
 
 For the ordinary internal-Fahrenheit hypothesis, coolant 20°C requires a pullup of 1.263–1.447 kΩ, 80°C requires 1.751–1.885 kΩ, and 110°C requires 1.908–2.039 kΩ. One fixed pullup cannot satisfy all three. Treating the wire byte as ordinary Fahrenheit is even more restrictive: the actual 149 cap would mean a maximum 65°C. The trial already fails before imposing that cap.
 
-For display in Fahrenheit, the corroborated coolant coordinate becomes `1.125*code-22 °F`. That does not make the original integer an ordinary Fahrenheit value. No claim is made about the dashboard’s selectable-unit implementation.
+Under the candidate scale, conversion to Fahrenheit becomes `1.125*code-22 °F`. That does not make the original integer an ordinary Fahrenheit value. No claim is made about the dashboard’s selectable-unit implementation.
+
+## Offset identifiability: the surviving candidate is not unique
+
+The earlier logger supplied no measured calibration. To avoid choosing a scale merely because it wins a short list of hypotheses, `sensor_profiles.py` now also sweeps every integer offset from -60 to +20 with slope fixed at 0.625: **162 sensor/offset trials**.
+
+Under the same constant ratiometric NTC model, both sensors admit **all thirteen shared offsets from -36 to -24 inclusive**, with a different allowed pullup interval for each sensor. For example, coolant offset -36 permits 2.129–2.139 kΩ, -30 permits 1.751–1.835 kΩ, and -24 permits 1.489–1.516 kΩ. The board pullups have not been measured, so these are alternative circuit/encoding explanations of the same available data.
+
+This bounded sweep does not establish the slope or exhaust continuous offsets and more complex circuits. It establishes that the resistance checks alone cannot uniquely prove -30. The [machine-readable results](temperature_profile.json) preserve every admitted offset and pullup interval. A known physical temperature paired with its raw/diagnostic value, verified conditioning values, or the applicable instrument decode would add independent constraints; no such measurement is inferred from the old logger.
 
 ## Resistance evidence for the scale
 
@@ -81,8 +89,8 @@ The [Yamaha TDM900 service manual](https://biker.ee/manuals/yamaha/Yamaha-TDM900
 
 Uniform temperature knots 16, 32, ... 240 become -20, -10, ... 120°C. IAT curve `0x3220` uses knots 16, 24, ... 208, giving -20 to 100°C in 5°C steps. The conversion catalogue retains raw knots and the profile requirement alongside every converted axis.
 
-Normal fan hysteresis clears below raw 205 and sets above raw 217. With the corroborated coolant encoding, the last clear code 204 represents 97.5°C; the first set code 218 represents 106.25°C. Equality retains the previous state. Sensor faults, diagnostic mode and override paths are separate. These values are not hardware-verified switching temperatures.
+Normal fan hysteresis clears below raw 205 and sets above raw 217. Under the conditional coolant encoding, the last clear code 204 represents 97.5°C; the first set code 218 represents 106.25°C. Equality retains the previous state. Sensor faults, diagnostic mode and override paths are separate. These values are not hardware-verified switching temperatures.
 
-The coolant offset now has owner corroboration. A resistance substituted at the ECU input plus its resulting diagnostic value would establish the analog transfer and accuracy; independent IAT readings would test its remaining candidate scale. The missing measurement does not prevent further tracing of other maps.
+The coolant offset remains unconfirmed. A resistance substituted at the ECU input plus its resulting diagnostic value would establish the analog transfer and accuracy; independent IAT readings would test its remaining candidate scale. The missing measurement does not prevent further tracing of other maps.
 
 Reproduce with `python scripts/sensor_profiles.py`; run `scripts/test_sensor_variants.py` against the compiled full-translation library. No firmware byte is modified by either script.

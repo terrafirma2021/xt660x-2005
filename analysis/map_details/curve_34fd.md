@@ -69,18 +69,18 @@ Selected response R (34D0/34DA/34E4 or 355D/3567/3571) and coolant C (34FD) part
 
 Consumer instruction addresses: `0x9220`, `0x9232`, `0x9274`, `0x9495`, `0x94BA`.
 
-uniform_input conversion: `coolant_celsius`; requires `xt660_coolant_owner_corroborated`.
+uniform_input conversion: `temperature_celsius_candidate`; requires `yamaha_temperature_candidate`.
 Converted values: -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120.
 
 ### Every input axis
 
 | Axis | Traced source | Interpretation | Physical scale |
 |---|---|---|---|
-| uniform_input | u8 0x08F4 coolant | Coolant Celsius encoding: code*0.625-30 (owner-corroborated) | Owner-corroborated encoding; sensor accuracy not measured here |
+| uniform_input | u8 0x08F4 coolant | Effective coolant temperature code | Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius. |
 
 ### What remains for this map
 
-- Celsius encoding is owner-corroborated; reconcile the manual 80 C fallback with this image's 60 C replacement and establish sensor accuracy/range for this ECU.
+- Confirm the coolant circuit/temperature transfer and resolve the XT manual fallback conflict before assigning Celsius.
 - The cell is one factor in a joint transient pulse calculation; no independent millisecond unit is established.
 - Finish the entry, override and fault-path conditions for this lookup; the current selection description is incomplete.
 - Validate edited behaviour, permitted ranges and output effects on the identified ECU; software arithmetic checks do not provide bench sign-off.

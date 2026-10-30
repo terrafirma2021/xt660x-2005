@@ -7,7 +7,7 @@ import hashlib
 import json
 import csv
 from pathlib import Path
-from sensor_profiles import PROFILE, DEFINITION, COOLANT_PROFILE, COOLANT_DEFINITION, celsius
+from sensor_profiles import PROFILE, DEFINITION, celsius
 from map_review import input_review, remaining_questions
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -67,10 +67,9 @@ def build():
     maps = json.loads((ROOT/'analysis/maps.json').read_text())
     profiles = {
         PROFILE: DEFINITION,
-        COOLANT_PROFILE: COOLANT_DEFINITION,
         'nominal_xt_timer': dict(timer_hz=500000, bus_hz=16000000, tick_microseconds=2,
             status='service-correlated nominal; not measured on this ECU',
-            basis='TSCR2=5 gives bus/32. Fan diagnostic repeats every 250 tasks; each task is 4*2500 timer ticks. Yamaha specifies a 5-second fan cycle with 2 seconds on, 3 off. The external logger RPM formula does not independently validate this profile: this image divides speed code by 190, not 256; see EXTERNAL_SCALE_CHECKS.md.',
+            basis='TSCR2=5 gives bus/32. Fan diagnostic repeats every 250 tasks; each task is 4*2500 timer ticks. Yamaha specifies a 5-second fan cycle with 2 seconds on, 3 off.',
             evidence=['0x5057','0x5059','0x679C','0x67C4','0x54B5','0xAC7F','0xBB45']),
         'nominal_xt_crank': dict(normalized_pitches_per_revolution=12, pitch_degrees=30,
             speed_period_degrees=180, spark_scale_period_degrees=90,
@@ -79,8 +78,6 @@ def build():
             evidence=['0xD871','0xDBAA','0x53F4','0x73F7']),
     }
     conversions = {
-        'coolant_celsius': dict(unit='degC', formula='raw*0.625-30',
-            requires=[COOLANT_PROFILE], meaning='Owner-corroborated encoding: ECU wire payload floor(raw*5/8), then logger subtracts 30. Physical sensor accuracy is separate. Ordinary Fahrenheit hypotheses fail the published resistance checks. See TEMPERATURE_PROFILE.md.'),
         'temperature_celsius_candidate': dict(unit='candidate degC', formula='raw*0.625-30',
             requires=[PROFILE], meaning='Inferred temperature profile; consistent with sensor resistances and TDM fallback values, but XT660 manual coolant fallback differs. See TEMPERATURE_PROFILE.md.'),
         'timer_ms': dict(unit='ms', formula='raw*1000/timer_hz', nominal_formula='raw*0.002',
@@ -105,7 +102,7 @@ def build():
             meaning='multiplicative factor in the denominator, not a direct fuel multiplier'),
     }
     cell_ids = {
-        'coolant_sensor_conversion':'coolant_celsius',
+        'coolant_sensor_conversion':'temperature_celsius_candidate',
         'intake_temperature_conversion':'temperature_celsius_candidate',
         **{f'main_quantity_{x}':'timer_ms' for x in 'ABC'},
         **{f'main_u8_{x}':'spark_relative_degrees' for x in 'ABC'},
@@ -118,7 +115,6 @@ def build():
         'fuel_normalization_throttle':'normalization_input_code',
     }
     nominal = {
-        'coolant_celsius':celsius,
         'temperature_celsius_candidate':celsius,
         'timer_ms': lambda x:x*.002, 'dwell_ms':lambda x:x*.064,
         'injector_compensation_ms':lambda x:x*.016,
@@ -201,8 +197,7 @@ def build():
         key=cell_ids.get(m['id'])
         rec=dict(id=m['id'], data_address=m['data_address'],
             cell_conversion=key, ready_for_tuning_export=False,
-            status='owner-corroborated physical encoding' if key=='coolant_celsius' else
-                   'conditional physical conversion' if key and conversions[key]['requires'] else
+            status='conditional physical conversion' if key and conversions[key]['requires'] else
                    'logical behavior decoded' if key=='eligibility' else
                    'numeric contribution decoded' if key else 'unresolved cell conversion',
             axis_conversions=[])
@@ -222,9 +217,8 @@ def build():
                     raw_pre_scale=factor, values=[speed_rpm(v*factor,500000,180) for v in axis['raw_values']],
                     requires=['nominal_xt_timer','nominal_xt_crank']))
             if any(s in sources.lower() for s in ['0x8f4','0x08f4','0x8f5','0x08f5']):
-                coolant=any(s in sources.lower() for s in ['0x8f4','0x08f4'])
-                rec['axis_conversions'].append(dict(axis=axis_name,conversion='coolant_celsius' if coolant else 'temperature_celsius_candidate',
-                    raw_pre_scale=1,values=[celsius(v) for v in axis['raw_values']],requires=[COOLANT_PROFILE if coolant else PROFILE]))
+                rec['axis_conversions'].append(dict(axis=axis_name,conversion='temperature_celsius_candidate',
+                    raw_pre_scale=1,values=[celsius(v) for v in axis['raw_values']],requires=[PROFILE]))
         if m['kind']=='1D_uniform_axis' and '0x0900' in ' '.join(m['inputs']):
             knots=[m['input_min_raw']+k*m['index_divisor']/m['index_factor_raw'] for k in range(m['columns'])]
             rec['axis_conversions'].append(dict(axis='uniform_input',conversion='speed_rpm',raw_pre_scale=1,
@@ -233,12 +227,11 @@ def build():
                 caveat='Ideal knot positions derived from the uniform header; final endpoint may lie beyond the clamped input span.',
                 requires=['nominal_xt_timer','nominal_xt_crank']))
         if m['kind']=='1D_uniform_axis' and any(s in ' '.join(m['inputs']).lower() for s in ['0x08f4','0x08f5']):
-            coolant='0x08f4' in ' '.join(m['inputs']).lower()
             knots=[m['input_min_raw']+k*m['index_divisor']/m['index_factor_raw'] for k in range(m['columns'])]
-            rec['axis_conversions'].append(dict(axis='uniform_input',conversion='coolant_celsius' if coolant else 'temperature_celsius_candidate',
+            rec['axis_conversions'].append(dict(axis='uniform_input',conversion='temperature_celsius_candidate',
                 raw_pre_scale=1,raw_ideal_knots=knots,values=[celsius(v) for v in knots],
                 raw_clamped_range=[m['input_min_raw'],m['input_min_raw']+m['input_span_raw']],
-                caveat='Ideal final knot can exceed clamped input span. See the named profile for evidence scope.',requires=[COOLANT_PROFILE if coolant else PROFILE]))
+                caveat='Conditional candidate profile. Ideal final knot can exceed clamped input span.',requires=[PROFILE]))
         if m['id'] in ['fuel_normalization_load','fuel_normalization_throttle']:
             rec['decoded_context']='The selected rounded lookup becomes CD1; CD0=clamp(CD1+CD4-128,0,255). CE2=normalization(CD0,CD5,ROM[1ACE]) is a Q8 multiplier shared by 0952/0954/0956/0958 into CE4/CE6/CE8/CEA. Increasing a nonzero code at fixed gain/reference reduces the ideal multiplier; code zero instead bypasses to unity. See NORMALIZATION.md for exact rounding and exceptions.'
             rec['consumer_evidence']=['0x7EE4','0x7EF3','0x7F0B','0x7F50','0x7FA8','0x7FAB','0x7FD5']
@@ -277,12 +270,12 @@ def build():
         profiles=profiles,conversions=conversions,maps=records,
         telemetry_cross_check=dict(speed_divisor_address='0x4E34',speed_divisor=int.from_bytes(image[0x4e34:0x4e36],'big'),
             exact_payload='min(255,floor(selected_speed_code/max(1,ROM_word_4E34)))',
-            external_logger='wire_byte*50 rpm; owner reports checked on XT660',
-            unresolved_conflict='Divisor190 implies ideal code*50/190 with that logger. Nominal clock/crank profile gives code*50/256. These differ by 34.7368%; do not promote RPM axes from the logger claim without paired data/revision and source-period confirmation.'),
+            external_logger='wire_byte*50 rpm; owner clarified this was a guess without measurement data',
+            unresolved_conflict='Divisor190 implies ideal code*50/190 with that logger. Nominal clock/crank profile gives code*50/256. These differ by 34.7368%; do not promote RPM axes from the unvalidated logger hypothesis without paired data/revision and source-period confirmation.'),
         unresolved_sensor_hypotheses={
-            'temperature':dict(candidate_celsius='raw*0.625-30', status='coolant encoding owner-corroborated; IAT remains conditional; sensor accuracy unmeasured',
+            'temperature':dict(candidate_celsius='raw*0.625-30', status='explicit conditional profile; not verified hardware units',
                 support='Quantization-aware resistance consistency test admits common pullups for both curves. TDM900 manual fallback 60/20 C matches raw144/80. Variant-selector tests leave both temperature conversions unchanged.',
-                conflict='XT660 service manual specifies coolant fallback80 C; this image uses 60 C under the corroborated coolant encoding. IAT display and both analog circuit values remain unverified.'),
+                conflict='XT660 service manual specifies coolant fallback80 C. TDM evidence does not relabel this XT660X image. Dashboard offset and circuit values remain unverified.'),
             'supply':dict(candidate_volts='raw*5/64',status='hypothesis; not assigned to map axes',
                 support='Would make fault replacement 154 approximately 12 V and dwell-axis knots approximately 6.5 to 16.5 V.',
                 conflict='Analog divider and dashboard decode are absent; diagnostic payload floor(raw*256/240) is not proven to be decivolts.'),
@@ -317,7 +310,6 @@ def build():
     summary=dict(maps=len(records),cell_conversions=sum(r['cell_conversion'] is not None for r in records),
                  maps_with_speed_axes=sum(any(a['conversion']=='speed_rpm' for a in r['axis_conversions']) for r in records),
                  maps_with_candidate_temperature_axes=sum(any(a['conversion']=='temperature_celsius_candidate' for a in r['axis_conversions']) for r in records),
-                 maps_with_corroborated_coolant_axes=sum(any(a['conversion']=='coolant_celsius' for a in r['axis_conversions']) for r in records),
                  joint_arithmetic_maps=len(joint_transient),
                  unresolved_cell_maps=[r['id'] for r in records if r['status']=='unresolved cell conversion'])
     summary['axes_with_explicit_review']=sum(len(r['axis_interpretations']) for r in records)
@@ -349,7 +341,7 @@ def build():
             definition=conversions[key]
             extra += [f"Conversion: `{definition['formula']}`; unit: **{definition['unit']}**.",'',definition['meaning'],'']
             if definition['requires']:
-                extra += ['Evidence profiles: '+', '.join('`'+x+'`' for x in definition['requires'])+'. Consult each profile for its corroboration, assumptions and limits.','']
+                extra += ['Required profiles: '+', '.join('`'+x+'`' for x in definition['requires'])+'. These are assumptions, not measured hardware parameters.','']
         if record.get('decoded_context'):extra += [record['decoded_context'],'']
         if record.get('reference_scenario'):
             scenario=record['reference_scenario']
