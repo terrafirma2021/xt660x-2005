@@ -4,3 +4,18 @@
 
 .curve-view{margin:20px 0 26px}.curve-controls{display:flex;gap:24px;align-items:center;flex-wrap:wrap}.curve-controls label{display:flex;align-items:center;gap:10px;color:var(--ink);font-size:13px}.curve-controls select{background:var(--surface);color:var(--ink);border:1px solid var(--line);padding:9px;max-width:100%}.curve-controls .adc-control{flex:1;min-width:200px}.curve-adc{accent-color:var(--blue);flex:1;min-width:80px}.document .curve-assumption{background:var(--notice);color:var(--notice-ink);padding:12px;font-size:12px;margin-top:16px}.curve-plot{display:block;width:100%;height:auto;min-height:220px;background:var(--plot-bg);border:1px solid var(--line);margin-top:16px}.curve-plot text{fill:var(--muted);font:12px Consolas,monospace}.curve-guide{stroke:var(--plot-grid);stroke-width:1}.curve-line{fill:none;stroke:var(--plot-line);stroke-width:2;vector-effect:non-scaling-stroke}.curve-knot{fill:var(--surface);stroke:var(--plot-line);stroke-width:2;cursor:pointer}.curve-knot.selected{fill:var(--plot-line);r:6}.curve-probe{fill:var(--notice-ink);stroke:var(--surface);stroke-width:2}.curve-reading{display:block;font:12px/1.8 Consolas,monospace;color:var(--ink);padding:10px 0}.curve-reading:empty{display:none}.document .curve-note{font-size:12px;margin:0}.map-mini.curve-mini{background:var(--plot-bg);padding:8px}.curve-mini path{stroke:var(--plot-line);stroke-width:2;fill:none;vector-effect:non-scaling-stroke}
 @media(max-width:600px){.curve-controls label{flex-wrap:wrap}.curve-plot{min-height:0}.curve-plot text{font-size:16px}.curve-controls .adc-control{min-width:100%}.curve-reading{font-size:11px}}
+
+/* Fit the complete map by default; scrolling is an explicit detail option. */
+.grid-tools select{background:var(--surface);color:var(--ink);border:1px solid var(--line);padding:8px;font:inherit;max-width:100%}
+.document .grid-overview-note{font-size:12px;color:var(--muted);margin:8px 0}
+.grid-overview-note[hidden]{display:none}
+.calibration-grid[data-view=fit] .grid-scroll{max-height:none;overflow:visible;overscroll-behavior:auto}
+.document .calibration-grid[data-view=fit] table.cell-grid{width:100%;min-width:0;table-layout:fixed;border-spacing:1px}
+.document .calibration-grid[data-view=fit] .cell-grid th{position:static;padding:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:var(--grid-header-font,10px);height:var(--grid-row-height,16px);box-sizing:border-box}
+.document .calibration-grid[data-view=fit] .cell-grid thead th{height:28px}
+.document .calibration-grid[data-view=fit] .cell-grid .grid-corner{width:var(--grid-axis-width,64px);font-size:8px}
+.calibration-grid[data-view=fit] .map-cell{min-width:0;min-height:0;height:var(--grid-row-height,16px);padding:0 1px;white-space:nowrap;overflow:hidden;font-size:var(--grid-cell-font,10px);line-height:1;touch-action:manipulation}
+.calibration-grid[data-view=fit].compact-overview .map-cell{font-size:0}
+.calibration-grid[data-view=fit] .map-cell.selected:after{width:3px;height:3px;right:1px;top:1px}
+.document .calibration-grid[data-view=fit] .cell-grid tbody th{padding:0;line-height:1}
+.document .calibration-grid[data-view=fit].compact-overview .cell-grid thead th:not(.grid-corner){writing-mode:vertical-rl;transform:rotate(180deg);height:64px;padding:4px 0;text-overflow:clip;font-size:8px;line-height:1}

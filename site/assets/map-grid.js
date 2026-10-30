@@ -4,6 +4,31 @@ document.querySelectorAll('.calibration-grid').forEach(grid=>{
   const output=grid.querySelector('.grid-inspector');
   const scroll=grid.querySelector('.grid-scroll');
   const corner=grid.querySelector('.grid-corner');
+  const rows=Number(grid.dataset.rows);
+  const view=grid.querySelector('.grid-view');
+  const maxDigits=Math.max(...cells.map(cell=>cell.textContent.length));
+  const fit=()=>{
+    const rowHeight=Math.max(12,Math.min(32,Math.floor((Math.min(820,Math.max(360,innerHeight*.72))-30)/rows)));
+    const axisWidth=grid.clientWidth<600?48:64;
+    const columnWidth=(scroll.clientWidth-axisWidth-columns-2)/columns;
+    const font=Math.min(12,Math.floor((columnWidth-4)/(maxDigits*.62)),Math.floor(rowHeight*.7));
+    grid.style.setProperty('--grid-row-height',rowHeight+'px');
+    grid.style.setProperty('--grid-axis-width',axisWidth+'px');
+    grid.style.setProperty('--grid-cell-font',Math.max(8,font)+'px');
+    grid.style.setProperty('--grid-header-font',Math.min(10,Math.max(8,font))+'px');
+    const overview=grid.dataset.view==='fit' && font<8;
+    grid.classList.toggle('compact-overview',overview);
+    grid.querySelector('.grid-overview-note').hidden=!overview;
+  };
+  view.addEventListener('change',()=>{
+    grid.dataset.view=view.value;
+    scroll.setAttribute('aria-label',view.value==='fit'?'Calibration values, whole map':'Scrollable calibration values, larger cells');
+    scroll.scrollTop=scroll.scrollLeft=0;
+    fit();
+  });
+  new ResizeObserver(fit).observe(scroll);
+  window.addEventListener('resize',fit);
+  fit();
   const padding=()=>{scroll.style.scrollPaddingTop=corner.offsetHeight+4+'px';scroll.style.scrollPaddingLeft=corner.offsetWidth+4+'px'};
   padding();new ResizeObserver(padding).observe(corner);
   let selected=cells[0];

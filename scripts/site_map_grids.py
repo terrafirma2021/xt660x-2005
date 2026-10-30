@@ -99,20 +99,21 @@ def grid(m, temperature=None):
     if lo == hi:
         note += f' All {len(values)} cells contain {lo}; this map is constant.'
     legend_style=' style="background:'+colour(lo,lo,hi)[0]+'"' if lo==hi else ''
-    parts = [f'<section class="calibration-grid" id="calibration-grid" data-map="{m["id"]}" data-columns="{m["columns"]}">',
+    parts = [f'<section class="calibration-grid" id="calibration-grid" data-map="{m["id"]}" data-columns="{m["columns"]}" data-rows="{m["rows"]}" data-view="fit">',
         f'<div class="grid-title"><h2>{"Curve & cells" if m["rows"]==1 else "Calibration grid"}</h2><span>RAW ECU VALUES</span></div>',
         curve(m,temperature),
         f'<p class="grid-source">{esc(axes)}</p>',
-        f'<div class="grid-tools"><label><input type="checkbox" class="grid-colours" checked> Colour cells</label><div class="grid-legend"><span>{lo}</span><i aria-hidden="true"{legend_style}></i><span>{hi}</span><span>{"Constant" if lo==hi else "Low → high"}</span></div></div>',
+        f'<div class="grid-tools"><label><input type="checkbox" class="grid-colours" checked> Colour cells</label><label>View <select class="grid-view"><option value="fit">Fit whole map</option><option value="detail">Larger cells</option></select></label><div class="grid-legend"><span>{lo}</span><i aria-hidden="true"{legend_style}></i><span>{hi}</span><span>{"Constant" if lo==hi else "Low → high"}</span></div></div>',
+        '<p class="grid-overview-note" hidden>Whole-map overview. Select a cell to read its value and axes above the map, or choose Larger cells.</p>',
         f'<p class="grid-note">{esc(note)} Select a cell or use the arrow keys to inspect its address.</p>',
         f'<output class="grid-inspector" aria-live="polite">Row 1 · Column 1 · {rows[0]} / {cols[0]} · Raw {values[0]} · {m["data_address"]}</output>',
-        '<div class="grid-scroll" tabindex="0" role="region" aria-label="Scrollable calibration values"><table class="cell-grid">',
+        '<div class="grid-scroll" tabindex="0" role="region" aria-label="Calibration values, whole map"><table class="cell-grid">',
         f'<caption class="grid-sr-only">{esc(m["display_name"])}: {m["rows"]} rows, {m["columns"]} columns; raw values.</caption>',
         '<thead><tr><th scope="col" class="grid-corner">ROW / COL</th>']
-    parts += [f'<th scope="col">{esc(label)}</th>' for label in cols]
+    parts += [f'<th scope="col" title="{esc(label,quote=True)}">{esc(label)}</th>' for label in cols]
     parts += ['</tr></thead><tbody>']
     for r,row in enumerate(m['raw_values']):
-        parts.append(f'<tr><th scope="row">{esc(rows[r])}</th>')
+        parts.append(f'<tr><th scope="row" title="{esc(rows[r],quote=True)}">{esc(rows[r])}</th>')
         for c,value in enumerate(row):
             address = int(m['data_address'],16)+(r*m['columns']+c)*m['element_bytes']
             bg,fg = colour(value,lo,hi)
