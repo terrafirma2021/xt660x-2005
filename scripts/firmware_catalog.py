@@ -17,6 +17,8 @@ def digest(data):
 
 def build():
     registry = json.loads(REGISTRY.read_text(encoding='utf-8'))
+    decoded_path=ROOT/'analysis/firmware/decode_catalog.json'
+    decoded = {i['id']:i for i in json.loads(decoded_path.read_text(encoding='utf-8'))['images']} if decoded_path.exists() else {}
     maps = json.loads((ROOT/'analysis/maps.json').read_text(encoding='utf-8'))
     images, rows, ids = {}, [], set()
     for entry in registry['images']:
@@ -38,6 +40,10 @@ def build():
     for entry in registry['images']:
         key = entry['id']; base, data = images[key]
         row = dict(entry, size=len(data), end_address=base+len(data)-1)
+        result=decoded.get(key)
+        if result:
+            assert result['sha256']==entry['sha256']
+            row.update(decoded_map_count=result['map_count'],decoded_cell_count=result['cell_count'],code_family=result['family'])
         app = span(key, 0x1800, 0xF800)
         boot = span(key, 0xF800, 0x10000)
         row['startup_checksum'] = None if app is None else f'{sum(int.from_bytes(app[i:i+2],"big") for i in range(0,len(app),2)) & 65535:04X}'

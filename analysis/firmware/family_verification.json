@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "families": {
+    "early": {
+      "code_start": "0x5000",
+      "code_end_exclusive": "0xF779",
+      "instruction_count": 15942,
+      "instruction_bytes": 42849,
+      "functions_decompiled": 225,
+      "unavailable_targets": [
+        "f8a0"
+      ],
+      "raw_pcode_operations": 187991,
+      "members": [
+        "xt660x-2005-owner",
+        "xt660-2004-2006-companion",
+        "xt660x-2005-checksum-fixed",
+        "xt660-2c1-00",
+        "xt660-2c1-00-immo-off"
+      ],
+      "source_sha256": null,
+      "processor_sha256": "aef17eddf77ab687c76f0f32526b0c7535538ba0464e1eb57b1c23012ed84285"
+    },
+    "late": {
+      "code_start": "0x4800",
+      "code_end_exclusive": "0xF770",
+      "instruction_count": 15928,
+      "instruction_bytes": 43134,
+      "functions_decompiled": 229,
+      "unavailable_targets": [
+        "f8a0"
+      ],
+      "raw_pcode_operations": 184015,
+      "members": [
+        "xt660-5vk-1x-2008",
+        "xt660-2c1-10",
+        "xt660-2c1-10-immo-off",
+        "xt660-5vk-11"
+      ],
+      "source_sha256": "2a55fe403baedb99152244a4a952352f851b70037dab27e0a63ec92bcf4b53c5",
+      "processor_sha256": "aef17eddf77ab687c76f0f32526b0c7535538ba0464e1eb57b1c23012ed84285"
+    }
+  },
+  "images": [
+    {
+      "id": "xt660x-2005-owner",
+      "family": "early",
+      "map_count": 71,
+      "map_cells": 8275,
+      "instruction_bytes_verified": 42849,
+      "calibration_mapped_bytes": 13452,
+      "calibration_remaining_bytes": 884
+    },
+    {
+      "id": "xt660-2004-2006-companion",
+      "family": "early",
+      "map_count": 71,
+      "map_cells": 8275,
+      "instruction_bytes_verified": 42849,
+      "calibration_mapped_bytes": 13452,
+      "calibration_remaining_bytes": 884
+    },
+    {
+      "id": "xt660x-2005-checksum-fixed",
+      "family": "early",
+      "map_count": 71,
+      "map_cells": 8275,
+      "instruction_bytes_verified": 42849,
+      "calibration_mapped_bytes": 13452,
+      "calibration_remaining_bytes": 884
+    },
+    {
+      "id": "xt660-2c1-00",
+      "family": "early",
+      "map_count": 71,
+      "map_cells": 8275,
+      "instruction_bytes_verified": 42849,
+      "calibration_mapped_bytes": 13452,
+      "calibration_remaining_bytes": 884
+    },
+    {
+      "id": "xt660-2c1-00-immo-off",
+      "family": "early",
+      "map_count": 71,
+      "map_cells": 8275,
+      "instruction_bytes_verified": 42849,
+      "calibration_mapped_bytes": 13452,
+      "calibration_remaining_bytes": 884
+    },
+    {
+      "id": "xt660-5vk-1x-2008",
+      "family": "late",
+      "map_count": 77,
+      "map_cells": 6938,
+      "instruction_bytes_verified": 43134,
+      "calibration_mapped_bytes": 10829,
+      "calibration_remaining_bytes": 1459
+    },
+    {
+      "id": "xt660-2c1-10",
+      "family": "late",
+      "map_count": 77,
+      "map_cells": 6938,
+      "instruction_bytes_verified": 43134,
+      "calibration_mapped_bytes": 10829,
+      "calibration_remaining_bytes": 1459
+    },
+    {
+      "id": "xt660-2c1-10-immo-off",
+      "family": "late",
+      "map_count": 77,
+      "map_cells": 6938,
+      "instruction_bytes_verified": 43134,
+      "calibration_mapped_bytes": 10829,
+      "calibration_remaining_bytes": 1459
+    },
+    {
+      "id": "xt660-5vk-11",
+      "family": "late",
+      "map_count": 77,
+      "map_cells": 6938,
+      "instruction_bytes_verified": 43134,
+      "calibration_mapped_bytes": 10829,
+      "calibration_remaining_bytes": 1459
+    }
+  ]
+}

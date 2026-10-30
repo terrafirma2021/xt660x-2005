@@ -11,6 +11,7 @@ from urllib.parse import quote, unquote, urlsplit
 import markdown
 from site_vehicles import home as build_vehicle_home, context as vehicle_context, build_pages as build_vehicle_pages
 from site_firmware import build_library
+from site_decoded_maps import build as build_decoded_maps
 from firmware_catalog import build as build_firmware_catalog
 from site_map_grids import grid as map_grid, preview as map_preview, palette_css
 
@@ -63,6 +64,7 @@ shutil.copytree(ROOT / 'site/assets', DEST / 'assets')
 write('assets/map-grid.css', (ROOT/'site/assets/map-grid.css').read_text(encoding='utf-8')+'\n'+palette_css())
 
 build_library(firmware_catalog,shell,write,REPO)
+build_decoded_maps(shell,write,REPO)
 write('firmware/catalog.json',json.dumps(firmware_catalog,indent=2)+'\n')
 build_vehicle_pages(shell,write,REPO)
 home = build_vehicle_home()

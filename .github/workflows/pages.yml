@@ -30,10 +30,14 @@ jobs:
           python3 scripts/build_verification_ledger.py --check
           python3 scripts/firmware_catalog.py --check
           python3 scripts/dataset_inventory.py --check
+          python3 scripts/decode_firmware_maps.py --check
+          python3 scripts/audit_firmware_families.py --check
+          python3 scripts/test_firmware_lookups.py
           python3 scripts/verify_vehicle_catalog.py
           python3 scripts/test_firmware_library.py
           python3 scripts/build_pages.py
           python3 scripts/verify_pages.py
+          python3 scripts/verify_decoded_pages.py
       - name: Upload site
         uses: actions/upload-pages-artifact@v4
         with:

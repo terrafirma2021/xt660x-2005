@@ -1,0 +1,904 @@
+[
+  {
+    "pointer_base": "0x46EF",
+    "load": "0x4AD4",
+    "calls": [
+      {
+        "address": "0x4ADA",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x46EF",
+    "load": "0x4AF2",
+    "calls": [
+      {
+        "address": "0x4AF8",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x37EB",
+    "load": "0x4B7E",
+    "calls": [
+      {
+        "address": "0x4B81",
+        "helper": "0xBD1D",
+        "kind": "uniform8_word"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x1890",
+    "load": "0x63BA",
+    "calls": [
+      {
+        "address": "0x63BD",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x46EF",
+    "load": "0x68F5",
+    "calls": [
+      {
+        "address": "0x68FB",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x4710",
+    "load": "0x69A9",
+    "calls": [
+      {
+        "address": "0x69C1",
+        "helper": "0xBC52",
+        "kind": "precomputed_integer"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x1970",
+    "load": "0x69F4",
+    "calls": [
+      {
+        "address": "0x69F7",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x0DA1",
+    "load": "0x6A09",
+    "calls": [
+      {
+        "address": "0x6A0C",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x0DB3",
+    "load": "0x6A15",
+    "calls": [
+      {
+        "address": "0x6A18",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x4455",
+    "load": "0x6A88",
+    "calls": [
+      {
+        "address": "0x6A8B",
+        "helper": "0xBE30",
+        "kind": "grid16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x4477",
+    "load": "0x6AB3",
+    "calls": [
+      {
+        "address": "0x6AB6",
+        "helper": "0xBE30",
+        "kind": "grid16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x4499",
+    "load": "0x6ADE",
+    "calls": [
+      {
+        "address": "0x6AE1",
+        "helper": "0xBE30",
+        "kind": "grid16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x44BB",
+    "load": "0x6B09",
+    "calls": [
+      {
+        "address": "0x6B0C",
+        "helper": "0xBE30",
+        "kind": "grid16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3857",
+    "load": "0x6CE1",
+    "calls": [
+      {
+        "address": "0x6CE4",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x33BC",
+    "load": "0x70C5",
+    "calls": [
+      {
+        "address": "0x70F9",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x33D3",
+    "load": "0x70D2",
+    "calls": [
+      {
+        "address": "0x70F9",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x33EA",
+    "load": "0x70D7",
+    "calls": [
+      {
+        "address": "0x70F9",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3401",
+    "load": "0x70E1",
+    "calls": [
+      {
+        "address": "0x70F9",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3418",
+    "load": "0x70EE",
+    "calls": [
+      {
+        "address": "0x70F9",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x342F",
+    "load": "0x70F3",
+    "calls": [
+      {
+        "address": "0x70F9",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3330",
+    "load": "0x7226",
+    "calls": [
+      {
+        "address": "0x725A",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3347",
+    "load": "0x7233",
+    "calls": [
+      {
+        "address": "0x725A",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x335E",
+    "load": "0x7238",
+    "calls": [
+      {
+        "address": "0x725A",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3375",
+    "load": "0x7242",
+    "calls": [
+      {
+        "address": "0x725A",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x338C",
+    "load": "0x724F",
+    "calls": [
+      {
+        "address": "0x725A",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x33A3",
+    "load": "0x7254",
+    "calls": [
+      {
+        "address": "0x725A",
+        "helper": "0xBBB8",
+        "kind": "precomputed"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x18EB",
+    "load": "0x7365",
+    "calls": [
+      {
+        "address": "0x7368",
+        "helper": "0xBE73",
+        "kind": "modulo24"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x19A0",
+    "load": "0x7384",
+    "calls": [
+      {
+        "address": "0x738A",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x1970",
+    "load": "0x7393",
+    "calls": [
+      {
+        "address": "0x7396",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x1994",
+    "load": "0x739C",
+    "calls": [
+      {
+        "address": "0x73B1",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x1982",
+    "load": "0x73B7",
+    "calls": [
+      {
+        "address": "0x73BD",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x1B2B",
+    "load": "0x748C",
+    "calls": [
+      {
+        "address": "0x748F",
+        "helper": "0xBE30",
+        "kind": "grid16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x264D",
+    "load": "0x74F1",
+    "calls": [
+      {
+        "address": "0x74F4",
+        "helper": "0xBE30",
+        "kind": "grid16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x30F5",
+    "load": "0x7530",
+    "calls": [
+      {
+        "address": "0x7533",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3101",
+    "load": "0x7572",
+    "calls": [
+      {
+        "address": "0x7575",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x31F3",
+    "load": "0x75DE",
+    "calls": [
+      {
+        "address": "0x75E1",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3478",
+    "load": "0x768E",
+    "calls": [
+      {
+        "address": "0x7694",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x38CF",
+    "load": "0x7C4F",
+    "calls": [
+      {
+        "address": "0x7C66",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3B4F",
+    "load": "0x7C5C",
+    "calls": [
+      {
+        "address": "0x7C66",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3DCF",
+    "load": "0x7C61",
+    "calls": [
+      {
+        "address": "0x7C66",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x472D",
+    "load": "0x7C8F",
+    "calls": [
+      {
+        "address": "0x7CA0",
+        "helper": "0xBC69",
+        "kind": "special"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x4137",
+    "load": "0x7E3E",
+    "calls": [
+      {
+        "address": "0x7E45",
+        "helper": "0xBC69",
+        "kind": "special"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x345C",
+    "load": "0x83C2",
+    "calls": [
+      {
+        "address": "0x83C8",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x351E",
+    "load": "0x8602",
+    "calls": [
+      {
+        "address": "0x8608",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3501",
+    "load": "0x8617",
+    "calls": [
+      {
+        "address": "0x861A",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3539",
+    "load": "0x8640",
+    "calls": [
+      {
+        "address": "0x8651",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x34AB",
+    "load": "0x8681",
+    "calls": [
+      {
+        "address": "0x86A4",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x34B3",
+    "load": "0x868E",
+    "calls": [
+      {
+        "address": "0x86A4",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x34BB",
+    "load": "0x8693",
+    "calls": [
+      {
+        "address": "0x86A4",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x34D5",
+    "load": "0x86C1",
+    "calls": [
+      {
+        "address": "0x86D2",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x351E",
+    "load": "0x886D",
+    "calls": [
+      {
+        "address": "0x8873",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3501",
+    "load": "0x8882",
+    "calls": [
+      {
+        "address": "0x8885",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3681",
+    "load": "0x88AB",
+    "calls": [
+      {
+        "address": "0x88BC",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x363D",
+    "load": "0x88EC",
+    "calls": [
+      {
+        "address": "0x890F",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3645",
+    "load": "0x88F9",
+    "calls": [
+      {
+        "address": "0x890F",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x364D",
+    "load": "0x88FE",
+    "calls": [
+      {
+        "address": "0x890F",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3667",
+    "load": "0x892C",
+    "calls": [
+      {
+        "address": "0x893D",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x0E32",
+    "load": "0x8A5C",
+    "calls": [
+      {
+        "address": "0x8A62",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x4519",
+    "load": "0x93D0",
+    "calls": [
+      {
+        "address": "0x93D5",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x313F",
+    "load": "0x969C",
+    "calls": [
+      {
+        "address": "0x969F",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x31C6",
+    "load": "0x96B1",
+    "calls": [
+      {
+        "address": "0x96BC",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x31DA",
+    "load": "0x96B6",
+    "calls": [
+      {
+        "address": "0x96BC",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x37D6",
+    "load": "0x982C",
+    "calls": [
+      {
+        "address": "0x982F",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x37B6",
+    "load": "0x9964",
+    "calls": [
+      {
+        "address": "0x996A",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x37C4",
+    "load": "0x9995",
+    "calls": [
+      {
+        "address": "0x999B",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x45A9",
+    "load": "0x9CC5",
+    "calls": [
+      {
+        "address": "0x9CC8",
+        "helper": "0xBE30",
+        "kind": "grid16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x37EB",
+    "load": "0xA8C5",
+    "calls": [
+      {
+        "address": "0xA8C8",
+        "helper": "0xBD1D",
+        "kind": "uniform8_word"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3807",
+    "load": "0xA902",
+    "calls": [
+      {
+        "address": "0xA905",
+        "helper": "0xBE30",
+        "kind": "grid16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3857",
+    "load": "0xA96E",
+    "calls": [
+      {
+        "address": "0xA971",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x31FA",
+    "load": "0xA980",
+    "calls": [
+      {
+        "address": "0xA983",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x330D",
+    "load": "0xA98C",
+    "calls": [
+      {
+        "address": "0xA98F",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x331F",
+    "load": "0xA998",
+    "calls": [
+      {
+        "address": "0xA99B",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3216",
+    "load": "0xAAAC",
+    "calls": [
+      {
+        "address": "0xAAB2",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x3257",
+    "load": "0xAAEE",
+    "calls": [
+      {
+        "address": "0xAAF1",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x32BA",
+    "load": "0xAB06",
+    "calls": [
+      {
+        "address": "0xAB0C",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x4081",
+    "load": "0xB09A",
+    "calls": [
+      {
+        "address": "0xB09D",
+        "helper": "0xBCC4",
+        "kind": "grid8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x4057",
+    "load": "0xB0A9",
+    "calls": [
+      {
+        "address": "0xB0AC",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x32EF",
+    "load": "0xB0B2",
+    "calls": [
+      {
+        "address": "0xB0B8",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x34E1",
+    "load": "0xB0C1",
+    "calls": [
+      {
+        "address": "0xB0C4",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x41D4",
+    "load": "0xB0DB",
+    "calls": [
+      {
+        "address": "0xB0E1",
+        "helper": "0xBBCF",
+        "kind": "uniform16"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x0DA1",
+    "load": "0xF4FD",
+    "calls": [
+      {
+        "address": "0xF500",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  },
+  {
+    "pointer_base": "0x0DB3",
+    "load": "0xF509",
+    "calls": [
+      {
+        "address": "0xF50C",
+        "helper": "0xBBAA",
+        "kind": "uniform8"
+      }
+    ]
+  }
+]

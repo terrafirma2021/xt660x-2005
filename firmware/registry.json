@@ -61,7 +61,7 @@
       "year_evidence": "Source filename only, unless separately qualified in vehicle catalogue",
       "provenance": "Owner-supplied Desktop/XT660/Bin/Yamaha XT660 2008 5VK-8591A-1X.motorcycle-tuning.com.bin",
       "kind": "supplied candidate",
-      "analysis_status": "Identity and byte comparison complete; map consumers not reviewed",
+      "analysis_status": "Application code decoded; 77 per-image maps extracted; physical scaling incomplete",
       "map_catalog": null,
       "reviewed_application_changes": [],
       "notes": "Associated TunerPro log records six edits dated 06/04/2023 (date convention unconfirmed); factory-stock status is not established."
@@ -76,7 +76,7 @@
       "year_evidence": "Source filename only, unless separately qualified in vehicle catalogue",
       "provenance": "Owner-supplied Desktop/XT660/Bin/Yamaha XT660 2012-2016 2C18591A-10.motorcycle-tuning.com.bin",
       "kind": "supplied candidate",
-      "analysis_status": "Identity and byte comparison complete; map consumers not reviewed",
+      "analysis_status": "Application code decoded; 77 per-image maps extracted; physical scaling incomplete",
       "map_catalog": null,
       "reviewed_application_changes": [],
       "notes": "Filename claims this ECU and year range; a 2014 Brazil parts catalogue corroborates the ECU reference, not this dump or every claimed year."
@@ -91,7 +91,7 @@
       "year_evidence": "Source filename only, unless separately qualified in vehicle catalogue",
       "provenance": "Owner-supplied Desktop/XT660/Bin/Yamaha XT660 2012-2016 ImmobilizerOff 2C18591A-10.motorcycle-tuning.com.bin",
       "kind": "supplied candidate",
-      "analysis_status": "Identity and byte comparison complete; map consumers not reviewed",
+      "analysis_status": "Application code decoded; 77 per-image maps extracted; physical scaling incomplete",
       "map_catalog": null,
       "reviewed_application_changes": [],
       "notes": "Two byte differences from its supplied partner; modification label is provenance, not a tested behavior claim."
@@ -106,7 +106,7 @@
       "year_evidence": "Source filename only, unless separately qualified in vehicle catalogue",
       "provenance": "Owner-supplied Desktop/XT660/xt 660 r/2C1-8591A-00",
       "kind": "supplied candidate",
-      "analysis_status": "Identity and byte comparison complete; map consumers not reviewed",
+      "analysis_status": "Application code decoded; 71 per-image maps extracted; physical scaling incomplete",
       "map_catalog": null,
       "reviewed_application_changes": [],
       "notes": "Extensionless 64 KB source. ECU reference occurs in the 2008 Brazil parts catalogue; the dump year is unknown. Boot region is FF-filled."
@@ -121,7 +121,7 @@
       "year_evidence": "Source filename only, unless separately qualified in vehicle catalogue",
       "provenance": "Owner-supplied Desktop/XT660/xt 660 r/2C1-8591A-00 immo off",
       "kind": "supplied candidate",
-      "analysis_status": "Identity and byte comparison complete; map consumers not reviewed",
+      "analysis_status": "Application code decoded; 71 per-image maps extracted; physical scaling incomplete",
       "map_catalog": null,
       "reviewed_application_changes": [],
       "notes": "Extensionless 64 KB source; differs from its partner only at 0x4E7D. Boot region is FF-filled."
@@ -136,7 +136,7 @@
       "year_evidence": "Source filename only, unless separately qualified in vehicle catalogue",
       "provenance": "Owner-supplied Desktop/XT660/xt 660 r/5VK-8591A-11.bin",
       "kind": "supplied candidate",
-      "analysis_status": "Identity and byte comparison complete; map consumers not reviewed",
+      "analysis_status": "Application code decoded; 77 per-image maps extracted; physical scaling incomplete",
       "map_catalog": null,
       "reviewed_application_changes": [],
       "notes": "Four bytes differ from the 2008-labelled 5VK-1X file. ECU reference is documented for XT660R model code 5VKL; exact dump year and stock status are unknown."

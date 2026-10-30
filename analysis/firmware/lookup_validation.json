@@ -1,0 +1,60 @@
+{
+  "scope": "CPU12 p-code lookup execution at selected knots and uniform clamp/fraction points; not physical ECU or complete caller execution validation",
+  "images": [
+    {
+      "id": "xt660x-2005-owner",
+      "instruction_lookup_cases": 946,
+      "maps_executed": 71,
+      "inline_step_tables_byte_checked_only": []
+    },
+    {
+      "id": "xt660-2004-2006-companion",
+      "instruction_lookup_cases": 946,
+      "maps_executed": 71,
+      "inline_step_tables_byte_checked_only": []
+    },
+    {
+      "id": "xt660x-2005-checksum-fixed",
+      "instruction_lookup_cases": 946,
+      "maps_executed": 71,
+      "inline_step_tables_byte_checked_only": []
+    },
+    {
+      "id": "xt660-5vk-1x-2008",
+      "instruction_lookup_cases": 939,
+      "maps_executed": 77,
+      "inline_step_tables_byte_checked_only": []
+    },
+    {
+      "id": "xt660-2c1-10",
+      "instruction_lookup_cases": 939,
+      "maps_executed": 77,
+      "inline_step_tables_byte_checked_only": []
+    },
+    {
+      "id": "xt660-2c1-10-immo-off",
+      "instruction_lookup_cases": 939,
+      "maps_executed": 77,
+      "inline_step_tables_byte_checked_only": []
+    },
+    {
+      "id": "xt660-2c1-00",
+      "instruction_lookup_cases": 946,
+      "maps_executed": 71,
+      "inline_step_tables_byte_checked_only": []
+    },
+    {
+      "id": "xt660-2c1-00-immo-off",
+      "instruction_lookup_cases": 946,
+      "maps_executed": 71,
+      "inline_step_tables_byte_checked_only": []
+    },
+    {
+      "id": "xt660-5vk-11",
+      "instruction_lookup_cases": 939,
+      "maps_executed": 77,
+      "inline_step_tables_byte_checked_only": []
+    }
+  ],
+  "total_cases": 8486
+}

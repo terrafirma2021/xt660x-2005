@@ -6,6 +6,8 @@ The repository supports multiple BINs through a [firmware registry](firmware/reg
 
 All 71 stored map bodies and stored axes match across the owner image, corrected derivative and 2004–06 companion only; application differences are explicitly checked. The companion has a separate [boot breakdown](analysis/firmware/xt660-2004-2006-companion/BOOT.md), disassembly, pseudocode and byte-accounting report. Its boot has not inherited the application execution-test status.
 
+**All nine images now have application decoding and their own calibration catalogues.** [Family decoding](analysis/firmware/FAMILY_DECODING.md) establishes two byte-identical code families: five early-code records with 71 extracted maps each, and four later-code records with 77 each. The later application has 15,928 decoded instructions and 229 recovered functions in structured pseudocode. The website provides 663 image-specific grid pages containing 69,127 source-checked cells. Complete physical scaling and identification of every residual calibration constant remain unfinished; code identity does not establish hardware interchangeability.
+
 [Adding another image](firmware/ADDING_IMAGES.md) documents the importer and review workflow. New images start unreviewed and do not inherit map or pin claims.
 
 The [dataset guide](dataset/README.md) explains the 21 preserved sources, 110 applicability profiles, including 89 Fowlers model/market records and manufacturer references. XT660X, XT660R and XT660Z Ténéré have separate entries; TDM900 is comparison-only with no matched dump. Later revisions do not inherit the original maps or connector claims.

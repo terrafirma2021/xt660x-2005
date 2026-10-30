@@ -55,7 +55,7 @@ def preview(m):
 def curve(m, temperature=None):
     if m['rows'] != 1:
         return ''
-    sensor = m['kind']=='1D_sensor_conversion'
+    sensor = m['kind']=='1D_sensor_conversion' and temperature is not None
     knots = [float(x) for x in axis_labels(m,'column_axis',m['columns'])]
     values = m['raw_values'][0]
     if sensor:

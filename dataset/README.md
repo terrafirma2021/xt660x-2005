@@ -8,7 +8,7 @@ The [website](https://terrafirma2021.github.io/xt660x-2005/) now selects **model
 - [files.json](files.json) accounts for all 21 files in the supplied Desktop/XT660 folder, including extensionless images and ZIP members. Originals are preserved without altering their bytes.
 - [firmware registry](../firmware/registry.json) owns immutable image identity, address base and explicitly reviewed map sharing.
 - [complete inventory](../analysis/firmware/dataset_inventory.json) checks hashes, archive duplicates, embedded identifiers and all 36 pairwise comparisons of nine registered images.
-- The existing map, unit, decompilation and MCU datasets remain shared research for the original application. They are not copied into each vehicle profile or assigned to unrelated firmware.
+- [Family decoding](../analysis/firmware/FAMILY_DECODING.md) now covers all nine application images. Code is shared only after exact byte checks; each BIN has its own `maps.json` and `decode_review.json`. Physical-unit and MCU applicability claims remain separately scoped.
 
 The seven distinct supplied images are additional evidence, not seven confirmed factory revisions. Together with the original owner image and its checksum-corrected derivative there are nine registered records. The two ZIP members are exact copies of already registered files. The eight XDFs remain candidate definitions: four readable XML files contain 64 declarations; four non-XML files are preserved with their screenshots but are not completely decoded.
 
@@ -17,7 +17,7 @@ The seven distinct supplied images are additional evidence, not seven confirmed 
 | Images | Difference / scope |
 |---|---|
 | 2004–06 companion and owner dump | Application differs only at `0x4E7D`; all 71 map bodies and stored axes agree. Companion has boot bytes; owner dump has FF placeholders. |
-| Extensionless `2C1-8591A-00` pair | One byte at `0x4E7D`, `00` versus `80`. Both have FF-filled boot regions. Different application from the original study. |
+| Extensionless `2C1-8591A-00` pair | One byte at `0x4E7D`, `00` versus `80`. Both have FF-filled boot regions. Code matches the original study; ten recovered map bodies differ from the original calibration. |
 | `2C1-8591A-10` pair | Two bytes: `0x4619` `00→80`, `0x4751` `FF→7F`. Modification labels are untested source claims. |
 | 2008-labelled `5VK-1X` and `5VK-11` | Four differing bytes: `0x348D`, `0xF776`, `0xF77E`, `0xF77F`. Embedded identifiers are `Y2051100` and `Y2051150`. Neither is assumed stock. |
 | Five short supplied BINs | Their complete 2 KB boot regions match. This supports a shared boot-byte record, not application or ECU interchangeability. |
@@ -41,4 +41,4 @@ Inspection uses UK and Europe listings where offered, otherwise the first listed
 3. Assign map research only after byte/axis and consumer checks. Matching filenames, boot regions or part-number prefixes are insufficient. Pin evidence requires an independent hardware applicability review.
 4. Run `dataset_inventory.py`, `firmware_catalog.py`, `verify_vehicle_catalog.py`, then the website build and link/grid verification. CI repeats these checks.
 
-“Matched” always names what matched: file hash, boot bytes, map cells, catalogue part number, or inspected hardware. It is not an overall tuning approval. New images remain unreviewed until their own control flow, scaling and physical hardware claims are checked.
+“Matched” always names what matched: file hash, boot bytes, map cells, catalogue part number, or inspected hardware. It is not an overall tuning approval. All nine current images have a byte-verified code family and separately extracted calibration. New imports start unreviewed; physical scaling and hardware claims retain their own evidence requirements.
