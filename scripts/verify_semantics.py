@@ -2,6 +2,7 @@
 import hashlib
 import json
 import re
+from audit_external_scaling import build as external_scaling_audit
 from map_review import input_review, remaining_questions
 from pathlib import Path
 
@@ -45,6 +46,12 @@ assert consumers['result']=='passed' and consumers['firmware_sha256']==catalog['
 assert consumers['test_script_sha256']==digest(ROOT/'scripts/test_map_consumers.py')
 assert consumers['model_script_sha256']==digest(ROOT/'scripts/map_models.py')
 assert consumers['compiled_library_sha256']==full['compiled_library_sha256']
+pressure=json.loads((OUT/'pressure_state_validation.json').read_text(encoding='utf-8'))
+assert pressure['result']=='passed' and pressure['firmware_sha256']==catalog['firmware_sha256']
+assert pressure['test_sha256']==digest(ROOT/'scripts/test_pressure_state.py')
+assert pressure['model_sha256']==digest(ROOT/'scripts/pressure_state.py')
+assert pressure['library_sha256']==full['compiled_library_sha256']
+assert json.loads((OUT/'external_scaling_audit.json').read_text(encoding='utf-8'))==external_scaling_audit()
 for report_name,test_name,model_name in [
     ('spark_schedule_validation.json','test_spark_schedule.py','spark_models.py'),
     ('sensor_variant_validation.json','test_sensor_variants.py','sensor_profiles.py')]:

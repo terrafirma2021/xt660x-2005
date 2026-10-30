@@ -2,6 +2,8 @@
 
 The owner's earlier repositories provide comparison evidence beyond the supplied image. They are separate sources, with separate revision and measurement limits. No bytes from another ECU have been merged into the target firmware.
 
+For subsequent investigation of other authors' Yamaha/Suzuki/Toyota definitions, see [wider scaling research](WIDER_SCALING_RESEARCH.md). Those comparisons do not restore the withdrawn logger corroboration.
+
 ## Coolant: earlier logger is an unvalidated hypothesis
 
 **Correction, 2026-10-30:** the owner clarified that the earlier logger conversions were guesses and that they had no supporting measurement data. The previous owner-corroborated status is withdrawn from the coolant table, twelve coolant-dependent map axes, generated catalogue and website. Neither logger output labels nor guessed conversion constants establish physical units.

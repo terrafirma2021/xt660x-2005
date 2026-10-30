@@ -1,0 +1,1135 @@
+{
+  "schema_version": 1,
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "generator_sha256": "4fded8bd053c07947966cecdbdaf9e03589a3283e240a5eceee778f76e0ff48e",
+  "sensor_model_sha256": "528590c2b84127a90eb512f9ff0eeb2a28be405f12e37771767674f5fb141d31",
+  "source_manifest_sha256": "93a86a83749b557d174878a938684c3c139c45ce0d72d495822108cbbbf02b51",
+  "physical_units_sha256": "5a484c946212ee499d9d3f9c02e7de486eebd9e5c4b2e612321ea7537adf5210",
+  "temperature_trials": [
+    {
+      "hypothesis": "suzuki_liana_iat",
+      "formula": "X*0.01-100",
+      "sensor": "coolant",
+      "points": [
+        {
+          "celsius": 20,
+          "reason": "not representable"
+        },
+        {
+          "celsius": 80,
+          "reason": "not representable"
+        },
+        {
+          "celsius": 110,
+          "reason": "not representable"
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "decoded_range": [
+        -100.0,
+        -97.61
+      ],
+      "common_pullup_ohms": null
+    },
+    {
+      "hypothesis": "suzuki_liana_iat",
+      "formula": "X*0.01-100",
+      "sensor": "intake",
+      "points": [
+        {
+          "celsius": 20,
+          "reason": "not representable"
+        },
+        {
+          "celsius": 80,
+          "reason": "not representable"
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "decoded_range": [
+        -100.0,
+        -97.45
+      ],
+      "common_pullup_ohms": null
+    },
+    {
+      "hypothesis": "toyota_mode06",
+      "formula": "X*0.625-40",
+      "sensor": "coolant",
+      "points": [
+        {
+          "celsius": 20,
+          "adc_bins": [
+            486,
+            492
+          ],
+          "pullup_ohms": [
+            2498.823529411765,
+            2867.1193415637863
+          ]
+        },
+        {
+          "celsius": 80,
+          "adc_bins": [
+            119,
+            120
+          ],
+          "pullup_ohms": [
+            2313.471074380165,
+            2479.2436974789916
+          ]
+        },
+        {
+          "celsius": 110,
+          "reason": "not representable"
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "decoded_range": [
+        -40.0,
+        109.375
+      ],
+      "common_pullup_ohms": null
+    },
+    {
+      "hypothesis": "toyota_mode06",
+      "formula": "X*0.625-40",
+      "sensor": "intake",
+      "points": [
+        {
+          "celsius": 20,
+          "adc_bins": [
+            384,
+            391
+          ],
+          "pullup_ohms": [
+            3563.0612244897957,
+            4483.333333333333
+          ]
+        },
+        {
+          "celsius": 80,
+          "adc_bins": [
+            84,
+            87
+          ],
+          "pullup_ohms": [
+            3084.5454545454545,
+            3961.428571428571
+          ]
+        }
+      ],
+      "consistent_constant_pullup": true,
+      "decoded_range": [
+        -40.0,
+        119.375
+      ],
+      "common_pullup_ohms": [
+        3563.0612244897957,
+        3961.428571428571
+      ]
+    },
+    {
+      "hypothesis": "toyotune_post_table_transfer",
+      "formula": "published nonlinear 3S-GTE fit",
+      "sensor": "coolant",
+      "points": [
+        {
+          "celsius": 20,
+          "adc_bins": [
+            296,
+            300
+          ],
+          "pullup_ohms": [
+            5572.624584717608,
+            6370.000000000001
+          ]
+        },
+        {
+          "celsius": 80,
+          "adc_bins": [
+            73,
+            74
+          ],
+          "pullup_ohms": [
+            3922.5333333333338,
+            4246.931506849315
+          ]
+        },
+        {
+          "celsius": 110,
+          "reason": "not representable"
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "decoded_range": [
+        -35.20251163874681,
+        102.6051928768675
+      ],
+      "common_pullup_ohms": null
+    },
+    {
+      "hypothesis": "toyotune_post_table_transfer",
+      "formula": "published nonlinear 3S-GTE fit",
+      "sensor": "intake",
+      "points": [
+        {
+          "celsius": 20,
+          "adc_bins": [
+            216,
+            223
+          ],
+          "pullup_ohms": [
+            7892.857142857142,
+            10062.592592592591
+          ]
+        },
+        {
+          "celsius": 80,
+          "adc_bins": [
+            52,
+            55
+          ],
+          "pullup_ohms": [
+            5012.857142857142,
+            6617.076923076924
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "decoded_range": [
+        -35.20251163874681,
+        172.6731069382813
+      ],
+      "common_pullup_ohms": null
+    },
+    {
+      "hypothesis": "xt_existing_candidate",
+      "formula": "X*0.625-30",
+      "sensor": "coolant",
+      "points": [
+        {
+          "celsius": 20,
+          "adc_bins": [
+            584,
+            591
+          ],
+          "pullup_ohms": [
+            1692.9729729729731,
+            1951.3698630136985
+          ]
+        },
+        {
+          "celsius": 80,
+          "adc_bins": [
+            151,
+            153
+          ],
+          "pullup_ohms": [
+            1751.2987012987014,
+            1884.7549668874171
+          ]
+        },
+        {
+          "celsius": 110,
+          "adc_bins": [
+            75,
+            76
+          ],
+          "pullup_ohms": [
+            1721.818181818182,
+            1834.7333333333333
+          ]
+        }
+      ],
+      "consistent_constant_pullup": true,
+      "decoded_range": [
+        -30.0,
+        119.375
+      ],
+      "common_pullup_ohms": [
+        1751.2987012987014,
+        1834.7333333333333
+      ]
+    },
+    {
+      "hypothesis": "xt_existing_candidate",
+      "formula": "X*0.625-30",
+      "sensor": "intake",
+      "points": [
+        {
+          "celsius": 20,
+          "adc_bins": [
+            480,
+            487
+          ],
+          "pullup_ohms": [
+            2427.377049180328,
+            3048.6666666666665
+          ]
+        },
+        {
+          "celsius": 80,
+          "adc_bins": [
+            108,
+            111
+          ],
+          "pullup_ohms": [
+            2361.428571428571,
+            3002.4444444444443
+          ]
+        }
+      ],
+      "consistent_constant_pullup": true,
+      "decoded_range": [
+        -30.0,
+        129.375
+      ],
+      "common_pullup_ohms": [
+        2427.377049180328,
+        3002.4444444444443
+      ]
+    }
+  ],
+  "timer_transfer_trials": [
+    {
+      "hypothesis": "liana_injector_lag",
+      "ms_per_raw": 0.001,
+      "implied_xt_timer_hz": 1000000.0,
+      "xt_fan_diagnostic_repeat_seconds": 2.5,
+      "xt_fan_diagnostic_on_seconds": 1.0,
+      "matches_documented_5s_repeat_2s_on": false,
+      "caveat": "Only tests direct transfer into XT timer ticks. Other ECUs may pre-scale a cell before timing. No oscillator measurement."
+    },
+    {
+      "hypothesis": "toyotune_injection",
+      "ms_per_raw": 0.004,
+      "implied_xt_timer_hz": 250000.0,
+      "xt_fan_diagnostic_repeat_seconds": 10.0,
+      "xt_fan_diagnostic_on_seconds": 4.0,
+      "matches_documented_5s_repeat_2s_on": false,
+      "caveat": "Only tests direct transfer into XT timer ticks. Other ECUs may pre-scale a cell before timing. No oscillator measurement."
+    },
+    {
+      "hypothesis": "xt_nominal_timer",
+      "ms_per_raw": 0.002,
+      "implied_xt_timer_hz": 500000.0,
+      "xt_fan_diagnostic_repeat_seconds": 5.0,
+      "xt_fan_diagnostic_on_seconds": 2.0,
+      "matches_documented_5s_repeat_2s_on": true,
+      "caveat": "Only tests direct transfer into XT timer ticks. Other ECUs may pre-scale a cell before timing. No oscillator measurement."
+    }
+  ],
+  "temperature_adc_evaluations": 8192,
+  "rpm_comparison": {
+    "external": "Toyotune raw/5.12",
+    "xt_nominal": "raw*100/512",
+    "factors_equal": true,
+    "factor": 0.1953125,
+    "conclusion": "Same numerical convention; external formula does not measure XT clock or crank geometry."
+  },
+  "scope": "Candidate applicability audit across all 71 catalogue maps. Tests formulas against XT byte ranges, digital sensor transfers, resistance intervals and nominal timing evidence; no external ECU hardware validation.",
+  "conclusion": "No newly verified absolute physical scale. External candidates are rejected or remain analogies; all original conditional profiles remain conditional.",
+  "maps": [
+    {
+      "id": "main_quantity_A",
+      "name": "Normal load-based fuel quantity",
+      "dossier": "../map_details/main_quantity_A.md",
+      "cell_conversion": "timer_ms",
+      "status": "conditional physical conversion",
+      "axes": [
+        "speed",
+        "load"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "main_quantity_B",
+      "name": "Throttle-based fuel quantity",
+      "dossier": "../map_details/main_quantity_B.md",
+      "cell_conversion": "timer_ms",
+      "status": "conditional physical conversion",
+      "axes": [
+        "speed",
+        "throttle"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "main_quantity_C",
+      "name": "Sequence-selected alternate load fuel quantity",
+      "dossier": "../map_details/main_quantity_C.md",
+      "cell_conversion": "timer_ms",
+      "status": "conditional physical conversion",
+      "axes": [
+        "speed",
+        "load"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "main_u8_A",
+      "name": "Base ignition timing \u2014 neutral-input branch",
+      "dossier": "../map_details/main_u8_A.md",
+      "cell_conversion": "spark_relative_degrees",
+      "status": "conditional physical conversion",
+      "axes": [
+        "speed",
+        "throttle"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "main_u8_B",
+      "name": "Base ignition timing \u2014 normal ratio-code branch",
+      "dossier": "../map_details/main_u8_B.md",
+      "cell_conversion": "spark_relative_degrees",
+      "status": "conditional physical conversion",
+      "axes": [
+        "speed",
+        "throttle"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "main_u8_C",
+      "name": "Base ignition timing \u2014 extended ratio-code branch",
+      "dossier": "../map_details/main_u8_C.md",
+      "cell_conversion": "spark_relative_degrees",
+      "status": "conditional physical conversion",
+      "axes": [
+        "speed",
+        "throttle"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "modulo24_surface",
+      "name": "Injection event-phase target",
+      "dossier": "../map_details/modulo24_surface.md",
+      "cell_conversion": "injection_event_code",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "throttle",
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "correction_surface_A",
+      "name": "Secondary injector quantity multiplier",
+      "dossier": "../map_details/correction_surface_A.md",
+      "cell_conversion": "gain128_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed",
+        "throttle"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "correction_surface_B",
+      "name": "Fuel normalization offset",
+      "dossier": "../map_details/correction_surface_B.md",
+      "cell_conversion": "normalization_offset_codes",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed",
+        "throttle"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "correction_surface_C",
+      "name": "Fuel correction gain vs speed and load",
+      "dossier": "../map_details/correction_surface_C.md",
+      "cell_conversion": "gain128_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed",
+        "load"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "correction_surface_D",
+      "name": "Alternate base ignition timing vs speed and coolant",
+      "dossier": "../map_details/correction_surface_D.md",
+      "cell_conversion": "spark_relative_degrees",
+      "status": "conditional physical conversion",
+      "axes": [
+        "speed",
+        "coolant"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "fuel_normalization_load",
+      "name": "Load-based fuel normalization input",
+      "dossier": "../map_details/fuel_normalization_load.md",
+      "cell_conversion": "normalization_input_code",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed",
+        "load"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "fuel_normalization_throttle",
+      "name": "Throttle-based fuel normalization input",
+      "dossier": "../map_details/fuel_normalization_throttle.md",
+      "cell_conversion": "normalization_input_code",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed",
+        "throttle"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "fuel_normalization_gain",
+      "name": "Fuel normalization denominator gain",
+      "dossier": "../map_details/fuel_normalization_gain.md",
+      "cell_conversion": "normalization_gain_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "normalization",
+        "load"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_18b6",
+      "name": "Feedback startup delay vs coolant",
+      "dossier": "../map_details/curve_18b6.md",
+      "cell_conversion": "feedback_delay_s",
+      "status": "conditional physical conversion",
+      "axes": [
+        "coolant"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_1996",
+      "name": "Startup fuel base quantity vs coolant",
+      "dossier": "../map_details/curve_1996.md",
+      "cell_conversion": "startup_base_ms",
+      "status": "conditional physical conversion",
+      "axes": [
+        "coolant"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_32ef",
+      "name": "Post-start enrichment \u2014 fast-decay state",
+      "dossier": "../map_details/curve_32ef.md",
+      "cell_conversion": "post_start_enrichment_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "coolant"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_3301",
+      "name": "Post-start enrichment \u2014 slow-decay state",
+      "dossier": "../map_details/curve_3301.md",
+      "cell_conversion": "post_start_enrichment_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "coolant"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_4234",
+      "name": "Injector pulse compensation vs supply",
+      "dossier": "../map_details/curve_4234.md",
+      "cell_conversion": "injector_compensation_ms",
+      "status": "conditional physical conversion",
+      "axes": [
+        "supply"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_19c6",
+      "name": "Startup fuel multiplier vs pressure estimate",
+      "dossier": "../map_details/curve_19c6.md",
+      "cell_conversion": "gain128_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "pressure_estimate"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_19ba",
+      "name": "Startup fuel multiplier vs throttle",
+      "dossier": "../map_details/curve_19ba.md",
+      "cell_conversion": "gain128_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "throttle"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_19a8",
+      "name": "Startup fuel multiplier vs engine speed",
+      "dossier": "../map_details/curve_19a8.md",
+      "cell_conversion": "gain128_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_34b0",
+      "name": "Centered fuel-correction gain vs engine speed",
+      "dossier": "../map_details/curve_34b0.md",
+      "cell_conversion": "q8_gain_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_3494",
+      "name": "Relative-throttle qualification threshold vs speed",
+      "dossier": "../map_details/curve_3494.md",
+      "cell_conversion": "relative_tps_counts",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_353a",
+      "name": "Transient fuel multiplier vs pressure estimate",
+      "dossier": "../map_details/curve_353a.md",
+      "cell_conversion": "gain128_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "pressure_estimate"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_351d",
+      "name": "Transient fuel multiplier vs intake temperature",
+      "dossier": "../map_details/curve_351d.md",
+      "cell_conversion": "transient_iat_gain_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "iat"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_34d0",
+      "name": "Transient fuel response 1 \u2014 neutral-input branch",
+      "dossier": "../map_details/curve_34d0.md",
+      "cell_conversion": null,
+      "status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "axes": [
+        "throttle_delta"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_34da",
+      "name": "Transient fuel response 1 \u2014 low ratio codes",
+      "dossier": "../map_details/curve_34da.md",
+      "cell_conversion": null,
+      "status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "axes": [
+        "throttle_delta"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_34e4",
+      "name": "Transient fuel response 1 \u2014 higher ratio codes",
+      "dossier": "../map_details/curve_34e4.md",
+      "cell_conversion": null,
+      "status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "axes": [
+        "throttle_delta"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_34ee",
+      "name": "Transient fuel multiplier vs throttle",
+      "dossier": "../map_details/curve_34ee.md",
+      "cell_conversion": "gain128_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "throttle"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_355d",
+      "name": "Transient fuel response 2 \u2014 neutral-input branch",
+      "dossier": "../map_details/curve_355d.md",
+      "cell_conversion": null,
+      "status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "axes": [
+        "throttle_delta"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_3567",
+      "name": "Transient fuel response 2 \u2014 normal ratio-code branch",
+      "dossier": "../map_details/curve_3567.md",
+      "cell_conversion": null,
+      "status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "axes": [
+        "throttle_delta"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_3571",
+      "name": "Transient fuel response 2 \u2014 extended ratio-code branch",
+      "dossier": "../map_details/curve_3571.md",
+      "cell_conversion": null,
+      "status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "axes": [
+        "throttle_delta"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_31ec",
+      "name": "Fuel normalization recovery hold \u2014 normal ratio-code branch",
+      "dossier": "../map_details/curve_31ec.md",
+      "cell_conversion": "normalization_hold_s",
+      "status": "conditional physical conversion",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_3200",
+      "name": "Fuel normalization recovery hold \u2014 extended ratio-code branch",
+      "dossier": "../map_details/curve_3200.md",
+      "cell_conversion": "normalization_hold_s",
+      "status": "conditional physical conversion",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_36c4",
+      "name": "Feedback eligibility delay vs coolant",
+      "dossier": "../map_details/curve_36c4.md",
+      "cell_conversion": "feedback_delay_100ms_s",
+      "status": "conditional physical conversion",
+      "axes": [
+        "coolant"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_36a4",
+      "name": "Adaptive fuel correction \u2014 decrement step",
+      "dossier": "../map_details/curve_36a4.md",
+      "cell_conversion": "adaptive_step_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_36b2",
+      "name": "Adaptive fuel correction \u2014 increment step",
+      "dossier": "../map_details/curve_36b2.md",
+      "cell_conversion": "adaptive_step_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_3220",
+      "name": "Fuel multiplier vs intake temperature",
+      "dossier": "../map_details/curve_3220.md",
+      "cell_conversion": "fuel_iat_gain_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "iat"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_3345",
+      "name": "Positive transient fuel gain vs coolant",
+      "dossier": "../map_details/curve_3345.md",
+      "cell_conversion": "q8_gain_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "coolant"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_3357",
+      "name": "Negative transient fuel gain vs coolant",
+      "dossier": "../map_details/curve_3357.md",
+      "cell_conversion": "q8_gain_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "coolant"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_1880",
+      "name": "Pressure-processing offset vs engine speed",
+      "dossier": "../map_details/curve_1880.md",
+      "cell_conversion": "load_offset_codes",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_323c",
+      "name": "Load-path fuel multiplier vs pressure estimate",
+      "dossier": "../map_details/curve_323c.md",
+      "cell_conversion": "gain128_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "pressure_estimate"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_32e0",
+      "name": "Throttle-path fuel multiplier vs pressure estimate",
+      "dossier": "../map_details/curve_32e0.md",
+      "cell_conversion": "gain128_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "pressure_estimate"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_4a33",
+      "name": "Alternate ignition mode \u2014 throttle threshold vs coolant",
+      "dossier": "../map_details/curve_4a33.md",
+      "cell_conversion": "relative_tps_counts",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "coolant"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_3315",
+      "name": "Coolant enrichment \u2014 load-based fuel path",
+      "dossier": "../map_details/curve_3315.md",
+      "cell_conversion": "coolant_enrichment_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "coolant"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_3327",
+      "name": "Coolant enrichment \u2014 throttle-based fuel path",
+      "dossier": "../map_details/curve_3327.md",
+      "cell_conversion": "coolant_enrichment_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "coolant"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_34fd",
+      "name": "Transient fuel pulse contribution vs coolant",
+      "dossier": "../map_details/curve_34fd.md",
+      "cell_conversion": null,
+      "status": "joint arithmetic decoded; standalone physical cell unit not assigned",
+      "axes": [
+        "coolant"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_4bac",
+      "name": "Spark timing bound vs pressure estimate",
+      "dossier": "../map_details/curve_4bac.md",
+      "cell_conversion": "spark_relative_degrees",
+      "status": "conditional physical conversion",
+      "axes": [
+        "pressure_estimate"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "delta_0985_gain_1",
+      "name": "Throttle-delta fuel gain \u2014 nonnegative, neutral-input",
+      "dossier": "../map_details/delta_0985_gain_1.md",
+      "cell_conversion": "transient_delta_slope_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "delta_0985_gain_2",
+      "name": "Throttle-delta fuel gain \u2014 nonnegative, normal ratio-code",
+      "dossier": "../map_details/delta_0985_gain_2.md",
+      "cell_conversion": "transient_delta_slope_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "delta_0985_gain_3",
+      "name": "Throttle-delta fuel gain \u2014 nonnegative, extended ratio-code",
+      "dossier": "../map_details/delta_0985_gain_3.md",
+      "cell_conversion": "transient_delta_slope_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "delta_0985_gain_4",
+      "name": "Throttle-delta fuel gain \u2014 negative, neutral-input",
+      "dossier": "../map_details/delta_0985_gain_4.md",
+      "cell_conversion": "transient_delta_slope_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "delta_0985_gain_5",
+      "name": "Throttle-delta fuel gain \u2014 negative, normal ratio-code",
+      "dossier": "../map_details/delta_0985_gain_5.md",
+      "cell_conversion": "transient_delta_slope_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "delta_0985_gain_6",
+      "name": "Throttle-delta fuel gain \u2014 negative, extended ratio-code",
+      "dossier": "../map_details/delta_0985_gain_6.md",
+      "cell_conversion": "transient_delta_slope_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "delta_0989_gain_1",
+      "name": "Load-delta fuel gain \u2014 nonnegative, neutral-input",
+      "dossier": "../map_details/delta_0989_gain_1.md",
+      "cell_conversion": "transient_delta_slope_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "delta_0989_gain_2",
+      "name": "Load-delta fuel gain \u2014 nonnegative, normal ratio-code",
+      "dossier": "../map_details/delta_0989_gain_2.md",
+      "cell_conversion": "transient_delta_slope_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "delta_0989_gain_3",
+      "name": "Load-delta fuel gain \u2014 nonnegative, extended ratio-code",
+      "dossier": "../map_details/delta_0989_gain_3.md",
+      "cell_conversion": "transient_delta_slope_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "delta_0989_gain_4",
+      "name": "Load-delta fuel gain \u2014 negative, neutral-input",
+      "dossier": "../map_details/delta_0989_gain_4.md",
+      "cell_conversion": "transient_delta_slope_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "delta_0989_gain_5",
+      "name": "Load-delta fuel gain \u2014 negative, normal ratio-code",
+      "dossier": "../map_details/delta_0989_gain_5.md",
+      "cell_conversion": "transient_delta_slope_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "delta_0989_gain_6",
+      "name": "Load-delta fuel gain \u2014 negative, extended ratio-code",
+      "dossier": "../map_details/delta_0989_gain_6.md",
+      "cell_conversion": "transient_delta_slope_pp",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "step_grid_4c44",
+      "name": "Air-induction enable vs speed and throttle",
+      "dossier": "../map_details/step_grid_4c44.md",
+      "cell_conversion": "eligibility",
+      "status": "logical behavior decoded",
+      "axes": [
+        "speed",
+        "throttle"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "step_grid_4d48",
+      "name": "Air-induction enable vs speed and load",
+      "dossier": "../map_details/step_grid_4d48.md",
+      "cell_conversion": "eligibility",
+      "status": "logical behavior decoded",
+      "axes": [
+        "speed",
+        "load"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "step_grid_35b0",
+      "name": "Adaptive feedback enable vs speed and throttle",
+      "dossier": "../map_details/step_grid_35b0.md",
+      "cell_conversion": "eligibility",
+      "status": "logical behavior decoded",
+      "axes": [
+        "speed",
+        "throttle"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "step_grid_363c",
+      "name": "Adaptive feedback enable vs speed and load",
+      "dossier": "../map_details/step_grid_363c.md",
+      "cell_conversion": "eligibility",
+      "status": "logical behavior decoded",
+      "axes": [
+        "speed",
+        "load"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "timing_speed_4f64",
+      "name": "Spark time correction \u2014 other variants",
+      "dossier": "../map_details/timing_speed_4f64.md",
+      "cell_conversion": "timer_ms",
+      "status": "conditional physical conversion",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "timing_speed_4f81",
+      "name": "Spark time correction \u2014 XT variant 9",
+      "dossier": "../map_details/timing_speed_4f81.md",
+      "cell_conversion": "timer_ms",
+      "status": "conditional physical conversion",
+      "axes": [
+        "speed"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "dwell_supply_speed",
+      "name": "Ignition dwell contribution vs speed and supply",
+      "dossier": "../map_details/dwell_supply_speed.md",
+      "cell_conversion": "dwell_ms",
+      "status": "conditional physical conversion",
+      "axes": [
+        "speed",
+        "supply"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "coolant_sensor_conversion",
+      "name": "Coolant sensor conversion",
+      "dossier": "../map_details/coolant_sensor_conversion.md",
+      "cell_conversion": "temperature_celsius_candidate",
+      "status": "conditional physical conversion",
+      "axes": [
+        "adc"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "intake_temperature_conversion",
+      "name": "Intake air temperature sensor conversion",
+      "dossier": "../map_details/intake_temperature_conversion.md",
+      "cell_conversion": "temperature_celsius_candidate",
+      "status": "conditional physical conversion",
+      "axes": [
+        "adc"
+      ],
+      "external_scale_promoted": false
+    },
+    {
+      "id": "curve_1854",
+      "name": "Pressure-to-load processing gain",
+      "dossier": "../map_details/curve_1854.md",
+      "cell_conversion": "gain128_percent",
+      "status": "numeric contribution decoded",
+      "axes": [
+        "pressure_estimate"
+      ],
+      "external_scale_promoted": false
+    }
+  ]
+}

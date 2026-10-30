@@ -1,0 +1,144 @@
+{
+  "researched_on": "2026-10-30",
+  "sources": [
+    {
+      "id": "suzuki_liana",
+      "url": "https://github.com/zelenecul/liana-33920-68j-ecu-mapping-reverse/blob/69b7c6ae49350f8b10473f877b5f277ea5b1abab/Suzuki_Liana_33920-68J.xdf",
+      "git_blob": "c9234366ac9826247b8b968fa0610e0a5c125656",
+      "tables_parsed": 600,
+      "selected_definitions": [
+        {
+          "title": "IATSensor_VoltageToCelsius_Table",
+          "axes": [
+            {
+              "id": "x",
+              "address": "0x6C9F4",
+              "bits": "32",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "bits": "16",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "address": "0x6CA70",
+              "bits": "16",
+              "equations": [
+                "X*0.01-100"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Injector_LagTime_ByVoltage",
+          "axes": [
+            {
+              "id": "x",
+              "address": "0x6FD94",
+              "bits": "32",
+              "unit": "V",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "address": "0x6FDA8",
+              "bits": "16",
+              "unit": "ms",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "address": "0x6FDA8",
+              "bits": "16",
+              "equations": [
+                "X*0.001"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "IgnitionTiming_FinalUpperLimit_ByRPM",
+          "axes": [
+            {
+              "id": "x",
+              "address": "0x73D1C",
+              "bits": "32",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "bits": "16",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "address": "0x73D40",
+              "bits": "16",
+              "equations": [
+                "X*0.01-100"
+              ]
+            }
+          ]
+        }
+      ],
+      "assessment": "Actual XDF formulas inspected; external author's correctness on Suzuki hardware not independently verified. 16-bit cells and 32-bit axes differ from XT sensor/ignition bytes."
+    },
+    {
+      "id": "denso_to_xdf",
+      "url": "https://github.com/tientuk3/DensoToXDF/blob/15fdf85a8c1042c928a9e65ab5a68e354887226a/test/32920-41G00.xdf",
+      "git_blob": "85e6872c1850372e11283efb87e7276f0e7ff202",
+      "tables_parsed": 171,
+      "math_nodes": 513,
+      "unique_equations": [
+        "X"
+      ],
+      "assessment": "All 513 math expressions are identity. Generator targets SH/M32R directory formats. No physical scale to transfer."
+    },
+    {
+      "id": "yamaha_aerox",
+      "url": "https://github.com/AutotronicCommunity/YAMAHA-AEROX-XDF--BIN/blob/e2a30fc3b9a166c59c922d68b55e3ea8a3b5198d/AEROX%20%20BBP-H594A-01.xdf",
+      "git_blob": "6506d13fc534d3420f423e029c47f6f8ad1fa63d",
+      "sha256": "c4f3bde85b3640882edc7935d7c60a545bf281bb8ba837c3d357c74db4bee48d",
+      "size_bytes": 75632,
+      "assessment": "Downloaded file is binary, not readable XDF XML; no formulas recovered. Matching BIN listed as 1 MiB. No transfer claim or protection bypass."
+    },
+    {
+      "id": "toyotune",
+      "url": "https://github.com/jonsole/toyotune/blob/570995adc0ff3d374b588bae92bf5ede944253d8/hw/dash_cluster/PLAN.md",
+      "git_blob": "3c0b381ba4f7449a3f535c6987d64060cbc5a5d0",
+      "assessment": "Toyota 3S-GTE project reports RPM code/5.12 and injection code*4 us. Temperature is a nonlinear conversion of inverted ADC encoding, not the XT lookup output. Different CPU/ADC path."
+    },
+    {
+      "id": "toyota_mode06",
+      "url": "https://manualzz.com/doc/30255717/toyota-sfi-system-engine-user-manual",
+      "document": "Toyota 2004 Corolla RM1037U, thermostat Mode 06 test 08 / component 81",
+      "formula": "X*0.625-40",
+      "assessment": "Manufacturer service text mirrored by third party. This is a diagnostic test-result conversion, not proof of an internal Yamaha map scale."
+    },
+    {
+      "id": "xt660_commercial",
+      "url": "https://oldskulltuning.com/yamaha-xt-660-remap-ecu-tunerpro-maps/",
+      "assessment": "Public map list includes fuel, spark, dwell, RPM/IAP/throttle axes. No inspectable equations or matched definition obtained; no purchase made."
+    },
+    {
+      "id": "xt660_newer",
+      "url": "https://motoeditor.com/definition/yamaha-xt660-2015-2017-2c1-8591a-20",
+      "assessment": "Public catalogue lists 15 tables for 2015-2017 ECU 2C1-8591A-20. Its verification claim is not independently reproduced, and does not identify the 2005 image."
+    }
+  ],
+  "policy": "External formulas are hypotheses. No source by itself promotes XT physical scaling. The earlier owner logger remains unvalidated."
+}

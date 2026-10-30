@@ -1,0 +1,24 @@
+{
+  "result": "passed",
+  "cases": 212800,
+  "selection_cases": 204608,
+  "tracking_cases": 8192,
+  "source_case_counts": {
+    "filtered": 65874,
+    "fallback": 72350,
+    "tracked": 65792,
+    "replacement": 592
+  },
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "test_sha256": "5ac65d54790777f749cd94c5764ee858465eaeec1cfc223a7377adf47b38c1fb",
+  "model_sha256": "f5184546c7d4f8aec307eed411a29c93b3a3dc3e277fee44d7a435decc018ac7",
+  "library_sha256": "19828ab9551c87af7293c32c3e2e41eb96a3621fa9226af18669aab9339047da",
+  "stock_clamp": [
+    27520,
+    65280
+  ],
+  "stock_selector": 128,
+  "stock_startup_counter_threshold": 12,
+  "scope": "B304-B381: source priority, replacement writes, ordered clamps and saturating counter; all request/fault byte pairs, all candidate words on both normal sources, randomized limits. 8764-87E2: five-word mean and signed Q8 tracking filter after eligibility.",
+  "limitations": "Does not execute tracking eligibility/history acquisition, all alternate upstream filters, downstream lookups, analog circuitry or pressure calibration. Passing does not establish kPa."
+}

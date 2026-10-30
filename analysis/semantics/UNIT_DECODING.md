@@ -4,6 +4,8 @@ This pass supplies executable arithmetic, converted cell values and nominal spee
 
 There are three separate claims: **instruction-proven arithmetic**, **physical conversions conditional on named hardware assumptions**, and **unresolved hypotheses**. The catalogue preserves those distinctions and enables no tuning export. A conversion into milliseconds does not describe all corrections or establish an operating limit.
 
+The [wider Denso/Yamaha comparison](WIDER_SCALING_RESEARCH.md) tests external definitions against this image instead of transferring their labels. The [pressure-estimate source and tracking trace](PRESSURE_ESTIMATE.md) narrows the input path used by six curves, without claiming an absolute kPa scale.
+
 ## Clock and diagnostic timing
 
 At `0x5057–0x5059`, the application writes `5` to timer control register `0x004D`. In the [NXP MC9S12T64 manual](https://www.nxp.com/docs/en/data-sheet/9S12T64AF16V1.pdf), ECT TSCR2 prescaler setting `101` divides the bus clock by 32. The supplied application does not establish the inherited oscillator/PLL setup; the boot region is absent.

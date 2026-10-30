@@ -77,3 +77,5 @@ No calibration setting has been changed. The supplied image already contains the
 4. [Yamaha XT660R(S)/XT660X(S), 2004 service manual 5VK1-AE1, third-party mirror of the manufacturer manual](https://scootertuub.nl/motoren/Yamaha/Yamaha%20XT%20660%20R%20X%202004%20Service%20Manual%20%20.pdf), printed pages 7-10 and 7-11, PDF pages 353–354. Used to corroborate diagnostic identities, not to assert that a filename-labelled 2005 dump matches every hardware detail of the 2004 manual. The manual is not redistributed in this repository.
 
 [External-source correction](EXTERNAL_SCALE_CHECKS.md): the old logger conversions were guesses, not measurements. No physical-unit verification depends on them.
+
+[Wider Denso/Yamaha scaling research](WIDER_SCALING_RESEARCH.md) compares actual external XDFs and sensor formulas, with an applicability record for all 71 maps. The [pressure-estimate trace](PRESSURE_ESTIMATE.md) adds 212,800 execution checks for source selection and accepted-window tracking; physical kPa remains open.
