@@ -1,0 +1,61 @@
+{
+  "review_date": "2026-10-30",
+  "source": "Owner-supplied decompiled YamahaServiceTool.Communication project",
+  "authentication": "Assembly metadata only; original assembly signature not checked",
+  "review_type": "static source review; not executed",
+  "files": [
+    {
+      "path": "Properties/AssemblyInfo.cs",
+      "sha256": "8e3202ce5a7b02c6bfd3cf4cb36132eb59ecca03aae74bc182518d1724f60385"
+    },
+    {
+      "path": "Communication.cs",
+      "sha256": "16a3968a0d3dc21f75f9f769478b4b7f9fc80627da691b021277ee289c3beb66"
+    },
+    {
+      "path": "DiagTool.cs",
+      "sha256": "73a6317b2eaa5d1efd0c1f11021f39581c58c25dfdb770f1bfa166504ef09882"
+    },
+    {
+      "path": "ECU/ECUInformation.cs",
+      "sha256": "c8dcca63f19ca4ae0b0c48c887f7bc3a8ce9677c90c971527646727cd841e17c"
+    },
+    {
+      "path": "COAdjust/COAdjustMeter.cs",
+      "sha256": "b063fdd0560ce63e74e4768f6c97d40774136fb1a6c9fd2e9c581515418d5a48"
+    },
+    {
+      "path": "DataMonitor/DataMonitorMeter.cs",
+      "sha256": "2af63023e17543caf65a75b84adc650297c13f3c0076ac28d65d8a9240404b95"
+    },
+    {
+      "path": "DataMonitor/MonitorDatum.cs",
+      "sha256": "9fd581b8b764e49180f1486997fc6d456d96058d2f9702419eab200702978ab9"
+    },
+    {
+      "path": "YamahaMotor/YDSCommon.cs",
+      "sha256": "e3a60321f3ad5443bd86d422d8f01315f43ceaaaba03af14dacfa935c314bb9f"
+    },
+    {
+      "path": "Protocol/RecordLocalIdentifier.cs",
+      "sha256": "10ca61fab8cf1c719fcaa40133d550725a1d5b95748e20fa97775b7863a4fd2e"
+    },
+    {
+      "path": "PassThru/PassThru.cs",
+      "sha256": "49e110524b4f4ae12360bff1dd7199155ec01feadee1a924ace10a18e7e1d577"
+    },
+    {
+      "path": "PassThru/PassThruProtocol.cs",
+      "sha256": "fcc5ab796f03296fd6e8a08f0d72204627194629e1726e6dbcb66b047270037f"
+    },
+    {
+      "path": "YamahaServiceTool.Communication.csproj",
+      "sha256": "05b95245b958bc3ed5eeee4bb1b8ba92da9a83be2aa1f9edc2cc943ead1c92eb"
+    }
+  ],
+  "map_scales_promoted": 0,
+  "legacy_baud_setting": 15625,
+  "xt_rpm_multiplier": null,
+  "xt_rpm_offset": null,
+  "temperature_display_formula": null
+}

@@ -21,6 +21,8 @@ At `5073–5075`, control value `24` enables reception and receive interrupts. A
 
 The recovered application does not establish an ISO 9141 five-baud initialization or a KWP fast-init sequence. Do not substitute generic `33`, `55`, `81`, `27`, or `3E` conventions for the meanings below. Other protocol code could exist in the unavailable boot region or the instrument/immobilizer units.
 
+The [supplied Yamaha service-tool communication code](YAMAHA_SERVICE_TOOL.md) explicitly requests 15,625 baud for legacy Meter connections. This supports the nominal clock interpretation above without measuring this ECU. Its adapter payload offsets differ from raw ECU reply offsets, and its newer KWP tacho-scale query must not be confused with the legacy FE handshake.
+
 ## Packet layout
 
 The application accepts individual peer bytes and emits a five-byte ECU reply from RAM `08A6–08AA`: four payload bytes followed by an additive checksum. There is no separate received checksum in the recovered single-byte handlers. See [checksum arithmetic and examples](CHECKSUMS.md).

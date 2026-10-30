@@ -4,6 +4,8 @@ The owner's earlier repositories provide comparison evidence beyond the supplied
 
 For subsequent investigation of other authors' Yamaha/Suzuki/Toyota definitions, see [wider scaling research](WIDER_SCALING_RESEARCH.md). Those comparisons do not restore the withdrawn logger corroboration.
 
+The newly supplied [Yamaha service-tool communication project](YAMAHA_SERVICE_TOOL.md) independently supports the nominal serial rate and exposes a configurable RPM conversion. Its XT multiplier/offset and sensor display formulas are absent, so it does not reinstate the old logger guesses.
+
 ## Coolant: earlier logger is an unvalidated hypothesis
 
 **Correction, 2026-10-30:** the owner clarified that the earlier logger conversions were guesses and that they had no supporting measurement data. The previous owner-corroborated status is withdrawn from the coolant table, twelve coolant-dependent map axes, generated catalogue and website. Neither logger output labels nor guessed conversion constants establish physical units.

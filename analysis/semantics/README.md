@@ -36,6 +36,10 @@ Start with the [verification ledger](VERIFICATION_LEDGER.md) for checked claims 
 
 These have different levels of completion. Coolant/fan decisions and the principal raw cut thresholds have direct behavioral fixtures. Spark angle and fuel quantity are traced workstreams, not fully identified engineering calibrations.
 
+## Service-tool comparison
+
+The [Yamaha diagnostic communication source review](YAMAHA_SERVICE_TOOL.md) adds independent 15,625-baud evidence and traces legacy RPM configuration, raw monitor reads and adapter framing. The missing caller settings and sensor display formulas prevent final physical-scale sign-off.
+
 ## Evidence files
 
 - [Map names and stable references](../MAP_NAMES.md): the reviewed name, existing ID, address and naming evidence for all 71 maps. Names describe functions; IDs remain stable for code and cross-references.
