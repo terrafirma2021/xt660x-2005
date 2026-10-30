@@ -1,4 +1,4 @@
-name: Publish Yamaha ECU research website
+name: Forward to Yamaha XT660 research
 
 on:
   push:
@@ -19,25 +19,8 @@ jobs:
       - uses: actions/checkout@v6
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Install site dependency
-        run: python3 -m pip install -r site/requirements.txt
-      - name: Generate and verify pin reference
-        run: |
-          python3 scripts/build_pin_overview.py
-          python3 scripts/verify_pin_overview.py
-          python3 scripts/map_names.py
-          python3 scripts/verify_map_names.py
-          python3 scripts/build_verification_ledger.py --check
-          python3 scripts/firmware_catalog.py --check
-          python3 scripts/dataset_inventory.py --check
-          python3 scripts/decode_firmware_maps.py --check
-          python3 scripts/audit_firmware_families.py --check
-          python3 scripts/test_firmware_lookups.py
-          python3 scripts/verify_vehicle_catalog.py
-          python3 scripts/test_firmware_library.py
-          python3 scripts/build_pages.py
-          python3 scripts/verify_pages.py
-          python3 scripts/verify_decoded_pages.py
+      - name: Build legacy redirects
+        run: python3 scripts/build_redirects.py
       - name: Upload site
         uses: actions/upload-pages-artifact@v4
         with:
