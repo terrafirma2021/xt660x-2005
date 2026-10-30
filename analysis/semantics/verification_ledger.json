@@ -11,7 +11,7 @@
     },
     {
       "script": "scripts/verify_semantics.py",
-      "sha256": "0f33399daf1187e861a7295e63a4b57e4c43f1dcab63e4c24cf4378c11d837e1",
+      "sha256": "0ed6c301edc9a900ee28f282a2f5301e3aaa4b171ae06cf5d2f09c7baa173cdb",
       "result": "passed"
     },
     {

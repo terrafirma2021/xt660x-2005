@@ -12,6 +12,11 @@ def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 image=(ROOT/'firmware/XT660X 2005.bin').read_bytes()
 catalog=json.loads((OUT/'catalog.json').read_text())
 assert catalog['firmware_sha256']==hashlib.sha256(image).hexdigest()
+local_xdf=json.loads((OUT/'local_xt660_audit.json').read_text(encoding='utf-8'))
+assert local_xdf['firmware_sha256']==catalog['firmware_sha256']
+assert local_xdf['script_sha256']==digest(ROOT/'scripts/audit_local_xt660.py')
+assert local_xdf['maps_sha256']==digest(ROOT/'analysis/maps.json')
+assert local_xdf['sensor_model_sha256']==digest(ROOT/'scripts/sensor_profiles.py')
 assert catalog['processor_model_sha256']==digest(ROOT/'ghidra/XT660CPU12/data/languages/HCS_HC12.sinc')
 assert len({r['id'] for r in catalog['calibrations']})==len(catalog['calibrations'])
 for record in catalog['calibrations']:

@@ -2,7 +2,7 @@
 
 [Area index](README.md) · [Serial link](K_LINE.md) · [Diagnostics](DIAGNOSTICS.md) · [Startup](STARTUP.md) · [Checksums](CHECKSUMS.md) · [Immobilizer](IMMOBILIZER.md) · [Verification](PROTOCOL_VERIFICATION.md)
 
-The supplied application entry at `F7A0` jumps to `5000`. The normal hardware reset vectors and `F800–FFFF` are all `FF` in this file, so the path from physical reset to this entry cannot be reconstructed.
+The supplied application entry at `F7A0` jumps to `5000`. The normal hardware reset vectors and `F800–FFFF` are all `FF` in this file, so this file alone cannot reconstruct the path from physical reset to this entry. A newly supplied [2004–06 companion BIN](LOCAL_XDF_REVIEW.md) matches the application except for the known patch and contains a populated boot, including reset F800 and a conditional jump through F7A0 to 5000. This is a strong companion candidate; the original target file and target-only translation remain unchanged.
 
 The application configures GPIO, timers, SCI1 and SPI, copies calibration into runtime variables, initializes sensor/state fields, loads persistent settings, performs the ROM checksum, enables interrupts, and enters its main loop. Relevant serial state writes include `08A0 |= 80` and `08AE |= 40` at `5200–5204`.
 
@@ -14,7 +14,7 @@ The owner confirms that the image was patched to skip immobilizer checking. Conf
 
 ## Integrity and unavailable boot code
 
-Initialization still calls the [ROM checksum routine](CHECKSUMS.md) after the skipped immobilizer initialization. Its mismatch in the supplied file is exactly consistent with the recalled `00 → 80` change. The main loop also calls `F8A0`, inside the absent boot region. Physical reset, inherited clock/framing configuration, and any boot-level protocol remain unresolved.
+Initialization still calls the [ROM checksum routine](CHECKSUMS.md) after the skipped immobilizer initialization. Its mismatch in the supplied file is exactly consistent with the recalled `00 → 80` change. The main loop also calls `F8A0`, inside the absent boot region. The companion boot now provides a source for further reset and boot-service analysis. Its PLL establishes bus = 4 × oscillator frequency; absolute clock frequency, physical correspondence to the owner ECU and a complete boot-service review remain open.
 
 ## Evidence
 

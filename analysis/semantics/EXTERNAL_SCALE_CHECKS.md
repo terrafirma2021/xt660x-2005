@@ -6,6 +6,8 @@ For subsequent investigation of other authors' Yamaha/Suzuki/Toyota definitions,
 
 The newly supplied [Yamaha service-tool communication project](YAMAHA_SERVICE_TOOL.md) independently supports the nominal serial rate and exposes a configurable RPM conversion. Its XT multiplier/offset and sensor display formulas are absent, so it does not reinstate the old logger guesses.
 
+The [owner-supplied XT660 folder review](LOCAL_XDF_REVIEW.md) now identifies a 2004–06 companion whose application matches the target except for the known immobilizer patch, with a populated boot identical to the earlier boot below. Its XDFs contain useful location matches but also verified address errors and conflicting scales.
+
 ## Coolant: earlier logger is an unvalidated hypothesis
 
 **Correction, 2026-10-30:** the owner clarified that the earlier logger conversions were guesses and that they had no supporting measurement data. The previous owner-corroborated status is withdrawn from the coolant table, twelve coolant-dependent map axes, generated catalogue and website. Neither logger output labels nor guessed conversion constants establish physical units.

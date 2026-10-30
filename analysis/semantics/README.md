@@ -40,6 +40,10 @@ These have different levels of completion. Coolant/fan decisions and the princip
 
 The [Yamaha diagnostic communication source review](YAMAHA_SERVICE_TOOL.md) adds independent 15,625-baud evidence and traces legacy RPM configuration, raw monitor reads and adapter framing. The missing caller settings and sensor display formulas prevent final physical-scale sign-off.
 
+## Local XT660 definitions
+
+The [local XDF/BIN review](LOCAL_XDF_REVIEW.md) compares eight definitions and five binaries. A 2004–06 companion matches all application bytes except the known patch and supplies a strong boot candidate. The XDF review separates useful location/formula matches from address errors and unsupported physical scales.
+
 ## Evidence files
 
 - [Map names and stable references](../MAP_NAMES.md): the reviewed name, existing ID, address and naming evidence for all 71 maps. Names describe functions; IDs remain stable for code and cross-references.

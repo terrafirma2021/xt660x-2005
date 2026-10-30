@@ -1,0 +1,4831 @@
+{
+  "schema_version": 1,
+  "firmware_sha256": "5a781c2dbc67950fcba6ab3d30ba56b884d4247f66f76d143923db8547f31280",
+  "script_sha256": "41516b411b9305100efc4f3245f6363fa82df109cfb9464ec0f8338a85e8dac5",
+  "maps_sha256": "06a9f0d3c7dad1b0100762d37ccd0977af407e105320bda90dfdc71e2a80f107",
+  "sensor_model_sha256": "528590c2b84127a90eb512f9ff0eeb2a28be405f12e37771767674f5fb141d31",
+  "scope": "Static declarations and byte comparisons; not live ECU calibration or a TunerPro rendering test.",
+  "inventory": [
+    {
+      "path": "Bin/Yamaha XT660 2008 5VK-8591A-1X.motorcycle-tuning.com.bin",
+      "bytes": 59392,
+      "sha256": "4e7166156f5e7a53c4c2f81a7e20f45503c032cc57b40d8f85d5c721d2550824",
+      "cpu_base": "0x1800",
+      "application_bytes_compared": 57344,
+      "application_differences": 55808,
+      "boot_sha256": "9f313f065e7f71309fb1c51f320d48f1d0a3ac72875464abded8e54fbc39df10",
+      "boot_non_ff_bytes": 1868,
+      "reset_vector": "0xF800",
+      "startup_checksum": "0xAA55"
+    },
+    {
+      "path": "Bin/Yamaha XT660 2012-2016 2C18591A-10.motorcycle-tuning.com.bin",
+      "bytes": 59392,
+      "sha256": "9ce732dd5586fe65adcbf7a2619be1427573899eb7d0673d577f129a84f844d3",
+      "cpu_base": "0x1800",
+      "application_bytes_compared": 57344,
+      "application_differences": 55820,
+      "boot_sha256": "9f313f065e7f71309fb1c51f320d48f1d0a3ac72875464abded8e54fbc39df10",
+      "boot_non_ff_bytes": 1868,
+      "reset_vector": "0xF800",
+      "startup_checksum": "0xAA55"
+    },
+    {
+      "path": "Bin/Yamaha XT660 2012-2016 ImmobilizerOff 2C18591A-10.motorcycle-tuning.com.bin",
+      "bytes": 59392,
+      "sha256": "51736dd94f02d2066a1a90d4e6c346c0c85778e9c896a4d2f72b5270b50a36f7",
+      "cpu_base": "0x1800",
+      "application_bytes_compared": 57344,
+      "application_differences": 55820,
+      "boot_sha256": "9f313f065e7f71309fb1c51f320d48f1d0a3ac72875464abded8e54fbc39df10",
+      "boot_non_ff_bytes": 1868,
+      "reset_vector": "0xF800",
+      "startup_checksum": "0xAA55"
+    },
+    {
+      "path": "xt 660 r/5vk-00-V.10.4-Mauro 2.xdf",
+      "bytes": 23260,
+      "sha256": "6d6b423e3e76762532495cbcc93dea9d6e60310dfb156aae514d9dbad59128d8",
+      "format": "non-XML; formulas not recovered by this audit"
+    },
+    {
+      "path": "xt 660 r/5vk-00-V.10.4-Mauro.xdf",
+      "bytes": 23270,
+      "sha256": "687e726a4d7a59f3f4e668c0e3ddd0cc295e59f656560d762bdbc320cc36f264",
+      "format": "non-XML; formulas not recovered by this audit"
+    },
+    {
+      "path": "xt 660 r/5vk-00-V.10.4-Motojacs.xdf",
+      "bytes": 23313,
+      "sha256": "8855570ca7cc3bf5d6e6e88f25a0e5c5976a69a57ef3bd8a86201a0b1e482230",
+      "format": "non-XML; formulas not recovered by this audit"
+    },
+    {
+      "path": "xt 660 r/5vk-00-V.10.4-Pepos-.xdf",
+      "bytes": 23300,
+      "sha256": "4348c754eb8a1a599899d9abf85aa12520729b588786c0b27935aa2282e8561a",
+      "format": "non-XML; formulas not recovered by this audit"
+    },
+    {
+      "path": "xt 660 r/5VK-8591A-11.bin",
+      "bytes": 59392,
+      "sha256": "b23ee5e64fcbb7cffc0a6d358c84163fc6608be9c8e222c32c85acef6d675067",
+      "cpu_base": "0x1800",
+      "application_bytes_compared": 57344,
+      "application_differences": 55808,
+      "boot_sha256": "9f313f065e7f71309fb1c51f320d48f1d0a3ac72875464abded8e54fbc39df10",
+      "boot_non_ff_bytes": 1868,
+      "reset_vector": "0xF800",
+      "startup_checksum": "0xAA55"
+    },
+    {
+      "path": "xt 660 r/prove xdf/xt660 04-06(5vk-8591a-01) final.xdf",
+      "bytes": 38944,
+      "sha256": "23164f4c62d5fb47cabfaa8ff2de6c090827b8f6a3a6697896e7cd1205efe515",
+      "format": "XML XDFFORMAT",
+      "tables": 20,
+      "base_offset": 6144,
+      "subtract_base": true
+    },
+    {
+      "path": "xt 660 r/prove xdf/xt660 04-06(5vk-8591a-01).xdf",
+      "bytes": 26087,
+      "sha256": "251ab448cd52f2b40cd392707f42612d4508fb5f9de4e933fe26732356f7ac6d",
+      "format": "XML XDFFORMAT",
+      "tables": 9,
+      "base_offset": 0,
+      "subtract_base": false
+    },
+    {
+      "path": "xt 660 r/xt660 04-06(5vk-8591a-01).bin",
+      "bytes": 59392,
+      "sha256": "1abfbaa9018b5a26452df4c060265a791979b6016d57981fb95b50d7192cbe0b",
+      "cpu_base": "0x1800",
+      "application_bytes_compared": 57344,
+      "application_differences": 1,
+      "boot_sha256": "9f313f065e7f71309fb1c51f320d48f1d0a3ac72875464abded8e54fbc39df10",
+      "boot_non_ff_bytes": 1868,
+      "reset_vector": "0xF800",
+      "startup_checksum": "0xAA55",
+      "application_byte_changes": [
+        {
+          "cpu_address": "0x4E7D",
+          "target": 128,
+          "candidate": 0
+        }
+      ]
+    },
+    {
+      "path": "Yamaha XT660 2008 5VK-8591A-1X.motorcycle-tuning.com.xdf",
+      "bytes": 32407,
+      "sha256": "861ad7c17c6ed63169edd6abdfc6ff64012158e1275119567e07da6cc09ff5a4",
+      "format": "XML XDFFORMAT",
+      "tables": 20,
+      "base_offset": 0,
+      "subtract_base": false
+    },
+    {
+      "path": "Yamaha XT660 2012-2016 2C1-8591A-10.motorcycle-tuning.com.xdf",
+      "bytes": 32355,
+      "sha256": "a3cf74d945a5715bf0047118009217ee459c20308b60c675399d7e18e573852a",
+      "format": "XML XDFFORMAT",
+      "tables": 15,
+      "base_offset": 0,
+      "subtract_base": false
+    }
+  ],
+  "definitions": [
+    {
+      "path": "xt 660 r/prove xdf/xt660 04-06(5vk-8591a-01) final.xdf",
+      "tables": [
+        {
+          "title": "Fuel Map   45x30",
+          "uniqueid": "0x263E",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x1AB2",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "TPS",
+              "equations": [
+                "X/471.86"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x7696"
+              },
+              "linked_table": "Breakpoint MAP-MAP-30pti",
+              "linked_storage": {
+                "mmedaddress": "0x1AD0",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/440"
+              ],
+              "declared_file_offset": 690,
+              "cpu_address_for_0x1800_bin": "0x1AB2"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x1A76",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "45",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "X/2.56"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x6A02"
+              },
+              "linked_table": "Breakpoint MAP-RPM-45pti",
+              "linked_storage": {
+                "mmedaddress": "0x1B0C",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 630,
+              "cpu_address_for_0x1800_bin": "0x1A76"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x1B66",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 870,
+              "cpu_address_for_0x1800_bin": "0x1B66",
+              "declared_shape": [
+                45,
+                30,
+                16
+              ],
+              "target_start_matches": [
+                {
+                  "id": "main_quantity_A",
+                  "shape": [
+                    45,
+                    30,
+                    16
+                  ],
+                  "shape_matches": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fuel TPS    45x30",
+          "uniqueid": "0x9EC",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x4002",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "29",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "MAP",
+              "equations": [
+                "(X-11389)/512"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x1839"
+              },
+              "linked_table": "Breakpoint TPS-TPS-30pti",
+              "linked_storage": {
+                "mmedaddress": "0x25F2",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/458.88"
+              ],
+              "declared_file_offset": 10242,
+              "cpu_address_for_0x1800_bin": "0x4002"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x25D2",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "38",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "X/5.12"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x6A02"
+              },
+              "linked_table": "Breakpoint MAP-RPM-45pti",
+              "linked_storage": {
+                "mmedaddress": "0x1B0C",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 3538,
+              "cpu_address_for_0x1800_bin": "0x25D2"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2688",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x"
+              ],
+              "declared_file_offset": 3720,
+              "cpu_address_for_0x1800_bin": "0x2688",
+              "declared_shape": [
+                45,
+                30,
+                16
+              ],
+              "target_start_matches": [
+                {
+                  "id": "main_quantity_B",
+                  "shape": [
+                    45,
+                    30,
+                    16
+                  ],
+                  "shape_matches": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inj. Advance RPM vs TPS",
+          "uniqueid": "0x31A9",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x18E6",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "10",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "TPS",
+              "equations": [
+                "x/445.64"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 230,
+              "cpu_address_for_0x1800_bin": "0x18E6"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x18FA",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "13",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "X/2.56"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 250,
+              "cpu_address_for_0x1800_bin": "0x18FA"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x1914",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "13",
+                "mmedcolcount": "10",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x*2.8"
+              ],
+              "declared_file_offset": 276,
+              "cpu_address_for_0x1800_bin": "0x1914",
+              "declared_shape": [
+                13,
+                10,
+                8
+              ],
+              "target_start_matches": [
+                {
+                  "id": "modulo24_surface",
+                  "shape": [
+                    10,
+                    13,
+                    8
+                  ],
+                  "shape_matches": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Breakpoint IGN-TPS-20pti",
+          "uniqueid": "0x7B96",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0xECE",
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "X/471.86"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": -2354,
+              "cpu_address_for_0x1800_bin": "0xECE"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x3486",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "23",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 7302,
+              "cpu_address_for_0x1800_bin": "0x3486"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x4246",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/458.88"
+              ],
+              "declared_file_offset": 10822,
+              "cpu_address_for_0x1800_bin": "0x4246",
+              "declared_shape": [
+                20,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Breakpoint IGN-RPM-32pti",
+          "uniqueid": "0x290E",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0xECE",
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "X/471.86"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": -2354,
+              "cpu_address_for_0x1800_bin": "0xECE"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x3486",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "23",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 7302,
+              "cpu_address_for_0x1800_bin": "0x3486"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x426C",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "32",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 10860,
+              "cpu_address_for_0x1800_bin": "0x426C",
+              "declared_shape": [
+                32,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Breakpoint MAP-MAP-30pti",
+          "uniqueid": "0x7696",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0xECE",
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "X/471.86"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": -2354,
+              "cpu_address_for_0x1800_bin": "0xECE"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x3486",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "23",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 7302,
+              "cpu_address_for_0x1800_bin": "0x3486"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x1AD0",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/440"
+              ],
+              "declared_file_offset": 720,
+              "cpu_address_for_0x1800_bin": "0x1AD0",
+              "declared_shape": [
+                30,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Breakpoint MAP-RPM-45pti",
+          "uniqueid": "0x6A02",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0xECE",
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "X/471.86"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": -2354,
+              "cpu_address_for_0x1800_bin": "0xECE"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x3486",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "23",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 7302,
+              "cpu_address_for_0x1800_bin": "0x3486"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x1B0C",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 780,
+              "cpu_address_for_0x1800_bin": "0x1B0C",
+              "declared_shape": [
+                45,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Breakpoint TPS-TPS-30pti",
+          "uniqueid": "0x1839",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0xECE",
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "X/471.86"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": -2354,
+              "cpu_address_for_0x1800_bin": "0xECE"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x3486",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "23",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 7302,
+              "cpu_address_for_0x1800_bin": "0x3486"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x25F2",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/458.88"
+              ],
+              "declared_file_offset": 3570,
+              "cpu_address_for_0x1800_bin": "0x25F2",
+              "declared_shape": [
+                30,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Breakpoint TPS-RPM-38pti",
+          "uniqueid": "0x29F1",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0xECE",
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "X/471.86"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": -2354,
+              "cpu_address_for_0x1800_bin": "0xECE"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x3486",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "23",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 7302,
+              "cpu_address_for_0x1800_bin": "0x3486"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x262E",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "38",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 3630,
+              "cpu_address_for_0x1800_bin": "0x262E",
+              "declared_shape": [
+                38,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Ign#1   32x20",
+          "uniqueid": "0x19CA",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0xECE",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "16",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "TPS",
+              "equations": [
+                "X/471.86"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x7B96"
+              },
+              "linked_table": "Breakpoint IGN-TPS-20pti",
+              "linked_storage": {
+                "mmedaddress": "0x4246",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/458.88"
+              ],
+              "declared_file_offset": -2354,
+              "cpu_address_for_0x1800_bin": "0xECE"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x3486",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "23",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "x/5.12"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x290E"
+              },
+              "linked_table": "Breakpoint IGN-RPM-32pti",
+              "linked_storage": {
+                "mmedaddress": "0x426C",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "32",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 7302,
+              "cpu_address_for_0x1800_bin": "0x3486"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x42AC",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "32",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "((x/256)*90)-12.5"
+              ],
+              "declared_file_offset": 10924,
+              "cpu_address_for_0x1800_bin": "0x42AC",
+              "declared_shape": [
+                32,
+                20,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Ign#2",
+          "uniqueid": "0x38EB",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0xECE",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "16",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "TPS",
+              "equations": [
+                "X/471.86"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x7B96"
+              },
+              "linked_table": "Breakpoint IGN-TPS-20pti",
+              "linked_storage": {
+                "mmedaddress": "0x4246",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/458.88"
+              ],
+              "declared_file_offset": -2354,
+              "cpu_address_for_0x1800_bin": "0xECE"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x3486",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "23",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "x/5.12"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x290E"
+              },
+              "linked_table": "Breakpoint IGN-RPM-32pti",
+              "linked_storage": {
+                "mmedaddress": "0x426C",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "32",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 7302,
+              "cpu_address_for_0x1800_bin": "0x3486"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x452C",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "32",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "((x/256)*90)-12.5"
+              ],
+              "declared_file_offset": 11564,
+              "cpu_address_for_0x1800_bin": "0x452C",
+              "declared_shape": [
+                32,
+                20,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Ign#3",
+          "uniqueid": "0x1D42",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0xECE",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "16",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "TPS",
+              "equations": [
+                "X/471.86"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x7B96"
+              },
+              "linked_table": "Breakpoint IGN-TPS-20pti",
+              "linked_storage": {
+                "mmedaddress": "0x4246",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/458.88"
+              ],
+              "declared_file_offset": -2354,
+              "cpu_address_for_0x1800_bin": "0xECE"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x3486",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "23",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "x/5.12"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x290E"
+              },
+              "linked_table": "Breakpoint IGN-RPM-32pti",
+              "linked_storage": {
+                "mmedaddress": "0x426C",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "32",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 7302,
+              "cpu_address_for_0x1800_bin": "0x3486"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x47AC",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "32",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "((x/256)*90)-12.5"
+              ],
+              "declared_file_offset": 12204,
+              "cpu_address_for_0x1800_bin": "0x47AC",
+              "declared_shape": [
+                32,
+                20,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Volt Dwell-Ms.  15x9",
+          "uniqueid": "0x67ED",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x300B8",
+                "mmedelementsizebits": "8",
+                "mmedcolcount": "9",
+                "mmedmajorstridebits": "8",
+                "mmedminorstridebits": "0"
+              },
+              "units": "BATT VOLT",
+              "equations": [
+                "X/11.857"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 190648,
+              "cpu_address_for_0x1800_bin": "0x300B8"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x300C2",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "X/2.56"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 190658,
+              "cpu_address_for_0x1800_bin": "0x300C2"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x4B10",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "15",
+                "mmedcolcount": "9",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X/25"
+              ],
+              "declared_file_offset": 13072,
+              "cpu_address_for_0x1800_bin": "0x4B10",
+              "declared_shape": [
+                15,
+                9,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "IGN. Idle ECT vs RPM",
+          "uniqueid": "0x651B",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x1D68",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "8",
+                "mmedminorstridebits": "0"
+              },
+              "units": "TPS",
+              "equations": [
+                "x/445.64"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x1839"
+              },
+              "linked_table": "Breakpoint TPS-TPS-30pti",
+              "linked_storage": {
+                "mmedaddress": "0x25F2",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/458.88"
+              ],
+              "declared_file_offset": 1384,
+              "cpu_address_for_0x1800_bin": "0x1D68"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x289C",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "10",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "X/2.56"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x6A02"
+              },
+              "linked_table": "Breakpoint MAP-RPM-45pti",
+              "linked_storage": {
+                "mmedaddress": "0x1B0C",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": 4252,
+              "cpu_address_for_0x1800_bin": "0x289C"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x4A5E",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "10",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "((x/256)*90)-12"
+              ],
+              "declared_file_offset": 12894,
+              "cpu_address_for_0x1800_bin": "0x4A5E",
+              "declared_shape": [
+                10,
+                15,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Rev Limit Fuel",
+          "uniqueid": "0x7DFA",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedcolcount": "10",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Gear",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x4BC8",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "3",
+                "mmedcolcount": "2",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "14999733/x"
+              ],
+              "declared_file_offset": 13256,
+              "cpu_address_for_0x1800_bin": "0x4BC8",
+              "declared_shape": [
+                3,
+                2,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Rev Limit Ignition",
+          "uniqueid": "0x44BC",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedcolcount": "10",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Gear",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x34A8",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "2",
+                "mmedcolcount": "2",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "14999733/x"
+              ],
+              "declared_file_offset": 7336,
+              "cpu_address_for_0x1800_bin": "0x34A8",
+              "declared_shape": [
+                2,
+                2,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Fan Temps",
+          "uniqueid": "0x74D",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "C",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x4C03",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "1",
+                "mmedcolcount": "2",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X/2.121"
+              ],
+              "declared_file_offset": 13315,
+              "cpu_address_for_0x1800_bin": "0x4C03",
+              "declared_shape": [
+                1,
+                2,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "ECU ID",
+          "uniqueid": "0xA9A",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0xF770",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "1",
+                "mmedcolcount": "8",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 57200,
+              "cpu_address_for_0x1800_bin": "0xF770",
+              "declared_shape": [
+                1,
+                8,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "RPM IGN. Limit Cyl#1",
+          "uniqueid": "0x5E7F",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x1000",
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "IGN",
+              "equations": [
+                "x/445.64"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": -2048,
+              "cpu_address_for_0x1800_bin": "0x1000"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x1028",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "28",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "X/2.56"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x290E"
+              },
+              "linked_table": "Breakpoint IGN-RPM-32pti",
+              "linked_storage": {
+                "mmedaddress": "0x426C",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "32",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": -2008,
+              "cpu_address_for_0x1800_bin": "0x1028"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x4F63",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "28",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "((x/256)*90)-12"
+              ],
+              "declared_file_offset": 14179,
+              "cpu_address_for_0x1800_bin": "0x4F63",
+              "declared_shape": [
+                28,
+                1,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "RPM IGN. Limit Cyl#2",
+          "uniqueid": "0x6FB8",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x1000",
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "IGN",
+              "equations": [
+                "x/445.64"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": -2048,
+              "cpu_address_for_0x1800_bin": "0x1000"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x1028",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "28",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "RPM",
+              "equations": [
+                "X/2.56"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x290E"
+              },
+              "linked_table": "Breakpoint IGN-RPM-32pti",
+              "linked_storage": {
+                "mmedaddress": "0x426C",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "32",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "x/5.12"
+              ],
+              "declared_file_offset": -2008,
+              "cpu_address_for_0x1800_bin": "0x1028"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x4F80",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "28",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "((x/256)*90)-12"
+              ],
+              "declared_file_offset": 14208,
+              "cpu_address_for_0x1800_bin": "0x4F80",
+              "declared_shape": [
+                28,
+                1,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "xt 660 r/prove xdf/xt660 04-06(5vk-8591a-01).xdf",
+      "tables": [
+        {
+          "title": "MAP 1",
+          "uniqueid": "0x1DAD",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x366",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 870,
+              "cpu_address_for_0x1800_bin": "0x1B66",
+              "declared_shape": [
+                45,
+                30,
+                16
+              ],
+              "target_start_matches": [
+                {
+                  "id": "main_quantity_A",
+                  "shape": [
+                    45,
+                    30,
+                    16
+                  ],
+                  "shape_matches": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "fuel 1",
+          "uniqueid": "0x7F7D",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x241"
+              },
+              "linked_table": "TPS TABLE",
+              "linked_storage": {
+                "mmedaddress": "0x2D0",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "X/458.88"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x1BCA"
+              },
+              "linked_table": "RPM  TABLE",
+              "linked_storage": {
+                "mmedaddress": "0x30C",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "1",
+                "mmedcolcount": "45",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "X/5.12"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0xE88",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 3720,
+              "cpu_address_for_0x1800_bin": "0x2688",
+              "declared_shape": [
+                45,
+                30,
+                16
+              ],
+              "target_start_matches": [
+                {
+                  "id": "main_quantity_B",
+                  "shape": [
+                    45,
+                    30,
+                    16
+                  ],
+                  "shape_matches": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fan Temp",
+          "uniqueid": "0x1C8B",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x4C03",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "1",
+                "mmedcolcount": "2",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 19459,
+              "cpu_address_for_0x1800_bin": "0x6403",
+              "declared_shape": [
+                1,
+                2,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "RPM limiter fuel",
+          "uniqueid": "0xACD",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x4BC6",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "4",
+                "mmedcolcount": "2",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "14999733/x"
+              ],
+              "declared_file_offset": 19398,
+              "cpu_address_for_0x1800_bin": "0x63C6",
+              "declared_shape": [
+                4,
+                2,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "fuel 2",
+          "uniqueid": "0x5904",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x1FA8",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 8104,
+              "cpu_address_for_0x1800_bin": "0x37A8",
+              "declared_shape": [
+                45,
+                30,
+                16
+              ],
+              "target_start_matches": [
+                {
+                  "id": "main_quantity_C",
+                  "shape": [
+                    45,
+                    30,
+                    16
+                  ],
+                  "shape_matches": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Ignition 1  ?",
+          "uniqueid": "0x2F18",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2D2E",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "32",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "((x/256)*90)-12.5"
+              ],
+              "declared_file_offset": 11566,
+              "cpu_address_for_0x1800_bin": "0x452E",
+              "declared_shape": [
+                32,
+                20,
+                8
+              ],
+              "target_start_matches": [
+                {
+                  "id": "main_u8_B",
+                  "shape": [
+                    32,
+                    20,
+                    8
+                  ],
+                  "shape_matches": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Ignition 2  ?",
+          "uniqueid": "0x76D7",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2FAE",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "32",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "((x/256)*90)-12.5"
+              ],
+              "declared_file_offset": 12206,
+              "cpu_address_for_0x1800_bin": "0x47AE",
+              "declared_shape": [
+                32,
+                20,
+                8
+              ],
+              "target_start_matches": [
+                {
+                  "id": "main_u8_C",
+                  "shape": [
+                    32,
+                    20,
+                    8
+                  ],
+                  "shape_matches": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "RPM  TABLE",
+          "uniqueid": "0x1BCA",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x30C",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "1",
+                "mmedcolcount": "45",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X/5.12"
+              ],
+              "declared_file_offset": 780,
+              "cpu_address_for_0x1800_bin": "0x1B0C",
+              "declared_shape": [
+                1,
+                45,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "TPS TABLE",
+          "uniqueid": "0x241",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2D0",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X/458.88"
+              ],
+              "declared_file_offset": 720,
+              "cpu_address_for_0x1800_bin": "0x1AD0",
+              "declared_shape": [
+                30,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Yamaha XT660 2008 5VK-8591A-1X.motorcycle-tuning.com.xdf",
+      "tables": [
+        {
+          "title": "Sw Version",
+          "uniqueid": "0x3481",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0xDF70",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "1",
+                "mmedcolcount": "8",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 57200,
+              "cpu_address_for_0x1800_bin": "0xF770",
+              "declared_shape": [
+                1,
+                8,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Rpm Limiter",
+          "uniqueid": "0x44F1",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x29F0",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "3",
+                "mmedcolcount": "2",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "15000000/X"
+              ],
+              "declared_file_offset": 10736,
+              "cpu_address_for_0x1800_bin": "0x41F0",
+              "declared_shape": [
+                3,
+                2,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Fan",
+          "uniqueid": "0x8FE",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2A26",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "1",
+                "mmedcolcount": "2",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "5*(x-29)/9"
+              ],
+              "declared_file_offset": 10790,
+              "cpu_address_for_0x1800_bin": "0x4226",
+              "declared_shape": [
+                1,
+                2,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "MAP",
+          "uniqueid": "0x1B19",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x2AA",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "MAP",
+              "equations": [
+                "x/256"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 682,
+              "cpu_address_for_0x1800_bin": "0x1AAA"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x2E6",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "45",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Rpm",
+              "equations": [
+                "x/5.12"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 742,
+              "cpu_address_for_0x1800_bin": "0x1AE6"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x340",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 832,
+              "cpu_address_for_0x1800_bin": "0x1B40",
+              "declared_shape": [
+                45,
+                30,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "TPS",
+          "uniqueid": "0x5BE2",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0xDCC",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "% TPS",
+              "equations": [
+                "x/514.56"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 3532,
+              "cpu_address_for_0x1800_bin": "0x25CC"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0xE08",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "45",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Rpm",
+              "equations": [
+                "x/5.12"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 3592,
+              "cpu_address_for_0x1800_bin": "0x2608"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0xE62",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 3682,
+              "cpu_address_for_0x1800_bin": "0x2662",
+              "declared_shape": [
+                45,
+                30,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Trim #1",
+          "uniqueid": "0x3747",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x1C0",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "14",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "% TPS",
+              "equations": [
+                "(x-320)/514.56"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 448,
+              "cpu_address_for_0x1800_bin": "0x19C0"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x1DE",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "11",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Rpm",
+              "equations": [
+                "X/7.68"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 478,
+              "cpu_address_for_0x1800_bin": "0x19DE"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x1F4",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "11",
+                "mmedcolcount": "14",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/1.28"
+              ],
+              "declared_file_offset": 500,
+              "cpu_address_for_0x1800_bin": "0x19F4",
+              "declared_shape": [
+                11,
+                14,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Trim #2",
+          "uniqueid": "0x40A5",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x1A32",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "12",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "% TPS",
+              "equations": [
+                "(x-16960)/453"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 6706,
+              "cpu_address_for_0x1800_bin": "0x3232"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x1A4A",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "8",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Rpm",
+              "equations": [
+                "X/7.68"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 6730,
+              "cpu_address_for_0x1800_bin": "0x324A"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x1A5A",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "8",
+                "mmedcolcount": "12",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/1.28"
+              ],
+              "declared_file_offset": 6746,
+              "cpu_address_for_0x1800_bin": "0x325A",
+              "declared_shape": [
+                8,
+                12,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Trim #3",
+          "uniqueid": "0x1538",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x1914",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "10",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "% TPS",
+              "equations": [
+                "x/514.56"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 6420,
+              "cpu_address_for_0x1800_bin": "0x3114"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x1928",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "13",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Rpm",
+              "equations": [
+                "X/7.68"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 6440,
+              "cpu_address_for_0x1800_bin": "0x3128"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x1942",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "13",
+                "mmedcolcount": "10",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/1.28"
+              ],
+              "declared_file_offset": 6466,
+              "cpu_address_for_0x1800_bin": "0x3142",
+              "declared_shape": [
+                13,
+                10,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "AIS #1",
+          "uniqueid": "0x63F6",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x2B34",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "10",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "% TPS",
+              "equations": [
+                "x/514.56"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 11060,
+              "cpu_address_for_0x1800_bin": "0x4334"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x2B48",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Rpm",
+              "equations": [
+                "X/5.12"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 11080,
+              "cpu_address_for_0x1800_bin": "0x4348"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2B70",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "20",
+                "mmedcolcount": "10",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 11120,
+              "cpu_address_for_0x1800_bin": "0x4370",
+              "declared_shape": [
+                20,
+                10,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "AIS #2",
+          "uniqueid": "0x587",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x2A30",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "10",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "% TPS",
+              "equations": [
+                "x/514.56"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 10800,
+              "cpu_address_for_0x1800_bin": "0x4230"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x2A44",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Rpm",
+              "equations": [
+                "X/5.12"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 10820,
+              "cpu_address_for_0x1800_bin": "0x4244"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2A6C",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "20",
+                "mmedcolcount": "10",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 10860,
+              "cpu_address_for_0x1800_bin": "0x426C",
+              "declared_shape": [
+                20,
+                10,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Neutral",
+          "uniqueid": "0x1325",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x206A",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "% TPS",
+              "equations": [
+                "(x-256)/514.56"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 8298,
+              "cpu_address_for_0x1800_bin": "0x386A"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x2092",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "32",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Rpm",
+              "equations": [
+                "x/5.12"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 8338,
+              "cpu_address_for_0x1800_bin": "0x3892"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x20D2",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "32",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "\u00b0",
+              "equations": [
+                "x/4"
+              ],
+              "declared_file_offset": 8402,
+              "cpu_address_for_0x1800_bin": "0x38D2",
+              "declared_shape": [
+                32,
+                20,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Gear 1- 3",
+          "uniqueid": "0x3227",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x206A",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "% TPS",
+              "equations": [
+                "(x-256)/514.56"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 8298,
+              "cpu_address_for_0x1800_bin": "0x386A"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x2092",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "32",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Rpm",
+              "equations": [
+                "x/5.12"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 8338,
+              "cpu_address_for_0x1800_bin": "0x3892"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2352",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "32",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "\u00b0",
+              "equations": [
+                "x/4"
+              ],
+              "declared_file_offset": 9042,
+              "cpu_address_for_0x1800_bin": "0x3B52",
+              "declared_shape": [
+                32,
+                20,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Gear 4 - 5",
+          "uniqueid": "0x4CD3",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x206A",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "% TPS",
+              "equations": [
+                "(x-256)/514.56"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 8298,
+              "cpu_address_for_0x1800_bin": "0x386A"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x2092",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "32",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Rpm",
+              "equations": [
+                "x/5.12"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 8338,
+              "cpu_address_for_0x1800_bin": "0x3892"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x25D2",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "32",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "\u00b0",
+              "equations": [
+                "x/4"
+              ],
+              "declared_file_offset": 9682,
+              "cpu_address_for_0x1800_bin": "0x3DD2",
+              "declared_shape": [
+                32,
+                20,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Ignition Temperature Compensation",
+          "uniqueid": "0x6F04",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x286A",
+                "mmedelementsizebits": "8",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "8",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Temp",
+              "equations": [
+                "(x-32)/1.8"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 10346,
+              "cpu_address_for_0x1800_bin": "0x406A"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x287A",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "10",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Rpm",
+              "equations": [
+                "X/7.68"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 10362,
+              "cpu_address_for_0x1800_bin": "0x407A"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2884",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "10",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "\u00b0",
+              "equations": [
+                "x/4"
+              ],
+              "declared_file_offset": 10372,
+              "cpu_address_for_0x1800_bin": "0x4084",
+              "declared_shape": [
+                10,
+                15,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Ignition Coil Compensation",
+          "uniqueid": "0x4A25",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x340A",
+                "mmedelementsizebits": "8",
+                "mmedcolcount": "9",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Volts",
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 13322,
+              "cpu_address_for_0x1800_bin": "0x4C0A"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x2A44",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Rpm",
+              "equations": [
+                "x/5.12"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 10820,
+              "cpu_address_for_0x1800_bin": "0x4244"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x293A",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "15",
+                "mmedcolcount": "9",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": "ms",
+              "equations": [
+                "x*0.032"
+              ],
+              "declared_file_offset": 10554,
+              "cpu_address_for_0x1800_bin": "0x413A",
+              "declared_shape": [
+                15,
+                9,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Coolant Temp Compensation #1",
+          "uniqueid": "0x66E3",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x286A",
+                "mmedelementsizebits": "8",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "8",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Temp",
+              "equations": [
+                "(X-32)/1.8"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 10346,
+              "cpu_address_for_0x1800_bin": "0x406A"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x1ACC",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "1",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X/10"
+              ],
+              "declared_file_offset": 6860,
+              "cpu_address_for_0x1800_bin": "0x32CC",
+              "declared_shape": [
+                1,
+                15,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Air Temp Compensation #1",
+          "uniqueid": "0x6368",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x286A",
+                "mmedelementsizebits": "8",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "8",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Temp",
+              "equations": [
+                "(X-32)/1.8"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 10346,
+              "cpu_address_for_0x1800_bin": "0x406A"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x1ADE",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "1",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/10"
+              ],
+              "declared_file_offset": 6878,
+              "cpu_address_for_0x1800_bin": "0x32DE",
+              "declared_shape": [
+                1,
+                15,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Air Temp Compensation #2",
+          "uniqueid": "0x7DAC",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x286A",
+                "mmedelementsizebits": "8",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "8",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "(X-32)/1.8"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 10346,
+              "cpu_address_for_0x1800_bin": "0x406A"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Temp",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x1AF2",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "1",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "x/10"
+              ],
+              "declared_file_offset": 6898,
+              "cpu_address_for_0x1800_bin": "0x32F2",
+              "declared_shape": [
+                1,
+                15,
+                8
+              ],
+              "target_start_matches": [
+                {
+                  "id": "curve_32ef",
+                  "shape": [
+                    1,
+                    15,
+                    8
+                  ],
+                  "shape_matches": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Air Temp Compensation #3",
+          "uniqueid": "0x17F0",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x286A",
+                "mmedelementsizebits": "8",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "8",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "(X-32)/1.8"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 10346,
+              "cpu_address_for_0x1800_bin": "0x406A"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Temp",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x1B10",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "1",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X/10"
+              ],
+              "declared_file_offset": 6928,
+              "cpu_address_for_0x1800_bin": "0x3310",
+              "declared_shape": [
+                1,
+                15,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Coolant Temp Compensation #2",
+          "uniqueid": "0x7740",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x286A",
+                "mmedelementsizebits": "8",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "8",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "(X-32)/1.8"
+              ],
+              "embedinfo": {
+                "type": "1"
+              },
+              "declared_file_offset": 10346,
+              "cpu_address_for_0x1800_bin": "0x406A"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "8",
+                "mmedmajorstridebits": "16",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Temp",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x1B22",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "1",
+                "mmedcolcount": "15",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X/10"
+              ],
+              "declared_file_offset": 6946,
+              "cpu_address_for_0x1800_bin": "0x3322",
+              "declared_shape": [
+                1,
+                15,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Yamaha XT660 2012-2016 2C1-8591A-10.motorcycle-tuning.com.xdf",
+      "tables": [
+        {
+          "title": "TPS : IAP",
+          "uniqueid": "0x6DE4",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Modify",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Original",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2AA",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.002825 -44.45"
+              ],
+              "declared_file_offset": 682,
+              "cpu_address_for_0x1800_bin": "0x1AAA",
+              "declared_shape": [
+                30,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "TPS : Fuel",
+          "uniqueid": "0x5589",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Modify",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Original",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0xDCC",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.0019434"
+              ],
+              "declared_file_offset": 3532,
+              "cpu_address_for_0x1800_bin": "0x25CC",
+              "declared_shape": [
+                30,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "RPM : IAP",
+          "uniqueid": "0x1FD9",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Modify",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Original",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2E6",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.390625 /2"
+              ],
+              "declared_file_offset": 742,
+              "cpu_address_for_0x1800_bin": "0x1AE6",
+              "declared_shape": [
+                45,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "RPM : Fuel",
+          "uniqueid": "0x2D7E",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Modify",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Original",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0xE08",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.390625 /2"
+              ],
+              "declared_file_offset": 3592,
+              "cpu_address_for_0x1800_bin": "0x2608",
+              "declared_shape": [
+                45,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "TPS : IGN",
+          "uniqueid": "0x6DE5",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Modify",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Original",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x206A",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.0020084"
+              ],
+              "declared_file_offset": 8298,
+              "cpu_address_for_0x1800_bin": "0x386A",
+              "declared_shape": [
+                20,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "RPM : IGN",
+          "uniqueid": "0x7417",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Modify",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": "Original",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2092",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "32",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.390625 /2"
+              ],
+              "declared_file_offset": 8338,
+              "cpu_address_for_0x1800_bin": "0x3892",
+              "declared_shape": [
+                32,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Fuel :: IAP",
+          "uniqueid": "0x6BF",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x4002",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.002272 - 23.5"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x6DE4"
+              },
+              "linked_table": "TPS : IAP",
+              "linked_storage": {
+                "mmedaddress": "0x2AA",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "X*0.002825 -44.45"
+              ],
+              "declared_file_offset": 16386,
+              "cpu_address_for_0x1800_bin": "0x5802"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x55EC",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "43",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.390625"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x1FD9"
+              },
+              "linked_table": "RPM : IAP",
+              "linked_storage": {
+                "mmedaddress": "0x2E6",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "X*0.390625 /2"
+              ],
+              "declared_file_offset": 21996,
+              "cpu_address_for_0x1800_bin": "0x6DEC"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x340",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "43",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 832,
+              "cpu_address_for_0x1800_bin": "0x1B40",
+              "declared_shape": [
+                43,
+                30,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Fuel :: TPS",
+          "uniqueid": "0x7E86",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x55B0",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.002134 - 0.645"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x5589"
+              },
+              "linked_table": "TPS : Fuel",
+              "linked_storage": {
+                "mmedaddress": "0xDCC",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "X*0.0019434"
+              ],
+              "declared_file_offset": 21936,
+              "cpu_address_for_0x1800_bin": "0x6DB0"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x403E",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "45",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.390625"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x2D7E"
+              },
+              "linked_table": "RPM : Fuel",
+              "linked_storage": {
+                "mmedaddress": "0xE08",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "X*0.390625 /2"
+              ],
+              "declared_file_offset": 16446,
+              "cpu_address_for_0x1800_bin": "0x583E"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0xE62",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "45",
+                "mmedcolcount": "30",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 3682,
+              "cpu_address_for_0x1800_bin": "0x2662",
+              "declared_shape": [
+                45,
+                30,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Ignition :: Neutral-Gear",
+          "uniqueid": "0x1C6",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x1000",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.002134 - 0.645"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x6DE5"
+              },
+              "linked_table": "TPS : IGN",
+              "linked_storage": {
+                "mmedaddress": "0x206A",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "X*0.0020084"
+              ],
+              "declared_file_offset": 4096,
+              "cpu_address_for_0x1800_bin": "0x2800"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x1028",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "32",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.390625"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x7417"
+              },
+              "linked_table": "RPM : IGN",
+              "linked_storage": {
+                "mmedaddress": "0x2092",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "32",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "X*0.390625 /2"
+              ],
+              "declared_file_offset": 4136,
+              "cpu_address_for_0x1800_bin": "0x2828"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x20D2",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "32",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.2"
+              ],
+              "declared_file_offset": 8402,
+              "cpu_address_for_0x1800_bin": "0x38D2",
+              "declared_shape": [
+                32,
+                20,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Ignition :: In-Gear : 1-3",
+          "uniqueid": "0x70F0",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x1000",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.002134 - 0.645"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x6DE5"
+              },
+              "linked_table": "TPS : IGN",
+              "linked_storage": {
+                "mmedaddress": "0x206A",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "X*0.0020084"
+              ],
+              "declared_file_offset": 4096,
+              "cpu_address_for_0x1800_bin": "0x2800"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x1028",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "32",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.390625"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x7417"
+              },
+              "linked_table": "RPM : IGN",
+              "linked_storage": {
+                "mmedaddress": "0x2092",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "32",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "X*0.390625 /2"
+              ],
+              "declared_file_offset": 4136,
+              "cpu_address_for_0x1800_bin": "0x2828"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2352",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "32",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.2"
+              ],
+              "declared_file_offset": 9042,
+              "cpu_address_for_0x1800_bin": "0x3B52",
+              "declared_shape": [
+                32,
+                20,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Ignition :: In-Gear : 4-6",
+          "uniqueid": "0x74EB",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedaddress": "0x1000",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.002134 - 0.645"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x6DE5"
+              },
+              "linked_table": "TPS : IGN",
+              "linked_storage": {
+                "mmedaddress": "0x206A",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "X*0.0020084"
+              ],
+              "declared_file_offset": 4096,
+              "cpu_address_for_0x1800_bin": "0x2800"
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedaddress": "0x1028",
+                "mmedelementsizebits": "16",
+                "mmedcolcount": "32",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.390625"
+              ],
+              "embedinfo": {
+                "type": "3",
+                "linkobjid": "0x7417"
+              },
+              "linked_table": "RPM : IGN",
+              "linked_storage": {
+                "mmedaddress": "0x2092",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "32",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "linked_equations": [
+                "X*0.390625 /2"
+              ],
+              "declared_file_offset": 4136,
+              "cpu_address_for_0x1800_bin": "0x2828"
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x25D2",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "32",
+                "mmedcolcount": "20",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.2"
+              ],
+              "declared_file_offset": 9682,
+              "cpu_address_for_0x1800_bin": "0x3DD2",
+              "declared_shape": [
+                32,
+                20,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Rev Limit #1",
+          "uniqueid": "0x32CB",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x292E",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "1",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "15004500/X"
+              ],
+              "declared_file_offset": 10542,
+              "cpu_address_for_0x1800_bin": "0x412E",
+              "declared_shape": [
+                1,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Rev Limit #2",
+          "uniqueid": "0x584B",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2936",
+                "mmedelementsizebits": "16",
+                "mmedrowcount": "1",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "15004500/X"
+              ],
+              "declared_file_offset": 10550,
+              "cpu_address_for_0x1800_bin": "0x4136",
+              "declared_shape": [
+                1,
+                1,
+                16
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "Fan Control",
+          "uniqueid": "0x72BA",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": "C \u00b0",
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0x2A26",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "1",
+                "mmedcolcount": "2",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X*0.476"
+              ],
+              "declared_file_offset": 10790,
+              "cpu_address_for_0x1800_bin": "0x4226",
+              "declared_shape": [
+                1,
+                2,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        },
+        {
+          "title": "SW Version",
+          "uniqueid": "0x438A",
+          "axes": [
+            {
+              "id": "x",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "y",
+              "declared_storage": {
+                "mmedelementsizebits": "16",
+                "mmedmajorstridebits": "-32",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ]
+            },
+            {
+              "id": "z",
+              "declared_storage": {
+                "mmedaddress": "0xDF70",
+                "mmedelementsizebits": "8",
+                "mmedrowcount": "1",
+                "mmedcolcount": "8",
+                "mmedmajorstridebits": "0",
+                "mmedminorstridebits": "0"
+              },
+              "units": null,
+              "equations": [
+                "X"
+              ],
+              "declared_file_offset": 57200,
+              "cpu_address_for_0x1800_bin": "0xF770",
+              "declared_shape": [
+                1,
+                8,
+                8
+              ],
+              "target_start_matches": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "matching_application": {
+    "source": "xt 660 r/xt660 04-06(5vk-8591a-01).bin",
+    "exact_except": "0x4E7D: candidate 0; target 128",
+    "startup_checksum": "0xAA55",
+    "boot_matches_earlier_source": true,
+    "boot_sha256": "9f313f065e7f71309fb1c51f320d48f1d0a3ac72875464abded8e54fbc39df10",
+    "instruction_anchors": [
+      {
+        "address": "0xF800",
+        "bytes": "cf1000",
+        "meaning": "LDS #0x1000"
+      },
+      {
+        "address": "0xF80A",
+        "bytes": "86075a3486015a35",
+        "meaning": "SYNR=7; REFDV=1"
+      },
+      {
+        "address": "0xF81A",
+        "bytes": "4c3980",
+        "meaning": "BSET CLKSEL,0x80"
+      },
+      {
+        "address": "0xF883",
+        "bytes": "bcf7fe1827ff16",
+        "meaning": "CPD 0xF7FE; LBEQ 0xF7A0"
+      },
+      {
+        "address": "0xF7A0",
+        "bytes": "065000",
+        "meaning": "JMP 0x5000"
+      }
+    ],
+    "limitation": "Strong companion boot candidate; not a physical read of the owner ECU boot. Target remains unchanged."
+  },
+  "temperature_trials": [
+    {
+      "candidate": "2008_fan",
+      "sensor": "coolant",
+      "slope": 0.5555555555555556,
+      "offset": -16.11111111111111,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2320,
+            2590
+          ],
+          "adc_bins": [
+            680,
+            687
+          ],
+          "compatible_pullup_ohms": [
+            1133.0232558139535,
+            1310.235294117647
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            310,
+            326
+          ],
+          "adc_bins": [
+            158,
+            161
+          ],
+          "compatible_pullup_ohms": [
+            1649.506172839506,
+            1786.8101265822784
+          ]
+        },
+        {
+          "celsius": 110,
+          "resistance_ohms": [
+            140,
+            145
+          ],
+          "adc_bins": [
+            72,
+            73
+          ],
+          "compatible_pullup_ohms": [
+            1797.2972972972975,
+            1917.2222222222222
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "candidate": "2008_fan",
+      "sensor": "intake",
+      "slope": 0.5555555555555556,
+      "offset": -16.11111111111111,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2210,
+            2690
+          ],
+          "adc_bins": [
+            588,
+            595
+          ],
+          "compatible_pullup_ohms": [
+            1587.0469798657716,
+            1994.625850340136
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            290,
+            354
+          ],
+          "adc_bins": [
+            112,
+            115
+          ],
+          "compatible_pullup_ohms": [
+            2270.0,
+            2882.5714285714284
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "candidate": "2008_temperature_axis",
+      "sensor": "coolant",
+      "slope": 0.5555555555555556,
+      "offset": -17.77777777777778,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2320,
+            2590
+          ],
+          "adc_bins": [
+            657,
+            662
+          ],
+          "compatible_pullup_ohms": [
+            1263.2277526395176,
+            1446.7732115677318
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            310,
+            326
+          ],
+          "adc_bins": [
+            151,
+            153
+          ],
+          "compatible_pullup_ohms": [
+            1751.2987012987014,
+            1884.7549668874171
+          ]
+        },
+        {
+          "celsius": 110,
+          "resistance_ohms": [
+            140,
+            145
+          ],
+          "adc_bins": [
+            68,
+            69
+          ],
+          "compatible_pullup_ohms": [
+            1908.0,
+            2038.5294117647059
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "candidate": "2008_temperature_axis",
+      "sensor": "intake",
+      "slope": 0.5555555555555556,
+      "offset": -17.77777777777778,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2210,
+            2690
+          ],
+          "adc_bins": [
+            560,
+            571
+          ],
+          "compatible_pullup_ohms": [
+            1746.3636363636363,
+            2228.8571428571427
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            290,
+            354
+          ],
+          "adc_bins": [
+            108,
+            111
+          ],
+          "compatible_pullup_ohms": [
+            2361.428571428571,
+            3002.4444444444443
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "candidate": "2004_final_fan",
+      "sensor": "coolant",
+      "slope": 0.47147571900047147,
+      "offset": 0,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2320,
+            2590
+          ],
+          "adc_bins": [
+            805,
+            809
+          ],
+          "compatible_pullup_ohms": [
+            612.9382716049382,
+            704.608695652174
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            310,
+            326
+          ],
+          "adc_bins": [
+            169,
+            172
+          ],
+          "compatible_pullup_ohms": [
+            1524.9132947976877,
+            1649.2899408284022
+          ]
+        },
+        {
+          "celsius": 110,
+          "resistance_ohms": [
+            140,
+            145
+          ],
+          "adc_bins": [
+            65,
+            66
+          ],
+          "compatible_pullup_ohms": [
+            1999.7014925373135,
+            2139.3076923076924
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "candidate": "2004_final_fan",
+      "sensor": "intake",
+      "slope": 0.47147571900047147,
+      "offset": 0,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2210,
+            2690
+          ],
+          "adc_bins": [
+            736,
+            743
+          ],
+          "compatible_pullup_ohms": [
+            831.7204301075271,
+            1052.6086956521738
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            290,
+            354
+          ],
+          "adc_bins": [
+            120,
+            123
+          ],
+          "compatible_pullup_ohms": [
+            2104.8387096774195,
+            2666.8
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "candidate": "2012_fan",
+      "sensor": "coolant",
+      "slope": 0.476,
+      "offset": 0,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2320,
+            2590
+          ],
+          "adc_bins": [
+            805,
+            809
+          ],
+          "compatible_pullup_ohms": [
+            612.9382716049382,
+            704.608695652174
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            310,
+            326
+          ],
+          "adc_bins": [
+            172,
+            174
+          ],
+          "compatible_pullup_ohms": [
+            1503.942857142857,
+            1614.8372093023256
+          ]
+        },
+        {
+          "celsius": 110,
+          "resistance_ohms": [
+            140,
+            145
+          ],
+          "adc_bins": [
+            67,
+            68
+          ],
+          "compatible_pullup_ohms": [
+            1937.68115942029,
+            2071.1194029850744
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    },
+    {
+      "candidate": "2012_fan",
+      "sensor": "intake",
+      "slope": 0.476,
+      "offset": 0,
+      "points": [
+        {
+          "celsius": 20,
+          "resistance_ohms": [
+            2210,
+            2690
+          ],
+          "adc_bins": [
+            736,
+            743
+          ],
+          "compatible_pullup_ohms": [
+            831.7204301075271,
+            1052.6086956521738
+          ]
+        },
+        {
+          "celsius": 80,
+          "resistance_ohms": [
+            290,
+            354
+          ],
+          "adc_bins": [
+            120,
+            127
+          ],
+          "compatible_pullup_ohms": [
+            2030.0,
+            2666.8
+          ]
+        }
+      ],
+      "consistent_constant_pullup": false,
+      "common_pullup_interval_ohms": null
+    }
+  ],
+  "new_physical_scales_verified": 0
+}

@@ -1,4 +1,5 @@
 # Scaling comparison with other Denso/Yamaha ECUs
+See also the later [owner-supplied XT660 XDF/BIN audit](LOCAL_XDF_REVIEW.md): 64 readable table declarations and a companion BIN matching the target application except for its known patch.
 
 Research date: 30 October 2026. **All 71 map records were reviewed for applicability; no new absolute physical scale was established by copying an external definition.** The useful new firmware result is the [pressure-estimate selection and tracking model](PRESSURE_ESTIMATE.md), which narrows the unresolved input path for six curves.
 
