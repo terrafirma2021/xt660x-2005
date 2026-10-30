@@ -4,10 +4,17 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import json
 import subprocess
+import re
 from sensor_profiles import sensor_code
 
 ROOT=Path(__file__).resolve().parents[1]
 SITE=ROOT/'_site'
+
+def luminance(hex_colour):
+    channels=[int(hex_colour[i:i+2],16)/255 for i in (1,3,5)]
+    return sum(weight*(v/12.92 if v<=.04045 else ((v+.055)/1.055)**2.4)
+               for weight,v in zip((.2126,.7152,.0722),channels))
+
 class Links(HTMLParser):
     def __init__(self):
         super().__init__(); self.links=[]; self.map_count=0; self.theme_buttons=0; self.cells=[]; self.cell=None; self.grid_count=0; self.preview_count=0; self.curves=0; self.curve_json=None; self.reading_curve=False
@@ -48,7 +55,7 @@ parser=Links();parser.feed((SITE/'maps/index.html').read_text(encoding='utf-8'))
 assert parser.map_count==len(json.loads((ROOT/'analysis/maps.json').read_text()))==71
 assert parser.preview_count==71
 image=(ROOT/'firmware/XT660X 2005.bin').read_bytes()
-cell_count=0;curve_count=0
+cell_count=0;curve_count=0;cell_inks=set()
 for m in json.loads((ROOT/'analysis/maps.json').read_text()):
     parser=Links();parser.feed((SITE/'docs/map_details'/f"{m['id']}.html").read_text(encoding='utf-8'))
     assert parser.grid_count==1 and len(parser.cells)==m['rows']*m['columns'],m['id']
@@ -67,7 +74,13 @@ for m in json.loads((ROOT/'analysis/maps.json').read_text()):
         assert int(c['data-address'],16)==address
         assert int(c['data-value'])==int(c['text'])==value
         assert (int(c['data-row']),int(c['data-column']))==divmod(index,m['columns'])
+        background=re.search(r'--cell-bg:(#[0-9a-f]{6})',c['style'])[1]
+        foreground=re.search(r'--cell-fg:(#[0-9a-f]{6})',c['style'])[1]
+        light,dark=sorted((luminance(background),luminance(foreground)),reverse=True)
+        assert (light+.05)/(dark+.05)>=7,('Insufficient cell text contrast',m['id'],address)
+        cell_inks.add(foreground)
         cell_count+=1
+assert len(cell_inks)==1,'Heatmap numbers must use consistent ink across values'
 assert not list(SITE.rglob('*.bin'))
 for route in ('index.html','maps/index.html','pins/index.html','research/index.html','coverage/index.html'):
     assert (SITE/route).is_file()

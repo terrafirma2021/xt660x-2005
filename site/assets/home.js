@@ -12,6 +12,7 @@
     const m=maps[current],values=m.raw_values.flat(),low=Math.min(...values),high=Math.max(...values);
     const w=canvas.width,h=canvas.height,cw=w/m.columns,ch=h/m.rows;
     const style=getComputedStyle(canvas),color=token=>style.getPropertyValue(token).trim();
+    const stops=color('--heat-stops').split(',').map(stop=>stop.trim().split(/\s+/).map(Number));
     ctx.fillStyle=color('--plot-bg');ctx.fillRect(0,0,w,h);
     if(m.rows===1){
       ctx.strokeStyle=color('--plot-grid');ctx.lineWidth=1;
@@ -20,8 +21,8 @@
       values.forEach((value,c)=>{const x=24+c*(w-48)/(m.columns-1),y=h-24-(value-low)/(high-low||1)*(h-48);if(c)ctx.lineTo(x,y);else ctx.moveTo(x,y);});ctx.stroke();
       values.forEach((value,c)=>{ctx.fillStyle=color(inspect&&c===column?'--ink':'--plot-line');ctx.beginPath();ctx.arc(24+c*(w-48)/(m.columns-1),h-24-(value-low)/(high-low||1)*(h-48),inspect&&c===column?7:3,0,Math.PI*2);ctx.fill();});
     }else m.raw_values.forEach((line,r)=>line.forEach((value,c)=>{
-      const t=(value-low)/(high-low||1);
-      ctx.fillStyle=t<.62?`hsl(${228-t*35} 90% ${22+t*80}%)`:`hsl(${40-(t-.62)*105} 95% ${68-(t-.62)*45}%)`;
+      const t=high===low?.5:(value-low)/(high-low),segment=Math.min(3,Math.floor(t*4)),f=t*4-segment;
+      ctx.fillStyle='rgb('+stops[segment].map((a,i)=>Math.round(a+(stops[segment+1][i]-a)*f)).join(',')+')';
       ctx.fillRect(c*cw+1,r*ch+1,Math.max(1,cw-2),Math.max(1,ch-2));
     }));
     if(inspect){if(m.rows>1){ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.strokeRect(column*cw+2,row*ch+2,cw-4,ch-4);}output.textContent=`ROW ${row+1} / COL ${column+1} · RAW ${m.raw_values[row][column]}`;}

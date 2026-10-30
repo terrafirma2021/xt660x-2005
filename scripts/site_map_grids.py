@@ -2,19 +2,24 @@
 from html import escape as esc
 import json
 
-STOPS = [(31, 61, 164), (56, 161, 214), (112, 216, 196), (251, 208, 105), (228, 96, 59)]
+# Bright blue/cyan/green/yellow/red ramp keeps one legible ink colour.
+# Shared by cells, SVG previews, legends and the homepage canvas.
+STOPS = [(108, 161, 255), (91, 221, 232), (128, 222, 143), (255, 223, 109), (249, 132, 116)]
+CELL_INK = '#07111b'
+
+
+def palette_css():
+    stops = ','.join(' '.join(map(str, rgb)) for rgb in STOPS)
+    gradient = ','.join('rgb('+','.join(map(str, rgb))+')' for rgb in STOPS)
+    return ':root{--heat-stops:'+stops+';--heat-gradient:linear-gradient(90deg,'+gradient+')}\n'
 
 
 def colour(value, lo, hi):
     t = .5 if hi == lo else (value-lo)/(hi-lo)
     segment = min(3, int(t*4))
     f = t*4-segment
-    rgb = tuple(round(a+(b-a)*f) for a,b in zip(STOPS[segment], STOPS[segment+1]))
-    channels = [v/255 for v in rgb]
-    linear = [v/12.92 if v <= .04045 else ((v+.055)/1.055)**2.4 for v in channels]
-    luminance = sum(a*b for a,b in zip(linear, [.2126,.7152,.0722]))
-    foreground = '#000' if (luminance+.05)/.05 >= 1.05/(luminance+.05) else '#fff'
-    return '#'+''.join(f'{v:02x}' for v in rgb), foreground
+    rgb = tuple(int(a+(b-a)*f+.5) for a,b in zip(STOPS[segment], STOPS[segment+1]))
+    return '#'+''.join(f'{v:02x}' for v in rgb), CELL_INK
 
 
 def axis_labels(m, name, count):

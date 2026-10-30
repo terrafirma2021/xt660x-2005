@@ -10,7 +10,7 @@ from pathlib import Path
 from urllib.parse import quote, unquote, urlsplit
 import markdown
 from site_home import build_home
-from site_map_grids import grid as map_grid, preview as map_preview
+from site_map_grids import grid as map_grid, preview as map_preview, palette_css
 
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / '_site'
@@ -57,6 +57,7 @@ if DEST.exists():
     shutil.rmtree(DEST)
 DEST.mkdir()
 shutil.copytree(ROOT / 'site/assets', DEST / 'assets')
+write('assets/map-grid.css', (ROOT/'site/assets/map-grid.css').read_text(encoding='utf-8')+'\n'+palette_css())
 
 home = build_home(maps, pins, write)
 write('index.html', shell('Yamaha XT660X / The inside line', home, 'index.html', 'Overview', f'<script src="assets/home.js?v={revision}" defer></script>'))
